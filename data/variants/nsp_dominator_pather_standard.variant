@@ -1,0 +1,69 @@
+{
+  "variantId": "nsp_dominator_pather_standard",
+  "hullId": "nsp_dominator_pather",
+  "displayName": "Holy",
+  "goalVariant": true,
+  "fluxCapacitors": 24,
+  "fluxVents": 25,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "blast_doors",
+    "heavyarmor",
+    "missleracks",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "hephag",
+        "WS0011": "lightneedler",
+        "WS0013": "lightag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "heavymg",
+        "WS0008": "devastator",
+        "WS0010": "jackhammer",
+        "WS0015": "hammer",
+        "WS0016": "hammer"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0014": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0007": "jackhammer"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+ "wings": [],
+    "modules": [
+        {"PATHOM1": "nsp_dominator_pather_canister_standard"},
+    ],
+}

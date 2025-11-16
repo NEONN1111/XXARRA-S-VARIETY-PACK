@@ -1,0 +1,196 @@
+{
+  "hullName": "Fulgurite",
+  "hullId": "nsp_fulgurite",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_fulgurite.png",
+  "style": "LOW_TECH",
+  "height": 152,
+  "width": 146,
+  "center": [73, 74],
+  "collisionRadius": 110,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 110,
+  "viewOffset": 0,
+  "builtInMods": [
+    "rugged",
+    "nsp_hardened_armor"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 120,
+      "locations": [-24, 53]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 60,
+      "locations": [14, 55]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -60,
+      "locations": [14, -55]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 240,
+      "locations": [-24, -53]
+    },
+    {
+      "id": "WS 006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [25, 0]
+    },
+    {
+      "id": "WS 008",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [29, 40]
+    },
+    {
+      "id": "WS 009",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [29, -40]
+    },
+    {
+      "id": "WS 010",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-27.5, -0.5]
+    },
+    {
+      "id": "WS 011",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-17, 26]
+    },
+    {
+      "id": "WS 012",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-17, -26]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-63, 42],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-64, -42],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-63, 54],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-63, -54],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-74, 18],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-73.5, -19],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    49, -3.5,
+    75.5, -15,
+    71.5, -22.5,
+    64, -31.5,
+    52.5, -36.5,
+    53, -44.5,
+    64, -45.5,
+    65.5, -53,
+    43.5, -54.5,
+    40, -59.5,
+    36.5, -55,
+    10, -69,
+    -61, -58.5,
+    -63.5, -29.5,
+    -71.5, -29,
+    -73, -12.5,
+    -65.5, -12,
+    -65.5, 12,
+    -73, 12.5,
+    -71.5, 29,
+    -63.5, 29.5,
+    -61, 58.5,
+    10, 69,
+    36.5, 55,
+    40, 59.5,
+    43.5, 54.5,
+    65.5, 53,
+    64, 45.5,
+    53, 44.5,
+    52.5, 36.5,
+    64, 31.5,
+    71.5, 22.5,
+    75.5, 15,
+    49, 3.5
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "nsp_elysium_lance",
+  "specClass": "projectile",
+  "projectileSpecId": "elysiumlance_shot",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/weapons/nsp_exponent_lance_turret.png",
+  "turretGlowSprite": "graphics/weapons/phase_beam_turret_glow.png",
+  "hardpointSprite": "graphics/weapons/nsp_exponent_lance_hardpoint.png",
+  "hardpointGlowSprite": "graphics/weapons/phase_beam_hardpoint_glow.png",
+  "glowColor": [
+    255,
+    196,
+    19,
+    255
+  ],
+  "turretOffsets": [
+    15,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    23,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "interruptibleBurst": true,
+  "autocharge": true,
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 20,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.5,
+    "particleCount": 10,
+    "particleColor": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "fireSoundTwo": "pulse_laser_fire"
+}

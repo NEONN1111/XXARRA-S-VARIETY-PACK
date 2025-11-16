@@ -1,0 +1,69 @@
+{
+	"id":"phasecloak_skimmer",
+	"type":"PHASE_CLOAK",
+	"aiType":"PHASE_CLOAK",
+	
+	"statsScript":"com.fs.starfarer.api.impl.combat.PhaseCloakStats",
+	"runScriptWhilePaused":true, # only for the player's ship
+	"runScriptWhileIdle":true,  # this means unapply() never gets called
+	"blockActionsWhileChargingDown":false,
+        
+	"jitterUnderColor":[255,165,90,155],
+	"jitterUnderCopies":25,
+	"jitterUnderMinRange":0,
+	"jitterUnderRange":7,
+	"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[255,165,90,55],
+	"jitterCopies":5,
+	"jitterMinRange":0,
+	"jitterRange":5,
+	"jitterRangeRadiusFraction":0,
+
+
+	
+	"canNotCauseOverload":true,
+	
+	"phaseHighlight":"_glow1",
+	"phaseDiffuse":"_glow2",
+	
+	
+	"effectColor1":[255,165,90,255],
+	"effectColor2":[255,165,90,150],
+	
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	
+	"engineGlowColor":[100,165,255,125],
+	"engineGlowContrailColor":[0,0,0,0],
+	"engineGlowLengthMult":0,
+	"engineGlowWidthMult":0,
+	"engineGlowGlowMult":0,
+
+        "range":300,
+	"randomRange":30,
+
+        "renderCopyDuringTeleport":true,
+
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.8,
+	"soundFilterGainHF":0.25,
+	
+	"shipAlpha":1, # handled in stats script
+	#"shipAlpha":0.25,
+	
+	"useSound":"system_phase_skimmer",
+	#"deactivateSound":"system_phase_cloak_deactivate",
+	"deactivateSound":"system_phase_cloak_deactivate",
+	"outOfUsesSound":"system_phase_cloak_collision",
+
+       "aiHints":{
+		"averageSpeedIncrease":300,
+		"burstMovementPotential":3000,		
+		"threatRange":900,
+		"threatAmount":100000000,
+		"threatAngle":0,
+		"threatArc":360,	
+
+	}
+}

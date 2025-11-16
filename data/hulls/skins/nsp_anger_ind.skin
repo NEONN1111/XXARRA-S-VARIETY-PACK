@@ -1,0 +1,17 @@
+{
+  "baseHullId": "nsp_anger",
+  "baseValue": 125000,
+  "baseValueMult": 1,
+  "descriptionId": "nsp_anger",
+  "fighterBays": 0,
+  "fleetPoints": 25,
+  "fpMod": 0,
+  "hullDesignation": "CRUISER",
+  "hullName": "Anger (I)",
+  "manufacturer": "Low Tech",
+  "ordnancePoints": 200,
+  "restoreToBaseHull": false,
+  "skinHullId": "nsp_anger_ind",
+  "spriteName": "graphics/ships/nsp_anger/nsp_anger_ind.png",
+  "tech": ""
+}

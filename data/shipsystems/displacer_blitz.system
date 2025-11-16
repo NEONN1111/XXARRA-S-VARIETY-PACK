@@ -1,0 +1,32 @@
+{
+	"id":"displacer_blitz",
+	"type":"DISPLACER",
+	"aiType":"PHASE_DISPLACER",
+	
+	
+	"jitterColor":[255,187,255,255],
+	#"jitterColor":[255,100,255,150],
+	"jitterCopies":15,
+	"jitterRange":0,
+	"jitterRangeRadiusFraction":0.8,
+	
+	"weaponGlowColor":[100,165,255,0],
+	"weaponTypes":[ENERGY],
+	
+	"engineGlowColor":[100,165,255,125],
+
+	"range":700,
+	"randomRange":0,
+	
+	"renderCopyDuringTeleport":true,
+	
+	"fadeActivationSoundOnChargedown":false,
+	"useSound":"system_phase_skimmer",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":150,
+		"burstMovementPotential":300,
+		"averageSpeedIncrease":150,
+	}
+}

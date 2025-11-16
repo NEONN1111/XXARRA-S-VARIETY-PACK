@@ -1,0 +1,343 @@
+{
+  "hullName": "Absolution (PR)",
+  "hullId": "nsp_absolution_domain",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/ships/nsp_absolution/absolution_domain.png",
+  "style": "ABS_DMN",
+  "height": 418,
+  "width": 407,
+  "center": [204, 196],
+  "collisionRadius": 243,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 228,
+  "viewOffset": 0,
+  "builtInMods": [
+    "hbi",
+    "rugged",
+    "distributed_fire_control",
+    "shared_flux_sink",
+    "nsp_shieldspeed",
+    "ablative_armor_nsp2"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": -45,
+      "locations": [51, -89]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": 45,
+      "locations": [51, 89]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": 0,
+      "locations": [116, 0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -30,
+      "locations": [99, -57]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 30,
+      "locations": [99, 57]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -150,
+      "locations": [-53, -33]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 150,
+      "locations": [-53, 33]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 50,
+      "locations": [15.5, 151]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -50,
+      "locations": [15.5, -151]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 45,
+      "locations": [69, 120]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -45,
+      "locations": [69, -120]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 135,
+      "locations": [-25.5, 162]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -135,
+      "locations": [-25.5, -162]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 71.5,
+      "locations": [14, 130.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -71.5,
+      "locations": [14, -130.5]
+    },
+    {
+      "id": "ABS_DMN",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [156.5, -0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-157, 11],
+      "length": 100,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-157, -11],
+      "length": 100,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-149, 31.5],
+      "length": 80,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-149, -31.5],
+      "length": 80,
+      "width": 23,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-120.5, 72],
+      "length": 30,
+      "width": 10,
+      "angle": 146.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-120.5, -72],
+      "length": 30,
+      "width": 7,
+      "angle": -146.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-122, 67],
+      "length": 30,
+      "width": 10,
+      "angle": 153.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-122, -67],
+      "length": 30,
+      "width": 7,
+      "angle": -153.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-100, 99.5],
+      "length": 120,
+      "width": 30,
+      "angle": 163.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-97.5, -98.5],
+      "length": 60,
+      "width": 30,
+      "angle": -163.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    },
+    {
+      "location": [-91, 128.5],
+      "length": 100,
+      "width": 30,
+      "angle": 158,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-91, -128.5],
+      "length": 100,
+      "width": 30,
+      "angle": -158,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-75, 153],
+      "length": 90,
+      "width": 28,
+      "angle": 160.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-75, -153],
+      "length": 90,
+      "width": 28,
+      "angle": -160.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-97.5, 98.5],
+      "length": 60,
+      "width": 30,
+      "angle": 163.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    },
+    {
+      "location": [-100, -99.5],
+      "length": 120,
+      "width": 30,
+      "angle": -163.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN2"
+    },
+    {
+      "location": [-87, 126.5],
+      "length": 60,
+      "width": 28,
+      "angle": 158,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    },
+    {
+      "location": [-87.5, -126.5],
+      "length": 60,
+      "width": 28,
+      "angle": -158,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    },
+    {
+      "location": [-73, 152.5],
+      "length": 40,
+      "width": 25,
+      "angle": 160.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    },
+    {
+      "location": [-73, -152.5],
+      "length": 40,
+      "width": 25,
+      "angle": -160.5,
+      "contrailSize": 30,
+      "style": "ABS_DMN1"
+    }
+  ],
+  "bounds": [
+    180.5, -0.5,
+    62.5, -150.5,
+    -53, -177,
+    -109.5, -60.5,
+    -194.5, -80.5,
+    -153.5, -47.5,
+    -153.5, 47.5,
+    -194.5, 80.5,
+    -109.5, 60.5,
+    -53, 177,
+    62.5, 150.5
+  ]
+}

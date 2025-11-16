@@ -1,0 +1,85 @@
+{
+  "variantId": "nsp_thgualsno_standard",
+  "hullId": "nsp_thgualsno",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "dedicated_targeting_core",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "mark9"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "hellbore"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "arbalest",
+        "WS0007": "arbalest"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "annihilatorpod",
+        "WS0004": "annihilatorpod",
+        "WS0008": "annihilatorpod",
+        "WS0009": "annihilatorpod",
+        "WS0010": "annihilatorpod",
+        "WS0011": "annihilatorpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0012": "flak",
+        "WS0013": "flak",
+        "WS0014": "devastator",
+        "WS0015": "vulcan",
+        "WS0016": "vulcan",
+        "WS0017": "flak",
+        "WS0019": "vulcan",
+        "WS0020": "vulcan",
+        "WS0021": "flak",
+        "WS0022": "flak",
+        "WS0023": "flak",
+        "WS0024": "vulcan",
+        "WS0025": "vulcan",
+        "WS0026": "dualflak"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "tpc",
+        "WS0018": "tpc"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

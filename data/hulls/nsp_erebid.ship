@@ -1,0 +1,233 @@
+{
+  "hullName": "Erebid",
+  "hullId": "nsp_erebid",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_erebid.png",
+  "style": "LOW_TECH",
+  "height": 154,
+  "width": 165,
+  "center": [82, 66],
+  "collisionRadius": 130,
+  "shieldCenter": [11, 3],
+  "shieldRadius": 120,
+  "viewOffset": 0,
+  "builtInMods": [
+    "rugged",
+    "nsp_hardened_armor"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [66, 21]
+    },
+    {
+      "id": "WS 002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [66, -21]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [44, 74]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [44, -74]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": 45,
+      "locations": [26, 71]
+    },
+    {
+      "id": "WS 006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": -45,
+      "locations": [26, -71]
+    },
+    {
+      "id": "WS 007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 30,
+      "locations": [22, 45]
+    },
+    {
+      "id": "WS 008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -30,
+      "locations": [22, -45]
+    },
+    {
+      "id": "WS 009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [60, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [80, -0]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 135,
+      "locations": [3, 78]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -135,
+      "locations": [3, -78]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -45,
+      "locations": [76.5, -49.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 45,
+      "locations": [76.5, 49.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-33, 0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-65, 29],
+      "length": 75,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 80,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-66, 16],
+      "length": 65,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 60,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-60, 42],
+      "length": 55,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 80,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-60, -42],
+      "length": 55,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 80,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-66, -16],
+      "length": 65,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 80,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-66, -28],
+      "length": 75,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 80,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    86, -8,
+    81.5, -15.5,
+    81.5, -27,
+    86.5, -35.5,
+    73.5, -46.5,
+    72.5, -58.5,
+    51.5, -58,
+    49.5, -79,
+    -7.5, -71,
+    -1, -49,
+    -49.5, -54,
+    -65, -11,
+    -32, -6,
+    -32, 6,
+    -65, 11,
+    -49.5, 54,
+    -1, 49,
+    -7.5, 71,
+    49.5, 79,
+    51.5, 58,
+    72.5, 58.5,
+    73.5, 46.5,
+    86.5, 35.5,
+    81.5, 27,
+    81.5, 15.5,
+    86, 8
+  ]
+}

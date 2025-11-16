@@ -1,0 +1,21 @@
+{
+    "hullFrequency":{
+        "hulls":{
+	    "nsp_hammerhead_pather":0.8,
+            "nsp_incursion_path":0.7,
+            "nsp_dominator_pather":0.8, 			
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_dominator_pather",
+            "nsp_hammerhead_pather",
+            "nsp_incursion_path",        ],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[""],
+		"hulls":[
+		],
+	},
+},

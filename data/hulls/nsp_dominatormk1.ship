@@ -1,0 +1,204 @@
+{
+  "hullName": "Dominator Mk.1",
+  "hullId": "nsp_dominatormk1",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_dominator1/oldminator2.png",
+  "style": "LOW_TECH",
+  "height": 194,
+  "width": 207,
+  "center": [103, 103],
+  "collisionRadius": 130,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 130,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "rugged"
+  ],
+  "builtInWeapons": {
+    "WS0010": "heavy_adjudicator"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [40, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -28,
+      "locations": [52, -55]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 28,
+      "locations": [52, 55]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -51.5,
+      "locations": [21, -71]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 51.5,
+      "locations": [21, 71]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -104,
+      "locations": [-14, -65]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 104,
+      "locations": [-14, 65]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -135,
+      "locations": [-48, -23]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 135,
+      "locations": [-48, 23]
+    },
+    {
+      "id": "WS0010",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [65, -0]
+    },
+    {
+      "id": "DML",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [54, 78]
+    },
+    {
+      "id": "DMR",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [52, -78.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-59.5, 53],
+      "length": 60,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-59.5, -53],
+      "length": 60,
+      "width": 20,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-96.5, 13],
+      "length": 30,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-96.5, -13],
+      "length": 30,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-102.5, 5],
+      "length": 30,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-102.5, -5],
+      "length": 30,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    63, -15,
+    42.5, -23,
+    66.5, -42,
+    50, -72.5,
+    26.5, -81,
+    8, -67,
+    -19, -79,
+    -61, -77,
+    -56, -53.5,
+    -95, -15,
+    -101, -0,
+    -95, 15,
+    -56, 53.5,
+    -61, 77,
+    -19, 79,
+    8, 67,
+    26.5, 81,
+    50, 72.5,
+    66.5, 42,
+    42.5, 23,
+    63, 15
+  ]
+}

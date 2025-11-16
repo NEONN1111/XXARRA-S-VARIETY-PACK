@@ -1,0 +1,77 @@
+{
+  "hullName": "Right Module",
+  "hullId": "nsp_templar_midleft",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_templar/nsp_templar_midleft.png",
+  "style": "TEMPLAR",
+  "height": 889,
+  "width": 266,
+  "center": [196.5, 411],
+  "collisionRadius": 192.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 193,
+  "viewOffset": 0,
+  "builtInMods": [
+    "always_detaches",
+    "missile_reload",
+    "reduced_explosion",
+    "automated",
+    "nsp_supercomputer"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [1, -37.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": -90,
+      "locations": [-68, -24.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -90,
+      "locations": [-48, -30.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -90,
+      "locations": [-32, -30.5]
+    },
+    {
+      "id": "WS0004t",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -90,
+      "locations": [-17, -30.5]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -65.5, 3.5,
+    -92, -31.5,
+    -76.5, -48.5,
+    63.5, -44,
+    92, -30,
+    60, -38
+  ]
+}

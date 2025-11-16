@@ -1,0 +1,80 @@
+{
+  "variantId": "nsp_nemetor_standard",
+  "hullId": "nsp_nemetor",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 36,
+  "fluxVents": 40,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "fluxbreakers",
+    "insulatedengine",
+    "hardened_subsystems"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "plasma",
+        "WS0002": "plasma"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "heavymauler",
+        "WS0006": "heavymauler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0018": "heavyac",
+        "WS0019": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "cyclone",
+        "WS0010": "cyclone"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0020": "sabot",
+        "WS0021": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "flak",
+        "WS0004": "flak",
+        "WS0007": "flak",
+        "WS0008": "flak",
+        "WS0011": "flak",
+        "WS0012": "dualflak",
+        "WS0013": "dualflak",
+        "WS0016": "guardian",
+        "WS0017": "flak"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

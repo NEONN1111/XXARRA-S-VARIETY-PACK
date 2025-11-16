@@ -1,0 +1,202 @@
+{
+  "hullName": "Mace",
+  "hullId": "nsp_mace",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_mace/nsp_mace_new.png",
+  "style": "MIDLINE",
+  "height": 219,
+  "width": 127,
+  "center": [63, 121.5],
+  "collisionRadius": 182,
+  "shieldCenter": [-16, -0],
+  "shieldRadius": 155,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-34.5, 39]
+    },
+    {
+      "id": "WS 002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-34.5, -39]
+    },
+    {
+      "id": "WS 005",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": 60,
+      "locations": [41.5, 34]
+    },
+    {
+      "id": "WS 006",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": -60,
+      "locations": [41.5, -34]
+    },
+    {
+      "id": "WS 009",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [28.5, -0]
+    },
+    {
+      "id": "WS 010",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 65,
+      "locations": [73.5, 32]
+    },
+    {
+      "id": "WS 012",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -65,
+      "locations": [73.5, -32]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-12.5, 42]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-12.5, -42]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": 141.5,
+      "locations": [-75.5, 29]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": -141.5,
+      "locations": [-75.5, -29]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-115, 29],
+      "length": 74,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-118, 18],
+      "length": 78,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-118, 10],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-117, -9],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-118, -18],
+      "length": 78,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-115, -28],
+      "length": 74,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-120, 0.5],
+      "length": 98,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    94, -8,
+    81.5, -26,
+    85.5, -36,
+    75.5, -41,
+    63.5, -60,
+    38, -60,
+    33.5, -55,
+    16, -55.5,
+    13, -57.5,
+    -42.5, -46,
+    -50, -35,
+    -85, -41,
+    -114, -33,
+    -118.5, -0,
+    -114, 33,
+    -85, 41,
+    -50, 35,
+    -42.5, 46,
+    13, 57.5,
+    16, 55.5,
+    33.5, 55,
+    38, 60,
+    63.5, 60,
+    75.5, 41,
+    85.5, 36,
+    81.5, 26,
+    94, 8
+  ]
+}

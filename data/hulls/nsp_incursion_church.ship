@@ -1,0 +1,194 @@
+{
+  "hullName": "Incursion (LC)",
+  "hullId": "nsp_incursion_church",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_incursor/nsp_incursor_church.png",
+  "style": "LOW_TECH",
+  "height": 131,
+  "width": 92,
+  "center": [46, 71],
+  "collisionRadius": 73.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 74,
+  "viewOffset": 0,
+  "builtInMods": [
+    "rugged"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 40,
+      "locations": [-3, 31]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -40,
+      "locations": [-3, -31]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 35,
+      "locations": [21, 19]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -35,
+      "locations": [21, -19]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [13, -0]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [33, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-52, 15],
+      "length": 30,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-52, -15],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-36, 32],
+      "length": 26,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-36, -32],
+      "length": 26,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-51.5, 9.5],
+      "length": 45,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-51.5, -9.5],
+      "length": 45,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-2.5, 44.5],
+      "length": 13,
+      "width": 4,
+      "angle": 121,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-2.5, -44.5],
+      "length": 13,
+      "width": 4,
+      "angle": -121,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-5, 43.5],
+      "length": 18,
+      "width": 5,
+      "angle": 135,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-5, -43.5],
+      "length": 18,
+      "width": 5,
+      "angle": -135,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-7.5, 42.5],
+      "length": 13,
+      "width": 4,
+      "angle": 153.5,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-7.5, -42.5],
+      "length": 13,
+      "width": 4,
+      "angle": -153.5,
+      "contrailSize": 128,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    40, -5.5,
+    52.5, -6.5,
+    56, -15.5,
+    18.5, -29.5,
+    1, -45,
+    -20, -39,
+    -33.5, -43,
+    -33.5, -28,
+    -51, -22.5,
+    -50, -7,
+    -69, -0,
+    -50, 7,
+    -51, 22.5,
+    -33.5, 28,
+    -33.5, 43,
+    -20, 39,
+    1, 45,
+    18.5, 29.5,
+    56, 15.5,
+    52.5, 6.5,
+    40, 5.5
+  ]
+}

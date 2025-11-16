@@ -1,0 +1,46 @@
+{
+  "variantId": "nsp_fulgurite_ancient",
+  "hullId": "nsp_fulgurite",
+  "displayName": "Ancient",
+  "goalVariant": true,
+  "fluxCapacitors": 12,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "autorepair",
+    "blast_doors",
+    "armoredweapons",
+    "ballistic_rangefinder",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 006": "heavyac",
+        "WS 008": "lightdualac",
+        "WS 009": "lightdualac"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "lightag",
+        "WS 003": "lightag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "vulcan",
+        "WS 004": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

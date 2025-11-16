@@ -1,0 +1,47 @@
+{
+  "variantId": "nsp_explorator_standard",
+  "hullId": "nsp_explorator",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 27,
+  "fluxVents": 27,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "surveying_equipment",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "vulcan",
+        "WS 006": "vulcan",
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0003": "dualflak",
+        "WS0004": "dualflak",
+        "WS0005": "dualflak"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,14 @@
+{
+  "variantId": "nsp_legion_domain_noseshield_standard",
+  "hullId": "nsp_legion_domain_noseshield",
+  "displayName": "Defense Module",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,75 @@
+{
+  "variantId": "nsp_superderelict_hurricane",
+  "hullId": "nsp_superderelict",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 25,
+  "fluxVents": 27,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "automated",
+    "delicate",
+    "stabilizedshieldemitter",
+    "targetingunit",
+    "hardenedshieldemitter",
+    "armoredweapons",
+    "hardened_subsystems",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "hurricane"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "shockrepeater",
+        "WS0003": "shockrepeater"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "vulcan",
+        "WS0005": "vulcan",
+        "WS0008": "vulcan",
+        "WS0009": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "miningblaster",
+        "WS0007": "miningblaster"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "sabot_single",
+        "WS0011": "sabot_single"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

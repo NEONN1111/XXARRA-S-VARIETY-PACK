@@ -1,0 +1,27 @@
+{
+  "hullName": "Defense Module",
+  "hullId": "nsp_dominator_pr_noseshield",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/domain_navy/nsp_dominator_pr_noseshield.png",
+  "style": "ABS_DMN",
+  "height": 175,
+  "width": 208,
+  "center": [104, 130],
+  "collisionRadius": 42.5,
+  "shieldCenter": [-41, -0],
+  "shieldRadius": 170,
+  "viewOffset": 0,
+  "builtInMods": [
+    "nsp_shieldspeed"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [
+    39.5, -9.5,
+    3.5, -21,
+    -9.5, -15,
+    -9.5, 15,
+    3.5, 21,
+    39.5, 9.5
+  ]
+}

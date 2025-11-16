@@ -1,0 +1,16 @@
+{
+    "hullFrequency":{
+        "hulls":{
+			"nsp_hammonitor":1,	
+			"nsp_upgradedmule":0.7,
+                        "nsp_mace":0.6,
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_hammonitor",
+	    "nsp_upgradedmule",
+            "nsp_mace",
+        ],
+	},
+},

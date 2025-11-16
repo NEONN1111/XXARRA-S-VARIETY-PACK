@@ -1,0 +1,29 @@
+{
+    "id":"nsp_blink_drive",
+    "type":"DISPLACER",
+    "aiType":"PHASE_DISPLACER",
+
+    "statsScript":"data.shipsystems.NSP_BlinkDriveStats",
+
+    "jitterColor":[100,100,100,255],
+    "jitterCopies":5,
+    "jitterRange":50,
+    "jitterRangeRadiusFraction":1,
+
+    "range":300,
+
+    "vulnerableChargeup":false,
+    "vulnerableChargedown":false,
+    "renderCopyDuringTeleport":true,
+
+    "fadeActivationSoundOnChargedown":false,
+     
+    "useSound":"nsp_blink_drive",
+    "outOfUsesSound":"gun_out_of_ammo",
+
+    "aiHints":{
+        "activeSpeedIncrease":0,
+        "burstMovementPotential":1000,
+        "averageSpeedIncrease":1000,
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "variantId": "tll_buffalo_standard",
+  "hullId": "tll_buffalo",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 8,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "auxiliarythrusters"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "lrpdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

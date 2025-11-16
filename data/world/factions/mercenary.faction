@@ -1,0 +1,26 @@
+{
+    "hullFrequency":{
+        "hulls":{
+	    "nsp_legionator":1,
+            "nsp_sisyphus":3,	
+            "nsp_hammonitor":0.8,
+            "nsp_mace":0.3,
+            "nsp_goblin":0.9,
+            "nsp_phite":0.1,
+            "nsp_pitbull":0.5,
+            "nsp_hobgoblin":0.8,
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_legionator",
+            "nsp_sisyphus",
+            "nsp_hammonitor",
+            "nsp_mace",
+            "nsp_goblin",
+            "nsp_phite",
+            "nsp_pitbull",
+            "nsp_hobgoblin", 
+        ],
+	},
+},

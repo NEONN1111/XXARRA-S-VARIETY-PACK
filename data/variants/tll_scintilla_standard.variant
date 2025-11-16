@@ -1,0 +1,43 @@
+{
+  "variantId": "tll_scintilla_standard",
+  "hullId": "tll_scintilla",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 13,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 006": "typhoon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 007": "sabot",
+        "WS 008": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "taclaser",
+        "WS 001": "taclaser",
+        "WS 002": "pdlaser",
+        "WS 003": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "lux_wing",
+    "flash_wing"
+  ]
+}

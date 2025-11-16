@@ -1,0 +1,126 @@
+{
+  "hullName": "Anubis (TLL)",
+  "hullId": "tll_anubis",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/tellasian_league/tll_anubis.png",
+  "style": "HIGH_TECH",
+  "height": 216,
+  "width": 184,
+  "center": [92, 89],
+  "collisionRadius": 180,
+  "shieldCenter": [17, 0],
+  "shieldRadius": 155,
+  "viewOffset": 0,
+  "builtInMods": [
+    "design_compromises",
+    "automated",
+    "tll_refit"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 90,
+      "locations": [0, 65]
+    },
+    {
+      "id": "WS 001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 0,
+      "locations": [38, 11]
+    },
+    {
+      "id": "WS 002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -90,
+      "locations": [0, -65]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [88, 27]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [92, 3]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 90,
+      "angle": 0,
+      "locations": [
+        45, -51,
+        69, -37,
+        60, -50,
+        -78, 45
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-78, 45],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, 7],
+      "length": 74,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, -7],
+      "length": 74,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-78, -44],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -71, 69,
+    -3, 89,
+    118, 39,
+    94, 35,
+    97, -4,
+    75, -15,
+    84, -58,
+    -4, -89,
+    -70, -69,
+    -65, 0
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "variantId": "tll_nova_standard",
+  "hullId": "tll_nova",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 46,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "blast_doors",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "autopulse",
+        "WS 001": "autopulse"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 002": "phasebeam",
+        "WS 003": "phasebeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 006": "breachpod",
+        "WS 007": "breachpod",
+        "WS 008": "breachpod",
+        "WS 009": "breachpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 004": "heavyneedler",
+        "WS 005": "heavyneedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 010": "pdlaser",
+        "WS 011": "pdburst",
+        "WS 012": "pdburst",
+        "WS 013": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

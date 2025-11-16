@@ -1,0 +1,28 @@
+{
+    "hullFrequency":{
+        "hulls":{
+	    "nsp_legionator":0.4,
+            "nsp_praxidike":2,
+            "nsp_medusa_lt":0.5,
+            "nsp_anger_ind":0.01,
+            "nsp_goblin":1,
+            "nsp_phite":0.1,
+            "nsp_wolf_heg":1,
+            "nsp_hobgoblin":0.9,
+            "nsp_phaseguard":1,
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_legionator",
+	    "nsp_praxidike",
+            "nsp_medusa_lt",
+            "nsp_anger_ind",
+            "nsp_goblin",
+            "nsp_phite",
+            "nsp_wolf_heg",
+            "nsp_hobgoblin",
+            "nsp_phaseguard",
+        ],
+	},
+},

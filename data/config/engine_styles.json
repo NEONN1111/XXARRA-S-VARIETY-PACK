@@ -1,0 +1,31 @@
+{
+	# Reserved engine style ids (can not be used):
+	# "CUSTOM"
+	
+	"ABS_DMN1":{
+		"engineColor":[208,255,235,105],
+		"contrailParticleSizeMult":4,
+		"contrailParticleDuration":1,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5f,
+		"contrailAngularVelocityMult":0f,
+		"contrailColor":[100,165,255,0],
+		#"contrailCampaignColor":[100,165,255,75],
+		"type":"GLOW" # GLOW or SMOKE
+
+	},
+	"ABS_DMN2":{
+        "engineColor":[78,255,177,185],
+        "engineCampaignColor":[200,90,70,0],
+        "contrailParticleSizeMult":2,
+        "contrailParticleDuration":3,
+        "contrailParticleFinalSizeMult":2.5,
+        "contrailMaxSpeedMult":0.5,
+        "contrailAngularVelocityMult":0.5,
+        "contrailColor":[50,50,50,50],
+        "contrailCampaignColor":[200,90,70,0],
+        "type":"SMOKE" # GLOW or SMOKE
+
+	},
+}
+

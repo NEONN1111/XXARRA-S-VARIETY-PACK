@@ -1,0 +1,184 @@
+{
+  "hullName": "Shrike (Z)",
+  "hullId": "nsp_shrike_z",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_shrike_z/nsp_shrike_z.png",
+  "style": "HIGH_TECH",
+  "height": 153,
+  "width": 102,
+  "center": [51, 76.5],
+  "collisionRadius": 87.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 88,
+  "viewOffset": 0,
+  "builtInMods": [
+    "advancedcore",
+    "delicate",
+    "high_maintenance",
+    "missile_reload",
+    "nsp_shieldspeed"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 135,
+      "locations": [-34.5, 34]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -135,
+      "locations": [-34.5, -34]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 16.5,
+      "locations": [13.5, 36]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -16.5,
+      "locations": [13.5, -36]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 0,
+      "locations": [30.5, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [56.5, 16]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [56.5, -16]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-77, 15],
+      "length": 60,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-77, -15],
+      "length": 60,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, 26],
+      "length": 30,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, -26],
+      "length": 30,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69, 30],
+      "length": 30,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69, -30],
+      "length": 30,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-67, 34],
+      "length": 30,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-67, -34],
+      "length": 30,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-65, 37],
+      "length": 30,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-65, -37],
+      "length": 30,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    67.5, -27,
+    -1, -49.5,
+    -8, -34,
+    -24, -50,
+    -63.5, -43,
+    -73.5, -12,
+    -58, -8.5,
+    -58, 8.5,
+    -73.5, 12,
+    -63.5, 43,
+    -24, 50,
+    -8, 34,
+    -1, 49.5,
+    67.5, 27
+  ]
+}

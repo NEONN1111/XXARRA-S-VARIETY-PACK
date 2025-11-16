@@ -1,0 +1,28 @@
+{
+  "variantId": "tll_berserker_standard",
+  "hullId": "tll_berserker",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "expanded_cargo_holds",
+    "auxiliary_fuel_tanks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "vulcan",
+        "WS0005": "vulcan",
+        "WS0006": "vulcan",
+        "WS0007": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

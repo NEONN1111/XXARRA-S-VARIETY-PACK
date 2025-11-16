@@ -1,0 +1,35 @@
+{
+  "variantId": "nsp_pitbull_standard",
+  "hullId": "nsp_pitbull",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "insulatedengine",
+    "reinforcedhull",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "devastator"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "sabot_single",
+        "WS0002": "sabot_single"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

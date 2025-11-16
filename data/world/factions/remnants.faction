@@ -1,0 +1,19 @@
+{
+    "hullFrequency":{
+        "hulls":{
+                        "nsp_eagle_r":1,
+                        "nsp_phosphoresence":0.1,
+                        "nsp_phosphophyllite":1,
+                        "nsp_elucidation":0.3,
+			
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_eagle_r",
+            "nsp_phosphoresence",
+            "nsp_phosphophyllite",
+            "nsp_elucidation",
+        ],
+	},
+},

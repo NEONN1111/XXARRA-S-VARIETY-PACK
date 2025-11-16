@@ -1,0 +1,23 @@
+{
+  "variantId": "nsp_derelictbomber_standard",
+  "hullId": "nsp_derelictbomber",
+  "displayName": "Hammer",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hammer_single",
+        "WS0002": "hammer_single"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

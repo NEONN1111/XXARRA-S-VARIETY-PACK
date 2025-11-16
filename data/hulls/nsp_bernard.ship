@@ -1,0 +1,165 @@
+{
+  "hullName": "Bernard",
+  "hullId": "nsp_bernard",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_bernard/nsp_st_bernard.png",
+  "style": "LOW_TECH",
+  "height": 263,
+  "width": 179,
+  "center": [89, 149.5],
+  "collisionRadius": 156.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 125,
+  "viewOffset": 0,
+  "builtInMods": [
+    "hbi"
+  ],
+  "builtInWeapons": {
+    "WS0007": "devastator"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 45,
+      "locations": [13.5, 41]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -45,
+      "locations": [13.5, -41]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 78,
+      "locations": [-27.5, 62]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -78,
+      "locations": [-27.5, -62]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 0,
+      "locations": [26.5, -0]
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [62.5, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 230,
+      "angle": 180,
+      "locations": [-89.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-96, 66],
+      "length": 50,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-96, -66],
+      "length": 50,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-107, 41.5],
+      "length": 80,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-107, -41.5],
+      "length": 80,
+      "width": 32,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-146.5, -0],
+      "length": 100,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-140.5, 12.5],
+      "length": 80,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-140.5, -12.5],
+      "length": 80,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    88, -12,
+    97.5, -27,
+    85, -27,
+    77.5, -35,
+    37, -50,
+    -1.5, -54.5,
+    -26, -73,
+    -91, -76,
+    -106.5, -26.5,
+    -140.5, -26.5,
+    -140.5, 26.5,
+    -106.5, 26.5,
+    -91, 76,
+    -26, 73,
+    -1.5, 54.5,
+    37, 50,
+    77.5, 35,
+    85, 27,
+    97.5, 27,
+    88, 12
+  ]
+}

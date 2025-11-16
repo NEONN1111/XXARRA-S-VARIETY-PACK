@@ -1,0 +1,26 @@
+{
+	"id":"plasmajets_phosphor",
+	"type":"ENGINE_MOD",
+	"aiType":"MANEUVERING_JETS",
+	
+	"statsScript":"com.fs.starfarer.api.impl.combat.PlasmaJetsStats",
+	
+	"engineGlowLengthMult":2,
+	"engineGlowWidthMult":2,
+	"engineGlowGlowMult":3,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":false,
+
+	"useSound":"system_plasma_jets",
+	"loopSound":"system_plasma_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":230,
+		"burstMovementPotential":0,
+		"averageSpeedIncrease":65,
+	}
+}

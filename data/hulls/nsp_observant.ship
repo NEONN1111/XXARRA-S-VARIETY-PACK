@@ -1,0 +1,85 @@
+{
+  "hullName": "Observant",
+  "hullId": "nsp_observant",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_observant/nsp_observant.png",
+  "style": "LOW_TECH",
+  "height": 81,
+  "width": 52,
+  "center": [25, 40],
+  "collisionRadius": 45.5,
+  "shieldCenter": [0.5, -1],
+  "shieldRadius": 0,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "hiressensors"
+  ],
+  "builtInWeapons": {
+    "WS0001": "heatseeker"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [22, -13]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 135,
+      "locations": [-25.5, 18]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -126,
+      "locations": [-34.5, -19.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [35, 6]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-34.5, 7.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-33.5, -10],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -33.5, -11.5,
+    -33.5, 11.5,
+    -14.5, 20,
+    30, 11,
+    30, -16,
+    -28.5, -18.5
+  ]
+}

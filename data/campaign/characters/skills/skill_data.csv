@@ -1,0 +1,2 @@
+id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon
+nsp_weirdslayer,"In Tenebris, Monstra",1,0,,,"""Beyond the veil, I see them there. Waiting for me. Hungering in the dark. Covetous of such great wonders. They call out to me. I will answer.""",,TRUE,FALSE,FALSE,npc_only,graphics/icons/skills/nsp_weirdslayer.png

@@ -1,0 +1,57 @@
+{
+  "variantId": "nsp_falcon_tt_standard",
+  "hullId": "nsp_falcon_tt",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 13,
+  "fluxVents": 25,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "pulselaser",
+        "WS0002": "pulselaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "ioncannon",
+        "WS0004": "ioncannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "phasebeam",
+        "WS0009": "phasebeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0014": "sabot",
+        "WS0015": "sabot"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "pdburst",
+        "WS0011": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

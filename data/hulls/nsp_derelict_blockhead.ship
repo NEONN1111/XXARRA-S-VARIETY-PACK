@@ -1,0 +1,136 @@
+{
+  "hullName": "BlockHead",
+  "hullId": "nsp_derelict_blockhead",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_blockhead/derelict_blockhead.png",
+  "style": "LOW_TECH",
+  "height": 182,
+  "width": 170,
+  "center": [85.5, 138.5],
+  "collisionRadius": 169,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 169,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "rugged"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25.5, -57.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 230,
+      "angle": 0,
+      "locations": [33.5, -16.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 230,
+      "angle": 0,
+      "locations": [33.5, -30.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 290,
+      "angle": 0,
+      "locations": [30.5, 42.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [26.5, 62.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [26.5, 76.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -51.5,
+      "locations": [-42.5, -68.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-80.5, -26.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-109.5, 9.5],
+      "length": 80,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-138.5, -57],
+      "length": 80,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-89.5, 38.5],
+      "length": 60,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-77.5, 58.5],
+      "length": 50,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    39.5, -57.5,
+    40.5, 50.5,
+    14, 82.5,
+    -69, 48.5,
+    -109, 11.5,
+    -68, -40.5,
+    -134, -58.5,
+    10.5, -75.5
+  ]
+}

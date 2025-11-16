@@ -1,0 +1,60 @@
+{
+  "variantId": "nsp_dominator_ancient_standard",
+  "hullId": "nsp_dominator_ancient",
+  "displayName": "Ancient",
+  "goalVariant": true,
+  "fluxCapacitors": 2,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "dedicated_targeting_core",
+    "heavyarmor",
+    "magazines"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "devastator",
+        "WS0003": "devastator"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "heavy_adjudicator"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "arbalest",
+        "WS0004": "arbalest",
+        "WS0005": "arbalest"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "flak",
+        "WS0007": "flak",
+        "WS0008": "flak",
+        "WS0009": "flak"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "DML": "nsp_dominatormk1_armorleft_variant"
+    },
+    {
+      "DMR": "nsp_dominatormk1_armorright_variant"
+    }
+  ],
+  "wings": []
+}

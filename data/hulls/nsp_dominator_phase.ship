@@ -1,0 +1,207 @@
+{
+  "hullName": "Dominator (M)",
+  "hullId": "nsp_dominator_phase",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_dominator_phase.png",
+  "style": "LOW_TECH",
+  "height": 179,
+  "width": 220,
+  "center": [110, 79],
+  "collisionRadius": 180,
+  "shieldCenter": [10, 0],
+  "shieldRadius": 170,
+  "viewOffset": 0,
+  "builtInMods": [
+    "high_maintenance",
+    "fluxbreakers",
+    "missleracks",
+    "distributed_fire_control"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 012",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [80, 61]
+    },
+    {
+      "id": "WS 013",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [80, -61]
+    },
+    {
+      "id": "WS 014",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [79, 35]
+    },
+    {
+      "id": "WS 015",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [72, 0]
+    },
+    {
+      "id": "WS 016",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [79, -35]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 51,
+      "locations": [33, 94]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [51, 97]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -51,
+      "locations": [33, -94]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [51, -97]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 135,
+      "locations": [-31, 77]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -135,
+      "locations": [-31, -77]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-52, 76.5],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-52, -76.5],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-58, 55.5],
+      "length": 64,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-58, -55.5],
+      "length": 64,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-72, 24.5],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-72.5, -24.5],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-75, 6],
+      "length": 48,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-75, -6],
+      "length": 48,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    95, 75,
+    84, 27,
+    45, 18,
+    78, 1,
+    45, -18,
+    84, -29,
+    97, -76,
+    72, -78,
+    47, -102,
+    23, -102,
+    11, -85,
+    -40.5, -89.5,
+    -72, 0,
+    -48, 83,
+    10, 85,
+    22, 103,
+    49, 103,
+    70, 81
+  ]
+}

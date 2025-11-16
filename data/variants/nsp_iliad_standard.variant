@@ -1,0 +1,81 @@
+{
+  "variantId": "nsp_iliad_standard",
+  "hullId": "nsp_iliad",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 34,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "autopulse"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "hil",
+        "WS0007": "gravitonbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "locust"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "heavyneedler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0011": "squall",
+        "WS0012": "squall",
+        "WS0019": "pilum",
+        "WS0020": "pilum"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "heavyburst",
+        "WS0006": "guardian",
+        "WS0008": "heavyburst",
+        "WS0009": "pdburst",
+        "WS0010": "pdburst",
+        "WS0013": "heavyburst",
+        "WS0014": "heavyburst",
+        "WS0015": "pdburst",
+        "WS0016": "pdburst",
+        "WS0017": "pdburst",
+        "WS0018": "pdburst"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "claw_wing",
+    "claw_wing"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "hullName": "Rampart (C)",
+  "hullId": "nsp_rampartcarrier",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_rampartcarrier/nsp_rampartcarrier.png",
+  "style": "LOW_TECH",
+  "height": 210,
+  "width": 197,
+  "center": [101, 97],
+  "collisionRadius": 136,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 136,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "rugged"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 002",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -35,
+      "locations": [47, -59]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 90,
+      "locations": [0, 82]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -90,
+      "locations": [16, -79]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [76, 84]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        57, 39,
+        59.5, 39
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        57, 36,
+        60, 36
+      ]
+    },
+    {
+      "id": "LB 3",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [57, 33.5]
+    },
+    {
+      "id": "LB 4",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [60, 33.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-89, 51],
+      "length": 40,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-96, 31],
+      "length": 65,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 50,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-94, 7],
+      "length": 50,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 38,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-94, -14],
+      "length": 50,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 38,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-96, -39],
+      "length": 65,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 50,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-89, -59],
+      "length": 40,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    112, 19.5,
+    88, 8,
+    89, -38,
+    75, -39,
+    70, -73,
+    44, -79,
+    31, -93,
+    -74, -88,
+    -75, -68,
+    -88, -68,
+    -88, 59,
+    -74, 59,
+    -72, 84,
+    -16, 89,
+    -10, 98,
+    15, 93,
+    74.5, 98.5
+  ]
+}

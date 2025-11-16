@@ -1,0 +1,204 @@
+{
+  "hullName": "Enforcer Mk.1",
+  "hullId": "nsp_enforcermk1",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_enforcermk1/nsp_enforcermk1.png",
+  "style": "LOW_TECH",
+  "coversColor": "255,188,175,255",
+  "height": 160,
+  "width": 165,
+  "center": [83, 81],
+  "collisionRadius": 105,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 96,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "rugged"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 90,
+      "locations": [-22, 52]
+    },
+    {
+      "id": "WS 002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 30,
+      "locations": [3, 48]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 0,
+      "locations": [34, 0]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": -30,
+      "locations": [3, -48]
+    },
+    {
+      "id": "WS 005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -90,
+      "locations": [-22, -52]
+    },
+    {
+      "id": "WS 006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [61, 42],
+      "renderOrderMod": -1
+    },
+    {
+      "id": "WS 009",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [61, -42],
+      "renderOrderMod": -1
+    },
+    {
+      "id": "ENF1",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [9.5, -59]
+    },
+    {
+      "id": "ENF2",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [10.5, 64]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [44, 61]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [44, -61]
+    },
+    {
+      "id": "ENF3",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [73.5, -0],
+      "renderOrderMod": 1
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-80.5, 47],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-80.5, 31],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-80.5, -31],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-80.5, -47],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-80.5, 39],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-80.5, -39],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    54.5, -15,
+    50.5, -31.5,
+    67.5, -42,
+    44.5, -69,
+    -18.5, -82.5,
+    -44.5, -64,
+    -50, -68,
+    -79, -49,
+    -79, -29,
+    -47, -6.5,
+    -47, 6.5,
+    -79, 29,
+    -79, 49,
+    -50, 68,
+    -44.5, 64,
+    -18.5, 82.5,
+    44.5, 69,
+    67.5, 42,
+    50.5, 31.5,
+    54.5, 15
+  ]
+}

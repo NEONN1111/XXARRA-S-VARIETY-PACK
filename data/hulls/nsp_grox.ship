@@ -1,0 +1,124 @@
+{
+  "hullName": "Goxling",
+  "hullId": "nsp_grox",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_grox/nsp_goxlin.png",
+  "style": "LOW_TECH",
+  "height": 142,
+  "width": 128,
+  "center": [64.5, 74.5],
+  "collisionRadius": 89,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 89,
+  "viewOffset": 0,
+  "builtInMods": [
+    "drive_field_stabilizer",
+    "delicate",
+    "high_maintenance",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "WS0003": "locust",
+    "WS0004": "locust"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [49.5, 18.5]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [49.5, -19.5]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 35.5,
+      "locations": [20.5, 40.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -35.5,
+      "locations": [20.5, -39.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-7, -32.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-6.5, 32.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-74.5, 20.5],
+      "length": 52,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-74.5, -19],
+      "length": 52,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-68.5, 36.5],
+      "length": 52,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-68.5, -35.5],
+      "length": 52,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    51.5, -41.5,
+    65.5, -42.5,
+    66, -54,
+    -64, -44.5,
+    -64, 44.5,
+    66, 54,
+    65.5, 42.5,
+    51.5, 41.5
+  ]
+}

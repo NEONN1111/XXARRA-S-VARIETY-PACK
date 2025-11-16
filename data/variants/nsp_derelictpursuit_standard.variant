@@ -1,0 +1,34 @@
+{
+  "variantId": "nsp_derelictpursuit_standard",
+  "hullId": "nsp_derelictpursuit",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 15,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "targetingunit",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "dualflak",
+        "WS0004": "dualflak",
+        "WS0005": "mark9",
+        "WS0006": "sabotpod",
+        "WS0007": "hellbore",
+        "WS0008": "annihilator",
+        "WS0009": "harpoonpod",
+        "WS0010": "annihilator",
+        "WS0011": "sabotpod"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,86 @@
+{
+  "hullName": "Legion (PR)",
+  "hullId": "nsp_legion_domain_noseshield",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/ships/domain_navy/nsp_legion_pr_noseshield.png",
+  "style": "ABS_DMN",
+  "height": 308,
+  "width": 300,
+  "center": [150, 252],
+  "collisionRadius": 52.5,
+  "shieldCenter": [-103, 0],
+  "shieldRadius": 190,
+  "viewOffset": 0,
+  "builtInMods": [
+    "nsp_shieldspeed"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 010",
+      "size": "MEDIUM",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 170,
+      "locations": [
+        -130, 103,
+        -138, 91,
+        -147, 105,
+        -154, 92
+      ]
+    },
+    {
+      "id": "WS 011",
+      "size": "MEDIUM",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 190,
+      "locations": [
+        -138, -90,
+        -129, -102,
+        -153, -92,
+        -143, -104
+      ]
+    },
+    {
+      "id": "WS 012",
+      "size": "MEDIUM",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 10,
+      "locations": [
+        -56, 104,
+        -44, 92,
+        -40, 105,
+        -31, 90
+      ]
+    },
+    {
+      "id": "WS 013",
+      "size": "MEDIUM",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": -10,
+      "locations": [
+        -44, -92,
+        -55, -104,
+        -31, -90,
+        -39, -105
+      ]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    38.5, -33,
+    -3.5, -46.5,
+    -10, -35.5,
+    27, 0,
+    -10, 34.5,
+    -3.5, 45.5,
+    38.5, 32,
+    52, 0
+  ]
+}

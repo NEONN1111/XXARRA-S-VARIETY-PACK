@@ -1,0 +1,50 @@
+{
+	"id":"temporalshell_blitz",
+	"type":"TELEPORTER",
+	"aiType":"PHASE_TELEPORTER_2",
+	
+	"statsScript":"data.shipsystems.TemporalShellStatsNSP",
+	
+	# handled in the script instead of here
+	#"jitterUnderColor":[255,187,255,255],
+	#"jitterUnderCopies":25,
+	#"jitterUnderMinRange":0,
+	#"jitterUnderRange":7,
+	#"jitterUnderRangeRadiusFraction":0,
+	
+	#"jitterColor":[255,187,255,255],
+	#"jitterCopies":10,
+	#"jitterMinRange":3,
+	#"jitterRange":8,
+	#"jitterRangeRadiusFraction":0,
+
+        "range":1500,
+	"randomRange":0,
+	#"requiresZeroFluxBoost":true,
+	
+	#"engineGlowColor":[255,187,255,255],
+	#"engineGlowContrailColor":[255,187,255,25],
+	#"engineGlowLengthMult":0.5,
+	#"engineGlowWidthMult":0.7,
+	#"engineGlowGlowMult":0.5,
+	
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.5,
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_temporalshell",
+	"loopSound":"system_temporalshell_loop",
+	"deactivateSound":"system_temporalshell_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":1000,
+		"averageSpeedIncrease":350,
+	}
+}
+
+
+
+

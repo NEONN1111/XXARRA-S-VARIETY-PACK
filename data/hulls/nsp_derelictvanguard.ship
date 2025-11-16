@@ -1,0 +1,168 @@
+{
+  "hullName": "Vanguard",
+  "hullId": "nsp_derelictvanguard",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/derelicts/nsp_derelictvanguard.png",
+  "style": "LOW_TECH",
+  "height": 109,
+  "width": 108,
+  "center": [54, 51],
+  "collisionRadius": 75,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 73,
+  "viewOffset": 0,
+  "builtInMods": [
+    "rugged",
+    "automated"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25, 40]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [46, 0]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [24, -40]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 235,
+      "angle": 100,
+      "locations": [3, 37]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 235,
+      "angle": 260,
+      "locations": [3, -37]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 25,
+      "locations": [29, 21]
+    },
+    {
+      "id": "WS 006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -25,
+      "locations": [29, -21]
+    },
+    {
+      "id": "WS 007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": 0,
+      "locations": [27, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-44.5, 18],
+      "length": 48,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-44.5, 6.5],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-44.5, -7],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-44.5, -17.5],
+      "length": 48,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-37.5, 36.5],
+      "length": 37,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-37.5, -37.5],
+      "length": 37,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-37.5, 30.5],
+      "length": 29,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-37.5, -31.5],
+      "length": 29,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    47.5, -29.5,
+    25, -45,
+    -26, -45.5,
+    -40, -22.5,
+    -40, 24.5,
+    -26.5, 46,
+    25, 47,
+    47.5, 31.5
+  ]
+}

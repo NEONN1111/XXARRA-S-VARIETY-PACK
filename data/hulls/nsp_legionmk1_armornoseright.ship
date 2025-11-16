@@ -1,0 +1,22 @@
+{
+  "hullName": "Vambrace",
+  "hullId": "nsp_legionmk1_armornoseright",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_legionmk1/nsp_legionmk1_armornoseright.png",
+  "style": "LOW_TECH",
+  "height": 72,
+  "width": 41,
+  "center": [20.5, 36],
+  "collisionRadius": 40.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 40.5,
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [
+    -34.5, -10,
+    -20.5, -19.5,
+    21.5, 9.5,
+    15, -3.5
+  ]
+}

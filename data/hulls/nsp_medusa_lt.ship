@@ -1,0 +1,170 @@
+{
+  "hullName": "Medusa (LT)",
+  "hullId": "nsp_medusa_lt",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_medusa_lt/medusa-lt-nsp.png",
+  "style": "LOW_TECH",
+  "coversColor": "255,255,255,255",
+  "height": 152,
+  "width": 141,
+  "center": [71.5, 63],
+  "collisionRadius": 110,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 110,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 120,
+      "locations": [-11, 52.5]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 60,
+      "locations": [27, 49.5]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -60,
+      "locations": [27, -49.5]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 240,
+      "locations": [-11, -52.5]
+    },
+    {
+      "id": "WS 006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 45,
+      "locations": [11, 25.5]
+    },
+    {
+      "id": "WS 007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -45,
+      "locations": [11, -25.5]
+    },
+    {
+      "id": "WS 008",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [57, 34.5]
+    },
+    {
+      "id": "WS 009",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [57, -34.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-45, 40],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-45, -40],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53.5, 18.5],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53.5, 9.5],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53.5, -9.5],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53.5, -18.5],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-56.5, -0],
+      "length": 64,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    65, -26,
+    65, -42.5,
+    50.5, -49.5,
+    30.5, -64.5,
+    -3.5, -65.5,
+    -29.5, -57.5,
+    -44, -61.5,
+    -46, -55,
+    -43.5, -40,
+    -57, -30.5,
+    -57, 30.5,
+    -43.5, 40,
+    -46, 55,
+    -44, 61.5,
+    -29.5, 57.5,
+    -3.5, 65.5,
+    30.5, 64.5,
+    50.5, 49.5,
+    65, 42.5,
+    65, 26,
+    77, -0
+  ]
+}

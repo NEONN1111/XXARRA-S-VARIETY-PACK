@@ -1,0 +1,36 @@
+name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,autofireAccBonus,extraArcForAI,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
+Large Vector Engine Cap,nsp_sotf_dkengcap_l,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+Large Vector Engine Cap,nsp_sotf_dkengcap_l2,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,hveldriver_builtin,3,0.3,2250,1000,,80,700,40,10,13,,,,KINETIC,200,,2,4,3,,,,,,,1200,,,300,,,,"no_drop, no_drop_salvage, restricted",,,,Anti Shield,,,,,,,,,,
+Material Obliterator,miningblaster_builtin,0,,1000,900,,1200,,25,7,10,3,0.5,,HIGH_EXPLOSIVE,240,,0,0.6,,,,,,,,900,,,,,,USE_LESS_VS_SHIELDS,"no_drop, no_drop_salvage, restricted",,,,General,,,,,Each bolt deals an additional %s damage to armor. This damage is not reduced by armor.,100,,,,22.125
+Herald Defense Cannon,messenger_builtin,1,,3500,1000,,250,,40,60,20,,,,HIGH_EXPLOSIVE,150,,0,0.17,,,5,6,1,5,,700,,,100,,,"PD,PD_ALSO","he16, pd17, no_drop, no_drop_salvage, restricted",,,,Anti Fighter (Area),,,,,"Each shell has a fuse set to explode at a random distance, resulting in a barrage that's increasingly more deadly at closer ranges.
+
+Will target missiles if no other targets are in range.",,,,,7.4
+,nsp_hangar_deco,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+Adjutant Defense Cannon,nsp_adjutant,1,,100000,900,,1000,,,50,40,80,1,8,FRAGMENTATION,230,,0,0.333333,1,,0,5,1,5,,1200,,,,,3,PD_ALSO,"no_drop, no_drop_salvage, restricted",,Domain Restricted,,Anti Armor (Area),,,,,"Each shell has a proximity fuse and deals damage over a wide area when it explodes.
+
+Will target missiles if no other targets are in range.",,,,,40.5
+,nsp_maneuveringjet,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,nsp_vambracecover1,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+,nsp_vambracecover2,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+,nsp_vambracecover3,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+,nsp_vambracecover4,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
+,nsp_absdeco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_absdeco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+Eyes,nsp_nemetor_eyes,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,44
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Angurvadal Assault Cannon,nsp_angurvadal,2,0.4,6000,900,,280,200,10,25,24,,,,ENERGY,275,,0.1,2,9,0.2,3,25,2,8,,900,,,75,,,"PD,PD_ALSO","energy18, he17, kinetic17, oddity, pd17, no_sell, no_dealer",,Unknown,,General,,,,,,,,,,7.5
+Neoferric Quadcoil,nsp_neoferric_quadcoil,0,,10000,900,,200,,10,30,20,,,,HIGH_EXPLOSIVE,200,,0,4.3,8,0.1,,,,,,900,,,,,,,"restricted, codex_unlockable, he17, nsp_ancient_bp",,Domain Restricted,,Anti Armor,,,,,,,,,,18.5
+,nsp_luminance_deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+Mass Annihilator,nsp_mass_annihilator,3,,12000,700,750,,100,0,720,40,,,,ENERGY,,300,0.75,1,,,,,,,99999,,,,,,,"SYSTEM, FIRE_WHEN_INEFFICIENT","energy20, beam20, no_drop, no_drop_salvage",,Domain Restricted,,Anti Armor,,,,,%s: Deals up to %s the longer the beam is kept on target.,Charged Beam|1000 EMP dps,,,,
+Castigation Missile Platform,nsp_castigation,0,,15000,2000,,1500,,30,10,30,,,,HIGH_EXPLOSIVE,0,,0,20,3,0.25,0,0,0,0,,700,40,22,350,,,STRIKE,"strike16, rocket14, no_sell, no_dealer, oddity",,Unknown,,Semi-guided Torpedo ,Very Fast,Special,,,,,,,TRUE,16.4
+Excommunication Missile Platform,nsp_excommunication,0,,10000,2000,,400,,20,10,15,,,,HIGH_EXPLOSIVE,0,,0,10,4,0.15,0,0,0,0,,700,40,22,350,,,STRIKE,"strike16, rocket14, no_sell, no_dealer, oddity",,Unknown,,Semi-guided Torpedo ,Very Fast,Special,,,,,,,TRUE,16.4
+Microlauncher (R),nsp_exponent_launcher_right,1,,1200,2500,,125,100,15,0,0,,,,KINETIC,0,,0,4,15,0.02,0,0,0,,,700,90,13,100,,,"DO_NOT_AIM, SYSTEM, DO_NOT_CONSERVE","no_sell, no_dealer, restricted",,,,General,Very Fast,Medium,,,,,,,TRUE,12
+Microlauncher (L),nsp_exponent_launcher_left,1,,1200,2500,,125,100,15,0,0,,,,KINETIC,0,,0,4,15,0.02,0,0,0,,,700,90,13,100,,,"DO_NOT_AIM, SYSTEM, DO_NOT_CONSERVE","no_sell, no_dealer, restricted",,,,General,Very Fast,Medium,,,,,,,TRUE,12
+Elysium Lance,nsp_elysium_lance,1,,1200,600,,90,100,0,20,10,,,,ENERGY,80,,0.25,0,,,,,,,,1000,,,,,,,"energy13, no_sell, no_dealer, restricted",,Unknown,,General,,,,,,,,,,22
+Exponential Pulser,nsp_exponent_pulser,1,,4500,700,,100,100,0,20,30,30,2,,ENERGY,125,,0,0.2,,,,,,,,1000,,,,,,,"energy18, no_sell, no_dealer, restricted",,Unknown,,General,,,,,,,,,,25
+,nsp_exponent_deco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_exponent_deco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_exponent_deco3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_exponent_deco4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,

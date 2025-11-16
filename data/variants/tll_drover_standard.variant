@@ -1,0 +1,45 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 19,
+    "fluxVents": 5,
+    "goalVariant": true,
+    "hullId": "tll_drover",
+    "hullMods": [
+        "blast_doors",
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "suppressedMods": [],
+    "variantId": "tll_drover_standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 004": "gazer",
+                "WS 003": "gazer",
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 005": "gorgon",
+                "WS 002": "gorgon",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "vulcan",
+                "WS 001": "vulcan",
+            }
+        },
+    ],
+    "wings": [
+        "flash_wing",
+        "flash_wing",
+    ],
+    "modules": [],
+}

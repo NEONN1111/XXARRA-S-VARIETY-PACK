@@ -1,0 +1,42 @@
+{
+  "variantId": "nsp_destrapogee_standard",
+  "hullId": "nsp_destrapogee",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 21,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "dedicated_targeting_core",
+    "hardenedshieldemitter",
+    "missile_autoloader"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "ionbeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "sabotpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "harpoon",
+        "WS0003": "harpoon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

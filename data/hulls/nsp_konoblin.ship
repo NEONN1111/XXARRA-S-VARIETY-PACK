@@ -1,0 +1,234 @@
+{
+  "hullName": "Konoblin",
+  "hullId": "nsp_konoblin",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_konoblin/nsp_konoblin.png",
+  "style": "LOW_TECH",
+  "height": 142,
+  "width": 230,
+  "center": [115, 71],
+  "collisionRadius": 129,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 129,
+  "viewOffset": 0,
+  "builtInMods": [
+    "faulty_grid",
+    "rugged",
+    "faulty_auto"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -45,
+      "locations": [3, -77]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -54.5,
+      "locations": [-18, -90]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -45,
+      "locations": [7, -9]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -45,
+      "locations": [23, 7]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 45,
+      "locations": [23, 69]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 68,
+      "locations": [8, 95]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [49, 20]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [49, 36]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [49, 52]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25, -57]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25, -22]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-43.5, 52.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-40.5, 65],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-55.5, -13],
+      "length": 30,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-59.5, -25],
+      "length": 30,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-59.5, -55],
+      "length": 30,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-56.5, -67],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57.5, -76.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57.5, -85],
+      "length": 29,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-51.5, 0.5],
+      "length": 40,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-47.5, 18],
+      "length": 30,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-40.5, 81.5],
+      "length": 50,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -55, -13,
+    -40, 44,
+    -39, 88.5,
+    7, 105,
+    38, 95.5,
+    54, 52,
+    45, 44,
+    54.5, 36,
+    42, 27,
+    55.5, 20,
+    44, 13.5,
+    41.5, -3.5,
+    23.5, -16,
+    32, -66,
+    23, -97.5,
+    -7.5, -97.5,
+    -12, -103.5,
+    -46, -95,
+    -55.5, -85.5,
+    -55, -65,
+    -58.5, -55,
+    -59, -25.5
+  ]
+}

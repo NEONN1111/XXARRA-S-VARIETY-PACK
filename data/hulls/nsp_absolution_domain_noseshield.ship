@@ -1,0 +1,63 @@
+{
+  "hullName": "Absolution (PR)",
+  "hullId": "nsp_absolution_domain_noseshield",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_absolution/absolution_domain_nose.png",
+  "style": "ABS_DMN",
+  "height": 84,
+  "width": 88,
+  "center": [44, 58.5],
+  "collisionRadius": 67,
+  "shieldCenter": [-111, -1],
+  "shieldRadius": 229.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "hbi",
+    "rugged",
+    "ablative_armor",
+    "distributed_fire_control",
+    "nsp_shieldspeed"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -38.5,
+      "locations": [5.5, -29]
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 38.5,
+      "locations": [5.5, 28.5]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    16, -17,
+    10, -32,
+    -12, -42.5,
+    -21, -34,
+    -28, -34.5,
+    -34, -41.5,
+    -44.5, -42,
+    -58, -30.5,
+    -20, -10.5,
+    -20, 10.5,
+    -58, 30.5,
+    -44.5, 42,
+    -34, 41.5,
+    -28, 34.5,
+    -21, 34,
+    -12, 42.5,
+    10, 32,
+    16, 17,
+    24.5, -0
+  ]
+}

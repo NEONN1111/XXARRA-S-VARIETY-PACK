@@ -1,0 +1,130 @@
+{
+  "hullName": "Harbinger (TLL)",
+  "hullId": "tll_harbinger",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/tellasian_league/tll_harbinger.png",
+  "style": "HIGH_TECH",
+  "height": 152,
+  "width": 134,
+  "center": [67, 81],
+  "collisionRadius": 120,
+  "shieldCenter": [1, 0],
+  "shieldRadius": 107,
+  "viewOffset": 0,
+  "builtInMods": [
+    "phasefield",
+    "delicate"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 6,
+      "angle": 0,
+      "locations": [50, 0]
+    },
+    {
+      "id": "WS 002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 6,
+      "angle": 0,
+      "locations": [60, 24]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 6,
+      "angle": 0,
+      "locations": [60, -23]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 120,
+      "locations": [-41, 36]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 240,
+      "locations": [-41, -36]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-77, 36],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-79, 28],
+      "length": 44,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 44,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-80, 20],
+      "length": 46,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-77, -36],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-80, -28],
+      "length": 44,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 44,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-80, -20],
+      "length": 46,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    61, 40,
+    61, -39,
+    23, -57,
+    -17, -34,
+    -40, -44,
+    -74, -41,
+    -76, -17,
+    -64, 0,
+    -76, 18,
+    -74, 41,
+    -39, 45,
+    -17, 34,
+    21, 56
+  ]
+}

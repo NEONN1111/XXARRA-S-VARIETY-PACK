@@ -1,0 +1,216 @@
+{
+  "hullName": "Apex (TLL)",
+  "hullId": "tll_apex",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/tellasian_league/tll_apex.png",
+  "style": "HIGH_TECH",
+  "height": 160,
+  "width": 278,
+  "center": [139, 71],
+  "collisionRadius": 170,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 160,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "coherer",
+    "tll_refit"
+  ],
+  "builtInWings": [
+    "terminator_wing",
+    "terminator_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 25,
+      "locations": [17, 79]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -25,
+      "locations": [17, -79]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [62, 34]
+    },
+    {
+      "id": "WS 005",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [66, 12]
+    },
+    {
+      "id": "WS 006",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [66, -12]
+    },
+    {
+      "id": "WS 007",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [62, -34]
+    },
+    {
+      "id": "WS 008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 135,
+      "locations": [-27, 73]
+    },
+    {
+      "id": "WS 009",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 225,
+      "locations": [-27, -73]
+    },
+    {
+      "id": "WS 010",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 40,
+      "locations": [23, 106]
+    },
+    {
+      "id": "WS 011",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 30,
+      "locations": [45, 65]
+    },
+    {
+      "id": "WS 012",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -30,
+      "locations": [45, -65]
+    },
+    {
+      "id": "WS 013",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -40,
+      "locations": [23, -106]
+    },
+    {
+      "id": "WS 014",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 180,
+      "locations": [
+        -18, 37,
+        -18, -37
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-70, 72],
+      "length": 36,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, 55],
+      "length": 38,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, 37],
+      "length": 40,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 50,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, -37],
+      "length": 40,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 50,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, -54],
+      "length": 38,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, -71],
+      "length": 36,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 46,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    34, 119,
+    63, 60,
+    47, 49,
+    66, 43,
+    67, -41,
+    46, -48,
+    59, -64,
+    33, -118,
+    5, -124,
+    -1, -107,
+    -22, -124,
+    -57, -100,
+    -63, -33,
+    -36, 0,
+    -63, 34,
+    -57, 97,
+    -22, 125,
+    0, 104,
+    3, 123
+  ]
+}

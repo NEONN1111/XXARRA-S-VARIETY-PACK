@@ -1,0 +1,53 @@
+{
+  "variantId": "nsp_falcon_safeguard_escort",
+  "hullId": "nsp_falcon_safeguard",
+  "displayName": "Escort",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "turretgyros",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 007": "heavyneedler",
+        "WS 008": "heavyneedler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "sabot",
+        "WS 002": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "phasebeam",
+        "WS 006": "phasebeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "pdlaser",
+        "WS 004": "pdlaser",
+        "WS 009": "pdlaser",
+        "WS 010": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

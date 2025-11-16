@@ -1,0 +1,60 @@
+{
+  "hullName": "Vambrace",
+  "hullId": "nsp_enforcermk1_helmet",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_enforcermk1/nsp_enforcermk1_helmet.png",
+  "style": "LOW_TECH",
+  "height": 58,
+  "width": 111,
+  "center": [56, 50.5],
+  "collisionRadius": 88.5,
+  "shieldCenter": [0.5, -0],
+  "shieldRadius": 87,
+  "viewOffset": 0,
+  "builtInMods": [
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "WS0001": "nsp_vambracecover1",
+    "WS0002": "nsp_vambracecover2"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-16, 41],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-16, -40],
+      "renderOrderMod": 1
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -10.5, -26,
+    -40.5, -41,
+    -31.5, -55.5,
+    -8.5, -53,
+    -14, -48.5,
+    -14, -38,
+    7, -26,
+    7, 26,
+    -14, 38,
+    -14, 48.5,
+    -8.5, 53,
+    -31.5, 55.5,
+    -40.5, 41,
+    -10.5, 26
+  ]
+}

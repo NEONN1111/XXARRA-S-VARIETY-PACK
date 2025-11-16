@@ -1,0 +1,40 @@
+{
+  "variantId": "tll_glimmer_standard",
+  "hullId": "tll_glimmer",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 3,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "ionpulser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 004": "irpulse",
+        "WS 005": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "pdburst",
+        "WS 003": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

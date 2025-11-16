@@ -1,0 +1,55 @@
+{
+    "displayName": "Elite",
+    "fluxCapacitors": 40,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "nsp_absolution_domain",
+    "hullMods": [
+        "armoredweapons",
+        "insulatedengine",
+        "magazines",
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "suppressedMods": [],
+    "variantId": "nsp_absolution_domain_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "multineedler",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "mjolnir",
+                "WS0002": "mjolnir",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightneedler",
+                "WS0003": "lightneedler",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "dualflak",
+                "WS0009": "dualflak",
+                "WS0013": "dualflak",
+                "WS0012": "dualflak",
+            }
+        },
+    ],
+    "wings": [],
+    "modules": [
+        {"ABS_DMN": "nsp_absolution_domain_noseshield_standard"},
+    ],
+}

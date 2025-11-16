@@ -1,0 +1,52 @@
+{
+  "variantId": "nsp_falcon_safeguard_elite",
+  "hullId": "nsp_falcon_safeguard",
+  "displayName": "Elite",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "auxiliarythrusters"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 007": "heavymg",
+        "WS 008": "heavymg"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "heatseeker",
+        "WS 002": "heatseeker"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "pulselaser",
+        "WS 006": "pulselaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "pdlaser",
+        "WS 004": "pdlaser",
+        "WS 009": "lrpdlaser",
+        "WS 010": "lrpdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,70 @@
+{
+  "variantId": "nsp_exponent_enlightened",
+  "hullId": "nsp_exponent",
+  "displayName": "Enlightened",
+  "goalVariant": true,
+  "fluxCapacitors": 26,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "fluxbreakers",
+    "fluxdistributor",
+    "turretgyros"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "nsp_exponent_pulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "nsp_elysium_lance",
+        "WS0005": "nsp_elysium_lance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightneedler",
+        "WS0003": "lightneedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "nsp_exponent_launcher_left",
+        "WS0008": "nsp_exponent_launcher_left",
+        "WS0009": "nsp_exponent_launcher_right",
+        "WS0010": "nsp_exponent_launcher_right"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "pdburst"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "nsp_adjutant",
+  "specClass": "projectile",
+  "projectileSpecId": "nsp_adjutant_shot",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "displayArcRadius": 600,
+  "turretSprite": "graphics/weapons/nsp_adjutant_base.png",
+  "turretGunSprite": "graphics/weapons/nsp_adjutant_turret_recoil.png",
+  "hardpointSprite": "graphics/weapons/nsp_adjutant_base.png",
+  "hardpointGunSprite": "graphics/weapons/nsp_adjutant_turret_recoil.png",
+  "visualRecoil": 10,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "turretOffsets": [
+    68.5,
+    8,
+    68.5,
+    -8
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    108.5,
+    8,
+    108.5,
+    -8
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 65,
+    "spread": 15,
+    "particleSizeMin": 10,
+    "particleSizeRange": 35,
+    "particleDuration": 0.75,
+    "particleCount": 50,
+    "particleColor": [
+      255,
+      120,
+      50,
+      245
+    ]
+  },
+  "fireSoundTwo": "heavy_adjudicator_fire"
+}

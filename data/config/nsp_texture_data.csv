@@ -1,0 +1,7 @@
+id,type,frame,magnitude,map,path
+nsp_absolution,ship,,,material,graphics/ships/nsp_absolution/absolution_material.png
+nsp_absolution,ship,,1,normal,graphics/ships/nsp_absolution/absolution_normal.png
+nsp_absolution,ship,,,surface,graphics/ships/nsp_absolution/absolution_surface.png
+nsp_absolution_domain,ship,,,material,graphics/ships/nsp_absolution/absolution_domain_material.png
+nsp_absolution_domain,ship,,,normal,graphics/ships/nsp_absolution/absolution_domain_normal.png
+nsp_absolution_domain,ship,,,surface,graphics/ships/nsp_absolution/absolution_surface.png

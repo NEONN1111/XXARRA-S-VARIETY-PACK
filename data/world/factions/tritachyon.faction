@@ -1,0 +1,17 @@
+{
+    "hullFrequency":{
+        "hulls":{
+                        "nsp_hammerhead_tt":1,
+                        "nsp_eagle_tt":1,
+                        "nsp_falcon_tt":1,
+			
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_hammerhead_tt",
+            "nsp_eagle_tt",
+            "nsp_falcon_tt",
+        ],
+	},
+},

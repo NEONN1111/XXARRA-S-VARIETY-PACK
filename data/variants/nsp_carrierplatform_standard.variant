@@ -1,0 +1,20 @@
+{
+  "variantId": "nsp_carrierplatform_standard",
+  "hullId": "nsp_carrierplatform",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 1,
+  "fluxVents": 1,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "insulatedengine"
+  ],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": [
+    "nsp_derelictfighter",
+    "nsp_derelictfighter"
+  ]
+}

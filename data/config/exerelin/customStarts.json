@@ -1,0 +1,21 @@
+{
+	"config":{
+		"colors":{
+			"easy":[0, 255, 255],
+			"normal":[119, 136, 153],
+			"hard":[255, 210, 0],
+			"very hard":[255, 0, 0]
+		}
+	},
+
+	"starts":[
+		{
+			"id":"NSP_OutOfTime",
+			"name":"Ancients",
+			"difficulty":"Normal",
+			"desc":"Re-awakening from within the cryochambers deep within the heart of your flagship, your head spins as you struggle to get your bearings, and remember how you even got here in the first place. Although hazy, the last memories you seem to have are... running from something, and making an emergency jump of some kind. Now, however many years later, you awaken.",
+			"className":"data.campaign.customstart.OutOfTimeNSP",
+			"randomSector":-1,
+		},
+			],
+}

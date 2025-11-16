@@ -1,0 +1,23 @@
+{
+    "hullFrequency":{
+        "hulls":{
+			"nsp_legionator":0.4,
+                        "nsp_sisyphus":2,
+                        "nsp_absolution":1,
+                        "nsp_reprieve":1,
+                        "nsp_incursion_church":1,
+                        "nsp_incursion":0.7,
+                       						
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_legionator",
+			"nsp_absolution",
+            "nsp_sisyphus",
+            "nsp_reprieve",
+            "nsp_incursion",
+            "nsp_incursion_church",
+        ],
+	},
+},

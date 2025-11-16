@@ -1,0 +1,74 @@
+{
+  "variantId": "tll_legion_standard",
+  "hullId": "tll_legion",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 33,
+  "fluxVents": 45,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "blast_doors",
+    "hardenedshieldemitter",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "hil"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 004t": "heavymauler",
+        "WS 007": "heavymauler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 020": "lightdualac",
+        "WS 021": "lightdualac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "guardian",
+        "WS 002": "flak",
+        "WS 003": "flak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 008": "vulcan",
+        "WS 009": "vulcan",
+        "WS 018": "vulcan",
+        "WS 019": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "spark_wing",
+    "spark_wing",
+    "lux_wing",
+    "flash_wing"
+  ]
+}

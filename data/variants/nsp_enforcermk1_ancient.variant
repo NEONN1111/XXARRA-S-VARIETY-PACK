@@ -1,0 +1,76 @@
+{
+  "variantId": "nsp_enforcermk1_ancient",
+  "hullId": "nsp_enforcermk1",
+  "displayName": "Ancient",
+  "goalVariant": true,
+  "fluxCapacitors": 19,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "fluxdistributor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 003": "heavymortar"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 002": "arbalest",
+        "WS 004": "arbalest"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 006": "annihilator",
+        "WS 009": "annihilator",
+        "WS0001": "annihilator",
+        "WS0002": "annihilator"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "flak",
+        "WS 005": "flak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "ENF1": "nsp_enforcermk1_armorright_variant"
+    },
+    {
+      "ENF2": "nsp_enforcermk1_armorleft_variant"
+    },
+    {
+      "ENF3": "nsp_enforcermk1_helmet_variant"
+    }
+  ],
+  "wings": []
+}

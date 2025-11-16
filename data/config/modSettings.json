@@ -1,0 +1,30 @@
+{
+    "chatter":{
+		# fleet logo priority: fleet memory key, then flagship-logo mapping here, then faction roundel here, then faction crest
+		# similar priorities exist for fleet name and sound that gets played
+		
+		"flagshipToLogoMap":{
+			"nsp_rampager":"graphics/factions/roundel_domain_explorarium.png",
+                        "nsp_templar":"graphics/factions/roundel_domain_explorarium.png",
+                        "nsp_nemetor":"graphics/factions/roundel_domain_explorarium.png",
+		},
+		"flagshipToNameMap":{
+			"nsp_rampager":"Rampager",
+	                "nsp_templar":"Templar",
+                         "nsp_nemetor":"Nemetor",
+		},
+		"flagshipToSoundMap":{
+			#"my_hull_id":"alarm_sound_id_in_sounds.json",
+		},
+		
+		"flagshipsWithStatic":["nsp_nemetor", "nsp_rampager"],
+		
+		# don't need to be in settings.json, the mod will load them on application startup
+		"factionRoundels":{
+		},
+		
+		"factionSounds":{
+			#"hegemony":"music_campaign_defeat_theme",
+		},
+    }
+}

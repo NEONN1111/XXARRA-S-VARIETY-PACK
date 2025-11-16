@@ -1,0 +1,88 @@
+{
+    "nsp_phasetunneleractivate":
+	[
+            {"file":"sounds/shipsystems/nsp_phasetunneler_activate.ogg","pitch":1,"volume":0.5},
+	],
+
+ "nsp_phasetunnelerblast":
+	[
+            {"file":"sounds/shipsystems/nsp_phasetunneler_blast.ogg","pitch":1,"volume":0.5},
+        ],
+
+ "nsp_invicta_death":
+	[
+            {"file":"sounds/nsp_invicta_death.ogg","pitch":1,"volume":0.5},
+        ],
+ 
+ "nsp_messenger_ambience":
+	[
+            {"file":"sounds/messenger_ambient.ogg","pitch":1,"volume":0.5},
+        ],
+
+  "nsp_rampage_start":
+	[
+            {"file":"sounds/rampager_activate.ogg","pitch":1,"volume":0.5},
+        ],
+
+    "nsp_rampage":
+	[
+            {"file":"sounds/rampager_loop.ogg","pitch":1,"volume":0.5},
+        ],
+
+   "nsp_rampager_boss_theme":
+	[
+            {"file":"sounds/nsp_rampager_theme.ogg","pitch":1,"volume":0.5},
+        ],
+  "nsp_templar_boss_theme":
+	[
+            {"file":"sounds/nsp_templar_theme.ogg","pitch":1,"volume":0.5},
+        ],
+  "nsp_material_obliterator_fire":
+	[
+            {"file":"sounds/material_obliterator.ogg","pitch":1,"volume":0.5},
+        ],
+   "nsp_rampager_theme":
+	[
+            {"file":"sounds/nsp_rampager_theme.ogg","pitch":1,"volume":0.5},
+        ],
+   "kardakes_feeder":
+	[
+            {"file":"sounds/kardakes_feeder4.ogg","pitch":1,"volume":0.5},
+        ],
+  "nsp_blink_drive":
+	[
+            {"file":"sounds/nsp_blink_drive1.ogg","pitch":1,"volume":0.5},
+        ],
+ "nsp_mass_annihilator_fire":
+	[
+            {"file":"sounds/nsp_mass_annihilator_fire.ogg","pitch":1,"volume":0.5},
+        ],
+"nsp_mass_annihilator_charge":
+	[
+            {"file":"sounds/nsp_annihilator_loop.ogg","pitch":1,"volume":0.5},
+        ],
+"nsp_sandevistan_loop":
+	[
+            {"file":"sounds/nsp_sandevistan_loop.ogg","pitch":1,"volume":0.5},
+        ],
+"nsp_elysium_dive_activate":
+	[
+            {"file":"sounds/elysium_dive.ogg","pitch":1,"volume":1},
+        ],
+"nsp_elysium_dive_deactivate":
+	[
+            {"file":"sounds/elysium_dive_deactivate.ogg","pitch":1,"volume":1},
+        ],
+
+
+
+
+
+
+
+
+
+
+
+
+}

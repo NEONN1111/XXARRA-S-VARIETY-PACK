@@ -1,0 +1,26 @@
+{
+  "hullName": "Onslaught (PR)",
+  "hullId": "nsp_onslaught_domain_noseshield",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/domain_navy/nsp_onslaught_pr_noseshield.png",
+  "style": "ABS_DMN",
+  "height": 384,
+  "width": 288,
+  "center": [144, 326],
+  "collisionRadius": 42,
+  "shieldCenter": [-154, 0],
+  "shieldRadius": 240,
+  "viewOffset": 200,
+  "builtInMods": [
+    "hbi",
+    "nsp_shieldspeed"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [
+    -1, -22,
+    -14.5, -0,
+    -1, 22,
+    39.5, -0
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "hullName": "Berserker (TLL)",
+  "hullId": "tll_berserker",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/tellasian_league/tll_berserker.png",
+  "style": "HIGH_TECH",
+  "height": 161,
+  "width": 146,
+  "center": [72.5, 80.5],
+  "collisionRadius": 99,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 107,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "tll_refit"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 123.5,
+      "locations": [-43.5, 57.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -123.5,
+      "locations": [-43.5, -58.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -49,
+      "locations": [63.5, -21.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 49,
+      "locations": [63.5, 19.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-80.5, 39.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-80.5, -39.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-79.5, 20.5],
+      "length": 49,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-79.5, -20.5],
+      "length": 49,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    17.5, -10.5,
+    78, -11,
+    59, -58.5,
+    -7, -61,
+    -14.5, -54.5,
+    -37, -73,
+    -56, -64,
+    -79.5, -47,
+    -76.5, -29.5,
+    -80, -15,
+    -73.5, -10,
+    -73.5, 10,
+    -80, 15,
+    -76.5, 29.5,
+    -79.5, 47,
+    -56, 64,
+    -37, 73,
+    -14.5, 54.5,
+    -7, 61,
+    59, 58.5,
+    78, 11,
+    17.5, 10.5
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "hullName": "Vambrace",
+  "hullId": "nsp_templar_prow",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_templar/nsp_templar_prow.png",
+  "style": "LOW_TECH",
+  "height": 889,
+  "width": 266,
+  "center": [133, 710],
+  "collisionRadius": 177,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 177,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "drive_field_stabilizer",
+    "operations_center",
+    "missile_reload",
+    "ground_support",
+    "advancedcore",
+    "heavycompositeintegration_nsp",
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "WS0001": "vulcan",
+    "WS0002": "vulcan",
+    "WS0003": "nsp_maneuveringjet",
+    "WS0004": "nsp_maneuveringjet"
+  },
+  "weaponSlots": [
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -488, -54,
+        -488, -54,
+        -485.5, -54
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -531, -54,
+        -531, -54
+      ]
+    },
+    {
+      "id": "LB 3",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -488, 54.5,
+        -488, 55
+      ]
+    },
+    {
+      "id": "LB 4",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -530.5, 54,
+        -531, 54.5
+      ]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [-49, 43]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": -90,
+      "locations": [-49, -43]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 90,
+      "locations": [6.5, 50.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [6.5, -50.5]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    125.5, -15.5,
+    -106, -66,
+    -112, -60,
+    99, -12,
+    99, 12,
+    -112, 60,
+    -106, 66,
+    125.5, 15.5,
+    177, -0
+  ]
+}

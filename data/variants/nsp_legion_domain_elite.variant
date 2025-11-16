@@ -1,0 +1,58 @@
+{
+    "displayName": "Elite",
+    "fluxCapacitors": 38,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "nsp_legion_domain",
+    "hullMods": [
+        "armoredweapons",
+        "heavyarmor",
+        "insulatedengine",
+        "recovery_shuttles",
+        "targetingunit",
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "suppressedMods": [],
+    "variantId": "nsp_legion_domain_elite",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "mjolnir",
+                "WS 001": "mjolnir",
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "typhoon",
+                "WS 004": "typhoon",
+                "WS 007": "typhoon",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "flak",
+                "WS 003": "flak",
+                "WS 009": "vulcan",
+                "WS 021": "vulcan",
+                "WS 008": "vulcan",
+                "WS 020": "vulcan",
+            }
+        },
+    ],
+    "wings": [
+        "broadsword_wing",
+        "broadsword_wing",
+        "broadsword_wing",
+        "broadsword_wing",
+     ],
+    "modules": {
+        "LGN_DMN": "nsp_legion_domain_noseshield_standard"
+    }
+}

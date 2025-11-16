@@ -1,0 +1,36 @@
+{
+  "variantId": "nsp_templar_midleft_standard",
+  "hullId": "nsp_templar_midleft",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "autorepair",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "vulcan",
+        "WS0003": "vulcan",
+        "WS0004t": "vulcan",
+        "WS0005": "dualflak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hurricane"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,17 @@
+{
+	"id":"NSP", # internal id
+	"name":"NEON's ship pack", # displayed to the player
+	"author":"NEON",
+	"jars":["jars/NSP.jar"],
+	"version":"3.0.5.8",
+	"description":"A small, gradually growing collection of ships. Credit to Minideth3, TouchOfVanilla, Histidine, USC, Corvus, The StarSector subreddit, and many others for script help, feedback, and support during the mod's development. Enjoy!",
+	"gameVersion":"0.98a-RC5",
+        "dependencies": [
+		{
+			"id": "MagicLib",
+			"name": "MagicLib",
+		},
+],
+
+        "modPlugin":"data.plugins.NSPModPlugin",
+}
