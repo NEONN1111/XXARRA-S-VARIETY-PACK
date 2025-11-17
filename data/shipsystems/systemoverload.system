@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"ACAUSAL_DISRUPTOR",
 	
-	"statsScript":"data.shipsystems.NSP_AcausalDisruptorStats",
+	"statsScript":"neon.nsp.data.shipsystems.NSP_AcausalDisruptorStats",
 	
 	# handled in the script instead of here
 	#"jitterUnderColor":[90,165,255,155],

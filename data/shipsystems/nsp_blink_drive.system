@@ -3,7 +3,7 @@
     "type":"DISPLACER",
     "aiType":"PHASE_DISPLACER",
 
-    "statsScript":"data.shipsystems.NSP_BlinkDriveStats",
+    "statsScript":"neon.nsp.data.shipsystems.NSP_BlinkDriveStats",
 
     "jitterColor":[100,100,100,255],
     "jitterCopies":5,

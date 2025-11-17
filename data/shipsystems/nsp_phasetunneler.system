@@ -2,7 +2,7 @@
     "id":"nsp_phasetunneler",
     "type":"TELEPORTER",
     "aiType":"PHASE_TELEPORTER",
-    "statsScript":"data.shipsystems.NSP_PhaseTunnelerStats",
+    "statsScript":"neon.nsp.data.shipsystems.NSP_PhaseTunnelerStats",
 
     "jitterColor":[255,255,255,150],
     "jitterCopies":5,

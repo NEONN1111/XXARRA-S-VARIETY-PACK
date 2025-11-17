@@ -4,7 +4,7 @@
 	#"aiType":"HIGH_ENERGY_FOCUS",
 	"aiType":"PHASE_CLOAK",
 	
-	"statsScript":"data.shipsystems.NSP_TemporalJaunt",
+	"statsScript":"neon.nsp.data.shipsystems.NSP_TemporalJaunt",
 
 
          "canNotCauseOverload":true,

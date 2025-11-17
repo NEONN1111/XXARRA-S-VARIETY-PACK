@@ -3,7 +3,7 @@
 	"name":"NEON's ship pack", # displayed to the player
 	"author":"NEON",
 	"jars":["jars/NSP.jar"],
-	"version":"3.0.5.8",
+	"version":"3.0.5.9",
 	"description":"A small, gradually growing collection of ships. Credit to Minideth3, TouchOfVanilla, Histidine, USC, Corvus, The StarSector subreddit, and many others for script help, feedback, and support during the mod's development. Enjoy!",
 	"gameVersion":"0.98a-RC5",
         "dependencies": [
@@ -13,5 +13,5 @@
 		},
 ],
 
-        "modPlugin":"data.plugins.NSPModPlugin",
+        "modPlugin":"neon.nsp.data.plugins.NSPModPlugin",
 }

@@ -3,7 +3,7 @@
 	"type":"ENGINE_MOD",
 	"aiType":"MANEUVERING_JETS",
 	
-	"statsScript":"data.shipsystems.PlasmaOverdriveNSP",
+	"statsScript":"neon.nsp.data.shipsystems.PlasmaOverdriveNSP",
 	
 	"engineGlowLengthMult":1,
 	"engineGlowWidthMult":1,

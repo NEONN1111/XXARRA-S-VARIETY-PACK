@@ -1,7 +1,7 @@
 {
 	"id":"nsp_adjutant_shot",
 	"specClass":"projectile",
-	"onFireEffect":"data.scripts.weapons.NSPAdjutanteffect",
+	"onFireEffect":"neon.nsp.data.scripts.weapons.NSPAdjutanteffect",
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",

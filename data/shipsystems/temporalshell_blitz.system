@@ -3,7 +3,7 @@
 	"type":"TELEPORTER",
 	"aiType":"PHASE_TELEPORTER_2",
 	
-	"statsScript":"data.shipsystems.TemporalShellStatsNSP",
+	"statsScript":"neon.nsp.data.shipsystems.TemporalShellStatsNSP",
 	
 	# handled in the script instead of here
 	#"jitterUnderColor":[255,187,255,255],

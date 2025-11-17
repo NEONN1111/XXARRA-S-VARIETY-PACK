@@ -1,4 +1,4 @@
-package data.hullmods.wip;
+package neon.nsp.data.hullmods.wip;
 
 import java.util.HashMap;
 import java.util.Map;
