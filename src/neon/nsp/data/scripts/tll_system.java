@@ -51,9 +51,9 @@ public class tll_system implements SectorGeneratorPlugin {
 		system.getLocation().set(location);
 		//Maddie Fractal World
 
-		system.addAsteroidBelt(alphard, 300, 9000, 1000, 160, 220); // Ring system located between inner and outer planets
-		system.addRingBand(alphard, "misc", "rings_asteroids0", 256f, 1, Color.white, 256f, 8900, 200f, null, null);
-		system.addRingBand(alphard, "misc", "rings_dust0", 256f, 1, Color.white, 256f, 9000, 200f, null, null);
+		system.addAsteroidBelt(alphard, 300, 20000, 1000, 160, 220); // Ring system located between inner and outer planets
+		system.addRingBand(alphard, "misc", "rings_asteroids0", 256f, 1, Color.white, 256f, 19000, 200f, null, null);
+		system.addRingBand(alphard, "misc", "rings_dust0", 256f, 1, Color.white, 256f, 19000, 200f, null, null);
 		PlanetAPI pyyhrus = system.addPlanet("tll_pyyrhus", alphard, "Pyyrhus", "gas_giant", 50, 300, 9000, 400);
 		pyyhrus.setCustomDescriptionId("tll_pyyhrus");
 		pyyhrus.getMarket().addCondition(Conditions.HIGH_GRAVITY);
@@ -189,7 +189,7 @@ public class tll_system implements SectorGeneratorPlugin {
 				));
 
 
-		PlanetAPI nisse = system.addPlanet("tll_nisse", alphard, "Nisse", "cryovolcanic", 50, 50, 12000, 450);
+		PlanetAPI nisse = system.addPlanet("tll_nisse", alphard, "Nisse", "cryovolcanic", 50, 50, 14000, 450);
 		nisse.setCustomDescriptionId("tll_nisse");
 		nisse.getMarket().addCondition(Conditions.EXTREME_WEATHER);
 		nisse.getMarket().addCondition(Conditions.VERY_COLD);

@@ -124,7 +124,7 @@ public class tll_system2 implements SectorGeneratorPlugin {
 		system.addRingBand(hades, "misc", "rings_asteroids0", 256f, 1, Color.white, 256f, 14000, 200f, null, null);
 		system.addRingBand(hades, "misc", "rings_dust0", 256f, 1, Color.white, 256f, 14500, 200f, null, null);
 
-		PlanetAPI amphitrite = system.addPlanet("tll_amphitrite", hades, "Amphitrite", "water", 50, 75, 700, 230);
+		PlanetAPI amphitrite = system.addPlanet("tll_amphitrite", hades, "Amphitrite", "water", 50, 75, 1200, 230);
 		amphitrite.setCustomDescriptionId("tll_amphitrite");
 		amphitrite.getMarket().addCondition(Conditions.WATER_SURFACE);
 		amphitrite.getMarket().addCondition(Conditions.HABITABLE);
@@ -134,7 +134,7 @@ public class tll_system2 implements SectorGeneratorPlugin {
 		amphitrite.getMarket().getMemoryWithoutUpdate().set(NOT_RANDOM_MISSION_TARGET, true);
 		amphitrite.getMemoryWithoutUpdate().set("$tll_amphitrite", true);
 
-		PlanetAPI vbarren1 = system.addPlanet("tll_vbarren1", hades, "Amoxyl", "barren", 50, 60, 900, 520);
+		PlanetAPI vbarren1 = system.addPlanet("tll_vbarren1", hades, "Amoxyl", "barren", 50, 60, 1600, 520);
 		vbarren1.setCustomDescriptionId("tll_vbarren1");
 		vbarren1.getMarket().addCondition(Conditions.NO_ATMOSPHERE);
 		vbarren1.getMarket().getMemoryWithoutUpdate().set(NOT_RANDOM_MISSION_TARGET, true);
