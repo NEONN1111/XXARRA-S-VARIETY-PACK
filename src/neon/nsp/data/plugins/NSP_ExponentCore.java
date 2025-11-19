@@ -24,7 +24,9 @@ public class NSP_ExponentCore extends BaseAICoreOfficerPluginImpl implements AIC
             new Random();
         }
         PersonAPI person = Global.getFactory().createPerson();
-        person.setId("nsp_exponent_core");
+        person.getName().setFirst("VALTEIL");
+        person.getName().setLast("");
+        person.setId("exponent_core");
         person.setAICoreId(aiCoreId);
         person.setFaction(factionId);
         boolean ExponentCore = "nsp_exponent_core".equals(aiCoreId);
@@ -43,7 +45,7 @@ public class NSP_ExponentCore extends BaseAICoreOfficerPluginImpl implements AIC
             person.getStats().setSkillLevel("point_defense", 2.0F);
             person.getStats().setSkillLevel("energy_weapon_mastery", 2.0F);
             person.getStats().setSkillLevel("systems_expertise", 2.0F);
-            person.setPortraitSprite(Global.getSettings().getSpriteName("characters", "The Exponent"));
+            person.setPortraitSprite("graphics/portraits/characters/exponent_core.png");
 
             points = ALPHA_POINTS;
             mult = ALPHA_MULT;
@@ -51,8 +53,8 @@ public class NSP_ExponentCore extends BaseAICoreOfficerPluginImpl implements AIC
         person.getMemoryWithoutUpdate().set("$autoPointsMult", mult);
 
         person.setPersonality(Personalities.RECKLESS);
-        person.setRankId(Ranks.SPACE_CAPTAIN);
-        person.setPostId(Ranks.SPACE_CAPTAIN);
+        person.setRankId(Ranks.UNKNOWN);
+        person.setPostId(Ranks.POST_UNKNOWN);
         person.getStats().setSkipRefresh(false);
 
         Global.getSector().getImportantPeople().addPerson(person);

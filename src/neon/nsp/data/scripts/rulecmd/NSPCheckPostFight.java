@@ -10,28 +10,18 @@ import com.fs.starfarer.api.util.Misc;
 import java.util.List;
 import java.util.Map;
 
-public class NSPCheckCanReportBack extends BaseCommandPlugin {
+public class NSPCheckPostFight extends BaseCommandPlugin {
     protected MemoryAPI memory;
     protected InteractionDialogAPI dialog;
     protected Map<String, MemoryAPI> memoryMap;
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
-//        this.dialog = dialog;
-//        this.memoryMap = memoryMap;
-//
-//        String cmd = null;
-//        cmd = params.get(0).getString(memoryMap);
-//        String param = null;
-//        if (params.size() > 1) {
-//            param = params.get(1).getString(memoryMap);
-//        }
-//
-//        TextPanelAPI text = dialog.getTextPanel();
+
+
         boolean exponentNotCompleted = !Global.getSector().getMemoryWithoutUpdate().contains("$nsp_exponentCompleted");
         boolean beganExponent = Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_beganExponent");
-        boolean hasInvestigated = Global.getSector().getMemoryWithoutUpdate().getBoolean("$exponent_hasInvestigated");
-        boolean hasReportedBack = !Global.getSector().getMemoryWithoutUpdate().getBoolean("$exponent_hasReported");
+        boolean hasFought = Global.getSector().getMemoryWithoutUpdate().getBoolean("$exponent_hasFought");
         MarketAPI originMarket = (MarketAPI) Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentMarket");
         boolean isOriginMarket;
         if (dialog.getInteractionTarget() != null && dialog.getInteractionTarget().getMarket() != null) {
@@ -39,6 +29,7 @@ public class NSPCheckCanReportBack extends BaseCommandPlugin {
         } else return false;
 
         return exponentNotCompleted && beganExponent &&
-                hasInvestigated && hasReportedBack && isOriginMarket;
+                hasFought && isOriginMarket;
+
     }
 }

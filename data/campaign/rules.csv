@@ -51,11 +51,63 @@ Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped ap
 ,,,,,,
 # ReportBack,,,,,,
 EBEbarOptionReportBack,AddBarEvents,"NSPCheckCanReportBack","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
-EBEbar3,DialogOptionSelected,"$option == EBEbar_hunt",,,"EBEbar_reportBack:Report back
+EBEbar3,DialogOptionSelected,"$option == EBEbar_hunt",,"EBEbar3 Text","EBEbar_reportBack:Report back
 backToBar:Leave",
-EBEbar4,DialogOptionSelected,"$option == EBEbar_reportBack","$global.exponent_hasReported = true
-Call $global.exponent_ref updateData",,"backToBar:Return to the bar",
+EBEbar4,DialogOptionSelected,"$option == EBEbar_reportBack",,"EBEbar4 Text","EBEbar_goAlone:Go Alone
+EBEbar_goWithFleet:Go with fleet
+backToBar:Leave",
+EBEbar5a,DialogOptionSelected,"$option == EBEbar_goAlone","$global.exponent_hasReported = true
+$global.exponent_goAlone = true
+Call $global.exponent_ref updateData
+FireBest ExponentMissionGoingAlone",,,
+EBEbar5aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","EBEbar5aText ""Blah blah blah Exponent location in $exponent_system2SName "" going alone","backToBar:Return to the bar",
+EBEbar5b,DialogOptionSelected,"$option == EBEbar_goWithFleet","$global.exponent_hasReported = true
+$global.exponent_goWithFleet = true
+Call $global.exponent_ref updateData
+FireBest ExponentMissionGoingWithFleet",,,
+EBEbar5bText,ExponentMissionGoingWithFleet,,"SetTextHighlights $exponent_system2SName
+Call $global.exponent_ref fleetFollowPlayer","EBEbar5bText ""Blah blah blah Exponent location in $exponent_system2SName "" going with escort fleet","backToBar:Return to the bar",
 "#END ReportBack",,,,,,
+,,,,,,
+# TakeTheFight,,,,,,
+EBEexponentCommLink,OpenCommLink,"$faction.id == nsp_exponent
+$entity.isHostile
+RollProbability 1","$menuState = fleetConvMain 0
+FireAll PopulateOptions
+#EndConversation","NSP It appears the enemy $personRank doesn't seem to feel the need to talk to you, as your comm requests go unanswered.",,
+EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global.exponent_hasFought = true
+Call $global.exponent_ref reportDebrief
+Call $global.exponent_ref updateData
+FireAll ExponentPostFight",,,
+exponent_encounterDesc,BeginFleetEncounter,"$nsp_exponent == true score:1000",,"NSP Exponent Encounter Description",,
+exponent_encounterDesc2,BeginFleetEncounter2,"$nsp_exponent == true score:1000","AddTextSmall ""Detailed scan of unknown vessel acquired"" highlight","NSP Exponent Encounter Description 2",,
+EBEexponentDefeated,ExponentPostFight,,"NSPexponentPostFight",,,
+EBEexponentDefeatedTwo,ExponentPostFightTwo,,"FireBest CheckSalvageSpecial","NSP A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+
+Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.",,
+EBEexponentDefeatedThree,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
+EBEexponentWreckOne,ShowSalvageEntityDetails,"$customType == wreck
+$global.exponent_hasFought score:1000","ShowDefaultVisual","NSP (EBEexponentWreckOne) The broken unknown vessel, now dormant, drifts through space as a husk from its former self.",,
+EBEexponentWreckTwo,CheckSalvageSpecial,"$salvageSpecialData != null
+$customType == wreck
+$global.exponent_hasFought score:1000","FireBest ExponentExploreDescription","NSP (EBEexponentWreckTwo) Your salvage teams dock a couple shuttles at various entry points along the vessel's hull. (change this, keep short, continues in another rule)",,
+EBEexponentWreckThree,ExponentExploreDescription,,,"NSP (EBEexponentWreckThree) After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
+
+Your operations chief reports that for all of the fancy hull features, it is clear that this ship requires crew to operate. But there are no traces of a crew, not even a single body caught in the battle damage, and the escape pods are all in their berths.
+
+The operation proceeds with telemetry feeds, officers reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your chief engineer appears, bringing you back from your reverie. You accept as a matter of course.","exponentExploreContinue:Continue",
+EBEexponentWreckThreeContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP ExponentExploreDescriptionContinue Text","exponentExploreContinue2:NSP Continue",
+EBEexponentWreckThreeContinue2,DialogOptionSelected,"$option == exponentExploreContinue2","SalvageSpecialInteraction","NSP The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+"#END TakeTheFight",,,,,,
+,,,,,,
+# ReturnPostFight,,,,,,
+EBEbarOptionPostFight,AddBarEvents,"NSPCheckPostFight","AddBarEvent EBEbar_end ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
+EBEbar6,DialogOptionSelected,"$option == EBEbar_end",,"EBEbar6 Text","EBEbar_reportDebrief:Report for debrief
+backToBar:Leave",
+EBEbar7,DialogOptionSelected,"$option == EBEbar_reportDebrief","$exponent_completed = true
+Call $global.exponent_ref updateData","EBEbar7 Text","
+backToBar:Leave",
+"#END ReturnPostFight",,,,,,
 "#END ExponentBarEvent",,,,,,
 "#END Missions",,,,,,
 ,,,,,,

@@ -9,7 +9,7 @@
     "iconHeight":20,
     "sprite":"graphics/ships/invictus/invictus.png",
     "spriteWidth":26,
-    "spriteHeight":34,
+    "spriteHeight":30,
     "detectionRange":1000,
     "discoverable":true,
     "discoveryXP":1000,

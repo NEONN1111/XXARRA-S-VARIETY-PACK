@@ -42,10 +42,10 @@ public class NSPPeople {
                 PersonAPI exponent = Global.getFactory().createPerson();
                 exponent.getName().setFirst("VALTEIL");
                 exponent.getName().setLast("");
-                exponent.setFaction(Factions.INDEPENDENT);
+                exponent.setFaction("nsp_exponent");
                 exponent.setImportance(PersonImportance.LOW);
-                exponent.setRankId(Ranks.SPACE_ADMIRAL);
-                exponent.setPostId(Ranks.SPACE_CAPTAIN);
+                exponent.setRankId(Ranks.UNKNOWN);
+                exponent.setPostId(Ranks.POST_UNKNOWN);
                 exponent.setGender(FullName.Gender.MALE);
                 exponent.setId(EXPONENT_CORE);
                 exponent.setPortraitSprite("graphics/portraits/characters/exponent_core.png");
