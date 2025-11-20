@@ -22,6 +22,9 @@
         },		
         "shields":{
         },
+		"blueprint_packages":{
+			"tll_base_bp":"graphics/icons/cargo/tll_base_bp.png",
+		},
 		
 		"abilities":{
 		},
