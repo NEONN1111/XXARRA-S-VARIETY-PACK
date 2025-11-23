@@ -23,8 +23,8 @@ public class NSPexponentPostFight extends BaseCommandPlugin {
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
 
         OptionPanelAPI options = dialog.getOptionPanel();
-        options.clearOptions();
-        options.addOption("Continue NSP","exponentBattleContinue");
+//        options.clearOptions();
+//        options.addOption("Continue NSP","exponentBattleContinue");
 
         Global.getSector().getMemoryWithoutUpdate().set("$defeatedExponent", true);
 
@@ -51,14 +51,17 @@ public class NSPexponentPostFight extends BaseCommandPlugin {
         data.addShip(copy);
         Misc.setSalvageSpecial(entity, data);
 
+        dialog.dismiss();
         dialog.setInteractionTarget(entity);
         RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl("ExponentPostFightTwo");
         dialog.setPlugin(plugin);
         plugin.init(dialog);
 
-        options = dialog.getOptionPanel();
         options.clearOptions();
         options.addOption("Continue NSP","exponentBattleContinue");
+
+        Global.getSector().getCampaignUI().getCurrentInteractionDialog().getOptionPanel().clearOptions();
+        Global.getSector().getCampaignUI().getCurrentInteractionDialog().getOptionPanel().addOption("Continue NSP","exponentBattleContinue");
 
         return true;
     }

@@ -1,5 +1,5 @@
 id,trigger,conditions,script,text,options,notes
-"#RULESET_NAME NSP",,,,,,
+"#RULESET_NAME NSPNew",,,,,,
 nsp_domainStation_openDialogFirst1,OpenInteractionDialog,"$id == orbital_habitat_domainships score:10000
 $hasDefenders
 !$nsp_visitedStation","ShowImageVisual abandoned_station
@@ -79,7 +79,7 @@ EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global
 Call $global.exponent_ref reportDebrief
 Call $global.exponent_ref updateData
 FireAll ExponentPostFight",,,
-exponent_encounterDesc,BeginFleetEncounter,"$nsp_exponent == true score:1000",,"NSP Exponent Encounter Description",,
+exponent_encounterDesc,BeginFleetEncounter,"$nsp_exponent == true score:1000","NSPexponentSetConfigOverride","NSP1 Exponent Encounter Description",,
 exponent_encounterDesc2,BeginFleetEncounter2,"$nsp_exponent == true score:1000","AddTextSmall ""Detailed scan of unknown vessel acquired"" highlight","NSP Exponent Encounter Description 2",,
 EBEexponentDefeated,ExponentPostFight,,"NSPexponentPostFight",,,
 EBEexponentDefeatedTwo,ExponentPostFightTwo,,"FireBest CheckSalvageSpecial","NSP A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
@@ -98,6 +98,12 @@ Your operations chief reports that for all of the fancy hull features, it is cle
 The operation proceeds with telemetry feeds, officers reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your chief engineer appears, bringing you back from your reverie. You accept as a matter of course.","exponentExploreContinue:Continue",
 EBEexponentWreckThreeContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP ExponentExploreDescriptionContinue Text","exponentExploreContinue2:NSP Continue",
 EBEexponentWreckThreeContinue2,DialogOptionSelected,"$option == exponentExploreContinue2","SalvageSpecialInteraction","NSP The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+EBETEST1,AfterNSPExponentDefeat,,,"NSP A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+
+Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP Continue",
+EBETEST2,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
+EBETEST3,ShowSalvageEntityDetails,"$customType == wreck
+$exponent score:1000","ShowDefaultVisual","NSP The broken phase vessel, now quite dormant, is drifting through space.",,
 "#END TakeTheFight",,,,,,
 ,,,,,,
 # ReturnPostFight,,,,,,
