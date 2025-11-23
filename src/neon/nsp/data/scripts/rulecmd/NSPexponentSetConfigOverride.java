@@ -27,7 +27,6 @@ public class NSPexponentSetConfigOverride extends BaseCommandPlugin {
 
         MemoryAPI memory = dialog.getInteractionTarget().getMemoryWithoutUpdate();
         memory.set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,createConfig());
-Console.showMessage(Global.getSector().getCampaignUI().getCurrentInteractionDialog().getInteractionTarget() instanceof CampaignFleetAPI)
         return true;
     }
 
