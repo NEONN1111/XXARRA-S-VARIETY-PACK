@@ -1,5 +1,5 @@
 id,trigger,conditions,script,text,options,notes
-"#RULESET_NAME NSPNew",,,,,,
+"#RULESET_NAME NSP",,,,,,
 nsp_domainStation_openDialogFirst1,OpenInteractionDialog,"$id == orbital_habitat_domainships score:10000
 $hasDefenders
 !$nsp_visitedStation","ShowImageVisual abandoned_station
@@ -70,40 +70,95 @@ Call $global.exponent_ref fleetFollowPlayer","EBEbar5bText ""Blah blah blah Expo
 "#END ReportBack",,,,,,
 ,,,,,,
 # TakeTheFight,,,,,,
-EBEexponentCommLink,OpenCommLink,"$faction.id == nsp_exponent
-$entity.isHostile
-RollProbability 1","$menuState = fleetConvMain 0
-FireAll PopulateOptions
-#EndConversation","NSP It appears the enemy $personRank doesn't seem to feel the need to talk to you, as your comm requests go unanswered.",,
-EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global.exponent_hasFought = true
-Call $global.exponent_ref reportDebrief
-Call $global.exponent_ref updateData
-FireAll ExponentPostFight",,,
-exponent_encounterDesc,BeginFleetEncounter,"$nsp_exponent == true score:1000","NSPexponentSetConfigOverride","NSP1 Exponent Encounter Description",,
-exponent_encounterDesc2,BeginFleetEncounter2,"$nsp_exponent == true score:1000","AddTextSmall ""Detailed scan of unknown vessel acquired"" highlight","NSP Exponent Encounter Description 2",,
-EBEexponentDefeated,ExponentPostFight,,"NSPexponentPostFight",,,
-EBEexponentDefeatedTwo,ExponentPostFightTwo,,"FireBest CheckSalvageSpecial","NSP A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+exponent_encounterDescScanned,BeginFleetEncounter,"$exponent score:1000
+!$printedDesc
+$showAfterScanIntro",,"NSP2 The capital-class construct appears to be a phase ship due to presenting features common to the type, though its design is otherwise exotic.
 
-Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.",,
-EBEexponentDefeatedThree,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
-EBEexponentWreckOne,ShowSalvageEntityDetails,"$customType == wreck
-$global.exponent_hasFought score:1000","ShowDefaultVisual","NSP (EBEexponentWreckOne) The broken unknown vessel, now dormant, drifts through space as a husk from its former self.",,
-EBEexponentWreckTwo,CheckSalvageSpecial,"$salvageSpecialData != null
+There also appear to be small, bright EM sources, ""-Only partially overlapping the visual spectrum,"" your sensors officer reports. They periodically appear and dissipate in a volume encompassing the mysterious ship. Your bridge crew murmurs speculation between their stations: a new form of shielding? microsat thruster bursts? Your sensors officer shakes their head. 
+
+Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
+exponent_encounterDesc1,BeginFleetEncounter,"$exponent score:1000
+!$printedDesc
+!$showAfterScanIntro","$printedDesc = true 0
+$fidpi_addContinue = true 0","NSP2 The capital-class construct appears to be a phase ship due to presenting features common to the type, though its design is otherwise exotic. There also appear to be small, bright EM sources, ""-Only partially overlapping the visual spectrum,"" your sensors officer reports. They periodically appear and dissipate in a volume encompassing the mysterious ship. Your bridge crew murmurs speculation between their stations: a new form of shielding? microsat thruster bursts? Your sensors officer shakes their head.
+
+You order a high-resolution scan performed, and the raw data placed into secure storage.",,
+exponent_encounterDesc2,BeginFleetEncounter2,"$exponent score:1000","AddTextSmall ""Detailed scan of unknown vessel acquired"" highlight
+$global.exponent_scannedExponent = true
+Call $global.exponent_ref updateData
+$showAfterScanIntro = true","NSP2 Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
+exponent_afterDefeating,AfterNSPExponentDefeat,,,"NSP2 A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+
+Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP2 Continue",
+exponent_afterDefeatingContinue,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
+exponent_wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
+$exponent score:1000","ShowDefaultVisual","NSP2 The broken phase vessel, now quite dormant, is drifting through space.",,
+exponent_exploreSabotage,CheckSalvageSpecial,"$salvageSpecialData != null
 $customType == wreck
-$global.exponent_hasFought score:1000","FireBest ExponentExploreDescription","NSP (EBEexponentWreckTwo) Your salvage teams dock a couple shuttles at various entry points along the vessel's hull. (change this, keep short, continues in another rule)",,
-EBEexponentWreckThree,ExponentExploreDescription,,,"NSP (EBEexponentWreckThree) After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
+$exponent score:1000
+!$triedSabotage
+PlayerHasCargo alpha_core","#ShowDefaultVisual
+$triedSabotage = true","NSP2 Salvage teams dock their drone-shuttles at various entry points along the massive vessel's hull. At the precise moment the go-order is given, all telemetry feeds from the shuttles simultaneously blank out.
+
+Your bridge officers initiate fallback procedures with practiced speed, contacting subordinates, performing checks and reinitializations to establish precisely where the systems fault occurred - and determine if it was a hostile act. Several agonizing minutes later, the salvage teams' data-feed and comms snap back to life.
+
+""Captain!"" Your tactical officer salutes, then launches into a status report, ""Someone or something just tried to send a power core collapse signal to the shuttles' computers. Fortunately the security package caught it in time, but they had to perform a full systems shutdown and manually switch to backups; that's why their telemetry cut off. All salvage teams are now reporting all-green and are standing by.""","exponentAlphaContinue:""Whoever tried this, what did they hope to accomplish?""",
+exponent_alphaContinueOpt,DialogOptionSelected,"$option == exponentAlphaContinue",,"NSP2 Your tactical officer rapidly taps a few buttons; holodisplays flicker through status updates.
+
+""If the shuttle power cores were overloaded simultaneously, well, with the shuttles so close to the wreck? The hull would have likely been damaged past any hope of recovery. In addition to killing the salvor crews, of course. But I don't think that was their goal; there are easier ways to kill salvage crews."" 
+
+As you indicate to your operations chief to ready the salvage teams for a second attempt, your tactical officer adds, ""It comes to mind that what we just experienced was an attempt at an old Tri-Tach trick from the Second AI War. They left black-box EW traps to keep the Hegemony from recovering intel and tech from disabled hulls. And it worked. For a while, anyway. I'm just glad we kept that legacy commsec package installed.""","exponentAlphaContinue2:Continue",
+exponent_alphaContinueOpt2,DialogOptionSelected,"$option == exponentAlphaContinue2",,"NSP2 You dismiss your tactical officer and ponder the situation as the call-and-return proceeds between your command crew and the salvage teams waiting at standby. Reports trickle up through the hierarchy, from junior officers in after-action/sim analyst teams to your bridge crew. A picture begins to form that has too many gaps for your liking: The core-collapse signal appears to have originated not exactly in, but uncomfortably near to a secure cargo bay holding an Alpha Core. The core was shielded in complete isolation at the time, and it denies any responsibility as effortlessly as it offers you its service and advice during this crisis, if you would be so kind as to open up a small data-link. You curtly terminate the secured comm-channel and order the AI put back in isolated lock-down.
+
+Your comms officer reports that there is uncertainty whether the AI was involved, or if the signal was sent from that location to throw suspicion onto the core. Both possibilities have troubling implications. In the meantime, however, your ops chief calls in, requesting the order to enter the wreck.","exponentAlphaContinue3:Order the exploration to proceed",
+exponent_alphaContinueOpt3,DialogOptionSelected,"$option == exponentAlphaContinue3","#ShowDefaultVisual
+FireBest ExponentExploreDescription",,,
+exponent_exploreNoSabotage,CheckSalvageSpecial,"$salvageSpecialData != null
+$customType == wreck
+$exponent score:1000","#ShowDefaultVisual
+FireBest ExponentExploreDescription","NSP2 Your salvage teams dock shuttles at various entry points along the vessel's massive hull.",,
+exponent_exploreDescription,ExponentExploreDescription,,,"NSP After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
 
 Your operations chief reports that for all of the fancy hull features, it is clear that this ship requires crew to operate. But there are no traces of a crew, not even a single body caught in the battle damage, and the escape pods are all in their berths.
 
 The operation proceeds with telemetry feeds, officers reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your chief engineer appears, bringing you back from your reverie. You accept as a matter of course.","exponentExploreContinue:Continue",
-EBEexponentWreckThreeContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP ExponentExploreDescriptionContinue Text","exponentExploreContinue2:NSP Continue",
-EBEexponentWreckThreeContinue2,DialogOptionSelected,"$option == exponentExploreContinue2","SalvageSpecialInteraction","NSP The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
-EBETEST1,AfterNSPExponentDefeat,,,"NSP A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+exponent_exploreDescriptionContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP2 ""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your chief engineer speaks with a genuine excitement.
 
-Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP Continue",
-EBETEST2,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
-EBETEST3,ShowSalvageEntityDetails,"$customType == wreck
-$exponent score:1000","ShowDefaultVisual","NSP The broken phase vessel, now quite dormant, is drifting through space.",,
+""I've found a device that appears to generate and control - I'm not sure that either is the right word, really - these ... swarming motes, the EM anomalies. The device appears to have two stages, the first as I've described, and what appears to be a later addition which is, unfortunately, damaged beyond repair. Judging by the complexity of the components and the bizarre discharge pattern... this is the work of a team of specialists doing bleeding-edge work. It's amazing! A device like this, it's simply unheard of nowadays. Except,"" your engineer looks abashed suddenly, ""Rumors. You know, people talk.""","exponentExploreContinue2:Continue",
+exponent_exploreDescriptionContinue2,DialogOptionSelected,"$option ==exponentExploreContinue2","SalvageSpecialInteraction","NSP2 The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+exponent_PostShipRecoverySpecial,PostShipRecoverySpecial,"$srs_baseHullId == nsp_exponent","ExponentCMD updateData",,,
+EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global.exponent_hasFought = true
+Call $global.exponent_ref reportDebrief
+Call $global.exponent_ref updateData
+#FireAll ExponentPostFight",,,
+WORK1,AfterExponentDefeat,,,"NSP3 A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+
+Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP3 Continue",
+WORK2,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
+WORK3,ShowSalvageEntityDetails,"$customType == wreck
+$exponent score:1000","ShowDefaultVisual","NSP3 The broken phase vessel, now quite dormant, is drifting through space.",,
+,,,,,,
+# CommLink,,,,,,
+EBEexponentCommLinkStart,OpenCommLink,"!$hadExponentConvo
+$faction.id == nsp_exponent
+RollProbability 1","$hadExponentConvo = true
+$menuState = fleetConvMain 0
+#FireAll PopulateOptions
+#EndConversation","NSP Initial VALTEIL interaction text","0:valteilContinueOne:Continue
+100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkOne,DialogOptionSelected,"$option == valteilContinueOne","#FireAll PopulateOptions
+#EndConversation","NSP - 1 deep VALTEIL interaction text - Initial conversation text","0:valteilContinueTwo:Continue
+100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkTwo,DialogOptionSelected,"$option == valteilContinueTwo","#FireAll PopulateOptions
+#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","0:valteilJoin:[Join VALTEIL option text]
+1:valteilFight:[Fight VALTEIL option text]
+100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkJoin,DialogOptionSelected,"$option == valteilJoin","NSPExponentSwitchSides
+#FireAll PopulateOptions
+#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkDone,OpenCommLink,"$hadExponentConvo
+$faction.id == nsp_exponent","EndConversation","NSP Text for when commlink falls silent",,
+"#END CommLink",,,,,,
 "#END TakeTheFight",,,,,,
 ,,,,,,
 # ReturnPostFight,,,,,,

@@ -4,22 +4,19 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
-import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.missions.hub.ReqMode;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.RemnantSeededFleetManager;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.fs.starfarer.campaign.fleet.CampaignFleet;
 import neon.nsp.data.scripts.NSPPeople;
+import neon.nsp.data.scripts.plugins.ExponentFIDConfig;
 
 import java.awt.*;
 import java.util.List;
@@ -119,6 +116,9 @@ public class ExponentM extends HubMissionWithSearch {
         triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_ALONE);
         triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(),"$nsp_exponentFleet");
         triggerFleetAddDefeatTrigger("nspExponentPostFight");
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY,true);
+        triggerSetFleetMemoryValue("$hailing", true);
+        triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,new ExponentFIDConfig.ExpFIDConfig());
         endTrigger();
         /// ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -226,11 +226,6 @@ public class ExponentM extends HubMissionWithSearch {
             return true;
         }
 
-        if (action.equals("setFIDconfig")) {
-            CampaignFleetAPI exponentFleet = (CampaignFleetAPI) Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentFleet");
-            exponentFleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,createConfig());
-        }
-
         if (action.equals("dialogTest")) {
 
             Global.getSector().getMemoryWithoutUpdate().set("$defeatedExponent", true);
@@ -266,88 +261,7 @@ public class ExponentM extends HubMissionWithSearch {
 
         }
 
-        return false;
-    }
-
-    public FleetInteractionDialogPluginImpl.FIDConfig createConfig() {
-        FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
-
-//			config.alwaysAttackVsAttack = true;
-//			config.leaveAlwaysAvailable = true;
-//			config.showFleetAttitude = false;
-        config.showTransponderStatus = false;
-        config.showEngageText = false;
-        config.alwaysPursue = true;
-        config.dismissOnLeave = false;
-        //config.lootCredits = false;
-        config.withSalvage = false;
-        //config.showVictoryText = false;
-        config.printXPToDialog = true;
-
-        config.noSalvageLeaveOptionText = "Continue NSPconfig";
-//			config.postLootLeaveOptionText = "Continue";
-//			config.postLootLeaveHasShortcut = false;
-
-        config.delegate = new FleetInteractionDialogPluginImpl.BaseFIDDelegate() {
-            public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
-                new RemnantSeededFleetManager.RemnantFleetInteractionConfigGen().createConfig().delegate.
-                        postPlayerSalvageGeneration(dialog, context, salvage);
-            }
-            public void notifyLeave(InteractionDialogAPI dialog) {
-
-                SectorEntityToken other = dialog.getInteractionTarget();
-                if (!(other instanceof CampaignFleetAPI)) {
-                    dialog.dismiss();
-                    return;
-                }
-                CampaignFleetAPI fleet = (CampaignFleetAPI) other;
-
-                if (!fleet.isEmpty()) {
-                    dialog.dismiss();
-                    return;
-                }
-
-                Global.getSector().getMemoryWithoutUpdate().set("$defeatedExponent", true);
-
-                ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);
-                ship.shipName = "Unknown";
-                DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(ship, false);
-                CustomCampaignEntityAPI entity = (CustomCampaignEntityAPI) BaseThemeGenerator.addSalvageEntity(
-                        fleet.getContainingLocation(),
-                        Entities.WRECK, Factions.NEUTRAL, params);
-                Misc.makeImportant(entity, "exponent");
-                entity.getMemoryWithoutUpdate().set("$exponent", true);
-
-                entity.getLocation().x = fleet.getLocation().x + (50f - (float) Math.random() * 100f);
-                entity.getLocation().y = fleet.getLocation().y + (50f - (float) Math.random() * 100f);
-
-                ShipRecoverySpecial.ShipRecoverySpecialData data = new ShipRecoverySpecial.ShipRecoverySpecialData(null);
-                data.notNowOptionExits = true;
-                data.noDescriptionText = true;
-                DerelictShipEntityPlugin dsep = (DerelictShipEntityPlugin) entity.getCustomPlugin();
-                ShipRecoverySpecial.PerShipData copy = (ShipRecoverySpecial.PerShipData) dsep.getData().ship.clone();
-                copy.variant = Global.getSettings().getVariant(copy.variantId).clone();
-                copy.variantId = null;
-                copy.variant.addTag(Tags.SHIP_CAN_NOT_SCUTTLE);
-//                copy.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE);
-                data.addShip(copy);
-
-                Misc.setSalvageSpecial(entity, data);
-
-                dialog.setInteractionTarget(entity);
-                RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl("AfterNSPExponentDefeat");
-                dialog.setPlugin(plugin);
-                plugin.init(dialog);
-            }
-
-            public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
-                bcc.aiRetreatAllowed = false;
-                bcc.objectivesAllowed = false;
-                bcc.fightToTheLast = true;
-                bcc.enemyDeployAll = true;
-            }
-        };
-        return config;
+        return true;
     }
 
     protected void updateInteractionDataImpl() {
@@ -355,7 +269,10 @@ public class ExponentM extends HubMissionWithSearch {
         set("$exponentSystemTwo",system2);
         set("$exponent_system1SName", system1.getNameWithNoType());
         set("$exponent_system2SName", system2.getNameWithNoType());
-        set("$exponentCurrentStage",getCurrentStage());
+        set("$exponentCurrentStage", getCurrentStage());
+        if (getCurrentStage() == Stage.TAKE_THE_FIGHT_LCF) {
+
+        }
 
     }
 

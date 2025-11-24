@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+### IntelliJ ###
+.idea/
+out/
+out/*
+.run/Run Starsector.run.xml
