@@ -1,4 +1,4 @@
-package data.hullmods;
+package neon.nsp.data.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
@@ -9,7 +9,7 @@ import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
-public class HardenedSubsystems extends BaseHullMod {
+public class ExponentSubsystems extends BaseHullMod {
 
 	public static final float PEAK_BONUS_PERCENT = 50f;
 	public static final float DEGRADE_REDUCTION_PERCENT = 25f;

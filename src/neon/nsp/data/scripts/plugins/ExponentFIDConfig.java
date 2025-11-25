@@ -17,10 +17,13 @@ import com.fs.starfarer.api.util.Misc;
 
 public class ExponentFIDConfig {
 
-    public static String DEFEATED_EXPONENT_KEY = "$defeatedExponent";
+    public static String DEFEATED_CHURCHFLEET_KEY = "$nsp_defExponentLCF";
+    public static String DEFEATED_EXPONENT_KEY = "$nsp_defExponentShip";
+
     public static class ExpFIDConfig implements FleetInteractionDialogPluginImpl.FIDConfigGen {
         public FleetInteractionDialogPluginImpl.FIDConfig createConfig() {
             FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
+
 
 //			config.alwaysAttackVsAttack = true;
 //			config.leaveAlwaysAvailable = true;
@@ -33,6 +36,7 @@ public class ExponentFIDConfig {
             config.withSalvage = false;
             //config.showVictoryText = false;
             config.printXPToDialog = true;
+
 
             config.noSalvageLeaveOptionText = "Continue";
 //			config.postLootLeaveOptionText = "Continue";
@@ -57,37 +61,54 @@ public class ExponentFIDConfig {
                         return;
                     }
 
-                    Global.getSector().getMemoryWithoutUpdate().set(DEFEATED_EXPONENT_KEY, true);
+                    // If the current interaction target is the Luddic Escort fleet
+                    if (dialog.getInteractionTarget().getName().contains("holder")) {
 
-                    ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);
-                    ship.shipName = "Unknown";
-                    DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(ship, false);
-                    CustomCampaignEntityAPI entity = (CustomCampaignEntityAPI) BaseThemeGenerator.addSalvageEntity(
-                            fleet.getContainingLocation(),
-                            Entities.WRECK, Factions.NEUTRAL, params);
-                    Misc.makeImportant(entity, "exponent");
-                    entity.getMemoryWithoutUpdate().set("$exponent", true);
+                        Global.getSector().getMemoryWithoutUpdate().set(DEFEATED_CHURCHFLEET_KEY, true);
 
-                    entity.getLocation().x = fleet.getLocation().x + (50f - (float) Math.random() * 100f);
-                    entity.getLocation().y = fleet.getLocation().y + (50f - (float) Math.random() * 100f);
+                        dialog.setInteractionTarget((CampaignFleetAPI)Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentFleet"));
+                        RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl("AfterNSPLuddicDefeat");
+                        dialog.setPlugin(plugin);
+                        plugin.init(dialog);
+                    }
+                    // If the current interaction target is the Exponent fleet
+                    else if (dialog.getInteractionTarget().getName().contains("xponent")) {
 
-                    ShipRecoverySpecial.ShipRecoverySpecialData data = new ShipRecoverySpecial.ShipRecoverySpecialData(null);
-                    data.notNowOptionExits = true;
-                    data.noDescriptionText = true;
-                    DerelictShipEntityPlugin dsep = (DerelictShipEntityPlugin) entity.getCustomPlugin();
-                    ShipRecoverySpecial.PerShipData copy = (ShipRecoverySpecial.PerShipData) dsep.getData().ship.clone();
-                    copy.variant = Global.getSettings().getVariant(copy.variantId).clone();
-                    copy.variantId = null;
-                    copy.variant.addTag(Tags.SHIP_CAN_NOT_SCUTTLE);
-                    copy.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE);
-                    data.addShip(copy);
+                        Global.getSector().getMemoryWithoutUpdate().set(DEFEATED_EXPONENT_KEY, true);
 
-                    Misc.setSalvageSpecial(entity, data);
+                        ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);
+                        ship.shipName = "Unknown";
+                        DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(ship, false);
+                        CustomCampaignEntityAPI entity = (CustomCampaignEntityAPI) BaseThemeGenerator.addSalvageEntity(
+                                fleet.getContainingLocation(),
+                                Entities.WRECK, Factions.NEUTRAL, params);
+                        Misc.makeImportant(entity, "exponent");
+                        entity.getMemoryWithoutUpdate().set("$exponent", true);
 
-                    dialog.setInteractionTarget(entity);
-                    RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl("AfterNSPExponentDefeat");
-                    dialog.setPlugin(plugin);
-                    plugin.init(dialog);
+                        entity.getLocation().x = fleet.getLocation().x + (50f - (float) Math.random() * 100f);
+                        entity.getLocation().y = fleet.getLocation().y + (50f - (float) Math.random() * 100f);
+
+                        ShipRecoverySpecial.ShipRecoverySpecialData data = new ShipRecoverySpecial.ShipRecoverySpecialData(null);
+                        data.notNowOptionExits = true;
+                        data.noDescriptionText = true;
+                        DerelictShipEntityPlugin dsep = (DerelictShipEntityPlugin) entity.getCustomPlugin();
+                        ShipRecoverySpecial.PerShipData copy = (ShipRecoverySpecial.PerShipData) dsep.getData().ship.clone();
+                        copy.variant = Global.getSettings().getVariant(copy.variantId).clone();
+                        copy.variantId = null;
+                        copy.variant.addTag(Tags.SHIP_CAN_NOT_SCUTTLE);
+                        copy.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE);
+                        data.addShip(copy);
+
+                        Misc.setSalvageSpecial(entity, data);
+
+                        Global.getSector().getMemoryWithoutUpdate().set("$nsp_ExponentDerelict",entity); // CustomCampaignEntityAPI
+
+                        dialog.setInteractionTarget(entity);
+                        RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl("AfterNSPExponentDefeat");
+                        dialog.setPlugin(plugin);
+                        plugin.init(dialog);
+                    }
+
                 }
 
                 public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {

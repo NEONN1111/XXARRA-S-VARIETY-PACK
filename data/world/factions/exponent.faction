@@ -90,6 +90,7 @@
 	"shipRoles":{
 		"combatSmall":{
 			"nsp_exponent_enlightened":1,
+			"nsp_exponent_ascendant":1,
 		},
 	},
 
@@ -100,6 +101,7 @@
 			"fluxbreakers",
 			"fluxdistributor",
 			"turretgyros",
+			"exponent_subsystems",
 		],
 	},
 

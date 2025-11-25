@@ -87,12 +87,21 @@ exponent_encounterDesc2,BeginFleetEncounter2,"$exponent score:1000","AddTextSmal
 $global.exponent_scannedExponent = true
 Call $global.exponent_ref updateData
 $showAfterScanIntro = true","NSP2 Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-exponent_afterDefeating,AfterNSPExponentDefeat,,,"NSP2 A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
-
-Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP2 Continue",
-exponent_afterDefeatingContinue,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
+exponent_afterDefeating,AfterNSPExponentDefeat,,,"NSP - pre Luddic Escort interaction text - What shows before Luddic escort contact starts, can be a description of what you see in front of you ","exponentDestroyedContinueOne:NSP Continue 1",
+exponent_afterDefeatingOne,DialogOptionSelected,"$option == exponentDestroyedContinueOne","NSPExponentLCFPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Escort commander says","exponentDestroyedContinueTwo:NSP Continue 2",
+exponent_afterDefeatingTwo,DialogOptionSelected,"$option == exponentDestroyedContinueTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Escort commander says","exponentDestroyedContinueThree:NSP Continue 3",
+exponent_afterDefeatingThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","NSP - 3 deep Luddic Escort interaction text - Choice to recover the Exponent or to permanently destroy it as per mission requirement",,
+exponent_afterDefeatingDestroy,DialogOptionSelected,"$option == exponentDestroyedPerma","NSPDestroyExponent
+$global.exponent_hasFought = true
+Call $global.exponent_ref reportDebrief
+Call $global.exponent_ref updateData","NSP Flavour text upon destroying the Exponent once and for all (can become a longer interaction than just this 1 message)","100:defaultLeave:Cut comm link",
+exponent_afterDefeatingPreRecovery,DialogOptionSelected,"$option == exponentDestroyedPreRecover","Call $global.exponent_ref recoverExponent
+$global.exponent_recoveredExponent = true
+Call $global.exponent_ref updateData","NSP - 4 deep Luddic Escort interaction text - Luddic Escort Commander shunning your actions of recovering the ship instead","0:exponentDestroyedRecover:Start recovery of the Exponent",
+exponent_afterDefeatingRecover,DialogOptionSelected,"$option == exponentDestroyedRecover","FireBest OpenInteractionDialog",,,
 exponent_wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
-$exponent score:1000","ShowDefaultVisual","NSP2 The broken phase vessel, now quite dormant, is drifting through space.",,
+$exponent score:1000","ShowDefaultVisual
+NSPInitExponentWreck",,,
 exponent_exploreSabotage,CheckSalvageSpecial,"$salvageSpecialData != null
 $customType == wreck
 $exponent score:1000
@@ -116,16 +125,16 @@ FireBest ExponentExploreDescription",,,
 exponent_exploreNoSabotage,CheckSalvageSpecial,"$salvageSpecialData != null
 $customType == wreck
 $exponent score:1000","#ShowDefaultVisual
-FireBest ExponentExploreDescription","NSP2 Your salvage teams dock shuttles at various entry points along the vessel's massive hull.",,
-exponent_exploreDescription,ExponentExploreDescription,,,"NSP After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
+FireBest ExponentExploreDescription","NSP [exponent_exploreNoSabotage Placeholder example > ] Your salvage teams dock shuttles at various entry points along the vessel's massive hull.",,
+exponent_exploreDescription,ExponentExploreDescription,,,"NSP [exponent_exploreNoSabotage Placeholder example > ] After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
 
 Your operations chief reports that for all of the fancy hull features, it is clear that this ship requires crew to operate. But there are no traces of a crew, not even a single body caught in the battle damage, and the escape pods are all in their berths.
 
 The operation proceeds with telemetry feeds, officers reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your chief engineer appears, bringing you back from your reverie. You accept as a matter of course.","exponentExploreContinue:Continue",
-exponent_exploreDescriptionContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP2 ""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your chief engineer speaks with a genuine excitement.
+exponent_exploreDescriptionContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP [exponent_exploreNoSabotage Placeholder example > ] ""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your chief engineer speaks with a genuine excitement.
 
 ""I've found a device that appears to generate and control - I'm not sure that either is the right word, really - these ... swarming motes, the EM anomalies. The device appears to have two stages, the first as I've described, and what appears to be a later addition which is, unfortunately, damaged beyond repair. Judging by the complexity of the components and the bizarre discharge pattern... this is the work of a team of specialists doing bleeding-edge work. It's amazing! A device like this, it's simply unheard of nowadays. Except,"" your engineer looks abashed suddenly, ""Rumors. You know, people talk.""","exponentExploreContinue2:Continue",
-exponent_exploreDescriptionContinue2,DialogOptionSelected,"$option ==exponentExploreContinue2","SalvageSpecialInteraction","NSP2 The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+exponent_exploreDescriptionContinue2,DialogOptionSelected,"$option ==exponentExploreContinue2","SalvageSpecialInteraction","NSP [exponent_exploreNoSabotage Placeholder example > ] The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
 exponent_PostShipRecoverySpecial,PostShipRecoverySpecial,"$srs_baseHullId == nsp_exponent","ExponentCMD updateData",,,
 EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global.exponent_hasFought = true
 Call $global.exponent_ref reportDebrief
@@ -135,14 +144,14 @@ WORK1,AfterExponentDefeat,,,"NSP3 A final terrific explosion blanks the external
 
 Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP3 Continue",
 WORK2,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
-WORK3,ShowSalvageEntityDetails,"$customType == wreck
-$exponent score:1000","ShowDefaultVisual","NSP3 The broken phase vessel, now quite dormant, is drifting through space.",,
 ,,,,,,
 # CommLink,,,,,,
+EBEexponentCommRequest,OpenInteractionDialog,"!$hadExponentConvo
+$faction.id == nsp_exponent
+","AddText ""As your $shipOrFleet closes in, the Exponent attempts to hail you.""",,,
 EBEexponentCommLinkStart,OpenCommLink,"!$hadExponentConvo
 $faction.id == nsp_exponent
-RollProbability 1","$hadExponentConvo = true
-$menuState = fleetConvMain 0
+RollProbability 1","$menuState = fleetConvMain 0
 #FireAll PopulateOptions
 #EndConversation","NSP Initial VALTEIL interaction text","0:valteilContinueOne:Continue
 100:cutCommLink:Cut the comm link",
@@ -150,15 +159,59 @@ EBEexponentCommLinkOne,DialogOptionSelected,"$option == valteilContinueOne","#Fi
 #EndConversation","NSP - 1 deep VALTEIL interaction text - Initial conversation text","0:valteilContinueTwo:Continue
 100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkTwo,DialogOptionSelected,"$option == valteilContinueTwo","#FireAll PopulateOptions
-#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","0:valteilJoin:[Join VALTEIL option text]
-1:valteilFight:[Fight VALTEIL option text]
+#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","0:valteilAccept:[Join VALTEIL option text]
+1:valteilRefuse:[Fight VALTEIL option text]
 100:cutCommLink:Cut the comm link",
-EBEexponentCommLinkJoin,DialogOptionSelected,"$option == valteilJoin","NSPExponentSwitchSides
+EBEexponentCommLinkAccept,DialogOptionSelected,"$option == valteilAccept","NSPExponentSwitchSides
+$hadExponentConvo = true
+$global.exponent_joinExponent = true
+Call $global.exponent_ref updateData
 #FireAll PopulateOptions
-#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","100:cutCommLink:Cut the comm link",
+#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player ACCEPTING to join them against the Luddic Church","100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkRefuse,DialogOptionSelected,"$option == valteilRefuse","$hadExponentConvo = true
+#FireAll PopulateOptions
+#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to join them against the Luddic Church","100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkDone,OpenCommLink,"$hadExponentConvo
-$faction.id == nsp_exponent","EndConversation","NSP Text for when commlink falls silent",,
+$entity.nsp_isExponentFleet
+!$global.exponent_joinExponent","EndConversation","NSP Text for when commlink falls silent, after refusing VALTEILs offer",,
+EBEexponentCommLinkLCFDone,OpenCommLink,"$entity.nsp_isExponentLCEscort
+$global.exponent_joinExponent","EndConversation","NSP Text when trying to contact the Luddic Church fleet after witnessing you switching sides",,
+EBEexponentCommLinkDoneRefused,OpenCommLink,"$hadExponentConvo
+$entity.nsp_isExponentFleet
+$global.exponent_joinExponent
+!$global.exponent_contactExponent","EndConversation","NSP Text for when commlink is refused, after switching sides",,
+,,,,,,
+# PostJoinFight,,,,,,
+EBEexponentFoughtLCF,nspFoughtLCF,,"$global.exponent_contactExponent = true
+Call $global.exponent_ref updateData",,,
+EBEexponentContact,OpenCommLink,"$hadExponentConvo
+$faction.id == nsp_exponent
+$global.exponent_contactExponent","$menuState = fleetConvMain 0","NSP VALTEIL interaction text after defeating Luddic Church fleet","0:valteilContactOne:Continue",
+EBEexponentContactOne,DialogOptionSelected,"$option == valteilContactOne",,"NSP - 1 deep VALTEIL interaction text - Initial conversation text after joining","0:valteilContactTwo:Continue",
+EBEexponentContactTwo,DialogOptionSelected,"$option == valteilContactTwo","SetStoryOption valteilContactJoin 3 valteilContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","NSP - 2 deep VALTEIL interaction text - Let VALTEIL join or release them","0:valteilContactJoin:[VALTEIL join option text]
+1:valteilContactRelease:[VALTEIL release option text]",
+EBEexponentContactJoin,DialogOptionSelected,"$option == valteilContactJoin","Call $global.exponent_ref transferExponent
+AdjustRep $faction.id 50
+AdjustRepActivePerson 50
+$global.exponent_exponentJoined = true
+Call $global.exponent_ref updateData
+AddTextSmall ""$personName joined your fleet"" highlight","NSP - 3a deep VALTEIL interaction text - On VALTEIL join text","100:defaultLeave:Cut comm link",
+EBEexponentContactRelease,DialogOptionSelected,"$option == valteilContactRelease","Call $global.exponent_ref releaseExponent
+AdjustRep $faction.id 50
+AdjustRepActivePerson 50
+$global.exponent_releasedExponent = true
+Call $global.exponent_ref updateData","NSP - 3b deep VALTEIL interaction text - On VALTEIL release text","100:defaultLeave:Release VALTEIL",
+"#END PostJoinFight",,,,,,
 "#END CommLink",,,,,,
+,,,,,,
+# PostLuddicFight,,,,,,
+ludEscort_afterDefeating,AfterNSPLuddicDefeat,,"$global.exponent_contactExponent = true
+Call $global.exponent_ref updateData","NSP Flavour text for post battle fighting the Luddic Church.
+
+Your sensors officer reports in a hushed voice no escape pods were detected leaving any of the ships at any point. A silence befell upon your bridge, being broken by a sudden incoming transmission from the Exponent.","0:luddicPostBattleHail:Answer the hail",
+ludEscort_afterDefeatingContinue,DialogOptionSelected,"$option == luddicPostBattleHail
+$global.exponent_contactExponent","ShowPersonVisual","NSP VALTEIL interaction text after defeating Luddic Church fleet","0:valteilContactOne:Continue",
+"#END PostLuddicFight",,,,,,
 "#END TakeTheFight",,,,,,
 ,,,,,,
 # ReturnPostFight,,,,,,

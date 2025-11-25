@@ -26,7 +26,7 @@ public class NSPexponentPostFight extends BaseCommandPlugin {
         options.clearOptions();
         options.addOption("Continue NSP","exponentBattleContinue");
 
-        Global.getSector().getMemoryWithoutUpdate().set("$defeatedExponent", true);
+        Global.getSector().getMemoryWithoutUpdate().set("$nsp_defExponentShip", true);
 
 
         ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);

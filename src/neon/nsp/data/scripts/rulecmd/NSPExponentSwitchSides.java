@@ -60,7 +60,10 @@ public class NSPExponentSwitchSides extends BaseCommandPlugin {
         for (FleetMemberAPI exponentMember : exponentFleetData.getMembersListCopy()) {
             context.getBattle().getCombinedFor(defender).getFleetData().addFleetMember(exponentMember);
         }
+
         defender.getFaction().setRelationship(Factions.PLAYER,0.5f);
+
+        dialog.setInteractionTarget(attacker);
 //        exponentFleet = (CampaignFleetAPI) Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentFleet");
 //        exponentFleet.getFaction().setRelationship(Factions.PLAYER,0.5f);
 

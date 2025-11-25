@@ -8,7 +8,10 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI;
 import com.fs.starfarer.api.util.Misc;
 import org.lwjgl.util.vector.Vector2f;
 
-public class ExponenMissionLCFleetEscort extends BaseAssignmentAI implements FleetEventListener {
+/**
+ * Exponent Mission - Custom assignment script for the Luddic Church escort fleet
+ */
+public class ExponentMissionLCFleetEscort extends BaseAssignmentAI implements FleetEventListener {
 
     protected StarSystemAPI system;
 
@@ -20,7 +23,7 @@ public class ExponenMissionLCFleetEscort extends BaseAssignmentAI implements Fle
     protected float jumpCooldown = 2f;
 
 
-    public ExponenMissionLCFleetEscort(CampaignFleetAPI fleet) {
+    public ExponentMissionLCFleetEscort(CampaignFleetAPI fleet) {
         super();
         this.fleet = fleet;
         this.system = system;
