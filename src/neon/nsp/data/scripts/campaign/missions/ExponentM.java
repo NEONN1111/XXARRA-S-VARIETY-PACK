@@ -4,6 +4,8 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
+import com.fs.starfarer.api.characters.FullName;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
@@ -28,6 +30,7 @@ import java.util.Map;
 public class ExponentM extends HubMissionWithSearch {
 
     public static enum Stage {
+        FIRST_TALK,
         INVESTIGATE, // Investigate strike force disappearance
         REPORT_BACK, // Report back your findings
         TAKE_THE_FIGHT_LCF, // Hunt down The Exponent with LC fleet support
@@ -58,19 +61,53 @@ public class ExponentM extends HubMissionWithSearch {
 
     @Override
     protected boolean create(MarketAPI createdAt, boolean barEvent) {
+
+//        if (barEvent) {
+            setGiverRank(Ranks.KNIGHT_CAPTAIN);
+            setGiverPost(Ranks.POST_GENERIC_MILITARY);
+            giverGender = FullName.Gender.ANY;
+            setGiverPortrait(Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getPortraits(giverGender).pick());
+            setGiverImportance(pickHighImportance());
+            findOrCreateGiver(createdAt, false, false);
+//        }
+
+        PersonAPI person = getPerson();
+        if (person == null) return false;
+        MarketAPI market = person.getMarket();
+        if (market == null) return false;
+
+        if (!setPersonMissionRef(person, "$exponent_ref")) {
+            return false;
+        }
+//
+//        if (barEvent) {
+            setGiverIsPotentialContactOnSuccess();
+//        }
+
+        person.setId("exponent_KnightContact");
+        Global.getSector().getImportantPeople().addPerson(person);
+//        Global.getSector().getMemoryWithoutUpdate().set("$nsp_exponentContact",person);
+
         originMarket = createdAt;
         Global.getSector().getMemoryWithoutUpdate().set("$nsp_exponentMarket",originMarket);
 
         setName("The Exponent");
         setStoryMission();
-        setRepFactionChangesNone();
-        setRepPersonChangesNone();
+
+//        setRepFactionChangesNone();
+//        setRepPersonChangesNone();
+        setCreditReward(100000); // Credits Reward
+        setXPReward(50000); // XP Reward
+        setRepRewardFaction(0.2f); // Rep Reward (Faction)
+        setRepRewardPerson(0.2f); // Rep Reward (Quest Giver, if Important person)
+
         setGiverFaction(Factions.LUDDIC_CHURCH);
         completedKey = "$nsp_exponentCompleted";
 
         // Disabled Invictus system
         requireSystemNotNebula();
         requireSystemNotHasPulsar();
+        requireSystemNotBlackHole();
         requireSystemInterestingAndNotUnsafeOrCore();
         requireSystemTags(ReqMode.ALL, Tags.THEME_RUINS);
         preferSystemUnexplored();
@@ -89,6 +126,7 @@ public class ExponentM extends HubMissionWithSearch {
         preferSystemWithinRangeOf(system1.getLocation(), 5f, 20);
         requireSystemNotNebula();
         requireSystemNotHasPulsar();
+        requireSystemNotBlackHole();
         preferSystemOnFringeOfSector();
         preferSystemUnexplored();
         requireSystemNot(system1);
@@ -169,7 +207,8 @@ public class ExponentM extends HubMissionWithSearch {
 
 
         // set our starting, success and failure stages
-        setStartingStage(Stage.INVESTIGATE);
+//        setStartingStage(Stage.INVESTIGATE);
+        setStartingStage(Stage.FIRST_TALK);
         setSuccessStage(Stage.COMPLETED);
 //        setFailureStage(Stage.SOLD_SIERRA);
         addFailureStages(Stage.EXPONENT_JOINED,Stage.RELEASED_EXPONENT,Stage.RECOVERED_EXPONENT);
@@ -182,6 +221,7 @@ public class ExponentM extends HubMissionWithSearch {
 //        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_LCF, Stage.RETURN_POST_FIGHT, "$exponent_hasFought");
 //        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_ALONE, Stage.RETURN_POST_FIGHT, "$exponent_hasFought");
 
+        connectWithGlobalFlag(Stage.FIRST_TALK, Stage.INVESTIGATE, "$exponent_hadFirstTalk");
         connectWithGlobalFlag(Stage.INVESTIGATE, Stage.REPORT_BACK, "$exponent_hasInvestigated");
         connectWithGlobalFlag(Stage.REPORT_BACK, Stage.TAKE_THE_FIGHT_LCF, "$exponent_goWithFleet");
         // In case of joining The Exponent in the fight
@@ -356,6 +396,9 @@ public class ExponentM extends HubMissionWithSearch {
         set("$exponent_system1SName", system1.getNameWithNoType());
         set("$exponent_system2SName", system2.getNameWithNoType());
         set("$exponentCurrentStage", getCurrentStage());
+        set("$exponent_Contact", getPerson());
+        set("$exponent_manOrWoman", getPerson().getManOrWoman());
+        set("$exponent_hisOrHer", getPerson().getHisOrHer());
 
     }
 
@@ -365,8 +408,11 @@ public class ExponentM extends HubMissionWithSearch {
         float opad = 10f;
         Color h = Misc.getHighlightColor();
 
-        if (currentStage == Stage.INVESTIGATE) {
-            info.addPara("You've heard rumors from a patrol officer about a strike fleet being MIA after being " +
+        if (currentStage == Stage.FIRST_TALK) {
+            info.addPara("You chose to follow some Luddic Knight's attendant to meet them.", opad);
+            info.addPara("See why you have been flagged down specifically", opad);
+        } else if (currentStage == Stage.INVESTIGATE) {
+            info.addPara("You've heard rumors from a senior Luddic Knight about a strike fleet being MIA after being " +
                     "sent out by the Knights of Ludd to eliminate the so called \"Exponent\".", opad);
             info.addPara(getGoToSystemTextShort(system1) + " and see if you can find out what happened to " +
                     "the strike fleet.", opad);
@@ -401,7 +447,10 @@ public class ExponentM extends HubMissionWithSearch {
     @Override
     public boolean addNextStepText(TooltipMakerAPI info, Color tc, float pad) {
         Color h = Misc.getHighlightColor();
-        if (currentStage == Stage.INVESTIGATE) {
+        if (currentStage == Stage.FIRST_TALK) {
+            info.addPara("Talk to the senior Luddic Knight.", tc, pad);
+            return true;
+        } else if (currentStage == Stage.INVESTIGATE) {
             info.addPara("Search the " + system1.getNameWithLowercaseTypeShort() + ".", tc, pad);
             return true;
         } else if (currentStage == Stage.REPORT_BACK) {

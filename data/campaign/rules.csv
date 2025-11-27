@@ -25,18 +25,26 @@ nsp_domainStation_TradePanelFlavorText,TradePanelFlavorText,"$id == orbital_habi
 ,,,,,,
 # Missions,,,,,,
 ,,,,,,
-# ExponentBarEvent,,,,,,
+# ExponentBarMission,,,,,,
 ,,,,,,
 # Start,,,,,,
 EBEbarOptionStart,AddBarEvents,"NSPCheckCanStart
-$faction.id == luddic_church","AddBarEvent EBEbar_start ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
-EBEbar1,DialogOptionSelected,"$option == EBEbar_start","$missionId = $nsp_exponent","EBEbar1 Text","EBEbar_one:""Who are you?""
+$faction.id == luddic_church","AddBarEvent EBEbar_start ""Follow the senior knight's attendant"" ""A senior knight's attendant flags you down."" luddicChurchColor",,,
+EBEbarKnight1,DialogOptionSelected,"$option == EBEbar_start","$missionId = $nsp_exponent
+BeginMission nsp_exponent_mission
+Call $global.exponent_ref updateData
+","EBEbar1 Text
+
+You follow the attendant to the knight, sitting at a low table with some tea steeping.
+","EBEbarKnight_two:Continue
 backToBar:Leave",
-EBEbar2,DialogOptionSelected,"$option == EBEbar_one","BeginMission nsp_exponent_mission
+EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","ShowPersonVisual false exponent_KnightContact","EBEbar2 Text","EBEbar_three:Get mission text
+backToBar:Leave",
+EBEbar3,DialogOptionSelected,"$option == EBEbar_three","$global.exponent_hadFirstTalk = true;
 Call $global.exponent_ref updateData
 FireBest ExponentMissionStarted
-$global.nsp_beganExponent = true",,,
-EBEbar2Text,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbar2Text ""Blah blah blah beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
+$global.nsp_beganExponent = true","EBEbar3 Text",,
+EBEbar3Text,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbar3Text ""Blah blah blah beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
 "#END Start",,,,,,
 ,,,,,,
 # InvictusInteraction,,,,,,
@@ -51,9 +59,9 @@ Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped ap
 ,,,,,,
 # ReportBack,,,,,,
 EBEbarOptionReportBack,AddBarEvents,"NSPCheckCanReportBack","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
-EBEbar3,DialogOptionSelected,"$option == EBEbar_hunt",,"EBEbar3 Text","EBEbar_reportBack:Report back
+EBEbar4,DialogOptionSelected,"$option == EBEbar_hunt",,"EBEbar3 Text","EBEbar_reportBack:Report back
 backToBar:Leave",
-EBEbar4,DialogOptionSelected,"$option == EBEbar_reportBack",,"EBEbar4 Text","EBEbar_goAlone:Go Alone
+EBEbar5,DialogOptionSelected,"$option == EBEbar_reportBack",,"EBEbar4 Text","EBEbar_goAlone:Go Alone
 EBEbar_goWithFleet:Go with fleet
 backToBar:Leave",
 EBEbar5a,DialogOptionSelected,"$option == EBEbar_goAlone","$global.exponent_hasReported = true
@@ -70,9 +78,7 @@ Call $global.exponent_ref fleetFollowPlayer","EBEbar5bText ""Blah blah blah Expo
 "#END ReportBack",,,,,,
 ,,,,,,
 # TakeTheFight,,,,,,
-exponent_encounterDescScanned,BeginFleetEncounter,"$exponent score:1000
-!$printedDesc
-$showAfterScanIntro",,"NSP2 The capital-class construct appears to be a phase ship due to presenting features common to the type, though its design is otherwise exotic.
+exponent_encounterDescScanned,BeginFleetEncounter,"$exponent score:1000",,"NSP2 The capital-class construct appears to be a phase ship due to presenting features common to the type, though its design is otherwise exotic.
 
 There also appear to be small, bright EM sources, ""-Only partially overlapping the visual spectrum,"" your sensors officer reports. They periodically appear and dissipate in a volume encompassing the mysterious ship. Your bridge crew murmurs speculation between their stations: a new form of shielding? microsat thruster bursts? Your sensors officer shakes their head. 
 
@@ -154,14 +160,14 @@ $faction.id == nsp_exponent
 RollProbability 1","$menuState = fleetConvMain 0
 #FireAll PopulateOptions
 #EndConversation","NSP Initial VALTEIL interaction text","0:valteilContinueOne:Continue
-100:cutCommLink:Cut the comm link",
+#100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkOne,DialogOptionSelected,"$option == valteilContinueOne","#FireAll PopulateOptions
 #EndConversation","NSP - 1 deep VALTEIL interaction text - Initial conversation text","0:valteilContinueTwo:Continue
-100:cutCommLink:Cut the comm link",
+#100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkTwo,DialogOptionSelected,"$option == valteilContinueTwo","#FireAll PopulateOptions
 #EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","0:valteilAccept:[Join VALTEIL option text]
 1:valteilRefuse:[Fight VALTEIL option text]
-100:cutCommLink:Cut the comm link",
+#100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkAccept,DialogOptionSelected,"$option == valteilAccept","NSPExponentSwitchSides
 $hadExponentConvo = true
 $global.exponent_joinExponent = true
@@ -171,9 +177,9 @@ Call $global.exponent_ref updateData
 EBEexponentCommLinkRefuse,DialogOptionSelected,"$option == valteilRefuse","$hadExponentConvo = true
 #FireAll PopulateOptions
 #EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to join them against the Luddic Church","100:cutCommLink:Cut the comm link",
-EBEexponentCommLinkDone,OpenCommLink,"$hadExponentConvo
+EBEexponentCommLinkExpDone,OpenCommLink,"$hadExponentConvo
 $entity.nsp_isExponentFleet
-!$global.exponent_joinExponent","EndConversation","NSP Text for when commlink falls silent, after refusing VALTEILs offer",,
+!$global.exponent_joinExponent","EndConversation","NSP Text for when commlink falls silent trying to contact the Exponent, after refusing VALTEILs offer",,
 EBEexponentCommLinkLCFDone,OpenCommLink,"$entity.nsp_isExponentLCEscort
 $global.exponent_joinExponent","EndConversation","NSP Text when trying to contact the Luddic Church fleet after witnessing you switching sides",,
 EBEexponentCommLinkDoneRefused,OpenCommLink,"$hadExponentConvo
@@ -222,7 +228,7 @@ EBEbar7,DialogOptionSelected,"$option == EBEbar_reportDebrief","$exponent_comple
 Call $global.exponent_ref updateData","EBEbar7 Text","
 backToBar:Leave",
 "#END ReturnPostFight",,,,,,
-"#END ExponentBarEvent",,,,,,
+"#END ExponentBarMission",,,,,,
 "#END Missions",,,,,,
 ,,,,,,
 # legion MK1,,,,,,
