@@ -27,7 +27,7 @@ public class ExponentMissionLCFleetEscort extends BaseAssignmentAI implements Fl
         super();
         this.fleet = fleet;
         this.system = system;
-
+        
         escortTimeLeft = ESCORT_DURATION;
         fleet.addEventListener(this);
         giveInitialAssignments();

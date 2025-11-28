@@ -33,18 +33,51 @@ $faction.id == luddic_church","AddBarEvent EBEbar_start ""Follow the senior knig
 EBEbarKnight1,DialogOptionSelected,"$option == EBEbar_start","$missionId = $nsp_exponent
 BeginMission nsp_exponent_mission
 Call $global.exponent_ref updateData
+ShowPersonVisual false exponent_KnightContact
 ","EBEbar1 Text
 
 You follow the attendant to the knight, sitting at a low table with some tea steeping.
-","EBEbarKnight_two:Continue
+","EBEbarKnight_two:EBEbarKnight_two Continue
 backToBar:Leave",
-EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","ShowPersonVisual false exponent_KnightContact","EBEbar2 Text","EBEbar_three:Get mission text
+EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","FireBest ExponentKnightGreeting",,,
+EBEbarKnight2GreetNeutralComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
+$faction.id == luddic_church
+NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You have not done much in your faith yet, but the Church believes you can grow to do so.""","EBEbarKnight_three:[Continue option text]
 backToBar:Leave",
-EBEbar3,DialogOptionSelected,"$option == EBEbar_three","$global.exponent_hadFirstTalk = true;
+EBEbarKnight2GreetNeutral,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
+$faction.id == luddic_church
+NSPExponentCheck neutralOrFavorable",,"<NoComm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text] $PersonRank
+backToBar:Leave",
+EBEbarKnight2GreetWelcomingComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
+$faction.id == luddic_church
+NSPExponentCheck welcomingOrHigher",,"<Comm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You have done much in your faith, and the Church believes you can continue to do so.""","EBEbarKnight_three:[Continue option text]
+backToBar:Leave",
+EBEbarKnight2GreetWelcoming,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
+$faction.id == luddic_church
+NSPExponentCheck welcomingOrHigher",,"<NoComm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text]
+backToBar:Leave",
+EBEbarKnight2GreetSuspicious,ExponentKnightGreeting,"$faction.id == luddic_church
+NSPExponentCheck susOrLower",,"<Suspicious> ""Come, sit, captain. We have become quite familiar with your handiwork. You may spurn the teachings of Ludd, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text]
+backToBar:Leave",
+EBEbarKnight2GreetPather,ExponentKnightGreeting,"NSPExponentCheck isPather",,"<PATHER> ""Come, sit, captain. We have become quite familiar with your handiwork. Your... zeal is off-putting to many within the Church, but the fervor with which you fight has caught the eye of some. You would have been a good Knight.""","EBEbarKnight_three:What is it you need $PersonRank
+backToBar:Leave",
+EBEbarKnight3,DialogOptionSelected,"$option == EBEbarKnight_three","NSPExponentPopulateOptions acceptRefuse","""A holy mission was sent to destroy an unholy vessel, an Abomination of Molochian design. The Curates Technologia cannot match it to anything in our records, and our brothers and sisters have not yet returned."" The senior knight looks out to the stars through a window. ""We believe they have been delivered to the Creator, yet all too soon.""
+
+Turning their attention back to you $heOrShe continues. ""We do not ask you to destroy this enemy, merely to confirm the fate of the fleet sent to destroy it and see if you can glean insight into where it is.""",,
+EBEbarKnight4Refuse,DialogOptionSelected,"$option == EBEbarKnight_refuse",,"EBEbarKnight5Refuse Text","backToBar:Return to the bar",
+EBEbarKnight4AcceptFaithful,DialogOptionSelected,"$option == EBEbarKnight_acceptFaithful","$acceptFaithful = true
+FireAll ExponentKnightAccepted","EBEbarKnight4AcceptFaithful Text",,
+EBEbarKnight4AcceptPather,DialogOptionSelected,"$option == EBEbarKnight_acceptPather","$acceptPather = true
+FireAll ExponentKnightAccepted","EBEbarKnight4AcceptPather Text",,
+EBEbarKnight4AcceptOther,DialogOptionSelected,"$option == EBEbarKnight_acceptOther","$acceptOther = true
+FireAll ExponentKnightAccepted","EBEbarKnight4AcceptOther Text",,
+EBEbarKnight4NextStage,ExponentKnightAccepted,,"$global.exponent_hadFirstTalk = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionStarted
-$global.nsp_beganExponent = true","EBEbar3 Text",,
-EBEbar3Text,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbar3Text ""Blah blah blah beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
+$global.nsp_beganExponent = true",,,
+EBEbarKnight4AcceptFaithfulText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptFaithfulText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
+EBEbarKnight4AcceptPatherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptPatherText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
+EBEbarKnight4AcceptOtherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptOtherText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
 "#END Start",,,,,,
 ,,,,,,
 # InvictusInteraction,,,,,,
@@ -58,7 +91,8 @@ Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped ap
 "#END InvictusInteraction",,,,,,
 ,,,,,,
 # ReportBack,,,,,,
-EBEbarOptionReportBack,AddBarEvents,"NSPCheckCanReportBack","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
+EBEbarOptionReportBack,AddBarEvents,"#NSPCheckCanReportBack
+NSPExponentCheck canReportBackExp","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
 EBEbar4,DialogOptionSelected,"$option == EBEbar_hunt",,"EBEbar3 Text","EBEbar_reportBack:Report back
 backToBar:Leave",
 EBEbar5,DialogOptionSelected,"$option == EBEbar_reportBack",,"EBEbar4 Text","EBEbar_goAlone:Go Alone

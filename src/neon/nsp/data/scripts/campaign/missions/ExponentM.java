@@ -147,6 +147,9 @@ public class ExponentM extends HubMissionWithSearch {
 
         Global.getSector().getFaction("nsp_exponent").setRelationship(Factions.PLAYER,RepLevel.HOSTILE);
 
+
+        makeImportant(originMarket, "$exponent", Stage.FIRST_TALK);
+
         /// ///////////////////////////////// EXPONENT SPAWN CODE /////////////////////////////////
         beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF);
         triggerCreateFleet(FleetSize.SMALL, FleetQuality.VERY_HIGH, "nsp_exponent", FleetTypes.PATROL_SMALL, system2);
@@ -396,9 +399,9 @@ public class ExponentM extends HubMissionWithSearch {
         set("$exponent_system1SName", system1.getNameWithNoType());
         set("$exponent_system2SName", system2.getNameWithNoType());
         set("$exponentCurrentStage", getCurrentStage());
-        set("$exponent_Contact", getPerson());
-        set("$exponent_manOrWoman", getPerson().getManOrWoman());
-        set("$exponent_hisOrHer", getPerson().getHisOrHer());
+//        set("$exponent_Contact", getPerson());
+//        set("$exponent_manOrWoman", getPerson().getManOrWoman());
+//        set("$exponent_hisOrHer", getPerson().getHisOrHer());
 
     }
 
