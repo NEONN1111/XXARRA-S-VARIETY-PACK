@@ -3,7 +3,7 @@
   "hullId": "nsp_recluse",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/derelicts/nsp_recluse.png",
-  "style": "TEMPLAR",
+  "style": "SUPERDERELICT",
   "height": 200,
   "width": 220,
   "center": [110, 100],
@@ -14,7 +14,9 @@
   "builtInMods": [
     "automated",
     "coherer",
-    "delicate"
+    "delicate",
+    "NSP_shield",
+    "NSP_shield_arcing"
   ],
   "builtInWings": [
     "nsp_cardinal",
@@ -165,7 +167,7 @@
       "width": 18,
       "angle": 180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-64, -34],
@@ -173,7 +175,7 @@
       "width": 18,
       "angle": -180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-48, 52],
@@ -181,7 +183,7 @@
       "width": 10,
       "angle": 180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-48, -52],
@@ -189,7 +191,39 @@
       "width": 10,
       "angle": -180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
+    },
+    {
+      "location": [-48, 52],
+      "length": 21,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-48, -52],
+      "length": 21,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-64, 34],
+      "length": 30,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-64, -34],
+      "length": 30,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
     }
   ],
   "bounds": [

@@ -3,7 +3,7 @@
   "hullId": "nsp_gleam",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/derelicts/nsp_gleam3.png",
-  "style": "TEMPLAR",
+  "style": "SUPERDERELICT",
   "height": 84,
   "width": 76,
   "center": [38, 42],
@@ -12,7 +12,9 @@
   "shieldRadius": 67.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "NSP_shield",
+    "NSP_shield_arcing"
   ],
   "builtInWeapons": {
     "WS0001": "lidardish",
@@ -77,20 +79,12 @@
   ],
   "engineSlots": [
     {
-      "location": [-39, 15],
-      "length": 30,
-      "width": 10,
-      "angle": 180,
-      "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
-    },
-    {
       "location": [-39, -15],
       "length": 30,
       "width": 10,
       "angle": -180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-42, -0],
@@ -98,7 +92,39 @@
       "width": 20,
       "angle": 180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
+    },
+    {
+      "location": [-39, 15],
+      "length": 15,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-39, 15],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SMOKY_RED_XVP"
+    },
+    {
+      "location": [-39, -15],
+      "length": 15,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-42, -0],
+      "length": 30,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
     }
   ],
   "bounds": [

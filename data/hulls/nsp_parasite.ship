@@ -3,7 +3,7 @@
   "hullId": "nsp_parasite",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/derelicts/nsp_parasite.png",
-  "style": "TEMPLAR",
+  "style": "SUPERDERELICT",
   "height": 86,
   "width": 106,
   "center": [52, 46],
@@ -12,7 +12,9 @@
   "shieldRadius": 58,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "NSP_shield",
+    "NSP_shield_arcing"
   ],
   "weaponSlots": [
     {
@@ -59,7 +61,7 @@
       "width": 10,
       "angle": 180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-27.5, -18],
@@ -67,7 +69,23 @@
       "width": 10,
       "angle": -180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
+    },
+    {
+      "location": [-27.5, 18],
+      "length": 15,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-27.5, -18],
+      "length": 15,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
     }
   ],
   "bounds": [

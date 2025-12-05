@@ -34,6 +34,11 @@
 		"abilities":{
 		},
 		
+		"SUPERDERELICT":{
+			"SPD_shield_inner":"graphics/fx/NSP_FX/NSP_derelictShield.png",
+			"SPD_shield_outer":"graphics/fx/NSP_FX/NSP_derelictShield_ring.png",
+		},
+
 		"characters":{
 			"Invicta":"graphics/portraits/characters/Invicta.png",
 			"The Exponent":"graphics/portraits/characters/exponent_core.png",

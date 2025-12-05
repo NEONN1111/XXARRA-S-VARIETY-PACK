@@ -3,7 +3,7 @@
   "hullId": "nsp_hermod",
   "hullSize": "CRUISER",
   "spriteName": "graphics/ships/nsp_hermod/nsp_hermod.png",
-  "style": "TEMPLAR",
+  "style": "SUPERDERELICT",
   "height": 210,
   "width": 352,
   "center": [176, 107],
@@ -15,7 +15,9 @@
     "automated",
     "delicate",
     "coherer",
-    "missile_autoloader"
+    "missile_autoloader",
+    "NSP_shield",
+    "NSP_shield_arcing"
   ],
   "weaponSlots": [
     {
@@ -170,7 +172,7 @@
       "width": 22,
       "angle": 180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-108, -67],
@@ -178,7 +180,7 @@
       "width": 22,
       "angle": -180,
       "contrailSize": 30,
-      "style": "COBRA_BOMBER"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-101.5, 87],
@@ -186,7 +188,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-101.5, -87],
@@ -194,7 +196,7 @@
       "width": 12,
       "angle": -180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-85, -101],
@@ -243,6 +245,38 @@
       "angle": -180,
       "contrailSize": 30,
       "style": "ABS_DMN2"
+    },
+    {
+      "location": [-108, -67],
+      "length": 45,
+      "width": 23,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-107.5, 66],
+      "length": 45,
+      "width": 23,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-101.5, 87],
+      "length": 20,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-101.5, -87],
+      "length": 20,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
     }
   ],
   "bounds": [

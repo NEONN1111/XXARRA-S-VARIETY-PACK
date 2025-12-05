@@ -20,7 +20,9 @@
     "nsp_supercomputer",
     "missile_reload",
     "do_not_back_off",
-    "invicta_assignment"
+    "invicta_assignment",
+    "NSP_shield_arcing",
+    "NSP_shield"
   ],
   "builtInWings": [
     "nsp_derelictfighter",
@@ -470,7 +472,7 @@
       "width": 50,
       "angle": 180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-223.5, -94.5],
@@ -478,7 +480,7 @@
       "width": 50,
       "angle": 180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
     },
     {
       "location": [-223.5, 94.5],
@@ -486,7 +488,31 @@
       "width": 50,
       "angle": -180,
       "contrailSize": 30,
-      "style": "ONSLAUGHT_MKI"
+      "style": "SMOKY_RED_XVP"
+    },
+    {
+      "location": [-223.5, 94.5],
+      "length": 60,
+      "width": 50,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-223.5, -94.5],
+      "length": 60,
+      "width": 50,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
+    },
+    {
+      "location": [-359, -0.5],
+      "length": 75,
+      "width": 50,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "SHIP_ORANGE_XVP"
     }
   ],
   "bounds": [

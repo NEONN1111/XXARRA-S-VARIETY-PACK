@@ -34,8 +34,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0012": "sabotpod",
-        "WS0015": "sabotpod"
+        "WS0012": "pulselaser",
+        "WS0015": "pulselaser"
       }
     },
     {

@@ -27,5 +27,27 @@
         "type":"SMOKE" # GLOW or SMOKE
 
 	},
+       "SHIP_ORANGE_XVP":{
+		"engineColor":[255,200,0,100],
+		"contrailParticleSizeMult":1.5,
+		"contrailParticleDuration":2.5,
+		"contrailParticleFinalSizeMult":2,
+		"contrailMaxSpeedMult":0.1,
+		"contrailAngularVelocityMult":0.1,
+		"contrailColor":[150,50,50,75],
+		"glowAlternateColor":[255,75,0,200],
+		"type":"SMOKE" # GLOW or SMOKE
+	},
+        "SMOKY_RED_XVP":{
+		"engineColor":[255,50,0,150],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":5,
+		"contrailParticleFinalSizeMult":4,
+		"contrailMaxSpeedMult":0.1,
+		"contrailAngularVelocityMult":0.1,
+		"contrailColor":[60,50,50,50],
+		"type":"SMOKE" # GLOW or SMOKE
+       },
+
 }
 
