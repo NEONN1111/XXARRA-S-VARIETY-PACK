@@ -19,10 +19,7 @@
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS0001": "vulcan",
-        "WS0002": "vulcan"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,

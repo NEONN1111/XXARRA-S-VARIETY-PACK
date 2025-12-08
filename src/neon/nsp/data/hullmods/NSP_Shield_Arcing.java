@@ -1,5 +1,7 @@
 package neon.nsp.data.hullmods;
 
+//script originally from Bultach Coalition
+
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShipAPI;
@@ -44,7 +46,7 @@ public class NSP_Shield_Arcing extends BaseHullMod {
             Vector2f arcEnd = MathUtils.getPointOnCircumference(ship.getShieldCenterEvenIfNoShield(),ship.getShield().getRadius(),arcStartAngle - arcDistance);
 
             Global.getCombatEngine().spawnEmpArcVisual(arcStart,ship,arcEnd,ship,10,
-                    new Color(255,200,100,255),
+                    new Color(200,60,40,255),
                     new Color(255, 255, 255,255));
 
         }

@@ -28,7 +28,8 @@
         "ADJ1": "nsp_adjutant",
         "ADJ2": "nsp_adjutant",
         "WS0023": "nsp_adjutant",
-        "WS0029": "nsp_adjutant"
+        "WS0029": "nsp_adjutant",
+        "WS0032": "vulcan"
       }
     },
     {
@@ -40,8 +41,6 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "locust",
-        "WS0002": "locust",
         "WS0005": "breach",
         "WS0006": "breach",
         "WS0007": "breach",
@@ -63,8 +62,6 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "heavyac",
-        "WS0004": "heavyac",
         "WS0019": "heavyac",
         "WS0020": "heavyac",
         "WS0030": "heavyac",
@@ -80,13 +77,28 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0003": "dualflak",
+        "WS0004": "dualflak",
         "WS0009": "dualflak",
         "WS0021": "messenger_builtin",
-        "WS0022": "messenger_builtin"
+        "WS0022": "messenger_builtin",
+        "WS0037": "vulcan",
+        "WS0038": "vulcan",
+        "WS0039": "vulcan",
+        "WS0040": "vulcan",
+        "WS0041": "vulcan",
+        "WS0042": "vulcan",
+        "WS0043": "vulcan",
+        "WS0044": "vulcan",
+        "WS0045": "vulcan",
+        "WS0046": "vulcan",
+        "WS0047": "vulcan"
       }
     }
   ],
-  "modules": [
+   "modules": [
     {
       "TEM1": "nsp_templar_prow_standard"
     },
