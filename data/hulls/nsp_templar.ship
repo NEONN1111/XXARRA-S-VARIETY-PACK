@@ -15,12 +15,12 @@
     "automated",
     "drive_field_stabilizer",
     "operations_center",
-    "increased_explosion",
     "heavycompositeintegration_nsp",
     "nsp_supercomputer",
     "missile_reload",
     "do_not_back_off",
-    "invicta_assignment"
+    "invicta_assignment",
+    "reduced_explosion"
   ],
   "builtInWings": [
     "nsp_derelictfighter",

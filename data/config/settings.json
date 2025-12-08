@@ -1,6 +1,8 @@
 {
 	"plugins":{
 		"nsp_mk1CombatPlugin":"neon.nsp.data.scripts.plugins.nsp_mk1CombatPlugin",
+                "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
+
 	},
 	"drop_prob_officer_nsp_invicta_core": 0,
 	"ruleCommandPackages":[
@@ -46,7 +48,10 @@
         "fx":{
 			"NSP_Flare":"graphics/fx/NSP_FX/NSP_FlareA.png",
                         "nsp_enlightenment":"graphics/fx/nsp_enlightenment.png",
-                        "shield_ring":"graphics/fx/distortion.png", 
+                        "shield_ring":"graphics/fx/distortion.png",
+                        "nsp_impact_shockwave":"graphics/fx/nsp_impact_shockwave.png",
+                        "nsp_nuke_risidual":"graphics/fx/nsp_nuke_risidual.png",
+ 
         },
     }
 },
