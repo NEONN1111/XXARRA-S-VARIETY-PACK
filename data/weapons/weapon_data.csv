@@ -4,11 +4,11 @@ Large Vector Engine Cap,nsp_sotf_dkengcap_l2,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,hveldriver_builtin,3,0.3,2250,1000,,80,700,40,10,13,,,,KINETIC,200,,2,4,3,,,,,,,1200,,,300,,,,"no_drop, no_drop_salvage, restricted",,,,Anti Shield,,,,,,,,,,
 Material Obliterator,miningblaster_builtin,0,,1000,900,,1200,,25,7,10,3,0.5,,HIGH_EXPLOSIVE,240,,0,0.6,,,,,,,,900,,,,,,USE_LESS_VS_SHIELDS,"no_drop, no_drop_salvage, restricted",,,,General,,,,,Each bolt deals an additional %s damage to armor. This damage is not reduced by armor.,100,,,,22.125
-Herald Defense Cannon,messenger_builtin,1,,3500,1000,,250,,40,60,20,,,,HIGH_EXPLOSIVE,150,,0,0.17,,,5,6,1,5,,700,,,100,,,"PD,PD_ALSO","he16, pd17, no_drop, no_drop_salvage, restricted",,,,Anti Fighter (Area),,,,,"Each shell has a fuse set to explode at a random distance, resulting in a barrage that's increasingly more deadly at closer ranges.
+Herald Defense Cannon,messenger_builtin,1,,3500,1000,,250,,40,40,20,,,,HIGH_EXPLOSIVE,150,,0,0.17,,,5,6,1,5,,700,,,100,,,"PD,PD_ALSO","he16, pd17, no_drop, no_drop_salvage, restricted",,,,Anti Fighter (Area),,,,,"Each shell has a fuse set to explode at a random distance, resulting in a barrage that's increasingly more deadly at closer ranges.
 
 Will target missiles if no other targets are in range.",,,,,7.4
 ,nsp_hangar_deco,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
-Adjutant Defense Cannon,nsp_adjutant,1,,100000,900,,1000,,,50,40,80,1,8,FRAGMENTATION,230,,0,0.333333,1,,0,5,1,5,,1200,,,,,3,PD_ALSO,"no_drop, no_drop_salvage, restricted",,Domain Restricted,,Anti Armor (Area),,,,,"Each shell has a proximity fuse and deals damage over a wide area when it explodes.
+Adjutant Defense Cannon,nsp_adjutant,1,,100000,900,,1000,,,20,40,80,1,8,FRAGMENTATION,190,,0,0.333333,1,,0,5,1,5,,900,,,,,3,PD_ALSO,"no_drop, no_drop_salvage, restricted",,Domain Restricted,,Anti Armor (Area),,,,,"Each shell has a proximity fuse and deals damage over a wide area when it explodes.
 
 Will target missiles if no other targets are in range.",,,,,40.5
 ,nsp_maneuveringjet,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
