@@ -626,3 +626,4 @@ public class NSP_TemporalJaunt extends BaseShipSystemScript {
         return picker.pick();
     }
 }
+

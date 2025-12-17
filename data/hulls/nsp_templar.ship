@@ -489,7 +489,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [376, -0]
+      "locations": [374, -0]
     },
     {
       "id": "TEM3",
@@ -498,7 +498,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [29, -63]
+      "locations": [28.5, -62]
     },
     {
       "id": "TEM2",
@@ -507,7 +507,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [29, 62]
+      "locations": [28.5, 62.5]
     },
     {
       "id": "LB 1",

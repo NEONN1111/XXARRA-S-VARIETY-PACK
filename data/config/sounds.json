@@ -74,6 +74,22 @@
             {"file":"sounds/elysium_dive_deactivate.ogg","pitch":1,"volume":1},
         ],
 
+ "nsp_invicta_phase1":
+	[
+            {"file":"sounds/nsp_invicta_phase1.ogg","pitch":1,"volume":0.5},
+        ],
+"nsp_invicta_phase2":
+	[
+            {"file":"sounds/nsp_invicta_phase2.ogg","pitch":1,"volume":0.5},
+        ],
+
+"nsp_invicta_phase3":
+	[
+            {"file":"sounds/nsp_invicta_phase3.ogg","pitch":1,"volume":0.5},
+        ],
+
+
+
 
 
 

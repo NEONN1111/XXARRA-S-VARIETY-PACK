@@ -4,9 +4,9 @@
   "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/nsp_templar/nsp_templar_midleft.png",
   "style": "TEMPLAR",
-  "height": 934,
-  "width": 330,
-  "center": [102, 429],
+  "height": 191,
+  "width": 63,
+  "center": [59, 98],
   "collisionRadius": 192.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 193,
@@ -67,8 +67,10 @@
   ],
   "engineSlots": [],
   "bounds": [
-    -74, 48.5,
-    84, 43,
-    -79, 43.5
+    -91, 33,
+    -69.5, 52.5,
+    82, 44.5,
+    76, 39.5,
+    -70, 43.5
   ]
 }
