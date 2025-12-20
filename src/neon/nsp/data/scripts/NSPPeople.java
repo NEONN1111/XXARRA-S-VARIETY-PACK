@@ -41,7 +41,7 @@ public class NSPPeople {
             if (getPerson(EXPONENT_CORE) == null){
                 PersonAPI exponent = Global.getFactory().createPerson();
                 exponent.getName().setFirst("VALTEIL");
-                exponent.getName().setLast("");
+                exponent.getName().setLast(" ");
                 exponent.setFaction("nsp_exponent");
                 exponent.setImportance(PersonImportance.LOW);
                 exponent.setRankId(Ranks.UNKNOWN);

@@ -24,6 +24,7 @@ import neon.nsp.data.scripts.plugins.ExponentFIDConfig;
 import neon.nsp.data.scripts.plugins.ExponentLCFleetFidConfig;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -64,7 +65,7 @@ public class ExponentM extends HubMissionWithSearch {
 
 //        if (barEvent) {
             setGiverRank(Ranks.KNIGHT_CAPTAIN);
-            setGiverPost(Ranks.POST_GENERIC_MILITARY);
+            setGiverPost("luddicKnight");
             giverGender = FullName.Gender.ANY;
             setGiverPortrait(Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getPortraits(giverGender).pick());
             setGiverImportance(pickHighImportance());
@@ -127,6 +128,7 @@ public class ExponentM extends HubMissionWithSearch {
         requireSystemNotNebula();
         requireSystemNotHasPulsar();
         requireSystemNotBlackHole();
+        requireSystemHasNumPlanets(2);
         preferSystemOnFringeOfSector();
         preferSystemUnexplored();
         requireSystemNot(system1);
@@ -151,7 +153,7 @@ public class ExponentM extends HubMissionWithSearch {
         makeImportant(originMarket, "$exponent", Stage.FIRST_TALK);
 
         /// ///////////////////////////////// EXPONENT SPAWN CODE /////////////////////////////////
-        beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF);
+        beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_ALONE);
         triggerCreateFleet(FleetSize.SMALL, FleetQuality.VERY_HIGH, "nsp_exponent", FleetTypes.PATROL_SMALL, system2);
         triggerFleetSetSingleShipOnly();
         triggerFleetSetFlagship(Global.getSettings().getVariant("nsp_exponent_ascendant"));
@@ -195,7 +197,7 @@ public class ExponentM extends HubMissionWithSearch {
         triggerSetFleetDoctrineQuality(4,4,15);
         triggerPickLocationAroundPlayer(0f);
         triggerSpawnFleetAtPickedLocation();
-        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_EXP);
+        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_EXP,Stage.TAKE_THE_FIGHT_ALONE);
         triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,new ExponentLCFleetFidConfig.LuddicEscortFIDConfig());
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE,true);
         triggerSetFleetMemoryValue("$nsp_isExponentLCEscort",true);
@@ -236,6 +238,7 @@ public class ExponentM extends HubMissionWithSearch {
         connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_LCF, Stage.RETURN_POST_FIGHT, "$exponent_hasFought");
         connectWithGlobalFlag(Stage.REPORT_BACK, Stage.TAKE_THE_FIGHT_ALONE, "$exponent_goAlone");
         connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_ALONE, Stage.RETURN_POST_FIGHT, "$exponent_hasFought");
+        connectWithGlobalFlag(Stage.RETURN_POST_FIGHT, Stage.COMPLETED, "$exponent_completed");
 
 //        // Releasing the Exponent instead of letting it join you
 //        connectWithGlobalFlag(Stage.CONTACT_EXPONENT,Stage.RETURN_NO_FIGHT, "$exponent_releasedExponent");
@@ -259,11 +262,20 @@ public class ExponentM extends HubMissionWithSearch {
 
     private SectorEntityToken getPlanetEntityFromSystem(StarSystemAPI system2) {
         WeightedRandomPicker<PlanetAPI> picker = new WeightedRandomPicker<>();
-        picker.addAll(system2.getPlanets());
+        List<PlanetAPI> possiblePlanets = new ArrayList<>();
+        for (PlanetAPI planet : system2.getPlanets()) {
+            if (planet == system2.getStar()) continue;
+            possiblePlanets.add(planet);
+        }
+        picker.addAll(possiblePlanets);
         PlanetAPI pickerPlanet = picker.pick();
-        Global.getSector().getMemoryWithoutUpdate().set("$system2Planet",pickerPlanet);
-        exponentSpawnPlanet = pickerPlanet;
-        return pickerPlanet;
+        for (PlanetAPI planet : system2.getPlanets()) {
+            if (planet != pickerPlanet) continue;
+            Global.getSector().getMemoryWithoutUpdate().set("$system2Planet",planet);
+            exponentSpawnPlanet = planet;
+            return planet;
+        }
+        throw new RuntimeException("Failed to spawn the Exponent");
     }
 
 
@@ -458,6 +470,9 @@ public class ExponentM extends HubMissionWithSearch {
             return true;
         } else if (currentStage == Stage.REPORT_BACK) {
             info.addPara("Report back at " + originMarket.getName() + ".", tc, pad);
+            return true;
+        } else if (currentStage == Stage.TAKE_THE_FIGHT_ALONE) {
+            info.addPara("Defeat the Exponent.", tc, pad);
             return true;
         } else if (currentStage == Stage.TAKE_THE_FIGHT_LCF) {
             info.addPara("Defeat the Exponent.", tc, pad);

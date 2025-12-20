@@ -34,32 +34,30 @@ EBEbarKnight1,DialogOptionSelected,"$option == EBEbar_start","$missionId = $nsp_
 BeginMission nsp_exponent_mission
 Call $global.exponent_ref updateData
 ShowPersonVisual false exponent_KnightContact
-","EBEbar1 Text
-
-You follow the attendant to the knight, sitting at a low table with some tea steeping.
-","EBEbarKnight_two:EBEbarKnight_two Continue
+","You follow the attendant to the knight, sitting at a low table with some tea steeping.
+","EBEbarKnight_two:Continue
 backToBar:Leave",
 EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","FireBest ExponentKnightGreeting",,,
 EBEbarKnight2GreetNeutralComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You have not done much in your faith yet, but the Church believes you can grow to do so.""","EBEbarKnight_three:[Continue option text]
+NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You have not done much in your faith yet, but the Church believes you can grow to do so.""","EBEbarKnight_three:Continue
 backToBar:Leave",
 EBEbarKnight2GreetNeutral,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable",,"<NoComm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text] $PersonRank
+NSPExponentCheck neutralOrFavorable",,"<NoComm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue
 backToBar:Leave",
 EBEbarKnight2GreetWelcomingComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck welcomingOrHigher",,"<Comm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You have done much in your faith, and the Church believes you can continue to do so.""","EBEbarKnight_three:[Continue option text]
+NSPExponentCheck welcomingOrHigher",,"<Comm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You have done much in your faith, and the Church believes you can continue to do so.""","EBEbarKnight_three:Continue
 backToBar:Leave",
 EBEbarKnight2GreetWelcoming,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck welcomingOrHigher",,"<NoComm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text]
+NSPExponentCheck welcomingOrHigher",,"<NoComm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue
 backToBar:Leave",
 EBEbarKnight2GreetSuspicious,ExponentKnightGreeting,"$faction.id == luddic_church
-NSPExponentCheck susOrLower",,"<Suspicious> ""Come, sit, captain. We have become quite familiar with your handiwork. You may spurn the teachings of Ludd, but your effectiveness cannot be ignored.""","EBEbarKnight_three:[Continue option text]
+NSPExponentCheck susOrLower",,"<Suspicious> ""Come, sit, captain. We have become quite familiar with your handiwork. You may spurn the teachings of Ludd, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue
 backToBar:Leave",
-EBEbarKnight2GreetPather,ExponentKnightGreeting,"NSPExponentCheck isPather",,"<PATHER> ""Come, sit, captain. We have become quite familiar with your handiwork. Your... zeal is off-putting to many within the Church, but the fervor with which you fight has caught the eye of some. You would have been a good Knight.""","EBEbarKnight_three:What is it you need $PersonRank
+EBEbarKnight2GreetPather,ExponentKnightGreeting,"NSPExponentCheck isPather",,"<PATHER> ""Come, sit, captain. We have become quite familiar with your handiwork. Your... zeal is off-putting to many within the Church, but the fervor with which you fight has caught the eye of some. You would have been a good Knight.""","EBEbarKnight_three:Continue
 backToBar:Leave",
 EBEbarKnight3,DialogOptionSelected,"$option == EBEbarKnight_three","NSPExponentPopulateOptions acceptRefuse","""A holy mission was sent to destroy an unholy vessel, an Abomination of Molochian design. The Curates Technologia cannot match it to anything in our records, and our brothers and sisters have not yet returned."" The senior knight looks out to the stars through a window. ""We believe they have been delivered to the Creator, yet all too soon.""
 
@@ -82,9 +80,35 @@ EBEbarKnight4AcceptOtherText,ExponentMissionStarted,,"SetTextHighlights $exponen
 ,,,,,,
 # InvictusInteraction,,,,,,
 EBEinvictusOpenDialog,OpenInteractionDialog,"$exponent_invictus","ShowImageVisual space_wreckage
-AddText ""You approach the heavily damaged dreadnought.""
-AddText ""It is scarred by energy burns and hull ruptures, its weaponry melted and deformed, engines lit only by starlight. As your $shipOrFleet closes in, an attempt is made to hail you, seemingly coming from the Invictus husk in front of you.""",,"EBEInvictusInteract:Fly closer to the damaged dreadnought",
-EBEinvictusEnd,DialogOptionSelected,"$option == EBEInvictusInteract","NSPEntityExplode
+$invictusStage = one","You approach the derelict amid the wreckages of the Knight fleet.
+
+Faint signatures of life have been detected, as well as that of a strained reactor.","EBEInvictusBoarding:Send a boarding party",
+EBEinvictusOne,DialogOptionSelected,"$option == EBEInvictusBoarding
+$invictusStage == one","$invictusStage = two","A small cadre of salvors, medics, and technicians depart to board the dormant Invictus. Inside, a frantic engineering team runs circles around a decaying reactor, threatening to go critical. A Knight-Captain steps forward from huddled survivors and a lieutenant of yours acts as your intermediary.","EBEInvictusContinue:Continue",
+EBEinvictusTwo,DialogOptionSelected,"$option == EBEInvictusContinue
+$invictusStage == two","NSPShowInvictusPersonVisual
+$invictusStage = three","""Did the Church send you?"" A nod bumps your feed. The Knight's shoulders sag, a tension released. ""Then the Creator watches over us, truly. We made battle with the foul machine but it... it... it was too fast, too strong, our faith could not resist it, I-""
+
+Another Knight shambles over, dragging a leg scarred by radiation burns.","EBEInvictusContinue:Continue",
+EBEinvictusThree,DialogOptionSelected,"$option == EBEInvictusContinue
+$invictusStage == three","NSPShowInvictusPersonVisual showSecond","""Our faith cannot be questioned. We did not falter. We merely did not win this battle. But the beast was damaged. It fled out of system to lick its wounds.""
+
+""Yes.. we did not falter. But now, our ship threatens to unmake what few of us survived the battle. Please, take us back to the Church, we shall do penance for our failures here.""","0:EBEInvictusLifeboats:Send lifeboats to hold them until the Church can recover them
+1:EBEInvictusTakeOnBoard:Take the survivors on board your fleet
+2:EBEInvictusFate:Leave them to their fate",
+EBEinvictusLifeboatChoice,DialogOptionSelected,"$option == EBEInvictusLifeboats","$global.nspExponentCrewFate = ""Lifeboat""","EBEinvictusLifeboatChoice Response to being put on lifeboats
+","EBEInvictusEnding:Continue",
+EBEinvictusTakeOnBoardChoice,DialogOptionSelected,"$option == EBEInvictusTakeOnBoard","$global.nspExponentCrewFate = ""Aboard""
+AddText ""EBEinvictusTakeOnBoardChoice Response to being taken aboard the player fleet""
+AddTextSmall ""The Knight fleet survivors were successfully picked up and brought aboard"" highlight",,"EBEInvictusEnding:Continue",
+EBEinvictusFateChoice,DialogOptionSelected,"$option == EBEInvictusFate","$global.nspExponentCrewFate = ""Fate""
+AdjustRepPerson $knightCaptain VENGEFUL -100
+AdjustRepPerson $secondKnight VENGEFUL -100","EBEinvictusFateChoice Response to being left to their fate
+","EBEInvictusReturnBoardingParty:Continue",
+EBEinvictusReturnBoardingParty,DialogOptionSelected,"$option == EBEInvictusReturnBoardingParty",,"EBEinvictusReturnBoardingParty Return text of the boarding party","EBEInvictusEnding:Continue",
+EBEinvictusEnd,DialogOptionSelected,"$option == EBEInvictusEnding","ShowImageVisual space_wreckage
+$global.nspDeclinedExponentMission = false
+NSPEntityExplode
 $global.exponent_hasInvestigated = true
 Call $global.exponent_ref updateData
 Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped apart by a large explosion as its reactors go critical, leaving nothing more behind than scrap.","defaultLeave:Continue",
@@ -92,22 +116,54 @@ Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped ap
 ,,,,,,
 # ReportBack,,,,,,
 EBEbarOptionReportBack,AddBarEvents,"#NSPCheckCanReportBack
-NSPExponentCheck canReportBackExp","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
-EBEbar4,DialogOptionSelected,"$option == EBEbar_hunt",,"EBEbar3 Text","EBEbar_reportBack:Report back
-backToBar:Leave",
-EBEbar5,DialogOptionSelected,"$option == EBEbar_reportBack",,"EBEbar4 Text","EBEbar_goAlone:Go Alone
-EBEbar_goWithFleet:Go with fleet
-backToBar:Leave",
-EBEbar5a,DialogOptionSelected,"$option == EBEbar_goAlone","$global.exponent_hasReported = true
+NSPExponentCheck canReportBackExp","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" luddicChurchColor",,,
+EBEbar4a,DialogOptionSelected,"$option == EBEbar_hunt
+!$global.nspDeclinedExponentMission score:1000","ShowPersonVisual false exponent_KnightContact
+FireBest PopulateReportBackOptions","You walk over to the booth with the senior Knight. ""You return."" The knight wears an inscrutable face. ""So, what of our wayward mission?""","
+",
+EBEbar4Lifeboat1,PopulateReportBackOptions,"$option == EBEbar_hunt
+$global.nspExponentCrewFate == ""Lifeboat""",,,"0:EBEReportBackLifeboat:""I left them in some lifeboats to be recovered by a rescue fleet.""",
+EBEbar4Lifeboat2,DialogOptionSelected,"$option == EBEReportBackLifeboat",,"You continue to explain the fate of the mission and its encounter and give the knight the tracking codes for the lifeboats you left behind. 
+
+Relief washes over them, subtly. ""Thank you, $playerName. They will be returned to the ecumene soon enough. As for the enemy...""","0:EBEReportBackCompany:Continue",
+EBEbar4Aboard1,PopulateReportBackOptions,"$option == EBEbar_hunt
+$global.nspExponentCrewFate == ""Aboard""",,,"0:EBEReportBackAboard:""The survivors were taken aboard my fleet.""",
+EBEbar4Aboard2,DialogOptionSelected,"$option == EBEReportBackAboard",,"You explain the fate of the mission and its encounter and give the orders for the survivors to be discharged at the port. 
+
+Relief washes over them, subtly. ""Thank you, $playerName. They shall be counseled and returned to duty soon. As for the enemy...""","0:EBEReportBackCompany:Continue",
+EBEbar4Fate1,PopulateReportBackOptions,"$option == EBEbar_hunt
+$global.nspExponentCrewFate == ""Fate""",,,"0:EBEReportBackFate:""The fleet was destroyed. The survivors hid on an Invictus, but it went critical.""",
+EBEbar4Fate2,DialogOptionSelected,"$option == EBEReportBackFate
+$global.nspExponentCrewFate == ""Fate""",,"You explain, in vague terms, the fate of the mission and its encounter.
+
+The knight takes on a more grim countenance. ""I... I see."" A heavy silence takes the air as a prayer is uttered with a bowed head. 
+
+""Those responsible will pay for trespass against the Creator."" The knight's eyes burn with righteous fury.","0:EBEReportBackCompany:Continue",
+EBEbar4b,DialogOptionSelected,"$option == EBEbar_hunt
+$global.nspDeclinedExponentMission score:1000","ShowPersonVisual false exponent_KnightContact","You walk over to the booth with the senior Knight. Remembering you turned down the hunt, they start speaking. ""You return. Ready to hunt down the foul machine?""","0:EBEAcceptExponentHunt:Accept
+1:EBEDeclineExponentHunt:Decline for now",
+EBEbar5a,DialogOptionSelected,"$option == EBEReportBackCompany
+$global.nspExponentCrewFate == ""Aboard""",,"""The Church would not so easily give a task to those outside the knightly orders, but action must be taken swiftly.""
+
+""Those knights whom survived the first encounter, will you let them accompany you in hunting down the foul machine? They shall find penance and, with the blessings of Ludd, closure, should you succeed.""","0:EBEAcceptExponentHunt:Accept
+1:EBEDeclineExponentHunt:Decline for now",
+EBEbar5b,DialogOptionSelected,"$option == EBEReportBackCompany
+$global.nspExponentCrewFate != ""Aboard""",,"""The Church would not so easily give a task to those outside the knightly orders, but action must be taken swiftly. Will you finish this and hunt down the foul machine?""","0:EBEAcceptExponentHunt:Accept
+1:EBEDeclineExponentHunt:Decline for now",
+EBEbar5decline,DialogOptionSelected,"$option == EBEDeclineExponentHunt","SetShortcut backToBar ""ESCAPE""
+$global.nspDeclinedExponentMission = true","""In that case, this bounty will stay available until you change your mind or a bounty hunter offers their services.""","0:backToBar:Leave",
+EBEbar6,DialogOptionSelected,"$option == EBEAcceptExponentHunt",,"EBEbar6 Text offering the player a backup Knight fleet to fight the Exponent, where the player can choose to go alone or accept the offer.","EBEbar_goAlone:Go Alone
+EBEbar_goWithFleet:Go with fleet",
+EBEbar6a,DialogOptionSelected,"$option == EBEbar_goAlone","$global.exponent_hasReported = true
 $global.exponent_goAlone = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingAlone",,,
-EBEbar5aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","EBEbar5aText ""Blah blah blah Exponent location in $exponent_system2SName "" going alone","backToBar:Return to the bar",
-EBEbar5b,DialogOptionSelected,"$option == EBEbar_goWithFleet","$global.exponent_hasReported = true
+EBEbar6aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","EBEbar5aText ""Blah blah blah Exponent location in $exponent_system2SName "" going alone","backToBar:Return to the bar",
+EBEbar6b,DialogOptionSelected,"$option == EBEbar_goWithFleet","$global.exponent_hasReported = true
 $global.exponent_goWithFleet = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingWithFleet",,,
-EBEbar5bText,ExponentMissionGoingWithFleet,,"SetTextHighlights $exponent_system2SName
+EBEbar6bText,ExponentMissionGoingWithFleet,,"SetTextHighlights $exponent_system2SName
 Call $global.exponent_ref fleetFollowPlayer","EBEbar5bText ""Blah blah blah Exponent location in $exponent_system2SName "" going with escort fleet","backToBar:Return to the bar",
 "#END ReportBack",,,,,,
 ,,,,,,
@@ -127,10 +183,10 @@ exponent_encounterDesc2,BeginFleetEncounter2,"$exponent score:1000","AddTextSmal
 $global.exponent_scannedExponent = true
 Call $global.exponent_ref updateData
 $showAfterScanIntro = true","NSP2 Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-exponent_afterDefeating,AfterNSPExponentDefeat,,,"NSP - pre Luddic Escort interaction text - What shows before Luddic escort contact starts, can be a description of what you see in front of you ","exponentDestroyedContinueOne:NSP Continue 1",
+exponent_afterDefeating,AfterNSPExponentDefeat,,,"NSP - pre Luddic Escort interaction text - What shows before Luddic escort contact starts after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueOne:NSP Continue 1",
 exponent_afterDefeatingOne,DialogOptionSelected,"$option == exponentDestroyedContinueOne","NSPExponentLCFPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Escort commander says","exponentDestroyedContinueTwo:NSP Continue 2",
 exponent_afterDefeatingTwo,DialogOptionSelected,"$option == exponentDestroyedContinueTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Escort commander says","exponentDestroyedContinueThree:NSP Continue 3",
-exponent_afterDefeatingThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","NSP - 3 deep Luddic Escort interaction text - Choice to recover the Exponent or to permanently destroy it as per mission requirement",,
+exponent_afterDefeatingThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","NSP - 3 deep Luddic Escort interaction text - Text where the player can choose to permanently destroy the Exponent, but there also being a possibility to recover it for themselves.",,
 exponent_afterDefeatingDestroy,DialogOptionSelected,"$option == exponentDestroyedPerma","NSPDestroyExponent
 $global.exponent_hasFought = true
 Call $global.exponent_ref reportDebrief
@@ -246,7 +302,7 @@ Call $global.exponent_ref updateData","NSP - 3b deep VALTEIL interaction text - 
 ,,,,,,
 # PostLuddicFight,,,,,,
 ludEscort_afterDefeating,AfterNSPLuddicDefeat,,"$global.exponent_contactExponent = true
-Call $global.exponent_ref updateData","NSP Flavour text for post battle fighting the Luddic Church.
+Call $global.exponent_ref updateData","NSP Text for post battle, having fought the Luddic Church.
 
 Your sensors officer reports in a hushed voice no escape pods were detected leaving any of the ships at any point. A silence befell upon your bridge, being broken by a sudden incoming transmission from the Exponent.","0:luddicPostBattleHail:Answer the hail",
 ludEscort_afterDefeatingContinue,DialogOptionSelected,"$option == luddicPostBattleHail
@@ -255,12 +311,13 @@ $global.exponent_contactExponent","ShowPersonVisual","NSP VALTEIL interaction te
 "#END TakeTheFight",,,,,,
 ,,,,,,
 # ReturnPostFight,,,,,,
-EBEbarOptionPostFight,AddBarEvents,"NSPCheckPostFight","AddBarEvent EBEbar_end ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" storyOptionColor",,,
-EBEbar6,DialogOptionSelected,"$option == EBEbar_end",,"EBEbar6 Text","EBEbar_reportDebrief:Report for debrief
+EBEbarOptionPostFight,AddBarEvents,"NSPCheckPostFight","AddBarEvent EBEbar_end ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" luddicChurchColor",,,
+EBEbar7,DialogOptionSelected,"$option == EBEbar_end",,"EBEbar7 Text","EBEbar_reportDebrief:Report for debrief
 backToBar:Leave",
-EBEbar7,DialogOptionSelected,"$option == EBEbar_reportDebrief","$exponent_completed = true
-Call $global.exponent_ref updateData","EBEbar7 Text","
+EBEbar8,DialogOptionSelected,"$option == EBEbar_reportDebrief","ShowPersonVisual false exponent_KnightContact","EBEbar8 Text","EBEbar_reportDebriefFinal:Report for debrief
 backToBar:Leave",
+EBEbar9,DialogOptionSelected,"$option == EBEbar_reportDebriefFinal","$global.exponent_completed = true
+Call $global.exponent_ref updateData","EBEbar9 Text","backToBar:Leave",
 "#END ReturnPostFight",,,,,,
 "#END ExponentBarMission",,,,,,
 "#END Missions",,,,,,
