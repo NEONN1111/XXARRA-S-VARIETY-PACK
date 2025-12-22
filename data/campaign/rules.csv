@@ -96,15 +96,26 @@ $invictusStage == three","NSPShowInvictusPersonVisual showSecond","""Our faith c
 ""Yes.. we did not falter. But now, our ship threatens to unmake what few of us survived the battle. Please, take us back to the Church, we shall do penance for our failures here.""","0:EBEInvictusLifeboats:Send lifeboats to hold them until the Church can recover them
 1:EBEInvictusTakeOnBoard:Take the survivors on board your fleet
 2:EBEInvictusFate:Leave them to their fate",
-EBEinvictusLifeboatChoice,DialogOptionSelected,"$option == EBEInvictusLifeboats","$global.nspExponentCrewFate = ""Lifeboat""","EBEinvictusLifeboatChoice Response to being put on lifeboats
+EBEinvictusLifeboatChoice,DialogOptionSelected,"$option == EBEInvictusLifeboats","NSPShowInvictusPersonVisual
+$global.nspExponentCrewFate = ""Lifeboat""
+AddText ""You have your lieutenant explain that while you cannot hold the survivors aboard your fleet, you can offer spare lifeboats that will be shielded from the Invictus's detonation where they can await a Church fleet.""
+AddText ""\""I... alright. This is generous of you. The thought of drifting in the great void... to see our ships detonate from afar..."" The Knight-Captain shudders and faces the floor. ""It feels ignoble. But we shall live to serve the Church.\""""
+AddTextSmall ""Deployed lifeboats for the survivors"" highlight","
+
 ","EBEInvictusEnding:Continue",
-EBEinvictusTakeOnBoardChoice,DialogOptionSelected,"$option == EBEInvictusTakeOnBoard","$global.nspExponentCrewFate = ""Aboard""
-AddText ""EBEinvictusTakeOnBoardChoice Response to being taken aboard the player fleet""
-AddTextSmall ""The Knight fleet survivors were successfully picked up and brought aboard"" highlight",,"EBEInvictusEnding:Continue",
-EBEinvictusFateChoice,DialogOptionSelected,"$option == EBEInvictusFate","$global.nspExponentCrewFate = ""Fate""
-AdjustRepPerson $knightCaptain VENGEFUL -100
-AdjustRepPerson $secondKnight VENGEFUL -100","EBEinvictusFateChoice Response to being left to their fate
-","EBEInvictusReturnBoardingParty:Continue",
+EBEinvictusTransferChoice1,DialogOptionSelected,"$option == EBEInvictusTakeOnBoard","ShowDefaultVisual
+$global.nspExponentCrewFate = ""Aboard""
+AddText ""You have your lieutenant coordinate the transfer of survivors onto your fleet. Soon thereafter, the Knight-Captain meets you in person.""",,"EBEInvictusTransferContinue:Continue",
+EBEinvictusTransferChoice2,DialogOptionSelected,"$option == EBEInvictusTransferContinue","NSPShowInvictusPersonVisual
+AddText ""\""I thank you for what you have done, $playerLastName. It feels ignoble to leave our stations behind, but..."" the knight looks away. ""We shall live to serve the Church.\""""
+AddTextSmall ""The survivors were successfully extracted and brought aboard"" highlight",,"EBEInvictusEnding:Continue",
+EBEinvictusFateChoice,DialogOptionSelected,"$option == EBEInvictusFate","ShowDefaultVisual
+$global.nspExponentCrewFate = ""Fate""
+AdjustRepPerson $knightCaptain VENGEFUL -80
+AdjustRepPerson $secondKnight VENGEFUL -100
+AddText ""Your lieutenant turns around and motions for the boarding party to head back to their shuttles.""
+AddText ""Over the comms link, you can hear a number of shouts from survivors calling for rescue and damning your name. The Knight-Captain is silent, but you can feel the contempt, directed at you personally.""
+AddTextSmall ""Left the crew to their ultimate fate"" highlight",,"EBEInvictusEnding:Continue",
 EBEinvictusReturnBoardingParty,DialogOptionSelected,"$option == EBEInvictusReturnBoardingParty",,"EBEinvictusReturnBoardingParty Return text of the boarding party","EBEInvictusEnding:Continue",
 EBEinvictusEnd,DialogOptionSelected,"$option == EBEInvictusEnding","ShowImageVisual space_wreckage
 $global.nspDeclinedExponentMission = false

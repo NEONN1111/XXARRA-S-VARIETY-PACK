@@ -183,6 +183,7 @@ public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
 
                 // Apply explosion damage and force
                 applyExplosionEffects(ship, engine);
+                ship.getFluxTracker().decreaseFlux(ship.getMaxFlux()/4);
 
                 isActive = false;
             }
@@ -336,7 +337,7 @@ public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
         if (teleportInProgress) {
             // Ensure ship is at target location
             if (teleportTargetLocation != null) {
-                ship.getLocation().set(teleportTargetLocation);
+                 ship.getLocation().set(teleportTargetLocation);
             }
 
             // Clear teleport state

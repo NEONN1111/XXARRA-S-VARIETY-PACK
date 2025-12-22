@@ -252,14 +252,18 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
                 if (distanceToUs <= weaponRange + ship.getCollisionRadius()) {
                     // For beam weapons, check if beam is hitting us
                     if (weapon.isBeam()) {
-                        BeamAPI beam = (BeamAPI) weapon.getBeams();
-                        if (beam != null) {
-                            // Check if beam is colliding with our ship
-                            if (MathUtils.isWithinRange(beam.getFrom(), ship.getLocation(), ship.getCollisionRadius()) ||
-                                    MathUtils.isWithinRange(beam.getTo(), ship.getLocation(), ship.getCollisionRadius())) {
-                                return true;
+
+                        for (BeamAPI beam : weapon.getBeams()) {
+//                            BeamAPI beam = (BeamAPI) weapon.getBeams();
+                            if (beam != null) {
+                                // Check if beam is colliding with our ship
+                                if (MathUtils.isWithinRange(beam.getFrom(), ship.getLocation(), ship.getCollisionRadius()) ||
+                                        MathUtils.isWithinRange(beam.getTo(), ship.getLocation(), ship.getCollisionRadius())) {
+                                    return true;
+                                }
                             }
                         }
+
                     }
                     // For projectile weapons, check firing direction
                     else {
@@ -403,11 +407,11 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
         if (target.getHullSize() == ShipAPI.HullSize.CAPITAL_SHIP) {
             // Generate multiple positions around capital
             Vector2f[] capitalPositions = {
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange, targetFacing + 180f), // Directly behind
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 1.2f, targetFacing + 150f), // Slightly to side
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 1.2f, targetFacing + 210f), // Other side
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.8f, targetFacing + 90f), // Close flank
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.8f, targetFacing + 270f)  // Other close flank
+                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange, targetFacing + 180f) // Directly behind
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 1.2f, targetFacing + 150f), // Slightly to side
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 1.2f, targetFacing + 210f), // Other side
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.8f, targetFacing + 90f), // Close flank
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.8f, targetFacing + 270f)  // Other close flank
             };
 
             return findBestPosition(capitalPositions, target);
@@ -415,11 +419,11 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
         // For cruisers, focus on rear and flanks
         else if (target.getHullSize() == ShipAPI.HullSize.CRUISER) {
             Vector2f[] cruiserPositions = {
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange, targetFacing + 180f),
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.9f, targetFacing + 135f),
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.9f, targetFacing + 225f),
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.7f, targetFacing + 90f),
-                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.7f, targetFacing + 270f)
+                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange, targetFacing + 180f)
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.9f, targetFacing + 135f),
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.9f, targetFacing + 225f),
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.7f, targetFacing + 90f),
+//                    MathUtils.getPointOnCircumference(target.getLocation(), adjustedRange * 0.7f, targetFacing + 270f)
             };
 
             return findBestPosition(cruiserPositions, target);
@@ -436,11 +440,11 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
         float closeRange = 200f; // Very close range
 
         Vector2f[] emergencyPositions = {
-                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 180f), // Directly behind
-                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 135f), // Rear quarter
-                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 225f), // Other rear quarter
-                MathUtils.getPointOnCircumference(target.getLocation(), closeRange * 1.5f, targetFacing + 90f), // Close flank
-                MathUtils.getPointOnCircumference(target.getLocation(), closeRange * 1.5f, targetFacing + 270f)  // Other close flank
+                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 180f) // Directly behind
+//                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 135f), // Rear quarter
+//                MathUtils.getPointOnCircumference(target.getLocation(), closeRange, targetFacing + 225f), // Other rear quarter
+//                MathUtils.getPointOnCircumference(target.getLocation(), closeRange * 1.5f, targetFacing + 90f), // Close flank
+//                MathUtils.getPointOnCircumference(target.getLocation(), closeRange * 1.5f, targetFacing + 270f)  // Other close flank
         };
 
         return findBestPosition(emergencyPositions, target);
@@ -450,11 +454,11 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
         float targetFacing = target.getFacing();
 
         Vector2f[] offensivePositions = {
-                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange, targetFacing + 180f),
-                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.8f, targetFacing + 150f),
-                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 1.2f, targetFacing + 210f),
-                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.9f, targetFacing + 90f),
-                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.9f, targetFacing + 270f)
+                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange, targetFacing + 180f)
+//                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.8f, targetFacing + 150f),
+//                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 1.2f, targetFacing + 210f),
+//                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.9f, targetFacing + 90f),
+//                MathUtils.getPointOnCircumference(target.getLocation(), preferredTeleportRange * 0.9f, targetFacing + 270f)
         };
 
         return findBestPosition(offensivePositions, target);
@@ -609,7 +613,7 @@ public class NSP_PhaseTunnelerAI implements ShipSystemAIScript {
         if (system.isActive()) return false;
         if (ship.getFluxTracker().isOverloadedOrVenting()) return false;
 
-        if (ship.getFluxLevel() > 0.9f - (aggressionLevel * 0.3f)) return false;
+//        if (ship.getFluxLevel() > 0.9f - (aggressionLevel * 0.3f)) return false;
 
         float timeSinceLastTeleport = engine.getTotalElapsedTime(false) - lastTeleportTime;
         if (timeSinceLastTeleport < minTeleportCooldown) return false;
