@@ -28,16 +28,15 @@
       "mode": "LINKED",
       "weapons": {
         "WS0005": "heavymauler",
-        "WS0006": "heavymauler"
+        "WS0006": "heavymauler",
+        "WS0018": "hveldriver",
+        "WS0019": "hveldriver"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "WS0018": "heavyac",
-        "WS0019": "heavyac"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,
