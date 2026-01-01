@@ -14,6 +14,7 @@ import com.fs.starfarer.api.util.Misc;
 import exerelin.campaign.DiplomacyManager;
 import kaysaar.aotd_question_of_loyalty.data.scripts.commision.AoTDCommissionDataManager;
 import lunalib.lunaSettings.LunaSettings;
+import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
 import neon.nsp.data.scripts.*;
 import neon.nsp.data.world.nsp_dominatorGen;
 import neon.nsp.data.world.testFilePlzIgnore;
@@ -234,6 +235,7 @@ public class NSPModPlugin extends BaseModPlugin {
         new nsp_gen().generate(Global.getSector());
         new tll_gen().generate(Global.getSector());
         new tll_gen2().generate(Global.getSector());
+        new NSPInvictaSystemGen().generate(Global.getSector());
     }
 
     @Override

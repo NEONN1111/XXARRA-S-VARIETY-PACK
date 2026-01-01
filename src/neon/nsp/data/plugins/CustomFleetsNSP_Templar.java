@@ -51,31 +51,35 @@ public class CustomFleetsNSP_Templar {
 		// this goes way above the vanilla max number of ships in a fleet which causes issues with post-battle recovery, if you care about that
 		addMembersFromVariant(fleet, "nsp_derelict_messenger_standard", 2);
 		addMembersFromVariant(fleet, "nsp_derelominator_standard", 2);
+		addMembersFromVariant(fleet, "nsp_recluse_standard", 3);
 		addMembersFromVariant(fleet, "nsp_superderelict_standard", 1);
 		addMembersFromVariant(fleet, "nsp_superderelict_squall", 1);
 		addMembersFromVariant(fleet, "nsp_hermod_standard", 2);
-		addMembersFromVariant(fleet, "nsp_luminance_standard", 4);
+		addMembersFromVariant(fleet, "nsp_luminance_standard", 3);
+		addMembersFromVariant(fleet, "nsp_gleam_standard", 3);
+		addMembersFromVariant(fleet, "nsp_parasite_standard", 3);
 		addMembersFromVariant(fleet, "rampart_Standard", 3);
-		addMembersFromVariant(fleet,"nsp_rampartcarrier_standard", 1);
+		addMembersFromVariant(fleet, "nsp_derelictpursuit_standard", 2);
+		addMembersFromVariant(fleet,"nsp_rampartcarrier_standard", 2);
 		addMembersFromVariant(fleet, "nsp_siegecarrier_standard", 1);
 		addMembersFromVariant(fleet, "warden_Defense",2);
 		addMembersFromVariant(fleet, "picket_Assault", 2);
-		addMembersFromVariant(fleet,"defender_PD", 2);
-		addMembersFromVariant(fleet,"berserker_Assault", 1);
-		addMembersFromVariant(fleet,"bastillon_Standard", 1);
+		addMembersFromVariant(fleet,"defender_PD", 6);
+		addMembersFromVariant(fleet,"berserker_Assault", 4);
+		addMembersFromVariant(fleet,"bastillon_Standard", 5);
 		addMembersFromVariant(fleet,"nsp_carrierplatform_standard", 3);
 		Random random = Misc.random;
 		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, new RemnantSeededFleetManager.RemnantFleetInteractionConfigGen());
 		// sets it so that fleet uses remnant FIDConfig, mainly so they don't try to run
 		DefaultFleetInflaterParams p = new DefaultFleetInflaterParams(); // super 100% necessary to actually have the fleet inflate
-		p.quality = 0.5f; // if you don't set the inflater, nothing happens and you won't get any officers or d-mods
+		p.quality = 3f; // if you don't set the inflater, nothing happens and you won't get any officers or d-mods
 		fleet.setInflater(new DefaultFleetInflater(p));
 		if (fleet.getInflater() instanceof DefaultFleetInflater) {
 			DefaultFleetInflater dfi = (DefaultFleetInflater) fleet.getInflater();
 			DefaultFleetInflaterParams dfip = (DefaultFleetInflaterParams)dfi.getParams();
 			dfip.allWeapons = true;
-			dfip.averageSMods = 0;
-			dfip.quality = 0.5f;
+			dfip.averageSMods = 3;
+			dfip.quality = 3f;
 			DModManager.assumeAllShipsAreAutomated = true;
 		}
 		initRemnantFleetProperties(random, fleet, false); // makes fleet lose certain abilities like e-burn, behave more like remnant fleets

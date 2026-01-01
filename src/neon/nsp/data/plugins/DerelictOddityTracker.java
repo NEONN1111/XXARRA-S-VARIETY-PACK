@@ -1,5 +1,3 @@
-// handles guilt gain from atrocities
-// Sierra's responses to such are handled in her conversation intel
 package neon.nsp.data.plugins;
 
 
@@ -62,6 +60,26 @@ public class DerelictOddityTracker extends BaseCampaignEventListener implements 
             if (ship.getHullId().contains("nsp_nemetor")) {
                 AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
                 PersonAPI person = plugin.createPerson(Commodities.ALPHA_CORE, fleet.getFaction().getId(), Misc.random);
+                ship.setCaptain(person);
+            }
+            if (ship.getHullId().contains("nsp_recluse")) {
+                AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
+                PersonAPI person = plugin.createPerson(Commodities.BETA_CORE, fleet.getFaction().getId(), Misc.random);
+                ship.setCaptain(person);
+            }
+            if (ship.getHullId().contains("nsp_gleam")) {
+                AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
+                PersonAPI person = plugin.createPerson(Commodities.GAMMA_CORE, fleet.getFaction().getId(), Misc.random);
+                ship.setCaptain(person);
+            }
+            if (ship.getHullId().contains("nsp_parasite")) {
+                AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
+                PersonAPI person = plugin.createPerson(Commodities.GAMMA_CORE, fleet.getFaction().getId(), Misc.random);
+                ship.setCaptain(person);
+            }
+            if (ship.getHullId().contains("nsp_derelictpursuit")) {
+                AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
+                PersonAPI person = plugin.createPerson(Commodities.GAMMA_CORE, fleet.getFaction().getId(), Misc.random);
                 ship.setCaptain(person);
             }
         }
