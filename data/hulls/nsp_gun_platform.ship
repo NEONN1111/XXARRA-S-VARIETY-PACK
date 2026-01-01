@@ -12,11 +12,10 @@
   "shieldRadius": 30,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "targetingunit"
+    "automated"
   ],
   "builtInWeapons": {
-    "WS0001": "hveldriver",
+    "WS0001": "heavyac",
     "WS0002": "vulcan",
     "WS0003": "vulcan",
     "WS0004": "vulcan"

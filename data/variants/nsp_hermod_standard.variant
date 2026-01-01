@@ -3,16 +3,13 @@
   "hullId": "nsp_hermod",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 25,
+  "fluxCapacitors": 14,
   "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "armoredweapons",
-    "hardenedshieldemitter",
     "hardened_subsystems",
-    "targetingunit",
-    "fluxbreakers"
+    "targetingunit"
   ],
   "weaponGroups": [
     {
@@ -42,22 +39,21 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0016": "lightneedler",
-        "WS0017": "lightneedler"
+        "WS0001": "flak",
+        "WS0002": "flak",
+        "WS0003": "vulcan",
+        "WS0004": "vulcan",
+        "WS0007": "vulcan",
+        "WS0008": "vulcan",
+        "WS0016": "vulcan",
+        "WS0017": "vulcan",
+        "WS0018": "flak"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0001": "dualflak",
-        "WS0002": "dualflak",
-        "WS0003": "vulcan",
-        "WS0004": "vulcan",
-        "WS0007": "vulcan",
-        "WS0008": "vulcan",
-        "WS0018": "flak"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,

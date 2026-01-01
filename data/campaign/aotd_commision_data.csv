@@ -1,0 +1,2 @@
+faction_id,ranks,rank_threshold,iconMap,maxPoints,commisionPlugin,tags
+derelict,"mercenary,auxiliary,commander,admiral,planetary_governor,system_governor,grand_moff","mercenary:0,auxiliary:250,commander:500,admiral:750,planetary_governor:850,system_governor:1200,grand_moff:1700",,2000,,up_rank_automatically

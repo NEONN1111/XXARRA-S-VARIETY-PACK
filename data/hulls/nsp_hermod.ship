@@ -15,7 +15,6 @@
     "automated",
     "delicate",
     "coherer",
-    "missile_autoloader",
     "NSP_shield",
     "NSP_shield_arcing"
   ],
@@ -77,7 +76,7 @@
     {
       "id": "WS0013",
       "size": "LARGE",
-      "type": "UNIVERSAL",
+      "type": "HYBRID",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,

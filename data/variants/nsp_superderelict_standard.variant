@@ -3,19 +3,15 @@
   "hullId": "nsp_superderelict",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 25,
+  "fluxCapacitors": 13,
   "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "automated",
     "delicate",
-    "stabilizedshieldemitter",
     "targetingunit",
-    "hardenedshieldemitter",
-    "armoredweapons",
-    "hardened_subsystems",
-    "missleracks"
+    "hardened_subsystems"
   ],
   "weaponGroups": [
     {

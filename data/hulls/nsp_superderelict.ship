@@ -27,7 +27,7 @@
     {
       "id": "WS0002",
       "size": "LARGE",
-      "type": "UNIVERSAL",
+      "type": "HYBRID",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,

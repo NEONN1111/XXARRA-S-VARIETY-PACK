@@ -1,0 +1,48 @@
+{
+  "variantId": "nsp_restored_mothership_standard",
+  "hullId": "nsp_restored_mothership",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "messenger_builtin"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MOD1": "derelict_mothership_bow_module_Standard"
+    },
+    {
+      "MOD2": "derelict_mothership_pod_m_left_Standard"
+    },
+    {
+      "MOD3": "derelict_mothership_pod_engine_left_Standard"
+    },
+    {
+      "MOD4": "derelict_mothership_sensor_mast_Standard"
+    },
+    {
+      "MOD5": "derelict_mothership_pod_m_right_Standard"
+    },
+    {
+      "MOD6": "derelict_mothership_pod_m_left_Standard"
+    }
+  ],
+  "wings": [
+    "nsp_derelictbomber",
+    "nsp_derelictbomber",
+    "nsp_derelictbomber",
+    "nsp_derelictfighter",
+    "nsp_derelictfighter",
+    "nsp_derelictfighter"
+  ]
+}
