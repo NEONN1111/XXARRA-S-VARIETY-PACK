@@ -27,7 +27,7 @@ public class CustomFleetsNSP_Templar {
 		CampaignFleetAPI fleet = Global.getFactory().createEmptyFleet(Factions.DERELICT, "ENFORCEMENT FLEET PS-RC-5590", true);
 
         AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE);
-		LocationAPI location = Global.getSector().getStarSystem("limbo"); // needs a location to spawn at to not crash the game, so if this is going to be null anyways then just give up
+		LocationAPI location = Global.getSector().getStarSystem("Mourn"); // needs a location to spawn at to not crash the game, so if this is going to be null anyways then just give up
 		if (location == null) return;
 
 		// add a fleet member with a custom name
@@ -96,7 +96,7 @@ public class CustomFleetsNSP_Templar {
 
 		// add fleet to a star system and set its location
 
-			SectorEntityToken planet = location.getEntityById("limbo_hades");
+			SectorEntityToken planet = location.getEntityById("test_planet");
 			location.addEntity(fleet);
 			if (planet != null){
 				fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);

@@ -331,6 +331,35 @@ EBEbar9,DialogOptionSelected,"$option == EBEbar_reportDebriefFinal","$global.exp
 Call $global.exponent_ref updateData","EBEbar9 Text","backToBar:Leave",
 "#END ReturnPostFight",,,,,,
 "#END ExponentBarMission",,,,,,
+,,,,,,
+# Invicta,,,,,,
+,,,,,,
+# FirstContactBarMission,,,,,,
+FCbarMissionOptionStart,AddBarEvents,"!$global.invictaFirstContact_started","AddBarEvent goToVigil_barEvent ""[Invicta First Contact Start]"" ""[Invicta First Contact Start Text]"" highlight",,,
+FCbarMission1,DialogOptionSelected,"$option == goToVigil_barEvent","StrangerGenerator independent
+ShowStrangerVisual false","[FCbarMission1 Placeholder Text]","0:invictaStrangerContinueOne:[Placeholder Option]",
+FCbarMission2,DialogOptionSelected,"$option == invictaStrangerContinueOne",,"[FCbarMission2 Placeholder Text]","0:invictaStrangerContinueTwo:[Placeholder Option]",
+FCbarMission3,DialogOptionSelected,"$option == invictaStrangerContinueTwo",,"[FCbarMission3 Placeholder Text]","0:invictaStrangerAccept:[Accept Mission Option]
+0:invictaStrangerRefuse:[Refuse Mission Option]",
+FCbarMissionAccept,DialogOptionSelected,"$option == invictaStrangerAccept","$global.invictaFirstContact_started = true
+BeginMission nsp_invicta_first_contact
+Call $global.invictaFirstContact_ref updateData","[FCbarMissionAccept Placeholder Text]","backToBar:Return to the bar",
+FCbarMissionRefuse,DialogOptionSelected,"$option == invictaStrangerRefuse",,"[FCbarMissionRefuse Placeholder Text]","backToBar:Return to the bar",
+"#END FirstContactBarMission",,,,,,
+,,,,,,
+# FirstContactVigil,,,,,,
+VigilCommRelayOption,COB_AddOptions,"!$global.invictaFirstContactDone
+$player.locationId == vigil
+$tag:comm_relay
+!$objectiveNonFunctional",,,"4:fcvInstallPackage:Install the shady comms package",
+VigilCommRelay1,DialogOptionSelected,"$option == fcvInstallPackage",,"[VigilCommRelay1 Post package installation text]","0:invictaVigilCommRelayContinueOne:[Placeholder Option]",
+VigilCommRelay2,DialogOptionSelected,"$option == invictaVigilCommRelayContinueOne","$global.invictaFirstContact_completed = true
+Call $global.invictaFirstContact_ref updateData
+$global.invictaFirstContactDone = true","[VigilCommRelay2 Invicta Text]","0:invictaVigilCommRelayContinueTwo:[Placeholder Option]",
+VigilCommRelay3,DialogOptionSelected,"$option == invictaVigilCommRelayContinueTwo",,"[VigilCommRelay3 Invicta Text]","0:invictaVigilCommRelayContinueThree:[Placeholder Option]",
+VigilCommRelay4,DialogOptionSelected,"$option == invictaVigilCommRelayContinueThree",,"[VigilCommRelay4 Invicta Text]","100:COB_Leave:Leave",
+"#END FirstContactVigil",,,,,,
+"#END Invicta",,,,,,
 "#END Missions",,,,,,
 ,,,,,,
 # legion MK1,,,,,,

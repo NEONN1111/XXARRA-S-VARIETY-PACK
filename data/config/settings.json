@@ -7,6 +7,7 @@
 	"drop_prob_officer_nsp_invicta_core": 0,
 	"ruleCommandPackages":[
 		"neon.nsp.data.scripts.rulecmd",
+		"neon.nsp.data.scripts.rulecmd.util"
 	],
 	
 	"designTypeColors":{

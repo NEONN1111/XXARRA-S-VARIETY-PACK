@@ -1,8 +1,10 @@
 {
   "ranks": {
-    "luddicKnight":{"name":"Luddic Knight"}
+    "luddicKnight":{"name":"Luddic Knight"},
+    "nsp_stranger": {"name":"Stranger"}
   },
   "posts":{
-    "luddicKnight":{"name":"Luddic Knight"}
+    "luddicKnight":{"name":"Luddic Knight"},
+    "nsp_stranger": {"name":"Stranger"}
   }
 }

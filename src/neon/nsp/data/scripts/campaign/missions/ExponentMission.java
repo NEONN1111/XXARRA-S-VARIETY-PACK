@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ExponentM extends HubMissionWithSearch {
+public class ExponentMission extends HubMissionWithSearch {
 
     public static enum Stage {
         FIRST_TALK,

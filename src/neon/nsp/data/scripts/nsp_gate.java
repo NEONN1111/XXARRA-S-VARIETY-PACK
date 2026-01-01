@@ -62,6 +62,7 @@ public class nsp_gate implements SectorGeneratorPlugin {
 		fueldepot.getMarket().addCondition(Conditions.EXTREME_WEATHER);
 		fueldepot.getMarket().getMemoryWithoutUpdate().set(NOT_RANDOM_MISSION_TARGET, true);
 		fueldepot.getMemoryWithoutUpdate().set("$nsp_fueldepottag", true);
+
 		SectorEntityToken field = system.addTerrain(Terrain.MAGNETIC_FIELD,
 				new MagneticFieldTerrainPlugin.MagneticFieldParams(150f, // terrain effect band width
 						320, // terrain effect middle radius

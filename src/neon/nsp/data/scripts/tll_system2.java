@@ -112,6 +112,7 @@ public class tll_system2 implements SectorGeneratorPlugin {
 		vosta.getMarket().getMemoryWithoutUpdate().set(NOT_RANDOM_MISSION_TARGET, true);
 		vosta.getMemoryWithoutUpdate().set("$tll_vostatag", true);
 
+		/// Limbo's planet also Hades, name change required
 		PlanetAPI hades = system.addPlanet("tll_hades", alaugon, "Hades", "ice_giant", 50, 340, 6000, 450);
 		hades.setCustomDescriptionId("tll_hades");
 		hades.getMarket().addCondition(Conditions.VOLATILES_TRACE);
