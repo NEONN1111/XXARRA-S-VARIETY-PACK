@@ -13,14 +13,14 @@
   "viewOffset": 0,
   "builtInMods": [
     "design_compromises",
-    "automated",
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "weaponSlots": [
     {
       "id": "WS 000",
       "size": "LARGE",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 210,
       "angle": 90,
@@ -38,7 +38,7 @@
     {
       "id": "WS 002",
       "size": "LARGE",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 210,
       "angle": -90,

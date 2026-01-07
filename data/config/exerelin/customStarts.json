@@ -14,7 +14,7 @@
 			"name":"Ancients",
 			"difficulty":"Normal",
 			"desc":"Re-awakening from within the cryochambers deep within the heart of your flagship, your head spins as you struggle to get your bearings, and remember how you even got here in the first place. Although hazy, the last memories you seem to have are... running from something, and making an emergency jump of some kind. Now, however many years later, you awaken.",
-			"className":"data.campaign.customstart.OutOfTimeNSP",
+			"className":"neon.nsp.data.campaign.customstart.OutOfTimeNSP",
 			"randomSector":-1,
 		},
 			],

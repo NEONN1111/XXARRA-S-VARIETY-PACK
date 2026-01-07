@@ -12,8 +12,8 @@
   "shieldRadius": 68,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "weaponSlots": [
     {

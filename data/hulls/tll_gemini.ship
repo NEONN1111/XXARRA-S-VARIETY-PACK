@@ -13,7 +13,8 @@
   "shieldRadius": 106,
   "viewOffset": 0,
   "builtInMods": [
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "weaponSlots": [
     {

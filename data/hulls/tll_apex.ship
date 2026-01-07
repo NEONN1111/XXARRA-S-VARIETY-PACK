@@ -12,9 +12,9 @@
   "shieldRadius": 160,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
     "coherer",
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "builtInWings": [
     "terminator_wing",

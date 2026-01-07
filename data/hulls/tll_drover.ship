@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "bdeck",
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "weaponSlots": [
     {

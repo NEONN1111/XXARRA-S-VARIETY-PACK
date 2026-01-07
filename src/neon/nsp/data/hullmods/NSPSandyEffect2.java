@@ -50,8 +50,8 @@ public class NSPSandyEffect2 extends BaseHullMod {
     public static float REFIRE_DELAY = 0.8f;
     public static float FLUX_PER_DAMAGE = 1f;
     public static float DAMAGE = 90f;
-    public static float MIN_ROF_MULT = 1f;
-    public static float MAX_ROF_MULT = 4f;
+    //public static float MIN_ROF_MULT = 1f;
+    //public static float MAX_ROF_MULT = 4f;
 
     // Visual/Audio effects
     public static float MAX_JITTER_INTENSITY = 1.0f;
@@ -63,16 +63,16 @@ public class NSPSandyEffect2 extends BaseHullMod {
     public static float VOLUME_RAMP_SPEED = 10f;
 
     // Weapon flux reduction system
-    public static float MAX_FLUX_REDUCTION = 50f;
-    public static float FLUX_REDUCTION_PER_KILL = 12.5f;
+    // public static float MAX_FLUX_REDUCTION = 50f;
+    // public static float FLUX_REDUCTION_PER_KILL = 12.5f;
 
     // Fire rate bonus system
-    public static float MAX_FIRE_RATE_BONUS = 25f;
-    public static float FIRE_RATE_PER_KILL = 6.25f;
+    //public static float MAX_FIRE_RATE_BONUS = 25f;
+    //public static float FIRE_RATE_PER_KILL = 6.25f;
 
     // Flux dissipation bonus system
-    public static float MAX_FLUX_DISSIPATION_BONUS = 50f;
-    public static float FLUX_DISSIPATION_PER_KILL = 12.5f;
+    //public static float MAX_FLUX_DISSIPATION_BONUS = 50f;
+    //public static float FLUX_DISSIPATION_PER_KILL = 12.5f;
 
     // Data key for explosion system
     public static String EXPLOSION_DATA_KEY = "nsp_ShroudedLensHullmod_data_key";
@@ -349,11 +349,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
                 return 0f;
         }
         return 1f;
-    }
-
-    public static float getRoF(ShipAPI.HullSize size) {
-        float mult = getPowerMult(size);
-        return MIN_ROF_MULT + (MAX_ROF_MULT - MIN_ROF_MULT) * mult;
     }
 
     public static float getFluxCost(ShipAPI.HullSize size) {
@@ -723,30 +718,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
                 }
             }
 
-            currentFluxReduction = Math.min(MAX_FLUX_REDUCTION, activeKillCount * FLUX_REDUCTION_PER_KILL);
-            currentFireRateBonus = Math.min(MAX_FIRE_RATE_BONUS, activeKillCount * FIRE_RATE_PER_KILL);
-            currentFluxDissipationBonus = Math.min(MAX_FLUX_DISSIPATION_BONUS, activeKillCount * FLUX_DISSIPATION_PER_KILL);
-
-            if (currentFluxReduction > 0) {
-                ship.getMutableStats().getEnergyWeaponFluxCostMod().modifyPercent(id + "_flux", -currentFluxReduction);
-                ship.getMutableStats().getBallisticWeaponFluxCostMod().modifyPercent(id + "_flux", -currentFluxReduction);
-                ship.getMutableStats().getMissileWeaponFluxCostMod().modifyPercent(id + "_flux", -currentFluxReduction);
-            } else {
-                ship.getMutableStats().getEnergyWeaponFluxCostMod().unmodify(id + "_flux");
-                ship.getMutableStats().getBallisticWeaponFluxCostMod().unmodify(id + "_flux");
-                ship.getMutableStats().getMissileWeaponFluxCostMod().unmodify(id + "_flux");
-            }
-
-            if (currentFireRateBonus > 0) {
-                ship.getMutableStats().getEnergyRoFMult().modifyPercent(id + "_rof", currentFireRateBonus);
-                ship.getMutableStats().getBallisticRoFMult().modifyPercent(id + "_rof", currentFireRateBonus);
-                ship.getMutableStats().getMissileRoFMult().modifyPercent(id + "_rof", currentFireRateBonus);
-            } else {
-                ship.getMutableStats().getEnergyRoFMult().unmodify(id + "_rof");
-                ship.getMutableStats().getBallisticRoFMult().unmodify(id + "_rof");
-                ship.getMutableStats().getMissileRoFMult().unmodify(id + "_rof");
-            }
-
             if (currentFluxDissipationBonus > 0) {
                 ship.getMutableStats().getFluxDissipation().modifyPercent(id + "_dissipation", currentFluxDissipationBonus);
             } else {
@@ -823,15 +794,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
                 String bonusText = Misc.getRoundedValue(currentBonus) + "x Speed";
                 if (activeKillCount > 0) {
                     bonusText += " | " + activeKillCount + "/4 Kills Active";
-                    if (currentFluxReduction > 0) {
-                        bonusText += " | -" + (int)currentFluxReduction + "% Flux";
-                    }
-                    if (currentFireRateBonus > 0) {
-                        bonusText += " | +" + (int)currentFireRateBonus + "% RoF";
-                    }
-                    if (currentFluxDissipationBonus > 0) {
-                        bonusText += " | +" + (int)currentFluxDissipationBonus + "% Dissipation";
-                    }
                 }
 
                 if (moteData != null && !moteData.motes.isEmpty()) {

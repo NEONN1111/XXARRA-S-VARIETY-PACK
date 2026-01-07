@@ -67,7 +67,7 @@ public class NSP_TemporalJaunt extends BaseShipSystemScript {
     @Override
     public String getInfoText(ShipSystemAPI system, ShipAPI ship) {
         if (system.isActive()) {
-            return "PHASE SHIFT ACTIVE";
+            return "ELYSIUM DIVE ACTIVE";
         } else if (system.isCoolingDown()) {
             return "RECHARGING";
         }

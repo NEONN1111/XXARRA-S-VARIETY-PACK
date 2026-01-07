@@ -14,7 +14,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "tll_refit",
-    "targetingunit"
+    "targetingunit",
+    "NSP_aiswitch"
   ],
   "weaponSlots": [
     {

@@ -3,7 +3,7 @@
   "hullId": "nsp_derelictpursuit",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 10,
+  "fluxCapacitors": 4,
   "fluxVents": 15,
   "quality": 1,
   "permaMods": [],
@@ -17,16 +17,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0009": "chaingun"
+        "WS0006": "jackhammer",
+        "WS0011": "jackhammer"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0005": "mark9",
-        "WS0006": "heavymg",
-        "WS0011": "heavymg"
+        "WS0005": "mark9"
       }
     },
     {
@@ -45,17 +44,17 @@
       }
     },
     {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {}
-    },
-    {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "WS0003": "dualflak",
         "WS0004": "dualflak"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
     },
     {
       "autofire": false,

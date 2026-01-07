@@ -12,8 +12,8 @@
   "shieldRadius": 200,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "tll_refit"
+    "tll_refit",
+    "NSP_aiswitch"
   ],
   "builtInWeapons": {
     "WS 015": "pusherplate_nova",

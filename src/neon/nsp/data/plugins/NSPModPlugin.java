@@ -58,152 +58,150 @@ public class NSPModPlugin extends BaseModPlugin {
         } catch (Throwable t) {
             log.error("Failed to register ExponentCampaignPluginImpl", t);
         }
-
+                     }
         // Derelict Start initialization
-        Global.getSector().registerPlugin((CampaignPlugin) new NSP_PlayerCore());
+        //Global.getSector().registerPlugin((CampaignPlugin) new NSP_PlayerCore());
 
-        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$ds_nexusStart")) {
-            List<String> variants = new ArrayList<>(Global.getSettings().getAllVariantIds());
+        //if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$ds_nexusStart")) {
+           // List<String> variants = new ArrayList<>(Global.getSettings().getAllVariantIds());
 
-            for (String shipId : Global.getSector().getFaction(Factions.DERELICT).getKnownShips()) {
-                if (!Global.getSettings().getHullSpec(shipId).getManufacturer().equals("Explorarium") &&
-                        !shipId.equals("rat_genesis")) {
+            //for (String shipId : Global.getSector().getFaction(Factions.DERELICT).getKnownShips()) {
+               // if (!Global.getSettings().getHullSpec(shipId).getManufacturer().equals("Explorarium") &&
+                      //  !shipId.equals("rat_genesis")) {
                     // Vague attempt to force remnants to re-learn hulls on save load if they don't have a default role
-                    String role = "combatSmall";
-                    com.fs.starfarer.api.combat.ShipAPI.HullSize hullSize = Global.getSettings().getHullSpec(shipId).getHullSize();
-                    switch (hullSize) {
-                        case CAPITAL_SHIP:
-                            role = "combatCapital";
-                            break;
-                        case CRUISER:
-                            role = "combatLarge";
-                            break;
-                        case DESTROYER:
-                            role = "combatMedium";
-                            break;
-                        default:
-                            role = "combatSmall";
-                    }
+                   // String role = "combatSmall";
+                    //com.fs.starfarer.api.combat.ShipAPI.HullSize hullSize = Global.getSettings().getHullSpec(shipId).getHullSize();
+                    //switch (hullSize) {
+                    //    case CAPITAL_SHIP:
+                    //        role = "combatCapital";
+                    //        break;
+                    //    case CRUISER:
+                    //        role = "combatLarge";
+                    //        break;
+                    //    case DESTROYER:
+                    //        role = "combatMedium";
+                    //        break;
+                    //    default:
+                    //        role = "combatSmall";
+                    //}
+                    //
+                    //for (String variantId : variants) {
+                    //    if (Global.getSettings().getVariant(variantId).getHullSpec().getHullId().equals(shipId)) {
+                    //        Global.getSettings().addDefaultEntryForRole(role, variantId, 0f);
+                    //        Global.getSettings().addEntryForRole(Factions.DERELICT, role, variantId, 0.5f);
+                        //}
+                   // }
+               // }
+            //}
 
-                    for (String variantId : variants) {
-                        if (Global.getSettings().getVariant(variantId).getHullSpec().getHullId().equals(shipId)) {
-                            Global.getSettings().addDefaultEntryForRole(role, variantId, 0f);
-                            Global.getSettings().addEntryForRole(Factions.DERELICT, role, variantId, 0.5f);
-                        }
-                    }
-                }
-            }
+            //if (!Global.getSector().getListenerManager().hasListenerOfClass(NSP_NexusRestocker.class)) {
+                //Global.getSector().getListenerManager().addListener(new NSP_NexusRestocker());
+            //}
 
-            if (!Global.getSector().getListenerManager().hasListenerOfClass(NSP_NexusRestocker.class)) {
-                Global.getSector().getListenerManager().addListener(new NSP_NexusRestocker());
-            }
+            // (newGame) {
+            //  FactionAPI player = Global.getSector().getFaction(Factions.PLAYER);
+            //  FactionAPI remmy = Global.getSector().getFaction(Factions.DERELICT);
+            //
+            //  //boolean peacefulMode = LunaSettings.getBoolean("zz derelictstart", "peacefulMode");
+            //
+            //  for (FactionAPI faction : Global.getSector().getAllFactions()) {
+            //      String factionId = faction.getId();
+            //      if (factionId.equals(Factions.PLAYER)) continue;
+            //      if (factionId.equals(Factions.DERELICT)) continue;
+            //      if (factionId.equals("nex_derelict")) continue;
+            //      if (factionId.equals(Factions.REMNANTS)) continue;
+            //      if (factionId.equals(Factions.OMEGA)) continue;
+            //      if (factionId.equals(Factions.HEGEMONY)) continue;
+            //      if (factionId.equals(Factions.TRITACHYON)) continue;
+            //      if (factionId.equals("sotf_dustkeepers")) continue;
+            //      if (factionId.equals("sotf_dustkeepers_proxies")) continue;
+            //      if (factionId.equals("sotf_sierra_faction")) continue;
+            //      if (factionId.equals("sotf_dreaminggestalt")) continue;
 
-            if (newGame) {
-                FactionAPI player = Global.getSector().getFaction(Factions.PLAYER);
-                FactionAPI remmy = Global.getSector().getFaction(Factions.DERELICT);
+                    //if (peacefulMode) {
+                        //remmy.setRelationship(factionId, 0f);
+                        //remmy.setRelationship(Factions.HEGEMONY, 0f);
+                        //remmy.setRelationship(Factions.TRITACHYON, 0f);
+                        //remmy.setRelationship(Factions.PIRATES, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                        //player.setRelationship(Factions.PIRATES, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                        //remmy.setRelationship(Factions.LUDDIC_PATH, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                        //player.setRelationship(Factions.LUDDIC_PATH, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                    //} else {
+                       // player.setRelationship(factionId, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                       // remmy.setRelationship(factionId, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
+                   // }
+               // }
+               //
+               // FactionAPI derelictFaction = Global.getSector().getFaction("derelict");
+               // FactionAPI nexderelictFaction = Global.getSector().getFaction("nex_derelict");
+               // if (derelictFaction != null && nexderelictFaction != null) {
+               //     FactionAPI playerFaction = Global.getSector().getPlayerFaction();
+               //     playerFaction.setRelationship(nexderelictFaction.getId(), 100f);
+               //     nexderelictFaction.setRelationship(playerFaction.getId(), 100f);
+               //     derelictFaction.setRelationship(nexderelictFaction.getId(), 100f);
+               //     nexderelictFaction.setRelationship(derelictFaction.getId(), 100f);
+               // }
+               //
+               // Global.getSector().getFaction(Factions.PLAYER).setRelationship(Factions.REMNANTS, 0f);
+               // Global.getSector().getFaction(Factions.PLAYER).setRelationship(Factions.OMEGA, 0f);
+               // Global.getSector().getFaction(Factions.DERELICT).setRelationship(Factions.REMNANTS, 0f);
+               // Global.getSector().getFaction(Factions.DERELICT).setRelationship(Factions.OMEGA, 0f);
+               //
+               // if (Global.getSettings().getModManager().isModEnabled("secretsofthefrontier")) {
+               //     Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dustkeepers", 0f);
+               //     Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dustkeepers_proxies", 0f);
+               //     Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_sierra_faction", 0f);
+               //     Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dreaminggestalt", 0f);
+               //     Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dustkeepers", 0f);
+               //     Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dustkeepers_proxies", 0f);
+               //     Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_sierra_faction", 0f);
+               //     Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dreaminggestalt", 0f);
+               // }
+               //
+               // for (com.fs.starfarer.api.fleet.FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+               //     member.getRepairTracker().setCR(1f);
+               //     member.getStatus().setHullFraction(1f);
+               // }
+            //}
 
-                boolean peacefulMode = LunaSettings.getBoolean("zz derelictstart", "peacefulMode");
+            //if (Global.getSettings().getModManager().isModEnabled("IndEvo")) {
+               // Global.getSector().getFaction(Factions.PLAYER).setRelationship("IndEvo_derelict", 0f);
+              //  Global.getSector().getFaction(Factions.DERELICT).setRelationship("IndEvo_derelict", 0f);
+            //}
 
-                for (FactionAPI faction : Global.getSector().getAllFactions()) {
-                    String factionId = faction.getId();
-                    if (factionId.equals(Factions.PLAYER)) continue;
-                    if (factionId.equals(Factions.DERELICT)) continue;
-                    if (factionId.equals("nex_derelict")) continue;
-                    if (factionId.equals(Factions.REMNANTS)) continue;
-                    if (factionId.equals(Factions.OMEGA)) continue;
-                    if (factionId.equals(Factions.HEGEMONY)) continue;
-                    if (factionId.equals(Factions.TRITACHYON)) continue;
-                    if (factionId.equals("sotf_dustkeepers")) continue;
-                    if (factionId.equals("sotf_dustkeepers_proxies")) continue;
-                    if (factionId.equals("sotf_sierra_faction")) continue;
-                    if (factionId.equals("sotf_dreaminggestalt")) continue;
+           // if (Global.getSettings().getModManager().isModEnabled("aotd_qol")) {
+           //     com.fs.starfarer.api.campaign.econ.MarketAPI market = Global.getSector().getEconomy().getMarket("ds_nexusMarket");
+           //     if (market != null) {
+           //         if (market.hasCondition(Conditions.DECIVILIZED_SUBPOP)) {
+           //             market.removeCondition(Conditions.DECIVILIZED_SUBPOP);
+           //         }
+           //         if (market.hasCondition(Conditions.DECIVILIZED)) {
+           //             market.removeCondition(Conditions.DECIVILIZED);
+           //         }
+           //         if (market.hasCondition(Conditions.RECENT_UNREST)) {
+           //             market.removeCondition(Conditions.RECENT_UNREST);
+           //         }
+           //         for (int i = 2; i <= 10; i++) {
+           //             String condId = "population_" + i;
+           //             if (market.hasCondition(condId)) {
+           //                 market.removeCondition(condId);
+           //                 market.addCondition(Conditions.POPULATION_1);
+           //             }
+           //         }
+           //         if (market.getSize() != 1) {
+           //             market.setSize(1);
+           //         }
+           //         if (market.getCommodityData(Commodities.SUPPLIES).getAvailable() < 1500) {
+           //             market.getCommodityData(Commodities.SUPPLIES).addTradeMod(Factions.DERELICT, 1500f, 30f);
+           //         }
+           //         if (market.getCommodityData(Commodities.FOOD).getAvailable() < 3000) {
+           //             market.getCommodityData(Commodities.FOOD).addTradeMod(Factions.DERELICT, 3000f, 30f);
+           //         }
+           //     }
+           // }
 
-                    if (peacefulMode) {
-                        remmy.setRelationship(factionId, 0f);
-                        remmy.setRelationship(Factions.HEGEMONY, 0f);
-                        remmy.setRelationship(Factions.TRITACHYON, 0f);
-                        remmy.setRelationship(Factions.PIRATES, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                        player.setRelationship(Factions.PIRATES, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                        remmy.setRelationship(Factions.LUDDIC_PATH, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                        player.setRelationship(Factions.LUDDIC_PATH, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                    } else {
-                        player.setRelationship(factionId, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                        remmy.setRelationship(factionId, DiplomacyManager.STARTING_RELATIONSHIP_HOSTILE);
-                    }
-                }
-
-                FactionAPI derelictFaction = Global.getSector().getFaction("derelict");
-                FactionAPI nexderelictFaction = Global.getSector().getFaction("nex_derelict");
-                if (derelictFaction != null && nexderelictFaction != null) {
-                    FactionAPI playerFaction = Global.getSector().getPlayerFaction();
-                    playerFaction.setRelationship(nexderelictFaction.getId(), 100f);
-                    nexderelictFaction.setRelationship(playerFaction.getId(), 100f);
-                    derelictFaction.setRelationship(nexderelictFaction.getId(), 100f);
-                    nexderelictFaction.setRelationship(derelictFaction.getId(), 100f);
-                }
-
-                Global.getSector().getFaction(Factions.PLAYER).setRelationship(Factions.REMNANTS, 0f);
-                Global.getSector().getFaction(Factions.PLAYER).setRelationship(Factions.OMEGA, 0f);
-                Global.getSector().getFaction(Factions.DERELICT).setRelationship(Factions.REMNANTS, 0f);
-                Global.getSector().getFaction(Factions.DERELICT).setRelationship(Factions.OMEGA, 0f);
-
-                if (Global.getSettings().getModManager().isModEnabled("secretsofthefrontier")) {
-                    Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dustkeepers", 0f);
-                    Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dustkeepers_proxies", 0f);
-                    Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_sierra_faction", 0f);
-                    Global.getSector().getFaction(Factions.PLAYER).setRelationship("sotf_dreaminggestalt", 0f);
-                    Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dustkeepers", 0f);
-                    Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dustkeepers_proxies", 0f);
-                    Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_sierra_faction", 0f);
-                    Global.getSector().getFaction(Factions.DERELICT).setRelationship("sotf_dreaminggestalt", 0f);
-                }
-
-                for (com.fs.starfarer.api.fleet.FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
-                    member.getRepairTracker().setCR(1f);
-                    member.getStatus().setHullFraction(1f);
-                }
-            }
-
-            if (Global.getSettings().getModManager().isModEnabled("IndEvo")) {
-                Global.getSector().getFaction(Factions.PLAYER).setRelationship("IndEvo_derelict", 0f);
-                Global.getSector().getFaction(Factions.DERELICT).setRelationship("IndEvo_derelict", 0f);
-            }
-
-            if (Global.getSettings().getModManager().isModEnabled("aotd_qol")) {
-                com.fs.starfarer.api.campaign.econ.MarketAPI market = Global.getSector().getEconomy().getMarket("ds_nexusMarket");
-                if (market != null) {
-                    if (market.hasCondition(Conditions.DECIVILIZED_SUBPOP)) {
-                        market.removeCondition(Conditions.DECIVILIZED_SUBPOP);
-                    }
-                    if (market.hasCondition(Conditions.DECIVILIZED)) {
-                        market.removeCondition(Conditions.DECIVILIZED);
-                    }
-                    if (market.hasCondition(Conditions.RECENT_UNREST)) {
-                        market.removeCondition(Conditions.RECENT_UNREST);
-                    }
-                    for (int i = 2; i <= 10; i++) {
-                        String condId = "population_" + i;
-                        if (market.hasCondition(condId)) {
-                            market.removeCondition(condId);
-                            market.addCondition(Conditions.POPULATION_1);
-                        }
-                    }
-                    if (market.getSize() != 1) {
-                        market.setSize(1);
-                    }
-                    if (market.getCommodityData(Commodities.SUPPLIES).getAvailable() < 1500) {
-                        market.getCommodityData(Commodities.SUPPLIES).addTradeMod(Factions.DERELICT, 1500f, 30f);
-                    }
-                    if (market.getCommodityData(Commodities.FOOD).getAvailable() < 3000) {
-                        market.getCommodityData(Commodities.FOOD).addTradeMod(Factions.DERELICT, 3000f, 30f);
-                    }
-                }
-            }
-
-            FactionAPI remmy = Global.getSector().getFaction(Factions.DERELICT);
-            remmy.setShowInIntelTab(true);
-        }
-    }
+           // FactionAPI remmy = Global.getSector().getFaction(Factions.DERELICT);
+           // remmy.setShowInIntelTab(true);
 
     @Override
     public void onNewGameAfterEconomyLoad() {

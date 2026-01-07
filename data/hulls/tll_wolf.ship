@@ -11,6 +11,9 @@
   "shieldCenter": [7, 0],
   "shieldRadius": 70,
   "viewOffset": 50,
+  "builtInMods": [
+    "NSP_aiswitch"
+  ],
   "weaponSlots": [
     {
       "id": "WS 001",

@@ -352,12 +352,15 @@ VigilCommRelayOption,COB_AddOptions,"!$global.invictaFirstContactDone
 $player.locationId == vigil
 $tag:comm_relay
 !$objectiveNonFunctional",,,4:fcvInstallPackage:Install the shady comms package,
-VigilCommRelay1,DialogOptionSelected,$option == fcvInstallPackage,,[VigilCommRelay1 Post package installation text],0:invictaVigilCommRelayContinueOne:[Placeholder Option],
-VigilCommRelay2,DialogOptionSelected,$option == invictaVigilCommRelayContinueOne,"$global.invictaFirstContact_completed = true
+VigilCommRelay1,DialogOptionSelected,$option == fcvInstallPackage,,[VigilCommRelay1 Post package installation text],0:invictaVigilCommRelayContinueOne:Continue,
+VigilCommRelay2,DialogOptionSelected,$option == invictaVigilCommRelayContinueOne,,[VigilCommRelay2 Invicta Text],0:invictaVigilCommRelayContinueTwo:Continue,
+VigilCommRelay3,DialogOptionSelected,$option == invictaVigilCommRelayContinueTwo,,[VigilCommRelay3 Invicta Text],0:invictaVigilCommRelayContinueThree:Continue,
+VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThree,"NSP_Scrollingdialog ""PLACEHOLDER."" ""PLACEHOLDER."" ""PLACEHOLDER."" ""******************************"" ""PLACEHOLDER"" ""PLACEHOLDER."" 
+
+$global.invictaFirstContact_completed = true
 Call $global.invictaFirstContact_ref updateData
-$global.invictaFirstContactDone = true",[VigilCommRelay2 Invicta Text],0:invictaVigilCommRelayContinueTwo:[Placeholder Option],
-VigilCommRelay3,DialogOptionSelected,$option == invictaVigilCommRelayContinueTwo,,[VigilCommRelay3 Invicta Text],0:invictaVigilCommRelayContinueThree:[Placeholder Option],
-VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThree,,[VigilCommRelay4 Invicta Text],100:COB_Leave:Leave,
+$global.invictaFirstContactDone = true",,,
+VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,,,0:defaultLeave:Leave,
 #END FirstContactVigil,,,,,,
 #END Invicta,,,,,,
 #END Missions,,,,,,
@@ -959,78 +962,6 @@ The soft sounds of the error notifications align just so, almost forming a melod
 #END this is wip ignore it pretty please,,,,,,
 ,,,,,,
 ,,,,,,
-nsp_nexusOpen,ShowSalvageEntityDetails,"$customType == derelict_mothership
-$global.ds_nexusStart score:10000
-$player.commissionFactionId == derelict","ds_nexusStartRulecmd 0
-ShowImageVisual orbital","The Explorarium Mothership welcomes you into its graces, allowing you to make use of its services.","0:ds_nexusCargoPicker:Evaluate the Mothership's cargo
-10:ds_nexusProductionPicker:Request immediate production
-30:ds_nexusStorage:Access the storage network
-50:ds_nexusRepair:Initiate fleet repairs
-70:ds_nexusDeconstructMain:Manage automated hulls
-90:ds_nexusConstructMenu:Consider building a new Mothership
-100:defaultLeave:Leave",
-nsp_nexusDialog1,DialogOptionSelected,$option == ds_nexusCargoPicker,ds_nexusStartRulecmd 1,,,
-nsp_nexusDialog2,DialogOptionSelected,$option == ds_nexusProductionPicker,ds_nexusStartRulecmd 2,,,
-nsp_nexusDialog3,DialogOptionSelected,$option == ds_nexusStorage,"EndConversation NO_CONTINUE
-ds_nexusStartRulecmd 3",,,
-nsp_nexusDialog4,DialogOptionSelected,$option == ds_nexusRepair,ds_nexusStartRulecmd 4,Your $shipOrFleet has been fully repaired at no cost.,,
-nsp_nexusDeconstruct1,DialogOptionSelected,$option == ds_nexusDeconstructMain,"ds_nexusStartRulecmd 13
-AddTextSmall ""You may deconstruct automated hulls here, as long as they normally require the Automated Ships skill to recover.""
-AddTextSmall ""Doing so will destroy the ship, but will allow the Explorarium to use the hull.""
-AddTextSmall ""Access to the faction's weapons, fighters and AI cores (if applicable) will be gained at 50/75/90% collection progress respectively."" highlight",,"0:ds_nexusDeconstruct:Deconstruct automated hulls
-30:ds_nexusRecap:View collection progress
-50:ds_nexusBack:Return
-",
-nsp_nexusDeconstruct2,DialogOptionSelected,$option == ds_nexusDeconstruct,ds_nexusStartRulecmd 8,,,
-nsp_nexusDeconstruct3,DialogOptionSelected,$option == ds_nexusRecap,ds_nexusStartRulecmd 12,,,
-nsp_nexusDialog6,DialogOptionSelected,$option == ds_nexusDeconstructProceed,ds_nexusStartRulecmd 9,,,
-nsp_nexusDialog7,DialogOptionSelected,$option == ds_nexusBack,ds_nexusStartRulecmd 5,,,
-nsp_nexusDialog8,DialogOptionSelected,"$option == salExplore
-#$faction.id == derelict
-$customType == derelict_mothership score:10000
-$global.ds_nexusStart",ds_nexusStartRulecmd 5,,,
-nsp_nexusConstructMenu,DialogOptionSelected,$option == ds_nexusConstructMenu,ds_nexusStartRulecmd 14,"With sufficient materials, you may dispatch a fleet to a target star system to construct a new Mothership. It will be fully operational 30 days after the fleet arrives. You must have visited the system at least once.
-You may only dispatch one fleet every 90 days.","0:ds_nexusConstruct:Choose a location
-50:ds_nexusBack:Back",
-nsp_nexusConstruct,DialogOptionSelected,$option == ds_nexusConstruct,ds_nexusStartRulecmd 15,,,
-nsp_nexusStorage1,MarketPostOpen,$id == ds_nexusStorage score:10000,"$tradeMode = OPEN 0
-FireBest MarketPostDock
-ds_nexusStartRulecmd 6",,,
-nsp_nexusStorage2,TradePanelFlavorText,$id == ds_nexusStorage score:1000,,The flow of vast datastores bring with them opportunity. No distance is too great to retrieve a perfect simulacra of vessels and armaments once uploaded.,,
-,,,,,,
-nsp_nexusStorage3,PopulateOptions,"$id == ds_nexusStorage score:10000
-$menuState == main",ds_nexusStartRulecmd 7,,,
-nsp_nexusComms,DialogOptionSelected,$option == ds_nexusComms,"BeginConversation nex_dissonant
-FireBest PickGreeting
-ds_nexusStartRulecmd 10",,,
-nsp_nexusRedirect,DialogOptionSelected,$option == ds_nexusRedirect,"ds_nexusStartRulecmd 11
-ds_nexusStartRulecmd 5",,,
-,,,,,,
-nsp_nexusDefenderSkip,DialogOptionSelected,"$option == salExplore score:1000
-ds_getRemnantDefenders 1
-$global.ds_nexusStart
-$player.commissionFactionId == derelict","
-ds_getRemnantDefenders 2","A fleet of Explorarium drones is guarding this object. They don't appear to recognize you yet.
-
-They're currently engaged in an automatic defensive protocol, but you may transmit your IFF code to disengage it.",0:ds_noyeetRemmies:Continue as normal,
-nsp_nexusDefenderSkip2,DialogOptionSelected,$option == nsp_yeetDerelicts,NSP_GetDerelictDefenders 3,"Your $shipOrFleet chirps out a request with your transponder code, with a request to stand down. Some moments later, the drone defenders process the information and plod away from the wreck in search of a new task.",0:salBeatDefendersContinue:Continue,
-nsp_nexusDefenderSkip3,DialogOptionSelected,$option == nsp_noyeetDerelicts,SalvageDefenderInteraction,,,
-,,,,,,
-# raid option,,,,,,
-ds_nexusPartyTimeShow,DialogOptionSelected,$option == nsp_nexusPartyTimeShow,ds_nexusStartRulecmd 16,,"0:ds_nexusPartyTimeInit:Accept the request
-30:ds_nexusBack:Go back",
-ds_nexusPartyTimeInit,DialogOptionSelected,$option == nsp_nexusPartyTimeInit,ds_nexusStartRulecmd 17,,0:ds_nexusBack:Continue,
-ds_nexusPartyTimeReward,DialogOptionSelected,$option == nsp_nexusPartyTimeReward,ds_nexusStartRulecmd 18,,0:ds_nexusBack:Continue,
-,,,,,,
-# bla,,,,,,
-nsp_nex_marketPostOpenDerelicts,MarketPostOpen,"$hasMarket
-$global.ds_nexusStart score:10000
-$faction.id == nex_derelict score:10000","$tradeMode = OPEN 0
-FireBest MarketPostDock",$TheFactionLong $factionIsOrAre in control of this location. You may interact since you are with Explorarium.,,
-nsp_nex_marketOptionCommDirDerelicts,PopulateOptions,"$hasMarket
-$menuState == main
-$global.ds_nexusStart score:10000
-$faction.id == nex_derelict score:1000",SetEnabled marketCommDir true,,,
 ,,,,,,
 ,,,,,,
 ,,,,,,

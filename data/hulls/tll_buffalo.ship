@@ -12,7 +12,8 @@
   "shieldRadius": 100,
   "viewOffset": 0,
   "builtInMods": [
-    "civgrade"
+    "civgrade",
+    "NSP_aiswitch"
   ],
   "builtInWeapons": {
     "WS 003": "blinker_red",
