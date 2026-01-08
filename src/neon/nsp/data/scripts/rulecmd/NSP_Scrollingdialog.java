@@ -46,7 +46,7 @@ public class NSP_Scrollingdialog extends BaseCommandPlugin {
         private int currdex = 0;
         private String currentpara;
         private String lastpara = null;
-        private final IntervalUtil adder = new IntervalUtil(0.07f, 0.07f);
+        private final IntervalUtil adder = new IntervalUtil(2f, 2f);
         private final IntervalUtil afterPause = new IntervalUtil(1.5f, 1.5f);
         
         public NSPScrollingdialog(InteractionDialogAPI dialog, String dialogOption, ArrayList<String> list) {
@@ -89,6 +89,7 @@ public class NSP_Scrollingdialog extends BaseCommandPlugin {
                     if (currdex >= list.size()) {
                         textPanel.setFontInsignia();
                         dialog.getOptionPanel().addOption("Continue", dialogOption);
+                        dialogOption = "VigilCommRelay5";
                         Global.getSector().removeScript(this);
                         done = true;
                         return;
