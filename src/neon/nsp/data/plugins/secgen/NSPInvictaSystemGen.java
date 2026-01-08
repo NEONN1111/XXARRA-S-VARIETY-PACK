@@ -46,11 +46,21 @@ public class NSPInvictaSystemGen implements SectorGeneratorPlugin {
 //        SectorEntityToken systemCenter = system.initNonStarCenter();
         system.generateAnchorIfNeeded();
 
-        PlanetAPI test = system.addPlanet("test_planet", systemCenter, "test", "frozen", 50, 100, 6000, 450);
+
+
+        PlanetAPI test2 = system.addPlanet("test_planet2", systemCenter, "test2", "ice_giant", 50, 300, 6000, 390);
 //        hades.setCustomDescriptionId("tll_hades");
-        test.getMarket().addCondition(Conditions.VOLATILES_TRACE);
+        test2.getMarket().addCondition(Conditions.VOLATILES_TRACE);
+        test2.getMarket().addCondition(Conditions.EXTREME_WEATHER);
+        test2.getMarket().addCondition(Conditions.HIGH_GRAVITY);
+        test2.getMemoryWithoutUpdate().set("$test_planet2", true);
+
+        PlanetAPI test = system.addPlanet("test_planet", test2, "test", "tundra", 50, 50, 500, 273);
+//        hades.setCustomDescriptionId("tll_hades");
         test.getMarket().addCondition(Conditions.VERY_COLD);
         test.getMarket().addCondition(Conditions.HIGH_GRAVITY);
+        test.getMarket().addCondition(Conditions.RUINS_VAST);
+        test.getMarket().addCondition(Conditions.MILD_CLIMATE);
         test.getMemoryWithoutUpdate().set("$test_planet", true);
 
 
