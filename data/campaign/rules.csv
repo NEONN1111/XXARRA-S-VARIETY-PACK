@@ -359,7 +359,7 @@ VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThr
 
 $global.invictaFirstContact_completed = true
 Call $global.invictaFirstContact_ref updateData
-$global.invictaFirstContactDone = true",,,
+$global.invictaFirstContactDone = true",,0:invictaVigilCommRelayContinueFour:Continue,
 VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,,,0:defaultLeave:Leave,
 #END FirstContactVigil,,,,,,
 #END Invicta,,,,,,
