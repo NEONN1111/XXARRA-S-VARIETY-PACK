@@ -87,8 +87,15 @@
 	[
             {"file":"sounds/nsp_invicta_phase3.ogg","pitch":1,"volume":0.5},
         ],
+	
+"music":{
+	"nsp_invicta_encounter1":
+	[
+            {"file":"nsp_invicta_encounter1.ogg","source":"sounds/music","volume":1},
+        ],
+			
 
-
+},
 
 
 

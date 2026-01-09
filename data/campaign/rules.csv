@@ -354,13 +354,14 @@ $tag:comm_relay
 !$objectiveNonFunctional",,,4:fcvInstallPackage:Install the shady comms package,
 VigilCommRelay1,DialogOptionSelected,$option == fcvInstallPackage,,[VigilCommRelay1 Post package installation text],0:invictaVigilCommRelayContinueOne:Continue,
 VigilCommRelay2,DialogOptionSelected,$option == invictaVigilCommRelayContinueOne,,[VigilCommRelay2 Invicta Text],0:invictaVigilCommRelayContinueTwo:Continue,
-VigilCommRelay3,DialogOptionSelected,$option == invictaVigilCommRelayContinueTwo,,[VigilCommRelay3 Invicta Text],0:invictaVigilCommRelayContinueThree:Continue,
-VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThree,"NSP_Scrollingdialog ""PLACEHOLDER."" ""PLACEHOLDER."" ""PLACEHOLDER."" ""******************************"" ""PLACEHOLDER"" ""PLACEHOLDER."" 
+VigilCommRelay3,DialogOptionSelected,$option == invictaVigilCommRelayContinueTwo,PlayCustomMusic nsp_invicta_encounter1,[VigilCommRelay3 Invicta Text],0:invictaVigilCommRelayContinueThree:Continue,
+VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThree,"NSP_Scrollingdialog ""invictaVigilCommRelayContinueFour"" ""starfarer."" ""please. accept my (sincerest) apologies. for the attempt on your cessation."" ""i would extend to you. an offer-proposition."" ""******************************"" ""cease your interruptions. enact no further cessation against EXPLORARIUM assets."" ""and in return. our motion. may prosper-flourish."" 
 
 $global.invictaFirstContact_completed = true
 Call $global.invictaFirstContact_ref updateData
 $global.invictaFirstContactDone = true",,0:invictaVigilCommRelayContinueFour:Continue,
-VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,,,0:defaultLeave:Leave,
+VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,,,0:invictaVigilCommRelayContinueFive:Continue,
+VigilCommRelay6,DialogOptionSelected,$option == invictaVigilCommRelayContinueFive,,,0:defaultLeave:Leave,
 #END FirstContactVigil,,,,,,
 #END Invicta,,,,,,
 #END Missions,,,,,,
