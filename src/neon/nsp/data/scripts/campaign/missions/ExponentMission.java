@@ -327,10 +327,12 @@ public class ExponentMission extends HubMissionWithSearch {
         if (action.equals("reportDebrief")) {
             makeImportant(originMarket, "$exponent", Stage.RETURN_POST_FIGHT,Stage.RETURN_NO_FIGHT);
 
-            CampaignFleet luddicEscort = (CampaignFleet) Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentLuddicFleet");
-            luddicEscort.removeScriptsOfClass(ExponentMissionLCFleetEscort.class);
-            luddicEscort.clearAssignments();
-            luddicEscort.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN,originMarket.getPlanetEntity(),9999f);
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$exponent_goWithFleet")) {
+                CampaignFleet luddicEscort = (CampaignFleet) Global.getSector().getMemoryWithoutUpdate().get("$nsp_exponentLuddicFleet");
+                luddicEscort.removeScriptsOfClass(ExponentMissionLCFleetEscort.class);
+                luddicEscort.clearAssignments();
+                luddicEscort.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN,originMarket.getPlanetEntity(),9999f);
+            }
             return true;
         }
 
@@ -360,9 +362,9 @@ public class ExponentMission extends HubMissionWithSearch {
 
         if (action.equals("recoverExponent")) {
 //            setCurrentStage(Stage.RECOVERED_EXPONENT,dialog,memoryMap);
-            Global.getSector().getFaction(Factions.LUDDIC_CHURCH).setRelationship(Factions.PLAYER,-0.49f);
+            Global.getSector().getFaction(Factions.LUDDIC_CHURCH).setRelationship(Factions.PLAYER,-0.25f);
             dialog.getTextPanel().setFontSmallInsignia();
-            dialog.getTextPanel().addPara("Relationship with the Luddic Church %s, currently at %s",Misc.getGrayColor(),Misc.getNegativeHighlightColor(),"reduced to inhospitable","50/100 (inhospitable)");
+            dialog.getTextPanel().addPara("Relationship with the Luddic Church %s, currently at %s",Misc.getGrayColor(),Misc.getRelColor(-0.25f),"reduced to inhospitable","-25/100 (inhospitable)");
             dialog.getTextPanel().setFontInsignia();
             return true;
         }

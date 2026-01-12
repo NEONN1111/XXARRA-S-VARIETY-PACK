@@ -12,7 +12,6 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.util.Misc;
 import exerelin.campaign.DiplomacyManager;
-import kaysaar.aotd_question_of_loyalty.data.scripts.commision.AoTDCommissionDataManager;
 import lunalib.lunaSettings.LunaSettings;
 import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
 import neon.nsp.data.scripts.*;
@@ -215,8 +214,10 @@ public class NSPModPlugin extends BaseModPlugin {
 
     @Override
     public void onNewGameAfterProcGen() {
+
         // NSP content
         SectorAPI sector = Global.getSector();
+
         ArrayList<String> systemBL = new ArrayList<>();
         ArrayList<String> tagBL = new ArrayList<>();
         tagBL.add(Tags.THEME_HIDDEN);
@@ -230,6 +231,7 @@ public class NSPModPlugin extends BaseModPlugin {
         nsp_legionGen.generate(Global.getSector());
         nsp_dominatorGen.generate(Global.getSector());
         Global.getSector().getListenerManager().addListener(new nsp_onslaughtMK1Listener());
+
         new nsp_gen().generate(Global.getSector());
         new tll_gen().generate(Global.getSector());
         new tll_gen2().generate(Global.getSector());

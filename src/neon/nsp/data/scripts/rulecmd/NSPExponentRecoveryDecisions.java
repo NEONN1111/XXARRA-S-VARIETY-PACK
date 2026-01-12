@@ -20,7 +20,7 @@ public class NSPExponentRecoveryDecisions extends BaseCommandPlugin {
         optionPanel.addOptionConfirmation("exponentDestroyedPreRecover","Recovering the Exponent will " +
                 "heavily sour relations with the Luddic Church. Are you certain of your choice?","Yes","No");
         optionPanel.addOptionConfirmation("exponentDestroyedPerma","Permanently destroying the Exponent " +
-                "will increase your standing with the Luddic Church quite a bit. Are you certain of your choice?","Yes","No");
+                "will increase your standing with the Luddic Church. Are you certain of your choice?","Yes","No");
 
         return true;
     }
