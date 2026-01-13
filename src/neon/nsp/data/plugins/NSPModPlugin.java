@@ -2,17 +2,13 @@ package neon.nsp.data.plugins;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.util.Misc;
-import exerelin.campaign.DiplomacyManager;
-import lunalib.lunaSettings.LunaSettings;
+import neon.nsp.data.listeners.DerelictBattleListener;
 import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
 import neon.nsp.data.scripts.*;
 import neon.nsp.data.world.nsp_dominatorGen;
@@ -25,7 +21,6 @@ import neon.nsp.data.world.nsp_legionGen;
 import neon.nsp.data.world.nsp_onslaughtMK1Listener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class NSPModPlugin extends BaseModPlugin {
@@ -42,6 +37,9 @@ public class NSPModPlugin extends BaseModPlugin {
         }
         if (!Global.getSector().getListenerManager().hasListenerOfClass(DerelictOddityTracker.class)) {
             Global.getSector().getListenerManager().addListener(new DerelictOddityTracker(), true);
+        }
+        if (!Global.getSector().getListenerManager().hasListenerOfClass(DerelictBattleListener.class)) {
+            Global.getSector().getListenerManager().addListener(new DerelictBattleListener(), true);
         }
         try {
             SectorAPI sector = Global.getSector();

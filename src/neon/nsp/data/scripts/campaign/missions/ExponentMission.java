@@ -348,6 +348,8 @@ public class ExponentMission extends HubMissionWithSearch {
         if (action.equals("releaseExponent")) {
 //            Global.getSector().getFaction("nsp_exponent").setRelationship(Factions.PLAYER,RepLevel.COOPERATIVE);
             CampaignFleet exponentFleet = (CampaignFleet) dialog.getInteractionTarget();
+            exponentFleet.clearAssignments();
+            exponentFleet.getBattle().leave(exponentFleet,false);
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PURSUE_PLAYER,false);
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_DO_NOT_IGNORE_PLAYER,false);
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_IGNORE_PLAYER_COMMS,true);
@@ -356,7 +358,7 @@ public class ExponentMission extends HubMissionWithSearch {
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_FLEET_DO_NOT_GET_SIDETRACKED,true);
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE,false);
             exponentFleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE,true);
-            exponentFleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN,getPlanetEntityFromSystem(system2),9999f);
+            exponentFleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN,getPlanetEntityFromSystem(system2),9999f,"departing to unknown location");
             return true;
         }
 

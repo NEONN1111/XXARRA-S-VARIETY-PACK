@@ -193,12 +193,12 @@ $global.exponent_scannedExponent = true
 Call $global.exponent_ref updateData
 $showAfterScanIntro = true","NSP2 Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
 exponent_afterDefeatingA,AfterNSPExponentDefeat,"$global.exponent_goWithFleet",,"NSP - pre Luddic Escort interaction text - What shows before Luddic escort contact starts after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueOne:NSP Continue 1",
-exponent_afterDefeatingB,AfterNSPExponentDefeat,"$global.exponent_goAlone",,"NSP - pre Luddic Escort interaction text - What shows when alone after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueBOne:NSP Continue 1",
 exponent_afterDefeatingAOne,DialogOptionSelected,"$option == exponentDestroyedContinueOne","NSPExponentLCFPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Escort commander says","exponentDestroyedContinueTwo:NSP Continue 2",
-exponent_afterDefeatingBOne,DialogOptionSelected,"$option == exponentDestroyedContinueBOne","NSPExponentLCEnvoyPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Envoy says","exponentDestroyedContinueBTwo:NSP Continue 2",
 exponent_afterDefeatingATwo,DialogOptionSelected,"$option == exponentDestroyedContinueTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Escort commander says","exponentDestroyedContinueThree:NSP Continue 3",
-exponent_afterDefeatingBTwo,DialogOptionSelected,"$option == exponentDestroyedContinueBTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Envoy says","exponentDestroyedContinueBThree:NSP Continue 3",
 exponent_afterDefeatingAThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","NSP - 3 deep Luddic Escort interaction text - Text where the player can choose to permanently destroy the Exponent, but there also being a possibility to recover it for themselves.",,
+exponent_afterDefeatingB,AfterNSPExponentDefeat,"$global.exponent_goAlone",,"NSP - pre Luddic Escort interaction text - What shows when alone after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueBOne:NSP Continue 1",
+exponent_afterDefeatingBOne,DialogOptionSelected,"$option == exponentDestroyedContinueBOne","NSPExponentLCEnvoyPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Envoy says (along the lines of thank goodness this machine has been destroyed)","exponentDestroyedContinueBTwo:NSP Continue 2",
+exponent_afterDefeatingBTwo,DialogOptionSelected,"$option == exponentDestroyedContinueBTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Envoy says","exponentDestroyedContinueBThree:NSP Continue 3",
 exponent_afterDefeatingBThree,DialogOptionSelected,"$option == exponentDestroyedContinueBThree",,"NSP - 3 deep Luddic Escort interaction text - Text where the head salvor walks up to the player, mentioning the Exponent can be salvaged. This is overheard by the Luddic Envoy who then speaks up. (something along the lines of  ""Captain, you cannot be seriously considering this"") (she continues talking next dialog)","exponentDestroyedContinueBFour:NSP Continue 4",
 exponent_afterDefeatingBFour,DialogOptionSelected,"$option == exponentDestroyedContinueBFour",,"NSP - 4 deep Luddic Escort interaction text - Text where the Luddic Envoy continues about the mission and how critical it is that the Exponent is to be destroyed permanently.
 
@@ -368,14 +368,24 @@ $global.exponent_goAlone
 #EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to fight it or not","0:valteilChooseFight:[Fight VALTEIL option text]
 1:valteilDontFight:[Refuse to fight VALTEIL option text]
 #100:cutCommLink:Cut the comm link",
+,,,,,,
+# FightValteil,,,,,,
 EBEexponentCommLinkAcceptB,DialogOptionSelected,"$option == valteilChooseFight","$hadExponentConvo = true
 #FireAll PopulateOptions
 #EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player ACCEPTING to fight it","100:cutCommLink:Cut the comm link",
+"#END FightValteil",,,,,,
+,,,,,,
+# PeaceValteil,,,,,,
 EBEexponentCommLinkRefuseB,DialogOptionSelected,"$option == valteilDontFight","$hadExponentConvo = true
 $global.exponent_joinExponent = true
 Call $global.exponent_ref updateData
 #FireAll PopulateOptions
-#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to fight it","100:cutCommLink:Cut the comm link",
+#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to fight it","0:valteilDontFightOne:Continue",
+EBEexponentCLRefuseOne,DialogOptionSelected,"$option == valteilDontFightOne",,"NSP - 3 deep VALTEIL interaction text - VALTEIL alone no fight 1","0:valteilDontFightTwo:Continue",
+EBEexponentCLRefuseTwo,DialogOptionSelected,"$option == valteilDontFightTwo",,"NSP - 4 deep VALTEIL interaction text - VALTEIL alone no fight OPTIONAL 2","0:valteilDontFightThree:Continue",
+EBEexponentCLRefuseThree,DialogOptionSelected,"$option == valteilDontFightThree","SetStoryOption valteilContactJoin 3 valteilContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","NSP - 5 deep VALTEIL interaction text - Let VALTEIL join or release them","0:valteilContactJoin:[VALTEIL join option text]
+1:valteilContactRelease:[VALTEIL release option text]",
+"#END PeaceValteil",,,,,,
 "#END WithoutLuddicFleet",,,,,,
 "#END CommLink",,,,,,
 ,,,,,,
