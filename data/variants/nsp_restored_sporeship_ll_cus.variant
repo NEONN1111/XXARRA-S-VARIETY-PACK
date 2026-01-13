@@ -1,0 +1,48 @@
+{
+  "variantId": "nsp_restored_sporeship_ll_cus",
+  "hullId": "nsp_restored_sporeship_ll",
+  "displayName": "Custom",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 5,
+  "quality": 1,
+  "permaMods": [
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair"
+  ],
+  "hullMods": [
+    "eccm",
+    "solar_shielding",
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair",
+    "fluxbreakers",
+    "turretgyros"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "swarmer",
+        "WS0003": "swarmer",
+        "WS0004": "swarmer"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "hveldriver"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

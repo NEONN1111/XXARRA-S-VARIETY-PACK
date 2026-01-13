@@ -1,0 +1,50 @@
+{
+    "displayName": "Restored",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "hullId": "nsp_restored_sporeship",
+    "hullMods": [],
+    "goalVariant": true,
+    "permaMods": [],
+    "quality": 0,
+    "variantId": "nsp_restored_sporeship_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "nsp_restored_sporeship_canistercannon",
+                "WS0002": "nsp_restored_sporeship_canistercannon"
+            }
+        },
+    ],
+    "modules": [
+        {
+		"RSP_SECTION_BL": "nsp_restored_sporeship_bl_cus"
+		},
+        {
+		"RSP_SECTION_BR": "nsp_restored_sporeship_br_cus"
+		},
+        {
+		"RSP_SECTION_LL": "nsp_restored_sporeship_ll_cus"
+		},
+        {
+		"RSP_SECTION_LR": "nsp_restored_sporeship_lr_cus"
+		},
+        {
+		"RSP_SECTION_ML": "nsp_restored_sporeship_ml_cus"
+		},
+        {
+		"RSP_SECTION_MR": "nsp_restored_sporeship_mr_cus"
+		},
+        {
+		"RSP_SECTION_UL": "nsp_restored_sporeship_ul_cus"
+		},
+        {
+		"RSP_SECTION_UR": "nsp_restored_sporeship_ur_cus"
+		},
+        {
+		"RSP_SECTION_TOP": "nsp_restored_sporeship_top_cus"
+		},
+    ]
+}

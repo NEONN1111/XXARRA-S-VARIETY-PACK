@@ -1,0 +1,62 @@
+{
+  "variantId": "nsp_restored_sporeship_top_cus",
+  "hullId": "nsp_restored_sporeship_top",
+  "displayName": "Custom",
+  "goalVariant": true,
+  "fluxCapacitors": 7,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair"
+  ],
+  "hullMods": [
+    "solar_shielding",
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "pulselaser",
+        "WS0003": "pulselaser",
+        "WS0013": "miningblaster_builtin"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "irpulse",
+        "WS0008": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "taclaser",
+        "WS0005": "taclaser",
+        "WS0006": "taclaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "dualflak"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

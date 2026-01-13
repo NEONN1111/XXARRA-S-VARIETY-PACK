@@ -16,7 +16,9 @@
     "missile_reload",
     "reduced_explosion",
     "automated",
-    "nsp_supercomputer"
+    "nsp_supercomputer",
+    "nsp_linkedhull",
+	"eccm"
   ],
   "weaponSlots": [
     {

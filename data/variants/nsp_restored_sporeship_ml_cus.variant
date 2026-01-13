@@ -1,0 +1,51 @@
+{
+  "variantId": "nsp_restored_sporeship_ml_cus",
+  "hullId": "nsp_restored_sporeship_ml",
+  "displayName": "Custom",
+  "goalVariant": true,
+  "fluxCapacitors": 6,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair"
+  ],
+  "hullMods": [
+    "eccm",
+    "solar_shielding",
+    "armoredweapons",
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "salamanderpod",
+        "WS0003": "harpoonpod",
+        "WS0006": "harpoonpod",
+        "WS0007": "salamanderpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0004": "sabotpod",
+        "WS0005": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "ionbeam"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

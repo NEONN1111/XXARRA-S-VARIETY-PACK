@@ -1,0 +1,117 @@
+{
+  "hullName": "Autofactory Section, Left",
+  "hullId": "nsp_restored_sporeship_ll",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/derelicts/nsp_restored_sporeship_ll.png",
+  "style": "LOW_TECH",
+  "height": 216,
+  "width": 164,
+  "center": [84.5, 102.5],
+  "collisionRadius": 144,
+  "shieldCenter": [3, 8.5],
+  "shieldRadius": 133,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "supercomputer",
+    "always_detaches",
+    "reduced_explosion",
+    "chassis_storage",
+    "missile_reload",
+    "nsp_linkedhull"
+  ],
+  "builtInWings": [
+    "mining_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [-8.5, 53.5]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [101.5, 43.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [92.5, 60.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [92.5, 74.5]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -86.5, -18,
+        -83.5, -11,
+        -79, -17.5,
+        -75.5, -11,
+        -72, -17
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [39, 67.5],
+      "length": 80,
+      "width": 18,
+      "angle": 170,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -84, 31.5,
+    -82, 56,
+    -24.5, 61.5,
+    -20, 69,
+    6, 68.5,
+    7, 60.5,
+    38.5, 63.5,
+    45, 81,
+    88.5, 82.5,
+    92, 52,
+    106, 51,
+    106, 36,
+    90, 32.5,
+    107, 19.5,
+    92, 19.5,
+    92, 8,
+    61.5, 7,
+    67.5, -15.5,
+    61, -35.5,
+    66, -67,
+    35, -75.5,
+    -60, -74.5,
+    -65, -57.5,
+    -96.5, -50,
+    -99, 2.5,
+    -93, 31
+  ]
+}

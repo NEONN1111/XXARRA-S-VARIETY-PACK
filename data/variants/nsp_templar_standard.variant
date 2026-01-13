@@ -25,17 +25,17 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "ADJ1": "nsp_adjutant",
-        "ADJ2": "nsp_adjutant",
-        "WS0023": "nsp_adjutant",
-        "WS0029": "nsp_adjutant",
-        "WS0032": "vulcan"
+        "ADJ1": "nsp_restored_sporeship_canistercannon",
+        "WS0029": "nsp_restored_sporeship_canistercannon"
       }
     },
     {
       "autofire": true,
       "mode": "ALTERNATING",
-      "weapons": {}
+      "weapons": {
+        "ADJ2": "nsp_adjutant",
+        "WS0023": "nsp_adjutant"
+      }
     },
     {
       "autofire": true,
@@ -84,6 +84,7 @@
         "WS0009": "dualflak",
         "WS0021": "messenger_builtin",
         "WS0022": "messenger_builtin",
+        "WS0032": "vulcan",
         "WS0037": "vulcan",
         "WS0038": "vulcan",
         "WS0039": "vulcan",
@@ -98,7 +99,7 @@
       }
     }
   ],
-   "modules": [
+  "modules": [
     {
       "TEM1": "nsp_templar_prow_standard"
     },

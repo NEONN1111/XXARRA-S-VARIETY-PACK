@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 
 public class NSPModPlugin extends BaseModPlugin {
-
+    public static boolean hasMagicLib = false;
     public Logger log = Logger.getLogger(this.getClass());
     public testFilePlzIgnore thespawnerrr;
     public static boolean HAS_GRAPHICSLIB = false;
@@ -56,6 +56,8 @@ public class NSPModPlugin extends BaseModPlugin {
             log.error("Failed to register ExponentCampaignPluginImpl", t);
         }
                      }
+
+
         // Derelict Start initialization
         //Global.getSector().registerPlugin((CampaignPlugin) new NSP_PlayerCore());
 
@@ -246,8 +248,11 @@ public class NSPModPlugin extends BaseModPlugin {
             TextureData.readTextureDataCSV((String) "data/config/nsp_texture_data.csv");
             log.info("NSP shaders active");
         }
+        hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
+
         log.info("Welcome to NSP! I'm in your hulls...");
     }
+
 
     // TLL Relations method from original NSP mod plugin
     public static void Tll_Relations() {

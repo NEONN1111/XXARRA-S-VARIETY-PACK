@@ -1,0 +1,194 @@
+{
+  "hullName": "Engine Section, Left",
+  "hullId": "nsp_restored_sporeship_bl",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/derelicts/nsp_restored_sporeship_bl.png",
+  "style": "LOW_TECH",
+  "height": 222,
+  "width": 193,
+  "center": [86, 100.5],
+  "collisionRadius": 148,
+  "shieldCenter": [-3.5, -6],
+  "shieldRadius": 140,
+  "viewOffset": 0,
+  "builtInMods": [
+    "swp_linkedhull",
+    "automated",
+    "supercomputer",
+    "always_detaches",
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "WS0007": "mininglaser",
+    "WS0008": "mininglaser"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-51.5, -41]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-2.5, 69]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 90,
+      "locations": [77.5, 55]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 90,
+      "locations": [62.5, 55]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-57.5, -19]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-56.5, -71]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 50,
+      "locations": [6.5, 47]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 165,
+      "angle": 135,
+      "locations": [-38.5, 39]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 170,
+      "locations": [-16.5, 22]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": -160,
+      "locations": [-35.5, 5]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-60.5, 12]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-87, -24],
+      "length": 144,
+      "width": 60,
+      "angle": 180,
+      "contrailSize": 60,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-94.5, -61],
+      "length": 96,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 24,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-100.5, -81],
+      "length": 96,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-88.5, 14],
+      "length": 104,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 24,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-83.5, 52],
+      "length": 128,
+      "width": 28,
+      "angle": 180,
+      "contrailSize": 28,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -98.5, -77,
+    -91, -53,
+    -84.5, -52.5,
+    -85, 28,
+    -63.5, 35.5,
+    -82.5, 43,
+    -81.5, 60,
+    -68, 70,
+    -33.5, 71,
+    -9, 84.5,
+    10.5, 78.5,
+    20, 58,
+    52, 55,
+    58, 64,
+    83.5, 63.5,
+    87, 56,
+    104.5, 56,
+    118.5, -3.5,
+    105.5, -22.5,
+    21, -39.5,
+    13, -104,
+    -68.5, -102,
+    -80, -93.5,
+    -99, -90
+  ]
+}

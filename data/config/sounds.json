@@ -87,6 +87,27 @@
 	[
             {"file":"sounds/nsp_invicta_phase3.ogg","pitch":1,"volume":0.5},
         ],
+		
+		   # CANISTER CANNON
+    "nsp_canistercannon_fire":[
+        {"file":"sounds/sfx_wpns_guns/nsp_canistercannon_fire.ogg","pitch":0.95,"volume":1.0},
+        {"file":"sounds/sfx_wpns_guns/nsp_canistercannon_fire.ogg","pitch":1.00,"volume":1.0},
+        {"file":"sounds/sfx_wpns_guns/nsp_canistercannon_fire.ogg","pitch":1.05,"volume":1.0},
+    ],
+    "nsp_canistercannon_split":{
+        "sounds":[
+            {"file":"sounds/sfx_impacts/explosion_missile_01.ogg","pitch":0.76,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_01.ogg","pitch":0.77,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_01.ogg","pitch":0.78,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_01.ogg","pitch":0.79,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_01.ogg","pitch":0.80,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.76,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.77,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.78,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.79,"volume":1.0},
+            {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.80,"volume":1.0},
+        ],
+    },
 	
 "music":{
 	"nsp_invicta_encounter1":

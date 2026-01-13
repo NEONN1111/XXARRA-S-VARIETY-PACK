@@ -1,0 +1,133 @@
+{
+  "hullName": "Command Core Section",
+  "hullId": "nsp_restored_sporeship_top",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/derelicts/nsp_restored_sporeship_top.png",
+  "style": "LOW_TECH",
+  "height": 348,
+  "width": 216,
+  "center": [102, 167.5],
+  "collisionRadius": 204,
+  "shieldCenter": [-0.5, -1.5],
+  "shieldRadius": 201.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "swp_linkedhull",
+    "automated",
+    "supercomputer",
+    "always_detaches",
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "WS0013": "miningblaster_builtin"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 0,
+      "locations": [96.5, -7]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [159.5, 46]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [157.5, 80]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 0,
+      "locations": [132.5, -37]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": 0,
+      "locations": [87.5, -29]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 40,
+      "locations": [120.5, 14]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [163.5, 64]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [163.5, 30]
+    },
+    {
+      "id": "WS0013",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": -0.3,
+      "locations": [166.5, -24]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    117, 91,
+    158, 88,
+    165.5, 27.5,
+    157, 20.5,
+    142, 21,
+    143.5, -3,
+    163.5, -4.5,
+    175.5, -16,
+    176, -31,
+    159, -38.5,
+    179.5, -51.5,
+    116.5, -62.5,
+    110, -72.5,
+    -43, -103,
+    -49.5, -94,
+    -91.5, -96.5,
+    -127.5, -113,
+    -159.5, -111.5,
+    -161, 80.5,
+    -138.5, 85,
+    -118.5, 69.5,
+    3.5, 92,
+    88.5, 99
+  ]
+}
