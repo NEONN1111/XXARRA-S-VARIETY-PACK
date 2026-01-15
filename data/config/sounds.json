@@ -114,6 +114,14 @@
 	[
             {"file":"nsp_invicta_encounter1.ogg","source":"sounds/music","volume":1},
         ],
+		"nsp_derelict_hostile":
+	[
+            {"file":"nsp_derelict_hostile.ogg","source":"sounds/music","volume":1},
+        ],
+			"nsp_derelict_friendly":
+	[
+            {"file":"nsp_derelict_friendly.ogg","source":"sounds/music","volume":1},
+        ],
 			
 
 },

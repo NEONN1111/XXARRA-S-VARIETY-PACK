@@ -188,12 +188,12 @@
 	"music":{
 		#"encounter_hostile":"music_default_encounter_hostile",
 		"theme":"music_none",
-		"market_neutral":"music_none",
-		"market_hostile":"music_none",
-		"market_friendly":"music_none",
-		"encounter_neutral":"music_none",
-		"encounter_hostile":"music_none",
-		"encounter_friendly":"music_none",
+		"market_neutral":"music_encounter_mysterious",
+		"market_hostile":"nsp_derelict_hostile",
+		"market_friendly":"nsp_derelict_friendly",
+		"encounter_neutral":"music_encounter_mysterious",
+		"encounter_hostile":"nsp_derelict_hostile",
+		"encounter_friendly":"nsp_derelict_friendly",
 	},
 	#"internalComms":"hegemony_internal",
 	"portraits":{

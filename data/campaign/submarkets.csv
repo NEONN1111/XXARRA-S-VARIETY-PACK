@@ -1,0 +1,2 @@
+id,name,faction,desc,script,icon,order
+,Mobile Storage,player,"Designed to be at the center of fleet operations, and has a dedicated storage for most armaments that considerably reduces the logistical burden on the fleet carrying them. It can also house some small craft.",neon.nsp.data.econ.submarkets.NSP_MobileStoragePlugin,,800.05

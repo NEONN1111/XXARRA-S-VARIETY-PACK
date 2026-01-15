@@ -1,0 +1,2 @@
+name,id,type,tags,activationDays,activationCooldown,durationDays,deactivationDays,deactivationCooldown,unlockedAtStart,defaultForAIFleet,musicSuppression,uiOn,uiOff,uiLoop,worldOn,worldOff,worldLoop,icon,plugin,ai,desc,sortOrder
+Refitting...,,DURATION,,0.1,0,0,0,1,,,,ui_cargo_special_military_drop,,,,,,graphics/icons/markets/autofactory.png,neon.nsp.data.scripts.abilities.NSP_storageHangar,,,910

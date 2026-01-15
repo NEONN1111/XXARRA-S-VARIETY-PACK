@@ -118,6 +118,7 @@ Domain Sporeship,nsp_restored_sporeship,Domain-era Sporeship,Explorarium,nsp_vic
 ,nsp_restored_sporeship_top,Command Core Section,Explorarium,highenergyfocus,1,19500,1000,30000,20000,1000,100,,0,0,0,10,10,1600,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","no_autofit, restricted",,1,4,7,,,,,,,,,
 ,nsp_restored_sporeship_ul,Deflector Section,Explorarium,damper,1,8000,1500,4500,4167,250,75,,0,0,0,10,10,650,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","no_autofit, restricted",,1,2,3,,,,,,,,,
 ,nsp_restored_sporeship_ur,Sensor Section,Explorarium,acausaldisruptor,1,19000,1000,8000,8000,400,140,,0,0,0,10,10,1600,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","no_autofit, restricted",,1,4,8,,,,,,,,,
+Operational Survey Ship,nsp_restored_survey_ship,Explorer,Explorarium,reservewing,30,26000,1300,6000,,500,230,4,10,10,10,7,10,4750,NONE,damper,0,0,0,,,0,0,1250,1250,15,27,8,300000,3,30,480,0.25,30,30,"UNBOARDABLE, HIDE_IN_CODEX, CARRIER, TANKER, FREIGHTER","derelict, no_autofit, auto_rec",,0.4,2,6,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #tellasian league,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

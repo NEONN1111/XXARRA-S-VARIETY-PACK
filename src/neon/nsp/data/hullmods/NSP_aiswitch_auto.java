@@ -14,8 +14,8 @@ import java.util.Random;
 
 public class NSP_aiswitch_auto extends BaseHullMod {
 
-    private final String nerfkey = "NSP_aiswitch_auto";
-    private final int nerflevel = 3;
+    private final String nerfkey = "$NSP_aiswitch_auto";
+    private final int nerflevel = 4;
     private final Random random = new Random();
 
     @Override

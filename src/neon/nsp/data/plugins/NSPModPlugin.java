@@ -236,6 +236,7 @@ public class NSPModPlugin extends BaseModPlugin {
         new tll_gen().generate(Global.getSector());
         new tll_gen2().generate(Global.getSector());
         new NSPInvictaSystemGen().generate(Global.getSector());
+      //  new nsp_dump_system().generate(Global.getSector());
     }
 
     @Override
