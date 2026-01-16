@@ -1,4 +1,6 @@
 {
+	
+	"nsp_InvictaHasRandomThoughts":true,
 	"plugins":{
 		"nsp_mk1CombatPlugin":"neon.nsp.data.scripts.plugins.nsp_mk1CombatPlugin",
                 "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",

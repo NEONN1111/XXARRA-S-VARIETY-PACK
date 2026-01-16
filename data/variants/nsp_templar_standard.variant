@@ -25,16 +25,18 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "ADJ1": "nsp_restored_sporeship_canistercannon",
-        "WS0029": "nsp_restored_sporeship_canistercannon"
+        "ADJ1": "nsp_adjutant",
+        "ADJ2": "nsp_adjutant",
+        "WS0023": "nsp_adjutant",
+        "WS0029": "nsp_adjutant"
       }
     },
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "ADJ2": "nsp_adjutant",
-        "WS0023": "nsp_adjutant"
+        "WS0017": "squall",
+        "WS0018": "squall"
       }
     },
     {
@@ -47,8 +49,6 @@
         "WS0008": "breach",
         "WS0015": "locust",
         "WS0016": "locust",
-        "WS0017": "squall",
-        "WS0018": "squall",
         "WS0027": "breachpod",
         "WS0028": "breachpod"
       }

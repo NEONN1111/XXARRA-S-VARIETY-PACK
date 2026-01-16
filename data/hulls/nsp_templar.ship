@@ -22,7 +22,7 @@
     "invicta_assignment",
     "reduced_explosion",
     "nsp_massivehull",
-	"eccm"
+    "eccm"
   ],
   "builtInWings": [
     "nsp_derelictfighter",
@@ -35,12 +35,12 @@
     "nsp_derelictbomber"
   ],
   "builtInWeapons": {
-    "ADJ1": "nsp_restored_sporeship_canistercannon",
+    "ADJ1": "nsp_adjutant",
     "ADJ2": "nsp_adjutant",
     "WS0021": "messenger_builtin",
     "WS0022": "messenger_builtin",
     "WS0023": "nsp_adjutant",
-    "WS0029": "nsp_restored_sporeship_canistercannon"
+    "WS0029": "nsp_adjutant"
   },
   "weaponSlots": [
     {
