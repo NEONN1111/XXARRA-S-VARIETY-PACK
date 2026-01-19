@@ -12,6 +12,7 @@ import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
@@ -121,8 +122,14 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 			}
 
 			if (!contactExists) {
+				//create fake market for invicta contact
+				MarketAPI sillymarket = Global.getFactory().createMarket("fake_invicta_market", "You shouldn't see this, Meow!", 3);
+				sillymarket.setFactionId(DERELICT);
+				sillymarket.setHidden(true);
+
+
 				// Create contact with null market (valid for AI cores)
-				ContactIntel contactIntel = new ContactIntel(invictaPerson, null);
+				ContactIntel contactIntel = new ContactIntel(invictaPerson, sillymarket);
 				Global.getSector().getIntelManager().addIntel(contactIntel, false);
 				contactIntel.develop(null);
 				contactIntel.setState(ContactIntel.ContactState.PRIORITY);
