@@ -114,14 +114,18 @@
 	[
             {"file":"nsp_invicta_encounter1.ogg","source":"sounds/music","volume":1},
         ],
-		"nsp_derelict_hostile":
+		"nsp_derelict_enc_hostile":
 	[
-            {"file":"nsp_derelict_hostile.ogg","source":"sounds/music","volume":1},
+            {"file":"nsp_derelict_enc_hostile.ogg","source":"sounds/music","volume":1},
         ],
-			"nsp_derelict_friendly":
+			"nsp_derelict_enc_friendly":
 	[
-            {"file":"nsp_derelict_friendly.ogg","source":"sounds/music","volume":1},
+            {"file":"nsp_derelict_enc_friendly.ogg","source":"sounds/music","volume":1},
         ],
+				"nsp_derelict_enc_neutral":
+	[
+            {"file":"nsp_derelict_enc_neutral.ogg","source":"sounds/music","volume":1},
+        ],		
 			
 
 },

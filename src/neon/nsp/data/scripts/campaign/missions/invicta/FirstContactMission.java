@@ -1,9 +1,9 @@
 package neon.nsp.data.scripts.campaign.missions.invicta;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.People;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
@@ -11,9 +11,14 @@ import com.fs.starfarer.api.impl.campaign.missions.academy.GAIntro2;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.campaign.fleet.CampaignFleet;
+import neon.nsp.data.campaign.intel.misc.NSPInvictaConvIntel;
 import neon.nsp.data.scripts.campaign.missions.ExponentMission;
+import neon.nsp.data.scripts.campaign.missions.ExponentMissionLCFleetEscort;
 
 import java.awt.*;
+import java.util.List;
+import java.util.Map;
 
 public class FirstContactMission extends HubMissionWithSearch {
 
@@ -49,7 +54,7 @@ public class FirstContactMission extends HubMissionWithSearch {
 
         makeImportant(getVigilStarSystemCommRelay(), "$invictaFirstContact_vigilCommRelay", Stage.GO_TO_VIGIL_COMM_RELAY);
 //        setStageOnGlobalFlag(Stage.GO_TO_VIGIL_COMM_RELAY, "$invictaFirstContact_commRelay");
-        setStageOnEnteredLocation(Stage.GO_TO_VIGIL_COMM_RELAY,vigil);
+        setStageOnEnteredLocation(Stage.GO_TO_VIGIL_COMM_RELAY, vigil);
         setStageOnGlobalFlag(Stage.COMPLETED, "$invictaFirstContact_completed");
 
         setRepFactionChangesNone();
@@ -88,6 +93,7 @@ public class FirstContactMission extends HubMissionWithSearch {
         }
         return false;
     }
+
 
     @Override
     public String getBaseName() {

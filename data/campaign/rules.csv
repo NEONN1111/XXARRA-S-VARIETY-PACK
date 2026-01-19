@@ -436,10 +436,8 @@ VigilCommRelay3,DialogOptionSelected,$option == invictaVigilCommRelayContinueTwo
 VigilCommRelay4,DialogOptionSelected,$option == invictaVigilCommRelayContinueThree,"NSP_Scrollingdialog ""invictaVigilCommRelayContinueFour"" ""starfarer."" ""please. accept my (sincerest) apologies. for the attempt on your cessation."" ""i would extend to you. an offer."" ""******************************"" ""cease your interruptions. enact no further cessation against EXPLORARIUM assets."" ""and in return. our motion. may prosper."" 
 
 $global.invictaFirstContact_completed = true
-$global.invictaFirstContactDone = true
-$global.nsp_metInvicta = true
-$global.nsp_showInvictaIntel = true",,0:invictaVigilCommRelayContinueFour:Continue,
-VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,,,0:invictaVigilCommRelayContinueFive:Continue,
+$global.invictaFirstContactDone = true",,0:invictaVigilCommRelayContinueFour:Continue,
+VigilCommRelay5,DialogOptionSelected,$option == invictaVigilCommRelayContinueFour,NSPInvictaContactCMD,,0:invictaVigilCommRelayContinueFive:Continue,
 VigilCommRelay6,DialogOptionSelected,$option == invictaVigilCommRelayContinueFive,,,0:defaultLeave:Leave,
 #END FirstContactVigil,,,,,,
 ,,,,,,

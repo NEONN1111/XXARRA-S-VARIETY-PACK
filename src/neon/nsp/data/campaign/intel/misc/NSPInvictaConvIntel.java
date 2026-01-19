@@ -2,6 +2,7 @@ package neon.nsp.data.campaign.intel.misc;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
+import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin; // ADD THIS IMPORT
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.econ.MonthlyReport;
@@ -14,6 +15,7 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
+import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.ui.ButtonAPI;
@@ -28,6 +30,7 @@ import neon.nsp.data.scripts.util.NSP_Misc;
 import org.lwjgl.input.Keyboard;
 
 import java.awt.*;
+import java.util.List; // ADD THIS IMPORT
 import java.util.Set;
 
 import static com.fs.starfarer.api.impl.campaign.ids.Factions.DERELICT;
@@ -36,11 +39,11 @@ import static com.fs.starfarer.api.impl.campaign.ids.Factions.DERELICT;
 /**
  *	Invicta's contact intel, also tracks what she wants to talk about
  */
-
-public class NSPInvictaConvIntel extends BaseIntelPlugin implements FleetEventListener, EconomyTickListener {
+public class NSPInvictaConvIntel extends BaseIntelPlugin {
 
 	private float randThoughtCounter = 0f;
 	private final float randThoughtTime = 30f;
+	private PersonAPI invictaPerson;
 
 	// so we can hotswap the Invicta officer core for the special item in the cargo screen
 	public boolean runWhilePaused() {
@@ -48,131 +51,161 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin implements FleetEventLi
 	}
 
 	public NSPInvictaConvIntel() {
-		Global.getSector().getPlayerFleet().addEventListener(this);
 		Global.getSector().getListenerManager().addListener(this);
 		if (!Global.getSector().getScripts().contains(this)) {
 			Global.getSector().addScript(this);
 		}
 
+		// Find or create Invicta person
+		invictaPerson = findOrCreateInvictaPerson();
+
 		// Auto-add to intel manager
 		Global.getSector().getIntelManager().addIntel(this, false);
+
+		// Also add Invicta as a contact (market can be null for AI cores)
+		addInvictaAsContact();
 	}
 
-	protected void advanceImpl(float amount) {
+	private PersonAPI findOrCreateInvictaPerson() {
+		PersonAPI invicta = null;
 
-
-
-		if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$nsp_metInvicta")) {
-			Global.getSector().getPlayerMemoryWithoutUpdate().set("$nsp_metInvicta", true);
+		// Try to get Invicta from NSP_People first
+		try {
+			invicta = NSP_People.getPerson(NSP_People.INVICTA);
+		} catch (Exception e) {
+			// Fall through to next method
 		}
 
-		if (Global.getSector().getMemoryWithoutUpdate().get(NSP_IDs.MEM_DAYS_WITH_INVICTA) == null) {
-			Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_DAYS_WITH_INVICTA, 0f);
-		} else {
-			float timeHadInvicta = Global.getSector().getMemoryWithoutUpdate().getFloat(NSP_IDs.MEM_DAYS_WITH_INVICTA);
-			Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_DAYS_WITH_INVICTA, timeHadInvicta + Global.getSector().getClock().convertToDays(amount));
-		}
-
-		if (!Global.getSettings().getBoolean("nsp_InvictaHasRandomThoughts")) return;
-		int numInvictaThoughts = Global.getSector().getMemoryWithoutUpdate().getInt(NSP_IDs.MEM_NUM_INVICTA_THOUGHTS);
-		if (numInvictaThoughts > 1) {
-			return;
-		}
-		float toIncrement = Global.getSector().getClock().convertToDays(amount);
-		if (numInvictaThoughts > 0) {
-			toIncrement *= 0.5f; // half as fast if she already has something random to say
-		}
-		randThoughtCounter += toIncrement;
-		if (randThoughtCounter > randThoughtTime) {
-			String topic = getInvictaTopic();
-			if (topic != null) {
-				Global.getSector().getMemoryWithoutUpdate().set(topic, true);
-				Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_NUM_INVICTA_THOUGHTS, numInvictaThoughts + 1);
+		// If not found, try to get from ImportantPeople API
+		if (invicta == null) {
+			try {
+				com.fs.starfarer.api.characters.ImportantPeopleAPI.PersonDataAPI data =
+						Global.getSector().getImportantPeople().getData("nsp_invicta_core");
+				if (data != null) {
+					invicta = data.getPerson();
+				}
+			} catch (Exception e) {
+				// Could not find Invicta person
 			}
-			randThoughtCounter = 0f;
 		}
+
+		// If still not found, create a new person
+		if (invicta == null) {
+			invicta = Global.getFactory().createPerson();
+			invicta.setId("nsp_invicta_core");
+			invicta.setName(new com.fs.starfarer.api.characters.FullName("Invicta", "", com.fs.starfarer.api.characters.FullName.Gender.ANY));
+			invicta.setPortraitSprite(Global.getSettings().getSpriteName("characters", "Invicta"));
+			invicta.setPostId("nsp_invicta_core");
+
+			// Add to ImportantPeople
+			Global.getSector().getImportantPeople().addPerson(invicta);
+		}
+
+		return invicta;
 	}
 
-
-	public static String getInvictaTopic() {
-		float timeHadInvicta = Global.getSector().getMemoryWithoutUpdate().getFloat(NSP_IDs.MEM_DAYS_WITH_INVICTA);
-		WeightedRandomPicker<String> picker = new WeightedRandomPicker<String>();
-		picker.add("$InvictaRandShepherds");
-		picker.add("$InvictaRandRain");
-		picker.add("$InvictaRandReaper");
-		if (timeHadInvicta > 60) {
-			picker.add("$InvictaRand2ndAIWar");
-		}
-		for (String topic : picker.clone().getItems()) {
-			if (Global.getSector().getMemoryWithoutUpdate().contains(topic)) {
-				picker.remove(topic);
-			}
-		}
-		if (picker.isEmpty()) {
-			return null;
-		}
-		return picker.pick();
-	}
-
-	// tracks the player's accomplishments
-	public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
-		if (isDone()) return;
-
-		if (!battle.isPlayerInvolved()) {
-			return;
-		}
-
-		NSP_Misc.setInvictaHasThoughts();
-
-		MemoryAPI sector_mem = Global.getSector().getMemoryWithoutUpdate();
-
-		int biggest = 0;
-		for (CampaignFleetAPI otherFleet : battle.getNonPlayerSideSnapshot()) {
-			if (otherFleet.getFleetPoints() > biggest) {
-				biggest = otherFleet.getFleetPoints();
-				if (!otherFleet.getMemoryWithoutUpdate().contains(MemFlags.MEMORY_KEY_NO_REP_IMPACT) && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-					sector_mem.set("$invictaFactionFought", otherFleet.getFaction().getId(), 60);
+	private void addInvictaAsContact() {
+		if (invictaPerson != null) {
+			// Check if contact already exists
+			boolean contactExists = false;
+			List<IntelInfoPlugin> intelList = Global.getSector().getIntelManager().getIntel(ContactIntel.class);
+			for (IntelInfoPlugin intel : intelList) {
+				if (intel instanceof ContactIntel) {
+					ContactIntel contact = (ContactIntel) intel;
+					if (contact.getPerson() == invictaPerson ||
+							(contact.getPerson() != null && contact.getPerson().getId().equals(invictaPerson.getId()))) {
+						contactExists = true;
+						break;
+					}
 				}
 			}
-			MemoryAPI fleet_mem = otherFleet.getMemoryWithoutUpdate();
-			if (fleet_mem.contains("$ziggurat") && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-				sector_mem.set("$InvictaWitnessedZigFight", true);
-			}
-			for (FleetMemberAPI member : Misc.getSnapshotMembersLost(otherFleet)) {
-				if (member.getHullId().equals("tesseract") && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-					sector_mem.set("$InvictaWitnessedOmega", true);
-				}
-				if (member.getHullId().equals("guardian") && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-					sector_mem.set("$InvictaWitnessedGuardianKill", true);
-				}
-				if (member.getHullId().equals("remnant_station1") && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-					sector_mem.set("$InvictaWitnessedRemStation1Kill", true);
-				}
-				if (member.getHullId().equals("remnant_station2") && Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel")) {
-					sector_mem.set("$InvictaWitnessedRemStation2Kill", true);
-				}
 
+			if (!contactExists) {
+				// Create contact with null market (valid for AI cores)
+				ContactIntel contactIntel = new ContactIntel(invictaPerson, null);
+				Global.getSector().getIntelManager().addIntel(contactIntel, false);
+				contactIntel.develop(null);
+				contactIntel.setState(ContactIntel.ContactState.PRIORITY);
+
+				// Play sound when contact is added
+				Global.getSoundPlayer().playUISound("ui_contact_developed", 1f, 1f);
+
+				// Send notification to player
+				contactIntel.sendUpdateIfPlayerHasIntel(null, false);
 			}
 		}
 	}
 
-	public void reportFleetDespawnedToListener(CampaignFleetAPI fleet, CampaignEventListener.FleetDespawnReason reason, Object param) {
-
+	// Helper method to get Invicta person
+	public PersonAPI getInvictaPerson() {
+		return invictaPerson;
 	}
 
-	public void reportRaidForValuablesFinishedBeforeCargoShown(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData, CargoAPI cargo) {
-		//
-	}
-	public void reportRaidToDisruptFinished(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData, Industry industry) {
-		//
-	}
+	//protected void advanceImpl(float amount) {
+	//	// [Keep existing advanceImpl code unchanged]
+	//	if (Global.getSector().getMemoryWithoutUpdate().get(NSP_IDs.MEM_DAYS_WITH_INVICTA) == null) {
+	//		Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_DAYS_WITH_INVICTA, 0f);
+	//	} else {
+	//		float timeHadInvicta = Global.getSector().getMemoryWithoutUpdate().getFloat(NSP_IDs.MEM_DAYS_WITH_INVICTA);
+	//		Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_DAYS_WITH_INVICTA, timeHadInvicta + Global.getSector().getClock().convertToDays(amount));
+	//	}
+	//
+	//	if (!Global.getSettings().getBoolean("nsp_InvictaHasRandomThoughts")) return;
+	//	int numInvictaThoughts = Global.getSector().getMemoryWithoutUpdate().getInt(NSP_IDs.MEM_NUM_INVICTA_THOUGHTS);
+	//	if (numInvictaThoughts > 1) {
+	//		return;
+	//	}
+	//	float toIncrement = Global.getSector().getClock().convertToDays(amount);
+	//	if (numInvictaThoughts > 0) {
+	//		toIncrement *= 0.5f; // half as fast if she already has something random to say
+	//	}
+	//	randThoughtCounter += toIncrement;
+	//	if (randThoughtCounter > randThoughtTime) {
+	//		String topic = getInvictaTopic();
+	//		if (topic != null) {
+	//			Global.getSector().getMemoryWithoutUpdate().set(topic, true);
+	//			Global.getSector().getMemoryWithoutUpdate().set(NSP_IDs.MEM_NUM_INVICTA_THOUGHTS, numInvictaThoughts + 1);
+	//		}
+	//		randThoughtCounter = 0f;
+	//	}
+	//}
 
-	public void reportTacticalBombardmentFinished(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData) {
-		//
-	}
-	public void reportEconomyMonthEnd() {
 
-	}
+//public static String getInvictaTopic() {
+//	float timeHadInvicta = Global.getSector().getMemoryWithoutUpdate().getFloat(NSP_IDs.MEM_DAYS_WITH_INVICTA);
+//	WeightedRandomPicker<String> picker = new WeightedRandomPicker<String>();
+//	picker.add("$InvictaRandShepherds");
+//	picker.add("$InvictaRandRain");
+//	picker.add("$InvictaRandReaper");
+//	if (timeHadInvicta > 60) {
+//		picker.add("$InvictaRand2ndAIWar");
+//	}
+//	for (String topic : picker.clone().getItems()) {
+//		if (Global.getSector().getMemoryWithoutUpdate().contains(topic)) {
+//			picker.remove(topic);
+//		}
+//	}
+//	if (picker.isEmpty()) {
+//		return null;
+//	}
+//	return picker.pick();
+//}
+
+	// [Keep other report methods unchanged]
+//	public void reportFleetDespawnedToListener(CampaignFleetAPI fleet, CampaignEventListener.FleetDespawnReason reason, Object param) {
+//	}
+//
+//	public void reportRaidForValuablesFinishedBeforeCargoShown(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData, CargoAPI cargo) {
+//	}
+//
+//	public void reportRaidToDisruptFinished(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData, Industry industry) {
+//	}
+//
+//	public void reportTacticalBombardmentFinished(InteractionDialogAPI dialog, MarketAPI market, MarketCMD.TempData actionData) {
+//	}
+//
+//	public void reportEconomyMonthEnd() {
+//	}
 
 	// No more maintenance cost for Invicta
 	public void reportEconomyTick(int iterIndex) {
@@ -210,8 +243,14 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin implements FleetEventLi
 		Color h = Misc.getHighlightColor();
 		Color g = Misc.getGrayColor();
 		Color tc = Misc.getTextColor();
-		PersonAPI invicta = NSP_People.getPerson(NSP_People.INVICTA);
-		FactionAPI invicta_faction = Global.getSector().getFaction(DERELICT);
+
+		// Use the stored invictaPerson instead of trying to fetch it
+		PersonAPI invicta = invictaPerson;
+		if (invicta == null) {
+			invicta = findOrCreateInvictaPerson();
+		}
+
+		//FactionAPI invicta_faction = Global.getSector().getFaction(DERELICT);
 		float pad = 3f;
 		float opad = 10f;
 
@@ -220,7 +259,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin implements FleetEventLi
 		info.addImage(invicta.getPortraitSprite(), width, 128, opad);
 		info.addPara("Invicta is currently available to speak to.", opad);
 		ButtonAPI button = info.addButton("Request a comm-link", "nsp_InvictaConvButton",
-				invicta_faction.getBaseUIColor(), invicta_faction.getDarkUIColor(),
+			//	invicta_faction.getBaseUIColor(), invicta_faction.getDarkUIColor(),
 				(int)(width), 20f, opad * 2f);
 		button.setShortcut(Keyboard.KEY_T, true);
 	}
@@ -250,27 +289,15 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin implements FleetEventLi
 	}
 
 
-	@Override
-	public FactionAPI getFactionForUIColors() {
-		return Global.getSector().getFaction(DERELICT);
-	}
+	//@Override
+	//public FactionAPI getFactionForUIColors() {
+	//	return Global.getSector().getFaction(DERELICT);
+	//}
 
 	public String getSmallDescriptionTitle() {
 		return getName();
 	}
 
-
-	@Override
-	public boolean shouldRemoveIntel() {
-		// Remove when the memory key is false or not set
-		return !Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel");
-	}
-
-	// don't show unless the memory key is set
-	@Override
-	public boolean isHidden() {
-		return !Global.getSector().getMemoryWithoutUpdate().getBoolean("$nsp_showInvictaIntel");
-	}
 
 	@Override
 	public String getCommMessageSound() {
