@@ -63,7 +63,7 @@ public class NSPInvictaSystemGen implements SectorGeneratorPlugin {
         test.getMarket().addCondition(Conditions.HIGH_GRAVITY);
         test.getMarket().addCondition(Conditions.RUINS_VAST);
         test.getMarket().addCondition(Conditions.MILD_CLIMATE);
-        test.getMemoryWithoutUpdate().set("$test_planet", true);
+        test.getMemoryWithoutUpdate().set("$"+INVICTA_PLANET_ID, true);
 
 
         system.autogenerateHyperspaceJumpPoints(false,false,false);

@@ -126,6 +126,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 				//create fake market for invicta contact
 				MarketAPI sillymarket = Global.getFactory().createMarket("test_market", "You shouldn't see this, Meow!", 2);
 				sillymarket.setAdmin(invictaPerson);
+				sillymarket.getCommDirectory().addPerson(invictaPerson);
 				sillymarket.setFactionId(DERELICT);
 				sillymarket.setHidden(true);
 				sillymarket.setPrimaryEntity(Global.getSector().getStarSystem("Mourn").getEntityById(NSPInvictaSystemGen.INVICTA_PLANET_ID));
