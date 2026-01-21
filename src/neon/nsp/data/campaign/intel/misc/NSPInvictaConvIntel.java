@@ -317,7 +317,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 
 	public void buttonPressConfirmed(Object buttonId, IntelUIAPI ui) {
 		if (buttonId == "nsp_InvictaConvButton") {
-			ui.showDialog(null, "InvictaConvOpen");
+			ui.showDialog(invictaPerson.getMarket().getPrimaryEntity(), "InvictaConvOpen");
 		}
 	}
 }
