@@ -124,25 +124,25 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 
 			if (!contactExists) {
 				//create fake market for invicta contact
-				MarketAPI sillymarket = Global.getFactory().createMarket("test_market", "You shouldn't see this, Meow!", 2);
-				sillymarket.setAdmin(invictaPerson);
-				sillymarket.setFactionId(DERELICT);
+				//MarketAPI sillymarket = Global.getFactory().createMarket("test_market", "You shouldn't see this, Meow!", 2);
+				//sillymarket.setAdmin(invictaPerson);
+				//sillymarket.setFactionId(DERELICT);
 				//sillymarket.setHidden(true);
 				//sillymarket.setPrimaryEntity(Global.getSector().getStarSystem("Mourn").getEntityById(NSPInvictaSystemGen.INVICTA_PLANET_ID));
 
 
 				// Create contact with null market (valid for AI cores)
-				ContactIntel contactIntel = new ContactIntel(invictaPerson, sillymarket);
+				//ContactIntel contactIntel = new ContactIntel(invictaPerson, sillymarket);
 
-				Global.getSector().getIntelManager().addIntel(contactIntel, false);
-				contactIntel.develop(null);
-				contactIntel.setState(ContactIntel.ContactState.PRIORITY);
+				//Global.getSector().getIntelManager().addIntel(contactIntel, false);
+				//contactIntel.develop(null);
+				//contactIntel.setState(ContactIntel.ContactState.PRIORITY);
 
 				// Play sound when contact is added
-				Global.getSoundPlayer().playUISound("ui_contact_developed", 1f, 1f);
+				//Global.getSoundPlayer().playUISound("ui_contact_developed", 1f, 1f);
 
 				// Send notification to player
-				contactIntel.sendUpdateIfPlayerHasIntel(null, false);
+				//contactIntel.sendUpdateIfPlayerHasIntel(null, false);
 			}
 		}
 	}
@@ -317,7 +317,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 
 	public void buttonPressConfirmed(Object buttonId, IntelUIAPI ui) {
 		if (buttonId == "nsp_InvictaConvButton") {
-			ui.showDialog(invictaPerson.getMarket().getPrimaryEntity(), "InvictaConvOpen");
+			ui.showDialog(Global.getSector().getPlayerFleet().getInteractionTarget(),"InvictaConvOpen");
 		}
 	}
 }
