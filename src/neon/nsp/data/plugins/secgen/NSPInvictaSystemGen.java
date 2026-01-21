@@ -7,6 +7,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceAbyssPluginImpl;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin;
+import com.fs.starfarer.api.util.Misc;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
@@ -64,6 +65,7 @@ public class NSPInvictaSystemGen implements SectorGeneratorPlugin {
         test.getMarket().addCondition(Conditions.RUINS_VAST);
         test.getMarket().addCondition(Conditions.MILD_CLIMATE);
         test.getMemoryWithoutUpdate().set("$"+INVICTA_PLANET_ID, true);
+        test.getMemoryWithoutUpdate().set("$salvageseed", Misc.genRandomSeed());
 
 
         system.autogenerateHyperspaceJumpPoints(false,false,false);
