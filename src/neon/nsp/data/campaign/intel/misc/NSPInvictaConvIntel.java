@@ -65,7 +65,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 		Global.getSector().getIntelManager().addIntel(this, false);
 
 		// Also add Invicta as a contact (market can be null for AI cores)
-		addInvictaAsContact();
+		//addInvictaAsContact();
 	}
 
 	private PersonAPI findOrCreateInvictaPerson() {
@@ -127,12 +127,13 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 				MarketAPI sillymarket = Global.getFactory().createMarket("test_market", "You shouldn't see this, Meow!", 2);
 				sillymarket.setAdmin(invictaPerson);
 				sillymarket.setFactionId(DERELICT);
-				sillymarket.setHidden(true);
-				sillymarket.setPrimaryEntity(Global.getSector().getStarSystem("Mourn").getEntityById(NSPInvictaSystemGen.INVICTA_PLANET_ID));
+				//sillymarket.setHidden(true);
+				//sillymarket.setPrimaryEntity(Global.getSector().getStarSystem("Mourn").getEntityById(NSPInvictaSystemGen.INVICTA_PLANET_ID));
 
 
 				// Create contact with null market (valid for AI cores)
 				ContactIntel contactIntel = new ContactIntel(invictaPerson, sillymarket);
+
 				Global.getSector().getIntelManager().addIntel(contactIntel, false);
 				contactIntel.develop(null);
 				contactIntel.setState(ContactIntel.ContactState.PRIORITY);
@@ -284,7 +285,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 	@Override
 	public Set<String> getIntelTags(SectorMapAPI map) {
 		Set<String> tags = super.getIntelTags(map);
-		tags.add(Tags.INTEL_CONTACTS);
+		//tags.add(Tags.INTEL_CONTACTS);
 		return tags;
 	}
 
