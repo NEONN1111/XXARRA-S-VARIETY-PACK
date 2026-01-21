@@ -14,5 +14,6 @@
     <orderEntry type="library" name="MagicLib" level="project" />
     <orderEntry type="library" name="commons-compiler-jdk" level="project" />
     <orderEntry type="library" name="starfarer" level="project" />
+    <orderEntry type="library" name="SecondInCommand1" level="project" />
   </component>
 </module>
