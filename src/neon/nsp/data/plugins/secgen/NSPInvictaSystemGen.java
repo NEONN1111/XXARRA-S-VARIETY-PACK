@@ -12,6 +12,8 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 
 public class NSPInvictaSystemGen implements SectorGeneratorPlugin {
+
+    public static String INVICTA_PLANET_ID = "test_planet_invicta";
     @Override
     public void generate(SectorAPI sector) {
 
@@ -55,7 +57,7 @@ public class NSPInvictaSystemGen implements SectorGeneratorPlugin {
         test2.getMarket().addCondition(Conditions.HIGH_GRAVITY);
         test2.getMemoryWithoutUpdate().set("$test_planet2", true);
 
-        PlanetAPI test = system.addPlanet("test_planet", test2, "test", "tundra", 50, 50, 500, 273);
+        PlanetAPI test = system.addPlanet(INVICTA_PLANET_ID, test2, "test", "tundra", 50, 50, 500, 273);
 //        hades.setCustomDescriptionId("tll_hades");
         test.getMarket().addCondition(Conditions.VERY_COLD);
         test.getMarket().addCondition(Conditions.HIGH_GRAVITY);

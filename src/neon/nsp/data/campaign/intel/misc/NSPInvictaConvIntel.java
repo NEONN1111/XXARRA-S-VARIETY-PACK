@@ -127,6 +127,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 				sillymarket.setAdmin(invictaPerson);
 				sillymarket.setFactionId(DERELICT);
 				sillymarket.setHidden(true);
+				sillymarket.setPrimaryEntity(Global.getSector().getEntityById("test_planet_invicta"));
 
 
 				// Create contact with null market (valid for AI cores)
