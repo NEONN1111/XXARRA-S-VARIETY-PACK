@@ -1,0 +1,25 @@
+{
+	"id":"nsp_energy_lash",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"neon.nsp.data.shipsystems.ai.NSP_EnergyLashSystemAI",	
+	
+	"runScriptWhileIdle":true,
+	#"canUseWhileRightClickSystemOn":true,
+	
+	"statsScript":"neon.nsp.data.shipsystems.NSP_EnergyLashSystemScript",
+	
+	"useSound":"nsp_disabling_strike",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"threatRange":1500,
+		"threatAmount":4,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
+
+
+
+

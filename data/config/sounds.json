@@ -88,6 +88,11 @@
             {"file":"sounds/nsp_invicta_phase3.ogg","pitch":1,"volume":0.5},
         ],
 		
+	"nsp_disabling_strike":
+	[
+            {"file":"sounds/shipsystems/nsp_disabling_strike.ogg","pitch":1,"volume":0.5},
+        ],
+		
 		   # CANISTER CANNON
     "nsp_canistercannon_fire":[
         {"file":"sounds/sfx_wpns_guns/nsp_canistercannon_fire.ogg","pitch":0.95,"volume":1.0},

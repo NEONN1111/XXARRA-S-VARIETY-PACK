@@ -123,7 +123,8 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 
 			if (!contactExists) {
 				//create fake market for invicta contact
-				MarketAPI sillymarket = Global.getFactory().createMarket("fake_invicta_market", "You shouldn't see this, Meow!", 3);
+				MarketAPI sillymarket = Global.getFactory().createMarket("test_market", "You shouldn't see this, Meow!", 2);
+				sillymarket.setAdmin(invictaPerson);
 				sillymarket.setFactionId(DERELICT);
 				sillymarket.setHidden(true);
 
