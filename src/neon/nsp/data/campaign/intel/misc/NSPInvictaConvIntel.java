@@ -25,6 +25,7 @@ import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
+import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
 import neon.nsp.data.scripts.campaign.ids.NSP_IDs;
 import neon.nsp.data.scripts.campaign.ids.NSP_People;
 import neon.nsp.data.scripts.util.NSP_Misc;
@@ -127,7 +128,7 @@ public class NSPInvictaConvIntel extends BaseIntelPlugin {
 				sillymarket.setAdmin(invictaPerson);
 				sillymarket.setFactionId(DERELICT);
 				sillymarket.setHidden(true);
-				sillymarket.setPrimaryEntity(Global.getSector().getEntityById("test_planet_invicta"));
+				sillymarket.setPrimaryEntity(Global.getSector().getStarSystem("Mourn").getEntityById(NSPInvictaSystemGen.INVICTA_PLANET_ID));
 
 
 				// Create contact with null market (valid for AI cores)
