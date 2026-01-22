@@ -36,7 +36,9 @@
                         "nsp_derelictpursuit",
                         "nsp_gleam",
                         "nsp_parasite", 
-                        "nsp_recluse"],
+                        "nsp_recluse",
+						"nsp_perun",
+						"nsp_silo"],
          },
 	"priorityShips":{
 		"tags":[],

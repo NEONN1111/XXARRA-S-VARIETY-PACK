@@ -1,8 +1,6 @@
 package neon.nsp.data.scripts.weapons;
 
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.*;
 import org.lazywizard.lazylib.MathUtils;
 
 public class NSP_RotorSpinner implements EveryFrameWeaponEffectPlugin {
@@ -20,11 +18,13 @@ public class NSP_RotorSpinner implements EveryFrameWeaponEffectPlugin {
             runOnce = false;
         }
 
-        float system = 1;
-        if (weapon.getShip().getSystem().isActive()) system = 2;
-        if (weapon.getShip().getSystem().isCoolingDown()) system = 0.5f;
+        float systemMult = 1;
+        //System dependent rotation for Xxarra
+        ShipSystemAPI system = weapon.getShip().getSystem();
 
-        angle = MathUtils.clampAngle(angle + (turn_rate * system * amount));
+        if (system.isActive()) systemMult = 20;
+        if (system.isCoolingDown()) systemMult = 0.7f + 0.7f * (system.getCooldown() - system.getCooldownRemaining()) / system.getCooldown();
+        angle = MathUtils.clampAngle(angle + (turn_rate * systemMult * amount));
 
         weapon.setCurrAngle(weapon.getShip().getFacing()+weapon.getSlot().getAngle() + angle);
     }

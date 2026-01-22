@@ -45,7 +45,7 @@ public class DerelictBattleListener implements FleetEventListener {
             }
 
             // Change number to 10 battles instead of 1 (dev) | CONTINUE
-            if (derelictFightCount >= 1 && !Global.getSector().getMemoryWithoutUpdate().contains("$nsp_invictaBountyHunter")) {
+            if (derelictFightCount >= 7 && !Global.getSector().getMemoryWithoutUpdate().contains("$nsp_invictaBountyHunter")) {
 
                 LocationAPI location = Global.getSector().getStarSystem("arcadia");
                 if (location == null) return;

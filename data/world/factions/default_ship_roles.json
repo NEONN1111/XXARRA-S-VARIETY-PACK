@@ -86,6 +86,8 @@
                 "tll_harbinger_standard":4,
                 "tll_sunder_standard":5,
                 "tll_fulgent_standard":5,
+				"nsp_perun_standard":4,
+				"nsp_silo_standard":5,
            
     },
     "combatLarge":{"nsp_eagle_r_standard":0.7,
@@ -95,7 +97,7 @@
                    "nsp_superderelict_hurricane":0.3,
 	           "nsp_derelict_blockhead_standard":0.4,
                    "nsp_derelict_blockhead_Assault":0.9,
-		   "nsp_derelict_messenger_standard":0.3,
+		   "nsp_derelict_messenger_standard":1,
                    "nsp_derelominator_standard":0.5,
                    "nsp_hermod_standard":0.2,
                    "nsp_luminance_standard":0.9,
@@ -122,6 +124,8 @@
                    "tll_scintilla_standard":3,
                    "tll_gemini_standard":4,
                    "tll_elucidation_standard":3,
+				   "nsp_perun_standard":3,
+				   "nsp_silo_standard":3,
  
              
                
@@ -148,13 +152,14 @@
                    "tll_brawler_standard":3,
     },
 	"carrierMedium":{
-		"nsp_rampartcarrier_standard":0.8,
-                "nsp_siegecarrier_standard":0.5,
-                "nsp_carrierplatform_standard":1,
+		"nsp_rampartcarrier_standard":3,
+                "nsp_siegecarrier_standard":2,
+                "nsp_carrierplatform_standard":6,
                 "nsp_recluse_standard":0.6,
                 "tll_drover_standard":5,
                 "tll_scintilla_standard":5,
-                "tll_heron_standard":5,},
+                "tll_heron_standard":5,
+				"nsp_silo_standard":5,},
       },
 	
 }

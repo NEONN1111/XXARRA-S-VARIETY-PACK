@@ -39,4 +39,6 @@ Canister Cannon Sub,nsp_sporeship_canister_sub_shot,1,,,800,,200,,20,0,,,,,HIGH_
 Perun cover,nsp_perun_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,42.5
 Rotor 1,nsp_perun_rotor1,,,,,,,,,10,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
 Rotor 2,nsp_perun_rotor2,,,,,,,,,-35,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mjolnir arm (L),nsp_symbiant_left_arm,3,,15000,750,,300,,0,30,30,,,,ENERGY,180,,0.1,0.3,,,5,15,1,5,,2000,,,,,,"SYSTEM, DO_NOT_CONSERVE",energy19,,Domain Restricted,,General,,,,,,,%s: Requires the use of the ship-system to regenerate its charges.,Dedicated Charging Bus,,
+Mjolnir arm (R),nsp_symbiant_right_arm,3,,15000,750,,300,,0,30,30,,,,ENERGY,180,,0.1,0.3,,,5,15,1,5,,2000,,,,,,"SYSTEM, DO_NOT_CONSERVE",energy19,,Domain Restricted,,General,,,,,,,%s: Requires the use of the ship-system to regenerate its charges.,Dedicated Charging Bus,,
+Domain's Gaze,nsp_symbiant_head,,,600,800,50,,,20,50,99,,,,ENERGY,,35,,,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,

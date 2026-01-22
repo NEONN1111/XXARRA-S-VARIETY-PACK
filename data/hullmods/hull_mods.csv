@@ -25,6 +25,7 @@ The ordnance point cost to mount large missile weapons is increased by %s.
 
 Fortunately, the changes made do also result in an ordnance point cost reduction of %s for large energy weapons.","Reduces missile and ballistic weapon range, and flux dissipation / capacity.",,graphics/hullmods/design_compromises.png
 AFAFAFAFAFAFAFAFA,nsp_ammofeeders,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_AAFSubSystem,,,,graphics/icons/intel/investigation.png
+FLAREFLAREFLAREFLARE,nsp_flarelaunchers,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_FlareLauncherHullmod,,,,graphics/icons/intel/investigation.png
 Enraged Systems,nsp_sandevistan,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSPSandyEffect,"At the heart of this infernal vessel's unsettlingly advanced technological entrails lie a series of anomalous subsystems, driving its capability for rampant destruction. A majority of these systems operate by capturing energy resulting from overloading starship reactors.
 ",,,graphics/hullmods/enraged_systems.png
 Enlightened Systems,nsp_sandevistan2,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSPSandyEffect2,"Can you hear it, too?",,,graphics/hullmods/enlightened_subsystems.png
@@ -45,3 +46,4 @@ Linked Hull,nsp_linkedhull,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_L
 Massive Hull,nsp_massivehull,,,,codex_require_related,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_MassiveHull,"This ship is extremely large, affording both a larger array of sensors and a heavy sensor profile. Increases sensor strength and sensor profile by %s.",Increases sensor strength and profile.,,graphics/hullmods/vast_bulk.png
 Fleet Hangar,,,,,"no_drop, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_storageHangarMod,Bears an expanded hangar bay that is invaluable for nomadic fleets wishing to reorganize their loadouts while braving the Sector's great frontier.,,,
 ZCS CONTROLLER NSP,,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_controllermod,,,,
+FIGHTER COLLISION CLASS,nsp_fightercoll,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_SetFighterColl,,,,

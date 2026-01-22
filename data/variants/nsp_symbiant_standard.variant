@@ -1,0 +1,45 @@
+{
+  "variantId": "nsp_symbiant_standard",
+  "hullId": "nsp_symbiant",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "nsp_symbiant_left_arm": "nsp_symbiant_left_arm",
+        "nsp_symbiant_right_arm": "nsp_symbiant_right_arm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "chaingun",
+        "WS0002": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "nsp_symbiant_head"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "SMB_LEFT_ARM": "nsp_symbiant_l_standard"
+    },
+    {
+      "SMB_RIGHT_ARM": "nsp_symbiant_r_standard"
+    }
+  ],
+  "wings": []
+}

@@ -2,10 +2,12 @@ package neon.nsp.data.shipsystems;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import java.awt.Color;
 
 import org.lwjgl.util.vector.Vector2f;
+import org.lazywizard.lazylib.MathUtils;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
@@ -19,6 +21,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
@@ -32,8 +35,8 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 
 	public static float MAX_LASH_RANGE = 1500f;
 
-	public static float DAMAGE = 0;
-	public static float EMP_DAMAGE = 1500;
+	public static float DAMAGE = 100;
+	public static float EMP_DAMAGE = 2000;
 
 	public static float MIN_COOLDOWN = 2f;
 	public static float MAX_COOLDOWN = 10f;
@@ -47,6 +50,19 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 	public static Color FRIENDLY_FRINGE_COLOR = new Color(255,175,255,255);
 	public static Color FRIENDLY_CORE_COLOR = new Color(255, 255, 255, 255);
 	public static Color JITTER_COLOR = VoltaicDischargeOnFireEffect.EMP_FRINGE_COLOR;
+
+	// New configurable settings for self-lashing arcs
+	public static float SELF_LASH_CHANCE = 0.05f; // 5% chance per frame while charging
+	public static float SELF_LASH_MAX_DURATION = 1.5f; // Maximum duration for self-lash effects
+	public static float SELF_LASH_MIN_DURATION = 0.3f; // Minimum duration for self-lash effects
+	public static float SELF_LASH_ARC_LENGTH = 800f; // Maximum length of self-lash arcs
+	public static float SELF_LASH_EMP_DAMAGE = 200f; // EMP damage to self
+	public static float SELF_LASH_MIN_COOLDOWN = 0.5f; // Minimum time between self-lash attempts
+	public static float WEAPON_DISABLE_CHANCE = 0.3f; // 30% chance to disable a weapon when hit
+	public static float ENGINE_DISABLE_CHANCE = 0.2f; // 20% chance to disable engines when hit
+	public static float WEAPON_RECOIL_MULT = 2.0f; // Recoil multiplier when weapons are affected
+	public static float TURRET_TURN_PENALTY = 0.5f; // Turret turn rate penalty when affected
+	public static float SELF_LASH_ARC_COUNT = 4; // Number of arcs to spawn at once
 
 	public static class DelayedCombatActionPlugin extends BaseEveryFrameCombatPlugin {
 		float elapsed = 0f;
@@ -72,12 +88,85 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 		}
 	}
 
+	// Plugin for managing self-lash effects
+	public static class SelfLashEffectPlugin extends BaseEveryFrameCombatPlugin {
+		private ShipAPI ship;
+		private float elapsed = 0f;
+		private float duration;
+		private boolean weaponDisabled = false;
+		private boolean enginesDisabled = false;
+		private String weaponId;
+
+		public SelfLashEffectPlugin(ShipAPI ship, float duration, boolean weaponDisabled, boolean enginesDisabled, String weaponId) {
+			this.ship = ship;
+			this.duration = duration;
+			this.weaponDisabled = weaponDisabled;
+			this.enginesDisabled = enginesDisabled;
+			this.weaponId = weaponId;
+		}
+
+		@Override
+		public void advance(float amount, List<InputEventAPI> events) {
+			if (Global.getCombatEngine().isPaused()) return;
+			if (ship == null || ship.isHulk()) {
+				Global.getCombatEngine().removePlugin(this);
+				return;
+			}
+
+			elapsed += amount;
+
+			// Apply effects
+			if (weaponDisabled && weaponId != null) {
+				for (WeaponAPI weapon : ship.getAllWeapons()) {
+					if (weapon.getId().contentEquals(weaponId)) {
+						weapon.disable();
+						weapon.setRemainingCooldownTo(duration - elapsed);
+						break;
+					}
+				}
+			}
+
+			if (enginesDisabled) {
+				ship.getMutableStats().getMaxSpeed().modifyMult("self_lash_engine_disable", 0f);
+				ship.getMutableStats().getAcceleration().modifyMult("self_lash_engine_disable", 0f);
+				ship.getMutableStats().getDeceleration().modifyMult("self_lash_engine_disable", 0f);
+				ship.getMutableStats().getMaxTurnRate().modifyMult("self_lash_engine_disable", 0f);
+				ship.getMutableStats().getTurnAcceleration().modifyMult("self_lash_engine_disable", 0f);
+			}
+
+			// Add visual feedback
+			if (elapsed < duration * 0.5f) {
+				float brightness = elapsed / (duration * 0.5f);
+				Color color = new Color(255, 100, 100, (int)(100 * brightness));
+				//ship.setJitter(this, color, brightness, 3, 0f, 5f);
+			}
+
+			// Remove plugin when duration is over
+			if (elapsed >= duration) {
+				// Restore engine stats
+				if (enginesDisabled) {
+					ship.getMutableStats().getMaxSpeed().unmodify("self_lash_engine_disable");
+					ship.getMutableStats().getAcceleration().unmodify("self_lash_engine_disable");
+					ship.getMutableStats().getDeceleration().unmodify("self_lash_engine_disable");
+					ship.getMutableStats().getMaxTurnRate().unmodify("self_lash_engine_disable");
+					ship.getMutableStats().getTurnAcceleration().unmodify("self_lash_engine_disable");
+				}
+
+				// Weapons will automatically re-enable when their cooldown expires
+
+				Global.getCombatEngine().removePlugin(this);
+			}
+		}
+	}
+
 
 
 	protected WeaponSlotAPI mainSlot;
 	protected List<WeaponSlotAPI> slots;
 	protected boolean readyToFire = true;
 	protected float cooldownToSet = -1f;
+	protected float sinceLastSelfLash = 0f;
+	protected Random random = new Random();
 
 	protected void findSlots(ShipAPI ship) {
 		if (slots != null) return;
@@ -92,6 +181,111 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 		}
 	}
 
+	protected void spawnSelfLashArc(ShipAPI ship, CombatEngineAPI engine, Vector2f startPoint, Vector2f endPoint) {
+		// Use SKR_empStats simple EMP arc method for self-lash arcs
+		// Use the same colors as the main energy lash
+		Global.getCombatEngine().spawnEmpArc(
+				ship,
+				startPoint,
+				ship,
+				ship,
+				DamageType.ENERGY,
+				0f, // No regular damage
+				SELF_LASH_EMP_DAMAGE, // EMP damage to self
+				100000f, // max range
+				"system_emp_emitter_impact", // Using the same sound as SKR_empStats
+				MathUtils.getRandomNumberInRange(8, 16), // Thicker arcs than SKR_empStats
+				FRINGE_COLOR, // Use main lash fringe color
+				CORE_COLOR // Use main lash core color
+		);
+
+		// Check for weapon/engine disruption
+		checkSelfLashEffects(ship);
+	}
+
+	protected void checkSelfLashEffects(ShipAPI ship) {
+		// Chance to disable a random weapon
+		if (random.nextFloat() < WEAPON_DISABLE_CHANCE && !ship.getAllWeapons().isEmpty()) {
+			List<WeaponAPI> weapons = ship.getAllWeapons();
+			WeaponAPI weapon = weapons.get(random.nextInt(weapons.size()));
+			String weaponId = weapon.getId();
+
+			// Apply temporary weapon effects
+			float duration = SELF_LASH_MIN_DURATION + random.nextFloat() * (SELF_LASH_MAX_DURATION - SELF_LASH_MIN_DURATION);
+
+			// Apply recoil penalty to the specific weapon (applies to all weapons with this mod)
+			ship.getMutableStats().getRecoilPerShotMult().modifyMult("self_lash_weapon_recoil", WEAPON_RECOIL_MULT);
+			ship.getMutableStats().getRecoilDecayMult().modifyMult("self_lash_weapon_recoil", 0.5f);
+
+			// For turrets, apply turn rate penalty using general weapon stats
+			if (weapon.getSlot() != null && weapon.getSlot().isTurret()) {
+				ship.getMutableStats().getBallisticWeaponRangeBonus().modifyMult("self_lash_turret_turn", TURRET_TURN_PENALTY);
+				ship.getMutableStats().getEnergyWeaponRangeBonus().modifyMult("self_lash_turret_turn", TURRET_TURN_PENALTY);
+			}
+
+			Global.getCombatEngine().addPlugin(new BaseEveryFrameCombatPlugin() {
+				float elapsed = 0f;
+				@Override
+				public void advance(float amount, List<InputEventAPI> events) {
+					if (Global.getCombatEngine().isPaused()) return;
+					if (ship == null || ship.isHulk()) {
+						Global.getCombatEngine().removePlugin(this);
+						return;
+					}
+
+					elapsed += amount;
+					if (elapsed >= duration) {
+						ship.getMutableStats().getRecoilPerShotMult().unmodify("self_lash_weapon_recoil");
+						ship.getMutableStats().getRecoilDecayMult().unmodify("self_lash_weapon_recoil");
+						ship.getMutableStats().getBallisticWeaponRangeBonus().unmodify("self_lash_turret_turn");
+						ship.getMutableStats().getEnergyWeaponRangeBonus().unmodify("self_lash_turret_turn");
+						Global.getCombatEngine().removePlugin(this);
+					}
+				}
+			});
+
+			// Add the main effect plugin for visual feedback
+			Global.getCombatEngine().addPlugin(new SelfLashEffectPlugin(ship, duration, true, false, weaponId));
+		}
+
+		// Chance to disable engines
+		if (random.nextFloat() < ENGINE_DISABLE_CHANCE) {
+			float duration = SELF_LASH_MIN_DURATION + random.nextFloat() * (SELF_LASH_MAX_DURATION - SELF_LASH_MIN_DURATION);
+			Global.getCombatEngine().addPlugin(new SelfLashEffectPlugin(ship, duration, false, true, null));
+		}
+	}
+
+	protected void spawnRandomSelfLash(ShipAPI ship, CombatEngineAPI engine) {
+		if (sinceLastSelfLash < SELF_LASH_MIN_COOLDOWN) return;
+
+		// Random chance to spawn self-lash arcs
+		if (random.nextFloat() < SELF_LASH_CHANCE) {
+			// Get the central medium mount position
+			findSlots(ship);
+			if (mainSlot == null) return;
+
+			Vector2f centerPoint = mainSlot.computePosition(ship);
+
+			// Spawn multiple arcs in a circular pattern
+			for (int i = 0; i < SELF_LASH_ARC_COUNT; i++) {
+				// Generate random angle for the arc
+				float angle = random.nextFloat() * 360f;
+
+				// Calculate end point at a random distance within arc length
+				float endDistance = SELF_LASH_ARC_LENGTH * 0.3f + random.nextFloat() * SELF_LASH_ARC_LENGTH * 0.7f;
+
+				Vector2f endPoint = new Vector2f(
+						centerPoint.x + (float)Math.cos(Math.toRadians(angle)) * endDistance,
+						centerPoint.y + (float)Math.sin(Math.toRadians(angle)) * endDistance
+				);
+
+				spawnSelfLashArc(ship, engine, centerPoint, endPoint);
+			}
+
+			sinceLastSelfLash = 0f;
+		}
+	}
+
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 		ShipAPI ship = null;
 		if (stats.getEntity() instanceof ShipAPI) {
@@ -100,11 +294,15 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 			return;
 		}
 
+		CombatEngineAPI engine = Global.getCombatEngine();
+		float amount = Global.getCombatEngine().getElapsedInLastFrame();
+
+		sinceLastSelfLash += amount;
+
 		if ((state == State.COOLDOWN || state == State.IDLE) && cooldownToSet >= 0f) {
 			ship.getSystem().setCooldown(cooldownToSet);
 			ship.getSystem().setCooldownRemaining(cooldownToSet);
 			cooldownToSet = -1f;
-
 		}
 
 		if (state == State.IDLE || state == State.COOLDOWN || effectLevel <= 0f) {
@@ -131,14 +329,18 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 				brightness = effectLevel * effectLevel;
 			}
 			Color color = JITTER_COLOR;
-			ship.setJitter(this, color, jitterLevel, 5, 0f, 3f + jitterRangeBonus);
+			//ship.setJitter(this, color, jitterLevel, 5, 0f, 3f + jitterRangeBonus);
+
+			// Spawn random self-lash arcs during charging (State.IN) using SKR_empStats method
+			if (state == State.IN && effectLevel > 0.1f) {
+				spawnRandomSelfLash(ship, engine);
+			}
 		}
 
 		if (effectLevel == 1 && readyToFire) {
 			ShipAPI target = findTarget(ship);
 			readyToFire = false;
 			if (target != null) {
-				CombatEngineAPI engine = Global.getCombatEngine();
 				findSlots(ship);
 
 				Vector2f slotLoc = mainSlot.computePosition(ship);
@@ -152,8 +354,8 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 
 				if (ship.getOwner() == target.getOwner()) {
 					params.flickerRateMult = 0.3f;
+
 					Color color = FRIENDLY_FRINGE_COLOR;
-					Color core = FRIENDLY_CORE_COLOR;
 					float emp = 0;
 					float dam = 0;
 					EmpArcEntityAPI arc = (EmpArcEntityAPI)engine.spawnEmpArcPierceShields(ship, slotLoc, ship, target,
@@ -164,7 +366,7 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 							"energy_lash_friendly_impact",
 							100f,
 							color,
-							core,
+							new Color(255,255,255,255),
 							params
 					);
 					arc.setTargetToShipCenter(slotLoc, target);
@@ -249,6 +451,19 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 	}
 
 	public void unapply(MutableShipStatsAPI stats, String id) {
+		// Clean up any remaining self-lash effects
+		if (stats.getEntity() instanceof ShipAPI) {
+			ShipAPI ship = (ShipAPI) stats.getEntity();
+			ship.getMutableStats().getRecoilPerShotMult().unmodify("self_lash_weapon_recoil");
+			ship.getMutableStats().getRecoilDecayMult().unmodify("self_lash_weapon_recoil");
+			ship.getMutableStats().getBallisticWeaponRangeBonus().unmodify("self_lash_turret_turn");
+			ship.getMutableStats().getEnergyWeaponRangeBonus().unmodify("self_lash_turret_turn");
+			ship.getMutableStats().getMaxSpeed().unmodify("self_lash_engine_disable");
+			ship.getMutableStats().getAcceleration().unmodify("self_lash_engine_disable");
+			ship.getMutableStats().getDeceleration().unmodify("self_lash_engine_disable");
+			ship.getMutableStats().getMaxTurnRate().unmodify("self_lash_engine_disable");
+			ship.getMutableStats().getTurnAcceleration().unmodify("self_lash_engine_disable");
+		}
 	}
 
 	public StatusData getStatusData(int index, State state, float effectLevel) {
