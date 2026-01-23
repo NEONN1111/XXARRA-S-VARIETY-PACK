@@ -3,11 +3,18 @@
   "hullId": "nsp_symbiant",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 0,
-  "fluxVents": 0,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "autorepair",
+    "auxiliarythrusters",
+    "blast_doors",
+    "fluxbreakers",
+    "fluxdistributor"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
@@ -30,6 +37,14 @@
       "mode": "LINKED",
       "weapons": {
         "WS0003": "nsp_symbiant_head"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "nsp_symbiant_launcher_left",
+        "WS0011": "nsp_symbiant_launcher_right"
       }
     }
   ],

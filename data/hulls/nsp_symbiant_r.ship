@@ -11,11 +11,14 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 29.5,
   "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "vulcan"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "UNIVERSAL",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 90,
       "angle": -34.5,

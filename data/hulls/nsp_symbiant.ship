@@ -23,6 +23,8 @@
     "WS0001": "chaingun",
     "WS0002": "chaingun",
     "WS0003": "nsp_symbiant_head",
+    "WS0010": "nsp_symbiant_launcher_left",
+    "WS0011": "nsp_symbiant_launcher_right",
     "nsp_symbiant_right_arm": "nsp_symbiant_right_arm"
   },
   "weaponSlots": [
@@ -142,6 +144,24 @@
       "arc": 5,
       "angle": 90,
       "locations": [-6, 53.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 40,
+      "angle": 0,
+      "locations": [-20.5, 16]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 40,
+      "angle": 0,
+      "locations": [-20.5, -15]
     }
   ],
   "engineSlots": [
