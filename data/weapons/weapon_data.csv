@@ -44,3 +44,4 @@ Mjolnir arm (R),nsp_symbiant_right_arm,3,,15000,750,,300,,0,30,30,,,,ENERGY,180,
 Domain's Gaze,nsp_symbiant_head,,,600,800,50,,,20,50,99,,,,ENERGY,,35,,,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 Bazooka (R),nsp_symbiant_launcher_right,0,,1000,1200,,1500,,30,20,6,,,,HIGH_EXPLOSIVE,0,,0,12,3,0.25,10,10,0,0,,500,40,4,350,,,STRIKE,"strike10, rocket5, no_drop, no_drop_salvage",,,,Torpedo,Fast,None,,,,,,,TRUE,13.75
 Bazooka (L),nsp_symbiant_launcher_left,0,,1000,1200,,1500,,30,20,6,,,,HIGH_EXPLOSIVE,0,,0,12,3,0.25,10,10,0,0,,500,40,4,350,,,STRIKE,"strike10, rocket5, no_drop, no_drop_salvage",,,,Torpedo,Fast,None,,,,,,,TRUE,13.75
+,nsp_symbiant_legs,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,

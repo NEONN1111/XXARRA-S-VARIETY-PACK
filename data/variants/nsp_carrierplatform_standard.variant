@@ -11,7 +11,16 @@
     "armoredweapons",
     "insulatedengine"
   ],
-  "weaponGroups": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "pilum",
+        "WS0002": "pilum"
+      }
+    }
+  ],
   "modules": [],
   "wings": [
     "nsp_derelictfighter",

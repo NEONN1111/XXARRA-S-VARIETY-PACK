@@ -38,7 +38,8 @@
                         "nsp_parasite", 
                         "nsp_recluse",
 						"nsp_perun",
-						"nsp_silo"],
+						"nsp_silo",
+						"nsp_cargoplatform"],
          },
 	"priorityShips":{
 		"tags":[],

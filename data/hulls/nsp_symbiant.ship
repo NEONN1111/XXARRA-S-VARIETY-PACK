@@ -16,10 +16,12 @@
     "NSP_shield",
     "NSP_shield_arcing",
     "nsp_fightercoll",
-    "nsp_flarelaunchers"
+    "nsp_flarelaunchers",
+	"advanced_ground_support"
   ],
   "builtInWeapons": {
     "nsp_symbiant_left_arm": "nsp_symbiant_left_arm",
+    "SMB_LEGS": "nsp_symbiant_legs",
     "WS0001": "chaingun",
     "WS0002": "chaingun",
     "WS0003": "nsp_symbiant_head",
@@ -162,6 +164,16 @@
       "arc": 40,
       "angle": 0,
       "locations": [-20.5, -15]
+    },
+    {
+      "id": "SMB_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [26, -0],
+      "renderOrderMod": -100
     }
   ],
   "engineSlots": [
