@@ -39,7 +39,7 @@ public class CustomFleetsNSP_Templar {
 		person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
 		person.getStats().setSkillLevel(Skills.COMBAT_ENDURANCE, 2);
 		person.getStats().setSkillLevel(Skills.MISSILE_SPECIALIZATION, 2);
-		person.getStats().setSkillLevel(Skills.HELMSMANSHIP, 1);
+		person.getStats().setSkillLevel(Skills.HELMSMANSHIP, 2);
 		person.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 2);
 		person.getStats().setSkillLevel(Skills.FLUX_REGULATION, 1);
 		person.getStats().setSkillLevel(Skills.WOLFPACK_TACTICS, 2);
@@ -67,7 +67,9 @@ public class CustomFleetsNSP_Templar {
 		addMembersFromVariant(fleet,"defender_PD", 6);
 		addMembersFromVariant(fleet,"berserker_Assault", 4);
 		addMembersFromVariant(fleet,"bastillon_Standard", 5);
-		addMembersFromVariant(fleet,"nsp_carrierplatform_standard", 3);
+		addMembersFromVariant(fleet,"nsp_carrierplatform_standard", 4);
+		addMembersFromVariant(fleet, "nsp_cargoplatform_standard", 3);
+		addMembersFromVariant(fleet, "nsp_silo_standard", 4);
 		Random random = Misc.random;
 		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, new RemnantSeededFleetManager.RemnantFleetInteractionConfigGen());
 		// sets it so that fleet uses remnant FIDConfig, mainly so they don't try to run
@@ -77,7 +79,7 @@ public class CustomFleetsNSP_Templar {
 		if (fleet.getInflater() instanceof DefaultFleetInflater) {
 			DefaultFleetInflater dfi = (DefaultFleetInflater) fleet.getInflater();
 			DefaultFleetInflaterParams dfip = (DefaultFleetInflaterParams)dfi.getParams();
-			dfip.allWeapons = true;
+			dfip.allWeapons = false;
 			dfip.averageSMods = 3;
 			dfip.quality = 3f;
 			DModManager.assumeAllShipsAreAutomated = true;
