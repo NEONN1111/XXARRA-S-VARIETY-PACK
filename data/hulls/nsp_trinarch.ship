@@ -13,13 +13,22 @@
   "viewOffset": 0,
   "builtInMods": [
     "automated",
-    "advancedcore",
     "delicate",
     "swp_linkedhull",
     "nsp_supercomputer",
     "operations_center",
-    "nsp_ammofeeders"
+    "nsp_plasmajets",
+    "NSP_shield",
+    "NSP_shield_arcing"
   ],
+  "builtInWeapons": {
+    "WS0003": "nsp_flux_spin1",
+    "WS0004": "nsp_flux_spin1",
+    "WS0007": "nsp_flux_spin3",
+    "WS0008": "nsp_flux_spin3",
+    "WS0009": "nsp_flux_spin3",
+    "WS0010": "nsp_flux_spin3"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -119,6 +128,60 @@
       "arc": 5,
       "angle": 0,
       "locations": [-63, 94.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-32, 87]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-32, -87]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [64, 217]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [64, -217]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [99, 83.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [99, -83.5]
     }
   ],
   "engineSlots": [

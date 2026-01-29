@@ -1,62 +1,35 @@
 package neon.nsp.data.scripts;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import neon.nsp.data.scripts.util.CollisionUtils;
-import neon.nsp.data.scripts.util.MathUtils;
+import com.fs.starfarer.api.util.IntervalUtil;
+import org.lwjgl.util.vector.Vector2f;
 
-public class nsp_DroneDeployerAI implements MissileAIPlugin, GuidedMissileAI {
 
-    private CombatEngineAPI engine;
-    private final MissileAPI missile;
-    private CombatEntityAPI target;
-    private ShipAPI launchingShip;
+public class nsp_DroneDeployerAI implements ShipSystemAIScript {
 
-    public nsp_DroneDeployerAI(MissileAPI missile, ShipAPI launchingShip) {
-        if (engine != Global.getCombatEngine()) {
-            this.engine = Global.getCombatEngine();
-        }
-        this.missile = missile;
-        this.launchingShip = launchingShip;
-        missile.setArmingTime(missile.getArmingTime()-(float)(Math.random()/4));
-    }
+
+    private ShipAPI ship;
+    private float shipRange;
+    private ShipSystemAPI system;
+    private final IntervalUtil tracker = new IntervalUtil(0.17f, 0.24f);
+
+
 
     @Override
-    public void advance(float amount) {
-        //skip the AI if the game is paused, the missile is engineless or fading
-        if (engine.isPaused()){return;}
+    public void init(ShipAPI ship, ShipSystemAPI system, ShipwideAIFlags flags, CombatEngineAPI engine) {
+        this.ship = ship;
+        this.system = system;
+    }
+    private boolean Within(float toCheck,float from,float to){ if(toCheck<to&&toCheck>from){return true;} return false;}
 
-        if(!CollisionUtils.isPointWithinCollisionCircle(missile.getLocation(), launchingShip))
-        //for(ShipAPI potentialTarget: CombatUtils.getShipsWithinRange(missile.getLocation(),500f))
-        {
-            if(MathUtils.getDistance(missile,launchingShip) > 80f && !CollisionUtils.isPointWithinBounds(missile.getLocation(),launchingShip))
-            {
-                missile.setArmingTime(0f);
-                CombatFleetManagerAPI cfm = engine.getFleetManager(missile.getOwner());
-                cfm.setSuppressDeploymentMessages(true);
-                ShipAPI pod = cfm.spawnShipOrWing("nsp_parasite_standard",missile.getLocation(),0f);
-                pod.setOwner(missile.getSource().getOriginalOwner());
-                pod.setFacing(missile.getFacing());
-                pod.getVelocity().set(missile.getVelocity());
-                pod.getMutableStats().getFighterRefitTimeMult().modifyPercent(pod.getId(),9999f);
-
-                cfm.setSuppressDeploymentMessages(false);
+    @Override
+    public void advance(float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {
+        if(ship.areAnyEnemiesInRange()) {
+            if (ship.getFluxTracker().getFluxLevel() < 0.92f){
+                if(!ship.getSystem().isCoolingDown() && !ship.getSystem().isOutOfAmmo() && !ship.getSystem().isChargedown() && !ship.getSystem().isActive()){
+                    ship.giveCommand(ShipCommand.USE_SYSTEM, null, 0);
+                }
             }
         }
-
-        if(missile.isArmed())
-        {
-            engine.removeEntity(missile);
-        }
-    }
-
-    @Override
-    public CombatEntityAPI getTarget() {
-        return target;
-    }
-
-    @Override
-    public void setTarget(CombatEntityAPI target) {
-        this.target = target;
     }
 }

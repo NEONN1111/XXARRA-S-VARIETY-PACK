@@ -1,7 +1,7 @@
 {
   "hullName": "Gargoyle ",
   "hullId": "nsp_trinarch_pd",
-  "hullSize": "FRIGATE",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/ships/nsp_trinarch/nsp_trinarch_gargoyle.png",
   "style": "TEMPLAR",
   "height": 120,
@@ -13,8 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "supercomputer",
-    "fluxshunt",
-    "nsp_fightercoll"
+    "fluxshunt"
   ],
   "builtInWeapons": {
     "WS0001": "nsp_maneuveringjet",

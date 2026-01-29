@@ -47,6 +47,19 @@ public class NSP_Kardakesfeeder extends BaseShipSystemScript {
     public void unapply(MutableShipStatsAPI stats, String id) {
         stats.getBallisticRoFMult().unmodify(id);
         stats.getCombatWeaponRepairTimeMult().unmodify(id);
+        stats.getBallisticAmmoRegenMult().unmodify(id);
+        stats.getBallisticWeaponFluxCostMod().unmodify(id);
+        stats.getBallisticWeaponRangeBonus().unmodify(id);
+        stats.getBallisticWeaponRangeBonus().unmodify(id);
+        stats.getEnergyWeaponRangeBonus().unmodify(id);
+        stats.getMaxRecoilMult().unmodify(id);
+        stats.getRecoilPerShotMult().unmodify(id);
+        stats.getRecoilDecayMult().unmodify(id);
+
+        stats.getBallisticProjectileSpeedMult().unmodify(id);
+        stats.getEnergyProjectileSpeedMult().unmodify(id);
+
+
 
         EFFECT = 0;
     }

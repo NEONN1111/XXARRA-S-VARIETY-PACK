@@ -1,7 +1,7 @@
 {
   "hullName": "Right Wing",
   "hullId": "nsp_trinarch_right",
-  "hullSize": "CAPITAL_SHIP",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/nsp_trinarch/nsp_trinarch_right.png",
   "style": "TEMPLAR",
   "height": 388,
@@ -189,6 +189,15 @@
       "arc": 0,
       "angle": -168,
       "locations": [28, -247]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [121.5, -128.5]
     }
   ],
   "engineSlots": [

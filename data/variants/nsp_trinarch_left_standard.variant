@@ -16,31 +16,34 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "vulcan",
-        "WS0002": "vulcan",
-        "WS0003": "guardian",
-        "WS0004": "dualflak",
-        "WS0007": "dualflak",
-        "WS0008": "dualflak",
-        "WS0009": "pdburst",
-        "WS0011": "vulcan",
-        "WS0013": "heavyburst"
+        "WS0004": "hveldriver"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {}
+      "weapons": {
+        "WS0003": "guardian",
+        "WS0009": "pdburst",
+        "WS0013": "heavyburst"
+      }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0007": "dualflak",
+        "WS0008": "dualflak"
+      }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0011": "vulcan"
+      }
     },
     {
       "autofire": true,

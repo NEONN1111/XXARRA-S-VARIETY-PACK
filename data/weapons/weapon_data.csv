@@ -54,4 +54,10 @@ Bazooka (R),nsp_symbiant_launcher_right,0,,1000,1200,,1500,,30,20,6,,,,HIGH_EXPL
 Bazooka (L),nsp_symbiant_launcher_left,0,,1000,1200,,1500,,30,20,6,,,,HIGH_EXPLOSIVE,0,,0,12,3,0.25,10,10,0,0,,500,40,4,350,,,STRIKE,"strike10, rocket5, no_drop, no_drop_salvage",,,,Torpedo,Fast,None,,,,,,,TRUE,13.75
 ,nsp_symbiant_legs,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#TRINARCH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Luminance Autofab,nsp_luminancebay,6,,1200000,4000,,200,,500,10,120,3,0.0625,1,ENERGY,,,0,3,,,,,,,,500,500,10,3000,,,"DO_NOT_AIM, DO_NOT_CONSERVE, SYSTEM","restricted, damage_special",,Explorarium,,Autofab,,,,,Each activation deploys an Intus-class frigate.,Intus-Class,,,TRUE,
+FLUX DECO 1,nsp_flux_spin1,,,,,,,,,300,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
+FLUX DECO 2,nsp_flux_spin2,,,,,,,,,400,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
+FLUX DECO 3,nsp_flux_spin3,,,,,,,,,400,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

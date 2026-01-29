@@ -47,3 +47,4 @@ Massive Hull,nsp_massivehull,,,,codex_require_related,,,,TRUE,,0,0,0,0,neon.nsp.
 Fleet Hangar,,,,,"no_drop, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_storageHangarMod,Bears an expanded hangar bay that is invaluable for nomadic fleets wishing to reorganize their loadouts while braving the Sector's great frontier.,,,
 ZCS CONTROLLER NSP,,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_controllermod,,,,
 FIGHTER COLLISION CLASS,nsp_fightercoll,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_SetFighterColl,,,,
+JETJETJETPLASMA,nsp_plasmajets,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_PlasmaJetsHullmod,,,,graphics/icons/intel/investigation.png

@@ -271,7 +271,7 @@ public class NSPModPlugin extends BaseModPlugin {
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)    {
         switch (missile.getProjectileSpecId()) {
             case NSP_LUMINANCE_MISSILE_ID:
-                return new PluginPick<MissileAIPlugin>(new nsp_DroneDeployerAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
+                return new PluginPick<MissileAIPlugin>(new nsp_luminancebay(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
         }
         return null;
     }

@@ -27,4 +27,4 @@ Blitz,nsp_symbiant_system,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,,graphics/icons/hu
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #TRINARCH,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Gargoyle Drones,nsp_drone_system,,,,,,,,9,,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/station_defense_drones_high.png
-Integrated Autofab,nsp_frigatespawner,,,,,,,,3,0.04,,,,3,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
+Integrated Autofab,nsp_frigatespawner,,,,,,,,3,,,,,50,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
