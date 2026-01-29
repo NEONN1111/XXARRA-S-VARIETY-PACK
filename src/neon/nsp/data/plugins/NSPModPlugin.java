@@ -2,9 +2,14 @@ package neon.nsp.data.plugins;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.PluginPick;
+import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.combat.MissileAIPlugin;
+import com.fs.starfarer.api.combat.MissileAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.util.Misc;
@@ -25,6 +30,7 @@ import java.util.ArrayList;
 
 public class NSPModPlugin extends BaseModPlugin {
     public static boolean hasMagicLib = false;
+    public static final String NSP_LUMINANCE_MISSILE_ID = "nsp_luminancemissile";
     public Logger log = Logger.getLogger(this.getClass());
     public testFilePlzIgnore thespawnerrr;
     public static boolean HAS_GRAPHICSLIB = false;
@@ -56,6 +62,8 @@ public class NSPModPlugin extends BaseModPlugin {
             log.error("Failed to register ExponentCampaignPluginImpl", t);
         }
                      }
+
+
 
 
         // Derelict Start initialization
@@ -212,6 +220,7 @@ public class NSPModPlugin extends BaseModPlugin {
         new tll_people().createTLLPeople();
     }
 
+
     @Override
     public void onNewGameAfterProcGen() {
 
@@ -252,6 +261,19 @@ public class NSPModPlugin extends BaseModPlugin {
         hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
 
         log.info("Welcome to NSP! I'm in your hulls...");
+    }
+
+    @Override
+    public void onNewGame() {
+
+    }
+    @Override
+    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)    {
+        switch (missile.getProjectileSpecId()) {
+            case NSP_LUMINANCE_MISSILE_ID:
+                return new PluginPick<MissileAIPlugin>(new nsp_DroneDeployerAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
+        }
+        return null;
     }
 
 

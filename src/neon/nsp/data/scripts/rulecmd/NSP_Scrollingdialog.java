@@ -46,7 +46,7 @@ public class NSP_Scrollingdialog extends BaseCommandPlugin {
         private int currdex = 0;
         private String currentpara;
         private String lastpara = null;
-        private final IntervalUtil adder = new IntervalUtil(0.7f, 0.7f);
+        private final IntervalUtil adder = new IntervalUtil(0.3f, 0.3f);
         private final IntervalUtil afterPause = new IntervalUtil(0.95f, 0.95f);
         
         public NSPScrollingdialog(InteractionDialogAPI dialog, String dialogOption, ArrayList<String> list) {

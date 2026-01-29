@@ -24,3 +24,7 @@ Elysium Dive,nsp_temporaljaunt,,,,,,,,2,0.1,0.2,3,0.25,1.5,,,TRUE,TRUE,TRUE,,,,,
 Maximum Drive,nsp_victoryjets,,,,,,,,,,0.5,4,1,10,TRUE,,,,,,,,,,,movement,graphics/icons/hullsys/combat_burn.png
 Disabling Strike,nsp_energy_lash,,,,,,,,,,2,,0.1,7,,,,,,,,,,,,"restricted, offensive, defensive",graphics/icons/hullsys/energy_lash.png
 Blitz,nsp_symbiant_system,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#TRINARCH,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gargoyle Drones,nsp_drone_system,,,,,,,,9,,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/station_defense_drones_high.png
+Integrated Autofab,nsp_frigatespawner,,,,,,,,3,0.04,,,,3,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
