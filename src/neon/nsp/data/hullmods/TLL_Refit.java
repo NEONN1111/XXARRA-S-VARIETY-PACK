@@ -55,7 +55,8 @@ public class TLL_Refit extends BaseHullMod {
 		peakmult.put(HullSize.CRUISER, 0.6f);
 		peakmult.put(HullSize.CAPITAL_SHIP, 0.5f);
 	}
-	
+
+
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 		stats.getEnergyWeaponRangeBonus().modifyMult(id, ENERGY_RANGE_MULT);
 		stats.getEnergyWeaponFluxCostMod().modifyPercent(id, ENERGY_WEAPON_FLUX_DECREASE);
@@ -63,7 +64,7 @@ public class TLL_Refit extends BaseHullMod {
 		stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, -COST_REDUCTION2);
 		stats.getHullBonus().modifyPercent(id, -HULL_DECREASE);
 		stats.getArmorBonus().modifyPercent(id, -ARMOR_DECREASE);
-		stats.getPeakCRDuration().modifyFlat(id, (Float) peakmult.get(hullSize));
+		stats.getPeakCRDuration().modifyMult(id, (Float) peakmult.get(hullSize));
 		stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
 		stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
 		
