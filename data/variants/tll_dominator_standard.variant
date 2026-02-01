@@ -1,57 +1,74 @@
 {
-    "displayName": "Standard",
-    "fluxCapacitors": 26,
-    "fluxVents": 30,
-    "goalVariant": true,
-    "hullId": "tll_dominator",
-    "hullMods": [
-        "armoredweapons",
-        "autorepair",
-        "blast_doors",
-        "targetingunit",
-    ],
-    "permaMods": [],
-    "sMods": [],
-    "suppressedMods": [],
-    "variantId": "tll_dominator_standard",
-    "weaponGroups": [
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 013": "hephag",
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS 015": "gazerpod",
-                "WS 016": "gazerpod",
-                "WS 014": "gazerpod",
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 012": "mark9",
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 007": "vulcan",
-                "WS 004": "vulcan",
-                "WS 005": "vulcan",
-                "WS 003": "vulcan",
-                "WS 011": "dualflak",
-                "WS 001": "vulcan",
-                "WS 010": "dualflak",
-            }
-        },
-    ],
-    "wings": [],
-    "modules": [],
+  "variantId": "tll_dominator_standard",
+  "hullId": "tll_dominator",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 23,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "autorepair",
+    "blast_doors",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 012": "hephag",
+        "WS 013": "hephag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 014": "phasebeam",
+        "WS 015": "phasebeam",
+        "WS 016": "phasebeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 010": "lightdualac",
+        "WS 011": "lightdualac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "vulcan",
+        "WS 002": "vulcan",
+        "WS 003": "vulcan",
+        "WS 005": "vulcan",
+        "WS 006": "vulcan",
+        "WS 007": "vulcan",
+        "WS 008": "vulcan",
+        "WS 009": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
 }
