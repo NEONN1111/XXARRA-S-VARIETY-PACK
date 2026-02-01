@@ -1,0 +1,86 @@
+{
+  "variantId": "nsp_cassowary_standard",
+  "hullId": "nsp_cassowary",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 16,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "mark9",
+        "WS0002": "mark9",
+        "WS0007": "heavyac",
+        "WS0008": "heavyac",
+        "WS0020": "flak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "hephag",
+        "WS0004": "hephag"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "gravitonbeam",
+        "WS0006": "gravitonbeam",
+        "WS0015": "harpoonpod",
+        "WS0016": "harpoonpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0013": "sabotpod",
+        "WS0014": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0011": "squall",
+        "WS0012": "hurricane"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "pdlaser",
+        "WS0010": "pdlaser",
+        "WS0017": "devastator",
+        "WS0018": "devastator",
+        "WS0019": "guardian",
+        "WS0021": "pdlaser",
+        "WS0022": "pdlaser",
+        "WS0023": "vulcan",
+        "WS0024": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "broadsword_wing",
+    "broadsword_wing",
+    "claw_wing"
+  ]
+}
