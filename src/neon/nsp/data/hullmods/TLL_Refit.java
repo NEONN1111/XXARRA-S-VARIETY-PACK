@@ -36,7 +36,7 @@ public class TLL_Refit extends BaseHullMod {
 
 		tooltip.addPara("As a result of the modifications performed, armor and hull integrity are reduced by %s, and the vessel's base speed is increased by %s.", 5f, Color.ORANGE, "5%", "10");
 
-		tooltip.addPara("Peak performance time is reduced by %s seconds. Performance degrades %s faster when peak performance runs out.", 5f, Color.ORANGE, "180", "25%");
+		tooltip.addPara("Peak performance time is reduced, with the least reduction found in frigates, and the highest in capital class ships. Performance degrades %s faster when peak performance runs out.", 5f, Color.ORANGE, "25%");
 
 
 
@@ -48,6 +48,13 @@ public class TLL_Refit extends BaseHullMod {
 		mag.put(HullSize.CRUISER, 20f);
 		mag.put(HullSize.CAPITAL_SHIP, 15f);
 	}
+	private static Map peakmult = new HashMap();
+	static {
+		peakmult.put(HullSize.FRIGATE, 0.8f);
+		peakmult.put(HullSize.DESTROYER, 0.7f);
+		peakmult.put(HullSize.CRUISER, 0.6f);
+		peakmult.put(HullSize.CAPITAL_SHIP, 0.5f);
+	}
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 		stats.getEnergyWeaponRangeBonus().modifyMult(id, ENERGY_RANGE_MULT);
@@ -56,7 +63,7 @@ public class TLL_Refit extends BaseHullMod {
 		stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, -COST_REDUCTION2);
 		stats.getHullBonus().modifyPercent(id, -HULL_DECREASE);
 		stats.getArmorBonus().modifyPercent(id, -ARMOR_DECREASE);
-		stats.getPeakCRDuration().modifyFlat(id, -PEAK_MULT);
+		stats.getPeakCRDuration().modifyFlat(id, (Float) peakmult.get(hullSize));
 		stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
 		stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
 		
