@@ -25,7 +25,7 @@
     "nameAngle":0,
     "nameColor":[0,255,158,255],
     "nameShadowColor":[0,0,0,255],
-    "customDescriptionId":"sotf_apromise_vena",
+    "customDescriptionId":"nsp_exponent_invictus",
     "interactionImage":"graphics/illustrations/space_wreckage.jpg",
     "tags":["has_interaction_dialog", "neutrino_high"],
     "layers":[STATIONS],

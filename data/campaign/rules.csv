@@ -55,13 +55,13 @@ EBEbarKnight2GreetPather,ExponentKnightGreeting,NSPExponentCheck isPather,,"<PAT
 EBEbarKnight3,DialogOptionSelected,$option == EBEbarKnight_three,NSPExponentPopulateOptions acceptRefuse,"""A holy mission was sent to destroy an unholy vessel, an Abomination of Molochian design. The Curates Technologia cannot match it to anything in our records, and our brothers and sisters have not yet returned."" The senior knight looks out to the stars through a window. ""We believe they have been delivered to the Creator, yet all too soon.""
 
 Turning their attention back to you $heOrShe continues. ""We do not ask you to destroy this enemy, merely to confirm the fate of the fleet sent to destroy it and see if you can glean insight into where it is.""",,
-EBEbarKnight4Refuse,DialogOptionSelected,$option == EBEbarKnight_refuse,,EBEbarKnight5Refuse Text,backToBar:Return to the bar,
+EBEbarKnight4Refuse,DialogOptionSelected,$option == EBEbarKnight_refuse,,Explain that you're not interested at this time.,backToBar:Return to the bar,
 EBEbarKnight4AcceptFaithful,DialogOptionSelected,$option == EBEbarKnight_acceptFaithful,"$acceptFaithful = true
-FireAll ExponentKnightAccepted",EBEbarKnight4AcceptFaithful Text,,
+FireAll ExponentKnightAccepted","""I will go with Ludd's word at heart.""",,
 EBEbarKnight4AcceptPather,DialogOptionSelected,$option == EBEbarKnight_acceptPather,"$acceptPather = true
-FireAll ExponentKnightAccepted",EBEbarKnight4AcceptPather Text,,
+FireAll ExponentKnightAccepted","""I will go with Ludd's hammer at hand.""",,
 EBEbarKnight4AcceptOther,DialogOptionSelected,$option == EBEbarKnight_acceptOther,"$acceptOther = true
-FireAll ExponentKnightAccepted",EBEbarKnight4AcceptOther Text,,
+FireAll ExponentKnightAccepted","""I will find this lost fleet.""",,
 EBEbarKnight4NextStage,ExponentKnightAccepted,,"$global.exponent_hadFirstTalk = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionStarted
@@ -114,7 +114,7 @@ AdjustRepPerson $secondKnight VENGEFUL -100
 AddText ""Your lieutenant turns around and motions for the boarding party to head back to their shuttles.""
 AddText ""Over the comms link, you can hear a number of shouts from survivors calling for rescue and damning your name. The Knight-Captain is silent, but you can feel the contempt, directed at you personally.""
 AddTextSmall ""Left the crew to their ultimate fate"" highlight",,EBEInvictusEnding:Continue,
-EBEinvictusReturnBoardingParty,DialogOptionSelected,$option == EBEInvictusReturnBoardingParty,,EBEinvictusReturnBoardingParty Return text of the boarding party,EBEInvictusEnding:Continue,
+EBEinvictusReturnBoardingParty,DialogOptionSelected,$option == EBEInvictusReturnBoardingParty,,"Just as your boarding party returns to your fleet, you're notified of the Invictus' growing instability.",EBEInvictusEnding:Continue,
 EBEinvictusEnd,DialogOptionSelected,$option == EBEInvictusEnding,"ShowImageVisual space_wreckage
 $global.nspDeclinedExponentMission = false
 NSPEntityExplode
