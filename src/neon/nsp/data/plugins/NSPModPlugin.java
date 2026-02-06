@@ -12,6 +12,8 @@ import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenerator;
 import com.fs.starfarer.api.util.Misc;
 import neon.nsp.data.listeners.DerelictBattleListener;
 import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
@@ -24,6 +26,7 @@ import org.apache.log4j.Logger;
 import neon.nsp.data.world.DomainShips;
 import neon.nsp.data.world.nsp_legionGen;
 import neon.nsp.data.world.nsp_onslaughtMK1Listener;
+import neon.nsp.data.plugins.NSPThemeGenerator;
 
 import java.util.ArrayList;
 
@@ -226,7 +229,7 @@ public class NSPModPlugin extends BaseModPlugin {
 
         // NSP content
         SectorAPI sector = Global.getSector();
-
+       // ThemeGenerator NSPThemeGenerator;
         ArrayList<String> systemBL = new ArrayList<>();
         ArrayList<String> tagBL = new ArrayList<>();
         tagBL.add(Tags.THEME_HIDDEN);
@@ -265,7 +268,7 @@ public class NSPModPlugin extends BaseModPlugin {
 
     @Override
     public void onNewGame() {
-
+        SectorThemeGenerator.generators.add(1, new NSPThemeGenerator());
     }
     @Override
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)    {

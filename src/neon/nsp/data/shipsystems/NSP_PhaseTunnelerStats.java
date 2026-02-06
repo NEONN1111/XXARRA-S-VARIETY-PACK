@@ -3,8 +3,10 @@ package neon.nsp.data.shipsystems;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.SoundAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.util.MagicRender;
 import neon.nsp.data.scripts.util.NSP_Util;
 import org.dark.shaders.distortion.DistortionShader;
 import org.dark.shaders.distortion.WaveDistortion;
@@ -19,6 +21,8 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.List;
 import java.util.Map;
+
+
 
 public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
 
@@ -46,16 +50,20 @@ public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
     private static final float FORCE_VS_FIGHTER = 1250f;
     private static final float FORCE_VS_FRIGATE = 1000f;
     private static final int MAX_PARTICLES_PER_FRAME = 30;
-    private static final Color PARTICLE_COLOR = new Color(255, 255, 255);
+    private static final Color PARTICLE_COLOR = new Color(243, 225, 255);
     private static final float PARTICLE_OPACITY = 0.5f;
     private static final float PARTICLE_RADIUS = 600f;
     private static final float PARTICLE_SIZE = 10f;
+    public static final Color RIPPLE_COLOR = new Color(174, 55, 255, 200);
+    public static final float RIPPLE_DURATION = 5f;
+    public static final float RIPPLE_MAX_SIZE = 4000;
+    public static final Color AFTERIMAGE_COLOR = new Color(255, 196, 19, 20);
     private static final Vector2f ZERO = new Vector2f();
 
     // AI teleport parameters
     private static final float TELEPORT_SPEED = 4000f;
     private static final float MIN_TELEPORT_DISTANCE = 100f;
-    private static final float MAX_TELEPORT_DISTANCE = 2000f;
+    private static final float MAX_TELEPORT_DISTANCE = 4000;
     private static final float TELEPORT_ACCELERATION = 0.2f;
 
     private final IntervalUtil interval = new IntervalUtil(0.035f, 0.035f);
@@ -230,10 +238,72 @@ public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
 
                         // Remove teleport data to prevent repeated use
                         dataMap.remove("nsp_teleport_data");
+
+                        {
+                            SpriteAPI rippleSprite = Global.getSettings().getSprite("fx", "shield_ring");
+                            MagicRender.battlespace(
+                                    rippleSprite,
+                                    ship.getLocation(),
+                                    new Vector2f(0f, 0f),
+                                    new Vector2f(50f, 50f),
+                                    new Vector2f(RIPPLE_MAX_SIZE, RIPPLE_MAX_SIZE),
+                                    ship.getFacing() - 90f,
+                                    0f,
+                                    RIPPLE_COLOR,
+                                    true,
+                                    0f,
+                                    0.1f,
+                                    0.3f,
+                                    RIPPLE_DURATION,
+                                    0f,
+                                    0.1f,
+                                    0.2f,
+                                    0.5f,
+                                    CombatEngineLayers.ABOVE_SHIPS_LAYER
+                            );
+
+                            for (int i = 0; i < 25; i++) {
+                                Vector2f particlePos = MathUtils.getPointOnCircumference(
+                                        ship.getLocation(),
+                                        MathUtils.getRandomNumberInRange(0f, ship.getCollisionRadius()),
+                                        MathUtils.getRandomNumberInRange(0f, 360f)
+                                );
+                                Vector2f particleVel = MathUtils.getRandomPointInCircle(new Vector2f(), 50f);
+
+                                final WaveDistortion wave = new WaveDistortion();
+                                final Vector2f loc = new Vector2f(ship.getLocation());
+                                wave.setLocation(loc);
+                                wave.setSize(950.0f);
+                                wave.setIntensity(85.0f);
+                                wave.fadeInSize(1.2f);
+                                wave.fadeOutIntensity(0.9f);
+                                wave.setSize(262.5f);
+                                DistortionShader.addDistortion(wave);
+
+                                final StandardLight light = new StandardLight();
+                                light.setLocation(loc);
+                                light.setIntensity(0.35f);
+                                light.setSize(950.0f);
+                                light.setColor(AFTERIMAGE_COLOR);
+                                light.fadeOut(1.0f);
+                                LightShader.addLight(light);
+
+                                Global.getCombatEngine().addSmoothParticle(
+                                        particlePos,
+                                        particleVel,
+                                        MathUtils.getRandomNumberInRange(5f, 15f),
+                                        0.8f,
+                                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                                        RIPPLE_COLOR
+                                );
+
+                            }
+                        }
                     }
                 }
             }
         }
+
 
         // Execute teleport movement if in progress
         if (teleportInProgress) {
@@ -337,7 +407,7 @@ public class NSP_PhaseTunnelerStats extends BaseShipSystemScript {
         if (teleportInProgress) {
             // Ensure ship is at target location
             if (teleportTargetLocation != null) {
-                 ship.getLocation().set(teleportTargetLocation);
+                ship.getLocation().set(teleportTargetLocation);
             }
 
             // Clear teleport state

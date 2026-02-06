@@ -4,20 +4,21 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.CoreUITabId;
-import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipHullSpecAPI;
-import com.fs.starfarer.api.combat.ShipVariantAPI;
+import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
+import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import neon.nsp.data.scripts.util.NSP_ReflectionUtilsT;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import static neon.nsp.data.NSP_reference_sheet.NSP_AISWITCHAUTOMATED;
 import static neon.nsp.data.NSP_reference_sheet.NSP_AISWITCHMANUAL;
@@ -25,6 +26,17 @@ import static neon.nsp.data.NSP_reference_sheet.NSP_AISWITCHMANUAL;
 public class NSP_aiswitch extends BaseHullMod {
 
     private final String switchTag = "NSP_switched";
+    public static final Map<String, String> decoMap = new HashMap<String, String>();
+    static {
+        decoMap.put("tll_anubis", "tll_anubis_corebridge");
+        decoMap.put("tll_peregrine", "tll_peregrine_corebridge");
+        decoMap.put("tll_conquest", "tll_conquest_corebridge");
+        decoMap.put("tll_dominator", "tll_dominator_corebridge");
+        decoMap.put("tll_eagle", "tll_eagle_corebridge");
+        decoMap.put("tll_falcon", "tll_falcon_corebridge");
+        decoMap.put("tll_onslaught", "tll_onslaught_corebridge");
+        decoMap.put("tll_legion", "tll_legion_corebridge");
+    }
 
     @Override
     public CargoStackAPI getRequiredItem() {
@@ -61,7 +73,25 @@ public class NSP_aiswitch extends BaseHullMod {
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        // Empty implementation
+        if(ship.getOriginalOwner()<0){
+            //undo fix for weapons put in cargo
+            if(
+                    Global.getSector()!=null &&
+                            Global.getSector().getPlayerFleet()!=null &&
+                            Global.getSector().getPlayerFleet().getCargo()!=null &&
+                            Global.getSector().getPlayerFleet().getCargo().getStacksCopy()!=null &&
+                            !Global.getSector().getPlayerFleet().getCargo().getStacksCopy().isEmpty()
+            ){
+                for (CargoStackAPI s : Global.getSector().getPlayerFleet().getCargo().getStacksCopy()){
+                    if(
+                            s.isWeaponStack()
+                                    && s.getWeaponSpecIfWeapon().getWeaponId().endsWith("_corebridge")
+                    ){
+                        Global.getSector().getPlayerFleet().getCargo().removeStack(s);
+                    }
+                }
+            }
+        }
     }
 
     @Override
@@ -97,8 +127,13 @@ public class NSP_aiswitch extends BaseHullMod {
         ShipHullSpecAPI spec = ship.getHullSpec();
         if (spec == null) return;
 
+        if (stats.getEntity() == null) return;
+
         ShipVariantAPI variant = stats.getVariant();
         if (variant == null) return;
+
+        // Apply decorative weapon only when in automated mode (has NSP_aiswitch_auto)
+        applyDecorativeWeaponBasedOnMode(ship, stats, variant);
 
         if (!this.isBuiltIn(ship) && !this.isSMod(ship)) return;
 
@@ -147,6 +182,53 @@ public class NSP_aiswitch extends BaseHullMod {
         if (stats.getVariant() == null || (!this.isBuiltIn(ship) && !this.isSMod(ship))) return;
 
         ShipVariantAPI variantStats = stats.getVariant();
+        handleAutomationSwitching(variantStats);
+    }
+
+    private void applyDecorativeWeaponBasedOnMode(ShipAPI ship, MutableShipStatsAPI stats, ShipVariantAPI variant) {
+        String hullId = stats.getVariant().getHullSpec().getHullId();
+
+        // Only proceed if this hull has a decorative weapon mapping
+        if (!decoMap.containsKey(hullId)) return;
+
+        // Check if ship is in automated mode (has NSP_aiswitch_auto)
+        boolean isAutomatedMode = variant.hasHullMod(NSP_AISWITCHAUTOMATED);
+
+        // Find decorative slot
+        WeaponSlotAPI decorativeSlot = null;
+        Iterator weaponiter = ship.getHullSpec().getAllWeaponSlotsCopy().iterator();
+        while (weaponiter.hasNext()) {
+            WeaponSlotAPI weaponslot = (WeaponSlotAPI) weaponiter.next();
+            if (weaponslot.getWeaponType().equals(WeaponAPI.WeaponType.DECORATIVE)) {
+                decorativeSlot = weaponslot;
+                break;
+            }
+        }
+
+        if (decorativeSlot == null) return;
+
+        String slotId = decorativeSlot.getId();
+
+        if (isAutomatedMode) {
+            // In automated mode: add the corebridge decorative weapon
+            String weaponId = decoMap.get(hullId);
+            WeaponSpecAPI weaponSpec = Global.getSettings().getWeaponSpec(weaponId);
+            if (weaponSpec != null) {
+                // Clear the slot first (set to empty string), then add the decorative weapon
+                variant.clearSlot(slotId);
+                variant.addWeapon(slotId, weaponId);
+            }
+        } else {
+            // In manual mode: clear any weapon in the decorative slot
+            // Check if current weapon is a corebridge weapon
+            String currentWeaponId = variant.getWeaponId(slotId);
+            if (currentWeaponId != null && currentWeaponId.endsWith("_corebridge")) {
+                variant.clearSlot(slotId);
+            }
+        }
+    }
+
+    private void handleAutomationSwitching(ShipVariantAPI variantStats) {
         if (variantStats.hasTag(Tags.AUTOMATED)) {
             if (!variantStats.hasHullMod(NSP_AISWITCHAUTOMATED)) {
                 variantStats.removeTag(Tags.AUTOMATED);
@@ -163,7 +245,6 @@ public class NSP_aiswitch extends BaseHullMod {
                         // Handle exception if needed
                     }
                 }
-                return;
             }
         } else {
             if (!variantStats.hasHullMod(NSP_AISWITCHMANUAL)) {
@@ -181,7 +262,6 @@ public class NSP_aiswitch extends BaseHullMod {
                         // Handle exception if needed
                     }
                 }
-                return;
             }
         }
     }
