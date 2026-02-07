@@ -78,5 +78,6 @@ Centurion (A) Cover,nsp_cent_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,
 #DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Pusher Plate (Small),nsp_pusherplate_small,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
 Pusher Plate (Tiny),nsp_pusherplate_tiny,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
-Pursuit Cover1,nsp_derelictpursuit2_cover1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,42.5
-Pursuit Cover2,nsp_derelictpursuit2_cover2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,42.5
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#REPLEVIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Salvage Beam,nsp_replevin_builtin,1,,4500,900,500,,,0,5,20,,,,HIGH_EXPLOSIVE,,300,0.1,0.1,,,,,,,2400,,,,,,,,"beam20, LR, no_drop, no_drop_salvage, restricted",,Explorarium,,Anti Armor,,,,,,,,,,24

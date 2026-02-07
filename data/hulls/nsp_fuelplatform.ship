@@ -12,7 +12,9 @@
   "shieldRadius": 102.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "increased_explosion",
+    "rugged"
   ],
   "weaponSlots": [
     {

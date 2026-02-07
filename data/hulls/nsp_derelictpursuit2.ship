@@ -12,7 +12,8 @@
   "shieldRadius": 82,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "rugged"
   ],
   "builtInWeapons": {
     "WS0007": "nsp_pusherplate_tiny"
@@ -79,7 +80,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 180,
-      "locations": [-44, -0]
+      "locations": [-46.5, -0]
     },
     {
       "id": "WS0008",

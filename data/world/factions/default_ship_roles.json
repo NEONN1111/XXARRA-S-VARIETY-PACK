@@ -21,7 +21,7 @@
                 "tll_peregrine_standard":2,
                 "tll_nest_standard":4,
                 "tll_nest_assault":3,
-				"nsp_cargoplatform_standard":3,
+		
  
 	},
 	
@@ -126,7 +126,10 @@
                    "tll_gemini_standard":4,
                    "tll_elucidation_standard":3,
 				   "nsp_perun_standard":3,
-				   "nsp_silo_standard":3,
+				   "nsp_silo_standard":5,
+				   "nsp_cargoplatform_standard":3,
+				   "nsp_cargoplatform2_standard":4,
+				   "nsp_replevin_standard":3,
  
              
                
@@ -147,10 +150,11 @@
                    "nsp_incursion_standard":0.9,
                    "nsp_incursion_church_standard":0.9,
                    "nsp_phaseguard_standard":0.9,
-	           "tll_lumen_standard":10,
+	               "tll_lumen_standard":10,
                    "tll_glimmer_standard":5,
                    "tll_shade_standard":3,
                    "tll_brawler_standard":3,
+				   "nsp_derelictpursuit2_standard":4,
     },
 	"carrierMedium":{
 		"nsp_rampartcarrier_standard":3,

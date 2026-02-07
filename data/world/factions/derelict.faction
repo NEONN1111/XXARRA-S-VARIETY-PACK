@@ -39,7 +39,10 @@
                         "nsp_recluse",
 						"nsp_perun",
 						"nsp_silo",
-						"nsp_cargoplatform"],
+						"nsp_cargoplatform",
+						"nsp_derelictpursuit2",
+						"nsp_cargoplatform2",
+						"nsp_replevin"],
          },
 	"priorityShips":{
 		"tags":[],
