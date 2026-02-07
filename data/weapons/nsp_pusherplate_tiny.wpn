@@ -1,0 +1,58 @@
+{
+  "id": "nsp_pusherplate_tiny",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "LARGE",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/decorative/pusher_plate_tiny.png",
+  "turretGlowSprite": "graphics/weapons/hil_turret_glow.png",
+  "hardpointSprite": "graphics/weapons/hil_hardpoint_base.png",
+  "hardpointGlowSprite": "graphics/weapons/hil_hardpoint_glow.png",
+  "renderBelowAllWeapons": true,
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    40,
+    90,
+    255,
+    235
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    32,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    40,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    25,
+    75,
+    155,
+    255
+  ],
+  "coreColor": [
+    215,
+    225,
+    255,
+    255
+  ],
+  "width": 30,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 292,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ]
+}
