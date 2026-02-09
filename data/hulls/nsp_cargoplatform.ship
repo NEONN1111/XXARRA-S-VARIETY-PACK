@@ -13,8 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "automated",
-    "ballistic_rangefinder",
-    "rugged"
+    "ballistic_rangefinder"
   ],
   "builtInWeapons": {
     "WS0017": "locust",
