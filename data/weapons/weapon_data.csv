@@ -11,6 +11,7 @@ Will target missiles if no other targets are in range.",,,,,7.4
 Adjutant Defense Cannon,nsp_adjutant,1,,100000,900,,1000,,,5,40,80,1,8,FRAGMENTATION,190,,0,0.333333,1,,0,5,1,5,,900,,,,,3,PD_ALSO,"no_drop, no_drop_salvage, restricted",,Domain Restricted,,Anti Armor (Area),,,,,"Each shell has a proximity fuse and deals damage over a wide area when it explodes.
 
 Will target missiles if no other targets are in range.",,,,,40.5
+Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,,,,,ENERGY,190,,0,0.5,1,,0,2,1,5,,1500,,,,,3,,"no_drop, no_drop_salvage, restricted",,Domain Restricted,,Anti Armor,,,,,Fires singularity shells.,,,,,40.5
 ,nsp_maneuveringjet,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
 ,nsp_vambracecover1,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
 ,nsp_vambracecover2,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,

@@ -1,0 +1,66 @@
+{
+  "variantId": "nsp_teutates_prow_variant",
+  "hullId": "nsp_teutates_prow",
+  "displayName": "Enforcement",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 40,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "autorepair",
+    "fluxbreakers",
+    "reinforcedhull",
+    "blast_doors",
+    "magazines"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "nsp_derelictbomber",
+    "nsp_derelictbomber",
+    "nsp_derelictfighter",
+    "nsp_derelictfighter",
+    "nsp_derelictfighter",
+    "nsp_gun_platform",
+    "nsp_gun_platform2",
+    "nsp_gun_platform3"
+  ]
+}

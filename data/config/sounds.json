@@ -92,6 +92,21 @@
 	[
             {"file":"sounds/shipsystems/nsp_disabling_strike.ogg","pitch":1,"volume":0.5},
         ],
+			
+	
+		
+		    "nsp_tyrfing_fire":
+	[
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01_loud.ogg","pitch":0.9,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01_loud.ogg","pitch":1.0,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01_loud.ogg","pitch":1.1,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_02_loud.ogg","pitch":0.9,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_02_loud.ogg","pitch":1.0,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_02_loud.ogg","pitch":1.1,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_03_loud.ogg","pitch":0.9,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_03_loud.ogg","pitch":1.0,"volume":0.7},
+		{"file":"sounds/sfx_wpn_guns/mjolnir_fire_03_loud.ogg","pitch":1.1,"volume":0.7},
+	], 
 		
 		   # CANISTER CANNON
     "nsp_canistercannon_fire":[

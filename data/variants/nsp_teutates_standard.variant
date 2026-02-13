@@ -1,0 +1,115 @@
+{
+  "variantId": "nsp_teutates_standard",
+  "hullId": "nsp_teutates",
+  "displayName": "Enforcement",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 40,
+  "quality": 1,
+  "permaMods": [
+    "fluxbreakers",
+    "magazines",
+    "autorepair"
+  ],
+  "hullMods": [
+    "armoredweapons",
+    "reinforcedhull",
+    "blast_doors",
+    "fluxdistributor",
+    "fluxbreakers",
+    "magazines",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "ADJ1": "nsp_tyrfing",
+        "ADJ2": "nsp_tyrfing",
+        "WS0023": "nsp_tyrfing",
+        "WS0029": "nsp_tyrfing"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0017": "hydra",
+        "WS0018": "hydra"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "breach",
+        "WS0006": "breach",
+        "WS0007": "breach",
+        "WS0008": "breach",
+        "WS0021": "nsp_angurvadal",
+        "WS0022": "nsp_angurvadal"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0027": "breachpod",
+        "WS0028": "breachpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0019": "heavyac",
+        "WS0020": "heavyac",
+        "WS0030": "heavyac",
+        "WS0031": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0003": "dualflak",
+        "WS0004": "dualflak",
+        "WS0009": "dualflak",
+        "WS0015": "guardian",
+        "WS0016": "guardian",
+        "WS0032": "vulcan",
+        "WS0037": "vulcan",
+        "WS0038": "vulcan",
+        "WS0039": "vulcan",
+        "WS0040": "vulcan",
+        "WS0041": "vulcan",
+        "WS0042": "vulcan",
+        "WS0043": "vulcan",
+        "WS0044": "vulcan",
+        "WS0045": "vulcan",
+        "WS0046": "vulcan",
+        "WS0047": "vulcan"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "TEM1": "nsp_teutates_prow_variant"
+    },
+    {
+      "TEM2": "nsp_teutates_midright_variant"
+    },
+    {
+      "TEM3": "nsp_teutates_midleft_variant"
+    }
+  ],
+  "wings": []
+}

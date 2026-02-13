@@ -1,0 +1,77 @@
+{
+  "hullName": "Left Module",
+  "hullId": "nsp_teutates_midright",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_templar/special/nsp_teutates_midleft.png",
+  "style": "TEMPLAR",
+  "height": 191,
+  "width": 66,
+  "center": [59, 98],
+  "collisionRadius": 192.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 193,
+  "viewOffset": 0,
+  "builtInMods": [
+    "always_detaches",
+    "missile_reload",
+    "reduced_explosion",
+    "nsp_supercomputer",
+    "nsp_linkedhull",
+    "eccm"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [3, 42]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 45,
+      "locations": [-66.5, 29]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 90,
+      "locations": [-46.5, 35]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 90,
+      "locations": [-30.5, 35]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 90,
+      "locations": [-15.5, 35]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -91, 33,
+    -69.5, 52.5,
+    82, 44.5,
+    76, 39.5,
+    -70, 43.5
+  ]
+}

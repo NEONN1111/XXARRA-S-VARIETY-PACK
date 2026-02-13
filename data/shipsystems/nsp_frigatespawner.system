@@ -1,9 +1,0 @@
-{
-	"id":"nsp_frigatespawner",
-	"type":"WEAPON",
-	"aiType":"CUSTOM", 
-	"aiScript":"neon.nsp.data.scripts.nsp_DroneDeployerAI",
-	
-	"weaponDataId":"nsp_luminancebay",
-	"outOfUsesSound":"gun_out_of_ammo",
-}

@@ -54,6 +54,8 @@
                         "shield_ring":"graphics/fx/distortion.png",
                         "nsp_impact_shockwave":"graphics/fx/nsp_impact_shockwave.png",
                         "nsp_nuke_risidual":"graphics/fx/nsp_nuke_risidual.png",
+						"NSP_drill_cloud":"graphics/fx/NSP_drill_cloud.png",
+						"NSP_shockwave":"graphics/fx/NSP_shockwave.png",
  
         },
     }

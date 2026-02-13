@@ -13,7 +13,6 @@ public class NSPPeople {
 
     public static String PHOS = "nsp_phos";
 
-    public static String INVICTA = "nsp_invicta";
 
     public static String EXPONENT_CORE = "exponent_core";
 

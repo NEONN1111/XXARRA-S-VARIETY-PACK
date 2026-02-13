@@ -1,5 +1,0 @@
-id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon
-nsp_weirdslayer,"In Tenebris, Monstra",1,0,,,"""Beyond the veil, I see them there. Waiting for me. Hungering in the dark. Covetous of such great wonders. They call out to me. I will answer.""",,TRUE,FALSE,FALSE,npc_only,graphics/icons/skills/nsp_weirdslayer.png
-nsp_paradeigma,Paradeigma,0,0,,,"humans are petty, irrational creatures that live for fleeting moments, fight, and die of some absurd act.
-but you have realized the passion of your ascension.
-are you ready to become something more?",,TRUE,,,"npc_only, deprecated",graphics/icons/markets/rogue_ai.png
