@@ -43,6 +43,10 @@ public class NSPModPlugin extends BaseModPlugin {
         if (!Global.getSector().getGenericPlugins().hasPlugin(NSPSafeguard.class)) {
             Global.getSector().getGenericPlugins().addPlugin(new NSPSafeguard(), true);
         }
+
+        if (!Global.getSector().getListenerManager().hasListenerOfClass(DerelictOddityTracker.class)) {
+            Global.getSector().getListenerManager().addListener(new DerelictOddityTracker(), true);
+        }
         try {
             SectorAPI sector = Global.getSector();
             ExponentCampaignPluginImpl plugin = new ExponentCampaignPluginImpl();
