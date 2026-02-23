@@ -11,6 +11,10 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 207,
   "viewOffset": 0,
+  "builtInMods": [
+    "hbi",
+    "ballistic_rangefinder"
+  ],
   "builtInWeapons": {
     "WS0007": "dualflak",
     "WS0008": "dualflak",
@@ -38,21 +42,21 @@
     },
     {
       "id": "WS0001",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 120,
       "angle": 20,
-      "locations": [16, 55]
+      "locations": [18, 45]
     },
     {
       "id": "WS0002",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 120,
       "angle": -20,
-      "locations": [16, -55]
+      "locations": [18, -45]
     },
     {
       "id": "WS0003",
@@ -68,7 +72,7 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 240,
+      "arc": 120,
       "angle": 25,
       "locations": [113, 12]
     },
@@ -77,7 +81,7 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 240,
+      "arc": 120,
       "angle": -25,
       "locations": [113, -12]
     },
@@ -86,7 +90,7 @@
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 240,
+      "arc": 120,
       "angle": 0,
       "locations": [150, 0]
     },
@@ -107,6 +111,60 @@
       "arc": 135,
       "angle": -153.5,
       "locations": [-21, -40]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 20,
+      "locations": [52, 30]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -20,
+      "locations": [52, -30]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 39.5,
+      "locations": [79, 47]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -39.5,
+      "locations": [79, -47]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 39.5,
+      "locations": [32, 76]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -39.5,
+      "locations": [32, -76]
     }
   ],
   "engineSlots": [

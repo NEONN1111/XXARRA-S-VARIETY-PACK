@@ -12,7 +12,6 @@
   "shieldRadius": 144,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxshunt",
     "nsp_sandevistan2",
     "delicate",
     "do_not_back_off"
@@ -26,8 +25,8 @@
   "weaponSlots": [
     {
       "id": "WS0002",
-      "size": "LARGE",
-      "type": "ENERGY",
+      "size": "MEDIUM",
+      "type": "HYBRID",
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": -0,
@@ -76,7 +75,7 @@
       "mount": "TURRET",
       "arc": 120,
       "angle": 180,
-      "locations": [-38, -0]
+      "locations": [-68, -0]
     },
     {
       "id": "WS0008",

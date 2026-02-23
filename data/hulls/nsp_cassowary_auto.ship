@@ -13,9 +13,9 @@
   "viewOffset": 0,
   "builtInMods": [
     "bdeck",
-    "NSP_aiswitch",
     "coherer",
-    "hbi"
+    "hbi",
+    "NSP_aiswitch_elite"
   ],
   "weaponSlots": [
     {

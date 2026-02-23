@@ -50,8 +50,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
     public static float REFIRE_DELAY = 0.8f;
     public static float FLUX_PER_DAMAGE = 1f;
     public static float DAMAGE = 90f;
-    //public static float MIN_ROF_MULT = 1f;
-    //public static float MAX_ROF_MULT = 4f;
 
     // Visual/Audio effects
     public static float MAX_JITTER_INTENSITY = 1.0f;
@@ -61,18 +59,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
     public static float MIN_VOLUME = 0f;
     public static float MAX_VOLUME = 3f;
     public static float VOLUME_RAMP_SPEED = 10f;
-
-    // Weapon flux reduction system
-    // public static float MAX_FLUX_REDUCTION = 50f;
-    // public static float FLUX_REDUCTION_PER_KILL = 12.5f;
-
-    // Fire rate bonus system
-    //public static float MAX_FIRE_RATE_BONUS = 25f;
-    //public static float FIRE_RATE_PER_KILL = 6.25f;
-
-    // Flux dissipation bonus system
-    //public static float MAX_FLUX_DISSIPATION_BONUS = 50f;
-    //public static float FLUX_DISSIPATION_PER_KILL = 12.5f;
 
     // Data key for explosion system
     public static String EXPLOSION_DATA_KEY = "nsp_ShroudedLensHullmod_data_key";
@@ -246,7 +232,7 @@ public class NSPSandyEffect2 extends BaseHullMod {
         }
     }
 
-    // Mote spawning method - UPDATED: Use modified MoteAIScript with priority targeting
+    // Mote spawning method
     protected void spawnTemporalMote(ShipAPI ship, MoteSystemData moteData) {
         CombatEngineAPI engine = Global.getCombatEngine();
 
@@ -264,7 +250,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
                 weaponId,
                 loc, dir, null);
 
-        // UPDATED: Use the modified MoteAIScript with priority targeting
         mote.setWeaponSpec(weaponId);
         mote.setMissileAI(new neon.nsp.data.shipsystems.NSP_ExponentMoteControl(mote));
         mote.getActiveLayers().remove(CombatEngineLayers.FF_INDICATORS_LAYER);
@@ -544,11 +529,7 @@ public class NSPSandyEffect2 extends BaseHullMod {
 
     @Override
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
-
         tooltip.addPara("The %s we weave together.", 5f, Color.ORANGE, "song");
-
-
-        // UPDATED: Mote system info with aggressive ship-only targeting
     }
 
     public String getHullmodName(String id) {
@@ -591,14 +572,13 @@ public class NSPSandyEffect2 extends BaseHullMod {
     @Override
     public void applyEffectsAfterShipAddedToCombatEngine(ShipAPI ship, String id) {
         ship.addListener(new SandyListener(ship));
-        ship.getMutableStats().getTimeMult().modifyMult(id, SandyListener.PASSIVE_TIMEFLOW);
+        // Note: The timeMult modifier (speed bonus) has been removed
         ship.getMutableStats().getArmorDamageTakenMult().modifyMult(id, ARMOR_DAMAGE_MULT);
         ship.getMutableStats().getHullDamageTakenMult().modifyMult(id, HULL_DAMAGE_MULT);
         ship.getMutableStats().getEmpDamageTakenMult().modifyMult(id, EMP_DAMAGE_MULT);
     }
 
     private static final Object STATUS_KEY1 = new Object();
-    private static final Object STATUS_KEY2 = new Object();
 
     class SandyListener implements AdvanceableListener, DamageDealtModifier {
         String id = "nsp_sandy_effect";
@@ -607,29 +587,13 @@ public class NSPSandyEffect2 extends BaseHullMod {
         float duration = 0.05f;
         Color color = Color.GRAY;
 
-        int kills = 0;
-        int maxKillsBonus = 4;
-        float bonusPerKill = 0.7f;
-        float killBonusDuration = 60f;
-
-        float currentBonus = 1f;
-        float maxBonus = 5f + (maxKillsBonus * bonusPerKill);
-        float minBonus = 1f;
-        float decayRate = 0.0001f;
-        public static final float PASSIVE_TIMEFLOW = 1.2f;
+        public static final float PASSIVE_TIMEFLOW = 1.2f; // Kept for reference but not used
         public static final float DAMAGE_REDUCTION = 0.12f;
         public static final Color AFTERIMAGE_COLOR = new Color(255, 196, 19, 90);
-
-        float currentFluxReduction = 0f;
-        float currentFireRateBonus = 0f;
-        float currentFluxDissipationBonus = 0f;
 
         private Object loopSound;
         private float currentVolume = 0f;
         private float targetVolume = 0f;
-
-        float[] killBonuses = new float[maxKillsBonus];
-        float[] killTimers = new float[maxKillsBonus];
 
         private ExplosionSystemData explosionData;
         private IntervalUtil interval = new IntervalUtil(timer, timer);
@@ -649,25 +613,13 @@ public class NSPSandyEffect2 extends BaseHullMod {
         private void updateJitterEffect(float amount) {
             if (ship == null || ship.isHulk()) return;
 
-            float jitterIntensity = 0f;
-            int activeKillCount = 0;
+            // Jitter effect now uses a constant low intensity since kill bonuses are removed
+            float jitterIntensity = 0.2f; // Base jitter intensity
 
-            for (int i = 0; i < kills; i++) {
-                if (killBonuses[i] > 0 && killTimers[i] > 0) {
-                    activeKillCount++;
-                    jitterIntensity += (killBonuses[i] / bonusPerKill);
-                }
-            }
-
-            if (activeKillCount > 0) {
-                jitterIntensity = jitterIntensity / maxKillsBonus;
-                jitterIntensity = Math.min(jitterIntensity, MAX_JITTER_INTENSITY);
-
-                if (jitterIntensity > 0.1f) {
-                    float maxJitterRange = 15f * jitterIntensity;
-                    ship.setJitter(this, JITTER_COLOR, jitterIntensity, 3, 0f, maxJitterRange);
-                    ship.setJitterUnder(this, JITTER_COLOR, jitterIntensity, 3, 0f, maxJitterRange);
-                }
+            if (jitterIntensity > 0.1f) {
+                float maxJitterRange = 15f * jitterIntensity;
+                ship.setJitter(this, JITTER_COLOR, jitterIntensity, 3, 0f, maxJitterRange);
+                ship.setJitterUnder(this, JITTER_COLOR, jitterIntensity, 3, 0f, maxJitterRange);
             } else {
                 ship.setJitter(this, JITTER_COLOR, 0f, 0, 0f, 0f);
                 ship.setJitterUnder(this, JITTER_COLOR, 0f, 0, 0f, 0f);
@@ -677,22 +629,8 @@ public class NSPSandyEffect2 extends BaseHullMod {
         private void updateAudioEffect(float amount) {
             if (ship == null || ship.isHulk()) return;
 
-            float intensity = 0f;
-            int activeKillCount = 0;
-
-            for (int i = 0; i < kills; i++) {
-                if (killBonuses[i] > 0 && killTimers[i] > 0) {
-                    activeKillCount++;
-                    intensity += (killBonuses[i] / bonusPerKill);
-                }
-            }
-
-            if (activeKillCount > 0) {
-                targetVolume = (intensity / maxKillsBonus) * (MAX_VOLUME - MIN_VOLUME) + MIN_VOLUME;
-                targetVolume = Math.min(targetVolume, MAX_VOLUME);
-            } else {
-                targetVolume = 0f;
-            }
+            // Audio now uses constant low volume since kill bonuses are removed
+            targetVolume = 0.5f; // Base volume
 
             if (currentVolume < targetVolume) {
                 currentVolume = Math.min(currentVolume + VOLUME_RAMP_SPEED * amount, targetVolume);
@@ -708,21 +646,6 @@ public class NSPSandyEffect2 extends BaseHullMod {
                     ship.getLocation(),
                     Misc.ZERO
             );
-        }
-
-        private void updateWeaponBonuses() {
-            int activeKillCount = 0;
-            for (int i = 0; i < kills; i++) {
-                if (killBonuses[i] > 0 && killTimers[i] > 0) {
-                    activeKillCount++;
-                }
-            }
-
-            if (currentFluxDissipationBonus > 0) {
-                ship.getMutableStats().getFluxDissipation().modifyPercent(id + "_dissipation", currentFluxDissipationBonus);
-            } else {
-                ship.getMutableStats().getFluxDissipation().unmodify(id + "_dissipation");
-            }
         }
 
         // UPDATED: Mote system update with aggressive ship-only targeting
@@ -762,49 +685,23 @@ public class NSPSandyEffect2 extends BaseHullMod {
             updateExplosionSystem(amount);
             updateMoteSystem(amount);
 
-            float totalActiveBonus = 0f;
-            for (int i = 0; i < kills; i++) {
-                if (killBonuses[i] > 0) {
-                    killTimers[i] -= amount;
-                    if (killTimers[i] <= 0) {
-                        killBonuses[i] = 0;
-                    } else {
-                        killBonuses[i] = Math.max(0, killBonuses[i] - (decayRate * amount));
-                        totalActiveBonus += killBonuses[i];
-                    }
-                }
-            }
-
-            currentBonus = minBonus + totalActiveBonus;
-            ship.getMutableStats().getTimeMult().modifyMult(id, currentBonus);
-
-            updateWeaponBonuses();
+            // Kill bonus and time multiplier updates removed
 
             updateJitterEffect(amount);
             updateAudioEffect(amount);
 
             if (ship == Global.getCombatEngine().getPlayerShip()) {
-                int activeKillCount = 0;
-                for (int i = 0; i < kills; i++) {
-                    if (killBonuses[i] > 0 && killTimers[i] > 0) {
-                        activeKillCount++;
-                    }
-                }
-
-                String bonusText = Misc.getRoundedValue(currentBonus) + "x Speed";
-                if (activeKillCount > 0) {
-                    bonusText += " | " + activeKillCount + "/4 Kills Active";
-                }
+                String statusText = "Temporal Distortion Active";
 
                 if (moteData != null && !moteData.motes.isEmpty()) {
-                    bonusText += " | " + moteData.motes.size() + " Motes";
+                    statusText += " | " + moteData.motes.size() + " Motes";
                 }
 
                 Global.getCombatEngine().maintainStatusForPlayerShip(
                         NSPSandyEffect2.STATUS_KEY1,
                         Global.getSettings().getSpriteName("ui", "icon_op"),
                         "SHOW THEM THE LIGHT",
-                        bonusText,
+                        statusText,
                         false
                 );
             }
@@ -817,68 +714,8 @@ public class NSPSandyEffect2 extends BaseHullMod {
 
         @Override
         public String modifyDamageDealt(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
-            if (target instanceof ShipAPI) {
-                ShipAPI targetShip = (ShipAPI) target;
-                if (targetShip.getOwner() != ship.getOwner()
-                        && !targetShip.isHulk()
-                        && targetShip.getHullSize() != ShipAPI.HullSize.FIGHTER
-                        && !targetShip.isStationModule()
-                        && !targetShip.hasListener(new KillTracker(ship))) {
-                    targetShip.addListener(new KillTracker(ship));
-                    return "added_kill_tracker";
-                }
-            }
+            // Kill tracker addition removed since kill bonuses are gone
             return null;
-        }
-
-        public void addKillBonus() {
-            if (kills < maxKillsBonus) {
-                killBonuses[kills] = bonusPerKill;
-                killTimers[kills] = killBonusDuration;
-                kills++;
-            } else {
-                int oldestIndex = 0;
-                for (int i = 1; i < maxKillsBonus; i++) {
-                    if (killTimers[i] < killTimers[oldestIndex]) {
-                        oldestIndex = i;
-                    }
-                }
-                killBonuses[oldestIndex] = bonusPerKill;
-                killTimers[oldestIndex] = killBonusDuration;
-            }
-        }
-    }
-
-    // KillTracker class
-    class KillTracker implements HullDamageAboutToBeTakenListener {
-        String key = "$nsp_kill_tracker_key";
-        ShipAPI dealer;
-
-        public KillTracker(ShipAPI ship) {
-            dealer = ship;
-        }
-
-        @Override
-        public boolean notifyAboutToTakeHullDamage(Object param, ShipAPI ship, Vector2f point, float damageAmount) {
-            if (damageAmount >= ship.getHitpoints()) {
-                if (param instanceof ShipAPI) {
-                    if (param != dealer) return false;
-                    if (ship.getCustomData().containsKey(key)) return false;
-
-                    ship.setCustomData(key, true);
-
-                    if (dealer.getListenerManager() != null) {
-                        Optional<SandyListener> maybelistener = dealer.getListenerManager()
-                                .getListeners(SandyListener.class).stream().findFirst();
-
-                        if (maybelistener.isPresent()) {
-                            SandyListener listener = maybelistener.get();
-                            listener.addKillBonus();
-                        }
-                    }
-                }
-            }
-            return false;
         }
     }
 

@@ -12,7 +12,8 @@
   "shieldRadius": 314,
   "viewOffset": 0,
   "builtInMods": [
-    "bdeck"
+    "bdeck",
+    "hbi"
   ],
   "weaponSlots": [
     {

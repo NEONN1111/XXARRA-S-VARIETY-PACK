@@ -3,7 +3,7 @@
   "hullId": "nsp_ajax",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 50,
+  "fluxCapacitors": 48,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
@@ -19,15 +19,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "hephag"
+        "WS0003": "hellbore"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "gauss",
-        "WS0002": "gauss"
+        "WS0001": "arbalest",
+        "WS0002": "arbalest"
       }
     },
     {
@@ -36,10 +36,32 @@
       "weapons": {
         "WS0004": "vulcan",
         "WS0005": "vulcan",
+        "WS0009": "shredder",
+        "WS0010": "shredder"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
         "WS0006": "dualflak",
         "WS0007": "dualflak",
-        "WS0008": "dualflak"
+        "WS0008": "dualflak",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
     },
     {
       "autofire": false,

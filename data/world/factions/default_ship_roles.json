@@ -12,8 +12,7 @@
                 "guardian_Standard":2,
                 "nsp_iliad_standard":0.8,
                 "nsp_praxidike_mkii_standard":0.7,
-
-		
+              
  
 	},
 	
@@ -35,7 +34,7 @@
 		"nsp_praxidike_pd":0.9,
 	},
 "freighterSmall":{
-
+		
 	},
 "freighterMedium":{
 	},
@@ -45,11 +44,11 @@
 		"nsp_grox_standard":0.4,
 	},
     "combatMedium":{
-		        "nsp_hammonitor_standard":0.9,
+		"nsp_hammonitor_standard":0.9,
                 "nsp_hammerhead_tt_standard":0.8,
                 "nsp_medusa_lt_standard":0.7,
                 "nsp_eagle_r_standard":0.7,
-                "nsp_mace_standard":0.8,
+		"nsp_mace_standard":0.8,
                 "nsp_anger_standard":0.4,
                 "nsp_anger_ind_standard":0.4,
                 "nsp_phosphophyllite_standard":0.3,
@@ -63,7 +62,6 @@
                 "nsp_elucidation_standard":0.1,
                 "nsp_dominator_pather_standard":0.3,
                 "nsp_erebid_ancient":3,
-                "nsp_fulgurite_ancient":3,
            
     },
     "combatLarge":{"nsp_eagle_r_standard":0.7,
@@ -76,6 +74,7 @@
                    "nsp_kardakes_ancient":3,
                    "nsp_erebid_ancient":4,
                    "nsp_fulgurite_ancient":4,
+      
  
              
                
@@ -90,7 +89,7 @@
                    "nsp_phaseguard_standard":0.9,
     },
 	"carrierMedium":{
-    },
+
       },
 	
 }

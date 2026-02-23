@@ -1,0 +1,48 @@
+{
+  "variantId": "nsp_brawler_auto_standard",
+  "hullId": "nsp_brawler_auto",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 6,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "fluxbreakers",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "shredder"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "ioncannon",
+        "WS0005": "ioncannon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

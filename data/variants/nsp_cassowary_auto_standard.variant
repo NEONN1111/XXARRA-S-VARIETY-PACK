@@ -3,7 +3,7 @@
   "hullId": "nsp_cassowary_auto",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 29,
+  "fluxCapacitors": 27,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
@@ -15,8 +15,6 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0005": "typhoon",
-        "WS0006": "typhoon",
         "WS0007": "cyclone",
         "WS0012": "cyclone"
       }
@@ -43,6 +41,14 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
+        "WS0005": "ionpulser",
+        "WS0006": "ionpulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
         "WS0011": "autopulse",
         "WS0025": "autopulse"
       }
@@ -64,11 +70,6 @@
         "WS0023": "vulcan",
         "WS0024": "vulcan"
       }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {}
     },
     {
       "autofire": false,
