@@ -106,3 +106,7 @@ Teutates,nsp_teutates,Dreadnought,Unknown,burndrive,90,40000,2500,35000,12500,25
 Vambrace,nsp_teutates_prow,Vambrace Module,Unknown,,1,25000,5000,0,2500,100,0,,0,0,0,10,10,300,PHASE,damper,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","module_hull_bar_only, always_detaches, module_unselectable, module_refit_bright",,20000,4,7,,,,,,,,,
 Module,nsp_teutates_midright,Vambrace Module,Unknown,fastmissileracks,1,25000,2000,0,2500,100,80,,0,0,0,10,10,300,PHASE,damper,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","module_refit_bright, always_detaches",,20000,4,7,,,,,,,,,
 Module,nsp_teutates_midleft,Vambrace Module,Unknown,fastmissileracks,1,25000,2000,0,2500,100,80,,0,0,0,10,10,300,PHASE,damper,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","module_refit_bright, always_detaches",,20000,4,7,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#THREAT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,nsp_inthrictus,Siege Unit,Threat,incursion_mode,35,45000,10000,30000,12500,900,600,,40,15,15,4,4,10000,PHASE,canister_flak,0,0,0,,,4000,6000,1000,800,24,40,6,700000,3,12,1200,0.25,85,85,NEVER_DODGE_MISSILES,rare_bp,,0.2,2,2,,33,,,,,,,

@@ -1,0 +1,91 @@
+{
+  "variantId": "nsp_inthrictus_type350",
+  "hullId": "nsp_inthrictus",
+  "displayName": "Type 350",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 31,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "fluxbreakers",
+    "reinforcedhull",
+    "armoredweapons",
+    "insulatedengine"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "neoferric_quadcoil",
+        "WS 003": "neoferric_quadcoil",
+        "WS 005": "neoferric_quadcoil",
+        "WS 006": "neoferric_quadcoil",
+        "WS 008": "neoferric_quadcoil",
+        "WS 026": "neoferric_quadcoil"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "heavy_mass_driver",
+        "WS 009": "neutron_torpedo",
+        "WS0047": "heavy_mass_driver",
+        "WS0048": "heavy_mass_driver",
+        "WS0057": "heavy_mass_driver",
+        "WS0058": "heavy_mass_driver",
+        "WS0059": "heavy_mass_driver",
+        "WS0060": "heavy_mass_driver"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "neutron_torpedo",
+        "WS 010": "heavy_mass_driver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "devouring_swarm",
+        "WS0002": "devouring_swarm",
+        "WS0049": "devouring_swarm",
+        "WS0056": "devouring_swarm",
+        "WS0063": "kinetic_fragments",
+        "WS0064": "kinetic_fragments"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0050": "swarm_launcher",
+        "WS0051": "swarm_launcher",
+        "WS0052": "swarm_launcher",
+        "WS0053": "swarm_launcher",
+        "WS0054": "swarm_launcher",
+        "WS0055": "swarm_launcher"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0061": "voltaic_discharge",
+        "WS0062": "voltaic_discharge"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
