@@ -28,7 +28,9 @@
         },
 	"glows":{
             "nsp_exponent_glow1":"graphics/ships/nsp_exponent_glow1.png",
-            "jdp_exponent_glow2":"graphics/ships/nsp_exponent_glow2.png",
+            "nsp_exponent_glow2":"graphics/ships/nsp_exponent_glow2.png",
+			"nsp_thremlin_glow1":"graphics/ships/threat/nsp_thremlin_glow1.png",
+			"nsp_thremlin_glow2":"graphics/ships/threat/nsp_thremlin_glow2.png",
         },		
         "shields":{
         },

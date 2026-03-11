@@ -82,3 +82,4 @@ Pusher Plate (Tiny),nsp_pusherplate_tiny,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,p
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #REPLEVIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Salvage Beam,nsp_replevin_builtin,1,,4500,900,500,,,0,20,20,,,,HIGH_EXPLOSIVE,,300,0.1,0.1,,,,,,,2400,,,,,,,,"beam20, LR, no_drop, no_drop_salvage, restricted",,Explorarium,,Anti Armor,,,,,,,,,,24
+Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.3,0,10,5,10,,500,,,400,,,,"he18, lowtech_bp, merc, ind",,,,Anti Armor,,,,,,,,,,8

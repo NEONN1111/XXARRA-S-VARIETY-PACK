@@ -1,0 +1,163 @@
+{
+  "hullName": "Hide Unit",
+  "hullId": "nsp_thremlin",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/threat/nsp_thremlin.png",
+  "style": "THREAT",
+  "height": 107,
+  "width": 104,
+  "center": [52, 52.5],
+  "collisionRadius": 76,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 72,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "fragment_coordinator",
+    "fragment_swarm",
+    "threat_hullmod"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 20,
+      "locations": [10.5, 28]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -20,
+      "locations": [10.5, -28]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [40.5, 23]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [40.5, -23]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [32.5, -0]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 45,
+      "locations": [21, 32.5]
+    },
+    {
+      "id": "WS 006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -45,
+      "locations": [21, -32.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-49.5, 33],
+      "length": 32,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "THREAT"
+    },
+    {
+      "location": [-49.5, -33],
+      "length": 32,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 64,
+      "style": "THREAT"
+    },
+    {
+      "location": [-51.5, 22],
+      "length": 32,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "THREAT"
+    },
+    {
+      "location": [-51.5, -22],
+      "length": 32,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 64,
+      "style": "THREAT"
+    }
+  ],
+  "bounds": [
+    40.5, -2,
+    46.5, -2.5,
+    49.5, -12,
+    52.5, -14,
+    53, -26,
+    50.5, -36,
+    37.5, -36,
+    34.5, -50,
+    11, -50,
+    8.5, -47,
+    -4, -45.5,
+    -7.5, -52,
+    -20, -52,
+    -22.5, -44.5,
+    -28, -44.5,
+    -35, -49,
+    -49, -39,
+    -52.5, -19,
+    -49, -18,
+    -50, -9,
+    -47.5, -2.5,
+    -47.5, 2.5,
+    -50, 9,
+    -49, 18,
+    -52.5, 19,
+    -49, 39,
+    -35, 49,
+    -28, 44.5,
+    -22.5, 44.5,
+    -20, 52,
+    -7.5, 52,
+    -4, 45.5,
+    8.5, 47,
+    11, 50,
+    34.5, 50,
+    37.5, 36,
+    50.5, 36,
+    53, 26,
+    52.5, 14,
+    49.5, 12,
+    46.5, 2.5,
+    40.5, 2
+  ]
+}

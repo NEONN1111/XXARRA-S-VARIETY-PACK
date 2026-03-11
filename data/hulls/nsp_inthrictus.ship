@@ -17,8 +17,8 @@
     "distributed_fire_control",
     "automated",
     "fragment_coordinator",
-    "nsp_fragment_swarm",
-    "threat_hullmod"
+    "threat_hullmod",
+    "targetingunit"
   ],
   "weaponSlots": [
     {
@@ -32,12 +32,12 @@
     },
     {
       "id": "WS 001",
-      "size": "MEDIUM",
-      "type": "HYBRID",
+      "size": "LARGE",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [165, -34]
+      "locations": [160, -34]
     },
     {
       "id": "WS 002",
@@ -95,12 +95,12 @@
     },
     {
       "id": "WS 010",
-      "size": "MEDIUM",
-      "type": "HYBRID",
+      "size": "LARGE",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [163, 34]
+      "locations": [160, 34]
     },
     {
       "id": "WS 012",

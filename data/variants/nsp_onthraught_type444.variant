@@ -1,0 +1,76 @@
+{
+  "variantId": "nsp_onthraught_type444",
+  "hullId": "nsp_onthraught",
+  "displayName": "Type 444",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "nsp_threatbore"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "neoferric_quadcoil",
+        "WS 004": "neoferric_quadcoil"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "light_mass_driver",
+        "WS 006": "light_mass_driver",
+        "WS 007": "heavy_mass_driver",
+        "WS 008": "heavy_mass_driver",
+        "WS0002": "light_mass_driver",
+        "WS0003": "light_mass_driver",
+        "WS0005": "heavy_mass_driver",
+        "WS0007": "light_mass_driver",
+        "WS0008": "light_mass_driver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "voltaic_discharge",
+        "WS0010": "voltaic_discharge"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "swarm_launcher",
+        "WS 002": "swarm_launcher",
+        "WS0001": "swarm_launcher",
+        "WS0006": "swarm_launcher"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0011": "mjolnir",
+        "WS0012": "mjolnir"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

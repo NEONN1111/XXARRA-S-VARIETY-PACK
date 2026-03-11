@@ -18,16 +18,23 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "nsp_neoferric_quadcoil",
-        "WS0002": "nsp_neoferric_quadcoil"
+        "WS0002": "nsp_neoferric_quadcoil",
+        "WS0003": "arbalest",
+        "WS0004": "arbalest"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "heavyac",
-        "WS0004": "heavyac"
+        "WS0005": "shredder",
+        "WS0006": "shredder"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
     },
     {
       "autofire": false,
@@ -45,8 +52,6 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0005": "flak",
-        "WS0006": "flak",
         "WS0007": "flak",
         "WS0008": "flak"
       }

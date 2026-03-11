@@ -1,0 +1,87 @@
+{
+  "variantId": "nsp_threatribution_type900",
+  "hullId": "nsp_threatribution",
+  "displayName": "Type 900",
+  "goalVariant": true,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "ballistic_rangefinder",
+    "armoredweapons",
+    "missleracks",
+    "fluxdistributor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "nsp_threatbore"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "neoferric_quadcoil",
+        "WS 001": "neoferric_quadcoil"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "voidblaster",
+        "WS 004": "voidblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "heavy_mass_driver",
+        "WS 006": "heavy_mass_driver",
+        "WS 011": "light_mass_driver",
+        "WS 012": "light_mass_driver",
+        "WS0001": "heavy_mass_driver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 007": "neutron_torpedo",
+        "WS 008": "neutron_torpedo",
+        "WS 009": "neutron_torpedo",
+        "WS 010": "neutron_torpedo",
+        "WS 020": "neutron_torpedo",
+        "WS 021": "neutron_torpedo",
+        "WS0002": "kinetic_fragments",
+        "WS0003": "kinetic_fragments",
+        "WS0004": "kinetic_fragments",
+        "WS0005": "kinetic_fragments",
+        "WS0006": "swarm_launcher",
+        "WS0007": "swarm_launcher",
+        "WS0008": "devouring_swarm",
+        "WS0009": "devouring_swarm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 016": "voltaic_discharge",
+        "WS 017": "voltaic_discharge"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

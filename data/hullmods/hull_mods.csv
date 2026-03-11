@@ -46,8 +46,3 @@ Linked Hull,nsp_linkedhull,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_L
 Massive Hull,nsp_massivehull,,,,codex_require_related,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_MassiveHull,"This ship is extremely large, affording both a larger array of sensors and a heavy sensor profile. Increases sensor strength and sensor profile by %s.",Increases sensor strength and profile.,,graphics/hullmods/vast_bulk.png
 FIGHTER COLLISION CLASS,nsp_fightercoll,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_SetFighterColl,,,,
 JETJETJETPLASMA,nsp_plasmajets,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_PlasmaJetsHullmod,,,,graphics/icons/intel/investigation.png
-Fragment Hive,nsp_fragment_swarm,,,,"no_drop, no_sell, restricted","Weapons, Special",30000,,TRUE,,6,12,18,30,neon.nsp.data.hullmods.FragmentSwarmHullmod_Invictus,"A swarm of Threat fragments roils around the ship, providing a regenerating supply of fragments for fragment-based weapons.
-
-The base number of fragments is %s/%s/%s/%s, and replacement fragments are launched %s/%s/%s/%s times a second, depending on hull size.
-
-This hullmod is required for fragment weapons to function, if the hullmod is not present or there are not enough fragments in the swarm, fragment weapons will be disabled.",A swarm of Threat fragments roils around the ship.,Reduces maximum combat readiness by %s and increases the maintenance cost by %s.,graphics/hullmods/fragment_swarm.png
