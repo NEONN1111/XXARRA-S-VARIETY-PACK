@@ -33,7 +33,7 @@ public class NSPPeople {
             phos.setPostId(Ranks.POST_ACADEMICIAN);
             phos.setGender(FullName.Gender.MALE);
             phos.setId(PHOS);
-            phos.setPortraitSprite("graphics/portraits/portrait_league06.png");
+            phos.setPortraitSprite("graphics/portraits/characters/phos_morganthal.png");
             ip.addPerson(phos);
         }
             ImportantPeopleAPI ip2 = Global.getSector().getImportantPeople();
