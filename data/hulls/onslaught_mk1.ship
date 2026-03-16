@@ -1,0 +1,339 @@
+{
+  "hullName": "Onslaught Mk.I",
+  "hullId": "onslaught_mk1",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/ships/onslaught/onslaught1.png",
+  "style": "LOW_TECH",
+  "height": 384,
+  "width": 288,
+  "center": [144, 140],
+  "collisionRadius": 275,
+  "shieldCenter": [32, 0],
+  "shieldRadius": 240,
+  "viewOffset": 200,
+  "builtInMods": [
+    "automated",
+    "hbi",
+    "rugged"
+  ],
+  "builtInWeapons": {
+    "WS 016": "heavy_adjudicator",
+    "WS 017": "heavy_adjudicator"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 15,
+      "locations": [152, 74]
+    },
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -15,
+      "locations": [152, -74]
+    },
+    {
+      "id": "WS 007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [179, -0]
+    },
+    {
+      "id": "WS 010",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 250,
+      "locations": [-12, -109]
+    },
+    {
+      "id": "WS 011",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 110,
+      "locations": [-12, 109]
+    },
+    {
+      "id": "WS 012",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 60,
+      "locations": [46, 29]
+    },
+    {
+      "id": "WS 013",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -60,
+      "locations": [46, -29]
+    },
+    {
+      "id": "WS 014",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 80,
+      "locations": [23, 99]
+    },
+    {
+      "id": "WS 015",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -80,
+      "locations": [23, -99]
+    },
+    {
+      "id": "WS 016",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [194, 67]
+    },
+    {
+      "id": "WS 017",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [194, -66]
+    },
+    {
+      "id": "WS 018",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 80,
+      "locations": [89, 89]
+    },
+    {
+      "id": "WS 019",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [141.5, -0]
+    },
+    {
+      "id": "WS 020",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": -80,
+      "locations": [89, -89]
+    },
+    {
+      "id": "WS 021",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 30,
+      "locations": [8, 51]
+    },
+    {
+      "id": "WS 024",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -30,
+      "locations": [8, -51]
+    },
+    {
+      "id": "WS 026",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [75, 119]
+    },
+    {
+      "id": "WS 027",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [76, -120]
+    },
+    {
+      "id": "WS 028",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 80,
+      "locations": [127, 78]
+    },
+    {
+      "id": "WS 029",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -80,
+      "locations": [127, -78]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-106, 30],
+      "length": 64,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-106, -29],
+      "length": 64,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-108, 13],
+      "length": 100,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-108, -12],
+      "length": 100,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-60, 99],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-66, 91],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-72, 82],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-72, -82],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-66, -91],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    },
+    {
+      "location": [-60, -99],
+      "length": 48,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "ONSLAUGHT_MKI"
+    }
+  ],
+  "bounds": [
+    203, 79,
+    193, 85,
+    174, 94,
+    159, 100,
+    135, 91,
+    96, 116,
+    58, 137,
+    45, 120,
+    15, 125,
+    -6, 130,
+    -14, 137,
+    -46, 105,
+    -71, 73,
+    -80, 74,
+    -94, 71,
+    -109, 54,
+    -96, 44,
+    -102, 33,
+    -104, 9,
+    -91, 7,
+    -91, -5,
+    -105, -6,
+    -102, -36,
+    -94, -44,
+    -110, -52,
+    -95, -70,
+    -66, -77,
+    -47, -103,
+    -18, -136,
+    12, -124,
+    45, -118,
+    59, -140,
+    98, -114,
+    136, -93,
+    147, -100,
+    159, -102,
+    174, -94,
+    202, -79,
+    204, -55,
+    185, -50,
+    83, -68,
+    79, -47,
+    196, -22,
+    213, -8,
+    214, 10,
+    195, 22,
+    77, 49,
+    85, 68,
+    192, 53,
+    204, 60
+  ]
+}

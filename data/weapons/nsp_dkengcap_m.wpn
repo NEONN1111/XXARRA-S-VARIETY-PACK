@@ -1,0 +1,49 @@
+{
+  "id": "nsp_dkengcap_m",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "neon.nsp.data.scripts.weapons.NSP_SotfMagicVectorThrusterSelkie",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/decorative/thrusters/nsp_thrustM.png",
+  "hardpointSprite": "graphics/weapons/decorative/thrusters/nsp_thrustM.png",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    -2.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 1,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 1
+}
