@@ -10,7 +10,7 @@
   "hullMods": [
     "dedicated_targeting_core",
     "heavyarmor",
-    "magazines"
+    "armoredweapons"
   ],
   "weaponGroups": [
     {
@@ -23,9 +23,11 @@
     },
     {
       "autofire": false,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
-        "WS0010": "heavy_adjudicator"
+        "WS0010": "jackhammer",
+        "WS0011": "jackhammer",
+        "WS0012": "jackhammer"
       }
     },
     {
