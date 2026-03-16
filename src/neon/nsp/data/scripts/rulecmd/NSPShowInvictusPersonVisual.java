@@ -32,14 +32,16 @@ public class NSPShowInvictusPersonVisual extends BaseCommandPlugin {
         // Luddic Knight-Captain portrait pickers (to ensure a proper captain looking portrait)
         WeightedRandomPicker<String> knightPortraitsMale = new WeightedRandomPicker<>();
         WeightedRandomPicker<String> knightPortraitsFemale = new WeightedRandomPicker<>();
+        knightPortraitsMale.add("graphics/portraits/portrait_luddic02.png");
         knightPortraitsMale.add("graphics/portraits/portrait_luddic05.png");
         knightPortraitsMale.add("graphics/portraits/portrait_luddic06.png");
         knightPortraitsFemale.add("graphics/portraits/portrait_luddic07.png");
-        knightPortraitsMale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
-        knightPortraitsFemale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+//        knightPortraitsMale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+//        knightPortraitsFemale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
         knightPortraitsMale.add("graphics/portraits/portrait_luddic09.png");
         knightPortraitsFemale.add("graphics/portraits/portrait_luddic10.png");
         knightPortraitsFemale.add("graphics/portraits/portrait_luddic11.png");
+        knightPortraitsFemale.add("graphics/portraits/portrait_luddic15.png");
 
         PersonAPI invictusKnightCaptain;
         if (!memoryMap.get(MemKeys.LOCAL).contains("$knightCaptain")) {

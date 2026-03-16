@@ -52,6 +52,8 @@ public class ExponentMission extends HubMissionWithSearch {
     }
 
     protected MarketAPI originMarket;
+    // mission giver person
+    protected PersonAPI missionGiver;
     // disabled invictus
     protected SectorEntityToken invictus;
     // disabled invictus system
@@ -64,16 +66,57 @@ public class ExponentMission extends HubMissionWithSearch {
     protected boolean create(MarketAPI createdAt, boolean barEvent) {
 
 //        if (barEvent) {
-            setGiverRank(Ranks.KNIGHT_CAPTAIN);
-            setGiverPost("luddicKnight");
-            giverGender = FullName.Gender.ANY;
-            setGiverPortrait(Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getPortraits(giverGender).pick());
-            setGiverImportance(pickHighImportance());
-            findOrCreateGiver(createdAt, false, false);
+
+            PersonAPI missionGiver = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson();
+
+            missionGiver.setRankId(Ranks.KNIGHT_CAPTAIN);
+            missionGiver.setPostId("luddicKnight");
+
+//            setGiverRank(Ranks.KNIGHT_CAPTAIN);
+//            setGiverPost("luddicKnight");
+
+//            giverGender = FullName.Gender.ANY;
+//            setGiverPortrait(Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getPortraits(giverGender).pick());
+
+            // Luddic Knight-Captain portrait pickers (to ensure a proper captain looking portrait)
+            if (missionGiver.getGender() == FullName.Gender.FEMALE) {
+                WeightedRandomPicker<String> knightPortraitsFemale = new WeightedRandomPicker<>();
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic07.png");
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic10.png");
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic11.png");
+    //        knightPortraitsFemale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+                String pick = knightPortraitsFemale.pick();
+                missionGiver.setPortraitSprite(pick);
+//                setGiverPortrait(pick);
+            }
+            else {
+                WeightedRandomPicker<String> knightPortraitsMale = new WeightedRandomPicker<>();
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic02.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic05.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic06.png");
+    //        knightPortraitsMale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic09.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic13.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic15.png");
+                String pick = knightPortraitsMale.pick();
+                missionGiver.setPortraitSprite(pick);
+//                setGiverPortrait(pick);
+            }
+
+//            setGiverImportance(pickHighImportance());
+            missionGiver.setImportance(pickHighImportance());
+
+            missionGiver.setMarket(createdAt);
+
+//            findOrCreateGiver(createdAt, false, false);
+            setPersonOverride(missionGiver);
+            this.missionGiver = missionGiver;
 //        }
 
         PersonAPI person = getPerson();
         if (person == null) return false;
+
+
         MarketAPI market = person.getMarket();
         if (market == null) return false;
 

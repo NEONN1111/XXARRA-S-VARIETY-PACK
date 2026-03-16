@@ -29,20 +29,35 @@ nsp_domainStation_TradePanelFlavorText,TradePanelFlavorText,"$id == orbital_habi
 ,,,,,,
 # Start,,,,,,
 EBEbarOptionStart,AddBarEvents,"NSPCheckCanStart
-$faction.id == luddic_church","AddBarEvent EBEbar_start ""Follow the senior knight's attendant"" ""A senior knight's attendant flags you down."" luddicChurchColor",,,
+$faction.id == luddic_church","AddBarEvent EBEbar_start ""Sit down with the knight"" ""At a corner table, you see a lone Knight of Ludd, fingers together like the steeple of a church in half prayer while a simple bowl of simpler tea steams silently in front of them. Watching you, intently, since you walked in."" luddicChurchColor",,,
 EBEbarKnight1,DialogOptionSelected,"$option == EBEbar_start","$missionId = $nsp_exponent
 BeginMission nsp_exponent_mission
 Call $global.exponent_ref updateData
 ShowPersonVisual false exponent_KnightContact
-","You follow the attendant to the knight, sitting at a low table with some tea steeping.
-","EBEbarKnight_two:Continue",
+","You walk over to parlay with the knight. Their hands, and eyes, remain locked forward as you approach their table. When you draw close enough, an invisible barrier is passed. Their eyes shift to you; their fingers uncurl from their devotion and they sit up straighter than before, raising both arms, sliding their hands into their opposite sleeves.
+
+As you sit down, the knight finally, directly, acknowledges you. ""Captain,"" they state. ""Thank you for coming over."" Their gaze slides off you for a moment, some errant thought, before they look back with an apologetic frown. ""Forgive me, $playerSirOrMadam, if I appeared suspicious. I did not wish to impose.""","EBEbarKnight_1b:""You got my attention. We'll see if you can keep it.""",
+EBEbarKnight1b,DialogOptionSelected,"$option == EBEbarKnight_1b",,"""We will."" They reach down to their bowl of steeped tea, crushed leaves of dark emerald gleam floating just under the surface. They take a long, practiced sip, then lay down the bowl and gaze through as they explain their sacred task.","EBEbarKnight_two:Continue",
 EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","FireBest ExponentKnightGreeting",,,
 EBEbarKnight2GreetNeutralComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You have not done much in your faith yet, but the Church believes you can grow to do so.""","EBEbarKnight_three:Continue",
+NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Already you've drawn our sword, though not much else. I believe Ludd has delivered a blessed opportunity for you to flourish.""
+
+They consider their next words.
+
+""The Hegemony. The League. The corporation. Any one of them you could have chosen to fight for."" Their shoulders rise with a single, brief chuckle. ""Any of them would pay better, yet you choose to crusade with us. Perhaps that's enough.""","GreetNeutralCommOptionOne:""The credits are enough.""
+GreetNeutralCommOptionTwo:""I respond well to incentive.""",
+EBEbarKnight2GreetNeutralCommOptionOne,DialogOptionSelected,"$option == GreetNeutralCommOptionOne",,"Their cheeks rise into into a knowing smile. ""But barely, I'm sure. Thus, this meeting.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetNeutralCommOptionTwo,DialogOptionSelected,"$option == GreetNeutralCommOptionTwo",,"""We've noticed.""","EBEbarKnight_three:Continue",
 EBEbarKnight2GreetNeutral,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable",,"<NoComm & Neutral> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue",
+NSPExponentCheck neutralOrFavorable","AddText ""<NoComm & Neutral>\""Despite your, uncertain loyalties, the Church has authorized me to formally request your help in an...important mattter.\""""
+SetTextHighlights uncertain","
+","GreetNeutralOptionOne:""Of holy importance?""
+GreetNeutralOptionTwo:""""The Church knows I get things done.""",
+EBEbarKnight2GreetNeutralOptionOne,DialogOptionSelected,"$option == GreetNeutralOptionOne",,"They remain somber. ""Yes.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetNeutralOptionTwo,DialogOptionSelected,"$option == GreetNeutralOptionTwo","AddText ""\""'Knowing' is a powerful word. I would say the Holy Church believes you can get things done. What we have in mind would go a very long way changing believing, to knowing.\""""
+SetTextHighlights believes",,"EBEbarKnight_three:Continue",
 EBEbarKnight2GreetWelcomingComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
 NSPExponentCheck welcomingOrHigher",,"<Comm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You have done much in your faith, and the Church believes you can continue to do so.""","EBEbarKnight_three:Continue",
