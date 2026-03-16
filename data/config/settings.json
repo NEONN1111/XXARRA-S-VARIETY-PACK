@@ -47,8 +47,8 @@
 		},
 
 		"characters":{
-			"Invicta":"graphics/portraits/characters/Invicta.png",
 			"The Exponent":"graphics/portraits/characters/exponent_core.png",
+			"Phos Morganthal":"graphics/portraits/characters/phos_morganthal.png",
 		},
         "fx":{
 			"NSP_Flare":"graphics/fx/NSP_FX/NSP_FlareA.png",
