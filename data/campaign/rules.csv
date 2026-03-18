@@ -41,7 +41,7 @@ EBEbarKnight1b,DialogOptionSelected,"$option == EBEbarKnight_1b",,"""We will."" 
 EBEbarKnight2a,DialogOptionSelected,"$option == EBEbarKnight_two","FireBest ExponentKnightGreeting",,,
 EBEbarKnight2GreetNeutralComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable",,"<Comm & Neutral> ""Already you've drawn our sword, though not much else. I believe Ludd has delivered a blessed opportunity for you to flourish.""
+NSPExponentCheck neutralOrFavorable",,"""Already you've drawn our sword, though not much else. I believe Ludd has delivered a blessed opportunity for you to flourish.""
 
 They consider their next words.
 
@@ -51,7 +51,7 @@ EBEbarKnight2GreetNeutralCommOptionOne,DialogOptionSelected,"$option == GreetNeu
 EBEbarKnight2GreetNeutralCommOptionTwo,DialogOptionSelected,"$option == GreetNeutralCommOptionTwo",,"""We've noticed.""","EBEbarKnight_three:Continue",
 EBEbarKnight2GreetNeutral,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck neutralOrFavorable","AddText ""<NoComm & Neutral>\""Despite your, uncertain loyalties, the Church has authorized me to formally request your help in an...important mattter.\""""
+NSPExponentCheck neutralOrFavorable","AddText ""\""Despite your, uncertain loyalties, the Church has authorized me to formally request your help in an...important mattter.\""""
 SetTextHighlights uncertain","
 ","GreetNeutralOptionOne:""Of holy importance?""
 GreetNeutralOptionTwo:""""The Church knows I get things done.""",
@@ -60,57 +60,142 @@ EBEbarKnight2GreetNeutralOptionTwo,DialogOptionSelected,"$option == GreetNeutral
 SetTextHighlights believes",,"EBEbarKnight_three:Continue",
 EBEbarKnight2GreetWelcomingComm,ExponentKnightGreeting,"NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck welcomingOrHigher",,"<Comm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You have done much in your faith, and the Church believes you can continue to do so.""","EBEbarKnight_three:Continue",
+NSPExponentCheck welcomingOrHigher",,"""You've already proven yourself a capable crusader. More than capable. We considered other names, but, yours was at the top of the list.""
+
+The knight pauses for a moment, then offers an assuring smile.
+
+""It was a very short list, captain.""
+
+They return to their stone expression. ""Obedience, loyalty. Discretion. The Church knows you value all of these things, so we trust you with this.""","EBEbarKnight_three:Continue",
 EBEbarKnight2GreetWelcoming,ExponentKnightGreeting,"!NSPExponentCheck hasFactionCommission
 $faction.id == luddic_church
-NSPExponentCheck welcomingOrHigher",,"<NoComm & Welcoming> ""Come, sit, captain. We have become quite familiar with your handiwork. You may not be of the Faith, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue",
+NSPExponentCheck welcomingOrHigher",,"""You are a friend of the Church, if not in our formal ranks. As a fellow pilgrim, the Church believes you can provide an, independent approach to our situation.""","GreetWelcomingOptionOne:""You need someone disposable.""
+GreetWelcomingOptionTwo:""Not that suspicious when I take off to the end of the sector, is it?""",
+EBEbarKnight2GreetWelcomingOptionOne,DialogOptionSelected,"$option == GreetWelcomingOptionOne",,"""No,"" they answer flatly, ""and don't discount yourself. We considered others, fellow brothers 
+and sisters. You were still the best suited.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetWelcomingOptionTwo,DialogOptionSelected,"$option == GreetWelcomingOptionTwo",,"""That reason was brought up. Now then.""","EBEbarKnight_three:Continue",
 EBEbarKnight2GreetSuspicious,ExponentKnightGreeting,"$faction.id == luddic_church
-NSPExponentCheck susOrLower",,"<Suspicious> ""Come, sit, captain. We have become quite familiar with your handiwork. You may spurn the teachings of Ludd, but your effectiveness cannot be ignored.""","EBEbarKnight_three:Continue",
-EBEbarKnight2GreetPather,ExponentKnightGreeting,"NSPExponentCheck isPather",,"<PATHER> ""Come, sit, captain. We have become quite familiar with your handiwork. Your... zeal is off-putting to many within the Church, but the fervor with which you fight has caught the eye of some. You would have been a good Knight.""","EBEbarKnight_three:Continue",
-EBEbarKnight3,DialogOptionSelected,"$option == EBEbarKnight_three","NSPExponentPopulateOptions acceptRefuse","""A holy mission was sent to destroy an unholy vessel, an Abomination of Molochian design. The Curates Technologia cannot match it to anything in our records, and our brothers and sisters have not yet returned."" The senior knight looks out to the stars through a window. ""We believe they have been delivered to the Creator, yet all too soon.""
+NSPExponentCheck susOrLower",,"""But your faith is-"" $heorShe starts, then trails off into something short of a scowl. ""Questionable. Your loyalties suspect. At best.""","GreetSuspiciousOptionOne:""I'm what you call a \""prodigal child.\""""
+GreetSuspiciousOptionTwo:""Offering me redemption?""
+GreetSuspiciousOptionThree:""My loyalties are perfectly known. They're just not to you.""",
+EBEbarKnight2GreetSuspiciousOptionOne,DialogOptionSelected,"$option == GreetSuspiciousOptionOne",,"""I'm not here to judge you, captain; that is for God alone to render, but your transgressions against the Church? Those are simply fact. What I'm offering is, some measure of recompense.""
 
-Turning their attention back to you $heOrShe continues. ""We do not ask you to destroy this enemy, merely to confirm the fate of the fleet sent to destroy it and see if you can glean insight into where it is.""",,
+They look off for a moment, and deflate with a sigh. 
+
+""And, of course, compensation.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetSuspiciousOptionTwo,DialogOptionSelected,"$option == GreetSuspiciousOptionTwo",,"""Despite the, zeal, of some of our preachers, the road to damnation is much longer than most think. Ludd gives us many, many chances to realize we are astray. And easier to turn back just a few steps down the wrong road. Now, if you would indulge me.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetSuspiciousOptionThree,DialogOptionSelected,"$option == GreetSuspiciousOptionThree",,"Their lips curl into an empty smirk.
+
+""Honesty. It is a virtue. Keep nurturing it.""","EBEbarKnight_three:Continue",
+EBEbarKnight2GreetPather,ExponentKnightGreeting,"NSPExponentCheck isPather",,"""I wish to be honest. Your interpretation of the Word may be more...energetic than the Church approves, but perhaps that's what's needed.""","EBEbarKnight_three:Continue",
+EBEbarKnight3,DialogOptionSelected,"$option == EBEbarKnight_three","NSPExponentPopulateOptions acceptRefuse","The knight looks out the window, into the old ocean of the void, silent as the steam column from their tea slowly thins.
+
+""There was a mission,"" they begin. ""A task. Mostly holy, to cast down an unholy vessel.""
+
+$HeOrShe turns back to you and raises one hand from their sleeve, fingers rolling in vague gesture.
+
+""An Abomination. Forged by Moloch themselves. It matched no records. No blueprints. Nothing in any archive of the Curates Technologia. An unknown demon. Our brothers and sisters were dispatched to destroy it, to smite it in Ludd's name, but."" 
+
+The knight's eyes wander to the table. ""They never returned. We suspect the worst.""
+
+They glance back up and continue. ""We need you to confirm the fate of the fleet. And, if possible, find out where the Abomination fled. If the worst has happened, surely our knights at least wounded the thing before falling. You do not have to destroy the machine, if you encounter it. That task will fall to us, once we've gleamed what system it's crawled into. You will, of course, be rewarded generously.""",,
 EBEbarKnight4Refuse,DialogOptionSelected,"$option == EBEbarKnight_refuse",,"Explain that you're not interested at this time.","backToBar:Return to the bar",
 EBEbarKnight4AcceptFaithful,DialogOptionSelected,"$option == EBEbarKnight_acceptFaithful","$acceptFaithful = true
-FireAll ExponentKnightAccepted","""I will go with Ludd's word at heart.""",,
+FireAll ExponentKnightAccepted",,,
 EBEbarKnight4AcceptPather,DialogOptionSelected,"$option == EBEbarKnight_acceptPather","$acceptPather = true
-FireAll ExponentKnightAccepted","""I will go with Ludd's hammer at hand.""",,
+FireAll ExponentKnightAccepted",,,
 EBEbarKnight4AcceptOther,DialogOptionSelected,"$option == EBEbarKnight_acceptOther","$acceptOther = true
-FireAll ExponentKnightAccepted","""I will find this lost fleet.""",,
+FireAll ExponentKnightAccepted",,,
 EBEbarKnight4NextStage,ExponentKnightAccepted,,"$global.exponent_hadFirstTalk = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionStarted
 $global.nsp_beganExponent = true",,,
-EBEbarKnight4AcceptFaithfulText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptFaithfulText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
-EBEbarKnight4AcceptPatherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptPatherText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
-EBEbarKnight4AcceptOtherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","EBEbarKnight4AcceptOtherText ""Something something beaten invictus in $exponent_system1SName ""","backToBar:Return to the bar",
+EBEbarKnight4AcceptFaithfulText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","[AcceptFaithfulText] ""The fleet of the Holy Church was last reported at $exponent_system1SName while on a mission to destroy the unholy machine.""","backToBar:Return to the bar",
+EBEbarKnight4AcceptPatherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","[AcceptPatherText]  ""The fleet in the service of Ludd was last seen at $exponent_system1SName while hunting one of Moloch's misbegotten designs.""","backToBar:Return to the bar",
+EBEbarKnight4AcceptOtherText,ExponentMissionStarted,,"SetTextHighlights $exponent_system1SName","[AcceptOtherText]  ""A Luddic fleet has gone MIA around $exponent_system1SName while attempting to destroy a ship of unknown origin.""","backToBar:Return to the bar",
 "#END Start",,,,,,
 ,,,,,,
 # InvictusInteraction,,,,,,
-EBEinvictusOpenDialog,OpenInteractionDialog,"$exponent_invictus","ShowImageVisual space_wreckage
-$invictusStage = one","You approach the derelict amid the wreckages of the Knight fleet.
-
-Faint signatures of life have been detected, as well as that of a strained reactor.","0:EBEInvictusBoarding:Send a boarding party
+EBEinvictusOpenDialog,OpenInteractionDialog,"$exponent_invictus","ShowImageVisual space_wreckage","Your fleet approaches the Invictus. 
+","0:EBEInvictusSurveyOne:Continue
 11:defaultLeave:Leave",
-EBEinvictusOne,DialogOptionSelected,"$option == EBEInvictusBoarding
-$invictusStage == one","$invictusStage = two","A small cadre of salvors, medics, and technicians depart to board the dormant Invictus. Inside, a frantic engineering team runs circles around a decaying reactor, threatening to go critical. A Knight-Captain steps forward from huddled survivors and a lieutenant of yours acts as your intermediary.","EBEInvictusContinue:Continue",
-EBEinvictusTwo,DialogOptionSelected,"$option == EBEInvictusContinue
-$invictusStage == two","NSPShowInvictusPersonVisual
-$invictusStage = three","""Did the Church send you?"" A nod bumps your feed. The Knight's shoulders sag, a tension released. ""Then the Creator watches over us, truly. We made battle with the foul machine but it... it... it was too fast, too strong, our faith could not resist it, I-""
+EBEinvictusSurveyOne,DialogOptionSelected,"$option == EBEInvictusSurveyOne",,"It is a hulk ripped apart, spaced cargo and blasted hull floating from its deep innards like metal blubber. For kilometers around, your sensors ping nebulae of gnarled metal and chaff and broken shapes. The remains of other dead Luddic ships, a school of shredded guppies drifting around a dead leviathan.
 
-Another Knight shambles over, dragging a leg scarred by radiation burns.","EBEInvictusContinue:Continue",
-EBEinvictusThree,DialogOptionSelected,"$option == EBEInvictusContinue
-$invictusStage == three","NSPShowInvictusPersonVisual showSecond","""Our faith cannot be questioned. We did not falter. We merely did not win this battle. But the beast was damaged. It fled out of system to lick its wounds.""
+Your tac officer breaks the silence.
 
-""Yes.. we did not falter. But now, our ship threatens to unmake what few of us survived the battle. Please, take us back to the Church, we shall do penance for our failures here.""","0:EBEInvictusLifeboats:Send lifeboats to hold them until the Church can recover them
+""Captain. All the other ships are just above background temp, but we're still getting thermal from the Invictus. A LOT of thermal. It's, uh, actually getting hotter.""","EBEInvictusSurveyTwo:""Reactor meltdown?""",
+EBEinvictusSurveyTwo,DialogOptionSelected,"$option == EBEInvictusSurveyTwo","$invictusStage = one","""Aye, captain. Direct hit, looks like. Much longer and she's gonna start glowing, if the heat don't cook off the magazines first. And you'll want to see this.""
+
+You're motioned over to their console, where a scanned diagram of the wounded behemoth glows before you. Glowing smears of thermal activity coat its destroyed hull, and your tac officer points to a section that's bluer than the rest.
+
+""One of the crew quarters. Heat hasn't gotten there yet, so we can still see localized low thermals. Barely. We're picking up a few dozen or so, maybe a hundred.""
+
+They look up to you, brows raised. ""People, $playerSirOrMadam.""","0:EBEInvictusBoardingInit: ""Assemble a boarding party.""
+11:defaultLeave:Leave",
+EBEinvictusBoardingInit,DialogOptionSelected,"$option == EBEInvictusBoardingInit",,"The crew hums stirs from their idleness, a dozen orders cruising their way down from the high throne of your bridge. Within minutes a large team of salvors and medics and technicians already assembled, along with a healthy contingent of hardened drones.
+
+The airlock has already been cleared. They await your command.","EBEInvictusBoardingOne:Proceed",
+EBEInvictusBoardingOne,DialogOptionSelected,"$option == EBEInvictusBoardingOne",,"The team touches off, jumping out from the airlock in pairs until only the drones remain. When they clear the airlock, the drones follow in short order. You select the feed of one of them, choosing it as your avatar as the vaguely square ruin of the Invictus slowly approaches.
+
+A voice crackles into your speakers. The leader of the boarding party.
+
+""Looks like fires on multiple decks.""
+
+You can see the scorch marks for yourself on the camera, along with the haze of dappled static; bullets of radiation crawling through the drone's electronic eye.
+
+""Radiation's getting worse."" Their tone isn't worried. Not yet. But it is a warning. ""If there's people in there, I can't make many guarantees.""
+
+Your tac officer's eyes remain on their screen. ""Meltdown's accelerating. We can probably slow it down, but not for long. Should I divert the techs, $playerSirOrMadam?""","EBEInvictusBoardingTwo:""Do it.""",
+EBEInvictusBoardingTwo,DialogOptionSelected,"$option == EBEInvictusBoardingTwo",,"With a terse order, the command is relayed. A few of the white, bulkier EVA suits and drones peel off from the floating group, headed towards the beast's melting heart. The rest continue, your feed showing the group slowly drifting towards a hallway exposed to the vacuum. At the end, a sealed doorway, snapped tight even against the vacuum. The boarding party swarms near it like curious ants, carefully constructing a makeshift airlock around the door to make entry. 
+
+""Captain,"" the lead calls.
+
+You simply nod at your second officer, who relays your affirmation. The temporary airlock is engaged, fastened to hull, and the boarding party's lead floats inside, along with your chosen drone.
+
+A sour hiss fills the speakers. You hear voices as white, pressurized gas briefly fogs the lens the drone, then fades to greater shouts.
+
+People.","EBEInvictusBoardingThree:Continue",
+EBEInvictusBoardingThree,DialogOptionSelected,"$option == EBEInvictusBoardingThree","NSPShowInvictusPersonVisual","Faithful of the Luddic church, clad in fatigues of green and emerald and primal suggestions of leaves and trees. They float about the cabin aimlessly, holding to any jutting surface they can, over two hundred eyes locked either on the drone or the boarding lead. Many are wounded. Some mortally. Chapped lips and sweat, so many pale as moon dust. They've been here for days.
+
+One of them, clearly the Knight-Captain of the vessel, floats towards the boarding party leader, eyes bulging with pallid flesh. They back away, pointing instead to the drone. You flick a button, turning on the console's camera to show your face to the weary crew.
+
+""Did the Church send you?"" they croak.","EBEInvictusBoardingFour:They did.",
+EBEInvictusBoardingFour,DialogOptionSelected,"$option == EBEInvictusBoardingFour",,"""Praise the Creator.""","EBEInvictusBoardingFive:Continue",
+EBEInvictusBoardingFive,DialogOptionSelected,"$option == EBEInvictusBoardingFive","ShowDefaultVisual
+NSPShowInvictusPersonVisual
+NSPShowInvictusPersonVisual showSecond","Another Knight half-floats, half-limps over. Their legs is covered in bandaged. Underneath, the seared gore of radiation burns. 
+
+""We did not...fail,"" they stammer. The mere effort of talking is too much, and they double over in pain. Two ensigns float over to try and pull them away, only for the knight to swat at them like an angry animal.
+
+They turn back to you, brimstone in their eyes. ""We did not. Fail,"" they repeat. The point 
+towards the camera, their arm too blistered by the touch of radiation. ""We found the demon. 
+We engaged it. We hurt it.""","EBEInvictusBoardingFiveBonus:""Looks like it won, though.""
+EBEInvictusBoardingSix:""What happened?""",
+EBEInvictusBoardingFiveBonus,DialogOptionSelected,"$option == EBEInvictusBoardingFiveBonus",,"The knight's eyes grow wide with fury. They push away the nearby ensigns, then impotently throw themselves at your drone in a futile, floating lunge. 
+
+""WE DID NOT FAIL!"" they scream. ""WE DIDN'T-""
+
+In slow motion, they're tackled by another group of faithful. They wrestle them to the bulkhead, dragging them back to a makeshift infirmity in the corner of the room.
+
+The other knight glances back to your drone. ""Forgive them. They have gone through 
+much. We all have.""","EBEInvictusBoardingSix:""What happened?""",
+EBEInvictusBoardingSix,DialogOptionSelected,"$option == EBEInvictusBoardingSix","ShowDefaultVisual
+NSPShowInvictusPersonVisual","""We were given a mission, captain. A most holy one.""","EBEInvictusBoardingSeven:""The Abomination.""",
+EBEInvictusBoardingSeven,DialogOptionSelected,"$option == EBEInvictusBoardingSeven",,"""Then they told you. We set out with a full fleet to smite it. We were...confident, that would be 
+enough. It wasn't. The beast danced around us. Like fighting a dozen ships at once. It picked us off, one-by-one. But a few of our salvos went through. We did wound it, captain, but it fled before we could finish it.""
+
+They stop speaking, arms falling limp to their sides.
+
+""...Were there any others? On the other ships?""","EBEInvictusBoardingEight:""Just you.""",
+EBEInvictusBoardingEight,DialogOptionSelected,"$option == EBEInvictusBoardingEight",,"""Then we have squandered much more than ships. We will face whatever penitence the Church deems fit.""","0:EBEInvictusLifeboats:Send lifeboats to hold them until the Church can recover them
 1:EBEInvictusTakeOnBoard:Take the survivors on board your fleet
 2:EBEInvictusFate:Leave them to their fate",
 EBEinvictusLifeboatChoice,DialogOptionSelected,"$option == EBEInvictusLifeboats","NSPShowInvictusPersonVisual
 $global.nspExponentCrewFate = ""Lifeboat""
 AdjustRepPerson $knightCaptain FAVORABLE 25
 AdjustRepPerson $secondKnight FAVORABLE 25
-AddText ""You have your lieutenant explain that while you cannot hold the survivors aboard your fleet, you can offer spare lifeboats that will be shielded from the Invictus's detonation where they can await a Church fleet.""
-AddText ""\""I... alright. This is generous of you. The thought of drifting in the great void... to see our ships detonate from afar..."" The Knight-Captain shudders and faces the floor. ""It feels ignoble. But we shall live to serve the Church.\""""
+AddText ""You explain that while you cannot hold the survivors aboard your fleet, you can offer spare lifeboats that will be shielded from the Invictus's meltdown where they can await a Church fleet.""
+AddText ""\""That is. Generous of you.\"" The Knight-Captain shudders and faces the floor. \""It feels ignoble. But we shall wait for rescue.\""""
 AddTextSmall ""Deployed lifeboats for the survivors"" highlight","
 
 ","EBEInvictusEnding:Continue",
@@ -118,24 +203,23 @@ EBEinvictusTransferChoice1,DialogOptionSelected,"$option == EBEInvictusTakeOnBoa
 $global.nspExponentCrewFate = ""Aboard""
 AdjustRepPerson $knightCaptain FRIENDLY 50
 AdjustRepPerson $secondKnight FRIENDLY 50
-AddText ""You have your lieutenant coordinate the transfer of survivors onto your fleet. Soon thereafter, the Knight-Captain meets you in person.""",,"EBEInvictusTransferContinue:Continue",
+AddText ""You coordinate the transfer of survivors onto your fleet. It is a slow and tense process, wounded and worse slowly being transferred by shuttle to your hold as the red splotches on the Invictus grow brighter and brighter. But it's done. Soon thereafter, the Knight Captain meets you in person.""",,"EBEInvictusTransferContinue:Continue",
 EBEinvictusTransferChoice2,DialogOptionSelected,"$option == EBEInvictusTransferContinue","NSPShowInvictusPersonVisual
-AddText ""\""I thank you for what you have done, $playerLastName. It feels ignoble to leave our stations behind, but..."" the knight looks away. ""We shall live to serve the Church.\""""
+AddText ""\""I thank you for what you have done, $playerLastName. We failed our mission, but...\"" the knight looks away. \""Much can be learned from failure.\""""
 AddTextSmall ""The survivors were successfully extracted and brought aboard"" highlight",,"EBEInvictusEnding:Continue",
-EBEinvictusFateChoice,DialogOptionSelected,"$option == EBEInvictusFate","ShowDefaultVisual
+EBEinvictusFateChoice,DialogOptionSelected,"$option == EBEInvictusFate","
 $global.nspExponentCrewFate = ""Fate""
 AdjustRepPerson $knightCaptain VENGEFUL -80
 AdjustRepPerson $secondKnight VENGEFUL -100
-AddText ""Your lieutenant turns around and motions for the boarding party to head back to their shuttles.""
-AddText ""Over the comms link, you can hear a number of shouts from survivors calling for rescue and damning your name. The Knight-Captain is silent, but you can feel the contempt, directed at you personally.""
-AddTextSmall ""Left the crew to their ultimate fate"" highlight",,"EBEInvictusEnding:Continue",
-EBEinvictusReturnBoardingParty,DialogOptionSelected,"$option == EBEInvictusReturnBoardingParty",,"Just as your boarding party returns to your fleet, you're notified of the Invictus' growing instability.","EBEInvictusEnding:Continue",
+AddText ""Your lieutenant turns around and motions for the boarding party to head back. They extract themselves from the pocket of atmosphere before the crew fully realizes their intent, and realization sets in just a moment too late.""
+AddText ""Over the comms link, you can hear a number of shouts from survivors calling for rescue and damning your name. The Knight-Captain is silent, but you can feel the contempt. A curse, silent and strong, bored into your soul from across the vast distance.""
+AddTextSmall ""Left the crew to their fate, and was possibly cursed"" highlight",,"EBEInvictusEnding:Continue",
 EBEinvictusEnd,DialogOptionSelected,"$option == EBEInvictusEnding","ShowImageVisual space_wreckage
 $global.nspDeclinedExponentMission = false
 NSPEntityExplode
 $global.exponent_hasInvestigated = true
 Call $global.exponent_ref updateData
-Call $global.exponent_ref reportBack","The heavily damaged Invictus is ripped apart by a large explosion as its reactors go critical, leaving nothing more behind than scrap.","defaultLeave:Continue",
+Call $global.exponent_ref reportBack","As predicted, the growing heat inside the damaged Invictus reaches a final, fatal tipping point. The molten fissile begins to chew right through the hull, and moments later, into the canister flak magazine. A great, orange fireball tears itself from the dreadnought's nose to its fat steel belly, and it is blown altogether into a mountain of burning scrap.","defaultLeave:Continue",
 "#END InvictusInteraction",,,,,,
 ,,,,,,
 # ReportBack,,,,,,
@@ -183,7 +267,8 @@ $global.exponent_goAlone = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingAlone",,,
 EBEbar6aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","EBEbar5aText ""Blah blah blah Exponent location in $exponent_system2SName "" going alone","backToBar:Return to the bar",
-EBEbar6b,DialogOptionSelected,"$option == EBEbar_goWithFleet","$global.exponent_hasReported = true
+EBEbar6b,DialogOptionSelected,"$option == EBEbar_goWithFleet","NSPAssureValidRelations
+$global.exponent_hasReported = true
 $global.exponent_goWithFleet = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingWithFleet",,,

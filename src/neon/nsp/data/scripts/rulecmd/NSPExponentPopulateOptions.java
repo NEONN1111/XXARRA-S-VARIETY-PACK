@@ -26,13 +26,13 @@ public class NSPExponentPopulateOptions extends BaseCommandPlugin {
 
         if (command.equals("acceptRefuse")) {
             optionPanel.clearOptions();
-            optionPanel.addOption("\"I will go with Ludd's word at heart.\"","EBEbarKnight_acceptFaithful");
-            optionPanel.addOption("\"I will go with Ludd's hammer at hand.\"","EBEbarKnight_acceptPather");
-            optionPanel.addOption("\"I will find this lost fleet.\"","EBEbarKnight_acceptOther");
-            optionPanel.addOption("Refuse","EBEbarKnight_refuse");
+            optionPanel.addOption("\"I'll do it. Pray for my success.\"","EBEbarKnight_acceptFaithful");
+            optionPanel.addOption("\"I'll find your fleet. And cast that Abomination back to Moloch.\"","EBEbarKnight_acceptPather");
+            optionPanel.addOption("\"I'll see what I can do.\"","EBEbarKnight_acceptOther");
+            optionPanel.addOption( "I'll have to decline.","EBEbarKnight_refuse");
 
-            if (Misc.getCommissionFactionId() == null ||
-                    (Misc.getCommissionFactionId() != null && !Misc.getCommissionFactionId().equals(Factions.LUDDIC_PATH))) {
+            if (Misc.getCommissionFactionId() == null || (Misc.getCommissionFactionId() != null
+                    && !Misc.getCommissionFactionId().equals(Factions.LUDDIC_PATH))) {
                 optionPanel.setEnabled("EBEbarKnight_acceptPather",false);
                 optionPanel.setTooltip("EBEbarKnight_acceptPather","Requires a Luddic Path commission");
                 optionPanel.setTooltipHighlights("EBEbarKnight_acceptPather","Luddic Path");
@@ -40,8 +40,9 @@ public class NSPExponentPopulateOptions extends BaseCommandPlugin {
                         Global.getSector().getFaction(Factions.LUDDIC_PATH).getColor()
                 );
             }
+            return true;
         }
 
-        return true;
+        return false;
     }
 }
