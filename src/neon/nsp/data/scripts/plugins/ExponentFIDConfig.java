@@ -76,7 +76,7 @@ public class ExponentFIDConfig {
 
                         Global.getSector().getMemoryWithoutUpdate().set(DEFEATED_EXPONENT_KEY, true);
 
-                        ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);
+                        ShipRecoverySpecial.PerShipData ship = new ShipRecoverySpecial.PerShipData("nsp_exponent_subpar_Hull", ShipRecoverySpecial.ShipCondition.WRECKED, 0f);
                         ship.shipName = "Unknown";
                         DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(ship, false);
                         CustomCampaignEntityAPI entity = (CustomCampaignEntityAPI) BaseThemeGenerator.addSalvageEntity(

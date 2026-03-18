@@ -1,8 +1,8 @@
 {
   "hullName": "Exponent",
-  "hullId": "nsp_exponent",
+  "hullId": "nsp_exponent_subpar",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/ships/nsp_exponent/nsp_exponent.png",
+  "spriteName": "graphics/ships/nsp_exponent/nsp_exponent_subpar.png",
   "style": "HIGH_TECH",
   "height": 230,
   "width": 221,
@@ -12,7 +12,6 @@
   "shieldRadius": 144,
   "viewOffset": 0,
   "builtInMods": [
-    "nsp_sandevistan2",
     "delicate",
     "do_not_back_off"
   ],
