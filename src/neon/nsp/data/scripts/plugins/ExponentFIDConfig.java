@@ -62,7 +62,7 @@ public class ExponentFIDConfig {
                     }
 
                     // If the current interaction target is the Luddic Escort fleet
-                    if (dialog.getInteractionTarget().getName().contains("holder")) {
+                    if (dialog.getInteractionTarget().getName().contains("holder")) { // Luddic Escort fleet name contains
 
                         Global.getSector().getMemoryWithoutUpdate().set(DEFEATED_CHURCHFLEET_KEY, true);
 

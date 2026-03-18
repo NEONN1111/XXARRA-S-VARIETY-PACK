@@ -8,6 +8,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
+import neon.nsp.data.scripts.everyframe.NSP_CampaignEntityExplosionScript;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.util.List;
@@ -34,6 +35,11 @@ public class NSPEntityExplode extends BaseCommandPlugin {
         } else {
             debris.getLocation().set(entity.getLocation());
         }
+
+        Global.getSector().addScript(new NSP_CampaignEntityExplosionScript(entity,4f, 0.5f));
+//        CombatEngineAPI engine = Global.getCombatEngine();
+//        engine.spawnExplosion(entity.getLocation(),new Vector2f(), Color.WHITE,1500f,2f);
+
         return true;
     }
 }
