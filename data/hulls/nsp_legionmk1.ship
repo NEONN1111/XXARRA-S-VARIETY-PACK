@@ -185,7 +185,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [105.5, -46]
+      "locations": [105.5, -41]
     },
     {
       "id": "DMNL",
@@ -194,7 +194,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [105.5, 41.5]
+      "locations": [105.5, 44]
     }
   ],
   "engineSlots": [
