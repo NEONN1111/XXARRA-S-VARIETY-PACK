@@ -1,7 +1,6 @@
 {
     "hullFrequency":{
         "hulls":{
-	    "nsp_legionator":1,
             "nsp_sisyphus":3,	
             "nsp_hammonitor":0.8,
             "nsp_mace":0.3,
@@ -13,7 +12,6 @@
     },
     "knownShips":{
         "hulls":[
-            "nsp_legionator",
             "nsp_sisyphus",
             "nsp_hammonitor",
             "nsp_mace",

@@ -4,7 +4,7 @@
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/ships/nsp_praxidike/praxidike_mkii.png",
   "style": "LOW_TECH",
-  "height": 406,
+  "height": 421,
   "width": 188,
   "center": [94, 154],
   "collisionRadius": 273.5,
@@ -79,7 +79,7 @@
       "mount": "TURRET",
       "arc": 210,
       "angle": 180,
-      "locations": [-103, 0]
+      "locations": [-104, -0]
     },
     {
       "id": "WS0017",

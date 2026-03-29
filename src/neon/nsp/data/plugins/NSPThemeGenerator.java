@@ -45,6 +45,7 @@ public class NSPThemeGenerator extends BaseThemeGenerator {
 		// Spawn legion_xiv_Elite derelicts
 		addDerelicts(context, "nsp_cassowary_standard", 2, 3, 1, 2, Tags.THEME_RUINS);
 		addDerelicts(context, "nsp_peregrine_standard", 2, 3, 1, 2, Tags.THEME_RUINS);
+		addDerelicts(context, "nsp_galaxy_standard", 0, 1, 1, 1, Tags.THEME_SPECIAL);
 	}
 
 	protected void addDerelicts(ThemeGenContext context, String variant,

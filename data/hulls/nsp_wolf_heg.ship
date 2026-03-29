@@ -4,22 +4,22 @@
   "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/nsp_wolf_heg/nsp_wolf_heg.png",
   "style": "LOW_TECH",
-  "height": 144,
-  "width": 82,
-  "center": [41, 68.5],
+  "height": 101,
+  "width": 70,
+  "center": [35, 47],
   "collisionRadius": 80,
-  "shieldCenter": [-2.5, -0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 70,
   "viewOffset": 50,
   "weaponSlots": [
     {
       "id": "WS 001",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 290,
       "angle": 0,
-      "locations": [6.5, 0]
+      "locations": [10, 0]
     },
     {
       "id": "WS 002",
@@ -28,7 +28,7 @@
       "mount": "TURRET",
       "arc": 200,
       "angle": 90,
-      "locations": [-16.5, 11]
+      "locations": [-10, 10]
     },
     {
       "id": "WS 003",
@@ -37,16 +37,16 @@
       "mount": "TURRET",
       "arc": 200,
       "angle": -90,
-      "locations": [-16.5, -11]
+      "locations": [-10, -10]
     },
     {
       "id": "WS 004",
       "size": "MEDIUM",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [42.5, -0]
+      "locations": [43, -0]
     },
     {
       "id": "WS 005",
@@ -55,7 +55,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [9.5, 23]
+      "locations": [-5, 27]
     },
     {
       "id": "WS 006",
@@ -64,20 +64,12 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [7.5, -23]
+      "locations": [-5, -27]
     }
   ],
   "engineSlots": [
     {
-      "location": [-50.5, 8.5],
-      "length": 64,
-      "width": 16,
-      "angle": 168.5,
-      "contrailSize": 64,
-      "style": "LOW_TECH"
-    },
-    {
-      "location": [-52, -0],
+      "location": [-44, 8],
       "length": 64,
       "width": 16,
       "angle": 180,
@@ -85,24 +77,80 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-50.5, -8.5],
+      "location": [-46, -0],
       "length": 64,
       "width": 16,
-      "angle": -168.5,
+      "angle": 180,
       "contrailSize": 64,
       "style": "LOW_TECH"
     },
     {
-      "location": [-22, -29],
+      "location": [-44, -8],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-28, -32],
+      "length": 39,
+      "width": 8,
+      "angle": -135,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-28, 32],
+      "length": 39,
+      "width": 8,
+      "angle": 135,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-21, 34],
       "length": 32,
+      "width": 8,
+      "angle": 125.5,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-21, -34],
+      "length": 32,
+      "width": 8,
+      "angle": -125.5,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-37, 19.5],
+      "length": 39,
       "width": 8,
       "angle": 180,
       "contrailSize": 64,
       "style": "LOW_TECH"
     },
     {
-      "location": [-22, 29],
-      "length": 32,
+      "location": [-37, -19.5],
+      "length": 39,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-39, 15.5],
+      "length": 39,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-39, -15.5],
+      "length": 39,
       "width": 8,
       "angle": -180,
       "contrailSize": 64,
@@ -110,18 +158,49 @@
     }
   ],
   "bounds": [
-    49.5, -8.5,
-    26.5, -12,
-    -8, -40.5,
-    -15.5, -40.5,
-    -23, -17.5,
-    -44, -20.5,
-    -50.5, -0,
-    -44, 20.5,
-    -23, 17.5,
-    -15.5, 40.5,
-    -8, 40.5,
-    26.5, 12,
-    49.5, 8.5
+    53.5, -7.5,
+    42.5, -10,
+    42.5, -14,
+    18, -14,
+    18, -16.5,
+    13.5, -21,
+    6.5, -21,
+    3.5, -19,
+    0, -19,
+    -2, -22,
+    2, -22.5,
+    2, -32,
+    -17.5, -33,
+    -18.5, -35,
+    -22.5, -33,
+    -24.5, -33,
+    -28, -34.5,
+    -32, -26.5,
+    -29, -24.5,
+    -32.5, -19.5,
+    -36, -22,
+    -47, -4,
+    -47, 4,
+    -36, 22,
+    -32.5, 19.5,
+    -29, 24.5,
+    -32, 26.5,
+    -28, 34.5,
+    -24.5, 33,
+    -22.5, 33,
+    -18.5, 35,
+    -17.5, 33,
+    2, 32,
+    2, 22.5,
+    -2, 22,
+    0, 19,
+    3.5, 19,
+    6.5, 21,
+    13.5, 21,
+    18, 16.5,
+    18, 14,
+    42.5, 14,
+    42.5, 10,
+    53.5, 7.5
   ]
 }

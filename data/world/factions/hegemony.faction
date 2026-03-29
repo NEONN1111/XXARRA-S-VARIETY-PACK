@@ -1,7 +1,6 @@
 {
     "hullFrequency":{
         "hulls":{
-	    "nsp_legionator":0.4,
             "nsp_praxidike":2,
             "nsp_medusa_lt":0.5,
             "nsp_anger_ind":0.01,
@@ -14,7 +13,6 @@
     },
     "knownShips":{
         "hulls":[
-            "nsp_legionator",
 	    "nsp_praxidike",
             "nsp_medusa_lt",
             "nsp_anger_ind",

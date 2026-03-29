@@ -1,17 +1,14 @@
 {
 	"combatCapital":{
 		"nsp_absolution_standard":0.7,
-		"nsp_legionator_attack":0.9,
-		"nsp_legionator_support":0.9,
-		"nsp_legionator_suppression":0.9,
 		"nsp_praxidike_pd":0.8,
 		"nsp_praxidike_standard":0.8,
-                "nsp_phosphoresence_standard":0.1,
                 "nsp_ajax_standard":0.9,
                 "nsp_ajax_elite":0.7,
                 "guardian_Standard":2,
                 "nsp_iliad_standard":0.8,
                 "nsp_praxidike_mkii_standard":0.7,
+				"nsp_galaxy_standard":0.5,
               
  
 	},
@@ -74,6 +71,7 @@
                    "nsp_kardakes_ancient":3,
                    "nsp_erebid_ancient":4,
                    "nsp_fulgurite_ancient":4,
+				   "nsp_phosphor_standard":3,
       
  
              

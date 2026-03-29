@@ -1,7 +1,6 @@
 {
     "hullFrequency":{
         "hulls":{
-			"nsp_legionator":2,
             "nsp_sisyphus":5,
             "nsp_praxidike":2,		
             "nsp_hammonitor":0.8,
@@ -11,12 +10,12 @@
             "nsp_pitbull":0.8,
             "nsp_konoblin":0.6,
             "nsp_destrapogee":0.7,
-            "nsp_iliad":0.7,			
+            "nsp_iliad":0.7,
+            "nsp_galaxy":0.6,			
         },
     },
     "knownShips":{
         "hulls":[
-            "nsp_legionator",
             "nsp_sisyphus",
 			"nsp_praxidike",
                         "nsp_hammonitor",
@@ -27,6 +26,7 @@
                         "nsp_konoblin",
                         "nsp_destrapogee",
                         "nsp_iliad",
+						"nsp_galaxy",
         ],
 	},
 },

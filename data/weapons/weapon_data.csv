@@ -12,6 +12,9 @@ Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,,,,,ENERGY,19
 ,nsp_absdeco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,nsp_absdeco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#THREAT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.3,0,10,5,10,,500,,,400,,,,"he18, threat",,,,Anti Armor,,,,,,,,,,8
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Angurvadal Assault Cannon,nsp_angurvadal,2,0.4,6000,900,,280,200,10,25,24,,,,ENERGY,275,,0.1,2,9,0.2,3,25,2,8,,900,,,75,,,"PD,PD_ALSO","energy18, he17, kinetic17, oddity, pd17, no_sell, no_dealer",,Unknown,,General,,,,,,,,,,7.5
 Neoferric Quadcoil,nsp_neoferric_quadcoil,0,,10000,900,,200,,10,30,20,,,,HIGH_EXPLOSIVE,200,,0,4.3,8,0.1,,,,,,900,,,,,,,"restricted, codex_unlockable, he17, nsp_ancient_bp",,Domain Restricted,,Anti Armor,,,,,,,,,,18.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -28,5 +31,4 @@ Centurion (A) Cover,nsp_cent_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,
 Pusher Plate (Small),nsp_pusherplate_small,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
 Pusher Plate (Tiny),nsp_pusherplate_tiny,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
 Medium Vector Engine Cap,nsp_dkengcap_m,,,,1,120,,,,55,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
-Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.3,0,10,5,10,,500,,,400,,,,"he18, lowtech_bp, merc, ind",,,,Anti Armor,,,,,,,,,,8
 Large Vector Engine Cap,nsp_sotf_dkengcap_l,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
