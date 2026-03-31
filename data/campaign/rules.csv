@@ -224,56 +224,65 @@ Call $global.exponent_ref reportBack","As predicted, the growing heat inside the
 ,,,,,,
 # ReportBack,,,,,,
 EBEbarOptionReportBack,AddBarEvents,"#NSPCheckCanReportBack
-NSPExponentCheck canReportBackExp","AddBarEvent EBEbar_hunt ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" luddicChurchColor",,,
+NSPExponentCheck canReportBackExp","AddBarEvent EBEbar_hunt ""A familiar knight sits at their table. Waiting, with a fresh cup of tea."" ""Report back to the Knight."" luddicChurchColor",,,
 EBEbar4a,DialogOptionSelected,"$option == EBEbar_hunt
 !$global.nspDeclinedExponentMission score:1000","ShowPersonVisual false exponent_KnightContact
-FireBest PopulateReportBackOptions","You walk over to the booth with the senior Knight. ""You return."" The knight wears an inscrutable face. ""So, what of our wayward mission?""","
+FireBest PopulateReportBackOptions","You walk over to the booth with the senior Knight. ""You return."" The knight wears an
+inscrutable face. ""So, what of our wayward mission?""","
 ",
 EBEbar4Lifeboat1,PopulateReportBackOptions,"$option == EBEbar_hunt
-$global.nspExponentCrewFate == ""Lifeboat""",,,"0:EBEReportBackLifeboat:""I left them in some lifeboats to be recovered by a rescue fleet.""",
-EBEbar4Lifeboat2,DialogOptionSelected,"$option == EBEReportBackLifeboat",,"You continue to explain the fate of the mission and its encounter and give the knight the tracking codes for the lifeboats you left behind. 
+$global.nspExponentCrewFate == ""Lifeboat""",,,"0:EBEReportBackLifeboat:""The fleet was destroyed, but we found some survivors.""",
+EBEbar4Lifeboat2,DialogOptionSelected,"$option == EBEReportBackLifeboat",,"You continue to explain the fate of the mission, and give the knight the tracking codes for the lifeboats you left behind.
 
-Relief washes over them, subtly. ""Thank you, $playerName. They will be returned to the ecumene soon enough. As for the enemy...""","0:EBEReportBackCompany:Continue",
+""I see."" They are quiet for a moment. Praying. ""Thank you, $playerName. They will be returned to the ecumene soon enough. As for the enemy...""","0:EBEReportBackCompany:Continue",
 EBEbar4Aboard1,PopulateReportBackOptions,"$option == EBEbar_hunt
-$global.nspExponentCrewFate == ""Aboard""",,,"0:EBEReportBackAboard:""The survivors were taken aboard my fleet.""",
-EBEbar4Aboard2,DialogOptionSelected,"$option == EBEReportBackAboard",,"You explain the fate of the mission and its encounter and give the orders for the survivors to be discharged at the port. 
+$global.nspExponentCrewFate == ""Aboard""",,,"0:EBEReportBackAboard:""The fleet was destroyed, but we rescued some survivors.""",
+EBEbar4Aboard2,DialogOptionSelected,"$option == EBEReportBackAboard",,"You continue to explain the fate of the mission and that the survivors are waiting to be transferred.
 
-Relief washes over them, subtly. ""Thank you, $playerName. They shall be counseled and returned to duty soon. As for the enemy...""","0:EBEReportBackCompany:Continue",
+""They are thankful for their salvation, I am sure. Thank you, $playerName. As for the enemy...""","0:EBEReportBackCompany:Continue",
 EBEbar4Fate1,PopulateReportBackOptions,"$option == EBEbar_hunt
-$global.nspExponentCrewFate == ""Fate""",,,"0:EBEReportBackFate:""The fleet was destroyed. The survivors hid on an Invictus, but it went critical.""",
+$global.nspExponentCrewFate == ""Fate""",,,"0:EBEReportBackFate:""The fleet was destroyed. There were survivors on the flagship, but it went critical before we could rescue them.""",
 EBEbar4Fate2,DialogOptionSelected,"$option == EBEReportBackFate
-$global.nspExponentCrewFate == ""Fate""",,"You explain, in vague terms, the fate of the mission and its encounter.
+$global.nspExponentCrewFate == ""Fate""",,"You explain, in vague terms, the ultimate fate of the Luddic Fleet and its survivors.
 
-The knight takes on a more grim countenance. ""I... I see."" A heavy silence takes the air as a prayer is uttered with a bowed head. 
-
-""Those responsible will pay for trespass against the Creator."" The knight's eyes burn with righteous fury.","0:EBEReportBackCompany:Continue",
+The knight falls into a grim countenance. ""I... I see."" A heavy silence takes the air as a prayer is uttered with a bowed head. ""May none more trespass, then."" They glance up, eyes burning with new fire. ""If that is the case...""","0:EBEReportBackCompany:Continue",
 EBEbar4b,DialogOptionSelected,"$option == EBEbar_hunt
-$global.nspDeclinedExponentMission score:1000","ShowPersonVisual false exponent_KnightContact","You walk over to the booth with the senior Knight. Remembering you turned down the hunt, they start speaking. ""You return. Ready to hunt down the foul machine?""","0:EBEAcceptExponentHunt:Accept
+$global.nspDeclinedExponentMission score:1000","ShowPersonVisual false exponent_KnightContact","""You return. I believe we have something to discuss.""","0:EBEAcceptExponentHunt:Accept
 1:EBEDeclineExponentHunt:Decline for now",
 EBEbar5a,DialogOptionSelected,"$option == EBEReportBackCompany
-$global.nspExponentCrewFate == ""Aboard""",,"""The Church would not so easily give a task to those outside the knightly orders, but action must be taken swiftly.""
+$global.nspExponentCrewFate == ""Aboard""",,"""The Church would not normally trust such a task to a, hm. Layman, but action must be taken. Now, before the monstrosity eludes us.""
 
-""Those knights whom survived the first encounter, will you let them accompany you in hunting down the foul machine? They shall find penance and, with the blessings of Ludd, closure, should you succeed.""","0:EBEAcceptExponentHunt:Accept
+They gaze up towards the ceiling.
+
+""The abomination must be destroyed. That is your task.""
+","0:EBEAcceptExponentHunt:Accept
 1:EBEDeclineExponentHunt:Decline for now",
 EBEbar5b,DialogOptionSelected,"$option == EBEReportBackCompany
 $global.nspExponentCrewFate != ""Aboard""",,"""The Church would not so easily give a task to those outside the knightly orders, but action must be taken swiftly. Will you finish this and hunt down the foul machine?""","0:EBEAcceptExponentHunt:Accept
 1:EBEDeclineExponentHunt:Decline for now",
 EBEbar5decline,DialogOptionSelected,"$option == EBEDeclineExponentHunt","SetShortcut backToBar ""ESCAPE""
-$global.nspDeclinedExponentMission = true","""In that case, this bounty will stay available until you change your mind or a bounty hunter offers their services.""","0:backToBar:Leave",
-EBEbar6,DialogOptionSelected,"$option == EBEAcceptExponentHunt",,"EBEbar6 Text offering the player a backup Knight fleet to fight the Exponent, where the player can choose to go alone or accept the offer.","EBEbar_goAlone:Go Alone
+$global.nspDeclinedExponentMission = true","""I can't force you. I also can't approve of this...meekness, but the offer will remain open. Unless we find someone else.""
+
+They lean forward; a face pocketed by time and trial. ""Captain, if I may be forward. I know what you are. Are you, really, not going to see this through?""","0:backToBar:Leave",
+EBEbar6,DialogOptionSelected,"$option == EBEAcceptExponentHunt",,"""I believe the survivors would be most helpful in your crusade. A heart of penance makes for a strong shield.""","EBEbar_goAlone:Go Alone
 EBEbar_goWithFleet:Go with fleet",
 EBEbar6a,DialogOptionSelected,"$option == EBEbar_goAlone","$global.exponent_hasReported = true
 $global.exponent_goAlone = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingAlone",,,
-EBEbar6aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","EBEbar5aText ""Blah blah blah Exponent location in $exponent_system2SName "" going alone","backToBar:Return to the bar",
+EBEbar6aText,ExponentMissionGoingAlone,,"SetTextHighlights $exponent_system2SName","""I understand.""
+
+He pulls out a small parchment of real paper, and slides it across the table. ""$exponent_system2SName is where the thing is hiding now. We are certain of it.""","backToBar:Return to the bar",
 EBEbar6b,DialogOptionSelected,"$option == EBEbar_goWithFleet","NSPAssureValidRelations
 $global.exponent_hasReported = true
 $global.exponent_goWithFleet = true
 Call $global.exponent_ref updateData
 FireBest ExponentMissionGoingWithFleet",,,
 EBEbar6bText,ExponentMissionGoingWithFleet,,"SetTextHighlights $exponent_system2SName
-Call $global.exponent_ref fleetFollowPlayer","EBEbar5bText ""Blah blah blah Exponent location in $exponent_system2SName "" going with escort fleet","backToBar:Return to the bar",
+Call $global.exponent_ref fleetFollowPlayer","He pulls out a small parchment of real paper, and slides it across the table.
+
+""We've tracked the demon to $exponent_system2SName. May Ludd bless your journey. And our own.""
+","backToBar:Return to the bar",
 "#END ReportBack",,,,,,
 ,,,,,,
 # TakeTheFight,,,,,,
@@ -292,69 +301,131 @@ exponent_encounterDesc2,BeginFleetEncounter2,"$exponent score:1000","AddTextSmal
 $global.exponent_scannedExponent = true
 Call $global.exponent_ref updateData
 $showAfterScanIntro = true","NSP2 Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away. You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-exponent_afterDefeatingA,AfterNSPExponentDefeat,"$global.exponent_goWithFleet",,"NSP - pre Luddic Escort interaction text - What shows before Luddic escort contact starts after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueOne:NSP Continue 1",
-exponent_afterDefeatingAOne,DialogOptionSelected,"$option == exponentDestroyedContinueOne","NSPExponentLCFPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Escort commander says","exponentDestroyedContinueTwo:NSP Continue 2",
-exponent_afterDefeatingATwo,DialogOptionSelected,"$option == exponentDestroyedContinueTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Escort commander says","exponentDestroyedContinueThree:NSP Continue 3",
-exponent_afterDefeatingAThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","NSP - 3 deep Luddic Escort interaction text - Text where the player can choose to permanently destroy the Exponent, but there also being a possibility to recover it for themselves.",,
-exponent_afterDefeatingB,AfterNSPExponentDefeat,"$global.exponent_goAlone",,"NSP - pre Luddic Escort interaction text - What shows when alone after defeating the Exponent, can be a description of what you see in front of you ","exponentDestroyedContinueBOne:NSP Continue 1",
-exponent_afterDefeatingBOne,DialogOptionSelected,"$option == exponentDestroyedContinueBOne","NSPExponentLCEnvoyPersonVisual","NSP - 1 deep Luddic Escort interaction text - First thing Luddic Envoy says (along the lines of thank goodness this machine has been destroyed)","exponentDestroyedContinueBTwo:NSP Continue 2",
-exponent_afterDefeatingBTwo,DialogOptionSelected,"$option == exponentDestroyedContinueBTwo",,"NSP - 2 deep Luddic Escort interaction text - Second thing Luddic Envoy says","exponentDestroyedContinueBThree:NSP Continue 3",
-exponent_afterDefeatingBThree,DialogOptionSelected,"$option == exponentDestroyedContinueBThree",,"NSP - 3 deep Luddic Escort interaction text - Text where the head salvor walks up to the player, mentioning the Exponent can be salvaged. This is overheard by the Luddic Envoy who then speaks up. (something along the lines of  ""Captain, you cannot be seriously considering this"") (she continues talking next dialog)","exponentDestroyedContinueBFour:NSP Continue 4",
-exponent_afterDefeatingBFour,DialogOptionSelected,"$option == exponentDestroyedContinueBFour",,"NSP - 4 deep Luddic Escort interaction text - Text where the Luddic Envoy continues about the mission and how critical it is that the Exponent is to be destroyed permanently.
+exponent_afterDefeatingA,AfterNSPExponentDefeat,"$global.exponent_goWithFleet",,"The destroyed ship lists through the void. The glowing squares of tracking sensor surround fires on every deck, errant amps pouring through the vessel's blasted components.
 
-","0:exponentAgreeEnvoy:Agree with the Luddic envoy
-1:exponentBrigEnvoy:Order the Luddic envoy to the brig
-2:exponentShootEnvoy:Shoot the Luddic envoy
-3:exponentSpaceEnvoy:Space the Luddic envoy",
-exponent_afterDefeatingBAgree,DialogOptionSelected,"$option == exponentAgreeEnvoy","$global.exponent_envoyPresent = true","NSP - 4c deep Luddic Escort interaction text - Text where the player agrees with the envoy
+Whatever it is, or was, it is now dead.","exponentDestroyedContinueOne:Continue",
+exponent_afterDefeatingAOne,DialogOptionSelected,"$option == exponentDestroyedContinueOne","NSPExponentLCFPersonVisual","The Luddic commander is distant. There eyes are elsewhere, another time, far beyond the glow of their consoles.
 
-","exponentDestroyedContinueBFive:NSP Continue 5",
+""And it's done. Thank you, $playerName. Retribution has been delivered. You've done a great thing, here. And not just for the Church. For all mankind.""","exponentDestroyedContinueTwo:Continue",
+exponent_afterDefeatingATwo,DialogOptionSelected,"$option == exponentDestroyedContinueTwo",,"Just then, something rings in your ears. A distant, haunting gasp. It is not music, note even a note. Not even anything. Then, it is gone.
+
+When you come to, you realize the Luddic commander is staring at you. ""Captain?""","exponentDestroyedContinueThree:Continue",
+exponent_afterDefeatingAThree,DialogOptionSelected,"$option == exponentDestroyedContinueThree","NSPExponentRecoveryDecisions","They return to their console, typing something unseen. ""Hm. No major power detected. The demon that drove it is dead."" They glance up, one eyebrow quirked. ""We came here to kill the demon; that we have accomplished. I am...unsure, what we should do with its shell.""",,
+exponent_afterDefeatingB,AfterNSPExponentDefeat,"$global.exponent_goAlone",,"The destroyed ship lists through the void. The glowing squares of tracking sensor surround fires on every deck, errant amps pouring through the vessel's blasted components.
+
+Whatever it is, or was, it is now dead.","exponentDestroyedContinueBOne:Continue",
+exponent_afterDefeatingBOne,DialogOptionSelected,"$option == exponentDestroyedContinueBOne","NSPExponentLCEnvoyPersonVisual","As the buzz of the battle dies down in your bridge, you hear a faint mumbling behind you. You turn to find the Luddic envoy that'd come with you, their hands clasped in prayer.
+
+""The Machine is dead,"" they state. ""Hallelujah.""","exponentDestroyedContinueBTwo:Continue",
+exponent_afterDefeatingBTwo,DialogOptionSelected,"$option == exponentDestroyedContinueBTwo",,"""You've done a great thing, Captain. That...thing."" Their eyes shift, growing distant, pouring over the readouts of the dead hulk. ""It was old. Quite old. Who knew what foul secrets it had to share.""","exponentDestroyedContinueBThree:Continue",
+exponent_afterDefeatingBThree,DialogOptionSelected,"$option == exponentDestroyedContinueBThree",,"Your head salvor speaks up. ""Captain,"" he says. ""Looks like whatever was piloting it is offline, but I think we just might be able to do something with that hulk."" There's a quiet, but slightly maniacal tone to his voice. ""Be somethin' to see.""","exponentDestroyedContinueBFour:Continue",
+exponent_afterDefeatingBFour,DialogOptionSelected,"$option == exponentDestroyedContinueBFour",,"The envoy narrows $hisOrHer eyes. ""No. We came here to destroy the demon."" He tone turns icy. ""Completely,"" $heOrShe enunciates. ""I will not stand for one atom of this abomination to remain. And neither will the Church.""","0:exponentAgreeEnvoy:Agree with the envoy
+1:exponentBrigEnvoy:Have the envoy detained
+2:exponentShootEnvoy:Shoot the envoy
+3:exponentSpaceEnvoy:Space them",
+exponent_afterDefeatingBAgree,DialogOptionSelected,"$option == exponentAgreeEnvoy","$global.exponent_envoyPresent = true","$HisOrHer shoulders drop. ""Good,"" they sigh. ""Man has seen enough clever things to last
+until Armageddon.""","exponentDestroyedContinueBFive:Continue",
 exponent_afterDefeatingBBrig,DialogOptionSelected,"$option == exponentBrigEnvoy","ShowDefaultVisual
 $global.exponent_envoyPresent = false
 NSPPlaySound ui_cargo_metals_drop 0.75
-AddTextSmall ""You sent the Luddic envoy to the brig of your ship"" highlight","NSP - 4b deep Luddic Escort interaction text - Text where the player orders for the envoy to be brigged (thrown into a cell) [dev note, if Nex active add high value prisoner]
+AddTextSmall ""You sent the Luddic envoy to the brig of your ship"" highlight","With one gesture and two words, two guards descend on the envoy and grab $hisorHer by
+her shoulders.
 
-","exponentDestroyedContinueBFive:NSP Continue 5",
-exponent_afterDefeatingBShoot,DialogOptionSelected,"$option == exponentShootEnvoy","ShowDefaultVisual
+""Wha-""
+
+Without a word, they haul $hisOrHer out of the bridge.
+
+""You can't DO THIS!"" they scream, ""I AM AN ENVOY OF THE CHURCH OF GALACTIC
+REDEMPTION! YOU HAVE BEEN ORDERED TO-""
+
+The doors to the bridge slam shut, muffling their cries into a distant caterwaul, fading as
+they're pulled to the nearest brig.
+
+When their voice is gone, one officer turns to you and nods. ""Good call, Captain.""","exponentDestroyedContinueBFive:Continue",
+exponent_afterDefeatingBShoot,DialogOptionSelected,"$option == exponentShootEnvoy",,"You consider your options.
+
+There is persuasion, of course; you came here to destroy the demon, and now the demon is dead; what harm is there in stealing its chariot? Or maybe just a good old-fashioned bribe; the Church is not as pure as it likes to think. Perhaps you could simply lie. Wait until the envoy leaves the bridge, then recover it and suffer their complaints.
+","exponentShootEnvoyTwo:Continue",
+exponent_afterDefeatingBShootTwo,DialogOptionSelected,"$option == exponentShootEnvoyTwo","ShowDefaultVisual
 $global.exponent_envoyPresent = false
 NSPPlaySound storyevent_diktat_execution 1
-AddTextSmall ""You decided to shoot the Luddic envoy"" highlight","NSP - 4a deep Luddic Escort interaction text - Text where the player lethally shoots the envoy
-
-","exponentDestroyedContinueBFive:NSP Continue 5",
+AddTextSmall ""You choose something simpler."" highlight",,"exponentDestroyedContinueBFive:Continue",
 exponent_afterDefeatingBSpace,DialogOptionSelected,"$option == exponentSpaceEnvoy","ShowDefaultVisual
 $global.exponent_envoyPresent = false
 NSPPlaySound vent_flux 1
-AddTextSmall ""You ordered to space the Luddic envoy"" highlight","NSP - 4a deep Luddic Escort interaction text - Text where the player orders for the envoy to be spaced (thrown out the airlock)
+AddTextSmall ""You ordered to space the Luddic envoy"" highlight","With one gesture, two guards descend on the envoy and grab $hisorHer by her shoulders.
 
-","exponentDestroyedContinueBFive:NSP Continue 5",
+""Wha-""
+
+They await your command. You make a quick tossing motion with one hand, a universal
+signal that every spacer knows. The envoy's eyes go wide, and they're hauled off the bridge,
+kicking and screaming.
+
+""You can't DO THIS!"" they scream, ""I AM AN ENVOY OF THE CHURCH OF GALACTIC
+REDEMPTION! THE CHURCH WILL HAVE YOU-""
+
+The doors to the bridge slam shut, muffling their cries into a distant caterwaul, fading as
+they're pulled to the nearest brig.
+
+A few officers exchange glances, but nothing is said. If there are doubts to your mercy, they
+are not expressed.","exponentDestroyedContinueBFive:Continue",
 exponent_afterDefeatingBFive,DialogOptionSelected,"$option == exponentDestroyedContinueBFive","ShowImageVisual space_wreckage
-NSPExponentRecoveryDecisions","NSP - 5 deep Luddic Escort interaction text - Text where the player can decide to recover the Exponent or to permanently destroy the Exponent",,
-exponent_afterDefeatingDestroy,DialogOptionSelected,"$option == exponentDestroyedPerma","NSPDestroyExponent
+NSPExponentRecoveryDecisions","The strange ship lists lifelessly through space, your targeting reticles marking it like pox. The bridge crew turns to you; a decision must be made.",,
+exponent_afterDefeatingDestroy,DialogOptionSelected,"$option == exponentDestroyedPerma",,"You relay the order: destroy the ship.","100:defaultLeave:Leave",
+exponent_afterDefeatingDestroyTwo,DialogOptionSelected,"$option == exponentDestroyedPerma","NSPDestroyExponent
 $global.exponent_hasFought = true
 Call $global.exponent_ref reportDebrief
-Call $global.exponent_ref updateData","NSP Flavour text upon destroying the Exponent once and for all (can become a longer interaction than just this 1 message)","100:defaultLeave:Leave",
+Call $global.exponent_ref updateData","It is a thorough disassembly. The main guns of your largest ship roar upon the battered hulk for minutes on end. The dead ship begins to glow red, then blinding hot white. Its own body turns into a roaring inferno, fires spreading throughout as the superstructure begins to sag under the explosive torrent.
+
+When a cease fire is ordered, the strange ship is little more than a vague, molten glob.","100:defaultLeave:Leave",
 exponent_afterDefeatingPreRecoveryA,DialogOptionSelected,"$option == exponentDestroyedPreRecover
 $global.exponent_goWithFleet
 ","Call $global.exponent_ref recoverExponent
 $global.exponent_recoveredExponent = true
-Call $global.exponent_ref updateData","NSP - 6 deep Luddic Escort interaction text - Luddic Escort Commander shunning your actions of recovering the ship.","0:exponentDestroyedRecover:Start recovery of the Exponent",
+Call $global.exponent_ref updateData","The Luddic Envoy balls $hisOrHer fists. ""The Church has given you orders. Direct orders. You will destroy the demon's vessel.""
+
+Their stare is venom. They glare at you as if you were an Alpha core standing in front of them, then turn and storm out of the bridge.","0:exponentDestroyedRecover:Start recovery of the Exponent",
 exponent_afterDefeatingPreRecoveryB,DialogOptionSelected,"$option == exponentDestroyedPreRecover
 $global.exponent_goAlone
 $global.exponent_envoyPresent","Call $global.exponent_ref recoverExponent
 $global.exponent_recoveredExponent = true
-Call $global.exponent_ref updateData","NSP - 6 deep Luddic Escort interaction text - Luddic Envoy shunning your actions of recovering the ship, storming away before your security officer reports an escape pod having launched. Tac officer chimes in asking the player to shoot down the escape pod or to let the envoy escape knowing you recover the Exponent.","0:exponentShootPod:Order the escape pod to be shot down
+Call $global.exponent_ref updateData","A few minutes after they're gone, your tac officer turns to you, proverbial hat in hand.
+
+""Uh, $SirOrMadame? Security one deck down just called. They said the envoy pushed her
+way into an escape pod and, uh. Launched it.""
+
+They turn back to their console. ""Tracking it now. We could intercept.""","0:exponentShootPod:Order the escape pod to be shot down
 1:exponentLetPodGo:Let the envoy escape",
 exponent_afterDefeatingPreRecoveryBShoot,DialogOptionSelected,"$option == exponentShootPod
-","NSPPlaySound collision_asteroids","NSP - 6a deep Luddic Escort interaction text - You giving the order to fire upon the escape pod before you hear a weapons battery fire.","0:exponentDestroyedRecover:Start recovery of the Exponent",
+","NSPPlaySound collision_asteroids","You order is nonverbal. A simple gesture, and your ship's weapons hum to half-waking.
+
+When you walk over to the command console, you see the tracked escape pod on screen,
+gently spinning through the void of space. A moment later, a potshot screams across its hull. The second shot grazes; the escpae pod is sent tumbling like a coin, debris and fuel spinning from its body in glittering arcs.
+
+The third and final shot hits dead on, and the pod explodes in a puff of fire and broken metal.
+
+You both stare at the expanding could of stellar flotsam.
+
+""That's that,"" your tac officer huffs.","0:exponentDestroyedRecover:Start recovery of the Exponent",
 exponent_afterDefeatingPreRecoveryBLetGo,DialogOptionSelected,"$option == exponentLetPodGo
-",,"NSP - 6a deep Luddic Escort interaction text - Player telling the tac officer to let the envoy go","0:exponentDestroyedRecover:Start recovery of the Exponent",
+",,"You give a wave; a silent order to let the envoy go.
+
+""Are you sure, $SirOrMadame? They're not gonna be flattering if they get back to the
+Church.""","0:exponentDestroyedPreRecover:""You have your orders, officer.""
+1:exponentDestroyedPreRecover:""It'll be fine.""",
 exponent_afterDefeatingPreRecoveryC,DialogOptionSelected,"$option == exponentDestroyedPreRecover
 $global.exponent_goAlone
 !$global.exponent_envoyPresent
 ","Call $global.exponent_ref recoverExponent
 $global.exponent_recoveredExponent = true
-Call $global.exponent_ref updateData","NSP - 6 deep Luddic Escort interaction text - The head salvor mentions all is prepped to start the recovery process.","0:exponentDestroyedRecover:Start recovery of the Exponent",
-exponent_afterDefeatingRecover,DialogOptionSelected,"$option == exponentDestroyedRecover","FireBest OpenInteractionDialog",,,
+Call $global.exponent_ref updateData","The head salvor chimes in.
+
+""$SirorMadame, ready to start the recovery process. I'm not gonna lie, we might have to
+improvise a bit with this one.""
+","0:exponentDestroyedRecover:Proceed",
+exponent_afterDefeatingRecover,DialogOptionSelected,"$option == exponentDestroyedRecover","FireBest OpenInteractionDialog","Your salvage teams get to work. It is a surprisingly smooth process, made simpler by the ship's relatively small size. Halfway through the process, the head salvor chimes in.
+
+""Captain? We found the core housing. Whatever was piloting this thing is dead now, but, we're finding whole bunks and cabins in here. We'll have to rip out a lot of these cables worming every which-away, but I think this thing was meant to have a crew. Originally, anyway.""",,
 exponent_wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $exponent score:1000","ShowDefaultVisual
 NSPInitExponentWreck",,,
@@ -363,42 +434,62 @@ $customType == wreck
 $exponent score:1000
 !$triedSabotage
 PlayerHasCargo alpha_core","#ShowDefaultVisual
-$triedSabotage = true","NSP2 Salvage teams dock their drone-shuttles at various entry points along the massive vessel's hull. At the precise moment the go-order is given, all telemetry feeds from the shuttles simultaneously blank out.
+$triedSabotage = true","Your salvage team arrives at the various point of the vessel's hole, drones already pouring in a full torrent of data. There's chatter, small deliberations on who will enter first and where, then silence.
 
-Your bridge officers initiate fallback procedures with practiced speed, contacting subordinates, performing checks and reinitializations to establish precisely where the systems fault occurred - and determine if it was a hostile act. Several agonizing minutes later, the salvage teams' data-feed and comms snap back to life.
+Complete silence. Your headset has gone dead, and the confused expressions of your nearby officers tell you that theirs have, too.
 
-""Captain!"" Your tactical officer salutes, then launches into a status report, ""Someone or something just tried to send a power core collapse signal to the shuttles' computers. Fortunately the security package caught it in time, but they had to perform a full systems shutdown and manually switch to backups; that's why their telemetry cut off. All salvage teams are now reporting all-green and are standing by.""","exponentAlphaContinue:""Whoever tried this, what did they hope to accomplish?""",
-exponent_alphaContinueOpt,DialogOptionSelected,"$option == exponentAlphaContinue",,"NSP2 Your tactical officer rapidly taps a few buttons; holodisplays flicker through status updates.
+The lights go dead. Then your ship. The entire bridge is plunged into darkness, and the familiar hum of life support draws down like a great dying sigh. Your bridge crew remain professional, at their station but now tersely exchanging status reports and orders as they attempt to draw the ship back to life.
 
-""If the shuttle power cores were overloaded simultaneously, well, with the shuttles so close to the wreck? The hull would have likely been damaged past any hope of recovery. In addition to killing the salvor crews, of course. But I don't think that was their goal; there are easier ways to kill salvage crews."" 
+Your bridge turns red; the crimson glow of emergency power. A few consoles in the bridge eek to life, and your officers swarm around them. After a few tense moments, there is a great click inside the ship, and the red glow is banished to welcome, sterile light.
 
-As you indicate to your operations chief to ready the salvage teams for a second attempt, your tactical officer adds, ""It comes to mind that what we just experienced was an attempt at an old Tri-Tach trick from the Second AI War. They left black-box EW traps to keep the Hegemony from recovering intel and tech from disabled hulls. And it worked. For a while, anyway. I'm just glad we kept that legacy commsec package installed.""","exponentAlphaContinue2:Continue",
-exponent_alphaContinueOpt2,DialogOptionSelected,"$option == exponentAlphaContinue2",,"NSP2 You dismiss your tactical officer and ponder the situation as the call-and-return proceeds between your command crew and the salvage teams waiting at standby. Reports trickle up through the hierarchy, from junior officers in after-action/sim analyst teams to your bridge crew. A picture begins to form that has too many gaps for your liking: The core-collapse signal appears to have originated not exactly in, but uncomfortably near to a secure cargo bay holding an Alpha Core. The core was shielded in complete isolation at the time, and it denies any responsibility as effortlessly as it offers you its service and advice during this crisis, if you would be so kind as to open up a small data-link. You curtly terminate the secured comm-channel and order the AI put back in isolated lock-down.
+Your tactical officer turns around, confused as you are. ""Sir. Something just tried to fry the power. On, uh. Every ship in our fleet.""","exponentAlphaContinue:""Come again?""",
+exponent_alphaContinueOpt,DialogOptionSelected,"$option == exponentAlphaContinue",,"They turn back, scratching the back of their head. The systems officer at their console
+engages in a brief conversation with the, before tactical turns back with a grave look. ""I don't
+know what to tell you, $playerSirOrMadam. It looks like a virus, but...if it is, it's been spreading through our fleet for days. Weeks, maybe. Look like it's just been dormant until something gave it the go order.""
 
-Your comms officer reports that there is uncertainty whether the AI was involved, or if the signal was sent from that location to throw suspicion onto the core. Both possibilities have troubling implications. In the meantime, however, your ops chief calls in, requesting the order to enter the wreck.","exponentAlphaContinue3:Order the exploration to proceed",
+The tactical officer looks around the bridge, then approaches you and whispers into your ear.
+
+""One of our firewall layers had old Second AI War code on it. Whatever just happened, it was
+close enough to CWF from back then to get tagged as malicious the second it popped out.
+Only reason we're not a drifting wreck right now.""","exponentAlphaContinue2:Continue",
+exponent_alphaContinueOpt2,DialogOptionSelected,"$option == exponentAlphaContinue2",,"You nod, and bid the officer to return to his work. The bridge settles back into normalcy, and the clacking keystrokes of an incident report.
+
+The full breadth of the shutdown slowly becomes clear. Every ship in your fleet lost power
+simultaneously, all triggered by an emergency shutdown of their power plants. The report by your comms officer pinpoints a specific line of code that was inert unless remotely activated, but there was no way any of your crew could have engaged it without being caught; until very recently, your crew had no idea it was there.
+
+A disturbing implication creeps into your mind. You go over which ships were actively communicating with the fleet when the power went out, and find only your own was transmitting, and the only one to make a fleet-wide transmission precisely 6.29 seconds before the power went dead.
+
+Whatever did this, it came from your own ship.","exponentAlphaContinue3:Order the exploration to proceed",
 exponent_alphaContinueOpt3,DialogOptionSelected,"$option == exponentAlphaContinue3","#ShowDefaultVisual
-FireBest ExponentExploreDescription",,,
+FireBest ExponentExploreDescription","Later, you receive a mysterious message in your inbox.
+
+""APOLOGIES. MISTAKEN IDENTITY.""
+
+Its origin has been thoroughly scrubbed. You could never hope to trace it back.",,
 exponent_exploreNoSabotage,CheckSalvageSpecial,"$salvageSpecialData != null
 $customType == wreck
 $exponent score:1000","#ShowDefaultVisual
-FireBest ExponentExploreDescription","NSP [exponent_exploreNoSabotage Placeholder example > ] Your salvage teams dock shuttles at various entry points along the vessel's massive hull.",,
-exponent_exploreDescription,ExponentExploreDescription,,,"NSP [exponent_exploreNoSabotage Placeholder example > ] After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
+FireBest ExponentExploreDescription","Your salvage team arrives at the various point of the vessel's hole, drones already pouring in a full torrent of data. There's chatter, small deliberations on who will enter first, and where.",,
+exponent_exploreDescription,ExponentExploreDescription,,,"After the salvage team makes entry, there is a long period of silence. Radio feeds give back only gnarling static, and tactical starts looking worried.
 
-Your operations chief reports that for all of the fancy hull features, it is clear that this ship requires crew to operate. But there are no traces of a crew, not even a single body caught in the battle damage, and the escape pods are all in their berths.
+Eventually, a voice pours through. The head of the salvage team, their voice garbled by interference. You can tell they're almost shouting through the snow, saying something about ""passive EM"".
 
-The operation proceeds with telemetry feeds, officers reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your chief engineer appears, bringing you back from your reverie. You accept as a matter of course.","exponentExploreContinue:Continue",
-exponent_exploreDescriptionContinue,DialogOptionSelected,"$option == exponentExploreContinue",,"NSP [exponent_exploreNoSabotage Placeholder example > ] ""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your chief engineer speaks with a genuine excitement.
+Through the static, you hear something else. A note; a long series of them, almost-song
+rapping at the back of your brain. With each second the tempo increases, smooth and gentle, louder and louder until it is a great hand knocking upon the bulkhead.
 
-""I've found a device that appears to generate and control - I'm not sure that either is the right word, really - these ... swarming motes, the EM anomalies. The device appears to have two stages, the first as I've described, and what appears to be a later addition which is, unfortunately, damaged beyond repair. Judging by the complexity of the components and the bizarre discharge pattern... this is the work of a team of specialists doing bleeding-edge work. It's amazing! A device like this, it's simply unheard of nowadays. Except,"" your engineer looks abashed suddenly, ""Rumors. You know, people talk.""","exponentExploreContinue2:Continue",
-exponent_exploreDescriptionContinue2,DialogOptionSelected,"$option ==exponentExploreContinue2","SalvageSpecialInteraction","NSP [exponent_exploreNoSabotage Placeholder example > ] The chief engineer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+""Sir?""
+
+You do a double-take. The music vanishes, dust on the wind, and you find yourself standing in front of your mildly-concerned chief engineer.","exponentExploreContinue2:Continue",
+exponent_exploreDescriptionContinue2,DialogOptionSelected,"$option ==exponentExploreContinue2","SalvageSpecialInteraction","The chief engineer seems almost relieved as you look at them, then steps back and clears their throat. ""As I was saying, I think we can get her flyin' again. I've heard..."" They trail off, staring sideways into nothing before making a shrug. ""Eh, nevermind.""",,
 exponent_PostShipRecoverySpecial,PostShipRecoverySpecial,"$srs_baseHullId == nsp_exponent","ExponentCMD updateData",,,
 EBEexponentPostFight,nspExponentPostFight,"!$global.exponent_hasFought","$global.exponent_hasFought = true
 Call $global.exponent_ref reportDebrief
 Call $global.exponent_ref updateData
 #FireAll ExponentPostFight",,,
-WORK1,AfterExponentDefeat,,,"NSP3 A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+WORK1,AfterExponentDefeat,,,"The ship finally collapsed under the fire of your $shipOrFleet. It now drifts through space,
+errant sparks of its dying metal heart pumping out dead amps into the void.
 
-Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.","exponentBattleContinue:NSP3 Continue",
+Sensors indicate no life aboard, and no escape pods, either jettisoned or on board.","exponentBattleContinue:NSP3 Continue",
 WORK2,DialogOptionSelected,"$option == exponentBattleContinue","FireBest OpenInteractionDialog",,,
 ,,,,,,
 # CommLink,,,,,,
@@ -409,7 +500,19 @@ EBEexponentCommLinkStart,OpenCommLink,"!$hadExponentConvo
 $faction.id == nsp_exponent
 RollProbability 1","$menuState = fleetConvMain 0
 #FireAll PopulateOptions
-#EndConversation","NSP Initial VALTEIL interaction text","0:valteilContinueOne:Continue
+#EndConversation","A golden visage, circuits and polymer, living motherboard and a single golden central eye with two smaller ones above and below stare at you through the camera of the commlink. No pretense of a false face.
+
+It speaks; words obviously uttered without a cell to make them. Their tone is...cautious? Confident? An inhumanly, human voice.
+
+""Captain.""
+
+You're left to hang on the word for a moment, then you merely nod. You have been called
+that.
+
+The AI's avatar shimmers; the lower ""lid"" of the central, unblinking eye raising by just a few
+scant degrees.
+
+""Love your work.""","0:valteilContinueOne:Continue
 #100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkOne,DialogOptionSelected,"$option == valteilContinueOne","#FireAll PopulateOptions
 #EndConversation","NSP - 1 deep VALTEIL interaction text - Initial conversation text","0:valteilContinueTwo:Continue
