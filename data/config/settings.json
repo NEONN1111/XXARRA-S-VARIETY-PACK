@@ -20,7 +20,7 @@
 
 	# Bonus XP values for most story-point-using actions
 	"bonusXP":{
-		"valteilContactJoin":0.25
+		"exponentContactJoin":0.25
 	},
 
     "graphics":{	

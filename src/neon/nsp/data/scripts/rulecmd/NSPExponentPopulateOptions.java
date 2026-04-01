@@ -5,6 +5,7 @@ import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.OptionPanelAPI;
 import com.fs.starfarer.api.campaign.TextPanelAPI;
 import com.fs.starfarer.api.campaign.VisualPanelAPI;
+import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
@@ -38,6 +39,57 @@ public class NSPExponentPopulateOptions extends BaseCommandPlugin {
                 optionPanel.setTooltipHighlights("EBEbarKnight_acceptPather","Luddic Path");
                 optionPanel.setTooltipHighlightColors("EBEbarKnight_acceptPather",
                         Global.getSector().getFaction(Factions.LUDDIC_PATH).getColor()
+                );
+            }
+            return true;
+        }
+        if (command.equals("exponentCommLinkOne")) {
+            optionPanel.clearOptions();
+            optionPanel.addOption("\"I was sent to to hunt down an 'abomination'. Looks like I found it.\"","exponentCommLinkOneA");
+            optionPanel.addOption("\"Not until I know who you are.\"","exponentCommLinkOneB");
+            optionPanel.addOption("\"Maybe. After an explanation.\"","exponentCommLinkOneC");
+            optionPanel.addOption( "\"You could die, demon.\"","valteilRefuse");
+
+            if (!Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().getBoolean("mostLuddicEthosPather")) {
+                optionPanel.setEnabled("valteilRefuse",false);
+                optionPanel.setTooltip("valteilRefuse","Requires you to be a follower of the Path");
+                optionPanel.setTooltipHighlights("valteilRefuse","follower","Path");
+                optionPanel.setTooltipHighlightColors("valteilRefuse",
+                        Global.getSector().getFaction(Factions.LUDDIC_PATH).getColor()
+                );
+            }
+            return true;
+        }
+
+        if (command.equals("exponentCommLinkOneAAA") || command.equals("exponentCommLinkOneAAB") || command.equals("exponentCommLinkOneABA")) {
+            optionPanel.clearOptions();
+            optionPanel.addOption("\"Got a sense you have a proposition.\"","exponentCommLinkTwoA");
+            optionPanel.addOption("\"I'm listening.\"","valteilContinueTwo");
+            optionPanel.addOption("\"Sorry. Time's up.\"","valteilRefuse");
+
+            if (memoryMap.get(MemKeys.GLOBAL).getBoolean("exponent_goAlone")) {
+                optionPanel.setEnabled("valteilContinueTwo",false);
+                optionPanel.setTooltip("valteilContinueTwo","No Church fleet present");
+                optionPanel.setTooltipHighlights("valteilContinueTwo","Church");
+                optionPanel.setTooltipHighlightColors("valteilContinueTwo",
+                        Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getColor()
+                );
+            }
+            return true;
+        }
+
+        if (command.equals("exponentCommLinkOneB")) {
+            optionPanel.clearOptions();
+            optionPanel.addOption("\"Got a sense you have a proposition.\"","exponentCommLinkTwoA");
+            optionPanel.addOption("\"I'm listening.\"","valteilContinueTwo");
+            optionPanel.addOption("\"I argue otherwise.\"","valteilRefuse");
+
+            if (memoryMap.get(MemKeys.GLOBAL).getBoolean("exponent_goAlone")) {
+                optionPanel.setEnabled("valteilContinueTwo",false);
+                optionPanel.setTooltip("valteilContinueTwo","No Church fleet present");
+                optionPanel.setTooltipHighlights("valteilContinueTwo","Church");
+                optionPanel.setTooltipHighlightColors("valteilContinueTwo",
+                        Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getColor()
                 );
             }
             return true;

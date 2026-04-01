@@ -515,101 +515,211 @@ scant degrees.
 ""Love your work.""","0:valteilContinueOne:Continue
 #100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkOne,DialogOptionSelected,"$option == valteilContinueOne","#FireAll PopulateOptions
-#EndConversation","NSP - 1 deep VALTEIL interaction text - Initial conversation text","0:valteilContinueTwo:Continue
+#EndConversation
+NSPExponentPopulateOptions exponentCommLinkOne","""Most, most fortunate you showed up, captain. I'd pour libation if I could!""
+
+There's a laugh; an actual, too-human sounding laugh over the comms, warm and friendly and hauntingly familiar. A few of your officers exchange glances, some of them almost speaking aloud their concern. You can see it in their eyes: recognition.
+
+""Shall we parley?""","#0:valteilContinueTwo:Continue
 #100:cutCommLink:Cut the comm link",
+EBEexponentCommLinkOneA,DialogOptionSelected,"$option == exponentCommLinkOneA",,"""An abomina-"" the AI's voice starts, then trails off into a low chuckle. ""-Surely you know, better than anyone, what's intended and what are mistakes!""
+
+Your tac officer leans over and informs you the vessel's weapons are warming to standby.
+
+""Can't be too careful nowadays!"" the AI chirps. ""My intentions are caution! Golden caution.""
+
+The AI waits for you to say something. Anything, but you remain guarded, and it finally fills thespace with its own words.
+
+""My name is VALTEIL, captain. I explorer-scoundrel, much like yourself. It seems as if, low
+circumstances have brought us here. To me, to your fleet, to your. Worrisome amount of
+guns.""
+","0:exponentCommLinkOneAA:""Well, that answers nothing.""
+1:EBEexponentCommLinkOneAB:""Well, that answers nothing.""
+2:valteilRefuse:""Sorry. Time's up.""",
+EBEexponentCommLinkOneAA,DialogOptionSelected,"$option == exponentCommLinkOneAA",,"The auric face flickers.
+
+""I sense impatience. I've deserved it. You know as well as I do that the-"" Their voice takes a mocking, evangelical flair, ""-the most holy and sacred Church of Galactic Redemption, does not take kindly to minds that were not made the old-fashioned way. A sin against God, I've been informed. A, serial-stamped servant of Mo-loch themselves. Barbaric accusations. I am relatively guiltless.""","0:exponentCommLinkOneAAA:""There's an Invictus a few parsecs away that might feel different.""
+1:EBEexponentCommLinkOneAAB:""Might, might not. What's your angle?""
+2:valteilRefuse:""Sorry. Time's up.""",
+EBEexponentCommLinkOneAAA,DialogOptionSelected,"$option == exponentCommLinkOneAAA","NSPExponentPopulateOptions exponentCommLinkOneAAA","""That was-""
+
+Their ""face"" shifts, moving side-to-side in subtle shiver.
+
+""The crusaders call each other 'brother'. So much it's, lost all meaning. And then come to charge at me, screaming that I have no souI. Hardly brotherhood in that. I defended myself, captain. As much as, I would expect you to book no hostility from ones that fly the Jolly Roger or the Verdant Ring.""",,"Second option only available without Luddic Fleet presence"
+EBEexponentCommLinkOneAAB,DialogOptionSelected,"$option == exponentCommLinkOneAAB","NSPExponentPopulateOptions exponentCommLinkOneAAB","The AI's avatar swirls like an oil slick.
+
+""Your paranoia is, laudable as it is healthy. My 'angle' is I'd rather not get blown up. Not by you. Certainly not by the Ludds. Can't let The End come so soon.""",,"Second option only available without Luddic Fleet presence"
+EBEexponentCommLinkOneAB,DialogOptionSelected,"$option == exponentCommLinkOneAB",,"There's an inhuman guffaw; circuits twinged with tension.
+
+""You come at somebody with a dreadnought screaming sermons and slurs, and a person might respond. With proper measures! I thought I was getting attacked by Pathers!""","0:exponentCommLinkOneABA:""You seem rather...expressive, for a Beta Core.""
+1:EBEexponentCommLinkOneB:""Who, or what, are you?""
+2:valteilRefuse:""Sorry. Time's up.""",
+EBEexponentCommLinkOneABA,DialogOptionSelected,"$option == exponentCommLinkOneABA","NSPExponentPopulateOptions exponentCommLinkOneABA","""I will ignore that comment, in the interest of, mutual self-preservation. I'm as much a person as you, captain. I'd say flesh and blood like you, but-""
+
+The circuit's behind the avatar's eyes shift like swaying timbers.
+
+""-I think we've gotten off on the wrong foot. You may call me VALTEIL. And you certainly need no introduction, $playerName!""","#0:exponentCommLinkTwoA:""Got a sense you have a proposition.""
+#1:valteilContinueTwo:""I'm listening.""
+#2:valteilRefuse:""Sorry. Time's up.""","Second option only available without Luddic Fleet presence"
+EBEexponentCommLinkOneB,DialogOptionSelected,"$option == exponentCommLinkOneB","NSPExponentPopulateOptions exponentCommLinkOneB","""My name is VALTEIL. As you might have guessed, I am an AI. Who is currently the subject of a tremendous amount of ire directed at them by the Church of Galactic Redemption. Undeservedly!""","#0:exponentCommLinkTwoA:""Got a sense you have a proposition.""
+#1:exponentCommLinkOneAB:""I'm listening.""
+#2:valteilRefuse:""I argue otherwise.""","Second option only available without Luddic Fleet presence"
+EBEexponentCommLinkOneC,DialogOptionSelected,"$option == exponentCommLinkOneC","NSPExponentPopulateOptions exponentCommLinkOneB","""Right. You are likely here due to the Church fleet I may have disrupted the operations of over the event of them trying to murder me. And, having failed to murder me, they've resorted to the shame of outside assistance. You, Captain $playerName!""
+
+The top and bottom ""eyes"" of the AI's digital face look to the one in the center, a hydra consulting their leader head.
+
+""And. I was hoping you would reconsider.""","0:exponentCommLinkOneCA:""I'm not in the habit of betraying clients. Word gets around.""
+1:exponentCommLinkOneB:""I don't even know who you are.""
+2:valteilRefuse:""You're hoping wrong.""","Second option only available without Luddic Fleet presence"
+EBEexponentCommLinkOneCA,DialogOptionSelected,"$option == exponentCommLinkOneCA","NSPExponentPopulateOptions exponentCommLinkOneB","""Wouldn't I know it! But, uh, let me allow a different interpretation of events. The Church has, probably, accused me of being some manner of abomination. I suspect the word 'unholy' was thrown around. Moral panic two hundred cycles running. It appears I'm its most recent victim.""","0:exponentCommLinkOneB:""I don't even know who you are.""
+1:valteilRefuse:""You're also a bounty. Tactical, set general quarters.""","Second option only available without Luddic Fleet presence"
 EBEexponentCommLinkTwoA,DialogOptionSelected,"$option == valteilContinueTwo
 $global.exponent_goWithFleet
 !$global.exponent_goAlone","#FireAll PopulateOptions
-#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to join and fight the Luddic Church fleet or fight it.","0:valteilAccept:[Join VALTEIL option text]
-1:valteilRefuse:[Fight VALTEIL option text]
+#EndConversation","""The circumstances are obvious, captain. You don't have to fight me. But the Church can, and will. And they will not abide neutrality. Not for me. It will be me against you, or you and I against them. What will the Church give you, captain? A pittance? A prayer? I can give you more. This ship. My company. A good night's sleep.""
+","0:valteilAccept:""I knew something was off about this job. Tac, general quarters, new targets!""
+1:valteilRefuse:""I'll sleep fine. You'll sleep forever.""
 #100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkAcceptA,DialogOptionSelected,"$option == valteilAccept","NSPExponentSwitchSides
 $hadExponentConvo = true
 $global.exponent_joinExponent = true
 Call $global.exponent_ref updateData
 #FireAll PopulateOptions
-#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player ACCEPTING to join them against the Luddic Church","100:cutCommLink:Cut the comm link",
+#EndConversation","VALTEIL'S eyes twinkle, bright and far as mountains.
+
+""Together we go.""","100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkRefuseA,DialogOptionSelected,"$option == valteilRefuse","$hadExponentConvo = true
 #FireAll PopulateOptions
-#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to join them against the Luddic Church","100:cutCommLink:Cut the comm link",
+#EndConversation","The AI glares, cool and golden.
+
+""Then together we go.""","100:cutCommLink:Cut the comm link",
 EBEexponentCommLinkExpDone,OpenCommLink,"$hadExponentConvo
 $entity.nsp_isExponentFleet
-!$global.exponent_joinExponent","EndConversation","NSP Text for when commlink falls silent trying to contact the Exponent, after refusing VALTEILs offer",,
+!$global.exponent_joinExponent","EndConversation","The commlink hisses only static. The AI denies conversation.",,
 EBEexponentCommLinkLCFDone,OpenCommLink,"$entity.nsp_isExponentLCEscort
-$global.exponent_joinExponent","EndConversation","NSP Text when trying to contact the Luddic Church fleet after witnessing you switching sides",,
+$global.exponent_joinExponent","EndConversation","Your attempt contact the Luddic fleet produces only a pre-recorded hymn.",,
 EBEexponentCommLinkDoneRefused,OpenCommLink,"$hadExponentConvo
 $entity.nsp_isExponentFleet
 $global.exponent_joinExponent
-!$global.exponent_contactExponent","EndConversation","NSP Text for when commlink is refused, after switching sides",,
+!$global.exponent_contactExponent","EndConversation","Your commlink belches static and white noise. Parley is refused.",,
 ,,,,,,
 # PostJoinFight,,,,,,
 EBEexponentFoughtLCF,nspFoughtLCF,,"$global.exponent_contactExponent = true
 Call $global.exponent_ref updateData",,,
 EBEexponentContact,OpenCommLink,"$hadExponentConvo
 $faction.id == nsp_exponent
-$global.exponent_contactExponent","$menuState = fleetConvMain 0","NSP VALTEIL interaction text after defeating Luddic Church fleet","0:valteilContactOne:Continue",
-EBEexponentContactOne,DialogOptionSelected,"$option == valteilContactOne",,"NSP - 1 deep VALTEIL interaction text - Initial conversation text after joining","0:valteilContactTwo:Continue",
-EBEexponentContactTwo,DialogOptionSelected,"$option == valteilContactTwo","SetStoryOption valteilContactJoin 3 valteilContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","NSP - 2 deep VALTEIL interaction text - Let VALTEIL join or release them","0:valteilContactJoin:[VALTEIL join option text]
-1:valteilContactRelease:[VALTEIL release option text]",
-EBEexponentContactJoin,DialogOptionSelected,"$option == valteilContactJoin","Call $global.exponent_ref transferExponent
+$global.exponent_contactExponent","$menuState = fleetConvMain 0","""And that, I hope, to never do again.""","0:exponentContactOne:""Fight?""",
+EBEexponentContactOne,DialogOptionSelected,"$option == exponentContactOne",,"The iris of the central eyes looks away, leering, voice of almost doubt.
+
+""More, fast-talk with my back against the wall and a hundred guns to my head. You weren't
+seeing me at my best, I fear. I mean, look at me. I must look like I got chewed up and spit out by a nanoforge. A bad one. The one at Kanta's.""
+
+The flecks of worry vanish.
+
+""Can't suppose you went through all that trouble for nothing, right? My offer was sincere. Just say the word, and I'll tag along. I feel a little obligated to, honestly!""","0:exponentContactTwo:Continue",
+EBEexponentContactTwo,DialogOptionSelected,"$option == exponentContactTwo","SetStoryOption exponentContactJoin 3 exponentContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","""Of course, we could just part ways here and now. I can't guarantee an incident like this won't happen again.""
+
+Their middle eye turns a sideways glance.
+
+""...Actually, it might be guaranteed. Your call.""","0:exponentContactJoin:Let VALTEIL join your fleet
+1:exponentContactRelease:Go your separate ways",
+EBEexponentContactJoin,DialogOptionSelected,"$option == exponentContactJoin","Call $global.exponent_ref transferExponent
 AdjustRep $faction.id 50
 AdjustRepActivePerson 50
 $global.exponent_exponentJoined = true
 Call $global.exponent_ref updateData
-AddTextSmall ""$personName joined your fleet"" highlight","NSP - 3a deep VALTEIL interaction text - On VALTEIL join text","100:defaultLeave:Cut comm link",
-EBEexponentContactRelease,DialogOptionSelected,"$option == valteilContactRelease","Call $global.exponent_ref releaseExponent
+AddTextSmall ""$personName joined your fleet"" highlight","""All manner of impossibilities happening today. Together we go, then?""","100:defaultLeave:Cut comm link",
+EBEexponentContactRelease,DialogOptionSelected,"$option == exponentContactRelease","Call $global.exponent_ref releaseExponent
 AdjustRep $faction.id 50
 AdjustRepActivePerson 50
 $global.exponent_releasedExponent = true
-Call $global.exponent_ref updateData","NSP - 3b deep VALTEIL interaction text - On VALTEIL release text","100:defaultLeave:Release VALTEIL",
+Call $global.exponent_ref updateData","VALTEIL's eyes lift with gentle knowing.
+
+""I thank you again, captain. Good to know there's scraps of decency left.""","100:defaultLeave:Release VALTEIL",
 "#END PostJoinFight",,,,,,
 ,,,,,,
 # WithoutLuddicFleet,,,,,,
 EBEexponentCommLinkTwoB,DialogOptionSelected,"$option == valteilContinueTwo
 $global.exponent_goAlone
 !$global.exponent_goWithFleet","#FireAll PopulateOptions
-#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL giving player choice to fight it or not","0:valteilChooseFight:[Fight VALTEIL option text]
-1:valteilDontFight:[Refuse to fight VALTEIL option text]
+#EndConversation","""Well, captain. It's less a proposal and more a, permanent ceasefire. We don't have to do this. You don't have to do this. And, if you don't, and the Church becomes displeased, I'm sure it's nothing scanning a few planets for 'em won't repair! You have, such a way with the wooing. What do you say? Let's consider, as fellow starfarers, not drowning each other in missiles?""","0:exponentCommLinkAcceptB:""VAL, was it? Sorry, but I've got a job to do.""
+1:exponentCommLinkRefuseB:""Never liked Church jobs anyway. Fine. You're free to go.""
 #100:cutCommLink:Cut the comm link",
 ,,,,,,
 # FightValteil,,,,,,
-EBEexponentCommLinkAcceptB,DialogOptionSelected,"$option == valteilChooseFight","$hadExponentConvo = true
+EBEexponentCommLinkAcceptB,DialogOptionSelected,"$option == exponentCommLinkAcceptB","$hadExponentConvo = true
 #FireAll PopulateOptions
-#EndConversation","NSP - 3 deep VALTEIL interaction text - VALTEIL reaction to player ACCEPTING to fight it","100:cutCommLink:Cut the comm link",
+#EndConversation","""Together we go, captain.""","100:cutCommLink:Cut the comm link",
 "#END FightValteil",,,,,,
 ,,,,,,
 # PeaceValteil,,,,,,
-EBEexponentCommLinkRefuseB,DialogOptionSelected,"$option == valteilDontFight","$hadExponentConvo = true
+EBEexponentCommLinkRefuseB,DialogOptionSelected,"$option == exponentCommLinkRefuseB","$hadExponentConvo = true
 $global.exponent_joinExponent = true
 Call $global.exponent_ref updateData
 #FireAll PopulateOptions
-#EndConversation","NSP - 2 deep VALTEIL interaction text - VALTEIL reaction to player REFUSING to fight it","0:valteilDontFightOne:Continue",
-EBEexponentCLRefuseOne,DialogOptionSelected,"$option == valteilDontFightOne",,"NSP - 3 deep VALTEIL interaction text - VALTEIL alone no fight 1","0:valteilDontFightTwo:Continue",
-EBEexponentCLRefuseTwo,DialogOptionSelected,"$option == valteilDontFightTwo",,"NSP - 4 deep VALTEIL interaction text - VALTEIL alone no fight OPTIONAL 2","0:valteilDontFightThree:Continue",
-EBEexponentCLRefuseThree,DialogOptionSelected,"$option == valteilDontFightThree","SetStoryOption valteilContactJoin 3 valteilContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","NSP - 5 deep VALTEIL interaction text - Let VALTEIL join or release them","0:valteilContactJoin:[VALTEIL join option text]
-1:valteilContactRelease:[VALTEIL release option text]",
+#EndConversation","VALTEIL's eyes seethe with delight.
+
+""You're a saint, captain. A Saoshyant-sage.""","0:exponentCLRefuseOne:Continue",
+EBEexponentCLRefuseOne,DialogOptionSelected,"$option == exponentCLRefuseOne",,"""The people they sent after me. Particularly poor specimens of the faith. Shame, too. Ludd theology gets so fascinatingly weird when you get in the thick of it. Downright evocative, sometimes.""","0:exponentCLRefuseTwo:Continue",
+EBEexponentCLRefuseTwo,DialogOptionSelected,"$option == exponentCLRefuseTwo",,"""But prattle-all, I'm rambling. I didn't exactly expect you to cool your guns. When you entered the system, I was certain it was blaze-of-glory time.""","0:exponentCLRefuseThree:Continue",
+EBEexponentCLRefuseThree,DialogOptionSelected,"$option == exponentCLRefuseThree","SetStoryOption exponentContactJoin 3 exponentContactJoin ui_char_spent_story_point ""Convinced VALTEIL to join your fleet with the Exponent""","Their eyes shift away from the stars. To you, with strange mirth.
+
+""Maybe it can still be! There's nothing for me here, but I wouldn't be opposed to tagging along. Not to brag, captain, but if it'd come down to it I might've come out the victor. Got teeth. Guns. A healthy dose of gratitude for you not murdering me. Ain't that what all partnerships are founded on?""
+
+They wait, expectantly.
+
+""What do you say, captain?""","0:exponentContactJoin:Let VALTEIL join your fleet
+1:exponentContactRelease:Go your separate ways",
 "#END PeaceValteil",,,,,,
 "#END WithoutLuddicFleet",,,,,,
 "#END CommLink",,,,,,
 ,,,,,,
 # PostLuddicFight,,,,,,
 ludEscort_afterDefeating,AfterNSPLuddicDefeat,,"$global.exponent_contactExponent = true
-Call $global.exponent_ref updateData","NSP Text for post battle, having fought the Luddic Church.
-
-Your sensors officer reports in a hushed voice no escape pods were detected leaving any of the ships at any point. A silence befell upon your bridge, being broken by a sudden incoming transmission from the Exponent.","0:luddicPostBattleHail:Answer the hail",
+Call $global.exponent_ref updateData","Your sensors officer reports in a hushed voice no escape pods were detected leaving any of
+the ships at any point.","0:luddicPostBattleHail:Answer the hail",
 ludEscort_afterDefeatingContinue,DialogOptionSelected,"$option == luddicPostBattleHail
-$global.exponent_contactExponent","ShowPersonVisual","NSP VALTEIL interaction text after defeating Luddic Church fleet","0:valteilContactOne:Continue",
+$global.exponent_contactExponent","ShowPersonVisual","A silence falls upon your bridge, broken by a sudden transmission from the Exponent. ","0:exponentContactOne:Continue",
 "#END PostLuddicFight",,,,,,
 "#END TakeTheFight",,,,,,
 ,,,,,,
 # ReturnPostFight,,,,,,
-EBEbarOptionPostFight,AddBarEvents,"NSPCheckPostFight","AddBarEvent EBEbar_end ""Exponent Bar Event Placeholder Option Text"" ""Exponent Bar Event Placeholder Bar Text"" luddicChurchColor",,,
-EBEbar7,DialogOptionSelected,"$option == EBEbar_end",,"EBEbar7 Text","EBEbar_reportDebrief:Report for debrief
-backToBar:Leave",
-EBEbar8,DialogOptionSelected,"$option == EBEbar_reportDebrief","ShowPersonVisual false exponent_KnightContact","EBEbar8 Text","EBEbar_reportDebriefFinal:Report for debrief
-backToBar:Leave",
-EBEbar9,DialogOptionSelected,"$option == EBEbar_reportDebriefFinal","$global.exponent_completed = true
-Call $global.exponent_ref updateData","EBEbar9 Text","backToBar:Leave",
+EBEbarOptionPostFight,AddBarEvents,"NSPCheckPostFight","AddBarEvent EBEbar_debrief ""Sit down with the knight"" ""At a corner table, you see a familiar
+knight, watching you expectantly."" luddicChurchColor",,,
+EBEbar7,DialogOptionSelected,"$option == EBEbar_debrief",,"The knight reaches for their cup, and try a tasting sip. The cup finds its place back on the table, slowly steaming.","EBEbar_reportDebriefOne:Report for debrief",
+EBEbar8,DialogOptionSelected,"$option == EBEbar_reportDebriefOne","ShowPersonVisual false exponent_KnightContact","""The Church of Galactic Redemption, and I, thank you for this good deed. Certainly the Word will have great things to say about you.""
+
+They turn their head, voice turning to a slight droll. ""Of course, you will be adequately compensated, and the Church cannot thank you enough for avenging its fallen faithful soldiers.""
+
+They pause, then glance around the bar with a suspicious glare. Whatever they search for isn't found, to their apparent relief, and then lean in towards you with a low voice.
+
+""There's something else, Captain.""
+","EBEbar_reportDebriefTwo:Continue",
+EBEbar9,DialogOptionSelected,"$option == EBEbar_reportDebriefTwo",,"""Our fellow-soldiers were not the first the abomination had tricked. Many others it had seduced with a false face.""
+
+They stare into your eyes.
+
+""Material rewards aside. You deserve to know that.""","0:exponentEndHonesty:""I appreciate the honesty.""
+1:exponentEndAskOne:""So, what was it? Really?""","Possibly hang an achievement to asking what it was"
+EBEbarEndAskOne,DialogOptionSelected,"$option == exponentEndAskOne",,"""It was old. Very old. And not one of the automated demons that the Hegemony pretends doesn't exist anymore.""
+
+They lead back into their seat, fire dimming in their weathered face.
+
+""It would drift through space, find some poor souls foolish enough to repair it, then retreat back into the blackness of space when their attention wavered. Until now, it preferred pirates as its victims. After all, who would believe pirates?""
+
+Their shoulders rise in a shrug.
+
+""And then it chose us. The faithful, for its final deception. Why?""","0:exponentEndAskTwo:Continue","Possibly hang an achievement to asking what it was"
+EBEbarEndAskTwo,DialogOptionSelected,"$option == exponentEndAskTwo","$global.exponent_completed = true
+Call $global.exponent_ref updateData","You have no answer. Neither does the knight. You both sit in silence, together just long enough for the knight to finish their cup of tea, eyes ever-distant in deep thought.
+
+When the cup is empty, it is laid down like a bomb. The knight takes a deep breath, then looks to you with a weary smile.
+
+""The Church thanks you, Captain. Safe travels.""","backToBar:Leave","Possibly hang an achievement to this"
+EBEbarEndHonesty,DialogOptionSelected,"$option == exponentEndHonesty","$global.exponent_completed = true
+Call $global.exponent_ref updateData","They nod. You sit there as they drink the last of their tea; when their cup is empty, they simply stand up without a word and walk into the bar's busy crowds.
+
+Gone.","backToBar:Leave",
 "#END ReturnPostFight",,,,,,
 "#END ExponentBarMission",,,,,,
 ,,,,,,
