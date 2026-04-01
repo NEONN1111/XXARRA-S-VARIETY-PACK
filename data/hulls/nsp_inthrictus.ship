@@ -758,6 +758,24 @@
       "arc": 5,
       "angle": -180,
       "locations": [-126, 74]
+    },
+    {
+      "id": "WS0065",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [158, 78]
+    },
+    {
+      "id": "WS0066",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [158, -78]
     }
   ],
   "engineSlots": [

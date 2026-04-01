@@ -92,6 +92,10 @@
 	[
             {"file":"sounds/shipsystems/nsp_disabling_strike.ogg","pitch":1,"volume":0.5},
         ],
+		"threat_pulse_cannon_fire_01":
+	[
+            {"file":"sounds/threat_pulse_cannon_fire_01.ogg","pitch":1,"volume":1},
+        ],
 			
 	
 		

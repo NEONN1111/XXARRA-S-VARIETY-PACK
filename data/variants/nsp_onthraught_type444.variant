@@ -3,25 +3,58 @@
   "hullId": "nsp_onthraught",
   "displayName": "Type 444",
   "goalVariant": true,
-  "fluxCapacitors": 0,
-  "fluxVents": 0,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "targetingunit",
+    "fragment_swarm",
+    "secondary_fabricator",
+    "fragment_coordinator",
+    "heavyarmor"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "nsp_threatbore"
+        "WS0011": "nsp_threatpc",
+        "WS0012": "nsp_threatpc"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 003": "neoferric_quadcoil",
-        "WS 004": "neoferric_quadcoil"
+        "WS0004": "nsp_mk9_threat",
+        "WS0005": "heavy_mass_driver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "nsp_threatbore",
+        "WS 004": "nsp_threatbore"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 007": "voidblaster",
+        "WS 008": "voidblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "voltaic_cannon",
+        "WS0003": "voltaic_cannon",
+        "WS0007": "voltaic_cannon",
+        "WS0008": "voltaic_cannon"
       }
     },
     {
@@ -29,46 +62,16 @@
       "mode": "LINKED",
       "weapons": {
         "WS 005": "light_mass_driver",
-        "WS 006": "light_mass_driver",
-        "WS 007": "heavy_mass_driver",
-        "WS 008": "heavy_mass_driver",
-        "WS0002": "light_mass_driver",
-        "WS0003": "light_mass_driver",
-        "WS0005": "heavy_mass_driver",
-        "WS0007": "light_mass_driver",
-        "WS0008": "light_mass_driver"
+        "WS 006": "light_mass_driver"
       }
     },
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0009": "voltaic_discharge",
-        "WS0010": "voltaic_discharge"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 001": "swarm_launcher",
-        "WS 002": "swarm_launcher",
         "WS0001": "swarm_launcher",
         "WS0006": "swarm_launcher"
       }
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0011": "mjolnir",
-        "WS0012": "mjolnir"
-      }
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {}
     }
   ],
   "modules": [],
