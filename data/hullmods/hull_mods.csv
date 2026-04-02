@@ -44,3 +44,6 @@ Linked Hull,nsp_linkedhull,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_L
 Massive Hull,nsp_massivehull,,,,codex_require_related,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_MassiveHull,"This ship is extremely large, affording both a larger array of sensors and a heavy sensor profile. Increases sensor strength and sensor profile by %s.",Increases sensor strength and profile.,,graphics/hullmods/vast_bulk.png
 FIGHTER COLLISION CLASS,nsp_fightercoll,,,,"no_drop, restricted, no_build_in,",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_SetFighterColl,,,,
 JETJETJETPLASMA,nsp_plasmajets,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.NSP_PlasmaJetsHullmod,,,,graphics/icons/intel/investigation.png
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Threat Automation,nsp_threat_automation,,,Threat,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_Threat_Automation,"This hull is almost an utter mystery in it's design and capabilities, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/threat_auto.png

@@ -15,9 +15,9 @@
     "hbi",
     "ablative_armor",
     "distributed_fire_control",
-    "automated",
     "fragment_coordinator",
-    "threat_hullmod"
+    "threat_hullmod",
+    "nsp_threat_automation"
   ],
   "builtInWeapons": {
     "WS0067": "threat_lidarbeam",

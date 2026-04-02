@@ -16,7 +16,7 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenerator;
 import com.fs.starfarer.api.util.Misc;
 import neon.nsp.data.listeners.DerelictBattleListener;
-import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
+//import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
 import neon.nsp.data.scripts.*;
 import neon.nsp.data.world.nsp_dominatorGen;
 import neon.nsp.data.world.testFilePlzIgnore;
@@ -229,7 +229,7 @@ public class NSPModPlugin extends BaseModPlugin {
         nsp_dominatorGen.generate(Global.getSector());
         Global.getSector().getListenerManager().addListener(new nsp_onslaughtMK1Listener());
 
-        new NSPInvictaSystemGen().generate(Global.getSector());
+       // new NSPInvictaSystemGen().generate(Global.getSector());
         //  new nsp_dump_system().generate(Global.getSector());
     }
 

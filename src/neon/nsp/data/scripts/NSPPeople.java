@@ -8,6 +8,7 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
+import neon.nsp.data.scripts.campaign.ids.NSP_People;
 
 public class NSPPeople {
 
@@ -15,6 +16,8 @@ public class NSPPeople {
 
 
     public static String EXPONENT_CORE = "exponent_core";
+
+    public static String NSP_THREAT_PROCESSOR = "nsp_threat_processor";
 
 
     public static PersonAPI getPerson(String id){
@@ -59,6 +62,22 @@ public class NSPPeople {
                 exponent.setPersonality(Personalities.RECKLESS);
                 ip2.addPerson(exponent);
             }
+        ImportantPeopleAPI ip3 = Global.getSector().getImportantPeople();
+        if (getPerson(NSP_THREAT_PROCESSOR) == null){
+            PersonAPI threatprocessor = Global.getFactory().createPerson();
+            threatprocessor.getName().setFirst("PROCESSING");
+            threatprocessor.getName().setLast("UNIT");
+            threatprocessor.setFaction("threat");
+            threatprocessor.setImportance(PersonImportance.LOW);
+            threatprocessor.setRankId(Ranks.UNKNOWN);
+            threatprocessor.setPostId(Ranks.POST_UNKNOWN);
+            threatprocessor.setGender(FullName.Gender.MALE);
+            threatprocessor.setId(NSP_THREAT_PROCESSOR);
+            threatprocessor.setPortraitSprite("graphics/portraits/threat.png");
+            threatprocessor.getStats().setSkillLevel("damage_control", 2.0F);
+            threatprocessor.setPersonality(Personalities.RECKLESS);
+            ip3.addPerson(threatprocessor);
+        }
 
     }
 }
