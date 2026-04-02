@@ -17,8 +17,7 @@
     "distributed_fire_control",
     "automated",
     "fragment_coordinator",
-    "threat_hullmod",
-    "targetingunit"
+    "threat_hullmod"
   ],
   "builtInWeapons": {
     "WS0067": "threat_lidarbeam",
@@ -308,7 +307,7 @@
       "type": "SYSTEM",
       "mount": "HIDDEN",
       "arc": 8,
-      "angle": -33.5,
+      "angle": -8,
       "locations": [128, -90]
     },
     {
@@ -803,7 +802,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
+      "angle": -4,
       "locations": [110.5, 71.5]
     },
     {
@@ -821,7 +820,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
+      "angle": -4.5,
       "locations": [45.5, 30.5]
     },
     {
@@ -830,7 +829,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": 5,
       "locations": [45.5, -30.5]
     },
     {
@@ -848,7 +847,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": -2.5,
       "locations": [20, -54.5]
     },
     {
@@ -866,7 +865,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": 2,
       "locations": [25.5, -24]
     },
     {
@@ -884,7 +883,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": -4,
       "locations": [25, -41]
     },
     {
@@ -902,7 +901,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": 0,
       "locations": [40, -42.5]
     },
     {
@@ -929,7 +928,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
+      "angle": 6.5,
       "locations": [108, 87]
     },
     {
@@ -938,7 +937,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": -5.5,
       "locations": [108, -87]
     },
     {
@@ -947,7 +946,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
+      "angle": -2.5,
       "locations": [127, 90]
     },
     {
@@ -956,7 +955,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
+      "angle": 4,
       "locations": [127, -90]
     }
   ],

@@ -96,6 +96,10 @@
 	[
             {"file":"sounds/threat_pulse_cannon_fire_01.ogg","pitch":1,"volume":1},
         ],
+			"threat_lidar_pulse":
+	[
+            {"file":"sounds/threat_lidar_pulse.ogg","pitch":1,"volume":1},
+        ],
 			
 	
 		
