@@ -146,7 +146,7 @@ public class ThreatAutomatedShips {
             if (fleetData != null) {
                 float crBonus = computeThreatCRBonus(fleetData);
                 SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
-                stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
+                stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.1f, skill.getName());
             }
         }
     }
