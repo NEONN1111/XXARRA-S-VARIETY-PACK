@@ -3,14 +3,12 @@
   "hullId": "nsp_threatribution",
   "displayName": "Type 900",
   "goalVariant": true,
-  "fluxCapacitors": 50,
+  "fluxCapacitors": 7,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "ballistic_rangefinder",
     "armoredweapons",
-    "missleracks",
     "fluxdistributor"
   ],
   "weaponGroups": [
@@ -18,7 +16,11 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 002": "nsp_threatbore"
+        "WS 002": "nsp_threatbore",
+        "WS 016": "voltaic_discharge",
+        "WS 017": "voltaic_discharge",
+        "WS 020": "devouring_swarm",
+        "WS 021": "devouring_swarm"
       }
     },
     {
@@ -52,28 +54,24 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 007": "neutron_torpedo",
-        "WS 008": "neutron_torpedo",
-        "WS 009": "neutron_torpedo",
-        "WS 010": "neutron_torpedo",
-        "WS 020": "neutron_torpedo",
-        "WS 021": "neutron_torpedo",
         "WS0002": "kinetic_fragments",
         "WS0003": "kinetic_fragments",
         "WS0004": "kinetic_fragments",
         "WS0005": "kinetic_fragments",
         "WS0006": "swarm_launcher",
-        "WS0007": "swarm_launcher",
-        "WS0008": "devouring_swarm",
-        "WS0009": "devouring_swarm"
+        "WS0007": "swarm_launcher"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 016": "voltaic_discharge",
-        "WS 017": "voltaic_discharge"
+        "WS 007": "devouring_swarm",
+        "WS 008": "devouring_swarm",
+        "WS 009": "devouring_swarm",
+        "WS 010": "devouring_swarm",
+        "WS0008": "devouring_swarm",
+        "WS0009": "devouring_swarm"
       }
     },
     {

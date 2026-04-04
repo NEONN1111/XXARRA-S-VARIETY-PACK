@@ -15,8 +15,7 @@
     "fragment_coordinator",
     "fragment_swarm",
     "distributed_fire_control",
-    "nsp_threat_automation",
-	"threat_hullmod"
+    "nsp_threat_automation"
   ],
   "weaponSlots": [
     {
@@ -139,7 +138,7 @@
     {
       "id": "WS 016",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 210,
       "angle": 240,
@@ -148,7 +147,7 @@
     {
       "id": "WS 017",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 210,
       "angle": 120,
