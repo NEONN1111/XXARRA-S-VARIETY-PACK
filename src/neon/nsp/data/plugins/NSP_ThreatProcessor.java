@@ -26,6 +26,7 @@ public class NSP_ThreatProcessor extends BaseAICoreOfficerPluginImpl implements 
         PersonAPI person = Global.getFactory().createPerson();
         person.setFaction(factionId);
         person.setAICoreId(aiCoreId);
+        person.setId("nsp_threat_processor");
         boolean ThreatProcessor = "nsp_threat_processor".equals(aiCoreId);
         CommoditySpecAPI spec = Global.getSettings().getCommoditySpec(aiCoreId);
         person.getStats().setSkipRefresh(true);
@@ -37,8 +38,8 @@ public class NSP_ThreatProcessor extends BaseAICoreOfficerPluginImpl implements 
             person.getStats().setSkillLevel("damage_control", 2.0F);
             person.setPortraitSprite(Global.getSettings().getSpriteName("characters", "threat"));
 
-            points = ALPHA_POINTS;
-            mult = ALPHA_MULT;
+            points = GAMMA_POINTS;
+            mult = GAMMA_MULT;
         }
         person.getMemoryWithoutUpdate().set("$autoPointsMult", mult);
 
@@ -55,8 +56,8 @@ public class NSP_ThreatProcessor extends BaseAICoreOfficerPluginImpl implements 
         Color bg = person.getFaction().getDarkUIColor();
         CommoditySpecAPI spec = Global.getSettings().getCommoditySpec(person.getAICoreId());
         if (spec.getId().equals("nsp_threat_processor")) {
-            tooltip.addSectionHeading("Personality: Devoted", text, bg, Alignment.MID, 20.0F);
-            tooltip.addPara("In combat, the " + spec.getName() + " is single-minded and near fervent. " + "This display of zealotry is more akin to fury than fearlessness.", opad);
+            tooltip.addSectionHeading("Personality: DELUSE", text, bg, Alignment.MID, 20.0F);
+            tooltip.addPara("In combat, the " + spec.getName() + " is single-minded, and struggles with complex maneuvers", opad);
         }
     }
     public boolean isInstallable(Industry industry) {

@@ -12,8 +12,10 @@
   "shieldRadius": 134.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "threat_hullmod"
+    "threat_hullmod",
+    "nsp_threat_automation",
+    "fragment_coordinator",
+    "fragment_swarm"
   ],
   "weaponSlots": [
     {

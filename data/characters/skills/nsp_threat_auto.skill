@@ -1,0 +1,23 @@
+{
+	"id":"nsp_threat_auto",
+	"governingAptitude":"combat",
+	"compressHullmods":false,
+	"scope":CUSTOM,
+	"scopeStr":"all threat ships",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"neon.nsp.data.scripts.skills.ThreatAutomatedShips$Level0"},
+			]
+		},
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"neon.nsp.data.scripts.skills.ThreatAutomatedShips$Level2"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"neon.nsp.data.scripts.skills.ThreatAutomatedShips$Level1"},
+			]
+		},
+	],
+}

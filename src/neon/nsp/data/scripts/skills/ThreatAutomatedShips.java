@@ -1,0 +1,228 @@
+package neon.nsp.data.scripts.skills;
+
+import java.awt.Color;
+
+import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.FleetDataAPI;
+import com.fs.starfarer.api.characters.CharacterStatsSkillEffect;
+import com.fs.starfarer.api.characters.DescriptionSkillEffect;
+import com.fs.starfarer.api.characters.FleetTotalItem;
+import com.fs.starfarer.api.characters.FleetTotalSource;
+import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
+import com.fs.starfarer.api.characters.ShipSkillEffect;
+import com.fs.starfarer.api.characters.SkillSpecAPI;
+import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.AICoreOfficerPluginImpl;
+import com.fs.starfarer.api.impl.campaign.ids.Strings;
+import com.fs.starfarer.api.impl.campaign.ids.Tags;
+import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
+import com.fs.starfarer.api.ui.TooltipMakerAPI;
+import com.fs.starfarer.api.util.Misc;
+
+import neon.nsp.data.scripts.util.NSP_Tags;
+
+public class ThreatAutomatedShips {
+
+    public static float MAX_CR_BONUS = 80f;
+    public static float MAX_THREAT_POINTS = 60f;
+
+    public static final float GAMMA_MULT = 2f;
+    public static final float BETA_MULT = 3f;
+    public static final float ALPHA_MULT = 4f;
+
+    private static float getTotalThreatAutomatedPoints(FleetDataAPI data) {
+        if (data == null) return 0f;
+
+        float total = 0f;
+        for (FleetMemberAPI member : data.getMembersListCopy()) {
+            if (member.isMothballed()) continue;
+
+            if (isThreatAutomatedShip(member)) {
+                float dpCost = member.getHullSpec().getFleetPoints();
+                float multiplier = getAICoreMultiplier(member);
+                total += dpCost * multiplier;
+            }
+        }
+        return total;
+    }
+
+    private static float getAICoreMultiplier(FleetMemberAPI member) {
+        if (member == null || member.getCaptain() == null || !member.getCaptain().isAICore()) {
+            return 1f;
+        }
+
+        String coreId = member.getCaptain().getAICoreId();
+        if ("alpha_core".equals(coreId)) {
+            return ALPHA_MULT;
+        } else if ("beta_core".equals(coreId)) {
+            return BETA_MULT;
+        } else if ("gamma_core".equals(coreId)) {
+            return GAMMA_MULT;
+        } else if ("nsp_threat_processor".equals(coreId)) {
+            return 0f;
+        }
+        return 1f;
+    }
+
+    public static boolean isThreatAutomatedShip(FleetMemberAPI member) {
+        if (member == null) return false;
+
+        if (member.getVariant() != null &&
+                member.getVariant().getHullMods().contains("nsp_threat_automation")) {
+            return true;
+        }
+
+        if (member.getVariant() != null &&
+                member.getVariant().hasTag(NSP_Tags.THREAT_AUTOMATED)) {
+            return true;
+        }
+        if (member.getHullSpec().hasTag(NSP_Tags.THREAT_AUTOMATED)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean isThreatAutomatedNoPenalty(FleetMemberAPI member) {
+        if (member == null) return false;
+
+        if (member.getCaptain() != null && !member.getCaptain().isDefault() &&
+                member.getCaptain().isAICore() &&
+                "nsp_threat_processor".equals(member.getCaptain().getAICoreId())) {
+            return true;
+        }
+
+        if (member.getFleetData() != null && member.getFleetData().getFleet() != null &&
+                member.getFleetData().getFleet().getFaction() != null &&
+                "threat".equals(member.getFleetData().getFleet().getFaction().getId())) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static float computeThreatCRBonus(FleetDataAPI fleetData) {
+        float totalPoints = MAX_THREAT_POINTS;
+        float usedPoints = getTotalThreatAutomatedPoints(fleetData);
+
+        if (usedPoints <= 0) return MAX_CR_BONUS;
+        if (usedPoints <= totalPoints) {
+            return MAX_CR_BONUS;
+        }
+
+        float ratio = totalPoints / usedPoints;
+        return MAX_CR_BONUS * ratio;
+    }
+
+
+    public static class Level0 implements DescriptionSkillEffect {
+        public String getString() { return null; }
+        public Color[] getHighlightColors() { return null; }
+        public String[] getHighlights() { return null; }
+        public Color getTextColor() { return null; }
+    }
+
+    public static class Level1 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
+
+        private FleetTotalItem threatPointsItem = null;
+
+        public FleetTotalItem getFleetTotalItem() {
+            if (threatPointsItem == null) {
+                threatPointsItem = new FleetTotalItem() {
+                    public String getId() {
+                        return "nsp_threat_automated_points";
+                    }
+
+                    public String getDisplayName() {
+                        return "Threat automated ship points";
+                    }
+
+                    public float getValue(FleetDataAPI data) {
+                        return getTotalThreatAutomatedPoints(data);
+                    }
+                };
+            }
+            return threatPointsItem;
+        }
+
+        public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+            FleetMemberAPI member = stats.getFleetMember();
+            if (member == null) return;
+
+            if (member.isMothballed()) return;
+
+            if (isThreatAutomatedShip(member)) {
+                FleetDataAPI fleetData = getFleetData(stats);
+                if (fleetData != null) {
+                    float crBonus = computeThreatCRBonus(fleetData);
+                    SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
+                    stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
+                }
+            }
+        }
+
+        public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+            stats.getMaxCombatReadiness().unmodifyFlat(id);
+        }
+
+        public String getEffectDescription(float level) {
+
+            return null;
+        }
+        @Override
+        public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill,
+                                            TooltipMakerAPI info, float width) {
+
+            init(stats, skill);
+
+
+            info.addPara("+" + (int) MAX_CR_BONUS + "% combat readiness for Threat Automated ships (maximum: " + (int) MAX_CR_BONUS + "%)",
+                    0f, hc, "+" + (int) MAX_CR_BONUS + "%");
+
+
+            info.addPara("Enables the recovery of Threat vessels", 0f, hc);
+
+
+            info.addPara("Offsets built-in " + (int) MAX_CR_BONUS + "% penalty", 0f, hc, (int) MAX_CR_BONUS + "%");
+
+
+            info.addPara("Threat ships share their own pool of points separate from automated ships.",
+                    0f, Misc.getPositiveHighlightColor());
+        }
+
+        public ScopeDescription getScopeDescription() {
+            return ScopeDescription.ALL_SHIPS;
+        }
+    }
+
+    public static class Level2 extends BaseSkillEffectDescription implements CharacterStatsSkillEffect {
+
+        public void apply(MutableCharacterStatsAPI stats, String id, float level) {
+            if (stats.isPlayerStats()) {
+                Misc.getAllowedRecoveryTags().add(NSP_Tags.THREAT_RECOVERABLE);
+                Misc.getAllowedRecoveryTags().add(Tags.AUTOMATED_RECOVERABLE);
+            }
+        }
+
+        public void unapply(MutableCharacterStatsAPI stats, String id) {
+            if (stats.isPlayerStats()) {
+                Misc.getAllowedRecoveryTags().remove(NSP_Tags.THREAT_RECOVERABLE);
+                Misc.getAllowedRecoveryTags().remove(Tags.AUTOMATED_RECOVERABLE);
+            }
+        }
+
+        public String getEffectDescription(float level) {
+            return "Enables the recovery of Threat Automated ships";
+        }
+
+        public String getEffectPerLevelDescription() {
+            return null;
+        }
+
+        public ScopeDescription getScopeDescription() {
+            return ScopeDescription.FLEET;
+        }
+    }
+}

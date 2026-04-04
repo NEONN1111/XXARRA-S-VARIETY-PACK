@@ -1,0 +1,5 @@
+id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon,
+nsp_threat_auto,Abyss Rigging,1090,5,4,2,"""The abyss is the perfect stasis. It has no pressure to change out there. What happens when that stasis is broken by invasive predators? To be frank, Director, It is not a question if evolution will create countermeasures, only when."""," Junior Executive Sao Val-Heysung, Special Acquisitions, c. 204",TRUE,,,,graphics/icons/skills/threat_auto.png,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,

@@ -12,11 +12,12 @@
   "shieldRadius": 276,
   "viewOffset": 0,
   "builtInMods": [
-    "hbi",
     "ablative_armor",
     "distributed_fire_control",
+	"threat_hullmod",
     "fragment_coordinator",
-    "threat_hullmod",
+	"secondary_fabricator",
+	"fragment_swarm",
     "nsp_threat_automation"
   ],
   "builtInWeapons": {

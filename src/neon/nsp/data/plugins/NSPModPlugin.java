@@ -50,7 +50,9 @@ public class NSPModPlugin extends BaseModPlugin {
         try {
             SectorAPI sector = Global.getSector();
             ExponentCampaignPluginImpl plugin = new ExponentCampaignPluginImpl();
+            ThreatProcessorCampaignPluginImpl plugin2 = new ThreatProcessorCampaignPluginImpl();
             sector.registerPlugin(plugin);
+            sector.registerPlugin(plugin2);
         } catch (Throwable t) {
             log.error("Failed to register ExponentCampaignPluginImpl", t);
         }

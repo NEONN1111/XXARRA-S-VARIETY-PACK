@@ -47,3 +47,4 @@ JETJETJETPLASMA,nsp_plasmajets,0,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
 Threat Automation,nsp_threat_automation,,,Threat,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_Threat_Automation,"This hull is almost an utter mystery in it's design and capabilities, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/threat_auto.png
+Threat Hull,threat_hullmod,,,,"codex_require_related, threat",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ThreatHullmodNSP,Hidden hullmod for managing the special properties of Threat ships. Description created in script.,,,graphics/hullmods/the_threat.png

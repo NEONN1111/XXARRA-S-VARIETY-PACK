@@ -11,7 +11,9 @@
 		"neon.nsp.data.scripts.rulecmd",
 		"neon.nsp.data.scripts.rulecmd.util"
 	],
-	
+	"campaignScripts":[
+		"neon.nsp.data.plugins.ThreatAutomationApplicator"
+	],
 	"designTypeColors":{
 		"Tellasian League":[111,137,149,255],
 	},
@@ -63,4 +65,4 @@
  
         },
     }
-},
+}

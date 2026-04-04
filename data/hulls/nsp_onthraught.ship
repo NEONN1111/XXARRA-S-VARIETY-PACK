@@ -12,8 +12,8 @@
   "shieldRadius": 202.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "threat_hullmod"
+    "threat_hullmod",
+    "nsp_threat_automation"
   ],
   "builtInWeapons": {
     "WS0011": "nsp_threatpc",

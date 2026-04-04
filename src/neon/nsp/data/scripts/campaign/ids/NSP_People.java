@@ -24,7 +24,7 @@ public class NSP_People {
     // Outrider-Affix-Courser
     public static String INVICTA = "nsp_invicta_core";
 
-    public static String NSP_THREAT_PROCESSOR = "nsp_threat_processor";
+    //public static String NSP_THREAT_PROCESSOR = "nsp_threat_processor";
 
 
     public static PersonAPI getPerson(String id) {

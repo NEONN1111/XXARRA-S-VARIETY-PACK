@@ -3,7 +3,7 @@
   "hullId": "nsp_throminator",
   "displayName": "Type 555",
   "goalVariant": true,
-  "fluxCapacitors": 30,
+  "fluxCapacitors": 19,
   "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
