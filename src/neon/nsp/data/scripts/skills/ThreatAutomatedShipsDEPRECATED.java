@@ -2,26 +2,25 @@ package neon.nsp.data.scripts.skills;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
-import com.fs.starfarer.api.characters.*;
+import com.fs.starfarer.api.characters.CharacterStatsSkillEffect;
+import com.fs.starfarer.api.characters.FleetTotalItem;
+import com.fs.starfarer.api.characters.FleetTotalSource;
+import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
+import com.fs.starfarer.api.characters.ShipSkillEffect;
+import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.impl.campaign.skills.*;
-import com.fs.starfarer.api.ui.TooltipMakerAPI;
+import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.util.Misc;
+
 import neon.nsp.data.scripts.util.NSP_Tags;
 
-import java.awt.*;
-
-import static com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription.getFleetData;
-
-public class ThreatAutomatedShips {
-
+public class ThreatAutomatedShipsDEPRECATED {
 
     public static float MAX_CR_BONUS = 80f;
     public static float MAX_THREAT_POINTS = 60f;
-    public static float PENALTY_OFFSET = 100f;
 
     public static final float GAMMA_MULT = 2f;
     public static final float BETA_MULT = 3f;
@@ -111,69 +110,89 @@ public class ThreatAutomatedShips {
         return MAX_CR_BONUS * ratio;
     }
 
-    // Level 1
-    public static class Level1 implements ShipSkillEffect, FleetTotalSource {
 
-    private FleetTotalItem threatPointsItem = null;
+//    public static class Level0 implements DescriptionSkillEffect {
+//        public String getString() { return null; }
+//        public Color[] getHighlightColors() { return null; }
+//        public String[] getHighlights() { return null; }
+//        public Color getTextColor() { return null; }
+//    }
 
-    public FleetTotalItem getFleetTotalItem() {
-        if (threatPointsItem == null) {
-            threatPointsItem = new FleetTotalItem() {
-                public String getId() {
-                    return "nsp_threat_automated_points";
-                }
+    public static class Level1 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
 
-                public String getDisplayName() {
-                    return "Threat automated ship points";
-                }
+        private FleetTotalItem threatPointsItem = null;
 
-                public float getValue(FleetDataAPI data) {
-                    return getTotalThreatAutomatedPoints(data);
-                }
-            };
+        public FleetTotalItem getFleetTotalItem() {
+            if (threatPointsItem == null) {
+                threatPointsItem = new FleetTotalItem() {
+                    public String getId() {
+                        return "nsp_threat_automated_points";
+                    }
+
+                    public String getDisplayName() {
+                        return "Threat automated ship points";
+                    }
+
+                    public float getValue(FleetDataAPI data) {
+                        return getTotalThreatAutomatedPoints(data);
+                    }
+                };
+            }
+            return threatPointsItem;
         }
-        return threatPointsItem;
-    }
 
-    public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
-        FleetMemberAPI member = stats.getFleetMember();
-        if (member == null) return;
+        public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+            FleetMemberAPI member = stats.getFleetMember();
+            if (member == null) return;
 
-        if (member.isMothballed()) return;
+            if (member.isMothballed()) return;
 
-        if (isThreatAutomatedShip(member)) {
-            FleetDataAPI fleetData = getFleetData(stats);
-            if (fleetData != null) {
-                float crBonus = computeThreatCRBonus(fleetData);
-                SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
-                stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
+            if (isThreatAutomatedShip(member)) {
+                FleetDataAPI fleetData = getFleetData(stats);
+                if (fleetData != null) {
+                    float crBonus = computeThreatCRBonus(fleetData);
+                    SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
+                    stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
+                }
             }
         }
-    }
 
-    public void unapply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id) {
-        stats.getMaxCombatReadiness().unmodifyFlat(id);
-    }
+        public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+            stats.getMaxCombatReadiness().unmodifyFlat(id);
+        }
 
-
-        // UNUSED BUT NECESSARY
         public String getEffectDescription(float level) {
-            return " ";
+            return "+" + (int) MAX_CR_BONUS + "% combat readiness for Threat Automated ships (maximum: " + (int) MAX_CR_BONUS + "%)" +
+                    "\nEnables the recovery of Threat Automated ships";
         }
 
-        // UNUSED BUT NECESSARY
-        public String getEffectPerLevelDescription() {
-            return null;
-        }
+//        @Override
+//        public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill,
+//                                            TooltipMakerAPI info, float width) {
+//
+//            init(stats, skill);
+//
+//
+//            info.addPara("+" + (int) MAX_CR_BONUS + "% combat readiness for Threat Automated ships (maximum: " + (int) MAX_CR_BONUS + "%)",
+//                    0f, hc, "+" + (int) MAX_CR_BONUS + "%");
+//
+//
+//            info.addPara("Enables the recovery of Threat vessels", 0f, hc);
+//
+//
+//            info.addPara("Offsets built-in " + (int) MAX_CR_BONUS + "% penalty", 0f, hc, (int) MAX_CR_BONUS + "%");
+//
+//
+//            info.addPara("Threat ships share their own pool of points separate from automated ships.",
+//                    0f, Misc.getPositiveHighlightColor());
+//        }
 
         public ScopeDescription getScopeDescription() {
             return ScopeDescription.ALL_SHIPS;
         }
-
     }
 
-    // Level 2
-    public static class Level2 implements CharacterStatsSkillEffect {
+    public static class Level2 extends BaseSkillEffectDescription implements CharacterStatsSkillEffect {
 
         public void apply(MutableCharacterStatsAPI stats, String id, float level) {
             if (stats.isPlayerStats()) {
@@ -189,50 +208,17 @@ public class ThreatAutomatedShips {
             }
         }
 
-        // UNUSED BUT NECESSARY
         public String getEffectDescription(float level) {
-            return " ";
+            return "Offsets built-in" + (int) MAX_CR_BONUS + "% penalty" +
+                    "\nThreat ships share their own pool of points separate from automated ships";
         }
 
-        // UNUSED BUT NECESSARY
         public String getEffectPerLevelDescription() {
             return null;
         }
 
         public ScopeDescription getScopeDescription() {
-            return ScopeDescription.PILOTED_SHIP;
-        }
-
-
-
-    }
-
-    // Purely for the description bullets
-    public static class Level3 extends BaseSkillEffectDescription implements ShipSkillEffect {
-        public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill,
-                                            TooltipMakerAPI info, float width) {
-            init(stats, skill);
-            float opad = 10f;
-            Color c = Misc.getBasePlayerColor();
-
-            info.addPara("%s combat readiness for Threat Automated ships (maximum: %s)",
-                    0f,hc,hc,"+" + (int) MAX_CR_BONUS + "%", "+" + (int) MAX_CR_BONUS + "%");
-
-            info.addPara("Enables the recovery of Threat vessels", hc, 0f);
-
-            info.addPara("Offsets built-in %s penalty", 0f, hc,hc, "-" + (int) PENALTY_OFFSET + "%");
-
-            info.addPara("Threat ships share their own pool of points separate from automated ships.", hc, 0f);
-        }
-
-        public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
-//            if (!isOriginalNoOfficer(stats)) {
-//                stats.getDynamic().getMod(Stats.COMMAND_POINT_RATE_FLAT).modifyFlat(id, COMMAND_POINT_REGEN_PERCENT * 0.01f);
-//            }
-        }
-
-        public void unapply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id) {
-//            stats.getDynamic().getMod(Stats.COMMAND_POINT_RATE_FLAT).unmodify(id);
+            return ScopeDescription.FLEET;
         }
     }
 

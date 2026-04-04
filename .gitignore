@@ -7,3 +7,4 @@
 out/
 out/*
 .run/Run Starsector.run.xml
+.class
