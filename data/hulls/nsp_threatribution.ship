@@ -15,7 +15,8 @@
     "fragment_coordinator",
     "fragment_swarm",
     "distributed_fire_control",
-    "nsp_threat_automation"
+    "nsp_threat_automation",
+	"threat_hullmod"
   ],
   "weaponSlots": [
     {
