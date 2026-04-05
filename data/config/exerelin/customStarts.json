@@ -17,5 +17,14 @@
 			"className":"neon.nsp.data.campaign.customstart.OutOfTimeNSP",
 			"randomSector":-1,
 		},
+		
+		{
+			"id":"NSP_Contact",
+			"name":"Contact",
+			"difficulty":"Normal",
+			"desc":"You have made contact with something you shouldn't. Something ancient and terrible. The haze still sits in your mind, but it is clearing, slowly. Neither you nor your small crew can remember how this occurred. All you know is that you must now survive.",
+			"className":"neon.nsp.data.campaign.customstart.ContactWithThreat",
+			"randomSector":-1,
+		},
 			],
 }

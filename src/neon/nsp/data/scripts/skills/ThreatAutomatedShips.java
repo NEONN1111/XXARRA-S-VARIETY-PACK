@@ -102,7 +102,7 @@ public class ThreatAutomatedShips {
         float totalPoints = MAX_THREAT_POINTS;
         float usedPoints = getTotalThreatAutomatedPoints(fleetData);
 
-        if (usedPoints <= 0) return MAX_CR_BONUS;
+        if (usedPoints <= 0.001f) return MAX_CR_BONUS;
         if (usedPoints <= totalPoints) {
             return MAX_CR_BONUS;
         }
@@ -135,21 +135,21 @@ public class ThreatAutomatedShips {
         return threatPointsItem;
     }
 
-    public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
-        FleetMemberAPI member = stats.getFleetMember();
-        if (member == null) return;
+        public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
+            FleetMemberAPI member = stats.getFleetMember();
+            if (member == null) return;
 
-        if (member.isMothballed()) return;
+            if (member.isMothballed()) return;
 
-        if (isThreatAutomatedShip(member)) {
-            FleetDataAPI fleetData = getFleetData(stats);
-            if (fleetData != null) {
-                float crBonus = computeThreatCRBonus(fleetData);
-                SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
-                stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.1f, skill.getName());
+            if (isThreatAutomatedShip(member)) {
+                FleetDataAPI fleetData = getFleetData(stats);
+                if (fleetData != null) {
+                    float crBonus = computeThreatCRBonus(fleetData);
+                    SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
+                    stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
+                }
             }
         }
-    }
 
     public void unapply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id) {
         stats.getMaxCombatReadiness().unmodifyFlat(id);

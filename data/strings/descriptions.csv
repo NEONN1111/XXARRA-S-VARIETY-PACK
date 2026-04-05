@@ -274,3 +274,4 @@ Querying database...
 
 This TriPad is not authorized to provide additional description for the requested product ID. Please upgrade your data permission level in compliance with Domain Information Security Standards.",,,,
 ,,,,,,
+construction_swarm,SHIP_SYSTEM,Launches a construction swarm that will build a new Threat unit.,Special,"Launches a construction swarm that will build a new Threat unit. Reduces the ship's combat readiness. When in your fleet, this system is limited to a maximum of 4 hulls, and can only construct frigates, and/or destroyers.",,Reduces the ship's combat readiness based on the size and type of unit the swarm will build. The newly constructed units use up deployment points as normal.

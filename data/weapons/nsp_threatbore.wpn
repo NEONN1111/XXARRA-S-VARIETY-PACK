@@ -1,7 +1,7 @@
 {
   "id": "nsp_threatbore",
   "specClass": "projectile",
-  "projectileSpecId": "hellbore_shot",
+  "projectileSpecId": "threatbore_shot",
   "type": "BALLISTIC",
   "size": "LARGE",
   "displayArcRadius": 600,
@@ -37,10 +37,7 @@
     "particleDuration": 0.75,
     "particleCount": 50,
     "particleColor": [
-      255,
-      120,
-      50,
-      245
+     200,255,20,255
     ]
   },
  "fireSoundTwo":"heavy_adjudicator_fire",

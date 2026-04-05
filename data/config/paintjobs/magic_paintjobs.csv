@@ -1,0 +1,3 @@
+id,hullIds,name,paintjobFamily,spriteId,unlockedAutomatically,tags,unlockConditions,description
+,,,,,,,,
+threaturat,ziggurat,False Angel,Threat,graphics/ships/magicpaintjobs/xvp_threaturat.png,true,,,by Xxarra
