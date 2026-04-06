@@ -15,8 +15,8 @@ public class NSP_reference_sheet {
     public static final String NSP_AISWITCHAUTOMATED = "NSP_aiswitch_auto";
     public static final String NSP_AISWITCHMANUAL = "NSP_aiswitch_manual";
 
-    public static final String NSP_AISWITCHAUTOMATED_ELITE = "NSP_aiswitch_auto_elite";
-    public static final String NSP_AISWITCHMANUAL_ELITE = "NSP_aiswitch_manual_elite";
+    public static final String NSP_IMPROVISED_AUTO = "nsp_improvised_auto";
+    public static final String NSP_IMPROVISED_MANUAL = "nsp_improvised_manual";
 
 
     // Constructor (init block from Kotlin)

@@ -12,9 +12,10 @@
   "shieldRadius": 240,
   "viewOffset": 200,
   "builtInMods": [
-    "automated",
+    "nsp_improvised_automation",
     "hbi",
-    "rugged"
+    "rugged",
+	"nsp_automated_remover"
   ],
   "builtInWeapons": {
     "WS 016": "heavy_adjudicator",

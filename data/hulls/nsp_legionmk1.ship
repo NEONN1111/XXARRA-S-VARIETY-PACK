@@ -12,7 +12,7 @@
   "shieldRadius": 190,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
+    "nsp_improvised_automation",
     "rugged",
     "ancient_forge"
   ],
@@ -185,7 +185,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [105.5, -41]
+      "locations": [106.5, -40]
     },
     {
       "id": "DMNL",
@@ -194,7 +194,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [105.5, 44]
+      "locations": [106.5, 42.5]
     }
   ],
   "engineSlots": [

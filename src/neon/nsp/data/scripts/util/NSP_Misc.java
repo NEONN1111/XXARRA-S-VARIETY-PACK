@@ -10,29 +10,16 @@ import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.*;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
-import com.fs.starfarer.api.impl.hullmods.Automated;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-import neon.nsp.data.plugins.NSPModPlugin;
-import neon.nsp.data.plugins.NSP_InvictaCore;
 import neon.nsp.data.scripts.campaign.ids.NSP_IDs;
-import neon.nsp.data.scripts.campaign.ids.NSP_People;
-import lunalib.lunaSettings.LunaSettings;
-import org.lazywizard.lazylib.combat.DefenseUtils;
-import second_in_command.SCUtils;
 
-import java.awt.*;
 import java.util.*;
 
 import static com.fs.starfarer.api.characters.MutableCharacterStatsAPI.SkillLevelAPI;
-import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.*;
 
 public class NSP_Misc {
 

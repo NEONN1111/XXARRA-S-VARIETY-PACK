@@ -12,7 +12,7 @@
   "shieldRadius": 130,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
+    "nsp_improvised_automation",
     "rugged",
     "hbi"
   ],
