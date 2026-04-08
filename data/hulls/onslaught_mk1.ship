@@ -15,7 +15,9 @@
     "nsp_improvised_automation",
     "hbi",
     "rugged",
-	"nsp_automated_remover"
+    "nsp_automated_remover",
+    "nsp_hardened_armor",
+	"nsp_armorparent"
   ],
   "builtInWeapons": {
     "WS 016": "heavy_adjudicator",

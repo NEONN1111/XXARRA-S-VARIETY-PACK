@@ -14,7 +14,9 @@
   "builtInMods": [
     "nsp_improvised_automation",
     "rugged",
-    "hbi"
+    "hbi",
+    "nsp_hardened_armor",
+	"nsp_armorparent"
   ],
   "weaponSlots": [
     {

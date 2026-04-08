@@ -14,7 +14,9 @@
   "builtInMods": [
     "nsp_improvised_automation",
     "rugged",
-    "ancient_forge"
+    "ancient_forge",
+    "nsp_hardened_armor",
+	"nsp_armorparent"
   ],
   "builtInWings": [
     "nsp_saros",

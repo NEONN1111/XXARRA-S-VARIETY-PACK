@@ -23,8 +23,9 @@ import java.util.List;
 import static neon.nsp.data.NSP_reference_sheet.NSP_IMPROVISED_AUTO;
 import static neon.nsp.data.NSP_reference_sheet.NSP_IMPROVISED_MANUAL;
 
-public class ImprovisedAutomation extends BaseHullMod {
 
+public class ImprovisedAutomation extends BaseHullMod {
+    private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
     private final String switchTag = "NSP_switched";
     public static final Map<String, String> decoMap = new HashMap<String, String>();
 
@@ -33,6 +34,11 @@ public class ImprovisedAutomation extends BaseHullMod {
 
 
     private static final Set<String> PROCESSED_SHIPS = new HashSet<>();
+
+    static {
+
+        BLOCKED_HULLMODS.add("safetyoverrides");
+    }
 
     @Override
     public CargoStackAPI getRequiredItem() {
@@ -59,10 +65,23 @@ public class ImprovisedAutomation extends BaseHullMod {
     ) {
         tooltip.addPara("This ship is equipped with a strange, archaic, and rudimentary form of Automation, born out of neccesity and desperation than any true innovation.", 5f);
 
+        tooltip.addPara("Due to the nature of these modifications, this vessel's systems are incompatible with %s.", 3f, Misc.getNegativeHighlightColor(),
+                getHullmodName("safetyoverrides"));
+    }
+
+    public String getHullmodName(String id) {
+        return Global.getSettings().getHullModSpec(id).getDisplayName();
     }
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        for (String tmp : BLOCKED_HULLMODS) {
+            if (ship.getVariant().getHullMods().contains(tmp)) {
+                ship.getVariant().removeMod(tmp);
+                String ERROR = "nsp_incompatible";
+                ship.getVariant().addMod(ERROR);
+            }
+        }
         if (ship.getOriginalOwner() < 0) {
 
             if (

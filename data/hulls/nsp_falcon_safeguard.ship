@@ -13,7 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "coherer",
-    "automated",
+    "nsp_improvised_automation",
     "fourteenth_safeguard"
   ],
   "weaponSlots": [

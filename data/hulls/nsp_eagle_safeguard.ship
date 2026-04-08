@@ -12,7 +12,7 @@
   "shieldRadius": 155,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
+    "nsp_improvised_automation",
     "fourteenth_safeguard"
   ],
   "weaponSlots": [

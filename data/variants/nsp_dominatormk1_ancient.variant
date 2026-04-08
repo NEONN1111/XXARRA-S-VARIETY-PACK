@@ -9,7 +9,6 @@
   "permaMods": [],
   "hullMods": [
     "dedicated_targeting_core",
-    "heavyarmor",
     "armoredweapons"
   ],
   "weaponGroups": [

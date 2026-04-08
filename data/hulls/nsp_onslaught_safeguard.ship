@@ -13,7 +13,7 @@
   "viewOffset": 200,
   "builtInMods": [
     "hbi",
-    "automated",
+    "nsp_improvised_automation",
     "fourteenth_safeguard"
   ],
   "builtInWeapons": {
