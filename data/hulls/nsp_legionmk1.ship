@@ -16,13 +16,7 @@
     "rugged",
     "ancient_forge",
     "nsp_hardened_armor",
-	"nsp_armorparent"
-  ],
-  "builtInWings": [
-    "nsp_saros",
-    "nsp_saros",
-    "nsp_saros",
-    "nsp_saros"
+    "nsp_armorparent"
   ],
   "weaponSlots": [
     {

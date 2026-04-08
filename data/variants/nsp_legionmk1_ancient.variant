@@ -8,6 +8,7 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
+    "heavyarmor",
     "armoredweapons",
     "autorepair",
     "dedicated_targeting_core",
