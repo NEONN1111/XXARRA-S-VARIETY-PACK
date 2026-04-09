@@ -6,22 +6,16 @@ import java.util.Random;
 
 import java.awt.Color;
 
+import com.fs.starfarer.api.combat.*;
+import neon.nsp.data.hullmods.NSP_LashReceiver;
 import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.MathUtils;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.DamageType;
-import com.fs.starfarer.api.combat.EmpArcEntityAPI;
 import com.fs.starfarer.api.combat.EmpArcEntityAPI.EmpArcParams;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
@@ -436,6 +430,27 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 				script.hitWithEnergyLash(ship, target);
 			}
 
+			//Handle Microwave Power Receiver hullmod interaction
+			if (target.getSystem() != null && target.getVariant().hasHullMod("nsp_lash_receiver")) {
+				//cursed-ass placeholder code until when/if I can figure out a way to grab a reference to the hullmod itself --Cap'n
+				int maxAmmo = target.getSystem().getMaxAmmo();
+				int currAmmo = target.getSystem().getAmmo();
+
+				int refill = 1;
+
+				if (maxAmmo > 1 && currAmmo < maxAmmo) {
+					if (target.getVariant().getSMods().contains("nsp_lash_receiver")) {
+						target.getSystem().setAmmo(maxAmmo);
+					}
+					else {
+						target.getSystem().setAmmo(currAmmo+refill);
+					}
+				}
+				else if (target.getSystem().getState() == SystemState.COOLDOWN) {
+					target.getSystem().setCooldownRemaining(0f);
+				}
+			}
+
 			float cooldown = target.getHullSpec().getSuppliesToRecover();
 
 			cooldown = MIN_COOLDOWN + cooldown * COOLDOWN_DP_MULT;
@@ -500,8 +515,8 @@ public class NSP_EnergyLashSystemScript extends BaseShipSystemScript {
 		if (other.isFighter()) return false;
 		if (other.getOwner() == ship.getOwner()) {
 			if (other.getSystem() == null) return false;
-			if (!(other.getSystem().getScript() instanceof EnergyLashActivatedSystem)) return false;
-			if (other.getSystem().getCooldownRemaining() > 0) return false;
+			if (!(other.getSystem().getScript() instanceof EnergyLashActivatedSystem) && !(other.getVariant().hasHullMod("nsp_lash_receiver"))) return false;
+			//if (other.getSystem().getCooldownRemaining() > 0) return false;
 			if (other.getSystem().isActive()) return false;
 			if (other.getFluxTracker().isOverloadedOrVenting()) return false;
 		}
