@@ -79,14 +79,34 @@ public class NSP_EnergyLashSystemAI implements ShipSystemAIScript {
 			float w = 0f;
 			if (ship.getOwner() == other.getOwner()) {
 				if (other.getSystem() == null) continue;
-				if (!(other.getSystem().getScript() instanceof EnergyLashActivatedSystem)) continue;
-				if (other.getSystem().getCooldownRemaining() > 0) continue;
+				if (!(other.getSystem().getScript() instanceof EnergyLashActivatedSystem) || !(other.getVariant().hasHullMod("nsp_lash_receiver"))) continue;
 				if (other.getSystem().isActive()) continue;
 				if (other.getFluxTracker().isOverloadedOrVenting()) continue;
 
-				EnergyLashActivatedSystem otherSystem = (EnergyLashActivatedSystem) other.getSystem().getScript();
-				w = otherSystem.getCurrentUsefulnessLevel(ship, other);
-			} else {
+				if (other.getVariant().hasHullMod("nsp_lash_receiver")) {
+					if (other.getSystem().getState() != ShipSystemAPI.SystemState.COOLDOWN || !(other.getSystem().getAmmo() < other.getSystem().getMaxAmmo())) continue;
+
+					float distToOverseer = Misc.getDistance(other.getLocation(), ship.getLocation());
+					distToOverseer -= other.getCollisionRadius() + ship.getCollisionRadius();
+					float overseerDistFactor = 0f;
+					if (distToOverseer < 1000f) {
+						float min = 500f;
+						overseerDistFactor = (1f - Math.max(0f, distToOverseer - min) / (1000f - min)) * 0.25f;
+					}
+					if (other.getSystem().getAmmo() < other.getSystem().getMaxAmmo()) {
+						w = Math.min(0.8f, 0.5f + Math.min(0.5f, ((float) Math.abs(other.getSystem().getAmmo() - other.getSystem().getMaxAmmo()) / other.getSystem().getMaxAmmo())) + overseerDistFactor);
+					} else if (other.getSystem().getCooldownRemaining() > 0) {
+						w = Math.min(0.8f, 0.5f + Math.min(0.5f, (other.getSystem().getCooldownRemaining()/other.getSystem().getCooldown()) + overseerDistFactor));
+					}
+
+				}
+				else if (other.getSystem().getScript() instanceof EnergyLashActivatedSystem) {
+					if (other.getSystem().getCooldownRemaining() > 0) continue;
+					EnergyLashActivatedSystem otherSystem = (EnergyLashActivatedSystem) other.getSystem().getScript();
+					w = otherSystem.getCurrentUsefulnessLevel(ship, other);
+				}
+			}
+			else {
 				ShieldAPI targetShield = other.getShield();
 				boolean targetShieldsFacingUs = targetShield != null &&
 							targetShield.isOn() &&
