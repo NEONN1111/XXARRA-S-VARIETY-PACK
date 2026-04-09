@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class HardenedArmorNSP extends BaseHullMod {
 
-	public static float ARMOR_MULT = 1.8f;
+	public static float ARMOR_MULT = 1.75f;
 	private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
 
 	static {
@@ -26,7 +26,7 @@ public class HardenedArmorNSP extends BaseHullMod {
 	@Override
 	public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
 
-		tooltip.addPara("Increases effective armor strength by %s." ,5f, Color.ORANGE, "80%");
+		tooltip.addPara("Increases effective armor strength by %s." ,5f, Color.ORANGE, "75%");
 
 		tooltip.addPara("Due to the nature of this armor type, it is incompatible with %s.", 5f, Misc.getNegativeHighlightColor(),
 				getHullmodName("heavyarmor"));
