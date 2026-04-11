@@ -16,6 +16,7 @@ public class ThreatAutomationApplicator implements EveryFrameScript {
 
     private static final String THREAT_AUTOMATION_HULLMOD = "nsp_threat_automation";
     private static final String THREAT_DESIGN_TYPE = "Threat";
+    private static final String AUTOMATED_HULLMOD = "automated";
 
     private final IntervalUtil interval = new IntervalUtil(0.5f, 1.0f);
     private final Set<String> processedShips = new HashSet<>();
@@ -105,28 +106,48 @@ public class ThreatAutomationApplicator implements EveryFrameScript {
         if (processedShips.contains(shipId)) return;
 
 
-        if (!member.getVariant().getHullMods().contains(THREAT_AUTOMATION_HULLMOD)) {
+        if (!member.getVariant().getHullMods().contains(AUTOMATED_HULLMOD)) {
             try {
-                member.getVariant().addMod(THREAT_AUTOMATION_HULLMOD);
+                member.getVariant().addMod(AUTOMATED_HULLMOD);
 
 
                 boolean isPlayerFleet = (fleet == Global.getSector().getPlayerFleet());
                 String fleetType = isPlayerFleet ? "player" : "AI";
-                Global.getLogger(this.getClass()).info("Applied " + THREAT_AUTOMATION_HULLMOD +
+                Global.getLogger(this.getClass()).info("Removed " + AUTOMATED_HULLMOD +
                         " to " + member.getShipName() + " (" + member.getHullSpec().getHullId() +
                         ") in " + fleetType + " fleet");
 
 
                 processedShips.add(shipId);
             } catch (Exception e) {
-                Global.getLogger(this.getClass()).warn("Failed to apply " + THREAT_AUTOMATION_HULLMOD +
+                Global.getLogger(this.getClass()).warn("Failed to remove " + THREAT_AUTOMATION_HULLMOD +
                         " to " + member.getShipName() + ": " + e.getMessage());
             }
         }
-    }
 
 
-    public void clearCache() {
-        processedShips.clear();
+            if (!member.getVariant().getHullMods().contains(THREAT_AUTOMATION_HULLMOD)) {
+                try {
+                    member.getVariant().addMod(THREAT_AUTOMATION_HULLMOD);
+
+
+                    boolean isPlayerFleet = (fleet == Global.getSector().getPlayerFleet());
+                    String fleetType = isPlayerFleet ? "player" : "AI";
+                    Global.getLogger(this.getClass()).info("Applied " + THREAT_AUTOMATION_HULLMOD +
+                            " to " + member.getShipName() + " (" + member.getHullSpec().getHullId() +
+                            ") in " + fleetType + " fleet");
+
+
+                    processedShips.add(shipId);
+                } catch (Exception e) {
+                    Global.getLogger(this.getClass()).warn("Failed to apply " + THREAT_AUTOMATION_HULLMOD +
+                            " to " + member.getShipName() + ": " + e.getMessage());
+                }
+            }
+        }
+
+
+        {
+            processedShips.clear();
+        }
     }
-}

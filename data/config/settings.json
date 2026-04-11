@@ -5,6 +5,7 @@
 		"nsp_mk1CombatPlugin":"neon.nsp.data.scripts.plugins.nsp_mk1CombatPlugin",
                 "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
 				"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
+				"ThreatAutomationApplicator":"neon.nsp.data.plugins.ThreatAutomationApplicator",
 
 	},
 	"drop_prob_officer_nsp_invicta_core": 0,
