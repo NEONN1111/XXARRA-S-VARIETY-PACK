@@ -17,7 +17,8 @@
 	"fragment_coordinator",
 	"secondary_fabricator",
 	"fragment_swarm",
-    "nsp_threat_automation"
+    "nsp_threat_automation",
+	"nsp_constructioncharges"
   ],
   "weaponSlots": [
     {

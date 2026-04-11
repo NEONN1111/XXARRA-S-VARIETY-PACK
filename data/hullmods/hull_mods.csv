@@ -60,3 +60,4 @@ Penalty,nsp_improvised_penalty,,,,"no_drop, restricted, no_build_in",,,,TRUE,TRU
 Automated Removal Helper,nsp_automated_remover,,,,"no_drop, restricted, no_build_in",,,,TRUE,TRUE,8,15,25,40,neon.nsp.data.hullmods.ImprovisedAutomationCleanup,,,,
 ,,,,,,,,,,,,,,,,,,,
 Armor Parent,nsp_armorparent,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.scripts.util.ArmorParent,,,,
+CONSTRUCTION CHARGE SETTER,nsp_constructioncharges,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.ConstructionSwarmChargeSetter,,,,

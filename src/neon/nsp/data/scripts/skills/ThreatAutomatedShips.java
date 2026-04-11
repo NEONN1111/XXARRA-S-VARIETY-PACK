@@ -20,7 +20,7 @@ public class ThreatAutomatedShips {
 
 
     public static float MAX_CR_BONUS = 80f;
-    public static float MAX_THREAT_POINTS = 60f;
+    public static float MAX_THREAT_POINTS = 40f;
     public static float PENALTY_OFFSET = 100f;
 
     public static final float GAMMA_MULT = 2f;
@@ -146,7 +146,7 @@ public class ThreatAutomatedShips {
                 if (fleetData != null) {
                     float crBonus = computeThreatCRBonus(fleetData);
                     SkillSpecAPI skill = Global.getSettings().getSkillSpec("nsp_threat_auto");
-                    stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.1f, skill.getName());
+                    stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, skill.getName());
                 }
             }
         }
