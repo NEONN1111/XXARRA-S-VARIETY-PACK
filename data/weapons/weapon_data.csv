@@ -12,6 +12,8 @@ Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,,,,,ENERGY,19
 ,nsp_absdeco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,nsp_absdeco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Plasma Torpedo Launcher,nsp_plasmatorp,3,,7500,2000,,2000,,75,10,30,12,0.05,,ENERGY,3000,,0.1,10,4,0.4,0,0,0,0,,800,800,15,500,,,"STRIKE, DO_NOT_AIM","strike20, missile20",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #THREAT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.5,0,10,5,10,,500,,,400,,,,"he18, threat",,Threat,,Anti Armor,,,,,,,,,,8
 Heavy Kinetic Cannon,nsp_mk9_threat,0,,3000,900,,200,,20,10,18,,,,KINETIC,200,,0,2,4,0.1,0,15,2,10,,800,,,100,,,,"kinetic18, threat",,Threat,,Anti Shield,,,,,,,,,,7.25

@@ -1,0 +1,21 @@
+{
+	"id":"nsp_plasmatorp",
+	"specClass":"projectile",
+	"type":"MISSILE",
+	"everyFrameEffect":"neon.nsp.data.scripts.weapons.NSP_PlasmaTorpedo",
+	"mountTypeOverride":"SYNERGY",
+	"size":"LARGE",
+	"turretSprite":"graphics/weapons/rift_torpedo_turret.png",
+	"hardpointSprite":"graphics/weapons/rift_torpedo_hardpoint.png",
+	"hardpointOffsets":[10, 0],
+	"turretOffsets":[4, 0],
+	"hardpointAngleOffsets":[0],
+	"turretAngleOffsets":[0],
+	"barrelMode":"ALTERNATING",
+	"interruptibleBurst":true,
+	"animationType":"NONE",
+	"projectileSpecId":"nsp_plasma_torpedo",
+	"fireSoundTwo":"nsp_plasmatorp_fire",
+}
+
+

@@ -136,6 +136,9 @@
             {"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.80,"volume":1.0},
         ],
     },
+    "nsp_plasmatorp_fire":[
+      {"file":"sounds/sfx_wpns_missiles/nsp_plasmatorp_fire.ogg","pitch":1,"volume":0.7},
+    ],
 	
 "music":{
 	"nsp_invicta_encounter1":
