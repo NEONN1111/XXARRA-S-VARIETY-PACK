@@ -177,8 +177,8 @@ public class EnergyTorpedoPlugin extends CombatEntityPluginWithParticles {
                 r.angle += r.spin * amount * 0.5F;
             }
         }
-        if (this.isExpired() && this.brightness > 0F) {
-            this.brightness =0;
+        if (this.isExpired()) {
+            this.rays.clear();
         }
     }
 
