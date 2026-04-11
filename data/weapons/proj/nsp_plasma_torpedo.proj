@@ -3,10 +3,9 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"onHitEffect":"neon.nsp.data.scripts.weapons.NSP_PlasmaTorpedo",
-	#"sprite":"graphics/missiles/shell_gauss_cannon.png",
-	"sprite":"",
-	"size":[10,10],	
-	"center":[5,5],
+	"sprite":"graphics/missiles/missile_torpedo.png",
+	"size":[20,32],	
+	"center":[10,16],
 	"collisionRadius":45,
 	"collisionClass":"HITS_SHIPS_ONLY_NO_FF",
 	"explosionColor":[220,250,226,255],  # purely visual, will get a white additively blended core on top of this color
@@ -48,7 +47,7 @@
 				  "dec":300},
 	"engineSlots":[{"id":"ES1",
 					#"loc":[-7, 0],
-					"loc":[0, 0],
+					"loc":[-16, 0],
 				    "style":"CUSTOM",
 					"styleSpec":{
 						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
