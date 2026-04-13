@@ -19,15 +19,15 @@ import com.fs.starfarer.api.util.Misc;
 public class CustomFleetsNSPThreat5 {
 
 	public static void spawnFleetThremlin() {
-		LocationAPI location = Global.getSector().getStarSystem("Deep Space IIIII");
+		LocationAPI location = Global.getSector().getStarSystem("thremgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat5.class).error("Deep Space IIIII system not found!");
+			Global.getLogger(CustomFleetsNSPThreat5.class).error("Desolation V system not found!");
 			return;
 		}
 
 		SectorEntityToken planet = location.getEntityByName("Nameless Rock 5");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat5.class).error("Nameless Rock 5 not found in Deep Space IIIII!");
+			Global.getLogger(CustomFleetsNSPThreat5.class).error("Nameless Rock 5 not found in Desolation V!");
 			return;
 		}
 
@@ -87,7 +87,7 @@ public class CustomFleetsNSPThreat5 {
 
 		ShipVariantAPI flagvariant = flag.getVariant().clone();
 		params.ignoreMarketFleetSizeMult = true;
-		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
+//		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
 		fleet.getFleetData().setFlagship(flag);
 		fleet.setCommander(flag.getCaptain());
 		FleetFactory.finishAndSync(fleet);
@@ -102,6 +102,6 @@ public class CustomFleetsNSPThreat5 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat5.class).info("Successfully spawned Thremlin fleet at Deep Space IIIII");
+		Global.getLogger(CustomFleetsNSPThreat5.class).info("Successfully spawned Thremlin fleet at Desolation V");
 	}
 }

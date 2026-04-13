@@ -21,7 +21,7 @@ public class nsp_abyssalgen5 {
 
 
     public static void generate(SectorAPI sector) {
-        StarSystemAPI system = sector.createStarSystem("Desolation IIIII");
+        StarSystemAPI system = sector.createStarSystem("Desolation V");
         //system.setType(StarSystemType.NEBULA);
         system.setName("Deep Space IIIII"); // to get rid of "Star System" at the end of the name
         system.setOptionalUniqueId("thremgen"); // used to retrieve system later if needed, we don't really need to but i didn't comment this out

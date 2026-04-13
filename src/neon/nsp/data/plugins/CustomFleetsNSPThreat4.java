@@ -19,15 +19,15 @@ import com.fs.starfarer.api.util.Misc;
 public class CustomFleetsNSPThreat4 {
 
 	public static void spawnFleetThreatribution() {
-		LocationAPI location = Global.getSector().getStarSystem("Deep Space IIII");
+		LocationAPI location = Global.getSector().getStarSystem("retrgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat4.class).error("Deep Space IIII system not found!");
+			Global.getLogger(CustomFleetsNSPThreat4.class).error("DeepDesolation IV system not found!");
 			return;
 		}
 
 		SectorEntityToken planet = location.getEntityByName("Nameless Rock 4");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat4.class).error("Nameless Rock 4 not found in Deep Space IIII!");
+			Global.getLogger(CustomFleetsNSPThreat4.class).error("Nameless Rock 4 not found in Desolation IV!");
 			return;
 		}
 
@@ -85,7 +85,7 @@ public class CustomFleetsNSPThreat4 {
 
 		ShipVariantAPI flagvariant = flag.getVariant().clone();
 		params.ignoreMarketFleetSizeMult = true;
-		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
+//		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
 		fleet.getFleetData().setFlagship(flag);
 		fleet.setCommander(flag.getCaptain());
 		FleetFactory.finishAndSync(fleet);
@@ -100,6 +100,6 @@ public class CustomFleetsNSPThreat4 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat4.class).info("Successfully spawned Threatribution fleet at Deep Space IIII");
+		Global.getLogger(CustomFleetsNSPThreat4.class).info("Successfully spawned Threatribution fleet at Desolation IV");
 	}
 }

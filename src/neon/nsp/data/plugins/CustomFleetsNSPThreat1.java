@@ -19,15 +19,16 @@ import com.fs.starfarer.api.util.Misc;
 public class CustomFleetsNSPThreat1 {
 
 	public static void spawnFleetInthrictus() {
-		LocationAPI location = Global.getSector().getStarSystem("Deep Space I");
+//		LocationAPI location = Global.getSector().getStarSystem("Deep Space I");
+		LocationAPI location = Global.getSector().getStarSystem("invgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat1.class).error("Deep Space I system not found!");
+			Global.getLogger(CustomFleetsNSPThreat1.class).error("Desolation I system not found!");
 			return;
 		}
 
 		SectorEntityToken planet = location.getEntityByName("Nameless Rock 1");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat1.class).error("Nameless Rock 1 not found in Deep Space I!");
+			Global.getLogger(CustomFleetsNSPThreat1.class).error("Nameless Rock 1 not found in Desolation I!");
 			return;
 		}
 
@@ -88,7 +89,7 @@ public class CustomFleetsNSPThreat1 {
 
 		ShipVariantAPI flagvariant = flag.getVariant().clone();
 		params.ignoreMarketFleetSizeMult = true;
-		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
+//		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
 		fleet.getFleetData().setFlagship(flag);
 		fleet.setCommander(flag.getCaptain());
 		FleetFactory.finishAndSync(fleet);
@@ -103,6 +104,6 @@ public class CustomFleetsNSPThreat1 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat1.class).info("Successfully spawned Inthrictus fleet at Deep Space I");
+		Global.getLogger(CustomFleetsNSPThreat1.class).info("Successfully spawned Inthrictus fleet at Desolation I");
 	}
 }

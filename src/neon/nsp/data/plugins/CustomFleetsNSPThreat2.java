@@ -19,15 +19,15 @@ import com.fs.starfarer.api.util.Misc;
 public class CustomFleetsNSPThreat2 {
 
 	public static void spawnFleetThrominator() {
-		LocationAPI location = Global.getSector().getStarSystem("Deep Space II");
+		LocationAPI location = Global.getSector().getStarSystem("thromgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat2.class).error("Deep Space II system not found!");
+			Global.getLogger(CustomFleetsNSPThreat2.class).error("Desolation II system not found!");
 			return;
 		}
 
 		SectorEntityToken planet = location.getEntityByName("Nameless Rock 2");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat2.class).error("Nameless Rock 2 not found in Deep Space II!");
+			Global.getLogger(CustomFleetsNSPThreat2.class).error("Nameless Rock 2 not found in Desolation II!");
 			return;
 		}
 
@@ -84,7 +84,7 @@ public class CustomFleetsNSPThreat2 {
 
 		ShipVariantAPI flagvariant = flag.getVariant().clone();
 		params.ignoreMarketFleetSizeMult = true;
-		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
+//		FleetFactoryV3.addCommanderAndOfficers(fleet, params, Misc.random);
 		fleet.getFleetData().setFlagship(flag);
 		fleet.setCommander(flag.getCaptain());
 		FleetFactory.finishAndSync(fleet);
@@ -99,6 +99,6 @@ public class CustomFleetsNSPThreat2 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat2.class).info("Successfully spawned Throminator fleet at Deep Space II");
+		Global.getLogger(CustomFleetsNSPThreat2.class).info("Successfully spawned Throminator fleet at Desolation II");
 	}
 }
