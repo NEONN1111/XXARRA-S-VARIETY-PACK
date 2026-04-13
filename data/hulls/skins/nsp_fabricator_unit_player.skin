@@ -1,0 +1,17 @@
+{
+    "baseHullId":"fabricator_unit",
+    "skinHullId":"nsp_fabricator_unit_recovered",
+    "descriptionPrefix":"This salvaged Threat vessel has been outfitted with highly-experimental modifications to enable it to operate as part of a conventional fleet.",
+    "ordnancePoints":350,
+    "systemId":"nsp_construction_swarm",
+    "removeBuiltInMods":[
+		"automated",
+	],
+    "builtInMods":[
+		"nsp_threat_automation",
+	],  
+}
+
+
+
+
