@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="Create .Jar">
     <output-path>$PROJECT_DIR$/jars</output-path>
     <root id="archive" name="NSP.jar">
-      <element id="module-output" name="XEON-S-CONTENT-PACK" />
+      <element id="module-output" name="XARRA-S-VARIETY-PACK" />
     </root>
   </artifact>
 </component>
