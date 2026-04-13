@@ -1,5 +1,5 @@
 {
-	"id":"construction_swarm",
+	"id":"nsp_construction_swarm",
 	"type":"STAT_MOD",
 	"aiType":"CUSTOM",
 	"aiScript":"com.fs.starfarer.api.impl.combat.threat.ConstructionSwarmSystemAI",	
@@ -7,7 +7,7 @@
 	"runScriptWhileIdle":true,
 	#"canUseWhileRightClickSystemOn":true,
 	
-	"statsScript":"neon.nsp.data.shipsystems.ConstructionSwarmSystemScriptNSP",
+	"statsScript":"com.fs.starfarer.api.impl.combat.threat.ConstructionSwarmSystemScript",
 	
 	"useSound":"system_construction_swarm",
 	"outOfUsesSound":"gun_out_of_ammo",

@@ -3,39 +3,43 @@ package neon.nsp.data.hullmods;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
-
-//jank solution to set ai controlled fabricators to have +100 ship system charges
-//while player owned/controlled ones should only have the 4 in the ship_data.csv
 
 public class ConstructionSwarmChargeSetter extends BaseHullMod {
 
+    public static final String BONUS_ID = "construction_swarm_charge_bonus";
     public static final int ADDED_CHARGES = 100;
 
     @Override
-    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
+    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
         super.applyEffectsBeforeShipCreation(hullSize, stats, id);
-
+        stats.getSystemUsesBonus().modifyFlat(BONUS_ID, ADDED_CHARGES);
     }
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         super.applyEffectsAfterShipCreation(ship, id);
 
+        if (ship == null) return;
 
-        ship.getMutableStats().getSystemUsesBonus().unmodifyFlat(id);
-
+        boolean isPlayerShip = false;
 
         if (Global.getCombatEngine() != null) {
-
-            if (ship.getOwner() != 0) {
-                ship.getMutableStats().getSystemUsesBonus().modifyFlat(id, ADDED_CHARGES);
-            }
+            isPlayerShip = (ship.getOwner() == 0);
         } else {
+            isPlayerShip = isInPlayerFleet(ship);
+        }
 
-            if (!isInPlayerFleet(ship)) {
-                ship.getMutableStats().getSystemUsesBonus().modifyFlat(id, ADDED_CHARGES);
-            }
+        if (isPlayerShip) {
+            ship.getMutableStats().getSystemUsesBonus().unmodifyFlat(BONUS_ID);
+        }
+
+        if (Global.getCombatEngine() != null) {
+            float maxUses = ship.getSystem() != null ? ship.getSystem().getMaxAmmo() : -1;
+            System.out.println("[" + ship.getName() + "] Owner: " + ship.getOwner() +
+                    " | Max System Uses: " + maxUses +
+                    " | IsPlayer: " + isPlayerShip);
         }
     }
 }
