@@ -1,7 +1,7 @@
 {
   "id": "nsp_mk9_threat",
   "specClass": "projectile",
-  "projectileSpecId": "mark9_shot",
+  "projectileSpecId": "threat_mark9_shot",
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/weapons/mk9_threat_turret.png",

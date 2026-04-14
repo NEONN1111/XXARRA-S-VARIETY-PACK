@@ -274,4 +274,11 @@ Querying database...
 
 This TriPad is not authorized to provide additional description for the requested product ID. Please upgrade your data permission level in compliance with Domain Information Security Standards.",,,,
 ,,,,,,
-construction_swarm,SHIP_SYSTEM,Launches a construction swarm that will build a new Threat unit.,Special,"Launches a construction swarm that will build a new Threat unit. Reduces the ship's combat readiness. When in your fleet, this system is limited to a maximum of 4 hulls, and can only construct frigates, and/or destroyers.",,Reduces the ship's combat readiness based on the size and type of unit the swarm will build. The newly constructed units use up deployment points as normal.
+nsp_mk9_threat,WEAPON,"""[Best match: 'Mark III Autocannon (obsolete)' / abbreviated: true / show partial match: true / warnings: Variant contains unlicensed modifications. Variant displays unregistered production ID. Variant may be in violation of Domain Technological Safety Standards.]
+
+""Created by the state-owned Domain Naval Industry Corporation, the Mark III was at the time considered the first ""true"" dedicated anti-capital weapons platform; created specifically for the deployment of new Hathoda hulls, the only ship at the time sturdy enough to withstand the Mark III's immense strain upon a ship's hull upon firing. Sale of the weapon was highly controlled; for many decades after its deployment, the Mark III was restricted to only a handful of ship classes.""
+
+""Though initially promising, the Mark III's shelf life was cut short during the ""August Massacre"", where Domain naval procurement declared an unspecified ""force majeure"" on nearly a hundred heavy weapon system contracts. [See also: > August Massacre > Mark IV Controversy > SDIC v. Nordstern]""","– Results compiled from 'The Authorized Encyclopedia of Early Weapon Systems of the Domain Armada, 43rd edition'",,,
+nsp_threatbore,WEAPON,"""I'll tell you right now, these things ain't dumbfire. They shoot in straight line and all, but I've never seen plasma burns eat up a ship like that. Show me a ball of hot plasma that targets electrical systems like it's candy.""
+
+""Their favorite thing to do is go after the bridge.  One shot gets through there, and half the crew get field promotions. Ruins the ship, too. Standing orders from the Powers that Be is any ship that gets tagged too much just gets dumped in the black.""","– Special Acquisitions Asset #2920, recovered log entry",,,
