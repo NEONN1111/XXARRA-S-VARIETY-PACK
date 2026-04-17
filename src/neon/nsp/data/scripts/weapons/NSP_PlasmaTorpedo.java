@@ -14,8 +14,8 @@ public class NSP_PlasmaTorpedo implements OnFireEffectPlugin, OnHitEffectPlugin,
     protected CombatEntityAPI torpedoEffectEntity;
     protected EnergyTorpedoPlugin torpedoEffectPlugin;
 
-    protected Color COLOR_INNER = new Color(255,100,100,255);
-    protected Color COLOR_OUTER = new Color(0,0,255,255);
+    protected Color COLOR_INNER = new Color(255, 128,100,255);
+    protected Color COLOR_OUTER = new Color(255, 0, 0,255);
 
     public NSP_PlasmaTorpedo() {
     }
