@@ -1,0 +1,27 @@
+{
+    "displayName": "Attack Fighter",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "goalVariant": false,
+    "hullId": "nsp_valor",
+    "hullMods": [],
+    "quality": 0.0,
+    "variantId": "nsp_valor_Fighter",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "irpulse_fighter",
+                "WS 003": "irpulse_fighter"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "nsp_plasmatorp_fighter"
+            }
+        }
+    ]
+}

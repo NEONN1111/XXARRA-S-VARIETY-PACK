@@ -1,19 +1,19 @@
 {
-	"id":"nsp_plasma_torpedo",
+	"id":"nsp_plasma_torpedo_mini",
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"onHitEffect":"neon.nsp.data.scripts.weapons.NSP_PlasmaTorpedo",
-	"sprite":"graphics/missiles/missile_torpedo.png",
-	"size":[20,32],	
-	"center":[10,16],
-	"collisionRadius":35,
+	"sprite":"graphics/missiles/missile_torpedo_compact.png",
+	"size":[14,23],	
+	"center":[7,12],
+	"collisionRadius":25,
 	"collisionClass":"HITS_SHIPS_ONLY_NO_FF",
 	"explosionColor":[220,250,226,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":250, # purely visual,
 	"explosionSpec":{
 		"duration":0.1f, # not visual
-		"radius":175,
-		"coreRadius":75, # full damage within core radius
+		"radius":85,
+		"coreRadius":36, # full damage within core radius
 		"collisionClass":HITS_SHIPS_AND_ASTEROIDS,
 		"collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
 		"particleSizeMin":5.0,
@@ -64,8 +64,8 @@
 						"contrailColor":[255,100,100,200],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
-				    "width":10.0,
-				    "length":50.0,
+				    "width":5.0,
+				    "length":35.0,
 				    "angle":180.0}]
 }
 			

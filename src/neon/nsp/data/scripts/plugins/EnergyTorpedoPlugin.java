@@ -145,7 +145,11 @@ public class EnergyTorpedoPlugin extends CombatEntityPluginWithParticles {
         if (Global.getCombatEngine().isPaused()) return;
         if (proj != null) {
             entity.getLocation().set(proj.getLocation());
-        } else {
+            if(isProjectileExpired(proj)) {
+                this.rays.clear();
+            }
+        }
+        else {
             entity.getLocation().set(weapon.getFirePoint(0));
         }
         super.advance(amount);
@@ -176,9 +180,6 @@ public class EnergyTorpedoPlugin extends CombatEntityPluginWithParticles {
             for (Ray r : this.rays) {
                 r.angle += r.spin * amount * 0.5F;
             }
-        }
-        if (this.isExpired()) {
-            this.rays.clear();
         }
     }
 

@@ -137,8 +137,14 @@
         ],
     },
     "nsp_plasmatorp_fire":[
-      {"file":"sounds/sfx_wpns_missiles/nsp_plasmatorp_fire.ogg","pitch":1,"volume":0.7},
+      {"file":"sounds/sfx_wpns_missiles/nsp_plasmatorp_fire.ogg","pitch":1,"volume":0.5},
     ],
+	"nsp_HELIOS_charge":[
+		{"file":"sounds/sfx_wpns_energy/nsp_HELIOS_charge.ogg","pitch":1,"volume":0.7},
+	],
+	"nsp_HELIOS_fire":[
+		{"file":"sounds/sfx_wpns_energy/nsp_HELIOS_fire.ogg","pitch":1,"volume":0.7},
+	],
 	
 "music":{
 	"nsp_invicta_encounter1":

@@ -1,3 +1,6 @@
-id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,Column,Column [1],Column [2],Column [3],Column [4],Column [5],Column [6],Column [7],Column [8],Column [9],Column [10],Column [11],number
-
+id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 nsp_saros,nsp_saros_standard,"fighter, low, fighter5, auto_fighter, no_sell, restricted",2,,7,12,V,1300,1500,,3,FIGHTER,Fighter,10,8000,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+nsp_valor_wing,nsp_valor_Fighter,"fighter2, fighter, bomber5, bomber, high, rare_bp, hist2t, merc",3,0.25,8,20,V,4000,2000,600,2,FIGHTER,Attack Fighter,25,14000,,,,,,,,,,,,,14
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -217,6 +217,12 @@ While few live to tell of what happened in those tense months that comprised the
 nsp_fulgurite,SHIP,"A standout of Orion Shipyards design in the post-'Emerald Age' exodus, this frontier-rated utility platform featured a spinal-mount microwave emitter modulated for orbit-to-orbit operations. Alongside this, the platform is also capable of orbit-to-surface energy transferral, though this results in the emitter placing far more strain on the vessel's reactor, varying on the distance. Furthermore, this emitter cannot be used on worlds that have habitable atmospheres. Such caveats ensured that the Fulgurite saw both limited adoption in more civilized spaces, and expectedly, wide-spread adoption within frontier sectors, where such concerns were less prevalent.",,,,
 nsp_exponent_invictus,CUSTOM,A heavily damaged invictus.,,,,
 ,,,,,,
+nsp_HELIOS,WEAPON,"An enormous composite-beam laser system with near-omnidirectional coverage integrated into the forward hull of the Galaxy-class battlecruiser. Equally capable of engaging enemy ships and acting as a high-powered point defense system.
+
+The pride of Altair Exotech R&D's Division 72, the High-Energy Laser Interception and Offense System was conceived as a radical new breed of point defense system for the in-development Galaxy-class battlecruiser. With a proprietary multitargeting emitter ""strip"" and a lasing medium directly pumped by the vessel's main reactor, the initial design brief promised a rare combination of wide-area coverage, pinpoint accuracy, and respectable firepower.
+
+The realities of engineering, however, ultimately set in, and while the production-model HELIOS Array was not the impenetrable aegis against missiles and strikecraft it was meant to be, it is still a marvel of energy weapon technology, with the power output to threaten full-size warships and the efficiency and precision to fire on targets in nearly any direction as fast as gunnery crews can lock on.",,,,
+,,,,,,
 nsp_inthrictus,SHIP,"Closest match found to archive entry for ""Hathoda""-class orbital siege platform, 50.001% confidence.
 
 Querying database... ""Dating back to even before the 3nd Expeditionary Wave, even before the controversial 2nd Domain Armada Revised Schema reclassification order, the Hathoda acted as the heavy spine of the Domain's early armadas, designed to engage the entire navies of smaller recalcitrant politi-"" DOMAIN INFOSEC VIOLATION THRESHOLD WARNING

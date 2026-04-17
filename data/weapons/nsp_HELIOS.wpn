@@ -1,0 +1,52 @@
+{
+  "id": "nsp_HELIOS",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/nsp_HELIOS_turret.png",
+  "turretGlowSprite": "graphics/weapons/nsp_HELIOS_glow.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    75,
+    0,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    56,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    75,
+    0,
+    255
+  ],
+  "coreColor": [
+    255,
+    240,
+    200,
+    255
+  ],
+  "width": 20,
+  "textureType": LASER,
+  "textureScrollSpeed": 512,
+  "pixelsPerTexel": 1,
+  "fireSoundOne": "nsp_HELIOS_charge",
+  "fireSoundTwo": "nsp_HELIOS_fire",
+  "autocharge":true,
+  "interruptibleBurst":true,
+}
