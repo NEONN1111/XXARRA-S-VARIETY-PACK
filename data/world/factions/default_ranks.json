@@ -2,11 +2,13 @@
   "ranks": {
     "luddicKnight":{"name":"Luddic Knight"},
     "luddicEnvoy": {"name":"Luddic Envoy"},
-    "nsp_stranger": {"name":"Stranger"}
+    "nsp_stranger": {"name":"Stranger"},
+	"nsp_detective": {"name":"Detective"}
   },
   "posts":{
     "luddicKnight":{"name":"Luddic Knight"},
     "luddicEnvoy":{"name":"Luddic Envoy"},
-    "nsp_stranger": {"name":"Stranger"}
+    "nsp_stranger": {"name":"Stranger"},
+	"nsp_detective": {"name":"Detective"}
   }
 }

@@ -11,6 +11,9 @@ Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,,,,,ENERGY,19
 ,nsp_vambracecover4,,,,0,0,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
 ,nsp_absdeco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,nsp_absdeco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_absdecopath1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_absdecopath2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Plasma Torpedo Launcher,nsp_plasmatorp,3,,7500,2000,,3000,,75,20,30,4,0.13,4,ENERGY,2500,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,500,,,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE","strike18, missile15, rare_bp, merc",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
 Light Plasma Torpedo (Fighter),nsp_plasmatorp_fighter,3,,7500,1000,,750,,75,30,30,1,,,ENERGY,700,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,250,,,"SYSTEM, STRIKE, USE_VS_FRIGATES, DO_NOT_AIM","missile8, strike3, show_in_codex",,,,Guided Torpedo (Fighter),Extremely Fast,Excellent,,,,,,,TRUE,23.6
@@ -41,3 +44,4 @@ Pusher Plate (Tiny),nsp_pusherplate_tiny,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,p
 Medium Vector Engine Cap,nsp_dkengcap_m,,,,1,120,,,,55,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 Large Vector Engine Cap,nsp_sotf_dkengcap_l,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
 Seeking Gaze,threat_lidarbeam,0,,1,0,100,,,0,200,0,1000,1000,,ENERGY,,0,0.2,0.2,0.35,0,,,,,1000000,,,,,,,SYSTEM,lidar,,,,Special,,,,,,,,,,43.5
+AAAAAAAAAAA,nsp_antimatter_injector,3,,10000,600,,500,,3,40,22,,,,KINETIC,20,,,0.05,6,0.05,0,0,0,0,,400,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted, nsp_engine",,,,Anti Everything,,,,,,,,,,20

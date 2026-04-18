@@ -52,6 +52,7 @@
 		"characters":{
 			"The Exponent":"graphics/portraits/characters/exponent_core.png",
 			"Phos Morganthal":"graphics/portraits/characters/phos_morganthal.png",
+			"Harry Dubois":"graphics/portraits/characters/harry_dubois.png",
 		},
         "fx":{
 			"NSP_Flare":"graphics/fx/NSP_FX/NSP_FlareA.png",

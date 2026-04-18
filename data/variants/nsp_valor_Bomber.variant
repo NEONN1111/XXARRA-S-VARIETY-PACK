@@ -1,7 +1,7 @@
 {
-  "variantId": "nsp_valor_Fighter",
+  "variantId": "nsp_valor_Bomber",
   "hullId": "nsp_valor",
-  "displayName": "Attack Fighter",
+  "displayName": "Attack Bomber",
   "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
@@ -13,7 +13,6 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 000": "irpulse_fighter",
         "WS 002": "irpulse_fighter",
         "WS 003": "irpulse_fighter"
       }
@@ -21,7 +20,9 @@
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS 000": "nsp_plasmatorp_fighter"
+      }
     }
   ],
   "modules": [],
