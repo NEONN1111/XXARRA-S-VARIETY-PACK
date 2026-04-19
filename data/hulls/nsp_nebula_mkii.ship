@@ -1,0 +1,189 @@
+{
+  "hullName": "Nebula Mk. II",
+  "hullId": "nsp_nebula_mkii",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_nebula_mkii.png",
+  "style": "MIDLINE",
+  "height": 205,
+  "width": 127,
+  "center": [64, 99.5],
+  "collisionRadius": 121,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 120,
+  "viewOffset": 0,
+  "builtInMods": [
+    "civgrade"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 60,
+      "locations": [48.5, 36]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -60,
+      "locations": [53.5, -44]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 110,
+      "locations": [-52.5, 48]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 250,
+      "locations": [-52.5, -47]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -71.5,
+      "locations": [-22.5, -47]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 71.5,
+      "locations": [-22.5, 47]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 0,
+      "locations": [34.5, -1]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [82, -1]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [19.5, 32.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [19.5, -31]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-93.5, 11],
+      "length": 92,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 92,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-93.5, -13],
+      "length": 92,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 92,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-83, 24],
+      "length": 32,
+      "width": 8,
+      "angle": 170,
+      "contrailSize": 32,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-82.5, -26],
+      "length": 32,
+      "width": 8,
+      "angle": 190,
+      "contrailSize": 32,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [31.5, 45.5],
+      "length": 32,
+      "width": 8,
+      "angle": 135,
+      "contrailSize": 32,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [31.5, -45.5],
+      "length": 32,
+      "width": 8,
+      "angle": -135,
+      "contrailSize": 32,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    98, -23.5,
+    105, -36,
+    89.5, -45.5,
+    75.5, -41,
+    62, -41,
+    53.5, -50,
+    43.5, -50,
+    34.5, -42,
+    -2, -36.5,
+    -10.5, -40,
+    -18, -62,
+    -65.5, -56.5,
+    -63, -30,
+    -92.5, -17,
+    -92.5, 17,
+    -63, 30,
+    -65.5, 56.5,
+    -18, 62,
+    -10.5, 40,
+    -2, 36.5,
+    34.5, 42,
+    43.5, 50,
+    53.5, 50,
+    62, 41,
+    75.5, 41,
+    89.5, 45.5,
+    105, 36,
+    98, 23.5
+  ]
+}
