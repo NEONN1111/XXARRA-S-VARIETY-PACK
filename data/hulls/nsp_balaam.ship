@@ -15,7 +15,7 @@
     "hbi",
     "ablative_armor",
     "distributed_fire_control",
-    "advancedcore"
+    "nsp_lidarbank"
   ],
   "builtInWeapons": {
     "WS 022": "lidardish",
