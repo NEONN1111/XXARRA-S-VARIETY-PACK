@@ -12,6 +12,7 @@ import com.fs.starfarer.api.impl.campaign.missions.hub.ReqMode;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.campaign.fleet.CampaignFleet;
+import neon.nsp.data.scripts.NSPPeople;
 
 import java.awt.Color;
 import java.util.List;
@@ -32,7 +33,7 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
     }
 
     protected MarketAPI originMarket;
-    protected PersonAPI missionGiver;
+    protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSPPeople.HARRYDISCODUBOIS);
 
 
     protected static final float DELAY_PROLOGUE_TO_ACT1 = 3f;
@@ -43,27 +44,15 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
 
     @Override
     protected boolean create(MarketAPI createdAt, boolean barEvent) {
-
+        /*
         if (!createdAt.getId().equals("nsp_revachol")) {
             return false;
         }
+        */
 
-        if (barEvent) {
-
-            missionGiver.setRankId("nsp_detective");
-            missionGiver.setPostId(POST_DETECTIVE);
-            missionGiver.getName().setFirst("Harry");
-            missionGiver.getName().setLast("Du Bois");
-            missionGiver.setGender(FullName.Gender.MALE);
-            missionGiver.setId("nsp_harry_dubois");
-            missionGiver.setPortraitSprite("graphics/portraits/characters/harry_dubois.png");
-
-            missionGiver.setImportance(pickHighImportance());
-            missionGiver.setMarket(createdAt);
-
-            setPersonOverride(missionGiver);
-            this.missionGiver = missionGiver;
-        }
+        //I don't think it actually suppose to be bar event even if it starts in bar
+        //Moved character to NSPPeople as he likely to be referenced a lot
+        setPersonOverride(missionGiver);
 
         PersonAPI person = getPerson();
         if (person == null) return false;
@@ -78,9 +67,6 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         if (barEvent) {
             setGiverIsPotentialContactOnSuccess();
         }
-
-        person.setId("nsp_harry_dubois");
-        Global.getSector().getImportantPeople().addPerson(person);
 
         originMarket = createdAt;
         Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_market", originMarket);

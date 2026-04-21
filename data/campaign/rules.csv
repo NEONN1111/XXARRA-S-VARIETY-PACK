@@ -849,7 +849,7 @@ nsp_spawnThreatFleet ""dominator""
 SalvageSpecialInteraction","There's a startling alert from your sensor crew's terminals, a halo of orange light underlining the station and those manning it. Fourteen letters, two words, and one united voice, your ship's own detection equipment now crying out in unison with the Dominator Mk.I's call to arms. And indeed, both the ancient and your own vessel point to the same seemingly empty section of abyssal space, a signal now repeated by all in this forsaken slice of starless black indicating you're no longer alone.","100:defaultLeave:Continue",
 "#END dominator MK1",,,,,,
 ,,,,,,
-"# Deep-space signals quest, pops up with slaught MK1 in fleet after semi-random number of days � should only happen if player has mk1 in their fleet and hasn't recovered both other ships.",,,,,,
+"# Deep-space signals quest, pops up with slaught MK1 in fleet after semi-random number of days ??? should only happen if player has mk1 in their fleet and hasn't recovered both other ships.",,,,,,
 nsp_deepSpaceSignalsPopup1,nsp_deepSpaceSignalsPopup,,,"One of your bridge crew approaches you, nerviously clearing their throat to draw your attention. ""$PlayerSirOrMadam, the report you ordered is ready. About the olds- Onslaught Mk.I's... movements.""
 
 Since being integrated into your fleet, the Onslaught Mk.I has displaying anomalous behavior. Turning and pointing in seemingly random directions when idle, leaving space for a ship not present during maneuvers, sending encrypted data over comms to nothing in particular. Your concerns were proven more than simple paranoia when the ship began moving on its own, wandering from formation before being noticed and swiftly ordered back into place, a command it followed as if it hadn't just been maneuvering by itself just mere seconds ago. Since that incident, the vessel has been under closer observation- and it seems your crew may have finally made a breakthrough.","0:nsp_deepSpaceSignalsPopup2:Continue",
@@ -951,14 +951,14 @@ $nsp_visitedfringeworld","SalvageDefenderInteraction","The pristine station spin
 ,,,,,,
 nsp_fringeworldBeatDefendersContinue1,BeatDefendersContinue,"$id == nsp_fringeworld",,"The defenders are destroyed.","0:nsp_habplanetBeatDefendersContinue2:Send your teams down.",
 nsp_fringeworldBeatDefendersContinue2,DialogOptionSelected,"$option == nsp_fringeworldBeatDefendersContinue2","FireBest MarketPostOpen","The planet, and whatever riches might lie below, wait for you.","100:defaultLeave:Take this moment of respite.",
-"#END Deep-space signals quest, pops up with slaught MK1 in fleet after semi-random number of days � should only happen if player has mk1 in their fleet and hasn't recovered both other ships.",,,,,,
+"#END Deep-space signals quest, pops up with slaught MK1 in fleet after semi-random number of days ??? should only happen if player has mk1 in their fleet and hasn't recovered both other ships.",,,,,,
 ,,,,,,
 # Galatia Academy SAFEGUARD stuff,,,,,,
 nsp_galatiaSafeguardOpen1,OpenInteractionDialog,"$id == station_galatia_academy score:10000
 $player.metBaird
 !$nsp_safeguardNotify
 nsp_displaySafeguardPicker CHECK","$nsp_safeguardNotify = true
-nsp_addPersonToComms ""nsp_phos""","Upon approaching Galatia Academy, you receive a comm� oh I can't write, just do the dialog.","0:nsp_galatiaSafeguardOpen2:Accept the comms request",
+nsp_addPersonToComms ""nsp_phos""","Upon approaching Galatia Academy, you receive a comm??? oh I can't write, just do the dialog.","0:nsp_galatiaSafeguardOpen2:Accept the comms request",
 nsp_galatiaSafeguardOpen2,DialogOptionSelected,"$option == nsp_galatiaSafeguardOpen2","ShowPersonVisual true sebestyen","""Captain!"" Sebestyen's usual energy bounces out of the comms.
 
 ""I have a new - that is to say, there's a new - not new, but, new to you, an Academician would like to meet you,"" he seemingly fumbles with something off-screen. ""Academician Phos Morganthal, who works in the - ah, um,"" Sebestyen lowers his voice, or attempts to.
@@ -972,7 +972,7 @@ nsp_phosCommsFirstOpen1,PickGreeting,"$id == nsp_phos score:10000
 !$nsp_phosFirst","BeginConversation nsp_phos
 $nsp_phosFirst = true","Walking down a wider corridor of the Academy's staff section with a couple of your technical officers, you see Phos waiting outside his office.","0:nsp_phosCommsFirstOpen2:Continue",
 nsp_phosCommsFirstOpen2,DialogOptionSelected,"$option == nsp_phosCommsFirstOpen2",,"""Captain! I've already looked over much of the models, and I can see some notable patterns and defects in the hulls, if you'll join me, we can go over them!""
-﻿
+???
 After bracing yourself and stepping into the office, you and your retinue sit down, prompting Phos to begin excitedly explaining and dissecting the holographic model hovering over his desk. About a half-hour into pointing out very minute details about the hull - some of which you had already seen, others that had never occurred to you - he starts to sidetrack.","0:nsp_phosCommsFirstOpen3a:Let him.
 10:nsp_phosCommsFirstOpen3b:Attempt to interrupt him.",
 nsp_phosCommsFirstOpen3a,DialogOptionSelected,"$option == nsp_phosCommsFirstOpen3a",,"The officers accompanying you seem split. One is eagerly listening to the lively droning, the other looks as though they'd fall asleep on the spot if they could get away with it.
@@ -1327,6 +1327,44 @@ DiscoBarEvent1b,DialogOptionSelected,"$option == DiscoBarEvent_1b",,"""disco dis
 DiscoBarrEvent1c,,"$option == DiscoBarEvent_1c","$discoBar = true
 BeginMission nsp_disco_mission
 Call $global.disco_mission_ref updateData",,"backToBar:""that shit was disco""",
+,,,,,,
+,,,,,,
+,,,,,,
+DiscoE_Baroption_add,AddBarEvents,"$market.id == eldfell
+!$global.disco_mission_prologue_complete","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
+DiscoE_Baroption_start,DialogOptionSelected,"$option == DiscoE_Bar_startoption","ShowPersonVisual true nsp_harry_dubois
+BeginMission nsp_disco_mission
+$global.disco_mission_prologue_complete = true","IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!","backToBar:""Return to the bar""",
+,,,,,,
+DiscoE_Act1_Inv1_addoption,PopulateOptions,"$market.id == eldfell
+$menuState == main
+$tradeMode == OPEN
+$global.disco_mission_prologue_complete
+!$global.disco_mission_inv_p1",,,"DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1",
+DiscoE_Act1_Inv1_finished,DialogOptionSelected,"$option == DiscoE_Inv_p1_startOption","$global.disco_mission_inv_p1 = true
+FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 1",,
+DiscoE_Act1_Inv2_addoption,PopulateOptions,"$market.id == eldfell
+$menuState == main
+$tradeMode == OPEN
+$global.disco_mission_inv_p1
+!$global.disco_mission_inv_p2",,,"DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2",
+DiscoE_Act1_Inv2_finished,DialogOptionSelected,"$option == DiscoE_Inv_p2_startOption","$global.disco_mission_inv_p2 = true
+FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 2",,
+DiscoE_Act1_Inv3_addoption,PopulateOptions,"$market.id == eldfell
+$menuState == main
+$tradeMode == OPEN
+$global.disco_mission_inv_p2
+!$global.disco_mission_inv_p3",,,"DiscoE_Inv_p3_startOption:Investigate $marketName - Part 2",
+DiscoE_Act1_Inv3_finished,DialogOptionSelected,"$option == DiscoE_Inv_p3_startOption","$global.disco_mission_inv_p3 = true
+FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 3",,
+DiscoE_Act1_Trubunal1_addoption,PopulateOptions,"$market.id == eldfell
+$menuState == main
+$tradeMode == OPEN
+$global.disco_mission_inv_p3
+!$disco_mission_act1_complete",,,"DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL",
+DiscoE_Act1_Trubunal1_finished,DialogOptionSelected,"$option == DiscoE_Inv_TRB_startOption","$global.disco_mission_inv_p3 = true
+$disco_mission_act1_complete = true
+FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Tribunal",,
 "#END Revachol",,,,,,
 "#END Missions",,,,,,
 
