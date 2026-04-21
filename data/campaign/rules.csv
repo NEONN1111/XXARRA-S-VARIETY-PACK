@@ -1330,41 +1330,70 @@ Call $global.disco_mission_ref updateData",,"backToBar:""that shit was disco""",
 ,,,,,,
 ,,,,,,
 ,,,,,,
-DiscoE_Baroption_add,AddBarEvents,"$market.id == eldfell
+nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == eldfell
 !$global.disco_mission_prologue_complete","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
-DiscoE_Baroption_start,DialogOptionSelected,"$option == DiscoE_Bar_startoption","ShowPersonVisual true nsp_harry_dubois
+nsp_DE_mission_Baroption_start,DialogOptionSelected,"$option == DiscoE_Bar_startoption","ShowPersonVisual true nsp_harry_dubois
 BeginMission nsp_disco_mission
 $global.disco_mission_prologue_complete = true","IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!","backToBar:""Return to the bar""",
 ,,,,,,
-DiscoE_Act1_Inv1_addoption,PopulateOptions,"$market.id == eldfell
+nsp_DE_mission_Act1_Inv1_addoption,PopulateOptions,"$market.id == eldfell
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_prologue_complete
 !$global.disco_mission_inv_p1",,,"DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1",
 DiscoE_Act1_Inv1_finished,DialogOptionSelected,"$option == DiscoE_Inv_p1_startOption","$global.disco_mission_inv_p1 = true
-FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 1",,
+FireAll PopulateOptions
+$disco_mission_act1_complete = true
+Call $global.disco_mission_ref DiscoCompleteAct1
+Call $global.disco_mission_ref updateStage","Investigated $marketName so well it become cleaner. - Part 1",,
 DiscoE_Act1_Inv2_addoption,PopulateOptions,"$market.id == eldfell
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv_p1
 !$global.disco_mission_inv_p2",,,"DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2",
 DiscoE_Act1_Inv2_finished,DialogOptionSelected,"$option == DiscoE_Inv_p2_startOption","$global.disco_mission_inv_p2 = true
-FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 2",,
+FireAll PopulateOptions
+$disco_mission_act2_complete = true
+Call $global.disco_mission_ref DiscoCompleteAct2
+Call $global.disco_mission_ref updateStage","Investigated $marketName so well it become cleaner. - Part 2",,
 DiscoE_Act1_Inv3_addoption,PopulateOptions,"$market.id == eldfell
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv_p2
 !$global.disco_mission_inv_p3",,,"DiscoE_Inv_p3_startOption:Investigate $marketName - Part 2",
 DiscoE_Act1_Inv3_finished,DialogOptionSelected,"$option == DiscoE_Inv_p3_startOption","$global.disco_mission_inv_p3 = true
-FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Part 3",,
+FireAll PopulateOptions
+$disco_mission_act3_complete = true
+Call $global.disco_mission_ref DiscoCompleteAct3
+Call $global.disco_mission_ref updateStage","Investigated $marketName so well it become cleaner. - Part 3",,
 DiscoE_Act1_Trubunal1_addoption,PopulateOptions,"$market.id == eldfell
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_inv_p3
-!$disco_mission_act1_complete",,,"DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL",
+$global.disco_mission_inv_p3",,,"DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL",
 DiscoE_Act1_Trubunal1_finished,DialogOptionSelected,"$option == DiscoE_Inv_TRB_startOption","$global.disco_mission_inv_p3 = true
 $disco_mission_act1_complete = true
-FireAll PopulateOptions","Investigated $marketName so well it become cleaner. - Tribunal",,
+FireAll PopulateOptions
+$disco_mission_act4_complete = true
+Call $global.disco_mission_ref DiscoCompleteAct4
+Call $global.disco_mission_ref updateStage","Investigated $marketName so well it become cleaner. - Tribunal",,
+nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == eldfell
+#addchecks for completed mission later","AddBarEvent DiscoE_HireHarry_BarOption ""You see familiar faces of Harry and Kim sitting at farther side of the bar "" ""Join them for a drink, for old times sake""",,,
+nsp_HireHarry_placeholder_hubFire,DialogOptionSelected,"$option == DiscoE_HireHarry_BarOption","ShowPersonVisual true nsp_harry_dubois
+FireAll nsp_HireHarry_hub","As you approach their table, Kim stand up to greet you. Looks like they noticed you in the bar right away, but didn't want to interfere with your business.
+You exchange greeting and take place at their table, curiously eyeing their drinks.",,
+nsp_HireHarry_placeholder_yapaboutlife_add,nsp_HireHarry_hub,,,,"1:nsp_HireHarry_placeholder_yapaboutlife_optionr:Ask about their life something.",
+nsp_HireHarry_placeholder_yapaboutlife_answer1,DialogOptionSelected,"$option == nsp_HireHarry_placeholder_yapaboutlife_optionr",,"Something about life or mission, or something else. ",,
+nsp_HireHarry_placeholder_offerwork_add,nsp_HireHarry_hub,,,,"2:nsp_HireHarry_placeholder_offerwork_option1:Offer Harry to work for you.",
+nsp_HireHarry_placeholder_skillcheck,DialogOptionSelected,"$option == nsp_HireHarry_placeholder_offerwork_option1","AddText ""You ask $personName some questions to establish where $hisOrHer skills lie.""
+CallEvent $ome_eventRef printSkills nsp_harry_dubois
+$askedSkills = true 0
+unset $askedSkills",,"1:nsp_HireHarry_Yes:""Sounds good.""
+99:backToBar:""Return to the bar"".",
+nsp_HireHarry_placeholder_YesHire,DialogOptionSelected,"$option == nsp_HireHarry_Yes","AddText ""You cut the comm link after exchanging a few pleasantries.""
+#CallEvent $ome_eventRef hireOfficer $id
+UpdateMemory
+ShowDefaultVisual
+EndConversation","Should call here either to hiring code or to mission/event ref.",,
 "#END Revachol",,,,,,
 "#END Missions",,,,,,
 

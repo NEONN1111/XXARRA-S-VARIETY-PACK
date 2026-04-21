@@ -108,6 +108,7 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE, true);
         triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(), "$disco_mission_mercenary_fleet");
         triggerFleetAddDefeatTrigger("$disco_mission_fleet_defeated");
+        triggerSetFleetAlwaysPursue();
         endTrigger();
 
 
@@ -204,10 +205,11 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         Color h = Misc.getHighlightColor();
 
         if (currentStage == Stage.PROLOGUE) {
-            info.addPara("placeholder " + originMarket.getName() + ".", opad);
-            info.addPara("placeholder.", opad);
+            info.addPara("PROLOGUE placeholder " + originMarket.getName() + ".", opad);
+            info.addPara("PROLOGUE placeholder.", opad);
         } else if (currentStage == Stage.ACT_1) {
             info.addPara("Act 1:placeholder", opad);
+
             float remainingDelay = getRemainingDelay("$disco_mission_prologue_complete_time", DELAY_PROLOGUE_TO_ACT1);
             if (remainingDelay > 0) {
                // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
@@ -231,7 +233,7 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
                // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
             }
         } else if (currentStage == Stage.EPILOGUE) {
-            info.addPara("placeholder" + originMarket.getName() + " placeholder", opad);
+            info.addPara("EPILOGUE placeholder" + originMarket.getName() + " placeholder", opad);
             float remainingDelay = getRemainingDelay("$disco_mission_act4_complete_time", DELAY_ACT4_TO_EPILOGUE);
             if (remainingDelay > 0) {
                // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
@@ -245,32 +247,33 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         }
         float flagSetTime = Global.getSector().getMemoryWithoutUpdate().getFloat(timeFlag);
         float currentTime = Global.getSector().getClock().getTimestamp();
-        float elapsed = currentTime - flagSetTime;
+        float elapsed = getElapsedInCurrentStage();
+        //float elapsed = currentTime - flagSetTime;
         return Math.max(0, delayDays - elapsed);
     }
 
     @Override
     public boolean addNextStepText(TooltipMakerAPI info, Color tc, float pad) {
         if (currentStage == Stage.PROLOGUE) {
-            info.addPara("placeholder" + originMarket.getName() + ".", tc, pad);
+            info.addPara("PROLOGUE placeholder" + originMarket.getName() + ".", tc, pad);
             return true;
         } else if (currentStage == Stage.ACT_1) {
             float remaining = getRemainingDelay("$disco_mission_prologue_complete_time", DELAY_PROLOGUE_TO_ACT1);
-            info.addPara("placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+            info.addPara("ACT_1 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
             return true;
         } else if (currentStage == Stage.ACT_2) {
             float remaining = getRemainingDelay("$disco_mission_act1_complete_time", DELAY_ACT1_TO_ACT2);
-            info.addPara("placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+            info.addPara("ACT_2 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
             return true;
         } else if (currentStage == Stage.ACT_3) {
             float remaining = getRemainingDelay("$disco_mission_act2_complete_time", DELAY_ACT2_TO_ACT3);
-            info.addPara("placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+            info.addPara("ACT_3 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
             return true;
         } else if (currentStage == Stage.ACT_4) {
-            info.addPara("placeholder", tc, pad);
+            info.addPara("ACT_4 placeholder", tc, pad);
             return true;
         } else if (currentStage == Stage.EPILOGUE) {
-            info.addPara("placeholder " + originMarket.getName() + " to complete the mission.", tc, pad);
+            info.addPara("EPILOGUE placeholder " + originMarket.getName() + " to complete the mission.", tc, pad);
             return true;
         }
 
