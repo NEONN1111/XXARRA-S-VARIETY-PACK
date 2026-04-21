@@ -13,7 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "safetyoverrides",
-	"ill_advised"
+    "ill_advised"
   ],
   "builtInWeapons": {
     "WS0005": "nsp_antimatter_injector",
@@ -272,6 +272,15 @@
       "arc": 0,
       "angle": 136.5,
       "locations": [-52.5, 77.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [72.5, -0]
     }
   ],
   "engineSlots": [
