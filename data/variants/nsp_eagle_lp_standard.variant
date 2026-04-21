@@ -1,0 +1,60 @@
+{
+  "variantId": "nsp_eagle_lp_standard",
+  "hullId": "nsp_eagle_lp",
+  "displayName": "Holy",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "hammer",
+        "WS 002": "hammer",
+        "WS 013": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "heavymg",
+        "WS 006": "heavymg",
+        "WS 009": "heavymg",
+        "WS 011": "lightdualmg"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 007": "chaingun",
+        "WS 008": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 010": "ioncannon",
+        "WS 012": "ioncannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
