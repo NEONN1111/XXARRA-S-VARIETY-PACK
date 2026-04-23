@@ -10,6 +10,7 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
 import com.fs.starfarer.api.input.InputEventAPI;
 
 import neon.nsp.data.scripts.NSPPeople;
+import neon.nsp.data.scripts.starsystems.Revanchol_starsystem;
 import neon.nsp.data.scripts.util.ExplosionOcclusionRaycast;
 import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
@@ -80,6 +81,8 @@ public class NSPModPlugin extends BaseModPlugin {
     @Override
     public void onNewGameAfterEconomyLoad() {
         CustomFleetsNSP.spawnFleetXIVictus();
+
+        new Revanchol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
         new NSPPeople().nsp_createPeople();
     }
 

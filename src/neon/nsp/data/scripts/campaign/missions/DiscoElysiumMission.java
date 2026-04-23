@@ -32,7 +32,9 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         COMPLETED,
     }
 
-    protected MarketAPI originMarket;
+    protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revanhol_market");
+    protected MarketAPI TriTachMarket = Global.getSector().getEconomy().getMarket("nsp_deora_market");
+    protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revanchol_miningstation_market");
     protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSPPeople.HARRYDISCODUBOIS);
 
 
@@ -101,8 +103,13 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         triggerFleetAllowJump();
         triggerMakeFleetIgnoredByOtherFleets();
         triggerMakeFleetIgnoreOtherFleetsExceptPlayer();
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_HOLD_VS_STRONGER,true);
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE,false);
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE,true);
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_PURSUE_PLAYER,true);
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_ALLOW_LONG_PURSUIT,true);
         triggerSetFleetFaction(Factions.MERCENARY);
-        triggerPickLocationAroundPlayer(100f);
+        triggerPickLocationAroundPlayer(1000f);
         triggerSpawnFleetAtPickedLocation();
         triggerFleetMakeImportant("$disco_mission_hostile_fleet", Stage.ACT_4);
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE, true);
@@ -159,14 +166,14 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         if (action.equals("DiscoCompleteAct1")) {
             Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act1_complete", true);
             Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act1_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(originMarket, "$disco_mission_act2", Stage.ACT_2);
+            makeImportant(stationMarket, "$disco_mission_act2", Stage.ACT_2);
             return true;
         }
 
         if (action.equals("DiscoCompleteAct2")) {
             Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act2_complete", true);
             Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act2_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(originMarket, "$disco_mission_act3", Stage.ACT_3);
+            makeImportant(TriTachMarket, "$disco_mission_act3", Stage.ACT_3);
             return true;
         }
 

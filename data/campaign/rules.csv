@@ -1318,7 +1318,7 @@ nsp_templar_commsOpen,OpenCommLink,$entity.nsp_templar score:1000,EndConversatio
 The soft sounds of the error notifications align just so, almost forming a melody you must have heard somewhere once. Or perhaps not. You return your attention to your command. No time for daydreaming.",,
 #END this is wip ignore it pretty please,,,,,,
 ,,,,,,
-# Revachol,,,,,,
+# Start of Disco Elysium mission,,,,,,
 DisoBarOptionStart,AddBarEvents,"$market.id == eldfell
 !$discoBar
 ","AddBarEvent DiscoBar_start ""this shit is disco"" ""so disco."" luddicChurchColor",,,
@@ -1330,53 +1330,55 @@ Call $global.disco_mission_ref updateData",,"backToBar:""that shit was disco""",
 ,,,,,,
 ,,,,,,
 ,,,,,,
-nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == eldfell
+nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revanchol_market
 !$global.disco_mission_prologue_complete","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
 nsp_DE_mission_Baroption_start,DialogOptionSelected,$option == DiscoE_Bar_startoption,"ShowPersonVisual true nsp_harry_dubois
 BeginMission nsp_disco_mission
 $global.disco_mission_prologue_complete = true",IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!,"backToBar:""Return to the bar""",
 ,,,,,,
-nsp_DE_mission_Act1_Inv1_addoption,PopulateOptions,"$market.id == eldfell
+nsp_DE_mission_Act1_InvRevanchol1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_prologue_complete
-!$global.disco_mission_inv_p1",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
-DiscoE_Act1_Inv1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv_p1 = true
-FireAll PopulateOptions
-$disco_mission_act1_complete = true
-Call $global.disco_mission_ref DiscoCompleteAct1
-Call $global.disco_mission_ref updateStage",Investigated $marketName so well it become cleaner. - Part 1,,
-DiscoE_Act1_Inv2_addoption,PopulateOptions,"$market.id == eldfell
+!$global.disco_mission_act1_complete",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
+nsp_DE_mission_Act1_InvRevanchol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"Call $global.disco_mission_ref DiscoCompleteAct1
+Call $global.disco_mission_ref updateStage
+FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 1,,
+nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revanchol_miningstation_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_inv_p1
-!$global.disco_mission_inv_p2",,,DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2,
-DiscoE_Act1_Inv2_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"$global.disco_mission_inv_p2 = true
-FireAll PopulateOptions
-$disco_mission_act2_complete = true
-Call $global.disco_mission_ref DiscoCompleteAct2
-Call $global.disco_mission_ref updateStage",Investigated $marketName so well it become cleaner. - Part 2,,
-DiscoE_Act1_Inv3_addoption,PopulateOptions,"$market.id == eldfell
+$global.disco_mission_act1_complete
+!$global.disco_mission_act2_complete",,,DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2,
+nsp_DE_mission_Act2_RMS_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"Call $global.disco_mission_ref DiscoCompleteAct2
+Call $global.disco_mission_ref updateStage
+FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 2,,
+nsp_DE_mission_Act3_Deora_addoption,PopulateOptions,"$market.id == nsp_deora_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_inv_p2
-!$global.disco_mission_inv_p3",,,DiscoE_Inv_p3_startOption:Investigate $marketName - Part 2,
-DiscoE_Act1_Inv3_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"$global.disco_mission_inv_p3 = true
-FireAll PopulateOptions
-$disco_mission_act3_complete = true
-Call $global.disco_mission_ref DiscoCompleteAct3
-Call $global.disco_mission_ref updateStage",Investigated $marketName so well it become cleaner. - Part 3,,
-DiscoE_Act1_Trubunal1_addoption,PopulateOptions,"$market.id == eldfell
+$global.disco_mission_act2_complete
+!$global.disco_mission_act3_complete",,,DiscoE_Inv_p3_startOption:Investigate $marketName - Part 2,
+nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"Call $global.disco_mission_ref DiscoCompleteAct3
+Call $global.disco_mission_ref updateStage
+FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 3,,
+nsp_DE_mission_Act4_toRevanchol_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_inv_p3",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL,
-DiscoE_Act1_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_inv_p3 = true
-$disco_mission_act1_complete = true
-FireAll PopulateOptions
-$disco_mission_act4_complete = true
-Call $global.disco_mission_ref DiscoCompleteAct4
-Call $global.disco_mission_ref updateStage",Investigated $marketName so well it become cleaner. - Tribunal,,
-nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == eldfell
+$global.disco_mission_act3_complete
+!$global.disco_mission_act4_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL,
+nsp_DE_mission_Act4_toRevanchol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"Call $global.disco_mission_ref DiscoCompleteAct4
+Call $global.disco_mission_ref updateStage
+FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Tribunal,,
+nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
+$menuState == main
+$tradeMode == OPEN
+$global.disco_mission_act4_complete
+!$global.$disco_mission_epilogue_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL,
+nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"Call $global.disco_mission_ref DiscoCompleteEpilogue
+Call $global.disco_mission_ref updateStage
+FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - End,,
+,,,,,,
+,,,,,,
+nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == nsp_revanchol_market
 #addchecks for completed mission later","AddBarEvent DiscoE_HireHarry_BarOption ""You see familiar faces of Harry and Kim sitting at farther side of the bar "" ""Join them for a drink, for old times sake""",,,
 nsp_HireHarry_placeholder_hubFire,DialogOptionSelected,$option == DiscoE_HireHarry_BarOption,"ShowPersonVisual true nsp_harry_dubois
 FireAll nsp_HireHarry_hub","As you approach their table, Kim stand up to greet you. Looks like they noticed you in the bar right away, but didn't want to interfere with your business.
@@ -1389,8 +1391,7 @@ CallEvent $ome_eventRef printSkills nsp_harry_dubois
 $askedSkills = true 0
 unset $askedSkills",,"1:nsp_HireHarry_Yes:""Sounds good.""
 99:backToBar:""Return to the bar"".",
-nsp_HireHarry_placeholder_YesHire,DialogOptionSelected,$option == nsp_HireHarry_Yes,"AddText ""You cut the comm link after exchanging a few pleasantries.""
-#CallEvent $ome_eventRef hireOfficer $id
+nsp_HireHarry_placeholder_YesHire,DialogOptionSelected,$option == nsp_HireHarry_Yes,"nsp_AddOfficer nsp_harry_dubois
 UpdateMemory
 ShowDefaultVisual
 EndConversation",Should call here either to hiring code or to mission/event ref.,,
