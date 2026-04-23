@@ -100,6 +100,10 @@
 	[
             {"file":"sounds/threat_lidar_pulse.ogg","pitch":1,"volume":1},
         ],
+				"nsp_od_bomb_explosion":
+	[
+            {"file":"sounds/nsp_od_detonate.ogg","pitch":1,"volume":1},
+        ],
 			
 	
 		

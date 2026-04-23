@@ -46,3 +46,5 @@ Medium Vector Engine Cap,nsp_dkengcap_m,,,,1,120,,,,55,,,,,,,,,,,,,,,,,,,,,,,SYS
 Large Vector Engine Cap,nsp_sotf_dkengcap_l,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
 Seeking Gaze,threat_lidarbeam,0,,1,0,100,,,0,200,0,1000,1000,,ENERGY,,0,0.2,0.2,0.35,0,,,,,1000000,,,,,,,SYSTEM,lidar,,,,Special,,,,,,,,,,43.5
 AAAAAAAAAAA,nsp_antimatter_injector,3,,10000,600,,500,,3,40,22,,,,KINETIC,20,,,0.05,6,0.05,0,0,0,0,,400,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted, nsp_engine",,,,Anti Everything,,,,,,,,,,20
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Orion Device Bomb Launcher,nsp_od_bomblauncher_lp,0,,200000,1000,,2000,,25,30,12,30,,,HIGH_EXPLOSIVE,0,,0,3,1,,0,0,0,0,,50,50,1,10000,,,SYSTEM,,,,,,,,,,,,,,,38.8

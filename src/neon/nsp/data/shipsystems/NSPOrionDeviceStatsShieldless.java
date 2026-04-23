@@ -109,7 +109,7 @@ public class NSPOrionDeviceStatsShieldless extends BaseShipSystemScript {
 		public float shapedExplosionOffset = 50f;
 		public float shapedExplosionEndSizeMin = 1f;
 		public float shapedExplosionEndSizeMax = 2f;
-		public Color shapedExplosionColor = new Color(255,125,25,155);
+		public Color shapedExplosionColor = new Color(200,125,255,255);
 		public int shapedExplosionNumParticles = 200;
 		public float shapedExplosionMinParticleSize = 80;
 		public float shapedExplosionMaxParticleSize = 100;
@@ -119,7 +119,7 @@ public class NSPOrionDeviceStatsShieldless extends BaseShipSystemScript {
 		public float shapedExplosionMinParticleDur = 1f;
 		public float shapedExplosionMaxParticleDur = 2f;
 		public float shapedExplosionArc = 90f;
-		public Color jitterColor = new Color(255,125,25,55);
+		public Color jitterColor = new Color(200,125,255,55);
 		public float maxJitterDur = 2f;
 
 		public float pusherPlateMaxOffset = 14f;
@@ -131,7 +131,7 @@ public class NSPOrionDeviceStatsShieldless extends BaseShipSystemScript {
 
 		public boolean recolorTowardsEngineColor = false;
 
-		public String bombWeaponId = "od_bomblauncher";
+		public String bombWeaponId = "nsp_od_bomblauncher_lp";
 	}
 
 

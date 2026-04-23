@@ -1,0 +1,48 @@
+{
+	"id":"nsp_od_bomb",
+	"specClass":"missile",
+	"missileType":"BOMB",
+	"sprite":"graphics/missiles/phase_charge_base.png",
+	"size":[6,10],	
+	"center":[3,5],
+	"collisionRadius":12,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[148,0,211,255], # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":150, # purely visual
+	"fizzleOnReachingWeaponRange":true,
+	"flameoutTime":0.05, # total time from flameout to full fadeout
+	"noEngineGlowTime":0.05, # time spent without the engine glow being rendered
+	"fadeTime":0.05, # fadeout duration
+	"renderTargetIndicator":false,		
+	"explosionSpec":{"duration":0.1f, # not visual
+					 "radius":75,
+					 "coreRadius":50, # full damage within core radius
+					 "collisionClass":MISSILE_FF,
+					 "collisionClassByFighter":MISSILE_FF},
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					"range":0,
+					"explosionSpec":{"duration":0.12f,
+									 "radius":200,
+									 "coreRadius":150, # full damage within core radius - at least equal to proximity fuse range
+									 "collisionClass":PROJECTILE_FF,
+									 "collisionClassByFighter":PROJECTILE_FIGHTER,
+									 "particleSizeMin":3.0,
+									 "particleSizeRange":3.0,
+									 "particleDuration":1,
+									 "particleCount":50,
+									 "particleColor":[148,70,211,255],
+									 "explosionColor":[155,125,255,255],
+									 "useDetailedExplosion":true,
+									 "useDetailedExplosionColorAlpha":true,
+									 "detailedExplosionRadius":100,
+									 "detailedExplosionFlashRadius":250,
+									 "detailedExplosionFlashDuration":0.5,
+									 "detailedExplosionFlashColorFringe":[200,125,255,255],
+									 "detailedExplosionFlashColorCore":[155,155,155,255],
+									 "sound":"nsp_od_bomb_explosion"},									 
+					},
+	"engineSpec":{"turnAcc":100,
+				  "turnRate":10,
+				  "acc":0,
+				  "dec":0}
+}
