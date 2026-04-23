@@ -1364,7 +1364,7 @@ nsp_DE_mission_Act4_toRevanchol_addoption,PopulateOptions,"$market.id == nsp_rev
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_act3_complete
-!$global.disco_mission_act4_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL,
+!$global.disco_mission_act4_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - past TRIBUNAL,
 nsp_DE_mission_Act4_toRevanchol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"Call $global.disco_mission_ref DiscoCompleteAct4
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Tribunal,,
@@ -1372,8 +1372,8 @@ nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revanc
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_act4_complete
-!$global.$disco_mission_epilogue_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - TRIBUNAL,
-nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"Call $global.disco_mission_ref DiscoCompleteEpilogue
+!$global.$disco_mission_epilogue_complete",,,DiscoE_Inv_End_startOption:Investigate $marketName - End mission,
+nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_End_startOption,"Call $global.disco_mission_ref DiscoCompleteEpilogue
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - End,,
 ,,,,,,
