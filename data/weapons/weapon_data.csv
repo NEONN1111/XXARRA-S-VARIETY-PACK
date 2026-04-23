@@ -41,6 +41,7 @@ Centurion (A) Cover,nsp_cent_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,
 #DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Pusher Plate (Small),nsp_pusherplate_small,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
 Pusher Plate (Tiny),nsp_pusherplate_tiny,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
+Pusher Plate (Champ),nsp_pusherplate_champ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,pusherplate,,,,,,,,,,,,,,42.75
 Medium Vector Engine Cap,nsp_dkengcap_m,,,,1,120,,,,55,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 Large Vector Engine Cap,nsp_sotf_dkengcap_l,,,,1,120,,,,45,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted",,,,,,,,,,,,,,
 Seeking Gaze,threat_lidarbeam,0,,1,0,100,,,0,200,0,1000,1000,,ENERGY,,0,0.2,0.2,0.35,0,,,,,1000000,,,,,,,SYSTEM,lidar,,,,Special,,,,,,,,,,43.5

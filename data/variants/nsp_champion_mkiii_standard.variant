@@ -3,13 +3,14 @@
   "hullId": "nsp_champion_mkiii",
   "displayName": "Zealous",
   "goalVariant": true,
-  "fluxCapacitors": 0,
-  "fluxVents": 19,
+  "fluxCapacitors": 5,
+  "fluxVents": 24,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",
-    "blast_doors"
+    "blast_doors",
+    "missleracks"
   ],
   "weaponGroups": [
     {
@@ -23,15 +24,15 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 008": "devastator"
+        "WS0001": "jackhammer",
+        "WS0004": "jackhammer"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "devastator",
-        "WS0004": "devastator"
+        "WS 008": "devastator"
       }
     },
     {
@@ -53,10 +54,7 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS 000": "ioncannon",
-        "WS 001": "ioncannon"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,

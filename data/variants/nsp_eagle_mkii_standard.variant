@@ -4,7 +4,7 @@
   "displayName": "Zealous",
   "goalVariant": true,
   "fluxCapacitors": 0,
-  "fluxVents": 10,
+  "fluxVents": 14,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
@@ -14,38 +14,36 @@
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 005": "jackhammer",
-        "WS 006": "jackhammer",
-        "WS 009": "jackhammer"
+        "WS 009": "devastator"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "hammer",
+        "WS 002": "hammer",
+        "WS 005": "hammer",
+        "WS 006": "hammer"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 001": "hammer",
-        "WS 002": "hammer"
+        "WS 007": "chaingun",
+        "WS 008": "chaingun"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "WS 010": "ioncannon",
-        "WS 012": "ioncannon",
-        "WS 013": "chaingun"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 007": "heavymg",
-        "WS 008": "heavymg",
-        "WS 011": "lightdualmg"
+        "WS 012": "ioncannon"
       }
     },
     {
