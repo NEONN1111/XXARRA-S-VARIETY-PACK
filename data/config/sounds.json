@@ -104,6 +104,18 @@
 	[
             {"file":"sounds/nsp_od_detonate.ogg","pitch":1,"volume":1},
         ],
+					"nsp_otpc_fire1":
+	[
+            {"file":"sounds/otpc_fire4.ogg","pitch":1,"volume":1},
+        ],
+			"nsp_rammingdrive_start":
+	[
+            {"file":"sounds/nsp_zealouscharge_start.ogg","pitch":1,"volume":1},
+        ],
+				"nsp_rammingdrive_loop":
+	[
+            {"file":"sounds/nsp_zealouscharge_loop.ogg","pitch":1,"volume":1},
+        ],
 			
 	
 		

@@ -127,7 +127,7 @@ public class NSPOrionDeviceStatsShieldless extends BaseShipSystemScript {
 		public float pusherPlateImpulseDuration = 0.2f;
 
 		public float impactAccel = 8000f;
-		public float impactRateMult = 2.5f;
+		public float impactRateMult = 1.5f;
 
 		public boolean recolorTowardsEngineColor = false;
 

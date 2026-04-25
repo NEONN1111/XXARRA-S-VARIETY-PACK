@@ -16,13 +16,14 @@
     "rugged",
     "ancient_forge",
     "nsp_hardened_armor",
-    "nsp_armorparent"
+    "nsp_armorparent",
+	"heavycompositeintegration_nsp"
   ],
   "weaponSlots": [
     {
       "id": "WS 000",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 160,
       "angle": 30,
@@ -31,7 +32,7 @@
     {
       "id": "WS 001",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 160,
       "angle": -30,

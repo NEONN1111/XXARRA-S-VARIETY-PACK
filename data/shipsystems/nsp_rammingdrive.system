@@ -1,0 +1,41 @@
+{
+	"id":"nsp_rammingdrive",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"neon.nsp.data.shipsystems.ai.NSP_ramming_ai",
+	
+	"statsScript":"neon.nsp.data.shipsystems.nsp_ramDrive",
+	
+	"engineGlowLengthMult":1.75,
+	"engineGlowWidthMult":1.35,
+	"engineGlowGlowMult":1.2,
+	
+	#"jitterUnderColor":[255,80,30,135],
+	#"jitterUnderCopies":25,
+	#"jitterUnderMinRange":0,
+	#"jitterUnderRange":5,
+	#"jitterUnderRangeRadiusFraction":0,
+	
+	#"jitterColor":[255,140,60,65],
+	#"jitterCopies":2,
+	#"jitterMinRange":0,
+	#"jitterRange":2,
+	#"jitterRangeRadiusFraction":0,
+	
+	"flameoutOnImpactChance":0.0,
+
+	"clampTurnRateAfter":false,
+	"clampMaxSpeedAfter":false,
+	"alwaysAccelerate":true,
+
+	#"useSound":"ork_burner_activate",
+	#"loopSound":"ork_burner_loop",
+	#"deactivateSound":"ability-sustained_burn_02",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":900,
+		"burstMovementPotential":1500,
+		"averageSpeedIncrease":900,
+	}
+}

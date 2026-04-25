@@ -20,7 +20,9 @@
     "terminator_wing"
   ],
   "builtInWeapons": {
-    "WS0008": "nsp_pusherplate_champ"
+    "WS0008": "nsp_pusherplate_champ",
+    "WS0010": "nsp_champdeco2",
+    "WS0011": "nsp_champdeco1"
   },
   "weaponSlots": [
     {
@@ -79,21 +81,21 @@
     },
     {
       "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "COMPOSITE",
+      "size": "LARGE",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [135, -38]
+      "locations": [111, -38]
     },
     {
       "id": "WS0004",
-      "size": "MEDIUM",
-      "type": "COMPOSITE",
+      "size": "LARGE",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [135, 38]
+      "locations": [111, 38]
     },
     {
       "id": "WS0002",
@@ -157,6 +159,24 @@
       "arc": 5,
       "angle": 180,
       "locations": [-122.5, 0]
+    },
+    {
+      "id": "WS0010",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [110.5, 44.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [108.5, -44]
     }
   ],
   "engineSlots": [
@@ -232,8 +252,8 @@
     136.5, -14.5,
     138.5, -18,
     131, -30,
-    143, -30,
-    143, -45.5,
+    129.5, -34,
+    133.5, -43.5,
     140, -47,
     143.5, -50.5,
     138, -53.5,
@@ -318,8 +338,8 @@
     138, 53.5,
     143.5, 50.5,
     140, 47,
-    143, 45.5,
-    143, 30,
+    133.5, 43.5,
+    129.5, 34,
     131, 30,
     138.5, 18,
     136.5, 14.5,

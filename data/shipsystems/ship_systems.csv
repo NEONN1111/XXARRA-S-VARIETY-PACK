@@ -30,3 +30,4 @@ Construction Swarm,nsp_construction_swarm,,,,,,,,4,,0.1,,0.4,,,,,,,,,,,,,,graphi
 Orion Device (LP),orion_device_shieldless,,,,,,,,4,0.2,0,0.001,0,1,,,,,,,,,,,,movement,graphics/icons/hullsys/orion_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Zealot's Charge,zealotscharge,1,,,,,,,,,2.7,6,1,14,,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/burn_drive.png
+Fervent Charge,nsp_rammingdrive,,,,,.2,,,,,3.4,3.7,1,18.6,,,,,,,TRUE,,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png

@@ -17,16 +17,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 009": "hammerrack"
+        "WS 009": "hammerrack",
+        "WS0001": "devastator",
+        "WS0004": "devastator"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0001": "jackhammer",
-        "WS0004": "jackhammer"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,

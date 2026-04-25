@@ -48,3 +48,10 @@ Seeking Gaze,threat_lidarbeam,0,,1,0,100,,,0,200,0,1000,1000,,ENERGY,,0,0.2,0.2,
 AAAAAAAAAAA,nsp_antimatter_injector,3,,10000,600,,500,,3,40,22,,,,KINETIC,20,,,0.05,6,0.05,0,0,0,0,,400,,,,,,SYSTEM,"no_drop, no_drop_salvage, restricted, nsp_engine",,,,Anti Everything,,,,,,,,,,20
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Orion Device Bomb Launcher,nsp_od_bomblauncher_lp,0,,200000,1000,,2000,,25,30,12,30,,,HIGH_EXPLOSIVE,0,,0,3,1,,0,0,0,0,,50,50,1,10000,,,SYSTEM,,,,,,,,,,,,,,,38.8
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,nsp_champdeco1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,nsp_champdeco2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Overclocked Thermal Pulse Cannon,nsp_utpc,0,,100000,800,,300,,0,0,20000,15,1,,ENERGY,200,,0,0.1,999999,0.3,0,5,1,2,,1000,,,,,,SYSTEM,,,,,Assault,,,,,"Can spawn up to %s splinter projectiles per shot, dealing %s energy and EMP damage each",15 | 50,Individual shots can be fired manually at higher rate of fire,,,
+OTPC Splinter,nsp_utpc_splinter,0,,100000,800,,50,50,0,0,,,,,ENERGY,40,,0,4.6,3,0.2,0,10,2,5,,1000,,,,,,SYSTEM,,,,,,,,,,,,,,,
+Zealous Injector,nsp_zealousinjector,0,,1,55,1,,,0,200,0,,,,ENERGY,,0,0.1,0.1,,,,,,,1000000,,,,,,,SYSTEM,"nova, fixed_range",,,,Special,,,,,,,,,,43.75

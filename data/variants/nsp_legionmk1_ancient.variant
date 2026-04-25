@@ -3,7 +3,7 @@
   "hullId": "nsp_legionmk1",
   "displayName": "Ancient",
   "goalVariant": true,
-  "fluxCapacitors": 26,
+  "fluxCapacitors": 24,
   "fluxVents": 40,
   "quality": 1,
   "permaMods": [],
@@ -17,15 +17,15 @@
   "weaponGroups": [
     {
       "autofire": true,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
-        "WS 000": "devastator",
-        "WS 001": "devastator"
+        "WS 000": "hammerrack",
+        "WS 001": "hammerrack"
       }
     },
     {
       "autofire": false,
-      "mode": "ALTERNATING",
+      "mode": "LINKED",
       "weapons": {
         "WS 005": "arbalest",
         "WS0001": "arbalest",
