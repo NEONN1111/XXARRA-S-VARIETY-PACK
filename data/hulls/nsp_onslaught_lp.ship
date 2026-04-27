@@ -179,7 +179,7 @@
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 135,
-      "angle": -80,
+      "angle": -51.5,
       "locations": [73, -87]
     },
     {

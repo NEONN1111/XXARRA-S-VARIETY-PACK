@@ -22,12 +22,19 @@ public class nsp_ramDrive extends BaseShipSystemScript {
     private static final float BASE_MASS_SCALAR = 1.25f;
     private static final float BASE_TURN_BOOST_MULT = 1.5f;
 
-    // Self-damage configuration
+
+    private static final float MIN_ENGINE_LENGTH = 0.01f;
+    private static final float MAX_ENGINE_LENGTH = 4f;
+
+
     public static float SELF_DAMAGE_FLUX_MULT = 0.15f;
     public static float SELF_DAMAGE_MIN_HULL = 0.2f;
 
-    // Malfunction configuration
+
     public static float MALFUNCTION_CHANCE = 0.33f;
+
+
+    public static final Object ENGINE_EFFECTS_KEY = new Object();
 
     private static final Map<ShipAPI.HullSize, Float> EXPLOSION_SIZE_MAP = new HashMap<>();
     static {
@@ -97,12 +104,48 @@ public class nsp_ramDrive extends BaseShipSystemScript {
     private boolean upMassed = false;
     private boolean hasAppliedMalfunction = false;
     private Random random = new Random();
+    private float currentEngineLength = 0f;
 
     public static Vector2f calculateHeader(float facing) {
         double angle = Math.toRadians(facing);
         Vector2f dir = new Vector2f((float) Math.cos(angle), (float) Math.sin(angle));
         if (dir.lengthSquared() > 0f) dir.normalise();
         return dir;
+    }
+
+
+    protected void updateEngineEffects(ShipAPI ship, float effectLevel, State state) {
+        float targetLength = 0f;
+
+        if (state == State.IN) {
+
+            float t = effectLevel;
+
+            float easedT = t * t * (3f - 2f * t);
+            targetLength = MIN_ENGINE_LENGTH + (MAX_ENGINE_LENGTH - MIN_ENGINE_LENGTH) * easedT;
+
+        } else if (state == State.ACTIVE) {
+
+            targetLength = MAX_ENGINE_LENGTH;
+
+        } else if (state == State.OUT) {
+
+            float t = effectLevel;
+
+            float easedT = t * t * (3f - 2f * t);
+            targetLength = MIN_ENGINE_LENGTH + (MAX_ENGINE_LENGTH - MIN_ENGINE_LENGTH) * easedT;
+
+        } else {
+
+            targetLength = 0f;
+        }
+
+
+        float rampSpeed = 0.15f;
+        currentEngineLength = currentEngineLength * (1f - rampSpeed) + targetLength * rampSpeed;
+
+
+        ship.getEngineController().extendFlame(ENGINE_EFFECTS_KEY, currentEngineLength, 0f, 0f);
     }
 
     protected void applySelfDamage(ShipAPI ship, float amount, float effectLevel) {
@@ -136,7 +179,7 @@ public class nsp_ramDrive extends BaseShipSystemScript {
         }
     }
 
-    // Fire decorative weapons with NOVA tag
+
     protected void fireDecoWeapons(ShipAPI ship) {
         for (WeaponAPI w : ship.getAllWeapons()) {
             if (w.isDecorative() && w.getSpec().hasTag(Tags.NOVA)) {
@@ -146,7 +189,7 @@ public class nsp_ramDrive extends BaseShipSystemScript {
         }
     }
 
-    // Create explosions behind every engine on the ship
+
     protected void createEngineExplosions(ShipAPI ship, float explosionSize, float explosionDuration, Color explosionColor) {
         CombatEngineAPI engine = Global.getCombatEngine();
         if (engine == null) return;
@@ -181,6 +224,9 @@ public class nsp_ramDrive extends BaseShipSystemScript {
         Color explosionColor = new Color(255, 163, 135, 255);
         Color jitterColor = new Color(255, 84, 84, 64);
 
+
+        updateEngineEffects(ship, effectLevel, state);
+
         if (state == State.OUT) {
             stats.getMaxSpeed().unmodify(id);
             stats.getDeceleration().unmodify(id);
@@ -208,10 +254,10 @@ public class nsp_ramDrive extends BaseShipSystemScript {
                 float baseMaxSpeed = stats.getMaxSpeed().getBaseValue();
                 stats.getMaxSpeed().modifyFlat(id, speedBoost - baseMaxSpeed);
 
-                // FIRE DECO WEAPONS WITH NOVA TAG RIGHT BEFORE EXPLOSIONS
+
                 fireDecoWeapons(ship);
 
-                // Create explosions behind every engine
+
                 createEngineExplosions(ship, explosionSize, BASE_EXPLOSION_DURATION, explosionColor);
 
                 Vector2f behindShip = new Vector2f(header);
@@ -323,6 +369,12 @@ public class nsp_ramDrive extends BaseShipSystemScript {
                 }
             }
             upMassed = false;
+        }
+
+
+        if (ship != null) {
+            currentEngineLength = 0f;
+            ship.getEngineController().extendFlame(ENGINE_EFFECTS_KEY, 0f, 0f, 0f);
         }
 
         hasAppliedMalfunction = false;

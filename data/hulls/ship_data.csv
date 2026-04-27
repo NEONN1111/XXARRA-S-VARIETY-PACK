@@ -143,3 +143,7 @@ Dominator Mk.1,nsp_dominatormk1,Heavy Cruiser,Domain Restricted,combat_burn,15,2
 ,nsp_dominatormk1_armorright,Vambrace Module,Domain Restricted,,1,13000,1000,0,2500,100,0,,0,0,0,10,10,300,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","module_hull_bar_only, always_detaches, module_unselectable, module_refit_bright",,10000,2,4,,,,,,,,,
 ,nsp_dominatormk1_armorleft,Vambrace Module,Domain Restricted,,1,13000,1000,0,2500,100,0,,0,0,0,10,10,300,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX, MODULE","module_hull_bar_only, always_detaches, module_unselectable, module_refit_bright",,10000,2,4,,,,,,,,,
 Onslaught Mk.I,onslaught_mk1,Battleship,Domain Restricted,combat_burn,28,30000,1200,15000,12500,500,300,,20,8,8,4,4,4000,NONE,,0,0,0,,,900,1800,700,800,10,80,7,300000,5,10,600 ,,50,50,SHIP_WITH_MODULES,"no_auto_penalty, codex_unlockable, no_dealer",,0.4,2,4,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Vesper,nsp_vesper,Battlecruiser,Unknown,NSP_drift,24,12000,1200,20000,30000,900,240,,45,20,15,6,4,2500,OMNI,,200,0.4,1.0,,,150,300,300,300,10,30,8,500000,3,15,600,0.25,35,35,,,,,,,,"rare_bp, merc",,,,0.5,2,4,

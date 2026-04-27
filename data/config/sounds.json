@@ -110,11 +110,11 @@
         ],
 			"nsp_rammingdrive_start":
 	[
-            {"file":"sounds/nsp_zealouscharge_start.ogg","pitch":1,"volume":1},
+            {"file":"sounds/nsp_zealouscharge_start.ogg","pitch":1,"volume":0.5},
         ],
 				"nsp_rammingdrive_loop":
 	[
-            {"file":"sounds/nsp_zealouscharge_loop.ogg","pitch":1,"volume":1},
+            {"file":"sounds/nsp_zealouscharge_loop.ogg","pitch":1,"volume":0.5},
         ],
 			
 	
