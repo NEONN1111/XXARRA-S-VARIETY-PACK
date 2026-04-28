@@ -1319,62 +1319,62 @@ The soft sounds of the error notifications align just so, almost forming a melod
 #END this is wip ignore it pretty please,,,,,,
 ,,,,,,
 # Start of Disco Elysium mission,,,,,,
-DisoBarOptionStart,AddBarEvents,"$market.id == eldfell
-!$discoBar
-","AddBarEvent DiscoBar_start ""this shit is disco"" ""so disco."" luddicChurchColor",,,
-DiscoBarEvent1,DialogOptionSelected,$option == DiscoBar_start,,"""disco disco disco""","DiscoBarEvent_1b:""disco""",
-DiscoBarEvent1b,DialogOptionSelected,$option == DiscoBarEvent_1b,,"""disco disco disco""","DiscoBarEvent_1c:""disco""",
-DiscoBarrEvent1c,,$option == DiscoBarEvent_1c,"$discoBar = true
-BeginMission nsp_disco_mission
-Call $global.disco_mission_ref updateData",,"backToBar:""that shit was disco""",
-,,,,,,
-,,,,,,
 ,,,,,,
 nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revanchol_market
-!$global.disco_mission_prologue_complete","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
+!$global.disco_mission_prologue_complete
+!$global.disco_mission_completed","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
 nsp_DE_mission_Baroption_start,DialogOptionSelected,$option == DiscoE_Bar_startoption,"ShowPersonVisual true nsp_harry_dubois
 BeginMission nsp_disco_mission
-$global.disco_mission_prologue_complete = true",IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!,"backToBar:""Return to the bar""",
+$global.disco_mission_prologue_complete = true
+Call $global.disco_mission_ref DiscoStartMission
+Call $global.disco_mission_ref updateData",IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!,"backToBar:""Return to the bar""",
 ,,,,,,
 nsp_DE_mission_Act1_InvRevanchol1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_prologue_complete
-!$global.disco_mission_act1_complete",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
-nsp_DE_mission_Act1_InvRevanchol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"Call $global.disco_mission_ref DiscoCompleteAct1
+!$global.disco_mission_inv1_complete
+!$global.disco_mission_completed",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
+nsp_DE_mission_Act1_InvRevanchol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv1_complete = true
+Call $global.disco_mission_ref DiscoCompleteInvestigation1
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 1,,
 nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revanchol_miningstation_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_act1_complete
-!$global.disco_mission_act2_complete",,,DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2,
-nsp_DE_mission_Act2_RMS_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"Call $global.disco_mission_ref DiscoCompleteAct2
+$global.disco_mission_inv1_complete
+!$global.disco_mission_inv2_complete",,,DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2,
+nsp_DE_mission_Act2_RMS_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"$global.disco_mission_inv2_complete = true
+Call $global.disco_mission_ref DiscoCompleteInvestigation2
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 2,,
 nsp_DE_mission_Act3_Deora_addoption,PopulateOptions,"$market.id == nsp_deora_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_act2_complete
-!$global.disco_mission_act3_complete",,,DiscoE_Inv_p3_startOption:Investigate $marketName - Part 2,
-nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"Call $global.disco_mission_ref DiscoCompleteAct3
+$global.disco_mission_inv2_complete
+!$global.disco_mission_inv3_complete",,,DiscoE_Inv_p3_startOption:Investigate $marketName - Part 3,
+nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"$global.disco_mission_inv3_complete = true
+Call $global.disco_mission_ref DiscoCompleteInvestigation3
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 3,,
 nsp_DE_mission_Act4_toRevanchol_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_act3_complete
-!$global.disco_mission_act4_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - past TRIBUNAL,
-nsp_DE_mission_Act4_toRevanchol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"Call $global.disco_mission_ref DiscoCompleteAct4
+$global.disco_mission_inv3_complete
+!$global.disco_mission_act3_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - past TRIBUNAL,
+nsp_DE_mission_Act4_toRevanchol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_act3_complete = true
+Call $global.disco_mission_ref DiscoCompleteTribunal
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Tribunal,,
 nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
 $menuState == main
 $tradeMode == OPEN
-$global.disco_mission_act4_complete
-!$global.$disco_mission_epilogue_complete",,,DiscoE_Inv_End_startOption:Investigate $marketName - End mission,
-nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_End_startOption,"Call $global.disco_mission_ref DiscoCompleteEpilogue
+$global.disco_mission_act3_complete
+!$global.disco_mission_arrest_complete",,,DiscoE_Inv_End_startOption:Investigate $marketName - End mission,
+nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_End_startOption,"$global.disco_mission_arrest_complete = true
+Call $global.disco_mission_ref DiscoCompleteArrest
 Call $global.disco_mission_ref updateStage
+Call $global.disco_mission_ref updateData
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - End,,
 ,,,,,,
 ,,,,,,

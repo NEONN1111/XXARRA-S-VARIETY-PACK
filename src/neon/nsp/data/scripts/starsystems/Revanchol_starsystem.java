@@ -7,6 +7,8 @@ import com.fs.starfarer.api.impl.campaign.CoreLifecyclePluginImpl;
 import com.fs.starfarer.api.impl.campaign.econ.FreeMarket;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
+import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.StarAge;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
@@ -31,7 +33,7 @@ public class Revanchol_starsystem {
                 "star_yellow", // id in planets.json
                 480f, // radius (in pixels at default zoom)
                 400); // corona radius, from star edge
-        system.setLightColor(new Color(195, 187, 137)); // light color in entire system, affects all entities
+        system.setLightColor(new Color(220, 215, 189)); // light color in entire system, affects all entities
         star.setDiscoverable(false);
 
         //Tri Tach Sensor array
@@ -51,12 +53,12 @@ public class Revanchol_starsystem {
         //Small planet inside inner asteroid belt
         PlanetAPI planet1 = system.addPlanet("nsp_insulinde0", star, "Insulinde I", Planets.IRRADIATED,
                 230, //angle
-                40f, //radius
+                35f, //radius
                 1730, //distance from star
                 95f); //how many days to orbit
         //planet1.setCustomDescriptionId("nsp_revanchol");
         planet1.setDiscoverable(false);
-
+        PlanetConditionGenerator.generateConditionsForPlanet(planet1, StarAge.OLD);
 
         //Tri Tach Center of power in the system. Bombarded and Twice lost in early conflict with Revanchol
         //It mostly hosts entrenched military divisions of Tri-Tachyon.
@@ -64,7 +66,7 @@ public class Revanchol_starsystem {
         PlanetAPI Deora = system.addPlanet("nsp_deora", star, "Deora-of-the-Seven-Seas", Planets.BARREN_BOMBARDED,
                 180, //angle
                 80f, //radius
-                2550, //distance from star
+                2650, //distance from star
                 145f); //how many days to orbit
         Deora.setCustomDescriptionId("nsp_deora");
         Deora.setDiscoverable(false);
@@ -103,9 +105,30 @@ public class Revanchol_starsystem {
                 false //used by the method to make a market hidden like a pirate base, not recommended for generating markets in a core world
         );
 
-        planet1.setMarket(Deora_Marketplace);
+        Deora.setMarket(Deora_Marketplace);
         Deora_Marketplace.reapplyIndustries();
 
+
+        //Shades and Mirrors of Deora
+        SectorEntityToken shade1 = system.addCustomEntity(null,null, "stellar_shade", Factions.INDEPENDENT);
+        shade1.setCircularOrbitPointingDown(Deora, 0, 350, Deora.getCircularOrbitPeriod());
+
+
+        SectorEntityToken shade2 = system.addCustomEntity(null,null, "stellar_shade", Factions.INDEPENDENT);
+        shade2.setCircularOrbitPointingDown(Deora, 20, 350, Deora.getCircularOrbitPeriod());
+
+        SectorEntityToken shade3 = system.addCustomEntity(null,"Lost Stellar Shade", "stellar_shade", Factions.INDEPENDENT);
+        shade3.setCircularOrbitPointingDown(star, 35, Deora.getCircularOrbitRadius() - 350, Deora.getCircularOrbitPeriod());
+        shade3.setFacing(180);
+
+        SectorEntityToken mirror1 = system.addCustomEntity(null,null, "stellar_mirror", Factions.INDEPENDENT);
+        mirror1.setCircularOrbitPointingDown(Deora, 140, 400, Deora.getCircularOrbitPeriod());
+
+        SectorEntityToken mirror2 = system.addCustomEntity(null,null, "stellar_mirror", Factions.INDEPENDENT);
+        mirror2.setCircularOrbitPointingDown(Deora, 220, 400, Deora.getCircularOrbitPeriod());
+
+        SectorEntityToken mirror3 = system.addCustomEntity(null,"Lost Stellar Mirror", "stellar_mirror", Factions.INDEPENDENT);
+        mirror3.setCircularOrbitPointingDown(star, 135, Deora.getCircularOrbitRadius() + 400, Deora.getCircularOrbitPeriod());
         ////////////////////////////////////////////////////////
 
         // Actual Revanchol - from wiki descriptions quite unremarkable outside recent communist revolution and reactionary take over.
@@ -113,7 +136,7 @@ public class Revanchol_starsystem {
                 0, //angle
                 130f, //radius
                 4500f, //distance from star
-                600f); //how many days to orbit
+                240f); //how many days to orbit
         Revanchol.setCustomDescriptionId("nsp_revanchol");
         Revanchol.setDiscoverable(false);
 
@@ -153,7 +176,12 @@ public class Revanchol_starsystem {
         Revanchol_Marketplace.setFreePort(true);
         FreeMarket.get(Revanchol_Marketplace).setDaysActive(368);
 
+        JumpPointAPI jumppoint = Global.getFactory().createJumpPoint("nsp_insulinde_inner_jp", "Revanchol Jump-point");
 
+        jumppoint.setRelatedPlanet(Revanchol);
+        jumppoint.setCircularOrbit(star, 20, 4100, Revanchol.getCircularOrbitPeriod());
+        system.addEntity(jumppoint);
+        
         //Revanchol makeshift Relay
         SectorEntityToken loc2 = system.addCustomEntity(null,null, "comm_relay_makeshift", Factions.INDEPENDENT);
         loc2.getMemoryWithoutUpdate().set("$nsp_InsulindeRelay", true);
@@ -229,6 +257,7 @@ public class Revanchol_starsystem {
                 255f); //how many days to orbit
         //planet1.setCustomDescriptionId("nsp_revanchol");
         planet2.setDiscoverable(false);
+        PlanetConditionGenerator.generateConditionsForPlanet(planet2, StarAge.OLD);
 
 
 
@@ -244,8 +273,11 @@ public class Revanchol_starsystem {
                 78f); //how many days to orbit
         //planet1.setCustomDescriptionId("nsp_revanchol");
         planet2a.setDiscoverable(false);
+        PlanetConditionGenerator.generateConditionsForPlanet(planet2a, StarAge.OLD);
 
         Misc.setAllPlanetsSurveyed(system, true);
+        system.setEnteredByPlayer(true);
+
 
         // autogenerate jump points
         system.autogenerateHyperspaceJumpPoints(true, true);

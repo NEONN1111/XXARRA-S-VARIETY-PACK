@@ -1,35 +1,36 @@
 package neon.nsp.data.scripts.campaign.missions;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.Script;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.*;
+import com.fs.starfarer.api.impl.campaign.missions.FleetCreatorMission;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
-import com.fs.starfarer.api.impl.campaign.missions.hub.ReqMode;
+import com.fs.starfarer.api.impl.campaign.missions.hub.MissionFleetAutoDespawn;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.campaign.fleet.CampaignFleet;
 import neon.nsp.data.scripts.NSPPeople;
+import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.Color;
 import java.util.List;
 import java.util.Map;
-
-import static neon.nsp.data.scripts.util.NSPRanks.POST_DETECTIVE;
+import java.util.Random;
 
 public class DiscoElysiumMission extends HubMissionWithSearch {
 
     public static enum Stage {
-        PROLOGUE,
-        ACT_1,
-        ACT_2,
-        ACT_3,
-        ACT_4,
-        EPILOGUE,
-        COMPLETED,
+        INVESTIGATION_1, //on Revanchol
+        INVESTIGATION_2, //Go to station
+        INVESTIGATION_3, //Go to Deora
+        GO_BACK_TO_REVANCHOL, //short stage to "hide" Tribunal
+        TRIBUNAL, //Fight the Mercs
+        ARREST, //Go nack to Revanchol again
+        COMPLETED, //Good job, you are good girl/boy
+        FAILED //If refused to help or refused to fight Tribunal
     }
 
     protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revanhol_market");
@@ -37,12 +38,10 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
     protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revanchol_miningstation_market");
     protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSPPeople.HARRYDISCODUBOIS);
 
-
-    protected static final float DELAY_PROLOGUE_TO_ACT1 = 3f;
-    protected static final float DELAY_ACT1_TO_ACT2 = 2f;
-    protected static final float DELAY_ACT2_TO_ACT3 = 2f;
-    protected static final float DELAY_ACT3_TO_ACT4 = 2f;
-    protected static final float DELAY_ACT4_TO_EPILOGUE = 2f;
+    protected static final float DELAY_TO_INVESTIGATION_2 = 3f;
+    protected static final float DELAY_TO_INVESTIGATION_3 = 2f;
+    protected static final float DELAY_TO_TRIBUNAL = 2f;
+    protected static final float DELAY_TO_ARREST = 10f;
 
     @Override
     protected boolean create(MarketAPI createdAt, boolean barEvent) {
@@ -86,16 +85,18 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
 
         if (!setGlobalReference("$disco_mission_ref")) return false;
 
-        makeImportant(originMarket, "$disco_mission", Stage.PROLOGUE);
+        setStartingStage(Stage.INVESTIGATION_1);
+        setStageOnGlobalFlag(Stage.INVESTIGATION_2, "$disco_mission_inv1_complete");
+        setStageOnGlobalFlag(Stage.INVESTIGATION_3, "$disco_mission_inv2_complete");
+        setStageOnGlobalFlag(Stage.TRIBUNAL, "$disco_mission_inv3_complete");
+        setStageOnGlobalFlag(Stage.ARREST, "$disco_mission_act3_complete"); //should use $disco_mission_fleet_defeated but for now we're not testing that
+        setStageOnGlobalFlag(Stage.COMPLETED, "$disco_mission_arrest_complete");
+        setSuccessStage(Stage.COMPLETED);
+        setFailureStage(Stage.FAILED);
+        setStageOnGlobalFlag(Stage.FAILED, "$disco_mission_failed");
+        setNoAbandon();
 
-        setStageOnGlobalFlag(Stage.ACT_1, "$disco_mission_prologue_complete");
-        setStageOnGlobalFlag(Stage.ACT_2, "$disco_mission_act1_complete");
-        setStageOnGlobalFlag(Stage.ACT_3, "$disco_mission_act2_complete");
-        setStageOnGlobalFlag(Stage.ACT_4, "$disco_mission_act3_complete");
-        setStageOnGlobalFlag(Stage.EPILOGUE, "$disco_mission_act4_complete");
-        setStageOnGlobalFlag(Stage.COMPLETED, "$disco_mission_epilogue_complete");
-
-        beginStageTrigger(Stage.ACT_4);
+        beginStageTrigger(Stage.TRIBUNAL);
         triggerCreateFleet(FleetSize.LARGE, FleetQuality.SMOD_3, Factions.TRITACHYON, FleetTypes.PATROL_LARGE, originMarket.getPrimaryEntity());
         triggerFleetSetFlagship(Global.getSettings().getVariant("paragon_Elite"));
         triggerFleetSetName("Mercenary Tribunal");
@@ -109,93 +110,181 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_PURSUE_PLAYER,true);
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_ALLOW_LONG_PURSUIT,true);
         triggerSetFleetFaction(Factions.MERCENARY);
-        triggerPickLocationAroundPlayer(1000f);
+        triggerPickLocationAroundPlayer(200f);
         triggerSpawnFleetAtPickedLocation();
-        triggerFleetMakeImportant("$disco_mission_hostile_fleet", Stage.ACT_4);
+        triggerFleetMakeImportant("$disco_mission_hostile_fleet", Stage.TRIBUNAL);
         triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE, true);
         triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(), "$disco_mission_mercenary_fleet");
+        triggerOrderFleetInterceptPlayer();
         triggerFleetAddDefeatTrigger("$disco_mission_fleet_defeated");
         triggerSetFleetAlwaysPursue();
         endTrigger();
 
-
-        setStartingStage(Stage.PROLOGUE);
-        setSuccessStage(Stage.COMPLETED);
-        setNoAbandon();
-
         return true;
+    }
+
+    //Spawns and orders Harry fleet to move to point - After Tribunal orders need to be handled separately
+    //isTargetTheMarket - makes fleet despawn at target location if true
+    private void createHarryAndKimFleet(MarketAPI fleetOrigin, SectorEntityToken fleetTarget, boolean isTargetTheMarket){
+        FleetCreatorMission m = new FleetCreatorMission(new Random());
+
+        m.beginFleet();
+        m.triggerCreateFleet(FleetSize.TINY, FleetQuality.DEFAULT, Factions.INDEPENDENT, FleetTypes.PATROL_MEDIUM, fleetOrigin.getPrimaryEntity());
+        m.triggerFleetSetFlagship(Global.getSettings().getVariant("apogee_Balanced"));
+        m.triggerAddShips("buffalo_Standard", "dram_Light", "gemini_Standard", "sunder_Support");
+        m.triggerSetFleetOfficers(OfficerNum.ALL_SHIPS, OfficerQuality.LOWER);
+        m.triggerSetFleetDoctrineComp(5, 0, 0);
+        m.triggerSetFleetCommander(missionGiver);
+
+        m.triggerFleetMakeImportant("$disco_mission_harry_fleet");
+        m.triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_SOURCE_MARKET, fleetOrigin);
+        m.triggerSetFleetFaction(Factions.INDEPENDENT);
+        m.triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MISSION_IMPORTANT,true);
+        m.triggerFleetSetNoFactionInName();
+        m.triggerFleetNoAutoDespawn();
+        m.triggerFleetSetName("Harry's Fleet");
+        m.triggerPatrolAllowTransponderOff();
+        m.triggerOrderFleetInterceptPlayer();
+        m.triggerMakeFleetIgnoredByOtherFleets();
+        m.triggerMakeFleetIgnoreOtherFleetsExceptPlayer();
+
+        CampaignFleetAPI fleet = m.createFleet();
+        fleet.setId("nsp_disco_mission_HarryFleet");
+        fleet.removeScriptsOfClass(MissionFleetAutoDespawn.class);
+        fleetOrigin.getContainingLocation().addEntity(fleet);
+        fleet.setLocation(fleetOrigin.getPrimaryEntity().getLocation().x, fleetOrigin.getPrimaryEntity().getLocation().y);
+        fleet.setFacing(new Random().nextFloat() * 360f);
+
+        if(isTargetTheMarket) {
+            fleet.getAI().clearAssignments();
+            fleet.getAI().addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN,
+                    fleetTarget, 50,"Flying to " + fleetTarget.getName(), null);
+        }
+        else {
+            fleet.getAI().clearAssignments();
+            fleet.addAssignment(FleetAssignment.GO_TO_LOCATION, fleetTarget, 50, "", null);
+        }
     }
 
     @Override
     public void advance(float amount) {
         super.advance(amount);
 
-
-        checkAndAdvanceStage(Stage.PROLOGUE, Stage.ACT_1, "$disco_mission_prologue_complete", "$disco_mission_prologue_complete_time", DELAY_PROLOGUE_TO_ACT1);
-        checkAndAdvanceStage(Stage.ACT_1, Stage.ACT_2, "$disco_mission_act1_complete", "$disco_mission_act1_complete_time", DELAY_ACT1_TO_ACT2);
-        checkAndAdvanceStage(Stage.ACT_2, Stage.ACT_3, "$disco_mission_act2_complete", "$disco_mission_act2_complete_time", DELAY_ACT2_TO_ACT3);
-        checkAndAdvanceStage(Stage.ACT_3, Stage.ACT_4, "$disco_mission_act3_complete", "$disco_mission_act3_complete_time", DELAY_ACT3_TO_ACT4);
-        checkAndAdvanceStage(Stage.ACT_4, Stage.EPILOGUE, "$disco_mission_act4_complete", "$disco_mission_act4_complete_time", DELAY_ACT4_TO_EPILOGUE);
+        /*
+        checkAndAdvanceStage(Stage.INVESTIGATION_1, Stage.INVESTIGATION_2,
+                "$disco_mission_prologue_complete", DELAY_TO_INVESTIGATION_2);
+        checkAndAdvanceStage(Stage.INVESTIGATION_2, Stage.INVESTIGATION_3,
+                "$disco_mission_act1_complete", DELAY_TO_INVESTIGATION_3);
+        checkAndAdvanceStage(Stage.INVESTIGATION_3, Stage.TRIBUNAL,
+                "$disco_mission_act2_complete", DELAY_TO_TRIBUNAL);
+        checkAndAdvanceStage(Stage.TRIBUNAL, Stage.ARREST,
+                "$disco_mission_act3_complete", DELAY_TO_ARREST);
+         */
+        checkIsMissionFailed();
     }
 
-    protected void checkAndAdvanceStage(Stage current, Stage next, String flag, String timeFlag, float delayDays) {
+    //I assume it doesn't do anything yet
+    protected void checkAndAdvanceStage(Stage current, Stage next, String flag, float delayDays) {
         if (getCurrentStage() == current && Global.getSector().getMemoryWithoutUpdate().getBoolean(flag)) {
-            float flagSetTime = Global.getSector().getMemoryWithoutUpdate().getFloat(timeFlag);
+            float elapsed = getElapsedInCurrentStage();
             float currentTime = Global.getSector().getClock().getTimestamp();
 
-            if (currentTime >= flagSetTime + delayDays) {
+            if (elapsed >= delayDays) {
                 setCurrentStage(next);
             }
         }
     }
 
+    float failuredelay = 10;
+    //Method to auto fail Tribunal if you don't complete it soon
+    private void checkIsMissionFailed(){
+        if(getCurrentStage() != Stage.TRIBUNAL){
+            return;
+        }
+
+        float elapsed = getElapsedInCurrentStage();
+        if(elapsed > failuredelay){
+            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_failed", true);
+            originMarket.setFactionId(Factions.TRITACHYON);
+            stationMarket.setFactionId(Factions.PIRATES);
+        }
+    }
+
     private void setCurrentStage(Stage next) {
+        if(next == Stage.INVESTIGATION_2){
+
+        }
+        else if(next == Stage.INVESTIGATION_3){
+
+        }
+        else if(next == Stage.TRIBUNAL){
+
+        }
+        else if(next == Stage.ARREST){
+
+        }
     }
 
     @Override
     protected boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
         TextPanelAPI text = dialog.getTextPanel();
 
-        if (action.equals("DiscoCompletePrologue")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_prologue_complete", true);
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_prologue_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(originMarket, "$disco_mission_act1", Stage.ACT_1);
-            return true;
+        //Maybe change to switch? Functionally will be the same
+        switch (action) {
+            case "DiscoStartMission" -> {
+                makeImportant(originMarket, "$disco_mission_inv1", Stage.INVESTIGATION_1);
+                return true;
+            }
+            case "DiscoCompleteInvestigation1" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_prologue_complete", true);
+                makeImportant(stationMarket, "$disco_mission_inv2", Stage.INVESTIGATION_2);
+                createHarryAndKimFleet(originMarket, stationMarket.getPrimaryEntity(), true);
+                return true;
+            }
+            case "DiscoCompleteInvestigation2" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act1_complete", true);
+                makeImportant(TriTachMarket, "$disco_mission_inv3", Stage.INVESTIGATION_3);
+                createHarryAndKimFleet(stationMarket, TriTachMarket.getPrimaryEntity(), true);
+                return true;
+            }
+            case "DiscoCompleteInvestigation3" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act2_complete", true);
+                makeImportant(originMarket, "$disco_mission_act3", Stage.TRIBUNAL);
+                createHarryAndKimFleet(TriTachMarket, originMarket.getPrimaryEntity(), true);
+                return true;
+            }
+            case "DiscoCompleteTribunal" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act3_complete", true);
+                //Fight fleet to progress
+                //makeImportant(originMarket, "$disco_mission_act4", Stage.ARREST);
+                return true;
+                //Fight fleet to progress
+                //makeImportant(originMarket, "$disco_mission_act4", Stage.ARREST);
+            }
+            case "DiscoCompleteArrest" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act4_complete", true);
+                makeImportant(originMarket, "$disco_mission_act_epilogue", Stage.ARREST);
+                return true;
+            }
+            case "DiscoFailedMission" -> {
+                Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_failed", true);
+                //setCurrentStage(Stage.FAILED);
+                originMarket.setFactionId(Factions.TRITACHYON);
+                stationMarket.setFactionId(Factions.PIRATES);
+                return true;
+            }
         }
 
-        if (action.equals("DiscoCompleteAct1")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act1_complete", true);
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act1_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(stationMarket, "$disco_mission_act2", Stage.ACT_2);
-            return true;
-        }
+        beginStageTrigger(Stage.INVESTIGATION_2);
+        makeImportant(stationMarket, "$disco_mission_inv2_complete", Stage.INVESTIGATION_2);
+        createHarryAndKimFleet(originMarket, stationMarket.getPrimaryEntity(), true);
+        endTrigger();
 
-        if (action.equals("DiscoCompleteAct2")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act2_complete", true);
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act2_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(TriTachMarket, "$disco_mission_act3", Stage.ACT_3);
-            return true;
-        }
+        beginStageTrigger(Stage.INVESTIGATION_3);
+        makeImportant(TriTachMarket, "$disco_mission_inv3_complete", Stage.INVESTIGATION_2);
+        createHarryAndKimFleet(stationMarket, TriTachMarket.getPrimaryEntity(), true);
+        endTrigger();
 
-        if (action.equals("DiscoCompleteAct3")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act3_complete", true);
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act3_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(originMarket, "$disco_mission_act4", Stage.ACT_4);
-            return true;
-        }
-
-        if (action.equals("DiscoCompleteAct4")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act4_complete", true);
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_act4_complete_time", Global.getSector().getClock().getTimestamp());
-            makeImportant(originMarket, "$disco_mission_act_epilogue", Stage.EPILOGUE);
-            return true;
-        }
-
-        if (action.equals("DiscoCompleteEpilogue")) {
-            Global.getSector().getMemoryWithoutUpdate().set("$disco_mission_epilogue_complete", true);
-            setCurrentStage(Stage.COMPLETED);
-            return true;
-        }
 
         return true;
     }
@@ -211,76 +300,97 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
         float opad = 10f;
         Color h = Misc.getHighlightColor();
 
-        if (currentStage == Stage.PROLOGUE) {
-            info.addPara("PROLOGUE placeholder " + originMarket.getName() + ".", opad);
-            info.addPara("PROLOGUE placeholder.", opad);
-        } else if (currentStage == Stage.ACT_1) {
-            info.addPara("Act 1:placeholder", opad);
+        if (currentStage == Stage.INVESTIGATION_1) {
+            info.addPara("After talking with Harry and Kim you been directed to join them in investigating crime scene on %s.",
+                    opad, Misc.getHighlightColor(), originMarket.getName());
 
-            float remainingDelay = getRemainingDelay("$disco_mission_prologue_complete_time", DELAY_PROLOGUE_TO_ACT1);
+            float remainingDelay = getRemainingDelay(DELAY_TO_INVESTIGATION_2);
             if (remainingDelay > 0) {
-               // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
+                info.addPara("Next stage is available in: %s days.", opad, Misc.getHighlightColor(), "" + String.format("%.1f", remainingDelay));
             }
-        } else if (currentStage == Stage.ACT_2) {
+            else {
+                info.addPara("Next stage is now available.", opad, Misc.getHighlightColor(), "now");
+            }
+        } else if (currentStage == Stage.INVESTIGATION_2) {
+            info.addPara("You seemed to pick up trail from few witnesses you found an the " + originMarket.getName() + "."
+                    + "They lead you after SomeName, which rumored to run away to %s.",
+                    opad, Misc.getHighlightColor(), stationMarket.getName());
+
+            float remainingDelay = getRemainingDelay(DELAY_TO_INVESTIGATION_3);
+            if (remainingDelay > 0) {
+                info.addPara("Next stage is available in: %s days.", opad, Misc.getHighlightColor(), "" + String.format("%.1f", remainingDelay));
+            }
+            else {
+                info.addPara("Next stage is now available.", opad, Misc.getHighlightColor(), "now");
+            }
+        } else if (currentStage == Stage.INVESTIGATION_3) {
             info.addPara("Act 2: placeholder", opad);
-            float remainingDelay = getRemainingDelay("$disco_mission_act1_complete_time", DELAY_ACT1_TO_ACT2);
+            float remainingDelay = getRemainingDelay(DELAY_TO_TRIBUNAL);
             if (remainingDelay > 0) {
-               // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
+                info.addPara("Next stage is available in: %s days.", opad, Misc.getHighlightColor(), "" + String.format("%.1f", remainingDelay));
             }
-        } else if (currentStage == Stage.ACT_3) {
+            else {
+                info.addPara("Next stage is now available.", opad, Misc.getHighlightColor(), "now");
+            }
+        } else if (currentStage == Stage.TRIBUNAL) {
             info.addPara("Act 3: placeholder", opad);
-            float remainingDelay = getRemainingDelay("$disco_mission_act2_complete_time", DELAY_ACT2_TO_ACT3);
+            float remainingDelay = getRemainingDelay(DELAY_TO_ARREST);
             if (remainingDelay > 0) {
-               // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
+                info.addPara("Next stage is available in: %s days.", opad, Misc.getHighlightColor(), "" + String.format("%.1f", remainingDelay));
             }
-        } else if (currentStage == Stage.ACT_4) {
+            else {
+                info.addPara("Next stage is now available.", opad, Misc.getHighlightColor(), "now");
+            }
+        } else if (currentStage == Stage.ARREST) {
             info.addPara("Act 4: placeholder", opad);
-            float remainingDelay = getRemainingDelay("$disco_mission_act3_complete_time", DELAY_ACT3_TO_ACT4);
-            if (remainingDelay > 0) {
-               // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
-            }
-        } else if (currentStage == Stage.EPILOGUE) {
-            info.addPara("EPILOGUE placeholder" + originMarket.getName() + " placeholder", opad);
-            float remainingDelay = getRemainingDelay("$disco_mission_act4_complete_time", DELAY_ACT4_TO_EPILOGUE);
-            if (remainingDelay > 0) {
-               // info.addPara("Next stage available in: " + String.format("%.1f", remainingDelay) + " days.", Misc.getHighlightColor(), opad);
-            }
         }
     }
 
+    /*
     protected float getRemainingDelay(String timeFlag, float delayDays) {
         if (!Global.getSector().getMemoryWithoutUpdate().contains(timeFlag)) {
             return delayDays;
         }
         float flagSetTime = Global.getSector().getMemoryWithoutUpdate().getFloat(timeFlag);
         float currentTime = Global.getSector().getClock().getTimestamp();
-        float elapsed = getElapsedInCurrentStage();
+        float elapsed = getElapsedInCurrentStage(); // i think having this means you don't need memkeys for date stage started
         //float elapsed = currentTime - flagSetTime;
+        return Math.max(0, delayDays - elapsed);
+    }
+    */
+
+    //Same method as above but without memkey, if Xxarra will not need/want it, safe to delete
+    protected float getRemainingDelay(float delayDays) {
+        float elapsed = getElapsedInCurrentStage();
         return Math.max(0, delayDays - elapsed);
     }
 
     @Override
     public boolean addNextStepText(TooltipMakerAPI info, Color tc, float pad) {
-        if (currentStage == Stage.PROLOGUE) {
-            info.addPara("PROLOGUE placeholder" + originMarket.getName() + ".", tc, pad);
+        if (currentStage == Stage.INVESTIGATION_1) {
+            float remaining = getRemainingDelay(DELAY_TO_INVESTIGATION_2);
+            info.addPara("INVESTIGATION_1 placeholder (" + String.format("%.1f", remaining) + " days remaining)\n"
+                    + "Go to %s", pad, tc, originMarket.getFaction().getBaseUIColor(), "" + originMarket.getName());
             return true;
-        } else if (currentStage == Stage.ACT_1) {
-            float remaining = getRemainingDelay("$disco_mission_prologue_complete_time", DELAY_PROLOGUE_TO_ACT1);
-            info.addPara("ACT_1 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+        } else if (currentStage == Stage.INVESTIGATION_2) {
+            float remaining = getRemainingDelay(DELAY_TO_INVESTIGATION_3);
+            info.addPara("INVESTIGATION_2 placeholder (" + String.format("%.1f", remaining) + " days remaining)\n"
+                    + "Go to %s", pad, tc, stationMarket.getFaction().getBaseUIColor(), "" + stationMarket.getName());
             return true;
-        } else if (currentStage == Stage.ACT_2) {
-            float remaining = getRemainingDelay("$disco_mission_act1_complete_time", DELAY_ACT1_TO_ACT2);
-            info.addPara("ACT_2 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+        } else if (currentStage == Stage.INVESTIGATION_3) {
+            float remaining = getRemainingDelay(DELAY_TO_TRIBUNAL);
+            info.addPara("INVESTIGATION_3 placeholder (" + String.format("%.1f", remaining) + " days remaining)\n"
+                    + "Go to %s", pad, tc, TriTachMarket.getFaction().getBaseUIColor(), "" + TriTachMarket.getName());
             return true;
-        } else if (currentStage == Stage.ACT_3) {
-            float remaining = getRemainingDelay("$disco_mission_act2_complete_time", DELAY_ACT2_TO_ACT3);
-            info.addPara("ACT_3 placeholder (" + String.format("%.1f", remaining) + " days remaining)", tc, pad);
+        } else if (currentStage == Stage.TRIBUNAL) {
+            float remaining = getRemainingDelay(DELAY_TO_ARREST);
+            info.addPara("TRIBUNAL placeholder\n"
+                    + "Intervene against mercenaries (%s)", pad, tc, Misc.getNegativeHighlightColor(),  String.format("%.1f", remaining) + "days remaining until the mission is failed");
             return true;
-        } else if (currentStage == Stage.ACT_4) {
-            info.addPara("ACT_4 placeholder", tc, pad);
-            return true;
-        } else if (currentStage == Stage.EPILOGUE) {
-            info.addPara("EPILOGUE placeholder " + originMarket.getName() + " to complete the mission.", tc, pad);
+        } else if (currentStage == Stage.ARREST) {
+            float remaining = getRemainingDelay(DELAY_TO_ARREST);
+            info.addPara("ARREST placeholder (" + String.format("%.1f", remaining) + " days remaining)\n"
+                    + "Go to %s", pad, tc, TriTachMarket.getFaction().getBaseUIColor(), "" + TriTachMarket.getName());
             return true;
         }
 
