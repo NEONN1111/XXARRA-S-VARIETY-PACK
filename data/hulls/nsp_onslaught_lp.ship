@@ -14,11 +14,16 @@
   "builtInMods": [
     "hbi",
     "safetyoverrides",
-    "ill_advised"
+    "ill_advised",
+    "missleracks"
   ],
   "builtInWeapons": {
     "WS 016": "nsp_utpc",
     "WS 017": "nsp_utpc",
+    "WS 021": "jackhammer",
+    "WS 022": "jackhammer",
+    "WS 023": "jackhammer",
+    "WS 024": "jackhammer",
     "WS0006": "nsp_zealousinjector",
     "WS0007": "nsp_zealousinjector",
     "WS0008": "nsp_zealousinjector",
@@ -185,7 +190,7 @@
     {
       "id": "WS 021",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 120,
       "angle": 30,
@@ -194,7 +199,7 @@
     {
       "id": "WS 022",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 120,
       "angle": 20,
@@ -203,7 +208,7 @@
     {
       "id": "WS 023",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 120,
       "angle": -20,
@@ -212,7 +217,7 @@
     {
       "id": "WS 024",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 120,
       "angle": -30,

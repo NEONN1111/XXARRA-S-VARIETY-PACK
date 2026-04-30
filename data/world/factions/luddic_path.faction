@@ -1,12 +1,13 @@
 {
     "hullFrequency":{
         "hulls":{
-	    "nsp_hammerhead_pather":0.8,
-            "nsp_incursion_path":0.7,
-            "nsp_dominator_pather":0.8,
-            "nsp_champion_mkiii":0.5,
+	    "nsp_hammerhead_pather":4,
+            "nsp_incursion_path":6,
+            "nsp_dominator_pather":4,
+            "nsp_champion_mkiii":2,
             "nsp_onslaught_lp":0.3,
-            "nsp_eagle_lp":3,			
+            "nsp_eagle_lp":3,
+            "nsp_eagle_mkii":2,			
         },
     },
     "knownShips":{
@@ -16,7 +17,8 @@
             "nsp_incursion_path",
             "nsp_champion_mkiii",
             "nsp_onslaught_lp",
-            "nsp_eagle_lp",			],
+            "nsp_eagle_lp",
+            "nsp_eagle_mkii",			],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
 	"priorityShips":{

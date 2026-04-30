@@ -4,20 +4,20 @@
   "displayName": "Zealous",
   "goalVariant": true,
   "fluxCapacitors": 0,
-  "fluxVents": 24,
+  "fluxVents": 28,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "heavyarmor",
-    "missleracks"
+    "reinforcedhull"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 016": "tpc",
-        "WS 017": "tpc"
+        "WS 016": "nsp_utpc",
+        "WS 017": "nsp_utpc"
       }
     },
     {
