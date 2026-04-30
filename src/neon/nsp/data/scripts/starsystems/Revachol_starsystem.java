@@ -9,7 +9,6 @@ import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.StarAge;
-import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Revanchol_starsystem {
+public class Revachol_starsystem {
 
     public void generate(SectorAPI sector) {
         // Create system
@@ -29,7 +28,7 @@ public class Revanchol_starsystem {
         system.setBackgroundTextureFilename("graphics/backgrounds/background3.jpg");
 
         // create the star
-        PlanetAPI star = system.initStar("ISotD_WIP_star", // unique id for this star
+        PlanetAPI star = system.initStar("nsp_insulinde_star", // unique id for this star
                 "star_yellow", // id in planets.json
                 480f, // radius (in pixels at default zoom)
                 400); // corona radius, from star edge
@@ -42,10 +41,10 @@ public class Revanchol_starsystem {
         loc1.setCircularOrbitPointingDown(star, 65, 1430, 130);
 
         //Inner Asteroid belt
-        system.addAsteroidBelt(star, 90, 1600, 150, 100, 110, Terrain.ASTEROID_BELT, "Inner Asteroid belt");
+        system.addAsteroidBelt(star, 90, 1600, 150, 100, 110);
         system.addRingBand(star, "misc", "rings_dust0", 256f, 0, Color.white, 256f, 1600, 110, Terrain.RING, "Inner Asteroid belt");
 
-        system.addAsteroidBelt(star, 120, 1900, 150, 100, 110, Terrain.ASTEROID_BELT, "Inner Asteroid belt");
+        system.addAsteroidBelt(star, 120, 1900, 150, 100, 110);
         system.addRingBand(star, "misc", "rings_asteroids0", 256f, 3, Color.white, 256f, 1900, 110, Terrain.RING, "Inner Asteroid belt");
 
         system.addRingBand(star, "misc", "rings_ice0", 256f, 2, Color.white, 256f, 2000, 110, Terrain.RING, "Inner Asteroid belt");
@@ -56,11 +55,10 @@ public class Revanchol_starsystem {
                 35f, //radius
                 1730, //distance from star
                 95f); //how many days to orbit
-        //planet1.setCustomDescriptionId("nsp_revanchol");
         planet1.setDiscoverable(false);
         PlanetConditionGenerator.generateConditionsForPlanet(planet1, StarAge.OLD);
 
-        //Tri Tach Center of power in the system. Bombarded and Twice lost in early conflict with Revanchol
+        //Tri Tach Center of power in the system. Bombarded and Twice lost in early conflict with Revachol
         //It mostly hosts entrenched military divisions of Tri-Tachyon.
         //Name for planet taken from wiki, supposedly city on other island in Insulinde isola
         PlanetAPI Deora = system.addPlanet("nsp_deora", star, "Deora-of-the-Seven-Seas", Planets.BARREN_BOMBARDED,
@@ -108,11 +106,9 @@ public class Revanchol_starsystem {
         Deora.setMarket(Deora_Marketplace);
         Deora_Marketplace.reapplyIndustries();
 
-
         //Shades and Mirrors of Deora
         SectorEntityToken shade1 = system.addCustomEntity(null,null, "stellar_shade", Factions.INDEPENDENT);
         shade1.setCircularOrbitPointingDown(Deora, 0, 350, Deora.getCircularOrbitPeriod());
-
 
         SectorEntityToken shade2 = system.addCustomEntity(null,null, "stellar_shade", Factions.INDEPENDENT);
         shade2.setCircularOrbitPointingDown(Deora, 20, 350, Deora.getCircularOrbitPeriod());
@@ -131,20 +127,20 @@ public class Revanchol_starsystem {
         mirror3.setCircularOrbitPointingDown(star, 135, Deora.getCircularOrbitRadius() + 400, Deora.getCircularOrbitPeriod());
         ////////////////////////////////////////////////////////
 
-        // Actual Revanchol - from wiki descriptions quite unremarkable outside recent communist revolution and reactionary take over.
-        PlanetAPI Revanchol = system.addPlanet("nsp_revanchol", star, "Revanchol", Planets.PLANET_TERRAN_ECCENTRIC,
+        // Actual Revachol - from wiki descriptions quite unremarkable outside recent communist revolution and reactionary take over.
+        PlanetAPI Revachol = system.addPlanet("nsp_revachol", star, "Revachol", Planets.PLANET_TERRAN_ECCENTRIC,
                 0, //angle
                 130f, //radius
                 4500f, //distance from star
                 240f); //how many days to orbit
-        Revanchol.setCustomDescriptionId("nsp_revanchol");
-        Revanchol.setDiscoverable(false);
+        Revachol.setCustomDescriptionId("nsp_revachol");
+        Revachol.setDiscoverable(false);
 
-        MarketAPI Revanchol_Marketplace = NSP_addMarketplace.NSP_addMarketplace(
+        MarketAPI Revachol_Marketplace = NSP_addMarketplace.NSP_addMarketplace(
                 Factions.INDEPENDENT,
-                Revanchol, //the PlanetAPI variable that this market will be assigned to
+                Revachol, //the PlanetAPI variable that this market will be assigned to
                 null,
-                "Revanchol", //Display name of market
+                "Revachol", //Display name of market
                 6, //population size
                 new ArrayList<>(Arrays.asList( //List of conditions for this method to iterate through and add to the market
                         Conditions.MILD_CLIMATE,
@@ -173,25 +169,25 @@ public class Revanchol_starsystem {
                 true, //if true, the planet will have visual junk orbiting and will play an ambient chatter audio track when the player is nearby
                 false //used by the method to make a market hidden like a pirate base, not recommended for generating markets in a core world
         );
-        Revanchol_Marketplace.setFreePort(true);
-        FreeMarket.get(Revanchol_Marketplace).setDaysActive(368);
+        Revachol_Marketplace.setFreePort(true);
+        FreeMarket.get(Revachol_Marketplace).setDaysActive(368);
 
-        JumpPointAPI jumppoint = Global.getFactory().createJumpPoint("nsp_insulinde_inner_jp", "Revanchol Jump-point");
+        JumpPointAPI jumppoint = Global.getFactory().createJumpPoint("nsp_insulinde_inner_jp", "Revachol Jump-point");
 
-        jumppoint.setRelatedPlanet(Revanchol);
-        jumppoint.setCircularOrbit(star, 20, 4100, Revanchol.getCircularOrbitPeriod());
+        jumppoint.setRelatedPlanet(Revachol);
+        jumppoint.setCircularOrbit(star, 20, 4100, Revachol.getCircularOrbitPeriod());
         system.addEntity(jumppoint);
         
-        //Revanchol makeshift Relay
+        //Revachol makeshift Relay
         SectorEntityToken loc2 = system.addCustomEntity(null,null, "comm_relay_makeshift", Factions.INDEPENDENT);
         loc2.getMemoryWithoutUpdate().set("$nsp_InsulindeRelay", true);
         loc2.setCircularOrbitPointingDown(star, 65, 8100, 170);
 
-        SectorEntityToken miningstation = system.addCustomEntity("nsp_revanchol_miningstation",
-                "Revanchol's Mining Station", "station_mining00", Factions.INDEPENDENT, 75, 75f, 75f);
+        SectorEntityToken miningstation = system.addCustomEntity("nsp_revachol_miningstation",
+                "Revachol's Mining Station", "station_mining00", Factions.INDEPENDENT, 75, 75f, 75f);
 
         miningstation.setCircularOrbitPointingDown(star, 45, 7200, 350);
-        miningstation.setCustomDescriptionId("nsp_revanchol_miningstation");
+        miningstation.setCustomDescriptionId("nsp_revachol_miningstation");
 
         miningstation.getDetectedRangeMod().modifyFlat("gen", 5000f);
 
@@ -202,7 +198,7 @@ public class Revanchol_starsystem {
                 Factions.INDEPENDENT, //Factions.INDEPENDENT references the id String of the Independent faction, so it is the same as writing "independent", but neater. This determines the Faction associated with this market
                 miningstation, //the PlanetAPI variable that this market will be assigned to
                 null, //some mods and vanilla will have additional floating space stations or other entities, that when accessed, will open this marketplace. We don't have any associated entities for this method to add, so we leave null
-                "Revanchol's Mining Station", //Display name of market
+                "Revachol's Mining Station", //Display name of market
                 4, //population size
                 new ArrayList<>(Arrays.asList( //List of conditions for this method to iterate through and add to the market
                         Conditions.POPULATION_3,
@@ -231,23 +227,20 @@ public class Revanchol_starsystem {
         miningstation.setMarket(miningstation_Marketplace);
         miningstation_Marketplace.reapplyIndustries();
 
-
         //Outer Asteroid Belt
         //Ringband texture is referenced by png name in starsector-core\graphics\planets
         system.addRingBand(star, "misc", "rings_asteroids0", 256f, 1, Color.white, 256f, 6350, 300, Terrain.RING, "Outer Asteroid belt");
         system.addRingBand(star, "misc", "rings_ice0", 256f, 2, Color.white, 256f, 6500, 300, Terrain.RING, "Outer Asteroid belt");
-        system.addAsteroidBelt(star, 120, 6600, 150, 280, 320, Terrain.ASTEROID_BELT, "Outer Asteroid belt");
+        system.addAsteroidBelt(star, 120, 6600, 150, 280, 320);
         system.addRingBand(star, "misc", "rings_asteroids0", 256f, 3, Color.white, 256f, 6750, 300, Terrain.RING, "Outer Asteroid belt");
 
         system.addRingBand(star, "misc", "rings_asteroids0", 256f, 0, Color.white, 256f, 6900, 300, Terrain.RING, "Outer Asteroid belt");
-        system.addAsteroidBelt(star, 90, 6950, 150, 100, 110, Terrain.ASTEROID_BELT, "Outer Asteroid belt");
+        system.addAsteroidBelt(star, 90, 6950, 150, 100, 110);
         system.addRingBand(star, "misc", "rings_dust0", 256f, 3, Color.white, 256f, 7000, 300, Terrain.RING, "Outer Asteroid belt");
 
         system.addRingBand(star, "misc", "rings_asteroids0", 256f, 1, Color.white, 256f, 7450, 300, Terrain.RING, "Outer Asteroid belt");
-        system.addAsteroidBelt(star, 120, 7520, 150, 280, 320, Terrain.ASTEROID_BELT, "Outer Asteroid belt");
+        system.addAsteroidBelt(star, 120, 7520, 150, 280, 320);
         system.addRingBand(star, "misc", "rings_ice0", 256f, 0, Color.white, 256f, 7550, 300, Terrain.RING, "Outer Asteroid belt");
-
-
 
         //Outer Ice giant
         PlanetAPI planet2 = system.addPlanet("nsp_insulinde1", star, "Insulinde IV", Planets.ICE_GIANT,
@@ -255,15 +248,12 @@ public class Revanchol_starsystem {
                 215f, //radius
                 9500, //distance from star
                 255f); //how many days to orbit
-        //planet1.setCustomDescriptionId("nsp_revanchol");
         planet2.setDiscoverable(false);
         PlanetConditionGenerator.generateConditionsForPlanet(planet2, StarAge.OLD);
 
-
-
-        system.addRingBand(planet2, "misc", "rings_special0", 256f, 0, Color.white, 256f, 480, 300, Terrain.RING, "Ice rings of Insulinde IV");
-        system.addAsteroidBelt(planet2, 6, 500, 190, 240, 320, Terrain.ASTEROID_BELT, "Outer Asteroid belt");
-        system.addRingBand(planet2, "misc", "rings_dust0", 256f, 0, Color.white, 256f, 550, 300, Terrain.RING, "Ice rings of Insulinde IV");
+        system.addRingBand(planet2, "misc", "rings_special0", 256f, 0, Color.white, 256f, 480, 300, Terrain.RING, "Rings of Insulinde IV");
+        system.addAsteroidBelt(planet2, 6, 500, 190, 240, 320);
+        system.addRingBand(planet2, "misc", "rings_dust0", 256f, 0, Color.white, 256f, 550, 300, Terrain.RING, "Rings of Insulinde IV");
 
         //Moon around the Ice giant
         PlanetAPI planet2a = system.addPlanet("nsp_insulinde1a", planet2, "Insulinde IVa", Planets.FROZEN,
@@ -271,13 +261,11 @@ public class Revanchol_starsystem {
                 55f, //radius
                 695, //distance from star
                 78f); //how many days to orbit
-        //planet1.setCustomDescriptionId("nsp_revanchol");
         planet2a.setDiscoverable(false);
         PlanetConditionGenerator.generateConditionsForPlanet(planet2a, StarAge.OLD);
 
         Misc.setAllPlanetsSurveyed(system, true);
         system.setEnteredByPlayer(true);
-
 
         // autogenerate jump points
         system.autogenerateHyperspaceJumpPoints(true, true);
@@ -293,11 +281,9 @@ public class Revanchol_starsystem {
 
         ////////////////////////////////////////////////////////
 
-
-
         //Creates administrators, quartermasters and stuff for system created after initial economy gen
         CoreLifecyclePluginImpl.createInitialPeople(Deora_Marketplace, new Random());
-        CoreLifecyclePluginImpl.createInitialPeople(Revanchol_Marketplace, new Random());
+        CoreLifecyclePluginImpl.createInitialPeople(Revachol_Marketplace, new Random());
         CoreLifecyclePluginImpl.createInitialPeople(miningstation_Marketplace, new Random());
         CoreLifecyclePluginImpl.addMissingPeople();
     }

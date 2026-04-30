@@ -1320,7 +1320,7 @@ The soft sounds of the error notifications align just so, almost forming a melod
 ,,,,,,
 # Start of Disco Elysium mission,,,,,,
 ,,,,,,
-nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revanchol_market
+nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revachol_market
 !$global.disco_mission_prologue_complete
 !$global.disco_mission_completed","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
 nsp_DE_mission_Baroption_start,DialogOptionSelected,$option == DiscoE_Bar_startoption,"ShowPersonVisual true nsp_harry_dubois
@@ -1329,17 +1329,17 @@ $global.disco_mission_prologue_complete = true
 Call $global.disco_mission_ref DiscoStartMission
 Call $global.disco_mission_ref updateData",IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!,"backToBar:""Return to the bar""",
 ,,,,,,
-nsp_DE_mission_Act1_InvRevanchol1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
+nsp_DE_mission_Act1_InvRevachol1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_prologue_complete
 !$global.disco_mission_inv1_complete
 !$global.disco_mission_completed",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
-nsp_DE_mission_Act1_InvRevanchol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv1_complete = true
+nsp_DE_mission_Act1_InvRevachol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv1_complete = true
 Call $global.disco_mission_ref DiscoCompleteInvestigation1
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 1,,
-nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revanchol_miningstation_market
+nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revachol_miningstation_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv1_complete
@@ -1357,16 +1357,16 @@ nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3
 Call $global.disco_mission_ref DiscoCompleteInvestigation3
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 3,,
-nsp_DE_mission_Act4_toRevanchol_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
+nsp_DE_mission_Act4_toRevachol_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv3_complete
 !$global.disco_mission_act3_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - past TRIBUNAL,
-nsp_DE_mission_Act4_toRevanchol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_act3_complete = true
+nsp_DE_mission_Act4_toRevachol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_act3_complete = true
 Call $global.disco_mission_ref DiscoCompleteTribunal
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Tribunal,,
-nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revanchol_market
+nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_act3_complete
@@ -1378,7 +1378,7 @@ Call $global.disco_mission_ref updateData
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - End,,
 ,,,,,,
 ,,,,,,
-nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == nsp_revanchol_market
+nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == nsp_revachol_market
 #addchecks for completed mission later","AddBarEvent DiscoE_HireHarry_BarOption ""You see familiar faces of Harry and Kim sitting at farther side of the bar "" ""Join them for a drink, for old times sake""",,,
 nsp_HireHarry_placeholder_hubFire,DialogOptionSelected,$option == DiscoE_HireHarry_BarOption,"ShowPersonVisual true nsp_harry_dubois
 FireAll nsp_HireHarry_hub","As you approach their table, Kim stand up to greet you. Looks like they noticed you in the bar right away, but didn't want to interfere with your business.

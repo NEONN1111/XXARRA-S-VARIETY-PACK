@@ -23,19 +23,19 @@ import java.util.Random;
 public class DiscoElysiumMission extends HubMissionWithSearch {
 
     public static enum Stage {
-        INVESTIGATION_1, //on Revanchol
+        INVESTIGATION_1, //on Revachol
         INVESTIGATION_2, //Go to station
         INVESTIGATION_3, //Go to Deora
-        GO_BACK_TO_REVANCHOL, //short stage to "hide" Tribunal
+        GO_BACK_TO_REVACHOL, //short stage to "hide" Tribunal
         TRIBUNAL, //Fight the Mercs
-        ARREST, //Go nack to Revanchol again
+        ARREST, //Go nack to Revachol again
         COMPLETED, //Good job, you are good girl/boy
         FAILED //If refused to help or refused to fight Tribunal
     }
 
-    protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revanhol_market");
+    protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_market");
     protected MarketAPI TriTachMarket = Global.getSector().getEconomy().getMarket("nsp_deora_market");
-    protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revanchol_miningstation_market");
+    protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_miningstation_market");
     protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSPPeople.HARRYDISCODUBOIS);
 
     protected static final float DELAY_TO_INVESTIGATION_2 = 3f;

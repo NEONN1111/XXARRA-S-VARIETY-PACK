@@ -5,13 +5,10 @@ import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
-import com.fs.starfarer.api.input.InputEventAPI;
 
 import neon.nsp.data.scripts.NSPPeople;
-import neon.nsp.data.scripts.starsystems.Revanchol_starsystem;
-import neon.nsp.data.scripts.util.ExplosionOcclusionRaycast;
+import neon.nsp.data.scripts.starsystems.Revachol_starsystem;
 import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
 import org.dark.shaders.util.ShaderLib;
@@ -19,7 +16,6 @@ import org.dark.shaders.util.TextureData;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NSPModPlugin extends BaseModPlugin {
     public static boolean hasMagicLib = false;
@@ -82,7 +78,7 @@ public class NSPModPlugin extends BaseModPlugin {
     public void onNewGameAfterEconomyLoad() {
         CustomFleetsNSP.spawnFleetXIVictus();
 
-        new Revanchol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
+        new Revachol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
         new NSPPeople().nsp_createPeople();
     }
 

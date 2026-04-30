@@ -99,7 +99,7 @@ public class NSPPeople {
             /* Skills */
             person.getStats().setSkillLevel(Skills.DAMAGE_CONTROL, 1);
 
-            MarketAPI market =  Global.getSector().getEconomy().getMarket("eldfell");
+            MarketAPI market =  Global.getSector().getEconomy().getMarket("nsp_revachol_market");
             market.getCommDirectory().addPerson(person, 10);
             market.getCommDirectory().getEntryForPerson(person).setHidden(true);
             market.addPerson(person);
