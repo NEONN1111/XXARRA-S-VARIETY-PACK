@@ -1,0 +1,80 @@
+{
+  "hullName": "Valor",
+  "hullId": "nsp_valor_wing_Bomber",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/nsp_valor/nsp_valor.png",
+  "style": "HIGH_TECH",
+  "height": 40,
+  "width": 38,
+  "center": [19, 18],
+  "collisionRadius": 30,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 28,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HIDDEN",
+      "arc": 6,
+      "angle": 0,
+      "locations": [18, 0]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [5, 0]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 90,
+      "angle": 0,
+      "locations": [7, 10]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 90,
+      "angle": 0,
+      "locations": [7, -10]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-18, 7],
+      "length": 30,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 60,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-18, -7],
+      "length": 30,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 60,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -13, -5,
+    1, -19,
+    20.5, 0,
+    1, 19,
+    -13, 5
+  ]
+}

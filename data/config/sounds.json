@@ -116,6 +116,10 @@
 	[
             {"file":"sounds/nsp_zealouscharge_loop.ogg","pitch":1,"volume":0.5},
         ],
+					"nsp_threat_detected":
+	[
+            {"file":"sounds/THREAT_DETECTED.ogg","pitch":1,"volume":1.5},
+        ],
 			
 	
 		
