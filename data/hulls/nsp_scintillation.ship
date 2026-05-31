@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "automated",
-    "nsp_coherer"
+    "nsp_coherer",
+    "distributed_fire_control"
   ],
   "builtInWings": [
     "terminator_wing"
