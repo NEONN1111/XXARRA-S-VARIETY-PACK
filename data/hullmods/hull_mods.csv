@@ -63,3 +63,5 @@ Armor Parent,nsp_armorparent,,,,,,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.scripts.util
 Lidar Bank,nsp_lidarbank,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.LidarBank,"Extends the range of ballistic and energy weapons by %s. The range of point-defense weapons is only extended by %s.
 
 Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,graphics/hullmods/lidar_bank.png
+,,,,,,,,,,,,,,,,,,,
+Energy Coherence Grid,nsp_coherer,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_EnergyBoltCoherer,<tooltip created in the script>,Increases base range of non-beam energy weapons.,,graphics/hullmods/coherer.png

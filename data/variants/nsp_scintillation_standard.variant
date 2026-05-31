@@ -1,0 +1,92 @@
+{
+  "variantId": "nsp_scintillation_standard",
+  "hullId": "nsp_scintillation",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 46,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "eccm"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0025": "breachpod",
+        "WS0026": "breachpod",
+        "WS0027": "breachpod",
+        "WS0028": "breachpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0011": "sabotpod",
+        "WS0012": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0019": "autopulse",
+        "WS0020": "autopulse",
+        "WS0021": "autopulse",
+        "WS0022": "autopulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "pulselaser",
+        "WS0002": "pulselaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "miningblaster",
+        "WS0004": "miningblaster",
+        "WS0013": "miningblaster",
+        "WS0014": "miningblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "pdlaser",
+        "WS0006": "pdlaser",
+        "WS0007": "pdlaser",
+        "WS0008": "pdlaser",
+        "WS0009": "pdlaser",
+        "WS0010": "pdlaser",
+        "WS0015": "pdburst",
+        "WS0016": "pdburst",
+        "WS0017": "pdburst",
+        "WS0018": "pdburst",
+        "WS0023": "heavyburst",
+        "WS0024": "pdburst",
+        "WS0029": "pdburst",
+        "WS0030": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "flash_wing",
+    "flash_wing"
+  ]
+}
