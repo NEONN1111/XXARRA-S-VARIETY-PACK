@@ -11,6 +11,7 @@
 				"nsp_galaxy_standard":0.5,
 				"nsp_champion_mkiii_standard":1,
 				"nsp_onslaught_lp_standard":0.5,
+				"nsp_scintillation_standard":1,
               
  
 	},
@@ -19,6 +20,7 @@
 	# hybrid ships with good combat and cargo capacity
 	"combatFreighterSmall":{
 		"nsp_sisyphus_standard":2,
+		"nsp_dachshund_standard":3,
 	},
 	"combatFreighterLarge":{
 		"nsp_praxidike_standard":0.6,

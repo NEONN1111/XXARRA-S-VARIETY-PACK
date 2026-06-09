@@ -5,6 +5,7 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.enc.AbyssalRogueStellarObjectEPEC;
 import com.fs.starfarer.api.impl.campaign.ids.*;
+import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
@@ -12,6 +13,7 @@ import com.fs.starfarer.api.impl.campaign.world.GateHaulerLocation;
 import com.fs.starfarer.api.util.Misc;
 import org.lwjgl.util.vector.Vector2f;
 
+import java.awt.*;
 import java.util.Random;
 
 public class nsp_abyssalgen1 {
@@ -83,6 +85,15 @@ public class nsp_abyssalgen1 {
         system.autogenerateHyperspaceJumpPoints(false, false);
 
         AbyssalRogueStellarObjectEPEC.setAbyssalDetectedRanges(system);
+
+        SectorEntityToken anchor = system.getHyperspaceAnchor();
+        CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity("nsp_threatbeacon",
+                "Beacon", "warning_beacon", Factions.NEUTRAL);
+        beacon.setCircularOrbitPointingDown(anchor, 100, 300, 65f);
+        beacon.setCustomDescriptionId("nsp_threatbeacon");
+        Misc.setWarningBeaconColors(beacon, new Color(155,155,155,155), new Color(155,155,155,155));
+        beacon.getMemoryWithoutUpdate().set("$nsp_threatbeacon", true);
+        beacon.getMemoryWithoutUpdate().set("$nsp_threatbeacontag", true);
 
     }
 

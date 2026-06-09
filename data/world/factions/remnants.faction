@@ -5,6 +5,7 @@
                         "nsp_phosphor":0.1,
                         "nsp_phosphophyllite":1,
                         "nsp_elucidation":0.3,
+						"nsp_scintillation":0.9,
 			
         },
     },
@@ -14,6 +15,7 @@
             "nsp_phosphor",
             "nsp_phosphophyllite",
             "nsp_elucidation",
+			"nsp_scintillation",
         ],
 	},
 },

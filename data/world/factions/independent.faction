@@ -11,7 +11,8 @@
             "nsp_konoblin":0.6,
             "nsp_destrapogee":0.7,
             "nsp_iliad":0.7,
-            "nsp_galaxy":0.6,			
+            "nsp_galaxy":0.6,		
+            "nsp_dachshund":4,			
         },
     },
     "knownShips":{
@@ -27,6 +28,7 @@
                         "nsp_destrapogee",
                         "nsp_iliad",
 						"nsp_galaxy",
+						"nsp_dachshund",
         ],
 	},
 },
