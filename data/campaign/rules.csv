@@ -1265,7 +1265,7 @@ nsp_glamorBack,DialogOptionSelected,$option == nsp_glamorBack,FireAll PopulateOp
 "#END TT path, triggered by having safeguard in fleet and going to any TT market. Only happens after 1st meeting with rotanev",,,,,,
 ,,,,,,
 # this is wip ignore it pretty please,,,,,,
-nsp_invictaEncounterDesc1,BeginFleetEncounter,"$nsp_invictaFleet score:1000
+# nsp_invictaEncounterDesc1,BeginFleetEncounter,"$nsp_invictaFleet score:1000
 !$printedDesc
 !$showAfterScanIntro","$printedDesc = true 0
 $fidpi_addContinue = true 0
@@ -1274,124 +1274,124 @@ AddTextSmall ""Detailed scan of unknown vessel acquired"" highlight","The capita
 There also appear to be small, bright EM sources, ""-Only partially overlapping the visual spectrum,"" your sensors officer reports. They periodically appear and dissipate in a volume encompassing the mysterious ship. Your bridge crew murmurs speculation between their stations: a new form of shielding? microsat thruster bursts? Your sensors officer shakes their head.
 
 You order a high-resolution scan performed, and the raw data placed into secure storage.",,
-nsp_invictaEncounterDesc2,BeginFleetEncounter2,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
+# nsp_invictaEncounterDesc2,BeginFleetEncounter2,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
 Call $global.gaPZ_ref updateStage
 $showAfterScanIntro = true","Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away.
 
 You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-nsp_invictaEncounterDesc3,BeginFleetEncounter3,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
+# nsp_invictaEncounterDesc3,BeginFleetEncounter3,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
 Call $global.gaPZ_ref updateStage
 $showAfterScanIntro = true","Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away.
 
 You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-nsp_invictaEncounterDesc4,BeginFleetEncounter4,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
+# nsp_invictaEncounterDesc4,BeginFleetEncounter4,$nsp_invictaFleet score:1000,"$global.gaPZ_scannedZiggurat = true
 Call $global.gaPZ_ref updateStage
 $showAfterScanIntro = true","Your attention strays as the impression of something not unlike distant music insinuates itself into your consciousness; as if a chorus was singing at some great distance, their voices brought to you by a chance gust of wind. When you attempt to focus on the music the impression slips away.
 
 You become suddenly aware that your bridge crew is staring expectantly, waiting for your next command.",,
-nsp_invictaAfterDefeat,AfterTemplarDefeat,,,"A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
+# nsp_invictaAfterDefeat,AfterTemplarDefeat,,,"A final terrific explosion blanks the external visual pickups. A few seconds later, backups are extruded through the hull.
 
 Your sensors officer reports in a hushed voice that no escape pods were detected leaving the ship at any point.",nspBattleContinue:Continue,
-nsp_afterDefeatingContinue,DialogOptionSelected,$option == nspBattleContinue,FireBest OpenInteractionDialog,,,
-nsp_wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
+# nsp_afterDefeatingContinue,DialogOptionSelected,$option == nspBattleContinue,FireBest OpenInteractionDialog,,,
+# nsp_wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $nsp_invictaFleet score:1000",ShowDefaultVisual,"The broken phase vessel, now quite dormant, is drifting through space.",,
-nsp_exploreNormal,CheckSalvageSpecial,"$salvageSpecialData != null
+# nsp_exploreNormal,CheckSalvageSpecial,"$salvageSpecialData != null
 $customType == wreck
 $nsp_invictaFleet score:1000","#ShowDefaultVisual
 FireBest ZigExploreDescription",Your salvage teams dock shuttles at various entry points along the vessel's massive hull.,,
-nsp_exploreDescription,TemplarExploreDescription,,,"After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
+# nsp_exploreDescription,TemplarExploreDescription,,,"After a few tense minutes, reports start to come in - the vessel is heavily damaged, and though of exotic design, it is theoretically recoverable.
 
 Your operations chief reports that for all of the fancy hull features, it is clear that this ship requires crew to operate. But there are no traces of a crew, not even a single body caught in the battle damage, and the escape pods are all in their berths.
 
 The operation proceeds with telemetry feeds, salvors' reports, and authorization orders flowing around you, through the bridge of your flagship. You catch yourself listening for that unheard music in a quiet moment, and shake your head just as a comms request from your technology officer appears, bringing you back from your reverie. You accept as a matter of course.",nspExploreContinue:Continue,
-nsp_exploreDescriptionContinue,DialogOptionSelected,$option == nspExploreContinue,,"""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your technology officer speaks with genuine excitement.
+# nsp_exploreDescriptionContinue,DialogOptionSelected,$option == nspExploreContinue,,"""$PlayerSirOrMadam, if I understand half of these systems, this ship is truly one of a kind,"" your technology officer speaks with genuine excitement.
 
 ""I've found a device that appears to generate and control - I'm not sure that either is the right word, really - these ... swarming motes, the EM anomalies. The device appears to have two stages, the first as I've described, and what appears to be a later addition which is, unfortunately, damaged beyond repair.""
 
 ""Judging by the complexity of the components and the bizarre discharge pattern... this is the work of a team of specialists doing bleeding-edge work. It's amazing! A device like this, it's simply unheard of nowadays. Except,"" Tech looks abashed suddenly, ""Rumors. You know, people talk.""",nspExploreContinue2:Continue,
-nsp_exploreDescriptionContinue2,DialogOptionSelected,$option == nspExploreContinue2,SalvageSpecialInteraction,"Your technology officer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
-nsp_PostShipRecoverySpecial,PostShipRecoverySpecial,$srs_baseHullId == nsp_templar,TemplarCMD initEncounters,,,
+# nsp_exploreDescriptionContinue2,DialogOptionSelected,$option == nspExploreContinue2,SalvageSpecialInteraction,"Your technology officer clears their throat, then continues ""I think I can get the main part of this device working again, though I can't claim to understand why it works. Not at all. The ship itself will be fit to fly, too, if we do the usual repairs. Should we proceed with recovery?""",,
+# nsp_PostShipRecoverySpecial,PostShipRecoverySpecial,$srs_baseHullId == nsp_templar,TemplarCMD initEncounters,,,
 ,,,,,,
-$nsp_invictaFleet score:1000,,,,,,
-nsp_templar_commsOpen,OpenCommLink,$entity.nsp_templar score:1000,EndConversation,"The connection request hangs for some time then a wave of holo-noise flickers through the main display before generating a series of error codes. Your comms officer works their console in consternation. 
+# $nsp_invictaFleet score:1000,,,,,,
+# nsp_templar_commsOpen,OpenCommLink,$entity.nsp_templar score:1000,EndConversation,"The connection request hangs for some time then a wave of holo-noise flickers through the main display before generating a series of error codes. Your comms officer works their console in consternation. 
 
 The soft sounds of the error notifications align just so, almost forming a melody you must have heard somewhere once. Or perhaps not. You return your attention to your command. No time for daydreaming.",,
 #END this is wip ignore it pretty please,,,,,,
 ,,,,,,
 # Start of Disco Elysium mission,,,,,,
 ,,,,,,
-nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revachol_market
+#nsp_DE_mission_addBaroption,AddBarEvents,"$market.id == nsp_revachol_market
 !$global.disco_mission_prologue_complete
 !$global.disco_mission_completed","AddBarEvent DiscoE_Bar_startoption ""IS THAT KIM AND HARRY?!?!!"" ""IS THAT KIM AND HARRY?!?!!""",,,
-nsp_DE_mission_Baroption_start,DialogOptionSelected,$option == DiscoE_Bar_startoption,"ShowPersonVisual true nsp_harry_dubois
+#nsp_DE_mission_Baroption_start,DialogOptionSelected,$option == DiscoE_Bar_startoption,"ShowPersonVisual true nsp_harry_dubois
 BeginMission nsp_disco_mission
 $global.disco_mission_prologue_complete = true
 Call $global.disco_mission_ref DiscoStartMission
 Call $global.disco_mission_ref updateData",IT IS KIM AND HARRY FROM HIT GAME DISCO ELYSIUM!!,"backToBar:""Return to the bar""",
 ,,,,,,
-nsp_DE_mission_Act1_InvRevachol1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
+# nsp_DE_mission_Act1_InvRevachol1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_prologue_complete
 !$global.disco_mission_inv1_complete
 !$global.disco_mission_completed",,,DiscoE_Inv_p1_startOption:Investigate $marketName - Part 1,
-nsp_DE_mission_Act1_InvRevachol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv1_complete = true
+# nsp_DE_mission_Act1_InvRevachol1_finished,DialogOptionSelected,$option == DiscoE_Inv_p1_startOption,"$global.disco_mission_inv1_complete = true
 Call $global.disco_mission_ref DiscoCompleteInvestigation1
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 1,,
-nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revachol_miningstation_market
+# nsp_DE_mission_Act2_RMS_addoption,PopulateOptions,"$market.id == nsp_revachol_miningstation_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv1_complete
 !$global.disco_mission_inv2_complete",,,DiscoE_Inv_p2_startOption:Investigate $marketName - Part 2,
-nsp_DE_mission_Act2_RMS_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"$global.disco_mission_inv2_complete = true
+# nsp_DE_mission_Act2_RMS_finished,DialogOptionSelected,$option == DiscoE_Inv_p2_startOption,"$global.disco_mission_inv2_complete = true
 Call $global.disco_mission_ref DiscoCompleteInvestigation2
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 2,,
-nsp_DE_mission_Act3_Deora_addoption,PopulateOptions,"$market.id == nsp_deora_market
+# nsp_DE_mission_Act3_Deora_addoption,PopulateOptions,"$market.id == nsp_deora_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv2_complete
 !$global.disco_mission_inv3_complete",,,DiscoE_Inv_p3_startOption:Investigate $marketName - Part 3,
-nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"$global.disco_mission_inv3_complete = true
+# nsp_DE_mission_Act3_Deora_finished,DialogOptionSelected,$option == DiscoE_Inv_p3_startOption,"$global.disco_mission_inv3_complete = true
 Call $global.disco_mission_ref DiscoCompleteInvestigation3
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Part 3,,
-nsp_DE_mission_Act4_toRevachol_addoption,PopulateOptions,"$market.id == nsp_revachol_market
+# nsp_DE_mission_Act4_toRevachol_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_inv3_complete
 !$global.disco_mission_act3_complete",,,DiscoE_Inv_TRB_startOption:Investigate $marketName - past TRIBUNAL,
-nsp_DE_mission_Act4_toRevachol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_act3_complete = true
+# nsp_DE_mission_Act4_toRevachol_finished,DialogOptionSelected,$option == DiscoE_Inv_TRB_startOption,"$global.disco_mission_act3_complete = true
 Call $global.disco_mission_ref DiscoCompleteTribunal
 Call $global.disco_mission_ref updateStage
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - Tribunal,,
-nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
+# nsp_DE_mission_End_Trubunal1_addoption,PopulateOptions,"$market.id == nsp_revachol_market
 $menuState == main
 $tradeMode == OPEN
 $global.disco_mission_act3_complete
 !$global.disco_mission_arrest_complete",,,DiscoE_Inv_End_startOption:Investigate $marketName - End mission,
-nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_End_startOption,"$global.disco_mission_arrest_complete = true
+# nsp_DE_mission_End_Trubunal1_finished,DialogOptionSelected,$option == DiscoE_Inv_End_startOption,"$global.disco_mission_arrest_complete = true
 Call $global.disco_mission_ref DiscoCompleteArrest
 Call $global.disco_mission_ref updateStage
 Call $global.disco_mission_ref updateData
 FireAll PopulateOptions",Investigated $marketName so well it become cleaner. - End,,
 ,,,,,,
 ,,,,,,
-nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == nsp_revachol_market
+# nsp_HireHarry_placeholder_addBarOption,AddBarEvents,"$market.id == nsp_revachol_market
 #addchecks for completed mission later","AddBarEvent DiscoE_HireHarry_BarOption ""You see familiar faces of Harry and Kim sitting at farther side of the bar "" ""Join them for a drink, for old times sake""",,,
-nsp_HireHarry_placeholder_hubFire,DialogOptionSelected,$option == DiscoE_HireHarry_BarOption,"ShowPersonVisual true nsp_harry_dubois
+# nsp_HireHarry_placeholder_hubFire,DialogOptionSelected,$option == DiscoE_HireHarry_BarOption,"ShowPersonVisual true nsp_harry_dubois
 FireAll nsp_HireHarry_hub","As you approach their table, Kim stand up to greet you. Looks like they noticed you in the bar right away, but didn't want to interfere with your business.
 You exchange greeting and take place at their table, curiously eyeing their drinks.",,
-nsp_HireHarry_placeholder_yapaboutlife_add,nsp_HireHarry_hub,,,,1:nsp_HireHarry_placeholder_yapaboutlife_optionr:Ask about their life something.,
-nsp_HireHarry_placeholder_yapaboutlife_answer1,DialogOptionSelected,$option == nsp_HireHarry_placeholder_yapaboutlife_optionr,,"Something about life or mission, or something else. ",,
-nsp_HireHarry_placeholder_offerwork_add,nsp_HireHarry_hub,,,,2:nsp_HireHarry_placeholder_offerwork_option1:Offer Harry to work for you.,
-nsp_HireHarry_placeholder_skillcheck,DialogOptionSelected,$option == nsp_HireHarry_placeholder_offerwork_option1,"AddText ""You ask $personName some questions to establish where $hisOrHer skills lie.""
+# nsp_HireHarry_placeholder_yapaboutlife_add,nsp_HireHarry_hub,,,,1:nsp_HireHarry_placeholder_yapaboutlife_optionr:Ask about their life something.,
+# nsp_HireHarry_placeholder_yapaboutlife_answer1,DialogOptionSelected,$option == nsp_HireHarry_placeholder_yapaboutlife_optionr,,"Something about life or mission, or something else. ",,
+# nsp_HireHarry_placeholder_offerwork_add,nsp_HireHarry_hub,,,,2:nsp_HireHarry_placeholder_offerwork_option1:Offer Harry to work for you.,
+# nsp_HireHarry_placeholder_skillcheck,DialogOptionSelected,$option == nsp_HireHarry_placeholder_offerwork_option1,"AddText ""You ask $personName some questions to establish where $hisOrHer skills lie.""
 CallEvent $ome_eventRef printSkills nsp_harry_dubois
 $askedSkills = true 0
 unset $askedSkills",,"1:nsp_HireHarry_Yes:""Sounds good.""
 99:backToBar:""Return to the bar"".",
-nsp_HireHarry_placeholder_YesHire,DialogOptionSelected,$option == nsp_HireHarry_Yes,"nsp_AddOfficer nsp_harry_dubois
+# nsp_HireHarry_placeholder_YesHire,DialogOptionSelected,$option == nsp_HireHarry_Yes,"nsp_AddOfficer nsp_harry_dubois
 UpdateMemory
 ShowDefaultVisual
 EndConversation",Should call here either to hiring code or to mission/event ref.,,
