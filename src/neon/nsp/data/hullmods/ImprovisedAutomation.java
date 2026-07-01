@@ -11,6 +11,7 @@ import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import com.fs.starfarer.api.loading.WeaponSpecAPI;
+import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import neon.nsp.data.scripts.util.NSP_ReflectionUtilsT;
@@ -55,17 +56,17 @@ public class ImprovisedAutomation extends BaseHullMod {
         return 0;
     }
 
-    @Override
     public void addPostDescriptionSection(
             TooltipMakerAPI tooltip,
             ShipAPI.HullSize hullSize,
             ShipAPI ship,
             float width,
+            float opad,
             boolean isForModSpec
     ) {
-        tooltip.addPara("This ship is equipped with a strange, archaic, and rudimentary form of Automation, born out of neccesity and desperation than any true innovation.", 5f);
-
-        tooltip.addPara("Due to the nature of these modifications, this vessel's systems are incompatible with %s.", 3f, Misc.getNegativeHighlightColor(),
+        tooltip.addPara("This ship is equipped with a strange, archaic, and rudimentary form of Automation, born out of neccesity and desperation than any true innovation.", opad);
+        tooltip.addSectionHeading("Incompatibilites", Alignment.MID, opad);
+        tooltip.addPara("Due to the nature of these modifications, this vessel's systems are incompatible with %s.", opad, Misc.getNegativeHighlightColor(),
                 getHullmodName("safetyoverrides"));
     }
 

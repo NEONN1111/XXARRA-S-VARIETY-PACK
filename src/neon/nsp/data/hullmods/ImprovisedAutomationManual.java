@@ -38,14 +38,15 @@ public class ImprovisedAutomationManual extends BaseHullMod {
         return "Must not have a captain assigned to remove.";
     }
 
-    @Override
+
     public void addPostDescriptionSection(
             TooltipMakerAPI tooltip,
             ShipAPI.HullSize hullSize,
             ShipAPI ship,
             float width,
+            float opad,
             boolean isForModSpec
     ) {
-        tooltip.addPara("This ship is currently in %s mode, and will require a standard crew compliment.", 5f, Misc.getHighlightColor(), "manual");
+        tooltip.addPara("This ship is currently in %s mode, and will require a standard crew compliment.", opad, Misc.getHighlightColor(), "manual");
     }
 }

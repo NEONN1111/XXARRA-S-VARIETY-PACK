@@ -9,6 +9,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
@@ -24,19 +25,20 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
 
     private static final String AUTO_MODE = "nsp_improvised_auto";
 
-    @Override
+
     public void addPostDescriptionSection(
             TooltipMakerAPI tooltip,
             ShipAPI.HullSize hullSize,
             ShipAPI ship,
             float width,
+            float opad,
             boolean isForModSpec
     ) {
-        tooltip.addPara("Due to the ad-hoc nature of this automation, this ship lacks the infrastructure to properly support %s AI cores", 5f, Misc.getHighlightColor(), "advanced");
 
-        tooltip.addPara("However, the nature of these modifications allows the ship to accomodate %s crews as well, with little modification.", 5f, Misc.getHighlightColor(), "standard");
-
-        tooltip.addPara("When captained by an AI core, this ship requires no crew.", 5f);
+        tooltip.addPara("Due to the ad-hoc nature of this automation, this ship lacks the infrastructure to properly support %s AI cores", opad, Misc.getHighlightColor(), "advanced");
+        tooltip.addSectionHeading("Crew Accomodation", Alignment.MID, opad);
+        tooltip.addPara("However, the nature of these modifications allows the ship to accomodate %s crews as well, with little modification.", opad, Misc.getHighlightColor(), "standard");
+        tooltip.addPara("When captained by an AI core, this ship requires no crew.", opad);
     }
 
     @Override
