@@ -7,13 +7,14 @@
   "height": 325,
   "width": 291,
   "center": [145, 162.5],
-  "collisionRadius": 0,
+  "collisionRadius": 196,
   "shieldCenter": [0, -0],
-  "shieldRadius": 0,
+  "shieldRadius": 210.5,
   "viewOffset": 0,
   "builtInMods": [
     "nsp_coherer",
-    "increased_explosion"
+    "increased_explosion",
+    "ablative_armor"
   ],
   "weaponSlots": [
     {
@@ -220,6 +221,54 @@
       "length": 30,
       "width": 10,
       "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-91.5, 103.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-91.5, -103.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-88.5, 90.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-88.5, -90.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, 78.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, -78.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
       "contrailSize": 30,
       "style": "HIGH_TECH"
     }
