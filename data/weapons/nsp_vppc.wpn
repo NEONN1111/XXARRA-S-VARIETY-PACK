@@ -1,0 +1,20 @@
+{
+	"id":"nsp_vppc",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"onFireEffect":"neon.nsp.data.scripts.weapons.NSP_VPPCOnFireEffect",
+	"type":"ENERGY",
+	"size":"LARGE",
+	"turretSprite":"graphics/weapons/onslaught_thermal_turret_base.png",
+	"turretGlowSprite":"",
+	"hardpointSprite":"",
+	"hardpointGlowSprite":"",
+	"turretOffsets":[0, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[8, 0],
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.,
+	"animationType": "NONE",
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+	"projectileSpecId":"nsp_vppc_shot",  # projectile that will be fired
+	"fireSoundTwo":"nsp_VPPC_fire",
+}
