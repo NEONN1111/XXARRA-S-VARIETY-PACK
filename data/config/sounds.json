@@ -120,6 +120,14 @@
 	[
             {"file":"sounds/THREAT_DETECTED.ogg","pitch":1,"volume":1.5},
         ],
+						"nsp_rom_cloak":
+	[
+            {"file":"sounds/shipsystems/nsp_rom_cloak.ogg","pitch":1,"volume":0.5},
+        ],
+							"nsp_rom_decloak":
+	[
+            {"file":"sounds/shipsystems/nsp_rom_decloak.ogg","pitch":1,"volume":0.5},
+        ],
 			
 	
 		

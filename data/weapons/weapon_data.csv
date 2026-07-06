@@ -22,7 +22,7 @@ Light Plasma Torpedo (Fighter),nsp_plasmatorp_fighter,3,,7500,1000,,750,,75,30,3
 HELIOS Array,nsp_HELIOS,,,100000,1000,500,,,,256,,,,,ENERGY,,400,0.6,0.2,,,,,,,3000,,,,,,,"SYSTEM,SHOW_IN_CODEX,PD,PD_ALSO",codex_unlockable,HELIOS_only,,,General,,,,,Will target missiles and fighters if no other targets are in range.,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MERIDIAN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Variable-Phase Particle Cannon,nsp_vppc,,,100000,1000,,250,,0,0,,20,2,5,ENERGY,200,,0,0.2,1,,0,10,2,5,,1000,,,,,,"SYSTEM,SHOW_IN_CODEX",,PPC_only,,,General,,,,,Each projectile has a %s chance to deal a %s.,50% | random damage type,,,,
+Variable-Phase Particle Cannon,nsp_vppc,,,100000,1000,,250,,0,15,,20,2,5,ENERGY,200,,0,0.2,1,,0,10,2,5,,1000,,,,,,"SYSTEM,SHOW_IN_CODEX",,PPC_only,,,General,,,,,Each projectile has a %s chance to deal a %s.,50% | random damage type,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #THREAT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.5,0,10,5,10,,500,,,400,,,,"he18, threat",,Threat,,Anti Armor,,,,,,,,,,8

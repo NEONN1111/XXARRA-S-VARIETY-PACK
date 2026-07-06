@@ -27,6 +27,8 @@ Phasic Descent,threatphasecloak,,,,,,0.05,,0,,1,8,1,0,,,TRUE,TRUE,TRUE,,,,TRUE,,
 Heavy Phase Grazer,NSP_drift,,,,,,,,3,0.033,1.5,3,1,1.6,,,,TRUE,TRUE,,,,TRUE,TRUE,,restricted,graphics/icons/hullsys/displacer.png
 Time Acceleration Field,nsp_timefield,1,0.3,,,,0.3,,,,2,8,2,20,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Phasic Cloak,nsp_romulancloak,,,,,,,,,,0.5,,0.5,2,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,,TRUE,defensive,graphics/icons/hullsys/phase_cloak.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Construction Swarm,nsp_construction_swarm,,,,,,,,4,,0.1,,0.4,,,,,,,,,,,,,,graphics/icons/hullsys/construction_swarm.png
 Orion Device (LP),orion_device_shieldless,,,,,,,,4,0.2,0,0.001,0,1,,,,,,,,,,,,movement,graphics/icons/hullsys/orion_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
