@@ -11,6 +11,7 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import data.scripts.util.MagicRender;
 import org.dark.shaders.distortion.DistortionShader;
+import org.dark.shaders.distortion.RippleDistortion;
 import org.dark.shaders.distortion.WaveDistortion;
 import org.dark.shaders.light.LightShader;
 import org.dark.shaders.light.StandardLight;
@@ -21,16 +22,17 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 
 	public static Color JITTER_COLOR = new Color(175,255,175,255);
 	public static float JITTER_FADE_TIME = 0.5f;
-	
+
 	public static float SHIP_ALPHA_MULT = 0.05f;
 	//public static float VULNERABLE_FRACTION = 0.875f;
 	public static float VULNERABLE_FRACTION = 0f;
 	public static float INCOMING_DAMAGE_MULT = 0.25f;
 	private boolean hasTriggeredInitialRipple = false;
-	
-	
+	private boolean hasTriggeredInitialCloak = false;
+
+
 	public static float MAX_TIME_MULT = 3f;
-	
+
 //	/**
 //	 * Top speed multiplier when at 100% disruption.  
 //	 */
@@ -48,25 +50,25 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 //	public static float PROJECTILE_DAMAGE_MULT = 3f;
 //	public static float BEAM_DAMAGE_MULT = 0.1f;
 //	public static float MASS_DAMAGE_MULT = 1f;
-	
+
 	public static boolean FLUX_LEVEL_AFFECTS_SPEED = false;
 	public static float MIN_SPEED_MULT = 0.33f;
 	public static float BASE_FLUX_LEVEL_FOR_MIN_SPEED = 0.5f;
-	
+
 	protected Object STATUSKEY1 = new Object();
 	protected Object STATUSKEY2 = new Object();
 	protected Object STATUSKEY3 = new Object();
 	protected Object STATUSKEY4 = new Object();
-	
-	
+
+
 	public static float getMaxTimeMult(MutableShipStatsAPI stats) {
 		return 1f + (MAX_TIME_MULT - 1f) * stats.getDynamic().getValue(Stats.PHASE_TIME_BONUS_MULT);
 	}
-	
+
 	protected boolean isDisruptable(ShipSystemAPI cloak) {
 		return cloak.getSpecAPI().hasTag(Tags.DISRUPTABLE);
 	}
-	
+
 	protected float getDisruptionLevel(ShipAPI ship) {
 		//return disruptionLevel;
 		//if (true) return 0f;
@@ -80,15 +82,15 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 		}
 		return 0f;
 	}
-	
+
 	protected void maintainStatus(ShipAPI playerShip, State state, float effectLevel) {
 		float level = effectLevel;
 		float f = VULNERABLE_FRACTION;
-		
+
 		ShipSystemAPI cloak = playerShip.getPhaseCloak();
 		if (cloak == null) cloak = playerShip.getSystem();
 		if (cloak == null) return;
-		
+
 		if (level > f) {
 //			Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
 //					cloak.getSpecAPI().getIconSpriteName(), cloak.getDisplayName(), "can not be hit", false);
@@ -100,7 +102,7 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 //			Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
 //					spec.getIconSpriteName(), cloak.getDisplayName(), "damage mitigated by " + (int) percent + "%", false);
 		}
-		
+
 		if (FLUX_LEVEL_AFFECTS_SPEED) {
 			if (level > f) {
 				if (getDisruptionLevel(playerShip) <= 0f) {
@@ -113,19 +115,26 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 					Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
 							cloak.getSpecAPI().getIconSpriteName(),
 							//"phase coils at " + disruptPercent, 
-							"phase coil stress", 
+							"phase coil stress",
 							"top speed at " + speedPercentStr, true);
 				}
 			}
 		}
 	}
-	
+
 //	protected float disruptionLevel = 0f;
 //	//protected Set<CombatEntityAPI> hitBy = new LinkedHashSet<CombatEntityAPI>();
 //	protected TimeoutTracker<Object> hitBy = new TimeoutTracker<Object>();
 //	protected float sinceHit = 1000f;
 
-	private void createRippleEffect(ShipAPI ship) {
+    private void WarpingSpriteRendererUtilV2(SpriteAPI sprite, int verticesWide, int verticesTall, float minWarpRadius, float maxWarpRadius, float warpRateMult) {
+        minWarpRadius = 1f;
+		maxWarpRadius = 10f;
+		warpRateMult = 1f;
+    }
+
+
+    private void createRippleEffect(ShipAPI ship) {
 		for (int i = 0; i < 25; i++) {
 			Vector2f particlePos = MathUtils.getPointOnCircumference(
 					ship.getLocation(),
@@ -134,14 +143,14 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 			);
 			Vector2f particleVel = MathUtils.getRandomPointInCircle(new Vector2f(), 50f);
 
-			final WaveDistortion wave = new WaveDistortion();
+			final RippleDistortion wave = new RippleDistortion();
 			final Vector2f loc = new Vector2f(ship.getLocation());
 			wave.setLocation(loc);
-			wave.setSize(950.0f);
+			wave.setSize(400.0f);
 			wave.setIntensity(85.0f);
 			wave.fadeInSize(1.2f);
 			wave.fadeOutIntensity(0.9f);
-			wave.setSize(262.5f);
+			wave.setSize(150f);
 			DistortionShader.addDistortion(wave);
 
 		}
@@ -149,7 +158,7 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 
 	public float getSpeedMult(ShipAPI ship, float effectLevel) {
 		if (getDisruptionLevel(ship) <= 0f) return 1f;
-		return MIN_SPEED_MULT + (1f - MIN_SPEED_MULT) * (1f - getDisruptionLevel(ship) * effectLevel); 
+		return MIN_SPEED_MULT + (1f - MIN_SPEED_MULT) * (1f - getDisruptionLevel(ship) * effectLevel);
 	}
 
 	/*
@@ -355,7 +364,7 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 		}
 	}
 	*/
-	
+
 	
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 		ShipAPI ship = null;
@@ -373,6 +382,7 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 			createRippleEffect(ship);
 			hasTriggeredInitialRipple = true;
 		}
+
 
 
 //		if (effectLevel > 0) {
@@ -519,6 +529,9 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 //		}
 	}
 
+	private void WarpingSpriteRendererUtilV2(ShipAPI ship) {
+	}
+
 
 	public void unapply(MutableShipStatsAPI stats, String id) {
 //		stats.getHullDamageTakenMult().unmodify(id);
@@ -559,7 +572,7 @@ public class RomulanCloakStats extends BaseShipSystemScript {
 //		stats.getAcceleration().unmodify(id);
 //		stats.getDeceleration().unmodify(id);
 	}
-	
+
 	public StatusData getStatusData(int index, State state, float effectLevel) {
 //		if (index == 0) {
 //			return new StatusData("time flow altered", false);
