@@ -12,6 +12,7 @@ import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import data.scripts.util.MagicRender;
 import org.dark.shaders.distortion.DistortionShader;
 import org.dark.shaders.distortion.RippleDistortion;
+import org.dark.shaders.lens.LensShader;
 import org.dark.shaders.distortion.WaveDistortion;
 import org.dark.shaders.light.LightShader;
 import org.dark.shaders.light.StandardLight;

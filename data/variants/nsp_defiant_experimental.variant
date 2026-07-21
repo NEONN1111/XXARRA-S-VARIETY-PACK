@@ -24,8 +24,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "autopulse",
-        "WS0002": "autopulse"
+        "WS0001": "nsp_modular_phaser",
+        "WS0002": "nsp_modular_phaser"
       }
     },
     {

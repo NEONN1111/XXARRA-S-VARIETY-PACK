@@ -15,14 +15,17 @@ Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,,,,,ENERGY,19
 ,nsp_absdecopath2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Plasma Torpedo Launcher,nsp_plasmatorp,3,,7500,2000,,3000,,75,20,30,4,0.13,4,ENERGY,2500,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,500,,,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE","strike18, missile15, rare_bp, merc",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
-Light Plasma Torpedo (Fighter),nsp_plasmatorp_fighter,3,,7500,1000,,750,,75,30,30,1,,,ENERGY,700,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,250,,,"SYSTEM, STRIKE, USE_VS_FRIGATES, DO_NOT_AIM","missile8, strike3, show_in_codex",,,,Guided Torpedo (Fighter),Extremely Fast,Excellent,,,,,,,TRUE,23.6
+Plasma Torpedo Launcher,nsp_plasmatorp,3,,7500,2000,,3000,,75,20,30,4,0.13,4,HIGH_EXPLOSIVE,2500,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,500,,,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE","strike18, missile15, rare_bp, merc",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
+Light Plasma Torpedo (Fighter),nsp_plasmatorp_fighter,3,,7500,1000,,750,,75,30,30,1,,,HIGH_EXPLOSIVE,700,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,250,,,"SYSTEM, STRIKE, USE_VS_FRIGATES, DO_NOT_AIM","missile8, strike3, show_in_codex",,,,Guided Torpedo (Fighter),Extremely Fast,Excellent,,,,,,,TRUE,23.6
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GALAXY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 HELIOS Array,nsp_HELIOS,,,100000,1000,500,,,,256,,,,,ENERGY,,400,0.6,0.2,,,,,,,3000,,,,,,,"SYSTEM,SHOW_IN_CODEX,PD,PD_ALSO",codex_unlockable,HELIOS_only,,,General,,,,,Will target missiles and fighters if no other targets are in range.,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MERIDIAN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Variable-Phase Particle Cannon,nsp_vppc,,,100000,1000,,250,,0,15,,20,2,5,ENERGY,200,,0,0.2,1,,0,10,2,5,,1000,,,,,,"SYSTEM,SHOW_IN_CODEX",,PPC_only,,,General,,,,,Each projectile has a %s chance to deal a %s.,50% | random damage type,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#STAR TREK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Particle Beam Emitter,nsp_modular_phaser,,,9000,1200,300,,,,256,25,,,,ENERGY,,400,0.6,0.2,,,,,,,3000,,,,,,,"SHOW_IN_CODEX,PD,PD_ALSO",codex_unlockable,,,,General,,,,,Will target missiles and fighters if no other targets are in range.,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #THREAT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Borer ,nsp_threatbore,0,,3000,900,,250,,200,5,16,,,,HIGH_EXPLOSIVE,250,,,3,3,0.5,0,10,5,10,,500,,,400,,,,"he18, threat",,Threat,,Anti Armor,,,,,,,,,,8
