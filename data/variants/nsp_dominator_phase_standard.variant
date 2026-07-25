@@ -10,16 +10,15 @@
   "hullMods": [
     "autorepair",
     "auxiliarythrusters",
-    "armoredweapons",
-    "safetyoverrides"
+    "armoredweapons"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 012": "devastator",
-        "WS 013": "devastator"
+        "WS 012": "autopulse",
+        "WS 013": "autopulse"
       }
     },
     {

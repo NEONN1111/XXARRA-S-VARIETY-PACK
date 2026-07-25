@@ -63,6 +63,7 @@ The Medusa is one of the most respected destroyers in the Sector due to its asso
 
 Medusa-class blueprints are few in number and are closely guarded by their owners; pirates have acquired a Medusa-class hull only a handful of times and the results were inevitably drastic, though short-term, threat to local patrols and subsequent reduction in small to medium intrasystem shipping volume. Such events are considered a tremendous nuisance, particularly accounting for increased insurance premiums. Many trade combines will simply call for their fleets to wait for the pirates to run down their new toy's combat readiness so that local authorities can remove the problem once and for all.",,,,
 deepstrike,SHIP_SYSTEM,"Temporarily engages a primary burn on the system travel drive of the ship. Provides a massive speed boost, and boosts the fire rate of all ship weaponry for the duration of the burn. Cannot be toggled once active.",,,,
+deepstrike,deepstrike_maneuver,"Temporarily engages a burn of the engines and auxilliary thrusters, alongside accelerating ammo feeders. Provides a massive speed boost, and boosts the fire rate of all ship weaponry for the duration of the burn. Cannot be toggled once active.",,,,
 nsp_invictus_xiv,SHIP,"A design dating to the first explosive expansion of the Domain, this gargantuan mass of armor and all-big-guns was the gauntleted fist that smashed all opposition, spreading hegemony by fear and force over all of spacefaring humanity that was worth conquering.
 
 The steady march of military technology left the hull outdated, however. Its armor design was incompatible with early shield generators, its minimum crew complement staggering, and targeting systems unsophisticated. Modernized replacements were soon developed and the Onslaught-class, among others, was churned out by the great Domain forges. 
@@ -300,3 +301,73 @@ nsp_revachol_miningstation,CUSTOM,"Revachol's mining station is major supplier o
 
 Compared to the chaos on other major population centers of the star system, Revachol's mining station, was always small enough to make any power struggles too costly, so they just sweared their loyalty to any dominant power in the system, while struggling to establish any sort of supply routes to keep people fed and healthy and station?s systems from collapsing.",,,,
 ,,,,,,
+,,,,,,
+nsp_defiant,SHIP,"The experimental Meridian is a hard, mean ship. Though clearly sharing DNA with both the Apogee and Culmination-class ships, the creators of the Meridian are largely unknown. While plainly sharing design aspects and proprietary technology, the corporation vehemently denied any an all involvement with the project when it became public knowledge in an unusual incident.
+
+What has been gleamed from fragmentary Domain history is that the Meridian was apparently commissioned in anticipation of a wave of civil unrest or insurrection. From where this expected insurrection was expected to arise is unknown, but many analysts have pointed out that the Meridian itself appears to be a ship custom-made to counter standard battlegroup task forces.",,,,
+nsp_galaxy,SHIP,"An odd example of domain era starship design by Altair Exotech, the Culmination class was a foray into experimental technologies, and the combat exploration line that began with the famous Apogee class exploration cruiser. Most prominent among those experimental technologies having been it's HELIOS array, an integrated particle beam weapon directly built into the ship.
+
+While the vessel saw somewhat limited military adoption, it's versatile suite of science facilities, spacious and near-luxurious crew quarters, and high resolution sensor package saw it gain high praise, and popularity amongst independent explorers, and surveyors on the frontiers of Domain space.",,,,
+nsp_marauder,SHIP,"A creation of the infamous Dogar-Kazon Heavy Industry Concern, the Decorum was created as an apparent attempt to see how much corporation could get away with plausible deniability. Though nominally designated as a ""trade ship"", the large weapon mounts and aggressive layout of the ship makes itself obvious to even the most oblivious bureaucrat that the Decorum is a vessel primarily meant for raiding. 
+
+Infamy plagued the ship; even before it began production, its blueprints were stolen by an equally shady corporation, who then attempted to pawn it off to Domain Procurement. The following legal battle resulted in the Decorum's blueprints being leaked to the public, creating an instant favorite among pirates and insurrectionists for its speed and frontal power.",,,,
+nsp_scintillation,SHIP,"A remnant of the autonomous AI fleets developed by the Tri-Tachyon Corporation. Illegal under Domain (and Hegemony) law, and an abomination to the Church of Galactic Redemption, the First AI War saw these creations purged from the Sector. So the official histories say. 
+
+During the First AI War, rumors abounded of autonomous ""fleet anchors""; gigantic sapphire citadels overloaded with guns and fighters, rarely found at the center of Tri-Tachyon's dreaded AI fleets. No such ship was ever confirmed to exist, yet over a century later explorers and treasure-hunters alike have occasionally reported a behemoth among the Persean Sector's worst-kept-secret. 
+
+This, apparently, is that leviathan.
+",,,,
+nsp_onslaught_lp,SHIP,"A venerable design, the Onslaught-class battleships were first created to serve the Domain Armada long ago, before the development of advanced strike weapons, modern energy weapons, and shield systems. This variant has been modified into weapon of ""holy"" war, with overdriven engines, stripped shields and the ability to go faster than the ship was ever designed to go in a combat situation.
+
+When first launched from orbital dock, their firepower and burst-speed surely intimidated entire systems. Some even say that they were built to combat non-humans in a long forgotten war. Much later, Orion Shipyards engineers made modifications to the blueprints to include a shield system, upgraded the hyperdrive, and reduced the required crew complement through automation and iterative engineering. Even though more advanced blueprints are available, the Onslaught remains the easiest to manufacture due to the brutal simplicity of its systems. 
+
+A ship designed without shields in mind, built to be able to withstand a heavy barrage of enemy fire and strike back while protecting its crew is much loved by its officers and crew. And strike back it can; the Onslaught's unmatched ballistic potential can devastate entire fleets in minutes, its only drawback a logistical dependency on ammunition. 
+
+Onslaught crews are proud to serve in the class which forms the backbone of the Hegemony Navy.",,,,
+nsp_eagle_lp,SHIP,"Eagle-class cruisers are often found at the core of military fleets headed for battle. It is not hard to see why: A strong overall profile, with a robust engine, the Eagle's deadly weapons package is a threat to all enemies. This variant has been modified into a weapon of ""holy"" war by the Luddic Path.
+
+The Eagle can deliver a strong tactical punch to enemy formations. Its numerous turret and hardpoint emplacements make it very dangerous to smaller foes. Decent armor and a strong shield emitter let it hold space while outnumbered, or even when faced with the rare larger ship. 
+
+These strengths are somewhat countered by strike craft - an Eagle captain must always watch their scopes for an approaching strike squadron, since their ship will be easily crippled by multiple hits from modern strike weapons. 
+
+The embodiment of the sleek and powerful space cruiser from the time of the Domain, the Eagle-class ships are a beautiful reminder of the technological and aesthetic achievements of humanity's past. ",,,,
+nsp_eagle_mkii,SHIP,"Eagle-class cruisers are often found at the core of military fleets headed for battle. It is not hard to see why: A strong overall profile, with a robust engine, the Eagle's deadly weapons package is a threat to all enemies. This variant has been modified into an extreme weapon of ""holy"" war by the Luddic Path.
+
+The Eagle can deliver a strong tactical punch to enemy formations. Its numerous turret and hardpoint emplacements make it very dangerous to smaller foes. Decent armor and a strong shield emitter let it hold space while outnumbered, or even when faced with the rare larger ship. 
+
+These strengths are somewhat countered by strike craft - an Eagle captain must always watch their scopes for an approaching strike squadron, since their ship will be easily crippled by multiple hits from modern strike weapons. 
+
+The embodiment of the sleek and powerful space cruiser from the time of the Domain, the Eagle-class ships are a beautiful reminder of the technological and aesthetic achievements of humanity's past. ",,,,
+nsp_nebula_mkii,SHIP,"The voluminous but ungainly hull of the Mbaye-Gogol 430 ""Nebula"" does little to enhance the romance of interstellar travel but it does ensure a respectable passenger and cargo capacity for a ship of its class. Indeed, the Nebula has slowly come to dominate mid-tier passenger service since the muted reception of its first line of production. This variant has been modified into a cheap, ungainly weapons platform by Pirates.
+
+The Nebula is equipped with a forward-facing shield to enhance the safety of passengers and extend the hull plating's maintenance schedule. And the Sector being what it is, several ballistic turrets and anti-missile all-band flare launchers have been mounted at fortuitous locations to assure paying passengers that their well-being is a top priority of the operator.",,,,
+nsp_lp_buffalo,SHIP,"The go-to choice for medium cargo hauling in the Sector, the Buffalo-class freighter exemplifies the ""Load-n-Pray"" principle prevalent in Sector shipping. This variant has been modified by the Luddic Path into a poor weapon of ""holy"" war.
+
+Sporting just a single small weapon emplacement, the hull of the ship is no more than a large engine with a tiny crew quarters section and cargo grapplers. A captain taking this ship out without a convoy rarely gets to make the same mistake twice. Incapable of anything resembling a combat maneuver, the lateral thrusters on Buffalo-class ships are designed to merely enable it to dock when (and if) it reaches its destination.
+
+The ship engines are the greatest contributor to hull cost, which, while low, is still within the norms for a medium freighter. The greatest contributing factor to its ubiquity is the fact that the blueprint for this ship is usually hardcoded into every orbital shipyard's blueprint database.",,,,
+,,,,,,
+,,,,,,
+#EXPONENT,,,,,,
+nsp_exponent,SHIP,"While clearly a Tri-Tachyon ship of some manner, whatever else can be gleamed about it is a matter of educated guesswork. The only part of the ship's components familiar at all to a modern engineer is the ship's oversized phase coil, connected to an unknown mechanism whorled around it like an iron snake that perpetually hisses ultraviolet radiation.
+
+Tendrils of wires and machinery of cryptic design bleed through the vessel's hallways, crude automation for a ship evidently meant to originally host a human crew, all linked to an armored ""cockpit"" just below the bridge. The bridge even possesses a golden plaque, the name it once displayed rendered illegible by the application of a fusion-welder many cycles ago. 
+
+The ship's name, purpose, origin, all have been scoured clean from the ship's purged databanks. The only things that remain are repeated, corrupted references to ""the Project"" and, strangely, a small collection of encrypted Domain research papers.
+
+""The earliest practical experiments showed great promise, as AIs exposed to the long-theorized, phase-adjacent 'Elysium' space showed remarkable resistance to the usual degradations of p-space, and in some cases even- ERROR // MALICIOUS DOMAIN INFOSEC VIOLATION
+
+REPORT IMMEDIATELY TO NEAREST DOMAIN INFOSEC ASSET FOR MANDATORY INFOSEC COMPLIANCE REVIEW
+
+// THIS VIOLATION HAS BEEN LOGGED",,,,
+nsp_exponent_subpar,SHIP,"While clearly a Tri-Tachyon ship of some manner, whatever else can be gleamed about it is a matter of educated guesswork. The only part of the ship's components familiar at all to a modern engineer is the ship's oversized phase coil, connected to an unknown mechanism whorled around it like an iron snake that perpetually hisses ultraviolet radiation.
+
+Tendrils of wires and machinery of cryptic design bleed through the vessel's hallways, crude automation for a ship evidently meant to originally host a human crew, all linked to an armored ""cockpit"" just below the bridge. The bridge even possesses a golden plaque, the name it once displayed rendered illegible by the application of a fusion-welder many cycles ago. 
+
+The ship's name, purpose, origin, all have been scoured clean from the ship's purged databanks. The only things that remain are repeated, corrupted references to ""the Project"" and, strangely, a small collection of encrypted Domain research papers.
+
+""The earliest practical experiments showed great promise, as AIs exposed to the long-theorized, phase-adjacent 'Elysium' space showed remarkable resistance to the usual degradations of p-space, and in some cases even- ERROR // MALICIOUS DOMAIN INFOSEC VIOLATION
+
+REPORT IMMEDIATELY TO NEAREST DOMAIN INFOSEC ASSET FOR MANDATORY INFOSEC COMPLIANCE REVIEW
+
+// THIS VIOLATION HAS BEEN LOGGED",,,,

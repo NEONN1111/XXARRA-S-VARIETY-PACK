@@ -14,14 +14,14 @@
   "builtInMods": [
     "high_maintenance",
     "fluxbreakers",
-    "missleracks",
+    "nsp_mercenary",
     "distributed_fire_control"
   ],
   "weaponSlots": [
     {
       "id": "WS 012",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "ENERGY",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -30,7 +30,7 @@
     {
       "id": "WS 013",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "ENERGY",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
