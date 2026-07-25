@@ -66,6 +66,11 @@ Medusa-class blueprints are few in number and are closely guarded by their owner
 deepstrike,SHIP_SYSTEM,"Temporarily engages a primary burn on the system travel drive of the ship. Provides a massive speed boost, and boosts the fire rate of all ship weaponry for the duration of the burn. Cannot be toggled once active.",,,,
 deepstrike_maneuver,SHIP_SYSTEM,"Temporarily engages a burn of the engines and auxilliary thrusters, alongside accelerating ammo feeders. Provides a massive speed boost, and boosts the fire rate of all ship weaponry for the duration of the burn. Cannot be toggled once active.",,,,
 orion_device_shieldless,SHIP_SYSTEM,"Deploys a shaped antimatter charge behind the ship. The explosion applied to the ship by these charges has been increased to ludicrious degrees, resulting in the ship incurring varying levels of structural damage with each activation and detenation.",,,,
+nsp_rammingdrive,SHIP_SYSTEM,"Engages the ship's Lasair Drives and temporarily overloads the engines, propelling the ship great distances with destructive force. Damages the ship and disables weapons on system end.",,,,
+zealotscharge,SHIP_SYSTEM,"Activates the heavily modified Deep Strike system of the Absolution (LP), and triggers anti-matter injectors to create a stream of highly destructive fuel in the ship's wake.",,,,
+kardakes_feeder,SHIP_SYSTEM,Rapidly and drastically increases range and fire rate for the duration of the system. ,,,,
+nsp_temporaljaunt,SHIP_SYSTEM,Ascend into Elysium space on system activation. Temporarily overloads all nearby ships using phase-cloaks or phase-type systems in a radius around the ship.,,,,
+,,,,,,
 ,,,,,,
 nsp_invictus_xiv,SHIP,"A design dating to the first explosive expansion of the Domain, this gargantuan mass of armor and all-big-guns was the gauntleted fist that smashed all opposition, spreading hegemony by fear and force over all of spacefaring humanity that was worth conquering.
 
@@ -353,7 +358,12 @@ nsp_bullshark,SHIP,"Designed during a transitory phase of ship design, the Bulls
 
 Its mixed weaponry betrays a transitory origin. Designed right before the renaissance of the ""Cruiser School"" in ship design, the Bullshark was quickly eclipsed by its leaner, faster cousins. However, the ship did find a respectable niche in the role of a command carrier, able to act as the central nexus of a carrier group while still keeping pace with its smaller escorts. 
 ",,,,
-,,,,,,
+nsp_cassowary,SHIP,"An experimental battleship that was slated to be produced by the Persean League, but ultimately cancelled.",,,,
+nsp_cassowary_auto,SHIP,// TRI-PAD ERROR: Unknown Entry,,,,
+nsp_hammerhead_auto,SHIP,// TRI-PAD ERROR: Unknown Entry,,,,
+nsp_centurion_auto,SHIP,// TRI-PAD ERROR: Unknown Entry,,,,
+nsp_falcon_auto,SHIP,// TRI-PAD ERROR: Unknown Entry,,,,
+nsp_brawler_auto,SHIP,// TRI-PAD ERROR: Unknown Entry,,,,
 ,,,,,,
 #EXPONENT,,,,,,
 nsp_exponent,SHIP,"While clearly a Tri-Tachyon ship of some manner, whatever else can be gleamed about it is a matter of educated guesswork. The only part of the ship's components familiar at all to a modern engineer is the ship's oversized phase coil, connected to an unknown mechanism whorled around it like an iron snake that perpetually hisses ultraviolet radiation.
