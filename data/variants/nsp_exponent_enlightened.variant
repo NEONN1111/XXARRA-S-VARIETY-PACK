@@ -2,11 +2,13 @@
   "variantId": "nsp_exponent_enlightened",
   "hullId": "nsp_exponent",
   "displayName": "Enlightened",
-  "goalVariant": true,
-  "fluxCapacitors": 26,
+  "goalVariant": false,
+  "fluxCapacitors": 5,
   "fluxVents": 30,
   "quality": 1,
-  "permaMods": [],
+  "permaMods": [
+    "exponent_subsystems"
+  ],
   "hullMods": [
     "targetingunit",
     "fluxbreakers",
@@ -18,15 +20,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "nsp_exponent_pulser"
+        "WS0002": "ionpulser"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "nsp_elysium_lance",
-        "WS0005": "nsp_elysium_lance"
+        "WS0004": "phasebeam",
+        "WS0005": "phasebeam"
       }
     },
     {

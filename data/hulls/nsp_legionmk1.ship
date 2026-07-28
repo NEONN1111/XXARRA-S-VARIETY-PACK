@@ -17,7 +17,7 @@
     "ancient_forge",
     "nsp_hardened_armor",
     "nsp_armorparent",
-	"heavycompositeintegration_nsp"
+    "heavycompositeintegration_nsp"
   ],
   "weaponSlots": [
     {
@@ -182,7 +182,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [106.5, -40]
+      "locations": [106.5, -40.5]
     },
     {
       "id": "DMNL",
