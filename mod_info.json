@@ -3,13 +3,17 @@
 	"name":"Xxarra's Variety Pack (XVP)", # displayed to the player
 	"author":"Xxarra",
 	"jars":["jars/NSP.jar"],
-	"version":"3.0.5.9",
+	"version":"1.0a",
 	"description":"A small, gradually growing collection of ships, exploration and quest content! Credit to Minideth3, TouchOfVanilla, Histidine, USC, The StarSector subreddit, and many others for script help, feedback, and support during the mod's development. Enjoy!",
 	"gameVersion":"0.98a-RC5",
         "dependencies": [
 		{
 			"id": "MagicLib",
 			"name": "MagicLib",
+		},
+		{
+			"id": "shaderLib",
+			"name": "zz GraphicsLib",
 		},
 ],
 
