@@ -86,9 +86,7 @@ They look off for a moment, and deflate with a sigh.
 EBEbarKnight2GreetSuspiciousOptionTwo,DialogOptionSelected,$option == GreetSuspiciousOptionTwo,,"""Despite the, zeal, of some of our preachers, the road to damnation is much longer than most think. Ludd gives us many, many chances to realize we are astray. And easier to turn back just a few steps down the wrong road. Now, if you would indulge me.""",EBEbarKnight_three:Continue,
 EBEbarKnight2GreetSuspiciousOptionThree,DialogOptionSelected,$option == GreetSuspiciousOptionThree,,"Their lips curl into an empty smirk.
 
-""Honesty. It is a virtue. Keep nurturing it.""","Their lips curl into an empty smirk.
-
-""Honesty. It is a virtue. Keep nurturing it.""",
+""Honesty. It is a virtue. Keep nurturing it.""",EBEbarKnight_three:Continue,
 EBEbarKnight2GreetPather,ExponentKnightGreeting,NSPExponentCheck isPather,,"""I wish to be honest. Your interpretation of the Word may be more...energetic than the Church approves, but perhaps that's what's needed.""",EBEbarKnight_three:Continue,
 EBEbarKnight3,DialogOptionSelected,$option == EBEbarKnight_three,NSPExponentPopulateOptions acceptRefuse,"The knight looks out the window, into the old ocean of the void, silent as the steam column from their tea slowly thins.
 
