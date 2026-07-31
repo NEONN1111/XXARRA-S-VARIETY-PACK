@@ -481,7 +481,7 @@ public class ExponentMission extends HubMissionWithSearch {
         } else if (currentStage == Stage.REPORT_BACK) {
             info.addPara("Arriving at the last known location of the strike fleet in " + system1.getNameWithLowercaseTypeShort() +
                     " you found a horrific sight.", opad);
-            info.addPara("Report back at " + originMarket.getName() + " blah blah blah", opad);
+            info.addPara("Report back at " + originMarket.getName(), opad);
         } else if (currentStage == Stage.TAKE_THE_FIGHT_LCF) {
             info.addPara("[Retrieved data from the Invictus, decrypted by contact, escort fleet for precaution and assurance of destruction]", opad);
             info.addPara("Defeat the Exponent and [something].", opad);

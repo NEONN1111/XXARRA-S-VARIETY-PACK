@@ -80,7 +80,7 @@ public class NSPExponentPopulateOptions extends BaseCommandPlugin {
 
         if (command.equals("exponentCommLinkOneB")) {
             optionPanel.clearOptions();
-            optionPanel.addOption("\"Got a sense you have a proposition.\"","exponentCommLinkTwoA");
+            optionPanel.addOption("\"Got a sense you have a proposition.\"","exponentCommLinkOneC");
             optionPanel.addOption("\"I'm listening.\"","valteilContinueTwo");
             optionPanel.addOption("\"I argue otherwise.\"","valteilRefuse");
 
