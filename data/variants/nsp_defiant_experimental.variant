@@ -3,7 +3,7 @@
   "hullId": "nsp_defiant",
   "displayName": "Experimental",
   "goalVariant": true,
-  "fluxCapacitors": 25,
+  "fluxCapacitors": 20,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],

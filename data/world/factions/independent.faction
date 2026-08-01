@@ -16,6 +16,10 @@
             "nsp_defiant":0.8,			
         },
     },
+		"weaponSellFrequency":{
+		"nsp_modular_phaser":2,
+		"nsp_plasmatorp":2,
+	},
     "knownShips":{
         "hulls":[
             "nsp_sisyphus",

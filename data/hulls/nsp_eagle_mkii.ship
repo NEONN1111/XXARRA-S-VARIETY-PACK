@@ -51,7 +51,7 @@
     {
       "id": "WS 005",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 170,
       "angle": 60,
@@ -60,7 +60,7 @@
     {
       "id": "WS 006",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 170,
       "angle": -60,

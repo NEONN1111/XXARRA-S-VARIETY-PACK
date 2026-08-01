@@ -13,11 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "ill_advised",
-    "safetyoverrides"
-  ],
-  "builtInWings": [
-    "terminator_wing",
-    "terminator_wing"
+    "safetyoverrides",
+    "reinforcedhull"
   ],
   "builtInWeapons": {
     "WS0008": "nsp_pusherplate_champ",
@@ -81,21 +78,21 @@
     },
     {
       "id": "WS0001",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [111, -38]
+      "locations": [118, -38]
     },
     {
       "id": "WS0004",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [111, 38]
+      "locations": [118, 38]
     },
     {
       "id": "WS0002",

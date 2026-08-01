@@ -4,7 +4,7 @@
   "displayName": "Holy",
   "goalVariant": true,
   "fluxCapacitors": 7,
-  "fluxVents": 50,
+  "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
@@ -18,7 +18,9 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "hammerrack"
+        "WS0004": "hammerrack",
+        "WS0030": "hammerrack",
+        "WS0031": "hammerrack"
       }
     },
     {

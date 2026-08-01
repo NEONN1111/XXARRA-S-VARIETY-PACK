@@ -17,15 +17,16 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 009": "hammerrack",
-        "WS0001": "devastator",
-        "WS0004": "devastator"
+        "WS 009": "hammerrack"
       }
     },
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0001": "chaingun",
+        "WS0004": "chaingun"
+      }
     },
     {
       "autofire": true,

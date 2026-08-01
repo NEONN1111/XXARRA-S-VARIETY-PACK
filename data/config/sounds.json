@@ -166,7 +166,7 @@
     },
 	
     "nsp_plasmatorp_fire":[
-      {"file":"sounds/sfx_wpns_missiles/nsp_plasmatorp_fire.ogg","pitch":1,"volume":0.5},
+      {"file":"sounds/sfx_wpns_missiles/nsp_plasmatorp_fire.ogg","pitch":1,"volume":0.3},
     ],
 	
 	"nsp_HELIOS_charge":[

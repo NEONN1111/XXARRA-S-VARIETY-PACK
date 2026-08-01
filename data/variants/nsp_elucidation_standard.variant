@@ -3,14 +3,13 @@
   "hullId": "nsp_elucidation",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 18,
+  "fluxCapacitors": 10,
   "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "targetingunit",
-    "fluxdistributor",
-    "auxiliarythrusters"
+    "fluxdistributor"
   ],
   "weaponGroups": [
     {
