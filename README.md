@@ -1,6 +1,6 @@
-# XEON's CONTENT PACK
+# XXARRA'S VARIETY PACK
 
-v1.0.1
+v0.1a
 
 ## Description
 
