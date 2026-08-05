@@ -66,8 +66,10 @@ public class NSP_aiswitch extends BaseHullMod {
         tooltip.addPara("Can only switch states if the ship doesn't already have a captain.", 5f);
 
         if (!this.isBuiltIn(ship) && !this.isSMod(ship)) {
-            TooltipMakerAPI para = (TooltipMakerAPI) tooltip.addPara("Only functions once built in to the vessel. Does not refund its ordnance post cost after being built in if the ship was originally automated.", 5f);
-            ((com.fs.starfarer.api.ui.LabelAPI) para).setHighlightColor(Misc.getNegativeHighlightColor());
+            tooltip.addPara("Only functions once built in to the vessel. Does not refund its ordnance post cost after being built in if the ship was originally automated.", Misc.getNegativeHighlightColor(),5f);
+            // Old code below that broke the tooltip
+//            TooltipMakerAPI para = (TooltipMakerAPI) tooltip.addPara("Only functions once built in to the vessel. Does not refund its ordnance post cost after being built in if the ship was originally automated.", 5f);
+//            ((com.fs.starfarer.api.ui.LabelAPI) para).setHighlightColor(Misc.getNegativeHighlightColor());
         }
     }
 
