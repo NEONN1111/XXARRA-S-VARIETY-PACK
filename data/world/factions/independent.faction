@@ -13,7 +13,8 @@
             "nsp_iliad":0.7,
             "nsp_galaxy":0.6,		
             "nsp_dachshund":4,		
-            "nsp_defiant":0.8,			
+            "nsp_defiant":0.8,		
+            "nsp_marauder":0.8,			
         },
     },
 		"weaponSellFrequency":{
@@ -35,6 +36,7 @@
 						"nsp_galaxy",
 						"nsp_dachshund",
 						"nsp_defiant",
+						"nsp_marauder",
         ],
 	},
 },

@@ -19,8 +19,8 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS 000": "hammerrack",
-        "WS 001": "hammerrack"
+        "WS 000": "devastator",
+        "WS 001": "devastator"
       }
     },
     {
