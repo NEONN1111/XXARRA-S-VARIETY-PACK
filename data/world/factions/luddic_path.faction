@@ -7,7 +7,8 @@
             "nsp_champion_mkiii":2,
             "nsp_onslaught_lp":0.3,
             "nsp_eagle_lp":3,
-            "nsp_eagle_mkii":2,			
+            "nsp_eagle_mkii":2,
+            "nsp_retribution_lp":2,			
         },
     },
     "knownShips":{
@@ -18,7 +19,8 @@
             "nsp_champion_mkiii",
             "nsp_onslaught_lp",
             "nsp_eagle_lp",
-            "nsp_eagle_mkii",			],
+            "nsp_eagle_mkii",		
+            "nsp_retribution_lp",			],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
 	"priorityShips":{
