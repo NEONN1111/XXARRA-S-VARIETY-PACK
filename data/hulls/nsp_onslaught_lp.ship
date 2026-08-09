@@ -3,7 +3,7 @@
   "hullId": "nsp_onslaught_lp",
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/ships/nsp_onslaught_lp.png",
-  "style": "LOW_TECH",
+  "style": "LUDDIC_PATH",
   "height": 384,
   "width": 288,
   "center": [144, 142],
@@ -40,7 +40,8 @@
     "WS0019": "nsp_zealousinjector",
     "WS0020": "nsp_zealousinjector",
     "WS0021": "nsp_zealousinjector",
-    "WS0022": "nsp_zealousinjector"
+    "WS0022": "nsp_zealousinjector",
+    "WS0023": "nsp_vectorEngineController"
   },
   "weaponSlots": [
     {
@@ -420,6 +421,15 @@
       "arc": 5,
       "angle": 140.5,
       "locations": [-118, -9.5]
+    },
+    {
+      "id": "WS0023",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [14.5, 0]
     }
   ],
   "engineSlots": [
@@ -485,7 +495,8 @@
       "width": 20,
       "angle": -138,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-18, 122.5],
@@ -493,7 +504,8 @@
       "width": 20,
       "angle": 138,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-1, -131],
@@ -501,7 +513,8 @@
       "width": 20,
       "angle": -138.5,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-1, 131],
@@ -509,7 +522,8 @@
       "width": 20,
       "angle": 138.5,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [42.5, 131.5],
@@ -517,7 +531,8 @@
       "width": 17,
       "angle": 144,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [42.5, -131.5],
@@ -525,7 +540,8 @@
       "width": 17,
       "angle": -144,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     }
   ],
   "bounds": [

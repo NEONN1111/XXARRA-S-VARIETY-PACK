@@ -3,7 +3,7 @@
   "hullId": "nsp_eagle_mkii",
   "hullSize": "CRUISER",
   "spriteName": "graphics/ships/nsp_eagle_mkii.png",
-  "style": "MIDLINE",
+  "style": "LUDDIC_PATH",
   "height": 218,
   "width": 177,
   "center": [88, 101],
@@ -27,7 +27,8 @@
     "WS0013": "nsp_antimatter_injector",
     "WS0014": "nsp_antimatter_injector",
     "WS0015": "nsp_antimatter_injector",
-    "WS0016": "nsp_antimatter_injector"
+    "WS0016": "nsp_antimatter_injector",
+    "WS0018": "nsp_vectorEngineController"
   },
   "weaponSlots": [
     {
@@ -263,6 +264,15 @@
       "arc": 5,
       "angle": 0,
       "locations": [79, -0]
+    },
+    {
+      "id": "WS0018",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-13, 0]
     }
   ],
   "engineSlots": [
@@ -320,7 +330,8 @@
       "width": 8,
       "angle": -146.5,
       "contrailSize": 121,
-      "style": "MIDLINE"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [26, 59.5],
@@ -328,7 +339,8 @@
       "width": 8,
       "angle": 146.5,
       "contrailSize": 121,
-      "style": "MIDLINE"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-58, -84],
@@ -336,7 +348,8 @@
       "width": 8,
       "angle": -149.5,
       "contrailSize": 121,
-      "style": "MIDLINE"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-58, 84],
@@ -344,7 +357,8 @@
       "width": 8,
       "angle": 149.5,
       "contrailSize": 121,
-      "style": "MIDLINE"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-82, 61],

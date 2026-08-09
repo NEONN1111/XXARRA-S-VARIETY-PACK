@@ -3,7 +3,7 @@
   "hullId": "nsp_retribution_lp",
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/ships/nsp_retribution_lp2.png",
-  "style": "LOW_TECH",
+  "style": "LUDDIC_PATH",
   "height": 328,
   "width": 204,
   "center": [102, 156],
@@ -20,7 +20,8 @@
   "builtInWeapons": {
     "WS 019": "pusherplate_lt",
     "WS0001": "hammerrack",
-    "WS0002": "hammerrack"
+    "WS0002": "hammerrack",
+    "WS0015": "nsp_vectorEngineController"
   },
   "weaponSlots": [
     {
@@ -238,6 +239,15 @@
       "arc": 5,
       "angle": -0,
       "locations": [99, -84]
+    },
+    {
+      "id": "WS0015",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [11, 0]
     }
   ],
   "engineSlots": [
@@ -279,7 +289,8 @@
       "width": 16,
       "angle": 135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-59.5, -96.5],
@@ -287,7 +298,8 @@
       "width": 16,
       "angle": -135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-40, 91.5],
@@ -295,7 +307,8 @@
       "width": 16,
       "angle": 135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [-40, -91.5],
@@ -303,7 +316,8 @@
       "width": 16,
       "angle": -135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [34, 95.5],
@@ -311,7 +325,8 @@
       "width": 16,
       "angle": 135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [34, -95.5],
@@ -319,7 +334,8 @@
       "width": 16,
       "angle": -135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [34.5, 48.5],
@@ -327,7 +343,8 @@
       "width": 8,
       "angle": 135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     },
     {
       "location": [34.5, -48.5],
@@ -335,7 +352,8 @@
       "width": 8,
       "angle": -135,
       "contrailSize": 36,
-      "style": "LOW_TECH"
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
     }
   ],
   "bounds": [

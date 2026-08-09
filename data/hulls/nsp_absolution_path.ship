@@ -3,7 +3,7 @@
   "hullId": "nsp_absolution_path",
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/ships/nsp_absolution/nsp_absolution_lp.png",
-  "style": "LOW_TECH",
+  "style": "LUDDIC_PATH",
   "height": 418,
   "width": 407,
   "center": [204, 197],
