@@ -1,0 +1,42 @@
+{
+  "variantId": "nsp_tribute_standard",
+  "hullId": "nsp_tribute",
+  "displayName": "Outdated",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "blast_doors",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "hammer",
+        "WS0003": "hammer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymortar"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "lightdualac",
+        "WS0005": "lightdualac"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
