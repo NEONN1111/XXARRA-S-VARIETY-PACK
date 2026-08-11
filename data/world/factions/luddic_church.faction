@@ -6,6 +6,7 @@
                         "nsp_reprieve":1,
                         "nsp_incursion_church":1,
                         "nsp_incursion":0.7,
+						"nsp_tribute":3,
                        						
         },
     },
@@ -16,6 +17,7 @@
             "nsp_reprieve",
             "nsp_incursion",
             "nsp_incursion_church",
+			"nsp_tribute",
         ],
 	},
 },
