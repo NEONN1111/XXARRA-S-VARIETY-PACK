@@ -12,7 +12,9 @@
   "shieldRadius": 74,
   "viewOffset": 0,
   "builtInMods": [
-    "rugged"
+    "rugged",
+    "distributed_fire_control",
+    "nsp_hardened_armor"
   ],
   "weaponSlots": [
     {
