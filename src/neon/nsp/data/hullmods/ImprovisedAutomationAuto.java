@@ -13,7 +13,10 @@ import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
+import java.awt.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class ImprovisedAutomationAuto extends BaseHullMod {
@@ -24,21 +27,21 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
     private final Random random = new Random();
 
     private static final String AUTO_MODE = "nsp_improvised_auto";
+    public static Map mag = new HashMap();
+    static {
+        mag.put(HullSize.FRIGATE, 2f);
+        mag.put(HullSize.DESTROYER, 3f);
+        mag.put(HullSize.CRUISER, 4f);
+        mag.put(HullSize.CAPITAL_SHIP, 5f);
+    }
 
 
-    public void addPostDescriptionSection(
-            TooltipMakerAPI tooltip,
-            ShipAPI.HullSize hullSize,
-            ShipAPI ship,
-            float width,
-            float opad,
-            boolean isForModSpec
-    ) {
-
-        tooltip.addPara("Due to the ad-hoc nature of this automation, this ship lacks the infrastructure to properly support %s AI cores", opad, Misc.getHighlightColor(), "advanced");
-        tooltip.addSectionHeading("Crew Accomodation", Alignment.MID, opad);
-        tooltip.addPara("However, the nature of these modifications allows the ship to accomodate %s crews as well, with little modification.", opad, Misc.getHighlightColor(), "standard");
-        tooltip.addPara("When captained by an AI core, this ship requires no crew.", opad);
+    @Override
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
+        tooltip.addSectionHeading("Ship State", Alignment.MID, 5f);
+        tooltip.addPara("The ship is currently %s.", 5f, Color.ORANGE, "automated");
+        tooltip.addSectionHeading("Affected Deployment", Alignment.MID, 5f);
+        tooltip.addPara("As a result of the idiosyncrasies of these modifications, the Deployment Point cost of this ship is raised by %s/%s/%s/%s.", 5f, Color.ORANGE, "2","3","4","5");
     }
 
     @Override
@@ -82,6 +85,9 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
 
         stats.getMinCrewMod().modifyMult(id, 0);
         stats.getMaxCrewMod().modifyMult(id, 0);
+        stats.getSuppliesPerMonth().modifyFlat(id, (Float) mag.get(hullSize));
+        stats.getSuppliesToRecover().modifyFlat(id, (Float) mag.get(hullSize));
+        stats.getDynamic().getMod("deployment_points_mod").modifyFlat(id, (Float) mag.get(hullSize));
     }
 
     @Override

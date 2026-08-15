@@ -41,10 +41,10 @@ public class ImprovisedAutomation extends BaseHullMod {
         BLOCKED_HULLMODS.add("safetyoverrides");
     }
 
-    @Override
-    public CargoStackAPI getRequiredItem() {
-        return Global.getSettings().createCargoStack(CargoAPI.CargoItemType.RESOURCES, Commodities.ALPHA_CORE, null);
-    }
+ //   @Override
+   // public CargoStackAPI getRequiredItem() {
+    //    return Global.getSettings().createCargoStack(CargoAPI.CargoItemType.RESOURCES, Commodities.ALPHA_CORE, null);
+   // }
 
     @Override
     public int getDisplayCategoryIndex() {
@@ -56,18 +56,16 @@ public class ImprovisedAutomation extends BaseHullMod {
         return 0;
     }
 
-    public void addPostDescriptionSection(
-            TooltipMakerAPI tooltip,
-            ShipAPI.HullSize hullSize,
-            ShipAPI ship,
-            float width,
-            float opad,
-            boolean isForModSpec
-    ) {
-        tooltip.addPara("This ship is equipped with a strange, archaic, and rudimentary form of Automation, born out of neccesity and desperation than any true innovation.", opad);
-        tooltip.addSectionHeading("Incompatibilites", Alignment.MID, opad);
-        tooltip.addPara("Due to the nature of these modifications, this vessel's systems are incompatible with %s.", opad, Misc.getNegativeHighlightColor(),
+
+    @Override
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
+
+        tooltip.addPara("This ship is equipped with a strange, archaic, and rudimentary form of Automation, born out of neccesity and desperation than any true innovation." ,5f);
+        tooltip.addSectionHeading("Incompatibilites", Alignment.MID, 5f);
+        tooltip.addPara("Due to the nature of these modifications, they are incompatible with %s.", 5f, Misc.getNegativeHighlightColor(),
                 getHullmodName("safetyoverrides"));
+        tooltip.addSectionHeading("AI Core Limitations", Alignment.MID, 5f);
+        tooltip.addPara("Vessels of this type lack the necessary infrastructure to support %s levels of AI core processes. As a result, AI cores installed on ships of this type cannot go past level 5, and 6 when %s." ,5f, Color.ORANGE, "higher", "fully integrated");
     }
 
     public String getHullmodName(String id) {

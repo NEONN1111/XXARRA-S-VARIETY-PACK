@@ -32,7 +32,7 @@ Enraged Systems,nsp_sandevistan,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0
 ",,,graphics/hullmods/enraged_systems.png
 Enlightened Systems,nsp_sandevistan2,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSPSandyEffect2,"Can you hear it, too?",,,graphics/hullmods/enlightened_subsystems.png
 HULLMOD CONFLICT,nsp_incompatible,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSPIncompatible,INCOMPATIBLE HULLMOD,,,graphics/icons/intel/investigation.png
-Hardened Armor,nsp_hardened_armor,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.HardenedArmorNSP,"An ancient design standard intended to increase the effectivness and survivability of shieldless hulls, developed before the advent of such technology that would replace it.",Increases damage reduction by armor.,,graphics/hullmods/nsp_hardenedarmor.png
+Impact Hardened Armor,nsp_hardened_armor,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.HardenedArmorNSP,"An ancient design standard intended to increase the effectivness and survivability of shieldless hulls, developed before the advent of such technology that would replace it.",Increases damage reduction by armor.,,graphics/hullmods/nsp_hardenedarmor.png
 Tellasian League Refit,tll_refit,,,,"no_drop, no_sell, restricted",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.TLL_Refit,,"Reduces missile and ballistic weapon range, and flux dissipation / capacity.",,graphics/hullmods/tll_refit.png
 Targeting Supercomputer,nsp_supercomputer,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_TargetingSupercomputer,An extremely advanced targeting array is integrated into this vessel.,,,graphics/hullmods/targeting_supercomputer.png
 SUBSYSTEMS FOR EXPONENT,exponent_subsystems,,,,"no_drop, no_sell, restricted",,,,TRUE,TRUE,0,0,0,0,neon.nsp.data.hullmods.ExponentSubsystems,A state-of-the-art hyperwave array is used by this ship to broadcast music at FTL.,Plays music.,,graphics/hullmods/high_res_sensors.png
@@ -54,8 +54,8 @@ Threat Automation,nsp_threat_automation,,,Threat,,,,,TRUE,,0,0,0,0,neon.nsp.data
 Threat Hull,threat_hullmod,,,,"codex_require_related, threat",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ThreatHullmodNSP,Hidden hullmod for managing the special properties of Threat ships. Description created in script.,,,graphics/hullmods/the_threat.png
 ,,,,,,,,,,,,,,,,,,,
 Improvised Automation Suite,nsp_improvised_automation,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomation,"This hull's design is rugged and ad-hoc, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/improvised_automation.png
-Automated,nsp_improvised_auto,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationAuto,"This hull's design is rugged and ad-hoc, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/improvised_automation.png
-Manual,nsp_improvised_manual,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationManual,"This hull's design is rugged and ad-hoc, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/improvised_automation.png
+Automated,nsp_improvised_auto,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationAuto,Automated Mode.,,,graphics/hullmods/improvised_automation.png
+Manual,nsp_improvised_manual,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationManual,Manual Mode.,,,graphics/hullmods/improvised_automation.png
 Penalty,nsp_improvised_penalty,,,,"no_drop, restricted, no_build_in",,,,TRUE,TRUE,8,15,25,40,neon.nsp.data.hullmods.ImprovisedAutomationPenalty,,,,
 Automated Removal Helper,nsp_automated_remover,,,,"no_drop, restricted, no_build_in",,,,TRUE,TRUE,8,15,25,40,neon.nsp.data.hullmods.ImprovisedAutomationCleanup,,,,
 ,,,,,,,,,,,,,,,,,,,
@@ -65,4 +65,6 @@ Lidar Bank,nsp_lidarbank,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.LidarBank,"
 Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,graphics/hullmods/lidar_bank.png
 ,,,,,,,,,,,,,,,,,,,
 Energy Coherence Grid,nsp_coherer,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_EnergyBoltCoherer,<tooltip created in the script>,Increases base range of non-beam energy weapons.,,graphics/hullmods/coherer.png
-Mercenary Refit,nsp_mercenary,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_PhominatorHullmod,<tooltip created in the script>,,,graphics/icons/missions/security_codes.png
+Mercenary Refit,nsp_mercenary,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_PhominatorHullmod,,,,graphics/icons/missions/security_codes.png
+,,,,,,,,,,,,,,,,,,,
+Safety Overrides,nsp_safetyoverrides,0,,,"special, engines, offensive, merc, no_build_in, standard","Special, Engines",2500,TRUE,,,15,30,45,70,neon.nsp.data.hullmods.NSP_SafetyOverridesLP,,,,graphics/hullmods/safety_overrides.png
