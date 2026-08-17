@@ -13,7 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "ill_advised",
-    "safetyoverrides",
+    "nsp_safetyoverrides",
     "reinforcedhull"
   ],
   "builtInWeapons": {

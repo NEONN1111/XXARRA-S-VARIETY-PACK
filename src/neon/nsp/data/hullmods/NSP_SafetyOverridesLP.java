@@ -11,9 +11,20 @@ import com.fs.starfarer.api.util.Misc;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class NSP_SafetyOverridesLP extends BaseHullMod {
+
+    private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
+
+    static {
+        // These hullmods will automatically be removed
+        // This prevents unexplained hullmod blocking
+        BLOCKED_HULLMODS.add("safetyoverrides");
+
+    }
 
     //Provides bonus to ship max speed and acceleration for short time after engines are not active
     private static Map speed = new HashMap();
@@ -30,7 +41,7 @@ public class NSP_SafetyOverridesLP extends BaseHullMod {
     private static final float RANGE_MULT = 0.25f;
 
     float boost_accumulator = 0;
-    float AfterBurnerBonusMax = 0.65f;
+    float AfterBurnerBonusMax = 0.75f;
 
     String MOD_KEY = "NSP_SafetyOverridesLP";
 
@@ -72,6 +83,17 @@ public class NSP_SafetyOverridesLP extends BaseHullMod {
           //      getHullmodName("heavyarmor"));
     //    tooltip.addSectionHeading("Effects On Other Hullmods", Alignment.MID, 5f);
       //  tooltip.addPara("%s hullmods which add armor will have no effect on the hull's armor.", 5f, Color.ORANGE, "Most");
+    }
+
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id, MutableShipStatsAPI stats) {
+        for (String tmp : BLOCKED_HULLMODS) {
+            if (ship.getVariant().getHullMods().contains(tmp)) {
+                ship.getVariant().removeMod(tmp);
+                String ERROR = "nsp_incompatible";
+                ship.getVariant().addMod(ERROR);
+            }
+        }
+
     }
 
 

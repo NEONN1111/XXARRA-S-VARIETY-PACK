@@ -184,6 +184,12 @@
 		{"file":"sounds/engine_01_luddicpath.ogg","pitch":1,"volume":0.5},
 	],
 	
+	 "horse_teleport":{
+            "sounds":[
+                   {"file":"sounds/horse.ogg","pitch":1,"volume":0.5},
+            ],
+    },
+	
 "music":{
 	"nsp_invicta_encounter1":
 	[

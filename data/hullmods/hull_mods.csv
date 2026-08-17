@@ -67,4 +67,4 @@ Precludes the installation of a Dedicated Targeting Core or an Integrated Target
 Energy Coherence Grid,nsp_coherer,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_EnergyBoltCoherer,<tooltip created in the script>,Increases base range of non-beam energy weapons.,,graphics/hullmods/coherer.png
 Mercenary Refit,nsp_mercenary,,,,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_PhominatorHullmod,,,,graphics/icons/missions/security_codes.png
 ,,,,,,,,,,,,,,,,,,,
-Safety Overrides,nsp_safetyoverrides,0,,,"special, engines, offensive, merc, no_build_in, standard","Special, Engines",2500,TRUE,,,15,30,45,70,neon.nsp.data.hullmods.NSP_SafetyOverridesLP,,,,graphics/hullmods/safety_overrides.png
+Dynamic Power Overrides,nsp_safetyoverrides,0,,,"special, engines, offensive, merc, no_build_in, standard","Special, Engines",2500,,TRUE,,15,30,45,70,neon.nsp.data.hullmods.NSP_SafetyOverridesLP,,,,graphics/hullmods/safety_overrides.png

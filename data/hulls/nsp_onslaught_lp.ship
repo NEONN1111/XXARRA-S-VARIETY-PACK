@@ -13,7 +13,7 @@
   "viewOffset": 200,
   "builtInMods": [
     "hbi",
-    "safetyoverrides",
+    "nsp_safetyoverrides",
     "ill_advised",
     "missleracks"
   ],
