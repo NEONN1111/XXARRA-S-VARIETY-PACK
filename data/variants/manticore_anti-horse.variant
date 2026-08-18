@@ -1,0 +1,41 @@
+{
+  "variantId": "manticore_anti-horse",
+  "hullId": "manticore",
+  "displayName": "Anti-Horse",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 14,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "horse_laser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 004": "breachpod",
+        "WS 005": "breachpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "lightneedler",
+        "WS 002": "lightneedler",
+        "WS 003": "lightneedler"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

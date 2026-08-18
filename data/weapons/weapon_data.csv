@@ -64,3 +64,5 @@ NSP vector Controller,nsp_vectorEngineController,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,S
 Overclocked Thermal Pulse Cannon,nsp_utpc,0,,100000,800,,300,,0,0,99999,15,1,,ENERGY,200,,0,0.1,999999,0.3,0,5,1,2,,1000,,,,,,SYSTEM,,,,,Assault,,,,,"Can spawn up to %s splinter projectiles per shot, dealing %s energy and EMP damage each",15 | 50,Individual shots can be fired manually at higher rate of fire,,,
 OTPC Splinter,nsp_utpc_splinter,0,,100000,800,,50,50,0,0,99999,,,,ENERGY,40,,0,4.6,3,0.2,0,10,2,5,,1000,,,,,,SYSTEM,,,,,,,,,,,,,,,
 Zealous Injector,nsp_zealousinjector,0,,1,55,1,,,0,200,99999,,,,ENERGY,,0,0.1,0.1,,,,,,,1000000,,,,,,,SYSTEM,"nova, fixed_range",,,,Special,,,,,,,,,,43.75
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Horse Denying Weapon,horse_laser,1,,4500,9999,9999,,,0,900,0,,,,HIGH_EXPLOSIVE,,400,0.1,0.1,,,,,,,2400,,,,,,,"PD,PD_ALSO","no_drop, no_drop_salvage",,,,Horse Denial,,,,,,,,,,

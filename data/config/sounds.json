@@ -186,7 +186,7 @@
 	
 	 "horse_teleport":{
             "sounds":[
-                   {"file":"sounds/horse.ogg","pitch":1,"volume":0.5},
+                   {"file":"sounds/horse.ogg","pitch":1,"volume":1},
             ],
     },
 	

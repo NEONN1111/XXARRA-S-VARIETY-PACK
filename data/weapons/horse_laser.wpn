@@ -1,0 +1,58 @@
+{
+  "id": "horse_laser",
+  "specClass": "beam",
+  "type": "UNIVERSAL",
+  "size": "LARGE",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/hil_turret_base.png",
+  "turretGlowSprite": "graphics/fx/NSP_FX/horse_denier.png",
+  "hardpointSprite": "graphics/weapons/hil_hardpoint_base.png",
+  "hardpointGlowSprite": "graphics/fx/NSP_FX/horse_denier.png",
+  "glowColor": [
+    40,
+    90,
+    255,
+    235
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    32,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    40,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    25,
+    75,
+    155,
+    255
+  ],
+  "coreColor": [
+    215,
+    225,
+    255,
+    255
+  ],
+  "width": 30,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 292,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

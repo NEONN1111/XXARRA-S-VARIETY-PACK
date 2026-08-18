@@ -12,7 +12,7 @@
   "shieldRadius": 200,
   "viewOffset": 0,
   "builtInMods": [
-    "nsp_safetyoverrides",
+    "NSP_DynamicPowerOverrides",
 	"distributed_fire_control",
     "reinforcedhull",
     "ill_advised"

@@ -17,7 +17,7 @@
     "ablative_armor",
     "distributed_fire_control",
     "ill_advised",
-    "nsp_safetyoverrides",
+    "NSP_DynamicPowerOverrides",
     "missleracks"
   ],
   "builtInWeapons": {

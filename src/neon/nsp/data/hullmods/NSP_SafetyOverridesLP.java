@@ -55,12 +55,12 @@ public class NSP_SafetyOverridesLP extends BaseHullMod {
         stats.getAcceleration().modifyFlat(id, (Float) speed.get(hullSize) * 2f);
         stats.getDeceleration().modifyFlat(id, (Float) speed.get(hullSize) * 2f);
         stats.getZeroFluxMinimumFluxLevel().modifyFlat(id, 2f); // set to two, meaning boost is always on
-
+        stats.getVentRateMult().modifyMult(id, 0f);
         stats.getFluxDissipation().modifyMult(id, FLUX_DISSIPATION_MULT);
 
         stats.getPeakCRDuration().modifyMult(id, PEAK_MULT);
 
-        stats.getVentRateMult().modifyMult(id, 0f);
+
 
         stats.getWeaponRangeThreshold().modifyFlat(id, RANGE_THRESHOLD);
         stats.getWeaponRangeMultPastThreshold().modifyMult(id, RANGE_MULT);

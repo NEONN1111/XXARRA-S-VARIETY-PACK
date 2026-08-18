@@ -41,13 +41,17 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
     }
 
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getZeroFluxSpeedBoost().modifyMult(id, 0.0F);
+       // stats.getZeroFluxSpeedBoost().modifyMult(id, 0.0F);
         stats.getVentRateMult().modifyMult(id, 0.0F);
 
         stats.getWeaponRangeThreshold().modifyFlat(id, RANGE_THRESHOLD);
         stats.getWeaponRangeMultPastThreshold().modifyMult(id, RANGE_MULT);
+
+        stats.getZeroFluxMinimumFluxLevel().modifyFlat(id, 2f); // set to two, meaning boost is always on
+        stats.getVentRateMult().modifyMult(id, 0f);
     }
 
+    private Color color = new Color(255,100,255,255);
     public void advanceInCombat(ShipAPI ship, float amount) {
         super.advanceInCombat(ship, amount);
         ShipEngineControllerAPI engines = ship.getEngineController();
@@ -120,6 +124,8 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
             Color weapon_hot_color = new Color(255, 165, 132, 170);
             ship.setWeaponGlow(weapon_effect / 2.0F, weapon_hot_color, EnumSet.of(WeaponType.BALLISTIC));
         }
+        ship.getEngineController().fadeToOtherColor(this, color, null, 1f, 0.4f);
+        ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
 
     }
 
