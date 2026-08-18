@@ -15,7 +15,7 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.util.Misc.Token;
 
 /**
- * 
+ * Likely deprecated?... Rules really full on old stuff which realistically should be deleted
  */
 public class TemplarCMD extends BaseCommandPlugin {
 
