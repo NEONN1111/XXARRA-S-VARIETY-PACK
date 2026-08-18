@@ -54,6 +54,11 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
     private Color color = new Color(255,100,255,255);
     public void advanceInCombat(ShipAPI ship, float amount) {
         super.advanceInCombat(ship, amount);
+
+        if(ship.getOriginalOwner() == -1){ //in refit
+            return;
+        }
+
         ShipEngineControllerAPI engines = ship.getEngineController();
         if (!engines.isAccelerating() & !engines.isDecelerating() & !engines.isAcceleratingBackwards()) {
             engine_direction -= amount * 5.0F;
@@ -119,14 +124,17 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
             ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
         }
 
-        engines.extendFlame(MOD_KEY, 0.8F * (engine_effect - 1.0F), 0.0F, 0.25F * (engine_effect - 1.0F));
+        engines.extendFlame(MOD_KEY, 0.8F * (engine_effect - 1.1F), 0.0F, 0.25F * (engine_effect - 1.0F));
         if (weapon_effect > 1.0F) {
             Color weapon_hot_color = new Color(255, 165, 132, 170);
             ship.setWeaponGlow(weapon_effect / 2.0F, weapon_hot_color, EnumSet.of(WeaponType.BALLISTIC));
         }
-        ship.getEngineController().fadeToOtherColor(this, color, null, 1f, 0.4f);
-        ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
+        else {
+            ship.setWeaponGlow(0, null, EnumSet.of(WeaponType.BALLISTIC));
+        }
 
+        ship.getEngineController().fadeToOtherColor(this, color, null, 1f, 0.4f);
+        //ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
     }
 
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
