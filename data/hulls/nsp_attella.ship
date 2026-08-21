@@ -1,0 +1,182 @@
+{
+  "hullName": "Attella",
+  "hullId": "nsp_attella",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/nsp_attella2.png",
+  "style": "LOW_TECH",
+  "height": 128,
+  "width": 134,
+  "center": [67, 64.5],
+  "collisionRadius": 93.5,
+  "shieldCenter": [-6.5, 0],
+  "shieldRadius": 98.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "distributed_fire_control",
+    "rugged",
+    "nsp_hardened_armor",
+    "nsp_ammofeeders"
+  ],
+  "builtInWeapons": {
+    "WS0004": "nsp_pusherplate_small"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [12.5, 46]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [12.5, -46]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-43.5, 0]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-57, 0]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [10.5, 0]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 90,
+      "locations": [-18.5, 42]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -90,
+      "locations": [-18.5, -42]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [34.5, 16]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-57.5, 43],
+      "length": 60,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57.5, -43],
+      "length": 60,
+      "width": 23,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-20.5, 65],
+      "length": 30,
+      "width": 10,
+      "angle": 135,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-20.5, -65],
+      "length": 30,
+      "width": 10,
+      "angle": -135,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    35, -17.5,
+    19.5, -29,
+    19.5, -31,
+    22, -31,
+    30.5, -40,
+    30.5, -53.5,
+    18, -63,
+    10.5, -63,
+    8, -66,
+    -12.5, -66,
+    -13, -63.5,
+    -18.5, -67,
+    -22.5, -63.5,
+    -31.5, -63.5,
+    -38, -58,
+    -42, -58,
+    -57, -53,
+    -57, -33,
+    -44.5, -28.5,
+    -31.5, -27.5,
+    -28.5, -22.5,
+    -47.5, -21.5,
+    -51, -18.5,
+    -51, 18.5,
+    -47.5, 21.5,
+    -28.5, 22.5,
+    -31.5, 27.5,
+    -44.5, 28.5,
+    -57, 33,
+    -57, 53,
+    -42, 58,
+    -38, 58,
+    -31.5, 63.5,
+    -22.5, 63.5,
+    -18.5, 67,
+    -13, 63.5,
+    -12.5, 66,
+    8, 66,
+    10.5, 63,
+    18, 63,
+    30.5, 53.5,
+    30.5, 40,
+    22, 31,
+    19.5, 31,
+    19.5, 29,
+    26.5, 23.5,
+    41.5, 21,
+    42, -9,
+    62, -12
+  ]
+}

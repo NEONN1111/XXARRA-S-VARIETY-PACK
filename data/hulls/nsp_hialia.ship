@@ -1,0 +1,182 @@
+{
+  "hullName": "Hialia",
+  "hullId": "nsp_hialia",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/nsp_hialia.png",
+  "style": "LOW_TECH",
+  "height": 187,
+  "width": 172,
+  "center": [86, 93.5],
+  "collisionRadius": 135.5,
+  "shieldCenter": [-14.5, 0],
+  "shieldRadius": 158,
+  "viewOffset": 0,
+  "builtInMods": [
+    "distributed_fire_control",
+    "nsp_hardened_armor",
+    "ballistic_rangefinder",
+    "rugged"
+  ],
+  "builtInWeapons": {
+    "WS0006": "nsp_pusherplate_reinforced"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 12.5,
+      "locations": [59.5, 27]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -12.5,
+      "locations": [59.5, -27]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [12.5, 63]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [12.5, -63]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [0.5, 0],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0006",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-79, 0]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-94, 0]
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [27.5, 0],
+      "renderOrderMod": -100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-92.5, 60],
+      "length": 70,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-92.5, -60],
+      "length": 70,
+      "width": 23,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, 84],
+      "length": 30,
+      "width": 10,
+      "angle": 135,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, -84],
+      "length": 30,
+      "width": 10,
+      "angle": -135,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    92.5, -36.5,
+    62, -45,
+    27.5, -44,
+    26.5, -42,
+    22.5, -42,
+    18.5, -48,
+    23, -48,
+    30.5, -57,
+    30.5, -69.5,
+    19, -80,
+    9.5, -80,
+    8, -83,
+    2, -83,
+    -2, -86,
+    -7.5, -84,
+    -8, -85,
+    -25, -84.5,
+    -92.5, -69.5,
+    -92.5, -50,
+    -56, -41.5,
+    -57.5, -31,
+    -68.5, -31,
+    -77.5, -23.5,
+    -77.5, 23.5,
+    -68.5, 31,
+    -57.5, 31,
+    -56, 41.5,
+    -92.5, 50,
+    -92.5, 69.5,
+    -25, 84.5,
+    -8, 85,
+    -7.5, 84,
+    -2, 86,
+    2, 83,
+    8, 83,
+    9.5, 80,
+    19, 80,
+    30.5, 69.5,
+    30.5, 57,
+    23, 48,
+    18.5, 48,
+    22.5, 42,
+    26.5, 42,
+    28, 45,
+    63, 45,
+    72, 36,
+    72, -33.5
+  ]
+}
