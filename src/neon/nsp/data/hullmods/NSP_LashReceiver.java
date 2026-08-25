@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -43,19 +44,24 @@ public class NSP_LashReceiver extends BaseHullMod {
 
     public boolean isApplicableToShip(ShipAPI ship) {
         for (String idStr : BLOCKED_SYSTEMS) {
-            if (Objects.equals(ship.getSystem().getId(), idStr)) {
-                return false;
+            if(ship.getSystem() != null) {
+                if (Objects.equals(ship.getSystem().getId(), idStr)) {
+                    return false;
+                }
             }
         }
         return true;
     }
 
+    //V: Why do check here? It will show only if isApplicableToShip already false
     public String getUnapplicableReason(ShipAPI ship) {
+        /*
         for (String idStr : BLOCKED_SYSTEMS) {
             if (Objects.equals(ship.getSystem().getId(), idStr)) {
                 return "Cannot be installed on vessels with an Energy Lash power transmitter.";
             }
         }
-        return null;
+        */
+        return "Cannot be installed on vessels with an Energy Lash power transmitter.";
     }
 }
