@@ -3,7 +3,7 @@
   "hullId": "nsp_cassowary",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 30,
+  "fluxCapacitors": 36,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
@@ -12,35 +12,41 @@
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "WS0001": "mark9",
         "WS0002": "mark9",
-        "WS0007": "heavyac",
-        "WS0008": "heavyac"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
         "WS0003": "hephag",
         "WS0004": "hephag"
       }
     },
     {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0011": "squall",
+        "WS0012": "squall"
+      }
+    },
+    {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0005": "gravitonbeam",
-        "WS0006": "gravitonbeam",
+        "WS0005": "heavyac",
+        "WS0006": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
         "WS0015": "gravitonbeam",
         "WS0016": "gravitonbeam"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {}
     },
@@ -48,16 +54,6 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0011": "squall",
-        "WS0012": "hurricane"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0009": "pdlaser",
-        "WS0010": "pdlaser",
         "WS0013": "vulcan",
         "WS0014": "vulcan",
         "WS0017": "devastator",

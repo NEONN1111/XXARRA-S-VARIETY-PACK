@@ -32,7 +32,7 @@ Blatt,nsp_tribute,Heavy Frigate,Low Tech,orion_device,6,5000,400,2000,1875,160,5
 Attella,nsp_attella,Heavy Destroyer,Low Tech,orion_device,10,9000,800,4000,3333,210,80,,75,70,20,35,30,1200,OMNI,,120,0.4,1.2,,,100,230,90,100,4,30,8,38000,5,10,540,0.25,12,12,,"rare_bp, merc, ind, special_allows_system_use, system_allows_special_use",,0.4,2,3,,,,,,,,,
 Hialia,nsp_hialia,Heavy Cruiser,Low Tech,orion_device,10,11500,1250,8000,6000,450,125,,55,15,20,20,15,2000,OMNI,,120,0.4,1.2,,,140,450,760,230,5,60,7,70000,5,10,600,0.25,28,28,,"rare_bp, merc, ind, special_allows_system_use, system_allows_special_use",,0.4,2,3,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Cassowary,nsp_cassowary,Battlecarrier,Midline,maneuveringjets,35,25000,1800,20000,,900,340,3,20,10,10,4,4,6000,OMNI,,150,0.25,1.0,,,1000,1900,500,600,20,30,7,800000,3,15,720,0.25,70,70,,rare_bp,,0.4,3,5,,,,,,,,,
+Casuarius,nsp_cassowary,Battleship,Midline,maneuveringjets,35,25000,1850,22000,25000,1500,340,3,25,12,12,8,8,7000,OMNI,,150,0.25,1.0,,,1000,1900,500,600,20,30,7,800000,3,15,720,0.25,65,65,,rare_bp,,0.4,3,5,,,,,,,,,
 Peregrine ,nsp_peregrine,Battlecruiser,Midline,plasmajets,24,20000,1200,20000,25000,700,260,,40,20,40,12,12,2500,OMNI,,140,0.25,1.2,,,400,500,300,300,10,30,8,300000,3,15,740,0.25,40,40,,rare_bp,,0.5,2,4,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Onslaught (PR),nsp_onslaught_domain,Battleship,Low Tech,microburn,28,20000,1750,17000,15000,600,370,,30,10,10,4,4,3300,FRONT,,0,0.4,0.9,,,750,1500,300,400,15,27,7,350000,3,12,720,0.25,40,45,"UNBOARDABLE, HIDE_IN_CODEX, SHIP_WITH_MODULES",restricted,,0.4,2,4,,31,,,,,,,

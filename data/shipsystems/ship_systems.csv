@@ -34,3 +34,5 @@ Leap Of Faith,orion_device_shieldless,,,,,,,,4,0.2,0,0.001,0,1,,,,,,,,,,,,moveme
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Zealot's Charge,zealotscharge,1,,,,,,,,,2.7,6,1,14,,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/burn_drive.png
 Fervent Charge,nsp_rammingdrive,,,,,.2,,,,,3.4,3.7,1,18.6,,,,,,,TRUE,,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Tactical Burn,nsp_combatburn_midline,1,,,,,,,,,2,5,1,10,TRUE,,,,,,TRUE,TRUE,TRUE,,,movement,graphics/icons/hullsys/combat_burn.png
