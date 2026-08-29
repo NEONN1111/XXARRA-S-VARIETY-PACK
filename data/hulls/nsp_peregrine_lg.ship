@@ -1,8 +1,8 @@
 {
   "hullName": "Peregrine",
-  "hullId": "nsp_peregrine",
+  "hullId": "nsp_peregrine_lg",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/ships/nsp_peregrine.png",
+  "spriteName": "graphics/ships/nsp_peregrine_lg.png",
   "style": "MIDLINE",
   "height": 369,
   "width": 264,
@@ -12,13 +12,19 @@
   "shieldRadius": 221.5,
   "viewOffset": 0,
   "builtInMods": [
-    "hbi"
+    "hbi",
+    "solar_shielding",
+    "coherer",
+	"andrada_mods"
   ],
+  "builtInWeapons": {
+    "WS0011": "gigacannon"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 140,
       "angle": 45,
@@ -27,7 +33,7 @@
     {
       "id": "WS0002",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 140,
       "angle": -45,
@@ -108,7 +114,7 @@
     {
       "id": "WS0011",
       "size": "LARGE",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -196,18 +202,18 @@
       "style": "MIDLINE"
     },
     {
-      "location": [19.5, 90.5],
+      "location": [17, 93],
       "length": 30,
       "width": 10,
-      "angle": 139.5,
+      "angle": 135,
       "contrailSize": 128,
       "style": "MIDLINE"
     },
     {
-      "location": [19.5, -90.5],
+      "location": [17, -93],
       "length": 30,
       "width": 10,
-      "angle": -139.5,
+      "angle": -135,
       "contrailSize": 128,
       "style": "MIDLINE"
     },

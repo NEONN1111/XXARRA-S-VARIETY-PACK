@@ -1,9 +1,9 @@
 {
-  "variantId": "nsp_peregrine_standard",
-  "hullId": "nsp_peregrine",
+  "variantId": "nsp_peregrine_lg_standard",
+  "hullId": "nsp_peregrine_lg",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 32,
+  "fluxCapacitors": 22,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
@@ -16,22 +16,23 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0011": "autopulse",
-        "WS0015": "typhoon",
-        "WS0016": "typhoon"
+        "WS0011": "gigacannon"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {}
+      "weapons": {
+        "WS0015": "typhoon",
+        "WS0016": "typhoon"
+      }
     },
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0001": "hephag",
-        "WS0002": "hephag"
+        "WS0001": "hil",
+        "WS0002": "hil"
       }
     },
     {
@@ -46,8 +47,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0005": "irautolance",
-        "WS0006": "irautolance"
+        "WS0005": "pulselaser",
+        "WS0006": "pulselaser"
       }
     },
     {
