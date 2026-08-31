@@ -15,7 +15,7 @@ Tyrfing Singularity Cannon,nsp_tyrfing,1,,100000,1200,,1000,700,,7,99999,,,,ENER
 ,nsp_absdecopath2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,"no_drop, no_drop_salvage",,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Plasma Torpedo Launcher,nsp_plasmatorp,3,,9000,2000,,3000,,75,20,30,4,0.13,4,HIGH_EXPLOSIVE,2500,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,500,,,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE","strike18, missile15, rare_bp, merc, ind",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
+Plasma Torpedo Launcher,nsp_plasmatorp,3,,9000,2000,,2000,,75,20,30,4,0.13,4,HIGH_EXPLOSIVE,2500,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,500,,,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE","strike18, missile15, rare_bp, merc, ind",,,,Guided Torpedo,Extremely Fast,Excellent,,,,,,,TRUE,23.5
 Light Plasma Torpedo (Fighter),nsp_plasmatorp_fighter,3,,7500,2000,,750,,75,30,99999,1,,,HIGH_EXPLOSIVE,700,,0.1,1,1,0.1,0,0,0,0,,1000,1000,15,250,,,"SYSTEM, STRIKE, USE_VS_FRIGATES, DO_NOT_AIM","missile8, strike3, show_in_codex",,,,Guided Torpedo (Fighter),Extremely Fast,Excellent,,,,,,,TRUE,23.6
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GALAXY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

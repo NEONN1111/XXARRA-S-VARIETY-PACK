@@ -23,6 +23,11 @@
 	[
             {"file":"sounds/rampager_activate.ogg","pitch":1,"volume":0.5},
         ],
+		
+	 "nsp_rampage_start2":
+	[
+            {"file":"sounds/ctholon_activate.ogg","pitch":1,"volume":0.5},
+        ],	
 
     "nsp_rampage":
 	[

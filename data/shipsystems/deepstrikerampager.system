@@ -20,7 +20,7 @@
 	"clampMaxSpeedAfter":true,
 	"alwaysAccelerate":true,
 
-	"useSound":"nsp_rampage_start",
+	"useSound":"nsp_rampage_start2",
 	"loopSound":"nsp_rampage",
 	"deactivateSound":"system_burn_drive_deactivate",
 	"outOfUsesSound":"engine_disabled",

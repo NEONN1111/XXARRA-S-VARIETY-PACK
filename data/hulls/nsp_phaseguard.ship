@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "rugged",
-    "missile_autoloader"
+    "missile_autoloader",
+    "distributed_fire_control"
   ],
   "weaponSlots": [
     {
@@ -57,8 +58,8 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 120,
-      "angle": 116.5,
+      "arc": 190,
+      "angle": 90,
       "locations": [-18, 45]
     },
     {
@@ -66,8 +67,8 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 120,
-      "angle": -116.5,
+      "arc": 190,
+      "angle": -90,
       "locations": [-18, -45]
     },
     {
