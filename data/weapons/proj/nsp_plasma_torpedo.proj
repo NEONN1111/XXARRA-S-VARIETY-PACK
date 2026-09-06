@@ -1,6 +1,7 @@
 {
 	"id":"nsp_plasma_torpedo",
 	"specClass":"missile",
+	"onFireEffect":"neon.nsp.data.scripts.weapons.NSP_VPPCOnFireEffect",
 	"missileType":"MISSILE",
 	"onHitEffect":"neon.nsp.data.scripts.weapons.NSP_PlasmaTorpedo",
 	"sprite":"graphics/missiles/missile_torpedo.png",

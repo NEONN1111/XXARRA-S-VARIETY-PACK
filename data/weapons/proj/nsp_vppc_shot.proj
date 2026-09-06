@@ -1,6 +1,7 @@
 {
 	"id":"nsp_vppc_shot",
 	"specClass":"projectile",
+	"onFireEffect":"neon.nsp.data.scripts.weapons.NSP_VPPCOnFireEffect",
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",

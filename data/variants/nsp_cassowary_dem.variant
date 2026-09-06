@@ -1,0 +1,70 @@
+{
+  "variantId": "nsp_cassowary_dem",
+  "hullId": "nsp_cassowary",
+  "displayName": "DEM",
+  "goalVariant": true,
+  "fluxCapacitors": 29,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "mjolnir",
+        "WS0004": "mjolnir",
+        "WS0017": "mjolnir",
+        "WS0018": "mjolnir"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0011": "hydra",
+        "WS0012": "hydra"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "heavyac",
+        "WS0006": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "guardian",
+        "WS0002": "guardian",
+        "WS0013": "lrpdlaser",
+        "WS0014": "lrpdlaser",
+        "WS0015": "irautolance",
+        "WS0016": "irautolance",
+        "WS0019": "guardian",
+        "WS0020": "flak",
+        "WS0021": "lrpdlaser",
+        "WS0022": "lrpdlaser",
+        "WS0023": "lightmg",
+        "WS0024": "lightmg"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "thunder_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
+}
