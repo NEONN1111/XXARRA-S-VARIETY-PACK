@@ -10,6 +10,9 @@ import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import neon.nsp.data.shipsystems.AmmoFeedersSubsystemNSP;
+import org.magiclib.subsystems.MagicSubsystemsManager;
+
 import java.awt.Color;
 import java.util.EnumSet;
 
@@ -51,90 +54,12 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
         stats.getVentRateMult().modifyMult(id, 0f);
     }
 
-    private Color color = new Color(255,100,255,255);
-    public void advanceInCombat(ShipAPI ship, float amount) {
-        super.advanceInCombat(ship, amount);
-
-        if(ship.getOriginalOwner() == -1){ //in refit
-            return;
+    @Override
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        super.applyEffectsAfterShipCreation(ship, id);
+        if (ship != null) {
+            MagicSubsystemsManager.addSubsystemToShip(ship, new NSP_DynamicPowerOverrides_Subsystem(ship));
         }
-
-        ShipEngineControllerAPI engines = ship.getEngineController();
-        if (!engines.isAccelerating() & !engines.isDecelerating() & !engines.isAcceleratingBackwards()) {
-            engine_direction -= amount * 5.0F;
-            weapons_direction += amount;
-        } else {
-            engine_direction += amount;
-            weapons_direction -= amount * 5.0F;
-        }
-
-        if (engine_direction > ENGINE_BONUS_TIME_MAX) {
-            engine_direction = ENGINE_BONUS_TIME_MAX;
-        } else if (engine_direction < 0.0F) {
-            engine_direction = 0.0F;
-        }
-
-        if (weapons_direction > WEAPONS_BONUS_TIME_MAX) {
-            weapons_direction = WEAPONS_BONUS_TIME_MAX;
-        } else if (weapons_direction < 0.0F) {
-            weapons_direction = 0.0F;
-        }
-
-        float active_effect = Math.max(engine_direction, weapons_direction);
-
-        Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
-                ship.getSystem().getSpecAPI().getIconSpriteName(),
-                "Dynamic Power Overrides",
-                "engine_direction: " + String.format("%.2f", engine_direction), false);
-        Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY2,
-                ship.getSystem().getSpecAPI().getIconSpriteName(),
-                "Dynamic Power Overrides",
-                "weapons_direction: " + String.format("%.2f", weapons_direction), false);
-
-        Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
-                ship.getSystem().getSpecAPI().getIconSpriteName(),
-                "Dynamic Power Overrides",
-                "active_effect: " + String.format("%.2f", active_effect) + " | EE: " + String.format("%.2f", engine_effect) + " | WE: " + String.format("%.2f", weapon_effect), false);
-
-        if (engine_direction > 0.0F) {
-            engine_effect = Math.max(1.0F, 1.0F + ENGINE_BONUS_MAX * (active_effect / ENGINE_BONUS_TIME_MAX));
-            ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
-            ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
-            ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, 2.0F * engine_effect);
-            ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, 2.0F * engine_effect);
-        }
-
-        if (weapons_direction == 0.0F) {
-            weapon_effect = 1.0F - WEAPONS_NERF_MAX * (engine_direction / ENGINE_BONUS_TIME_MAX);
-            ship.getMutableStats().getFluxDissipation().modifyMult(MOD_KEY, weapon_effect);
-            ship.getMutableStats().getBallisticRoFMult().modifyMult(MOD_KEY, weapon_effect);
-        }
-
-        if (weapons_direction > 0.0F) {
-            weapon_effect = Math.max(1.0F, 1.0F + WEAPONS_BONUS_MAX * (active_effect / WEAPONS_BONUS_TIME_MAX));
-            ship.getMutableStats().getFluxDissipation().modifyMult(MOD_KEY, weapon_effect);
-            ship.getMutableStats().getBallisticRoFMult().modifyMult(MOD_KEY, weapon_effect);
-        }
-
-        if (engine_direction == 0.0F) {
-            engine_effect = 1.0F - ENGINE_NERF_MAX * (weapons_direction / WEAPONS_BONUS_TIME_MAX);
-            ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
-            ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
-            ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, engine_effect);
-            ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
-        }
-
-        engines.extendFlame(MOD_KEY, 0.8F * (engine_effect - 1.1F), 0.0F, 0.25F * (engine_effect - 1.0F));
-        if (weapon_effect > 1.0F) {
-            Color weapon_hot_color = new Color(255, 165, 132, 170);
-            ship.setWeaponGlow(weapon_effect / 2.0F, weapon_hot_color, EnumSet.of(WeaponType.BALLISTIC));
-        }
-        else {
-            ship.setWeaponGlow(0, null, EnumSet.of(WeaponType.BALLISTIC));
-        }
-
-        ship.getEngineController().fadeToOtherColor(this, color, null, 1f, 0.4f);
-        //ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
     }
 
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
