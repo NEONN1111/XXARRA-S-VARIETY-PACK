@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+//Threat start with Abyssal Rigging
 public class ContactWithThreat extends CustomStart {
 
     protected List<String> ships = new ArrayList<>(
@@ -48,8 +49,6 @@ public class ContactWithThreat extends CustomStart {
 
 
         MutableCharacterStatsAPI stats = data.getPerson().getStats();
-        stats.setSkillLevel("nsp_threat_auto", 2f);
-
         // Optionally add a message to the dialog to confirm the skill was added
         dialog.getTextPanel().addParagraph("Gained skill: Abyss Rigging", Misc.getPositiveHighlightColor());
 
@@ -57,6 +56,7 @@ public class ContactWithThreat extends CustomStart {
                 new Script() {
                     @Override
                     public void run() {
+                        stats.setSkillLevel("nsp_threat_auto", 2f);
 
                         SectorEntityToken location = null;
                         for (Integer i = 0; i < 9; i++) {

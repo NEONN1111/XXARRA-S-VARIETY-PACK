@@ -114,26 +114,26 @@ public class ThreatAutomatedShips {
     // Level 1
     public static class Level1 implements ShipSkillEffect, FleetTotalSource {
 
-    private FleetTotalItem threatPointsItem = null;
+        private FleetTotalItem threatPointsItem = null;
 
-    public FleetTotalItem getFleetTotalItem() {
-        if (threatPointsItem == null) {
-            threatPointsItem = new FleetTotalItem() {
-                public String getId() {
-                    return "nsp_threat_automated_points";
-                }
+        public FleetTotalItem getFleetTotalItem() {
+            if (threatPointsItem == null) {
+                threatPointsItem = new FleetTotalItem() {
+                    public String getId() {
+                        return "nsp_threat_automated_points";
+                    }
 
-                public String getDisplayName() {
-                    return "Threat automated ship points";
-                }
+                    public String getDisplayName() {
+                        return "Threat automated ship points";
+                    }
 
-                public float getValue(FleetDataAPI data) {
-                    return getTotalThreatAutomatedPoints(data);
-                }
-            };
+                    public float getValue(FleetDataAPI data) {
+                        return getTotalThreatAutomatedPoints(data);
+                    }
+                };
+            }
+            return threatPointsItem;
         }
-        return threatPointsItem;
-    }
 
         public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
             FleetMemberAPI member = stats.getFleetMember();
@@ -151,9 +151,9 @@ public class ThreatAutomatedShips {
             }
         }
 
-    public void unapply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id) {
-        stats.getMaxCombatReadiness().unmodifyFlat(id);
-    }
+        public void unapply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id) {
+            stats.getMaxCombatReadiness().unmodifyFlat(id);
+        }
 
 
         // UNUSED BUT NECESSARY

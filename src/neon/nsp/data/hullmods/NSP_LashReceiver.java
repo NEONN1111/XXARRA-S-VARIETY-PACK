@@ -13,9 +13,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class NSP_LashReceiver extends BaseHullMod {
-
     private static final int BASE_CHARGES_RESTORED = 1;
-
     private static final Set<String> BLOCKED_SYSTEMS = new HashSet<>();
 
     static {
@@ -24,7 +22,6 @@ public class NSP_LashReceiver extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
-
         if (index == 0) return "Energy Lash";
         if (index == 1) return BASE_CHARGES_RESTORED + " charge(s)";
         return null;
@@ -45,7 +42,7 @@ public class NSP_LashReceiver extends BaseHullMod {
     public boolean isApplicableToShip(ShipAPI ship) {
         for (String idStr : BLOCKED_SYSTEMS) {
             if(ship.getSystem() != null) {
-                if (Objects.equals(ship.getSystem().getId(), idStr)) {
+                if (ship.getSystem().getId().equals(idStr)) {
                     return false;
                 }
             }

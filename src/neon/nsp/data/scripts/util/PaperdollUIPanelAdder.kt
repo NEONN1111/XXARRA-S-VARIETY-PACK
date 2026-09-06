@@ -32,7 +32,7 @@ class PaperdollUIPanelAdder: BaseEveryFrameCombatPlugin() {
         val shipInfo = state.invoke("getShipInfo") as UIPanelAPI
 
         val uiElements = shipInfo.getChildrenCopy()
-        if (uiElements.any { it is CustomPanelAPI && it.plugin is PaperdollPanelPlugin }) return // return if added
+        if (uiElements.any { it is CustomPanelAPI && it.plugin is ExtendableCustomUIPanelPlugin }) return // return if added
 
         val shipField = shipInfo.getFieldsMatching(fieldAssignableTo = ShipAPI::class.java)[0]
         val ship = shipField.get(shipInfo) as ShipAPI? ?: return
@@ -104,17 +104,4 @@ class PaperdollUIPanelAdder: BaseEveryFrameCombatPlugin() {
         glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_ALPHA, GL_PRIMARY_COLOR)
         glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND1_ALPHA, GL_SRC_ALPHA)
     }
-}
-
-// Marker class to identify that our paperdoll panel has been added
-class PaperdollPanelPlugin : CustomUIPanelPlugin {
-    override fun advance(amount: Float) {}
-    override fun positionChanged(position: PositionAPI?) {}
-    override fun processInput(events: MutableList<InputEventAPI>?) {}
-    override fun buttonPressed(buttonId: Any?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun renderBelow(alphaMult: Float) {}
-    override fun render(alphaMult: Float) {}
 }

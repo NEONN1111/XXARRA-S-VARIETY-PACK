@@ -96,6 +96,26 @@ public class NSP_Threat_Automation extends BaseHullMod {
 		stats.getMaxCombatReadiness().unmodifyFlat(coreKey);
 
 
+		if (stats.getVariant() != null) {
+			// Remove from regular hullmods
+			if (stats.getVariant().getHullMods().contains(VANILLA_AUTOMATED_HULLMOD)) {
+				stats.getVariant().getHullMods().remove(VANILLA_AUTOMATED_HULLMOD);
+				Global.getLogger(this.getClass()).info("Removed vanilla Automated hullmod from Threat ship in afterShipCreation: " + stats.getVariant().getHullSpec().getHullName());
+			}
+
+			// Remove from built-in hullmods
+			if (stats.getVariant().getPermaMods() != null && stats.getVariant().getPermaMods().contains(VANILLA_AUTOMATED_HULLMOD)) {
+				stats.getVariant().getPermaMods().remove(VANILLA_AUTOMATED_HULLMOD);
+				Global.getLogger(this.getClass()).info("Removed built-in vanilla Automated hullmod from Threat ship in afterShipCreation: " + stats.getVariant().getHullSpec().getHullName());
+			}
+
+			// Ensure tags are present
+			stats.getVariant().addTag(Tags.AUTOMATED);
+			stats.getVariant().addTag(NSP_Tags.THREAT_AUTOMATED);
+			stats.getVariant().addTag(NSP_Tags.THREAT_RECOVERABLE);
+		}
+
+
 		String installedCoreId = null;
 		if (member != null) {
 			PersonAPI captain = member.getCaptain();
@@ -217,25 +237,6 @@ public class NSP_Threat_Automation extends BaseHullMod {
 
 		// Remove vanilla Automated hullmod every time the ship is loaded/created
 		// This prevents it from being re-added when loading saves (like NSPSandyEffect does)
-		if (ship.getVariant() != null) {
-			// Remove from regular hullmods
-			if (ship.getVariant().getHullMods().contains(VANILLA_AUTOMATED_HULLMOD)) {
-				ship.getVariant().getHullMods().remove(VANILLA_AUTOMATED_HULLMOD);
-				Global.getLogger(this.getClass()).info("Removed vanilla Automated hullmod from Threat ship in afterShipCreation: " + ship.getName());
-			}
-
-			// Remove from built-in hullmods
-			if (ship.getVariant().getPermaMods() != null &&
-					ship.getVariant().getPermaMods().contains(VANILLA_AUTOMATED_HULLMOD)) {
-				ship.getVariant().getPermaMods().remove(VANILLA_AUTOMATED_HULLMOD);
-				Global.getLogger(this.getClass()).info("Removed built-in vanilla Automated hullmod from Threat ship in afterShipCreation: " + ship.getName());
-			}
-
-			// Ensure tags are present
-			ship.getVariant().addTag(Tags.AUTOMATED);
-			ship.getVariant().addTag(NSP_Tags.THREAT_AUTOMATED);
-			ship.getVariant().addTag(NSP_Tags.THREAT_RECOVERABLE);
-		}
 	}
 
 	public void onRemove(ShipAPI ship) {
