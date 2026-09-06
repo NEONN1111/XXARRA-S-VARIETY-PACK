@@ -1,0 +1,59 @@
+{
+  "id": "nsp_manongel",
+  "specClass": "projectile",
+  "projectileSpecId": "nsp_manongel_lrm",
+  "type": "MISSILE",
+  "size": "LARGE",
+  "displayArcRadius": 300,
+  "turretSprite": "graphics/weapons/nsp_manongel/nsp_manongel_lrm_launcher_turret_base.png",
+  "hardpointSprite": "graphics/weapons/nsp_manongel/nsp_manongel_lrm_launcher_hardpoint_base.png",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    17.5,
+    7,
+    17.5,
+    0,
+    17.5,
+    -7
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    27.5,
+    7,
+    27.5,
+    0,
+    27.5,
+    -7
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 20,
+    "particleSizeRange": 20,
+    "cloudParticleCount": 6,
+    "cloudDuration": 2,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 7,
+    "blowbackDuration": 4,
+    "blowbackLength": 40,
+    "blowbackSpread": 10,
+    "particleColor": [
+      100,
+      100,
+      100,
+      100
+    ]
+  },
+  "fireSoundTwo": "nsp_manongel_launch"
+}

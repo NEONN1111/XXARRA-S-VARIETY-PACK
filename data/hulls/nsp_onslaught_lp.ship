@@ -2,7 +2,7 @@
   "hullName": "Onslaught (LP)",
   "hullId": "nsp_onslaught_lp",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/ships/nsp_onslaught_lp.png",
+  "spriteName": "graphics/ships/nsp_onslaught_lp2.png",
   "style": "LUDDIC_PATH",
   "height": 384,
   "width": 288,
@@ -168,7 +168,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 51.5,
-      "locations": [73, 87]
+      "locations": [74, 87]
     },
     {
       "id": "WS 019",
@@ -186,7 +186,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": -51.5,
-      "locations": [73, -87]
+      "locations": [74, -87]
     },
     {
       "id": "WS 021",
@@ -258,7 +258,7 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 135,
-      "locations": [1.5, 81]
+      "locations": [1, 81.5]
     },
     {
       "id": "WS0005",
@@ -442,7 +442,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-125, -30],
+      "location": [-125, -31],
       "length": 64,
       "width": 20,
       "angle": 180,
@@ -450,7 +450,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-118, -0],
+      "location": [-119, 0],
       "length": 120,
       "width": 40,
       "angle": 180,
@@ -499,7 +499,7 @@
       "styleId": "Vectored NSP_ENGINE"
     },
     {
-      "location": [-18, 122.5],
+      "location": [-17, 123],
       "length": 64,
       "width": 20,
       "angle": 138,
@@ -526,7 +526,7 @@
       "styleId": "Vectored NSP_ENGINE"
     },
     {
-      "location": [42.5, 131.5],
+      "location": [42.5, 132.5],
       "length": 54,
       "width": 17,
       "angle": 144,
@@ -535,7 +535,7 @@
       "styleId": "Vectored NSP_ENGINE"
     },
     {
-      "location": [42.5, -131.5],
+      "location": [42.5, -132.5],
       "length": 54,
       "width": 17,
       "angle": -144,
