@@ -14,7 +14,7 @@
   "builtInMods": [
     "bdeck",
     "coherer",
-    "hbi",
+    "heavy_hybrid_integration",
     "nsp_improvised_automation"
   ],
   "weaponSlots": [

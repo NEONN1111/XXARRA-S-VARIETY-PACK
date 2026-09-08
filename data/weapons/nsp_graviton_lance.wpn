@@ -1,0 +1,76 @@
+{
+  "id": "nsp_graviton_lance",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "everyFrameEffect": "neon.nsp.data.scripts.weapons.NSP_ImpactLanceEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/energy/nsp_graviton_lance_turret.png",
+  "turretGlowSprite": "graphics/weapons/energy/nsp_graviton_lance_turret_glow.png",
+  "hardpointSprite": "graphics/weapons/energy/nsp_graviton_lance_hardpoint.png",
+  "hardpointGlowSprite": "graphics/weapons/energy/nsp_graviton_lance_hardpoint_glow.png",
+  "glowColor": [
+    25,
+    215,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    12,
+    -6,
+    12,
+    -2,
+    12,
+    2,
+    12,
+    6
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    12,
+    -6,
+    12,
+    -2,
+    12,
+    2,
+    12,
+    6
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "fringeColor": [
+    5,
+    135,
+    175,
+    255
+  ],
+  "coreColor": [
+    200,
+    225,
+    255,
+    255
+  ],
+  "darkCore": true,
+  "width": 25,
+  "textureType": CHUNKY,
+  "textureScrollSpeed": 250,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "graviton_beam_loop"
+}

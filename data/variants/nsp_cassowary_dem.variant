@@ -1,10 +1,10 @@
 {
   "variantId": "nsp_cassowary_dem",
   "hullId": "nsp_cassowary",
-  "displayName": "DEM",
+  "displayName": "Disabler",
   "goalVariant": true,
-  "fluxCapacitors": 29,
-  "fluxVents": 50,
+  "fluxCapacitors": 38,
+  "fluxVents": 40,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
@@ -15,18 +15,26 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "mjolnir",
-        "WS0004": "mjolnir",
-        "WS0017": "mjolnir",
-        "WS0018": "mjolnir"
+        "WS0001": "nsp_graviton_lance",
+        "WS0002": "nsp_graviton_lance"
       }
     },
     {
       "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0011": "nsp_manongel",
+        "WS0012": "nsp_manongel"
+      }
+    },
+    {
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0011": "hydra",
-        "WS0012": "hydra"
+        "WS0003": "mjolnir",
+        "WS0004": "mjolnir",
+        "WS0017": "mjolnir",
+        "WS0018": "mjolnir"
       }
     },
     {
@@ -41,24 +49,29 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "guardian",
-        "WS0002": "guardian",
-        "WS0013": "lrpdlaser",
-        "WS0014": "lrpdlaser",
-        "WS0015": "irautolance",
-        "WS0016": "irautolance",
-        "WS0019": "guardian",
-        "WS0020": "flak",
-        "WS0021": "lrpdlaser",
-        "WS0022": "lrpdlaser",
-        "WS0023": "lightmg",
-        "WS0024": "lightmg"
+        "WS0015": "gravitonbeam",
+        "WS0016": "gravitonbeam"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0019": "guardian"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0013": "pdlaser",
+        "WS0014": "pdlaser",
+        "WS0020": "flak",
+        "WS0021": "pdlaser",
+        "WS0022": "pdlaser",
+        "WS0023": "pdlaser",
+        "WS0024": "pdlaser"
+      }
     }
   ],
   "modules": [],

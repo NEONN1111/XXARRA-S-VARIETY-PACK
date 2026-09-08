@@ -1,0 +1,78 @@
+{
+  "variantId": "nsp_peregrine_dem",
+  "hullId": "nsp_peregrine",
+  "displayName": "DEM",
+  "goalVariant": true,
+  "fluxCapacitors": 32,
+  "fluxVents": 45,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "dedicated_targeting_core",
+    "blast_doors"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "mjolnir",
+        "WS0002": "mjolnir",
+        "WS0007": "pdlaser",
+        "WS0008": "pdlaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0011": "hydra"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0015": "gorgonpod",
+        "WS0016": "gorgonpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "heavyac",
+        "WS0004": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "irautolance",
+        "WS0006": "irautolance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "taclaser",
+        "WS0010": "taclaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0012": "flak",
+        "WS0013": "flak",
+        "WS0014": "flak",
+        "WS0017": "pdlaser",
+        "WS0018": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

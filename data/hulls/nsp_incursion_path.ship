@@ -14,7 +14,8 @@
   "builtInMods": [
     "rugged",
     "distributed_fire_control",
-    "nsp_hardened_armor"
+    "nsp_hardened_armor",
+	"NSP_DynamicPowerOverrides"
   ],
   "weaponSlots": [
     {

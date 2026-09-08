@@ -1,12 +1,35 @@
 package neon.nsp.data.shipsystems;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipEngineControllerAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.util.Misc;
 import org.magiclib.subsystems.MagicSubsystem;
 
+import java.awt.*;
+import java.util.EnumSet;
+
 public class AmmoFeedersSubsystemNSP extends MagicSubsystem {
+
+    public static String AMMO_FEEDER = "system_ammo_feeder";
+
     public AmmoFeedersSubsystemNSP(ShipAPI ship) {
         super(ship);
+    }
+
+    @Override
+    public void advance(float amount, boolean isPaused) {
+        super.advance(amount, isPaused);
+
+        if(ship.getOriginalOwner() == -1){ //in refit
+            return;
+        }
+        else {
+            ship.setWeaponGlow(0, null, EnumSet.of(WeaponAPI.WeaponType.BALLISTIC));
+        }
+
+        //ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
     }
 
     @Override
@@ -49,6 +72,7 @@ public class AmmoFeedersSubsystemNSP extends MagicSubsystem {
 
     @Override
     public void onActivate() {
+        Global.getSoundPlayer().playSound(AMMO_FEEDER, 1f, 1f, ship.getLocation(), ship.getVelocity());
         stats.getBallisticWeaponFluxCostMod().modifyMult(this.getDisplayText(), 0.5f);
         stats.getBallisticRoFMult().modifyMult(this.getDisplayText(), 2f);
     }
@@ -61,6 +85,6 @@ public class AmmoFeedersSubsystemNSP extends MagicSubsystem {
 
     @Override
     public String getDisplayText() {
-        return "Ammo Feeders";
+        return "Accelerated Ammo Feeder";
     }
 }

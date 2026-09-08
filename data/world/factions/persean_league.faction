@@ -3,14 +3,33 @@
         "hulls":{
 			"nsp_hammonitor":1,	
 			"nsp_upgradedmule":0.7,
-                        "nsp_mace":0.6,
+            "nsp_mace":0.6,
+			"nsp_cassowary":0.4,
+			"nsp_peregrine":1,
         },
     },
+	"knownWeapons":{
+		"tags":["persean"],
+		"weapons":[
+			"nsp_graviton_lance",
+			"nsp_manongel",
+		],
+	},
+	"weaponSellFrequency":{
+		"nsp_graviton_lance":10,
+		"nsp_manongel":8,
+	},
+	"variantOverrides":{
+		"nsp_cassowary_dem":4,
+		"nsp_peregrine_dem":5,
+	},
     "knownShips":{
         "hulls":[
             "nsp_hammonitor",
 	    "nsp_upgradedmule",
             "nsp_mace",
+			"nsp_cassowary",
+			"nsp_peregrine",
         ],
 	},
 },

@@ -12,7 +12,7 @@
   "shieldRadius": 155,
   "viewOffset": 0,
   "builtInMods": [
-    "nsp_safetyoverrides",
+    "NSP_DynamicPowerOverrides",
     "ill_advised"
   ],
   "builtInWeapons": {

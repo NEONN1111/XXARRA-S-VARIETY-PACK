@@ -13,7 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "bdeck",
-    "hbi"
+    "heavy_hybrid_integration"
   ],
   "weaponSlots": [
     {
@@ -163,7 +163,7 @@
     {
       "id": "WS0023",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 90,
       "angle": 109,
@@ -172,7 +172,7 @@
     {
       "id": "WS0024",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 90,
       "angle": -109,

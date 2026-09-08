@@ -17,6 +17,8 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
 
     String MOD_KEY = "NSP_DynamicPowerOverrides";
 
+    public static String DPO_ACTIVATE = "ui_transponder_on";
+
     float engine_direction = 0.0F;
     float weapons_direction = 0.0F;
 
@@ -182,6 +184,7 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
 
     @Override
     public void onActivate() {
+        Global.getSoundPlayer().playSound(DPO_ACTIVATE, 1f, 1f, ship.getLocation(), ship.getVelocity());
     }
 
     @Override
@@ -190,6 +193,6 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
 
     @Override
     public String getDisplayText() {
-        return "NSP_DynamicPowerOverrides";
+        return "Dynamic Power Overrides";
     }
 }

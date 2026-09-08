@@ -12,7 +12,10 @@ ShieldSpeed,nsp_shieldspeed,,,,"no_drop, no_sell",,,,TRUE,TRUE,0,0,0,0,neon.nsp.
 Improved Ablative Armor,ablative_armor_nsp,,,,"no_drop, no_sell",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.AblativeArmorNSP,"An ancient design intended to stop micro-meteorites through sheer volume of material in place, before the advent of ""spaced"" armor. This ship has had it's armor improved by the military engineers of the 14th battlegroup, in an attempt to bring it back into viability.
 
 Reduces the effective armor strength for the damage reduction calculation to %s of its actual value. However, ships of this design tend to carry extremely heavy armor.",Reduces damage reduction by armor.,,graphics/hullmods/ablative_armor.png
+,,,,,,,,,,,,,,,,,,,
 Heavy Composite Integration,heavycompositeintegration_nsp,,,,"no_drop, no_sell",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.HeavyCompositeIntegrationNSP,Reduces the ordnance point cost of large ballistic and missile weapons by %s.,Reduces ordnance point cost of large ballistic and missile weapons.,,graphics/hullmods/heavycomposite.png
+Heavy Hybrid Integration,heavy_hybrid_integration,,,,"no_drop, no_sell",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.HeavyHybridIntegration,Reduces the ordnance point cost of large ballistic and energy weapons by %s.,Reduces ordnance point cost of large ballistic and energy weapons.,,graphics/hullmods/heavyhybrid.png
+,,,,,,,,,,,,,,,,,,,
 Improved Ablative Armor,ablative_armor_nsp2,,,,"no_drop, no_sell",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.AblativeArmorNSP,"An ancient design intended to stop micro-meteorites through sheer volume of material in place, before the advent of ""spaced"" armor. This ship has had it's armor improved by the top engineers of the domain navy, resulting in it being far more effective.
 
 Reduces the effective armor strength for the damage reduction calculation to %s of its actual value. However, ships of this design tend to carry extremely heavy armor.",Reduces damage reduction by armor.,,graphics/hullmods/ablative_armor.png

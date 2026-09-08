@@ -14,7 +14,7 @@
   "builtInMods": [
     "nsp_ammofeeders",
     "ill_advised",
-    "nsp_safetyoverrides"
+    "NSP_DynamicPowerOverrides"
   ],
   "builtInWeapons": {
     "WS0010": "nsp_vectorEngineController"
