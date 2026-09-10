@@ -92,6 +92,7 @@
 	[
             {"file":"sounds/nsp_invicta_phase3.ogg","pitch":1,"volume":0.5},
         ],
+
 		
 	"nsp_disabling_strike":
 	[
@@ -133,6 +134,11 @@
 	[
             {"file":"sounds/shipsystems/nsp_rom_decloak.ogg","pitch":1,"volume":0.5},
         ],
+		# GRAVITON LANCE
+	"graviton_lance_loop":
+	[
+		{"file":"sounds/graviton_lance_loop.ogg","pitch":1,"volume":0.25},
+	],
 			
 	
 		

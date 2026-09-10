@@ -234,6 +234,10 @@ nsp_HELIOS,WEAPON,"An enormous composite-beam laser system with near-omnidirecti
 The pride of Altair Exotech R&D's Division 72, the High-Energy Laser Interception and Offense System was conceived as a radical new breed of point defense system for the in-development Galaxy-class battlecruiser. With a proprietary multitargeting emitter ""strip"" and a lasing medium directly pumped by the vessel's main reactor, the initial design brief promised a rare combination of wide-area coverage, pinpoint accuracy, and respectable firepower.
 
 The realities of engineering, however, ultimately set in, and while the production-model HELIOS Array was not the impenetrable aegis against missiles and strikecraft it was meant to be, it is still a marvel of energy weapon technology, with the power output to threaten full-size warships and the efficiency and precision to fire on targets in nearly any direction as fast as gunnery crews can lock on.",,,,
+nsp_graviton_lance,WEAPON,Placeholder,,,,
+nsp_plasmatorp,WEAPON,"Originally meant as the main weapon for small missile boats, the Plasma Torpedo Launcher found wild success in Domain naval deployments. For a time, it was standard even on capital ships, famed for its ability to often punch through shields and even armor due to the rapid oscillation of its magnetically-bound plasma projectiles. Also often called ""photon"" torpedoes due to the immense light & heat given off by the torpedoes en route to their target. 
+",,,,
+nsp_modular_phaser,WEAPON,"A large, general-use energy weapon, the Particle Cannon draws from its great batteries to spew forth a concentrated beam of nearly every particle known to the Standard Model. Normally built into the ship itself because of its immense energy requirements, later iterations produced a PC that was modular and just as lethal.",,,,
 ,,,,,,
 nsp_inthrictus,SHIP,"Closest match found to archive entry for ""Hathoda""-class orbital siege platform, 50.001% confidence.
 
