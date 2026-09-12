@@ -24,8 +24,6 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS 001": "hammer",
-        "WS 002": "hammer",
         "WS 005": "hammer",
         "WS 006": "hammer"
       }

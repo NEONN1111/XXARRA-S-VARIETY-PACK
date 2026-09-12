@@ -32,24 +32,6 @@
   },
   "weaponSlots": [
     {
-      "id": "WS 001",
-      "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-30, 77]
-    },
-    {
-      "id": "WS 002",
-      "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-30, -69]
-    },
-    {
       "id": "WS 005",
       "size": "SMALL",
       "type": "COMPOSITE",
