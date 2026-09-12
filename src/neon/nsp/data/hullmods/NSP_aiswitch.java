@@ -20,8 +20,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import static neon.nsp.data.NSP_reference_sheet.NSP_AISWITCHAUTOMATED;
-import static neon.nsp.data.NSP_reference_sheet.NSP_AISWITCHMANUAL;
+import static neon.nsp.data.ids.NSP_reference_sheet.NSP_AISWITCHAUTOMATED;
+import static neon.nsp.data.ids.NSP_reference_sheet.NSP_AISWITCHMANUAL;
 
 public class NSP_aiswitch extends BaseHullMod {
 

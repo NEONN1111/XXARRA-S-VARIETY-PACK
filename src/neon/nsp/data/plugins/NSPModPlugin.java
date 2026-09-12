@@ -7,7 +7,7 @@ import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
 
-import neon.nsp.data.scripts.NSPPeople;
+import neon.nsp.data.ids.NSPPeople;
 import neon.nsp.data.scripts.starsystems.Revachol_starsystem;
 import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
@@ -55,24 +55,6 @@ public class NSPModPlugin extends BaseModPlugin {
         }
     }
 
-    private void initializeModularShipSystems() {
-        if (modularShipSystemInitialized) return;
-
-        // Register a transient EveryFrameScript that will initialize combat plugins when combat starts
-
-        modularShipSystemInitialized = true;
-        log.info("Modular ship systems initialized for Legion Mk.1, Dominator Mk.1, and Onslaught Mk.1");
-    }
-
-    private void registerPaperdollUI() {
-        if (paperdollUIRegistered) return;
-
-        // Register the paperdoll UI adder via sector script so it persists across combats
-        Global.getSector().addTransientScript(new PaperdollUIRegistrar());
-
-        paperdollUIRegistered = true;
-        log.info("Paperdoll UI system registered for modular ships");
-    }
 
     @Override
     public void onNewGameAfterEconomyLoad() {
@@ -129,23 +111,37 @@ public class NSPModPlugin extends BaseModPlugin {
         registerModularHullmods();
     }
 
-    private void registerModularHullmods() {
-        log.info("Modular armor systems registered for Mk.1 series ships");
-    }
 
     @Override
     public void onNewGame() {
         SectorThemeGenerator.generators.add(1, new NSPThemeGenerator());
     }
 
-    /**
-     * Initializes modular ship systems when combat starts
-     * This implements EveryFrameScript to be added as a transient script
-     */
+    //V: Moved modular stuff after plugin specific functions
+    //Outdated or unimplemented? Currently, plugin initialised in config
+    private void initializeModularShipSystems() {
+        if (modularShipSystemInitialized) return;
 
-    /**
-     * Registers paperdoll UI when combat starts
-     */
+        // Register a transient EveryFrameScript that will initialize combat plugins when combat starts
+        modularShipSystemInitialized = true;
+        log.info("Modular ship systems initialized for Legion Mk.1, Dominator Mk.1, and Onslaught Mk.1");
+    }
+
+    private void registerModularHullmods() {
+        log.info("Modular armor systems registered for Mk.1 series ships");
+    }
+
+    private void registerPaperdollUI() {
+        if (paperdollUIRegistered) return;
+
+        // Register the paperdoll UI adder via sector script so it persists across combats
+        Global.getSector().addTransientScript(new PaperdollUIRegistrar());
+
+        paperdollUIRegistered = true;
+        log.info("Paperdoll UI system registered for modular ships");
+    }
+
+    /* Registers paperdoll UI when combat starts */
     private static class PaperdollUIRegistrar implements EveryFrameScript {
         private boolean registered = false;
         private boolean done = false;

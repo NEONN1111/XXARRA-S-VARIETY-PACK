@@ -19,6 +19,7 @@ import com.fs.starfarer.api.util.FaderUtil;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 
+//Is this changes anything? Or is it some reference?
 public class MoteAIScript implements MissileAIPlugin {
 
 	public static float MAX_FLOCK_RANGE = 500;

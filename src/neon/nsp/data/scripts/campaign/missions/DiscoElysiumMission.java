@@ -1,7 +1,6 @@
 package neon.nsp.data.scripts.campaign.missions;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.Script;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
@@ -12,8 +11,7 @@ import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.missions.hub.MissionFleetAutoDespawn;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import neon.nsp.data.scripts.NSPPeople;
-import org.lwjgl.util.vector.Vector2f;
+import neon.nsp.data.ids.NSPPeople;
 
 import java.awt.Color;
 import java.util.List;

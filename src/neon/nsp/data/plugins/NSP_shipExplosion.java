@@ -18,6 +18,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.*;
 
+//V: This probably can be deleted unless used by blue Templar?
 public class NSP_shipExplosion extends BaseEveryFrameCombatPlugin {
 
     private static final Set<String> APPLICABLE_SHIPS = new HashSet<>(1);

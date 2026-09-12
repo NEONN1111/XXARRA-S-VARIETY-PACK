@@ -15,8 +15,9 @@ import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.util.Misc;
 
-import neon.nsp.data.scripts.util.NSP_Tags;
+import neon.nsp.data.ids.NSP_Tags;
 
+@Deprecated
 public class ThreatAutomatedShipsDEPRECATED {
 
     public static float MAX_CR_BONUS = 80f;

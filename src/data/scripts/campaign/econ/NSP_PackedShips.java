@@ -12,6 +12,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 
 import java.awt.Color;
 
+//Maybe to be moved to main directory? Don't see anything special about it
 public class NSP_PackedShips extends BaseSpecialItemPlugin {
     private String memberID = null;
     private FleetMemberAPI member = null;

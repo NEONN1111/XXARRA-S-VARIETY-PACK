@@ -7,6 +7,8 @@ package neon.nsp.data.scripts.util;
  * @author Various (see javadoc of individual methods for attributions)
  * @since 1.0
  */
+//Same thing as MathUtils, unused it seems
+@Deprecated
 public class FastTrig
 {
     /**

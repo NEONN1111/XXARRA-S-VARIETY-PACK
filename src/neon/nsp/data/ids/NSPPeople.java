@@ -1,4 +1,4 @@
-package neon.nsp.data.scripts;
+package neon.nsp.data.ids;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PersonImportance;
@@ -10,14 +10,19 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
+import com.fs.starfarer.api.util.WeightedRandomPicker;
 
-import static neon.nsp.data.scripts.util.NSPRanks.POST_DETECTIVE;
+import static neon.nsp.data.ids.NSP_Ranks.POST_DETECTIVE;
 
+//V: people usually go in ids, by vanilla convention
 public class NSPPeople {
 
     public static String PHOS = "nsp_phos";
 
-
+    //Exponent quest people
+    public static String EXQ_KNIGHT = "exponent_KnightContact";
+    public static String EXQ_INVICTUS_LEADER = "exponent_KnightContact";
+    public static String EXQ_LUDDIC_FLEET_COMMANDER = "exponent_KnightContact";
     public static String EXPONENT_CORE = "exponent_core";
 
     public static String NSP_THREAT_PROCESSOR = "nsp_threat_processor";
@@ -106,5 +111,40 @@ public class NSPPeople {
 
             ip.addPerson(person);
         }
+
+        //Pre create them here so they can be called to before mission is started
+        if (getPerson(EXQ_KNIGHT) == null) {
+            //They are semi random including name and portrait
+            PersonAPI person = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson();
+            person.setId(EXQ_KNIGHT);
+            person.setFaction(Factions.KOL);
+            person.setRankId(Ranks.KNIGHT_CAPTAIN);
+            person.setPostId(Ranks.POST_EXCUBITOR_ORBIS);
+
+            if (person.getGender() == FullName.Gender.FEMALE) {
+                WeightedRandomPicker<String> knightPortraitsFemale = new WeightedRandomPicker<>();
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic07.png");
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic10.png");
+                knightPortraitsFemale.add("graphics/portraits/portrait_luddic11.png");
+                String pick = knightPortraitsFemale.pick();
+                person.setPortraitSprite(pick);
+            } else {
+                WeightedRandomPicker<String> knightPortraitsMale = new WeightedRandomPicker<>();
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic02.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic05.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic06.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic09.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic13.png");
+                knightPortraitsMale.add("graphics/portraits/portrait_luddic15.png");
+                String pick = knightPortraitsMale.pick();
+                person.setPortraitSprite(pick);
+            }
+            person.setImportance(PersonImportance.HIGH);
+
+            //person.setMarket(createdAt);
+            //Will be added to market with rulesCMD or not added at all.
+            ip.addPerson(person);
+        }
+
     }
 }

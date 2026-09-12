@@ -12,6 +12,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import java.util.HashSet;
 import java.util.Set;
 
+//V: Is this used? Or plans to be used? I think that handled by Threat hullmod now right?
 public class ThreatAutomationApplicator implements EveryFrameScript {
 
     private static final String THREAT_AUTOMATION_HULLMOD = "nsp_threat_automation";

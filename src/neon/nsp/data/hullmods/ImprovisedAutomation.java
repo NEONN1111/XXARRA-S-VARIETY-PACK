@@ -1,12 +1,10 @@
 package neon.nsp.data.hullmods;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.CoreUITabId;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
@@ -21,8 +19,8 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
 
-import static neon.nsp.data.NSP_reference_sheet.NSP_IMPROVISED_AUTO;
-import static neon.nsp.data.NSP_reference_sheet.NSP_IMPROVISED_MANUAL;
+import static neon.nsp.data.ids.NSP_reference_sheet.NSP_IMPROVISED_AUTO;
+import static neon.nsp.data.ids.NSP_reference_sheet.NSP_IMPROVISED_MANUAL;
 
 
 public class ImprovisedAutomation extends BaseHullMod {

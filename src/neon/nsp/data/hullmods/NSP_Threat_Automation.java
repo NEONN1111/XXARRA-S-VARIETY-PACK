@@ -3,7 +3,6 @@ package neon.nsp.data.hullmods;
 import java.awt.*;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Collection;
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,19 +10,17 @@ import java.util.HashSet;
 
 import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.combat.listeners.WeaponOPCostModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import neon.nsp.data.scripts.util.NSP_Tags;
+import neon.nsp.data.ids.NSP_Tags;
 import org.lwjgl.util.vector.Vector2f;
 
 public class NSP_Threat_Automation extends BaseHullMod {

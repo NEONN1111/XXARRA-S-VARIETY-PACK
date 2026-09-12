@@ -9,6 +9,7 @@ import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
+//V: Why not just have them in system? It doesn't really serve any purpose besides spreading code files
 public class NSPSandevistan2 {
 
     // Gold color constants matching your Temporal Jaunt system

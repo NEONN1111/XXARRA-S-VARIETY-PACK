@@ -55,6 +55,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.Mag
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc;
 
+//Is this changes anything? Or is it some reference?
 public class TTBlackSite {
 
 	public static String HAMATSU_ID = "hamatsu";

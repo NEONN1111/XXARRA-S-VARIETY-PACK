@@ -10,7 +10,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import neon.nsp.data.scripts.util.NSP_Tags;
+import neon.nsp.data.ids.NSP_Tags;
 
 import java.awt.*;
 

@@ -9,8 +9,8 @@ import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
+//V: Why not just have them in system code? It doesn't really serve any purpose besides spreading code files
 public class NSPSandevistan {
-
 
     public static void afterimage(ShipAPI ship, Color color, Float fadein, Float duration, Float fadeout){
         // renders additive sprite of ship below where ship currently is

@@ -10,12 +10,15 @@ import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
+import neon.nsp.data.ids.NSP_Skills;
 
 import java.awt.*;
 import java.util.Random;
 
 import static com.fs.starfarer.api.impl.campaign.AICoreOfficerPluginImpl.*;
 
+//V: This probably can be deleted?
+@Deprecated
 public class NSP_InvictaCore extends BaseAICoreOfficerPluginImpl implements AICoreOfficerPlugin{
 
 
@@ -43,7 +46,7 @@ public class NSP_InvictaCore extends BaseAICoreOfficerPluginImpl implements AICo
             person.getStats().setSkillLevel("point_defense", 2.0F);
             person.getStats().setSkillLevel("ballistic_mastery", 2.0F);
             person.getStats().setSkillLevel("systems_expertise", 2.0F);
-            person.getStats().setSkillLevel(nsp_Skills.NSP_WEIRDSLAYER, 2.0F);
+            person.getStats().setSkillLevel(NSP_Skills.NSP_WEIRDSLAYER, 2.0F);
             person.setPortraitSprite(Global.getSettings().getSpriteName("characters", "Invicta"));
 
             points = ALPHA_POINTS;

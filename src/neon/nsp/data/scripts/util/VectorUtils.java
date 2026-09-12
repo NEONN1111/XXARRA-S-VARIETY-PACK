@@ -11,6 +11,9 @@ import java.util.List;
  * @author LazyWizard
  * @since 1.7
  */
+
+//Same thing as MathUtils, unused it seems
+@Deprecated
 public class VectorUtils
 {
     private static final Vector2f TEMP_VECTOR = new Vector2f();

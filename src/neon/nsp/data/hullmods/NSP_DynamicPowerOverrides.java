@@ -27,6 +27,8 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
     float WEAPONS_BONUS_MAX = 1.0F;
     float WEAPONS_NERF_MAX = 0.5F;
 
+    float MIN_CREW_MOD = 5F;
+
     public NSP_DynamicPowerOverrides() {
     }
 
@@ -36,6 +38,8 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
 
         stats.getWeaponRangeThreshold().modifyFlat(id, RANGE_THRESHOLD);
         stats.getWeaponRangeMultPastThreshold().modifyMult(id, RANGE_MULT);
+
+        stats.getMinCrewMod().modifyPercent(id, MIN_CREW_MOD);
 
         //stats.getZeroFluxMinimumFluxLevel().modifyFlat(id, 2f); // set to two, meaning boost is always on
         stats.getVentRateMult().modifyMult(id, 0f);
@@ -61,11 +65,13 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
         float padList = 6.0F;
         float padSig = 1.0F;
 
-
         tooltip.addSectionHeading("Effects", Alignment.MID, 10.0F);
 
         tooltip.addPara("Prevents the use of active venting, drastically reduces weapon ranges past %s units and disables the zero-flux engine boost.",
-                padList, Color.ORANGE, "" + RANGE_THRESHOLD);
+                padList, hColor, "" + RANGE_THRESHOLD);
+
+        tooltip.addPara("%s to skeleton crew required",
+                padList, hColor, "+" + MIN_CREW_MOD + "%");
 
         tooltip.addPara("Adds %s subsystem,",
                 padList, hColor, "Dynamic Power Overrides");
@@ -74,11 +80,14 @@ public class NSP_DynamicPowerOverrides extends BaseHullMod {
 
         tooltip.addPara("Subsystem actively diverts reactor power to either weapons or engines, depending on current state.", padList);
 
-        tooltip.addPara("When %s is active, reactor power diverted to weapons providing up to %s firerate and ship's flux dissipation, but reduces maneuverability and max speed by as much as %s.",
-                padList, hColor, "subsystem", (int)(100.0F + WEAPONS_BONUS_MAX * 100.0F) + "%", (int)(ENGINE_NERF_MAX * 100.0F) + "%");
+        tooltip.addPara("When %s is in %s, reactor power diverted to weapons providing up to %s firerate and ship's flux dissipation, but reduces maneuverability and max speed by as much as %s.",
+                padList, hColor, "subsystem", "weapon mode", (int)(100.0F + WEAPONS_BONUS_MAX * 100.0F) + "%", (int)(ENGINE_NERF_MAX * 100.0F) + "%");
 
-        tooltip.addPara("When %s is not active, reactor power diverted to engines providing up to %s maneuverability and max speed, but reduces weapons firerate and ship's flux dissipation by as much as %s.",
-                padList, hColor, "subsystem", (int)(100.0F + ENGINE_BONUS_MAX * 100.0F) + "%", (int)(WEAPONS_NERF_MAX * 100.0F) + "%");
+        tooltip.addPara("When %s is in %s, reactor power diverted to engines providing up to %s maneuverability and max speed, but reduces weapons firerate and ship's flux dissipation by as much as %s.",
+                padList, hColor, "subsystem", "engine mode", (int)(100.0F + ENGINE_BONUS_MAX * 100.0F) + "%", (int)(WEAPONS_NERF_MAX * 100.0F) + "%");
+
+        tooltip.addPara("When %s of subsystem is active for more than %s seconds, power gets routed away from main ship system %s",
+                padList, hColor, "any mode", "7", "preventing ship system activation");
 
         tooltip.addPara("When ship %s, short power surge boosts switched to focus.",
                 padList, hColor, "switches from one focus to another");

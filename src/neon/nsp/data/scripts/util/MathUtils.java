@@ -16,6 +16,9 @@ import java.util.Random;
  * @author LazyWizard
  * @since 1.0
  */
+//V: Why not use just Magiclib dependency version? It kinda same thing, isn't it?
+//V: actually checking usages it not used anywhere besides itself and vectorUtils, which means everthing run using magiclib util anyway?
+@Deprecated
 public class MathUtils
 {
     // This is the internal RNG used by all randomized LazyLib methods

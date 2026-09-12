@@ -5,6 +5,8 @@ import com.fs.starfarer.api.campaign.AICoreOfficerPlugin;
 import com.fs.starfarer.api.campaign.BaseCampaignPlugin;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 
+//V: Not used anywhere, so likely can be deleted?
+@Deprecated
 public class InvictaCampaignPluginImpl extends BaseCampaignPlugin {
 
     @Override

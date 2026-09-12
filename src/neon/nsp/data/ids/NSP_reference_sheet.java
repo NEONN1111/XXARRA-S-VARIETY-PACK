@@ -1,8 +1,6 @@
-package neon.nsp.data;
+package neon.nsp.data.ids;
 
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-
-import java.awt.Color;
 
 public class NSP_reference_sheet {
 
@@ -19,6 +17,7 @@ public class NSP_reference_sheet {
     public static final String NSP_IMPROVISED_MANUAL = "nsp_improvised_manual";
 
 
+    //V: Shouldn't be necessary for id class?
     // Constructor (init block from Kotlin)
     public NSP_reference_sheet() {
         // Empty constructor as the init block only contained static initialization
