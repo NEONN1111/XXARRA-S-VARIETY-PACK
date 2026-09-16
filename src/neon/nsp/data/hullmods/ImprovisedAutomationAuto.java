@@ -41,7 +41,7 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
         tooltip.addSectionHeading("Ship State", Alignment.MID, 5f);
         tooltip.addPara("The ship is currently %s.", 5f, Color.ORANGE, "automated");
         tooltip.addSectionHeading("Affected Deployment", Alignment.MID, 5f);
-        tooltip.addPara("As a result of the idiosyncrasies of these modifications, the Deployment Point cost of this ship is raised by %s/%s/%s/%s.", 5f, Color.ORANGE, "2","3","4","5");
+        tooltip.addPara("As a result of the of these modifications, the minimum crew requirements, and maximum crew capacity of this ship are lowered by %s.", 5f, Color.ORANGE, "100%");
     }
 
     @Override

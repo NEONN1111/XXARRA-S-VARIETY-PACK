@@ -3,7 +3,7 @@
   "hullId": "nsp_cassowary_auto",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 25,
+  "fluxCapacitors": 30,
   "fluxVents": 50,
   "quality": 1,
   "permaMods": [],
@@ -12,11 +12,19 @@
   ],
   "weaponGroups": [
     {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "nsp_graviton_lance",
+        "WS0002": "nsp_graviton_lance",
+        "WS0008": "tachyonlance"
+      }
+    },
+    {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
         "WS0007": "dragonpod",
-        "WS0008": "squall",
         "WS0012": "dragonpod"
       }
     },
@@ -24,26 +32,10 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "hephag",
-        "WS0004": "hephag"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0001": "multineedler",
-        "WS0002": "multineedler",
-        "WS0015": "gravitonbeam",
-        "WS0016": "gravitonbeam"
-      }
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0005": "ionpulser",
-        "WS0006": "ionpulser"
+        "WS0005": "dragon",
+        "WS0006": "dragon",
+        "WS0015": "dragon",
+        "WS0016": "dragon"
       }
     },
     {
@@ -55,6 +47,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
+        "WS0003": "guardian",
+        "WS0004": "guardian",
         "WS0013": "vulcan",
         "WS0014": "vulcan",
         "WS0017": "devastator",
@@ -71,8 +65,17 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [],
-  "wings": []
+  "wings": [
+    "thunder_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
 }
