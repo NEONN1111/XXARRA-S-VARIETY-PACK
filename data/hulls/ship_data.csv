@@ -34,6 +34,7 @@ Hialia,nsp_hialia,Heavy Cruiser,Low Tech,orion_device,10,11500,1250,8000,6000,45
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Casuarius,nsp_cassowary,Battleship,Midline,maneuveringjets,35,25000,1850,22000,25000,1500,335,3,25,12,12,8,8,7000,OMNI,,150,0.25,1.0,,,1000,1900,500,600,20,30,7,800000,3,15,720,0.25,70,70,,rare_bp,,0.4,3,5,,,,,,,,,
 Peregrine ,nsp_peregrine,Battlecruiser,Midline,maneuveringjets,24,20000,1200,20000,25000,900,270,,40,20,40,12,12,2500,OMNI,,140,0.25,1.0,,,400,500,300,300,10,30,8,300000,3,15,740,0.25,40,40,,rare_bp,,0.5,2,4,,,,,,,,,
+Harrier,nsp_harrier,Phase Frigate,Midline,flarelauncher_active,5,2000,400,2500,2250,200,45,,150,120,100,45,90,100,PHASE,phasecloak,,,,0.04,0.04,10,25,40,25,1,25,10,30000,8,10,240,0.25,6,6,,"rare_bp, merc, ind",,1,2,2,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Peregrine (LG),nsp_peregrine_lg,Battlecruiser,Lion's Guard,maneuveringjets,24,20000,1200,20000,25000,900,270,,40,20,40,12,12,2500,OMNI,,140,0.25,1.2,,,400,500,300,300,10,30,8,300000,3,15,740,0.25,40,40,,"rare_bp, no_dealer, codex_unlockable",,0.5,2,4,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,175 @@
+{
+  "hullName": "Harrier",
+  "hullId": "nsp_harrier",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_harrier.png",
+  "style": "MIDLINE",
+  "height": 82,
+  "width": 84,
+  "center": [42, 41],
+  "collisionRadius": 60,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 60,
+  "viewOffset": 0,
+  "builtInMods": [
+    "missile_autoloader",
+    "phasefield"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [9, 28]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [9, -28]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [27, 0]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [11, 0]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 135,
+      "locations": [-28.5, 30.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -135,
+      "locations": [-28.5, -30.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 37,
+      "locations": [12, 25.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -37,
+      "locations": [12, -25.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-38, 13.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-38, -13.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-41, 20.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-41, -20.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    29, -2.5,
+    24, -10,
+    39, -10,
+    39, -13,
+    34, -13,
+    34, -16,
+    20, -16,
+    21, -21.5,
+    13, -25.5,
+    13, -23,
+    10, -23,
+    12, -24,
+    12, -32,
+    -5, -40,
+    -10, -40,
+    -29, -30,
+    -36, -29.5,
+    -38.5, -24,
+    -41, -24,
+    -41, -16,
+    -38, -16,
+    -38, -10.5,
+    -26, -7,
+    -28, 0,
+    -26, 7,
+    -38, 10.5,
+    -38, 16,
+    -41, 16,
+    -41, 24,
+    -38.5, 24,
+    -36, 29.5,
+    -29, 30,
+    -10, 40,
+    -5, 40,
+    12, 32,
+    12, 24,
+    10, 23,
+    13, 23,
+    13, 25.5,
+    21, 21.5,
+    20, 16,
+    34, 16,
+    34, 13,
+    39, 13,
+    39, 10,
+    24, 10,
+    29, 2.5
+  ]
+}
