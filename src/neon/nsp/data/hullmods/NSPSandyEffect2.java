@@ -8,6 +8,7 @@ import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.combat.listeners.DamageDealtModifier;
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.combat.NegativeExplosionVisual;
@@ -22,11 +23,13 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import neon.nsp.data.plugins.NSP_ExponentCore;
 import neon.nsp.data.scripts.util.NSPSandevistan2;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
+//V: What differences are between it and NSPSandyEffect? It one boss version and other player version
 public class NSPSandyEffect2 extends BaseHullMod {
     public static float SHIELD_BONUS_TURN = 120f;
     public static float SHIELD_BONUS_UNFOLD = 120f;
@@ -708,7 +711,7 @@ public class NSPSandyEffect2 extends BaseHullMod {
 
             interval.advance(amount);
             if (interval.intervalElapsed()) {
-                NSPSandevistan2.afterimage(ship, AFTERIMAGE_COLOR, duration, duration, duration);
+                AddAfterimage(ship, AFTERIMAGE_COLOR, duration, duration, duration);
             }
         }
 
@@ -763,6 +766,33 @@ public class NSPSandyEffect2 extends BaseHullMod {
                 s.getMutableStats().getHighExplosiveShieldDamageTakenMult().unmodify("KT_blastdampeners");
             }
         }
+    }
+
+    public static void AddAfterimage(ShipAPI ship, Color color, Float fadein, Float duration, Float fadeout) {
+        // renders additive sprite of ship below where ship currently is
+        SpriteAPI sprite = ship.getSpriteAPI();
+        Vector2f location = ship.getLocation();
+
+        MagicRender.battlespace(
+                Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                new Vector2f(location.getX(), location.getY()),
+                new Vector2f(0f, 0f),
+                new Vector2f(sprite.getWidth(), sprite.getHeight()),
+                new Vector2f(0f, 0f),
+                ship.getFacing() - 90f,
+                0f,
+                color, // Now uses the passed color parameter instead of hardcoded Color.ORANGE
+                true,
+                0f,
+                fadein, // Use the fadein parameter
+                duration, // Use the duration parameter
+                fadeout, // Use the fadeout parameter
+                0f,
+                0.1f,
+                0.1f,
+                1f, // This should probably be fadeout, but keeping original structure
+                CombatEngineLayers.BELOW_SHIPS_LAYER
+        );
     }
 
     private ShroudedLensHullmod.ShroudedLensHullmodData getData(ShipAPI ship) {

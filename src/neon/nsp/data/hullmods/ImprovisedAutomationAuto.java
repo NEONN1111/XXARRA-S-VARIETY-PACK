@@ -9,6 +9,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -38,9 +39,9 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
 
     @Override
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
-        tooltip.addSectionHeading("Ship State", Alignment.MID, 5f);
+        tooltip.addSectionHeading("Ship State", Alignment.MID, 10f);
         tooltip.addPara("The ship is currently %s.", 5f, Color.ORANGE, "automated");
-        tooltip.addSectionHeading("Affected Deployment", Alignment.MID, 5f);
+        tooltip.addSectionHeading("Affected Deployment", Alignment.MID, 10f);
         tooltip.addPara("As a result of the of these modifications, the minimum crew requirements, and maximum crew capacity of this ship are lowered by %s.", 5f, Color.ORANGE, "100%");
     }
 
@@ -82,12 +83,11 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-
         stats.getMinCrewMod().modifyMult(id, 0);
         stats.getMaxCrewMod().modifyMult(id, 0);
-        stats.getSuppliesPerMonth().modifyFlat(id, (Float) mag.get(hullSize));
-        stats.getSuppliesToRecover().modifyFlat(id, (Float) mag.get(hullSize));
-        stats.getDynamic().getMod("deployment_points_mod").modifyFlat(id, (Float) mag.get(hullSize));
+        //stats.getSuppliesPerMonth().modifyFlat(id, (Float) mag.get(hullSize));
+        //stats.getSuppliesToRecover().modifyFlat(id, (Float) mag.get(hullSize));
+        //stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id, (Float) mag.get(hullSize));
     }
 
     @Override
@@ -123,7 +123,7 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
 
                 if (pick != null &&
                         (pick.getSkill().getSourceMod() == null ||
-                                "QualityCaptains".equals(pick.getSkill().getSourceMod().getId())) &&
+                        "QualityCaptains".equals(pick.getSkill().getSourceMod().getId())) &&
                         !pick.getSkill().isAptitudeEffect() &&
                         pick.getLevel() > 0f) {
 
@@ -137,6 +137,7 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
             }
         }
 
+        //Probably redundant?
         if (ship.getVariant() != null && !ship.getVariant().hasHullMod(AUTO_MODE)) {
             ship.getMutableStats().getMinCrewMod().unmodifyMult(id);
             ship.getMutableStats().getMaxCrewMod().unmodifyMult(id);

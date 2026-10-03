@@ -27,12 +27,7 @@ public class ImprovisedAutomationManual extends BaseHullMod {
     }
 
     @Override
-    public boolean canBeAddedOrRemovedNow(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
-
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return (ship != null && (ship.getCaptain() == null || ship.getCaptain().isDefault()));
     }
 

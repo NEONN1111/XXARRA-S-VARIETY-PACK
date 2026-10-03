@@ -9,7 +9,10 @@ import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
-//V: Why not just have them in system code? It doesn't really serve any purpose besides spreading code files
+//V: Why not just have them in system/hullmod code? It doesn't really serve any purpose besides spreading code files
+//V: Also pretty much the same code as NSPSandevistan2
+//V: Moved to respective hullmod code
+@Deprecated
 public class NSPSandevistan {
 
     public static void afterimage(ShipAPI ship, Color color, Float fadein, Float duration, Float fadeout){

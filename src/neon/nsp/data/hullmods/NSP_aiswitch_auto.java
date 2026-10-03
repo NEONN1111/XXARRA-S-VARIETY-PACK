@@ -19,13 +19,7 @@ public class NSP_aiswitch_auto extends BaseHullMod {
     private final Random random = new Random();
 
     @Override
-    public void addPostDescriptionSection(
-            TooltipMakerAPI tooltip,
-            ShipAPI.HullSize hullSize,
-            ShipAPI ship,
-            float width,
-            boolean isForModSpec
-    ) {
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
         tooltip.addPara("Due to certain liberties taken when integrating the AI core cradle into the new hull the result is less than optimal - it lacks the throughput required to support AI cores of higher sentience.", 5f);
         tooltip.addPara("Any AI core installed is limited to level " + nerflevel + ", up to level " + (nerflevel + 1) + " if fully integrated.", 5f)
                 .setHighlight("level " + nerflevel, "level " + (nerflevel + 1));
@@ -39,15 +33,6 @@ public class NSP_aiswitch_auto extends BaseHullMod {
     @Override
     public int getDisplaySortOrder() {
         return 1;
-    }
-
-    @Override
-    public boolean canBeAddedOrRemovedNow(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
-        return (ship != null && (ship.getCaptain() == null || ship.getCaptain().isDefault()));
     }
 
     @Override
@@ -79,7 +64,7 @@ public class NSP_aiswitch_auto extends BaseHullMod {
 
                 if (pick != null &&
                         (pick.getSkill().getSourceMod() == null ||
-                                "QualityCaptains".equals(pick.getSkill().getSourceMod().getId())) &&
+                        "QualityCaptains".equals(pick.getSkill().getSourceMod().getId())) &&
                         !pick.getSkill().isAptitudeEffect() &&
                         pick.getLevel() > 0f) {
 
@@ -96,11 +81,12 @@ public class NSP_aiswitch_auto extends BaseHullMod {
     }
 
     @Override
-    public String getCanNotBeInstalledNowReason(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return (ship != null && (ship.getCaptain() == null || ship.getCaptain().isDefault()));
+    }
+
+    @Override
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return "Must not have a captain assigned to remove.";
     }
 }

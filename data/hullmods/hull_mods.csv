@@ -56,6 +56,7 @@ Microwave Power Receiver,nsp_lash_receiver,,,,"no_sell, restricted, req_spacepor
 Threat Automation,nsp_threat_automation,,,Threat,,,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.NSP_Threat_Automation,"This hull is almost an utter mystery in it's design and capabilities, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/threat_auto.png
 Threat Hull,threat_hullmod,,,,"codex_require_related, threat",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ThreatHullmodNSP,Hidden hullmod for managing the special properties of Threat ships. Description created in script.,,,graphics/hullmods/the_threat.png
 ,,,,,,,,,,,,,,,,,,,
+#IAS for MK1 ships,,,,,,,,,,,,,,,,,,,
 Improvised Automation Suite,nsp_improvised_automation,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomation,"This hull's design is rugged and ad-hoc, but still somewhat in-line with other automated ship design. ",,,graphics/hullmods/improvised_automation.png
 Automated,nsp_improvised_auto,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationAuto,Automated Mode.,,,graphics/hullmods/improvised_automation.png
 Manual,nsp_improvised_manual,,,,"no_drop, restricted, no_build_in",,,,TRUE,,0,0,0,0,neon.nsp.data.hullmods.ImprovisedAutomationManual,Manual Mode.,,,graphics/hullmods/improvised_automation.png

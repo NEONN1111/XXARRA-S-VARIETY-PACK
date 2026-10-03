@@ -7,6 +7,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 
+//V: It does pretty much nothing right?
 public class ImprovisedAutomationPenalty extends BaseHullMod {
 
     private static final String MAIN_HULLMOD = "nsp_improvised_automation";
@@ -32,11 +33,7 @@ public class ImprovisedAutomationPenalty extends BaseHullMod {
     }
 
     @Override
-    public boolean canBeAddedOrRemovedNow(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return false;
     }
 }

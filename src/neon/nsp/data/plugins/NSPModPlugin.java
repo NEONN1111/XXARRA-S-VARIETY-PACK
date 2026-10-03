@@ -7,7 +7,9 @@ import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
 
+import lunalib.lunaSettings.LunaSettings;
 import neon.nsp.data.ids.NSPPeople;
+import neon.nsp.data.ids.xvp_lunasettings;
 import neon.nsp.data.scripts.starsystems.Revachol_starsystem;
 import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
@@ -18,43 +20,42 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 
 public class NSPModPlugin extends BaseModPlugin {
-    public static boolean hasMagicLib = false;
     public Logger log = Logger.getLogger(this.getClass());
-    public testFilePlzIgnore thespawnerrr;
-    public static boolean HAS_GRAPHICSLIB = false;
+
+    //Mod interaction checks
+    public static boolean hasMagicLib = false;
+    public static boolean hasGraphicsLib = false;
+    private boolean use_lunasettings = false;
 
     // Hull IDs for modular ships
-
     private boolean modularShipSystemInitialized = false;
     private boolean paperdollUIRegistered = false;
 
     @Override
     public void onGameLoad(boolean newGame) {
-        if (!Global.getSector().getGenericPlugins().hasPlugin(NSPSafeguard.class)) {
-            Global.getSector().getGenericPlugins().addPlugin(new NSPSafeguard(), true);
+        initializeModularShipSystems(); // Functionally does nothing
+        registerPaperdollUI(); //Transient, so need to be re-added on each reload
+
+        //If no lunalib: if - true, if yes lunalib: checks settings
+        if (!use_lunasettings || Boolean.TRUE.equals(LunaSettings.getBoolean("NSP", xvp_lunasettings.UNIQUE_SENTINELS))) {
+            //As it just overrides vanilla it should work by just preventing override
+            if (!Global.getSector().getGenericPlugins().hasPlugin(NSPSafeguard.class)) {
+                Global.getSector().getGenericPlugins().addPlugin(new NSPSafeguard(), true);
+            }
         }
 
         if (!Global.getSector().getListenerManager().hasListenerOfClass(DerelictOddityTracker.class)) {
             Global.getSector().getListenerManager().addListener(new DerelictOddityTracker(), true);
         }
 
-        // Initialize modular ship systems
-        initializeModularShipSystems();
-
-        // Register paperdoll UI
-        registerPaperdollUI();
-
         try {
-            SectorAPI sector = Global.getSector();
-            ExponentCampaignPluginImpl plugin = new ExponentCampaignPluginImpl();
-            ThreatProcessorCampaignPluginImpl plugin2 = new ThreatProcessorCampaignPluginImpl();
-            sector.registerPlugin(plugin);
-            sector.registerPlugin(plugin2);
+            //AI cores campaighn plugins
+            Global.getSector().registerPlugin(new ExponentCampaignPluginImpl());
+            Global.getSector().registerPlugin(new ThreatProcessorCampaignPluginImpl());
         } catch (Throwable t) {
             log.error("Failed to register ExponentCampaignPluginImpl", t);
         }
     }
-
 
     @Override
     public void onNewGameAfterEconomyLoad() {
@@ -75,9 +76,10 @@ public class NSPModPlugin extends BaseModPlugin {
         tagBL.add(com.fs.starfarer.api.impl.campaign.ids.Tags.SYSTEM_ABYSSAL);
         tagBL.add(com.fs.starfarer.api.impl.campaign.ids.Tags.STAR_HIDDEN_ON_MAP);
         tagBL.add("theme_d");
-        StarSystemAPI system = thespawnerrr.getRandomSystemWithBlacklist(systemBL, tagBL, sector);
+        StarSystemAPI system = getRandomStarSystemsWithBlacklist.getRandomSystemWithBlacklist(systemBL, tagBL, sector);
         if (system != null) DomainShips.generate(system);
 
+        //V: probably can be moved to separate gen class to not clutter plugin? Or at least be more clearly named and organised
         nsp_legionGen.generate(Global.getSector());
         nsp_dominatorGen.generate(Global.getSector());
 
@@ -98,16 +100,17 @@ public class NSPModPlugin extends BaseModPlugin {
 
     @Override
     public void onApplicationLoad() throws Exception {
-        boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
+        use_lunasettings = Global.getSettings().getModManager().isModEnabled("lunalib");
+
         if (hasGraphicsLib) {
-            HAS_GRAPHICSLIB = true;
             ShaderLib.init();
             TextureData.readTextureDataCSV("data/config/nsp_texture_data.csv");
             log.info("NSP shaders active");
         }
-        hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
 
-        log.info("Welcome to NSP! I'm in your hulls...");
+        log.info("Welcome to XVP! I'm in your hulls...");
         registerModularHullmods();
     }
 

@@ -8,7 +8,7 @@ import org.lazywizard.lazylib.MathUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class testFilePlzIgnore {
+public class getRandomStarSystemsWithBlacklist {
     // random old java function I copied from god knows where, takes two arraylists and the sector as input
     // first arraylist contains starsystem IDs, if you really want to avoid specific systems for whatever reason
     // second is more important, contains a blacklist of tags.

@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.combat.listeners.DamageDealtModifier;
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -12,6 +13,7 @@ import com.fs.starfarer.api.util.Misc;
 import neon.nsp.data.scripts.util.NSPSandevistan;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 import java.util.*;
@@ -65,6 +67,7 @@ public class NSPSandyEffect extends BaseHullMod {
     public boolean affectsOPCosts() {
         return true;
     }
+
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         stats.getMissileRoFMult().modifyMult(id, MISSILE_ROF_MULT);
@@ -131,6 +134,7 @@ public class NSPSandyEffect extends BaseHullMod {
         final Map<HullSize, Float> repairSpeed = new HashMap<>();
         final float maxFoam = 60f;
         final float maxRepairReductionPerUsed = 0.7f;
+
         {
             repairSpeed.put(HullSize.CRUISER, 1.5f);
             repairSpeed.put(HullSize.DESTROYER, 3f);
@@ -194,7 +198,7 @@ public class NSPSandyEffect extends BaseHullMod {
             // Create afterimages
             interval.advance(amount);
             if (interval.intervalElapsed()) {
-                NSPSandevistan.afterimage(ship, color, duration, duration, duration);
+                AddAfterimage(ship, color, duration, duration, duration);
             }
         }
 
@@ -303,7 +307,7 @@ public class NSPSandyEffect extends BaseHullMod {
     private float resisting = 0f;
 
     @Override
-    public void advanceInCombat(ShipAPI ship, float amount){
+    public void advanceInCombat(ShipAPI ship, float amount) {
 
         if (Global.getCombatEngine() == null)
             return;
@@ -313,16 +317,16 @@ public class NSPSandyEffect extends BaseHullMod {
         shipPlusModules.add(ship);
 
         resisting -= amount;
-        for (ShipAPI s : Global.getCombatEngine().getShips()){
-            if (s != ship && s.getHullSize() != HullSize.FIGHTER && s.isAlive()){
-                float distance = Vector2f.sub(ship.getLocation(),s.getLocation(),new Vector2f()).length() - ship.getCollisionRadius();
-                for (ShipAPI child : ship.getChildModulesCopy()){
-                    float newDistance = Vector2f.sub(child.getLocation(),s.getLocation(),new Vector2f()).length() - child.getCollisionRadius();
-                    distance = Math.min(distance,newDistance);
+        for (ShipAPI s : Global.getCombatEngine().getShips()) {
+            if (s != ship && s.getHullSize() != HullSize.FIGHTER && s.isAlive()) {
+                float distance = Vector2f.sub(ship.getLocation(), s.getLocation(), new Vector2f()).length() - ship.getCollisionRadius();
+                for (ShipAPI child : ship.getChildModulesCopy()) {
+                    float newDistance = Vector2f.sub(child.getLocation(), s.getLocation(), new Vector2f()).length() - child.getCollisionRadius();
+                    distance = Math.min(distance, newDistance);
                 }
                 float mult = s.getMutableStats().getDynamic().getValue(Stats.EXPLOSION_RADIUS_MULT);
                 float radius = s.getCollisionRadius() + Math.min(200f, s.getCollisionRadius()) * mult;
-                if (distance <= radius){
+                if (distance <= radius) {
                     nearbyShips.add(s);
                 } else {
                     nearbyShips.remove(s);
@@ -330,9 +334,9 @@ public class NSPSandyEffect extends BaseHullMod {
             }
         }
         Iterator<ShipAPI> iter = nearbyShips.iterator();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             ShipAPI t = iter.next();
-            if (t == null || !t.isAlive()){
+            if (t == null || !t.isAlive()) {
                 iter.remove();
                 for (ShipAPI s : shipPlusModules) {
                     s.getMutableStats().getHighExplosiveDamageTakenMult().modifyMult("KT_blastdampeners", RESISTANCE);
@@ -341,7 +345,7 @@ public class NSPSandyEffect extends BaseHullMod {
                 resisting = RESIST_TIME;
             }
         }
-        if (resisting <= 0f){
+        if (resisting <= 0f) {
             for (ShipAPI s : shipPlusModules) {
                 s.getMutableStats().getHighExplosiveDamageTakenMult().unmodify("KT_blastdampeners");
                 s.getMutableStats().getHighExplosiveShieldDamageTakenMult().unmodify("KT_blastdampeners");
@@ -350,7 +354,7 @@ public class NSPSandyEffect extends BaseHullMod {
 
     }
 
-static class KillTracker implements HullDamageAboutToBeTakenListener {
+    static class KillTracker implements HullDamageAboutToBeTakenListener {
         String key = "$nsp_kill_tracker_key";
         ShipAPI dealer;
         private Object spec;
@@ -381,5 +385,32 @@ static class KillTracker implements HullDamageAboutToBeTakenListener {
             }
             return false;
         }
+    }
+
+    public static void AddAfterimage(ShipAPI ship, Color color, Float fadein, Float duration, Float fadeout) {
+        // renders additive sprite of ship below where ship currently is
+        SpriteAPI sprite = ship.getSpriteAPI();
+        Vector2f location = ship.getLocation();
+
+        MagicRender.battlespace(
+                Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                new Vector2f(location.getX(), location.getY()),
+                new Vector2f(0f, 0f),
+                new Vector2f(sprite.getWidth(), sprite.getHeight()),
+                new Vector2f(0f, 0f),
+                ship.getFacing() - 90f,
+                0f,
+                color, // Now uses the passed color parameter instead of hardcoded Color.ORANGE
+                true,
+                0f,
+                fadein, // Use the fadein parameter
+                duration, // Use the duration parameter
+                fadeout, // Use the fadeout parameter
+                0f,
+                0.1f,
+                0.1f,
+                1f, // This should probably be fadeout, but keeping original structure
+                CombatEngineLayers.BELOW_SHIPS_LAYER
+        );
     }
 }

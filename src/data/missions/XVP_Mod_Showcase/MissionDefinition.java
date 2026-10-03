@@ -34,10 +34,10 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-import static javax.swing.UIManager.getString;
+//Created by Vexlia from SC/VE code with rubi permission
 
 //General mission to add all ships
-//Class needs to be in matching not source data/mission package and named MissionDefinition
+//Class needs to be in matching data/mission package to mission folder and named MissionDefinition
 public class MissionDefinition implements MissionDefinitionPlugin {
     private static final Logger log = Global.getLogger(MissionDefinition.class);
 
@@ -57,16 +57,11 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         api.initFleet(FleetSide.PLAYER, "XVP", FleetGoal.ATTACK, false, 10);
         api.initFleet(FleetSide.ENEMY, "IWD", FleetGoal.ATTACK, true, 10);
 
-        // Set a blurb for each fleet
+        // Set a blurb/name for each side
         api.setFleetTagline(FleetSide.PLAYER, "Your Boyz!!!");
         api.setFleetTagline(FleetSide.ENEMY, "Targets!!!");
 
-        // These show up as items in the bulleted list under
-        // "Tactical Objectives" on the mission detail screen
-
-        //Maybe redo for hulls?
-        ArrayList<String> Variants = new ArrayList<>(Global.getSettings().getAllVariantIds());
-
+        //hulls
         List<String> shipList = new ArrayList<>(modToHull.getList(MOD_ID)); // make new ship list so removing doesn't affect the original list
 
         // don't use api.addFleetMember() because then the ships start at 0 CR
@@ -83,6 +78,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
             }
         }
 
+        // These show up as items in the bulleted list under
+        // "Tactical Objectives" on the mission detail screen
         api.addBriefingItem("Showing " + shipList.size() + " ships (that's excluding modules and wing only ships.");
         api.addBriefingItem("Test what you like");
         api.addBriefingItem("Try not to have too much fun");

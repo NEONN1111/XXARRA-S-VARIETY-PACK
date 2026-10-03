@@ -119,11 +119,7 @@ public class ImprovisedAutomation extends BaseHullMod {
     }
 
     @Override
-    public void applyEffectsBeforeShipCreation(
-            ShipAPI.HullSize hullSize,
-            MutableShipStatsAPI stats,
-            String id
-    ) {
+    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         ShipAPI ship = null;
         if (stats != null && stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
@@ -271,7 +267,6 @@ public class ImprovisedAutomation extends BaseHullMod {
             }
         }
 
-
         if (stats.getVariant() == null || (!this.isBuiltIn(ship) && !this.isSMod(ship))) return;
 
         ShipVariantAPI variantStats = stats.getVariant();
@@ -279,11 +274,9 @@ public class ImprovisedAutomation extends BaseHullMod {
     }
 
     private void applyDecorativeWeaponBasedOnMode(ShipAPI ship, MutableShipStatsAPI stats, ShipVariantAPI variant) {
-
         if (ship.isFighter() || ship.isDrone() || ship.getParentStation() != null || ship.getParentStation() != null) {
             return;
         }
-
 
         if (stats.getVariant().getHullSpec() == null) return;
 
@@ -293,9 +286,7 @@ public class ImprovisedAutomation extends BaseHullMod {
 
         if (!decoMap.containsKey(hullId)) return;
 
-
         boolean isAutomatedMode = variant.hasHullMod(NSP_IMPROVISED_AUTO);
-
 
         WeaponSlotAPI decorativeSlot = null;
         Iterator weaponiter = ship.getHullSpec().getAllWeaponSlotsCopy().iterator();
@@ -312,7 +303,6 @@ public class ImprovisedAutomation extends BaseHullMod {
         String slotId = decorativeSlot.getId();
 
         if (isAutomatedMode) {
-
             String weaponId = decoMap.get(hullId);
             WeaponSpecAPI weaponSpec = Global.getSettings().getWeaponSpec(weaponId);
             if (weaponSpec != null) {
@@ -320,7 +310,6 @@ public class ImprovisedAutomation extends BaseHullMod {
                 variant.addWeapon(slotId, weaponId);
             }
         } else {
-
             String currentWeaponId = variant.getWeaponId(slotId);
             if (currentWeaponId != null && currentWeaponId.endsWith("_corebridge")) {
                 variant.clearSlot(slotId);
@@ -357,6 +346,7 @@ public class ImprovisedAutomation extends BaseHullMod {
         }
     }
 
+    //To do: replace with reflections for better compatibility
     private void refreshRefitScreen() {
         if (Global.getSector() != null &&
                 Global.getSector().getCampaignUI() != null &&
@@ -365,9 +355,7 @@ public class ImprovisedAutomation extends BaseHullMod {
                 Robot robot = new Robot();
                 robot.keyPress(KeyEvent.VK_R);
                 robot.keyRelease(KeyEvent.VK_R);
-            } catch (AWTException e) {
-     
-            }
+            } catch (AWTException e) {}
         }
     }
 }

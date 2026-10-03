@@ -27,6 +27,7 @@ public class NSP_aiswitch extends BaseHullMod {
 
     private final String switchTag = "NSP_switched";
     public static final Map<String, String> decoMap = new HashMap<String, String>();
+    //V: You probably don't need string map if naming is cosistent, just get it based on ship_id + _coreBridge
     static {
         decoMap.put("tll_anubis", "tll_anubis_corebridge");
         decoMap.put("tll_peregrine", "tll_peregrine_corebridge");
@@ -54,13 +55,7 @@ public class NSP_aiswitch extends BaseHullMod {
     }
 
     @Override
-    public void addPostDescriptionSection(
-            TooltipMakerAPI tooltip,
-            ShipAPI.HullSize hullSize,
-            ShipAPI ship,
-            float width,
-            boolean isForModSpec
-    ) {
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
         tooltip.addPara("Allows for normally automated ships to be piloted with a modest crew complement, and removes their reliance on a commander proficient in handling them.", 5f);
         tooltip.addPara("Can switch between allowing a human captain or an AI core captain.", 5f);
         tooltip.addPara("Can only switch states if the ship doesn't already have a captain.", 5f);
@@ -75,20 +70,16 @@ public class NSP_aiswitch extends BaseHullMod {
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        if(ship.getOriginalOwner()<0){
+        if (ship.getOriginalOwner() < 0) {
             //undo fix for weapons put in cargo
-            if(
-                    Global.getSector()!=null &&
-                            Global.getSector().getPlayerFleet()!=null &&
-                            Global.getSector().getPlayerFleet().getCargo()!=null &&
-                            Global.getSector().getPlayerFleet().getCargo().getStacksCopy()!=null &&
-                            !Global.getSector().getPlayerFleet().getCargo().getStacksCopy().isEmpty()
-            ){
-                for (CargoStackAPI s : Global.getSector().getPlayerFleet().getCargo().getStacksCopy()){
-                    if(
-                            s.isWeaponStack()
-                                    && s.getWeaponSpecIfWeapon().getWeaponId().endsWith("_corebridge")
-                    ){
+            if (Global.getSector() != null &&
+                    Global.getSector().getPlayerFleet() != null &&
+                    Global.getSector().getPlayerFleet().getCargo() != null &&
+                    Global.getSector().getPlayerFleet().getCargo().getStacksCopy() != null &&
+                    !Global.getSector().getPlayerFleet().getCargo().getStacksCopy().isEmpty()) {
+
+                for (CargoStackAPI s : Global.getSector().getPlayerFleet().getCargo().getStacksCopy()) {
+                    if (s.isWeaponStack() && s.getWeaponSpecIfWeapon().getWeaponId().endsWith("_corebridge")) {
                         Global.getSector().getPlayerFleet().getCargo().removeStack(s);
                     }
                 }
@@ -115,11 +106,7 @@ public class NSP_aiswitch extends BaseHullMod {
     }
 
     @Override
-    public void applyEffectsBeforeShipCreation(
-            ShipAPI.HullSize hullSize,
-            MutableShipStatsAPI stats,
-            String id
-    ) {
+    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         ShipAPI ship = null;
         if (stats != null && stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
@@ -230,6 +217,7 @@ public class NSP_aiswitch extends BaseHullMod {
         }
     }
 
+    // todo swap Java Robot implementation to Reflections based one
     private void handleAutomationSwitching(ShipVariantAPI variantStats) {
         if (variantStats.hasTag(Tags.AUTOMATED)) {
             if (!variantStats.hasHullMod(NSP_AISWITCHAUTOMATED)) {

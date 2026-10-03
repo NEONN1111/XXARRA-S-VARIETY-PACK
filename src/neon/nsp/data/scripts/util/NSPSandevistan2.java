@@ -9,7 +9,10 @@ import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
-//V: Why not just have them in system? It doesn't really serve any purpose besides spreading code files
+//V: Why not just have them in system/hullmod? It doesn't really serve any purpose besides spreading code files
+//V: Also pretty much the same code as NSPSandevistan
+//V: Moved to respective hullmod code
+@Deprecated
 public class NSPSandevistan2 {
 
     // Gold color constants matching your Temporal Jaunt system

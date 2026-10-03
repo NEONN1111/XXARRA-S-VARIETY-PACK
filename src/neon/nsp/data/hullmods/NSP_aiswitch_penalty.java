@@ -14,18 +14,18 @@ import com.fs.starfarer.api.loading.HullModSpecAPI;
 public class NSP_aiswitch_penalty extends BaseHullMod {
 
     // hidden op penalty hullmod, removed when the original goes
-    
+    //V: I assume doesn't do anything?
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         if (ship == null) return;
         ShipVariantAPI variant = ship.getVariant();
         if (variant == null) return;
-        
+
         // can't use variant.spec because we change the spec itself to remove UNBOARDABLE
         if (!variant.hasHullMod("NSP_aiswitch")) {
-          ShipHullSpecAPI spec = Global.getSettings().getHullSpec(variant.getHullSpec().getRestoredToHullId());
+            ShipHullSpecAPI spec = Global.getSettings().getHullSpec(variant.getHullSpec().getRestoredToHullId());
             variant.removeMod(this.getSpec().getId());
-            
+
             if (spec != null && spec.isBuiltInMod(HullMods.AUTOMATED)) {
                 variant.setHullSpecAPI(spec);
             }
@@ -37,11 +37,7 @@ public class NSP_aiswitch_penalty extends BaseHullMod {
     }
 
     @Override
-    public boolean canBeAddedOrRemovedNow(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return false;
     }
 }

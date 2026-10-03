@@ -11,6 +11,8 @@ import java.util.List;
 
 // Code originally by Tartiflette for Tiandong Heavy Industries
 // this version taken from SWP
+//V: not used? Looks like taken from magiclib, but never fully implemented
+@Deprecated
 public class NSP_BlockedHullmodDisplayScript extends BaseEveryFrameCombatPlugin implements EveryFrameScript {
 
     private static final String NOTIFICATION_HULLMOD = "nsp_incompatible";

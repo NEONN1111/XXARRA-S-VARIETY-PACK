@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.util.Misc;
 
+//Sub-System Modernization
 public class cutcrew extends BaseHullMod {
 
 	public String getUnapplicableReason(ShipAPI ship) {

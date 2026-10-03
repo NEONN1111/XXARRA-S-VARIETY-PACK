@@ -19,31 +19,18 @@ public class NSP_aiswitch_manual extends BaseHullMod {
     }
     
     @Override
-    public boolean canBeAddedOrRemovedNow(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return (ship != null && (ship.getCaptain() == null || ship.getCaptain().isDefault()));
     }
     
     @Override
-    public String getCanNotBeInstalledNowReason(
-            ShipAPI ship,
-            MarketAPI marketOrNull,
-            CampaignUIAPI.CoreUITradeMode mode
-    ) {
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
         return "Must not have a captain assigned to remove.";
     }
     
     @Override
-    public void addPostDescriptionSection(
-            TooltipMakerAPI tooltip,
-            ShipAPI.HullSize hullSize,
-            ShipAPI ship,
-            float width,
-            boolean isForModSpec
-    ) {
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
         // Empty implementation - no description needed
+        //V: Probably still can use note about requiring crew and being able to be piloted by human officers. 
     }
 }

@@ -1,0 +1,41 @@
+fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
+xvp_IntroHeader,Intro Header,Header,Xxarra's Varietty Pack Settings,,,,,
+xvp_IntroText,Intro Text,Text,"Here you can tweak mod's changes to vanilla, crossover content and other things.",,"Changes the Keybind for opening this Menu in the Campaign. 
+Can always be opened by pressing [Shift + F2], even if set to another key.",,,
+,,,,,,,,
+xvp_VanillaHeader,Vanilla Changes Header,Header,Vanilla changes ,,,,,
+,,,,,,,,
+xvp_uniqueSentinels,Unique Sentinels,Boolean,true,,"Enables unique hulls for [Sentinel] ships found during ""The Scythe of Orion"" quest. 
+XVP [Sentinels] feature special version of automation allowing crewed operations, special version of XIV battlegroup hullmod as well as unique sprites.
+Default: [True]",,,
+xvp_SentinelsCoresLevelCap,Sentinel AI core level cap,Int,5,,"Automation on Sentinels limits max officer level AI cores can use. Integrated AI core level being this number plus one.
+Default: [5]",1,10,
+xvp_vanillaSpacer,Spacer,Text,              ,,,,,
+xvp_hybridMK1s,Hybrid Mk1 ships,Boolean,true,,"Enables automation changes to Mk1 ships, adding special [Improvised Automation hullmod] which allows them to use human or AI officers.
+Default: [True]",,,
+xvp_MK1CoresLevelCap,MK1 AI core level cap,Int,5,,"Automation on MK1 ships limits max officer level AI cores can use. Integrated AI core level being this number plus one.
+Default: [5]",1,10,
+,,,,,,,,
+,,,,,,,,
+xvp_CrossoverHeader,Crossover Header,Header,Crossover and reference content,,,,,
+xvp_enable_Disco,Disco Elysium,Boolean,true,,"Enables Disco Elisium inspired content. Currently includes separate star system, characters and quest.
+Default: [True]",,,
+,,,,,,,,
+#luna_exampleHeader,Example Header,Header,Example Section,,,,,
+#luna_exampleText,Example Text Field,Text,"Any value below is merely an example for Modders. 
+None of the Settings here do anything.
+",,,,,
+#luna_exampleString,Example String,String,some string,,"Strings will accept any characters put in, with no filtering.",,,
+#luna_exampleBoolean,Example Boolean,Boolean,true,,A button that switches between true and false.,,,
+#luna_exampleInt,Example Int,Int,100,,"Int Fields will only accept whole Numbers, and block any other character from being entered.",-50,200,
+#luna_exampleDouble,Example Double,Double,10.2,,Doubles allow only numbers and a single decimal dot (.) ,0,20,
+#luna_exampleKeybind,Example Keybind,Keycode,0,,"Lets users register a keybind. The saved keycodes are the same as used by org.lwjgl.input.Keyboard and Starsectors InputEventAPI.
+
+Make sure to set a condition for your input checks to not accept numbers of 0, as lwjgl sets both unbound & unknown characters to that value.",,,
+#luna_newExampleColor,Example Color,Color,#f22e6e,,"Creates a color picker, giving both a hex text field and three sliders for the HSV color selection.
+",,,
+#luna_exampleRadio,Example Radio,Radio,None,"None, Hegemony, Tritachyon, Persean League, Sindrian, Independent","Creates a radio button selector. 
+
+The defaultValue decides which one is selected by default, the secondaryValue creates the list of choices with a comma separated String. 
+Can be retrieved as a String.",,,
+,,,,,,,,

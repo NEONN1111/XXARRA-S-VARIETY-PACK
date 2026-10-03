@@ -1,12 +1,10 @@
 {
-	
-	"nsp_InvictaHasRandomThoughts":true,
+	"nsp_InvictaHasRandomThoughts":true, #V: depricated?
 	"plugins":{
 		"nsp_mk1CombatPlugin":"neon.nsp.data.scripts.plugins.nsp_mk1CombatPlugin",
-                "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
-				"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
-				"ThreatAutomationApplicator":"neon.nsp.data.plugins.ThreatAutomationApplicator",
-
+        "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
+		"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
+		"ThreatAutomationApplicator":"neon.nsp.data.plugins.ThreatAutomationApplicator",
 	},
 	"drop_prob_officer_nsp_invicta_core": 0,
 	"ruleCommandPackages":[
@@ -31,7 +29,7 @@
     "graphics":{	
         "ui":{
         },
-	"glows":{
+		"glows":{
             "nsp_exponent_glow1":"graphics/ships/nsp_exponent/nsp_exponent_glow1.png",
             "nsp_exponent_glow2":"graphics/ships/nsp_exponent/nsp_exponent_glow2.png",
 			"nsp_exponent_subpar_glow1":"graphics/ships/nsp_exponent/nsp_exponent_subpar_glow1.png",
