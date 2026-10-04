@@ -15,6 +15,8 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.RemnantSeededFleetManag
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.util.Misc;
 
+//V: Probably not used? Invicta had a lot of roots in NSP it seems
+@Deprecated
 public class InvictaBountyHunterFIDConfig {
 
     public static String DEFEATED_CHURCHFLEET_KEY = "$nsp_defExponentLCF";

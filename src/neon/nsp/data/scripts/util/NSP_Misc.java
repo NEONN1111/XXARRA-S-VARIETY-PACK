@@ -15,7 +15,7 @@ import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-import neon.nsp.data.scripts.campaign.ids.NSP_IDs;
+import neon.nsp.data.ids.NSP_IDs;
 
 import java.util.*;
 

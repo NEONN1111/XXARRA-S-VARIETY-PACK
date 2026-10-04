@@ -8,8 +8,9 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageGenFromSeed;
 
 import java.util.Random;
 
+//V: Not used? Seems like old attempt to implement Sentinel
+@Deprecated
 public class NSPSpawner extends BaseGenericPlugin implements SalvageGenFromSeed.SalvageDefenderModificationPlugin{
-
     @Override
     public float getStrength(SalvageGenFromSeed.SDMParams p, float strength, Random random, boolean withOverride) {
         return strength;

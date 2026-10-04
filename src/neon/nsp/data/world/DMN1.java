@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
+//Replaced by DomainShips
+@Deprecated
 public class DMN1 {
     public static Logger log = Global.getLogger(DMN1.class);
     public static void main(String[] args) {

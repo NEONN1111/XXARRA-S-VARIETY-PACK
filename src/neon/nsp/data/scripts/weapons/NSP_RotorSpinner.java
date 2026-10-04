@@ -3,9 +3,8 @@ package neon.nsp.data.scripts.weapons;
 import com.fs.starfarer.api.combat.*;
 import org.lazywizard.lazylib.MathUtils;
 
+//Fancy code for deco weapons? But seems it end up unused
 public class NSP_RotorSpinner implements EveryFrameWeaponEffectPlugin {
-
-
     private float angle = 0;
     private float turn_rate = 0;
     private boolean runOnce = true;

@@ -14,24 +14,23 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.VariantSource;
-import com.fs.starfarer.api.util.Misc;
 
-public class CustomFleetsNSPThreat3 {
+public class NSP_CustomFleets_Threat5_Thremlin {
 
-	public static void spawnFleetOnthraught() {
-		LocationAPI location = Global.getSector().getStarSystem("onthgen");
+	public static void spawnFleetThremlin() {
+		LocationAPI location = Global.getSector().getStarSystem("thremgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat3.class).error("Desolation III system not found!");
+			Global.getLogger(NSP_CustomFleets_Threat5_Thremlin.class).error("Desolation V system not found!");
 			return;
 		}
 
-		SectorEntityToken planet = location.getEntityByName("Nameless Rock 3");
+		SectorEntityToken planet = location.getEntityByName("Nameless Rock 5");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat3.class).error("Nameless Rock 3 not found in Desolation III!");
+			Global.getLogger(NSP_CustomFleets_Threat5_Thremlin.class).error("Nameless Rock 5 not found in Desolation V!");
 			return;
 		}
 
-		Global.getLogger(CustomFleetsNSPThreat3.class).info("Found planet at: " + planet.getLocation());
+		Global.getLogger(NSP_CustomFleets_Threat5_Thremlin.class).info("Found planet at: " + planet.getLocation());
 
 		CampaignFleetAPI fleet = Global.getFactory().createEmptyFleet(Factions.THREAT, "Unknown", true);
 
@@ -39,22 +38,21 @@ public class CustomFleetsNSPThreat3 {
 		fleet.setTransponderOn(true);
 
 		// add flagship
-		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_onthraught_type444");
+		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_thremlin_type000");
 		flag.setShipName("Name Unknown");
 		data.addFleetMember(flag);
 
 		// add other ships
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "assault_unit_Type200"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "assault_unit_Type200"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type100"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type100"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_thremlin_type000"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_thremlin_type000"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_thremlin_type000"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_thremlin_type000"));
 
 		DefaultFleetInflaterParams p = new DefaultFleetInflaterParams();
 		p.quality = 3f;
@@ -103,6 +101,6 @@ public class CustomFleetsNSPThreat3 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat3.class).info("Successfully spawned Onthraught fleet at Desolation III");
+		Global.getLogger(NSP_CustomFleets_Threat5_Thremlin.class).info("Successfully spawned Thremlin fleet at Desolation V");
 	}
 }

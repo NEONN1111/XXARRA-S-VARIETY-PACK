@@ -12,12 +12,10 @@ import java.awt.*;
 import java.util.Set;
 
 public class nsp_legionMK1Intel extends BaseIntelPlugin {
-
     String title = "Voices In The Dark"; // replace this lol
     String missionIcon = Global.getSettings().getSpriteName("intel", "link_to_derelict_ship");
 
-    // todo :
-    // tell guy to set ID to entity so i don't have to filter the entire world to find the legion
+    // todo: tell guy to set ID to entity so i don't have to filter the entire world to find the legion
     MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
     SectorEntityToken legionLocation = Global.getSector().getEntityById("nsp_legionWreck");
 

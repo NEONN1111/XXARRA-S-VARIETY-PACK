@@ -15,8 +15,7 @@ public class nsp_dominatorMK1Intel extends BaseIntelPlugin {
     String title = "Voices In The Dark"; // replace this lol
     String missionIcon = Global.getSettings().getSpriteName("intel", "link_to_derelict_ship");
 
-    // todo :
-    // tell guy to set ID to entity so i don't have to filter the entire world to find the legion
+    // todo: tell guy to set ID to entity so i don't have to filter the entire world to find the legion
     MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
     SectorEntityToken dominatorLocation = Global.getSector().getEntityById("nsp_dominatorWreck");
 

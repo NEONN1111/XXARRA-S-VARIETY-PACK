@@ -15,8 +15,10 @@ import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-//import data.scripts.plugins.SpriteRenderManager;
 
+//import data.scripts.plugins.SpriteRenderManager;
+//Another magiclib class? Damn, how many of them there are
+@Deprecated
 public class NSPVectorThruster implements EveryFrameWeaponEffectPlugin {
     
     private boolean runOnce=false, accel=false, turn=false;

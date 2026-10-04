@@ -26,7 +26,7 @@
 //import com.fs.starfarer.api.util.Misc;
 //import com.fs.starfarer.api.util.WeightedRandomPicker;
 //import neon.nsp.data.plugins.secgen.NSPInvictaSystemGen;
-//import neon.nsp.data.scripts.campaign.ids.NSP_IDs;
+//import neon.nsp.data.ids.NSP_IDs;
 //import neon.nsp.data.scripts.campaign.ids.NSP_People;
 //import neon.nsp.data.scripts.util.NSP_Misc;
 //import org.lwjgl.input.Keyboard;

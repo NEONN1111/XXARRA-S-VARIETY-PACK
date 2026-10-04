@@ -8,9 +8,8 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.util.Misc;
 
+//V: Hmmmm. what that suppose to be?
 public class NSP_Mk1ThreatListener implements EconomyTickListener {
-
-
     MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
     String threat_hullmod = "threat_hullmod";
     boolean ThreatDetected = false;

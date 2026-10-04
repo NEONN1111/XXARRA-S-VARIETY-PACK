@@ -20,7 +20,7 @@ import java.util.Random;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.PKDefenderPluginImpl.addAutomated;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.PKDefenderPluginImpl.makeAICoreSkillsGoodForLowTech;
 
-public class NSPSafeguard  extends BaseGenericPlugin implements SalvageGenFromSeed.SalvageDefenderModificationPlugin {
+public class NSPSafeguard extends BaseGenericPlugin implements SalvageGenFromSeed.SalvageDefenderModificationPlugin {
     @Override
     public float getStrength(SalvageGenFromSeed.SDMParams p, float strength, Random random, boolean withOverride) {
         return strength;

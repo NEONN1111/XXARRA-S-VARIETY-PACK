@@ -16,8 +16,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc;
 
-public class CustomFleetsNSP {
-
+public class NSP_CustomFleets_XIVictus {
 	/**
 	 * To add a new fleet:
 	 * 1) Make a copy of this method

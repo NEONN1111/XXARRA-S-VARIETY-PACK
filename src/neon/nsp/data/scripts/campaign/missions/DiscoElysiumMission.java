@@ -11,7 +11,7 @@ import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.missions.hub.MissionFleetAutoDespawn;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import neon.nsp.data.ids.NSPPeople;
+import neon.nsp.data.ids.NSP_People;
 
 import java.awt.Color;
 import java.util.List;
@@ -34,7 +34,7 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
     protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_market");
     protected MarketAPI TriTachMarket = Global.getSector().getEconomy().getMarket("nsp_deora_market");
     protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_miningstation_market");
-    protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSPPeople.HARRYDISCODUBOIS);
+    protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSP_People.HARRYDISCODUBOIS);
 
     protected static final float DELAY_TO_INVESTIGATION_2 = 3f;
     protected static final float DELAY_TO_INVESTIGATION_3 = 2f;

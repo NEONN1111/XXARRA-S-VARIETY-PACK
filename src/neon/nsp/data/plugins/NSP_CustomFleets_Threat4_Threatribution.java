@@ -14,25 +14,23 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.VariantSource;
-import com.fs.starfarer.api.util.Misc;
 
-public class CustomFleetsNSPThreat1 {
+public class NSP_CustomFleets_Threat4_Threatribution {
 
-	public static void spawnFleetInthrictus() {
-//		LocationAPI location = Global.getSector().getStarSystem("Deep Space I");
-		LocationAPI location = Global.getSector().getStarSystem("invgen");
+	public static void spawnFleetThreatribution() {
+		LocationAPI location = Global.getSector().getStarSystem("retrgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat1.class).error("Desolation I system not found!");
+			Global.getLogger(NSP_CustomFleets_Threat4_Threatribution.class).error("DeepDesolation IV system not found!");
 			return;
 		}
 
-		SectorEntityToken planet = location.getEntityByName("Nameless Rock 1");
+		SectorEntityToken planet = location.getEntityByName("Nameless Rock 4");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat1.class).error("Nameless Rock 1 not found in Desolation I!");
+			Global.getLogger(NSP_CustomFleets_Threat4_Threatribution.class).error("Nameless Rock 4 not found in Desolation IV!");
 			return;
 		}
 
-		Global.getLogger(CustomFleetsNSPThreat1.class).info("Found planet at: " + planet.getLocation());
+		Global.getLogger(NSP_CustomFleets_Threat4_Threatribution.class).info("Found planet at: " + planet.getLocation());
 
 		CampaignFleetAPI fleet = Global.getFactory().createEmptyFleet(Factions.THREAT, "Unknown", true);
 
@@ -40,22 +38,19 @@ public class CustomFleetsNSPThreat1 {
 		fleet.setTransponderOn(true);
 
 		// add flagship
-		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_inthrictus_type350");
+		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_threatribution_type900");
 		flag.setShipName("Name Unknown");
 		data.addFleetMember(flag);
 
 		// add other ships
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "assault_unit_Type200"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "assault_unit_Type201"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type100"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type100"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
 
 		DefaultFleetInflaterParams p = new DefaultFleetInflaterParams();
 		p.quality = 3f;
@@ -104,6 +99,6 @@ public class CustomFleetsNSPThreat1 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat1.class).info("Successfully spawned Inthrictus fleet at Desolation I");
+		Global.getLogger(NSP_CustomFleets_Threat4_Threatribution.class).info("Successfully spawned Threatribution fleet at Desolation IV");
 	}
 }

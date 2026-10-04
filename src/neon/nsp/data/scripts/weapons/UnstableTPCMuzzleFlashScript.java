@@ -18,14 +18,12 @@ import java.util.Map;
 public class UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffectPlugin {
 
     /*
-
         HOW TO USE:
         USED_IDS specifies which IDs to use for the rest of the script; any ID is valid EXCEPT the unique ID "default". Each ID should only be used once on the same weapon
         The script will spawn one particle "system" for each ID in this list, with the specific attributes of that ID.
 
         All the different Maps<> specify the attributes of each of the particle "systems"; they MUST have something defined as "default", and can have specific fields for specific IDs
         in the USED_IDS list; any field not filled in for a specific ID will revert to "default" instead.
-
     */
     private static final List<String> USED_IDS = new ArrayList<>();
     static {

@@ -15,11 +15,6 @@ import org.lwjgl.util.vector.Vector2f;
 import java.util.Random;
 
 public class nsp_legionGen {
-
-
-    public static nsp_legionGen addsystem;
-
-
     public static void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Resting Place");
         //system.setType(StarSystemType.NEBULA);

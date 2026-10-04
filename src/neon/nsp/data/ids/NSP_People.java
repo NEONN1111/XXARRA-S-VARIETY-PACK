@@ -15,8 +15,7 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import static neon.nsp.data.ids.NSP_Ranks.POST_DETECTIVE;
 
 //V: people usually go in ids, by vanilla convention
-public class NSPPeople {
-
+public class NSP_People {
     public static String PHOS = "nsp_phos";
 
     //Exponent quest people

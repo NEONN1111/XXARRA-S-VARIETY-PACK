@@ -8,8 +8,10 @@ import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SectorThemeGenerator;
 
 import lunalib.lunaSettings.LunaSettings;
-import neon.nsp.data.ids.NSPPeople;
-import neon.nsp.data.ids.xvp_lunasettings;
+import neon.nsp.data.ids.NSP_People;
+import neon.nsp.data.ids.NSP_lunasettings;
+import neon.nsp.data.plugins.AICoreOfficerPlugins.NSP_ExponentCore_CampaignPluginImpl;
+import neon.nsp.data.plugins.AICoreOfficerPlugins.NSP_ThreatProcessor_CampaignPluginImpl;
 import neon.nsp.data.scripts.starsystems.Revachol_starsystem;
 import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
@@ -37,8 +39,8 @@ public class NSPModPlugin extends BaseModPlugin {
         registerPaperdollUI(); //Transient, so need to be re-added on each reload
 
         //If no lunalib: if - true, if yes lunalib: checks settings
-        if (!use_lunasettings || Boolean.TRUE.equals(LunaSettings.getBoolean("NSP", xvp_lunasettings.UNIQUE_SENTINELS))) {
-            //As it just overrides vanilla it should work by just preventing override
+        if (!use_lunasettings || Boolean.TRUE.equals(LunaSettings.getBoolean("NSP", NSP_lunasettings.UNIQUE_SENTINELS))) {
+            //As it just overrides vanilla settings should work by just preventing override
             if (!Global.getSector().getGenericPlugins().hasPlugin(NSPSafeguard.class)) {
                 Global.getSector().getGenericPlugins().addPlugin(new NSPSafeguard(), true);
             }
@@ -49,20 +51,20 @@ public class NSPModPlugin extends BaseModPlugin {
         }
 
         try {
-            //AI cores campaighn plugins
-            Global.getSector().registerPlugin(new ExponentCampaignPluginImpl());
-            Global.getSector().registerPlugin(new ThreatProcessorCampaignPluginImpl());
+            //AI cores campaign plugins
+            Global.getSector().registerPlugin(new NSP_ExponentCore_CampaignPluginImpl());
+            Global.getSector().registerPlugin(new NSP_ThreatProcessor_CampaignPluginImpl());
         } catch (Throwable t) {
-            log.error("Failed to register ExponentCampaignPluginImpl", t);
+            log.error("Failed to register NSP_ExponentCore_CampaignPluginImpl", t);
         }
     }
 
     @Override
     public void onNewGameAfterEconomyLoad() {
-        CustomFleetsNSP.spawnFleetXIVictus();
+        NSP_CustomFleets_XIVictus.spawnFleetXIVictus();
 
         new Revachol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
-        new NSPPeople().nsp_createPeople();
+        new NSP_People().nsp_createPeople();
     }
 
     @Override
@@ -89,11 +91,11 @@ public class NSPModPlugin extends BaseModPlugin {
         nsp_abyssalgen4.generate(Global.getSector());
         nsp_abyssalgen5.generate(Global.getSector());
 
-        CustomFleetsNSPThreat1.spawnFleetInthrictus();
-        CustomFleetsNSPThreat2.spawnFleetThrominator();
-        CustomFleetsNSPThreat3.spawnFleetOnthraught();
-        CustomFleetsNSPThreat4.spawnFleetThreatribution();
-        CustomFleetsNSPThreat5.spawnFleetThremlin();
+        NSP_CustomFleets_Threat1_Inthrictus.spawnFleetInthrictus();
+        NSP_CustomFleets_Threat2_Throminator.spawnFleetThrominator();
+        NSP_CustomFleets_Threat3_Onthraught.spawnFleetOnthraught();
+        NSP_CustomFleets_Threat4_Threatribution.spawnFleetThreatribution();
+        NSP_CustomFleets_Threat5_Thremlin.spawnFleetThremlin();
 
         Global.getSector().getListenerManager().addListener(new nsp_onslaughtMK1Listener());
     }

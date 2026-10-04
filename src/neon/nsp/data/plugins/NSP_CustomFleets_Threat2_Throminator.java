@@ -14,24 +14,23 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.loading.VariantSource;
-import com.fs.starfarer.api.util.Misc;
 
-public class CustomFleetsNSPThreat4 {
+public class NSP_CustomFleets_Threat2_Throminator {
 
-	public static void spawnFleetThreatribution() {
-		LocationAPI location = Global.getSector().getStarSystem("retrgen");
+	public static void spawnFleetThrominator() {
+		LocationAPI location = Global.getSector().getStarSystem("thromgen");
 		if (location == null) {
-			Global.getLogger(CustomFleetsNSPThreat4.class).error("DeepDesolation IV system not found!");
+			Global.getLogger(NSP_CustomFleets_Threat2_Throminator.class).error("Desolation II system not found!");
 			return;
 		}
 
-		SectorEntityToken planet = location.getEntityByName("Nameless Rock 4");
+		SectorEntityToken planet = location.getEntityByName("Nameless Rock 2");
 		if (planet == null) {
-			Global.getLogger(CustomFleetsNSPThreat4.class).error("Nameless Rock 4 not found in Desolation IV!");
+			Global.getLogger(NSP_CustomFleets_Threat2_Throminator.class).error("Nameless Rock 2 not found in Desolation II!");
 			return;
 		}
 
-		Global.getLogger(CustomFleetsNSPThreat4.class).info("Found planet at: " + planet.getLocation());
+		Global.getLogger(NSP_CustomFleets_Threat2_Throminator.class).info("Found planet at: " + planet.getLocation());
 
 		CampaignFleetAPI fleet = Global.getFactory().createEmptyFleet(Factions.THREAT, "Unknown", true);
 
@@ -39,19 +38,18 @@ public class CustomFleetsNSPThreat4 {
 		fleet.setTransponderOn(true);
 
 		// add flagship
-		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_threatribution_type900");
+		FleetMemberAPI flag = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_throminator_type555");
 		flag.setShipName("Name Unknown");
 		data.addFleetMember(flag);
 
 		// add other ships
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "assault_unit_Type200"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_throminator_type555"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "nsp_throminator_type555"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "hive_unit_Type350"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
-		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "overseer_unit_Type250"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
 		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type100"));
+		data.addFleetMember(Global.getFactory().createFleetMember(FleetMemberType.SHIP, "skirmish_unit_Type101"));
 
 		DefaultFleetInflaterParams p = new DefaultFleetInflaterParams();
 		p.quality = 3f;
@@ -100,6 +98,6 @@ public class CustomFleetsNSPThreat4 {
 		fleet.setLocation(planet.getLocation().x, planet.getLocation().y - 500);
 		fleet.getAI().addAssignment(FleetAssignment.PATROL_SYSTEM, planet, 1000000f, "Waiting", null);
 
-		Global.getLogger(CustomFleetsNSPThreat4.class).info("Successfully spawned Threatribution fleet at Desolation IV");
+		Global.getLogger(NSP_CustomFleets_Threat2_Throminator.class).info("Successfully spawned Throminator fleet at Desolation II");
 	}
 }

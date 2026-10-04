@@ -16,11 +16,6 @@ import java.awt.*;
 import java.util.Random;
 
 public class nsp_abyssalgen3 {
-
-
-    public static nsp_abyssalgen3 addsystem;
-
-
     public static void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Desolation III");
         //system.setType(StarSystemType.NEBULA);

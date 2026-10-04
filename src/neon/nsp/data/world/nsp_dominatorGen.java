@@ -15,11 +15,6 @@ import org.lwjgl.util.vector.Vector2f;
 import java.util.Random;
 
 public class nsp_dominatorGen {
-
-
-    public static nsp_dominatorGen addsystem;
-
-
     public static void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Eternal Vigil");
         //system.setType(StarSystemType.NEBULA);

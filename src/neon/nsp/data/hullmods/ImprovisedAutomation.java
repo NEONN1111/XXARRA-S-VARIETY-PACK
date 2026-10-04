@@ -19,8 +19,8 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
 
-import static neon.nsp.data.ids.NSP_reference_sheet.NSP_IMPROVISED_AUTO;
-import static neon.nsp.data.ids.NSP_reference_sheet.NSP_IMPROVISED_MANUAL;
+import static neon.nsp.data.ids.NSP_Hullmods.NSP_IMPROVISED_AUTO;
+import static neon.nsp.data.ids.NSP_Hullmods.NSP_IMPROVISED_MANUAL;
 
 
 public class ImprovisedAutomation extends BaseHullMod {

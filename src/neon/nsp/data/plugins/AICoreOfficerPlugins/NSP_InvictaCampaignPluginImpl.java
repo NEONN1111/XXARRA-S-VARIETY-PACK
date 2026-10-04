@@ -1,21 +1,23 @@
-package neon.nsp.data.plugins;
+package neon.nsp.data.plugins.AICoreOfficerPlugins;
 
 import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.AICoreOfficerPlugin;
 import com.fs.starfarer.api.campaign.BaseCampaignPlugin;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 
-public class ExponentCampaignPluginImpl extends BaseCampaignPlugin {
+//V: Not used anywhere, so likely can be deleted?
+@Deprecated
+public class NSP_InvictaCampaignPluginImpl extends BaseCampaignPlugin {
 
     @Override
     public String getId() {
-        return "NSP_ExponentCampaignPluginImpl";
+        return "NSP_CampaignPlugin";
     }
 
     @Override
     public PluginPick<AICoreOfficerPlugin> pickAICoreOfficerPlugin(String commodityId) {
-        if ("nsp_exponent_core".equals(commodityId)) {
-            return new PluginPick<AICoreOfficerPlugin>(new NSP_ExponentCore(), CampaignPlugin.PickPriority.MOD_SET);
+        if ("nsp_invicta_core".equals(commodityId)) {
+            return new PluginPick<AICoreOfficerPlugin>(new NSP_InvictaCore(), CampaignPlugin.PickPriority.MOD_SET);
         }
         return null;
     }
