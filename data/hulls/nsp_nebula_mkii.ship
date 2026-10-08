@@ -5,7 +5,7 @@
   "spriteName": "graphics/ships/nsp_nebula_mkii.png",
   "style": "MIDLINE",
   "height": 205,
-  "width": 127,
+  "width": 130,
   "center": [64, 99.5],
   "collisionRadius": 121,
   "shieldCenter": [0, -0],
@@ -14,13 +14,17 @@
   "builtInMods": [
     "civgrade"
   ],
+  "builtInWeapons": {
+    "WS0004": "hammer",
+    "WS0009": "nsp_nebula_deco"
+  },
   "weaponSlots": [
     {
       "id": "WS 001",
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 200,
+      "arc": 150,
       "angle": 60,
       "locations": [48.5, 36]
     },
@@ -29,9 +33,9 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 200,
+      "arc": 150,
       "angle": -60,
-      "locations": [53.5, -44]
+      "locations": [48.5, -38]
     },
     {
       "id": "WS 003",
@@ -76,16 +80,18 @@
       "mount": "TURRET",
       "arc": 200,
       "angle": 0,
-      "locations": [34.5, -1]
+      "locations": [34.5, -1],
+      "renderOrderMod": 2
     },
     {
       "id": "WS0004",
-      "size": "MEDIUM",
-      "type": "MISSILE",
+      "size": "SMALL",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [82, -1]
+      "locations": [63, -1],
+      "renderOrderMod": -1
     },
     {
       "id": "WS0005",
@@ -104,6 +110,34 @@
       "arc": 5,
       "angle": -90,
       "locations": [19.5, -31]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 33.5,
+      "locations": [74, 27.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -33.5,
+      "locations": [74, -27.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [66, -1.5],
+      "renderOrderMod": 1
     }
   ],
   "engineSlots": [
@@ -140,7 +174,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [31.5, 45.5],
+      "location": [34.5, 41.5],
       "length": 32,
       "width": 8,
       "angle": 135,
@@ -148,7 +182,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [31.5, -45.5],
+      "location": [34.5, -41.5],
       "length": 32,
       "width": 8,
       "angle": -135,
@@ -157,11 +191,14 @@
     }
   ],
   "bounds": [
-    98, -23.5,
-    105, -36,
-    89.5, -45.5,
-    75.5, -41,
-    62, -41,
+    93, -3.5,
+    90, -16,
+    84, -16,
+    83.5, -31,
+    88.5, -46.5,
+    81.5, -31,
+    76, -35.5,
+    70, -32.5,
     53.5, -50,
     43.5, -50,
     34.5, -42,
@@ -180,10 +217,13 @@
     34.5, 42,
     43.5, 50,
     53.5, 50,
-    62, 41,
-    75.5, 41,
-    89.5, 45.5,
-    105, 36,
-    98, 23.5
+    70, 32.5,
+    76, 35.5,
+    81.5, 31,
+    88.5, 46.5,
+    83.5, 31,
+    84, 16,
+    90, 16,
+    93, 3.5
   ]
 }
