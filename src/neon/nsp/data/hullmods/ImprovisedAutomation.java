@@ -35,7 +35,6 @@ public class ImprovisedAutomation extends BaseHullMod {
     private static final Set<String> PROCESSED_SHIPS = new HashSet<>();
 
     static {
-
         BLOCKED_HULLMODS.add("safetyoverrides");
     }
 
@@ -79,20 +78,18 @@ public class ImprovisedAutomation extends BaseHullMod {
                 ship.getVariant().addMod(ERROR);
             }
         }
-        if (ship.getOriginalOwner() < 0) {
 
-            if (
-                    Global.getSector() != null &&
-                            Global.getSector().getPlayerFleet() != null &&
-                            Global.getSector().getPlayerFleet().getCargo() != null &&
-                            Global.getSector().getPlayerFleet().getCargo().getStacksCopy() != null &&
-                            !Global.getSector().getPlayerFleet().getCargo().getStacksCopy().isEmpty()
-            ) {
+        //Clean up deco weapons from cargo
+        if (ship.getOriginalOwner() < 0) {
+            if (Global.getSector() != null &&
+                    Global.getSector().getPlayerFleet() != null &&
+                    Global.getSector().getPlayerFleet().getCargo() != null &&
+                    Global.getSector().getPlayerFleet().getCargo().getStacksCopy() != null &&
+                    !Global.getSector().getPlayerFleet().getCargo().getStacksCopy().isEmpty()) {
+
                 for (CargoStackAPI s : Global.getSector().getPlayerFleet().getCargo().getStacksCopy()) {
-                    if (
-                            s.isWeaponStack()
-                                    && s.getWeaponSpecIfWeapon().getWeaponId().endsWith("_corebridge")
-                    ) {
+                    if (s.isWeaponStack()
+                            && s.getWeaponSpecIfWeapon().getWeaponId().endsWith("_corebridge")) {
                         Global.getSector().getPlayerFleet().getCargo().removeStack(s);
                     }
                 }
@@ -135,14 +132,13 @@ public class ImprovisedAutomation extends BaseHullMod {
         if (variant == null) return;
 
 
-        String shipId = "";
+        String shipId;
         FleetMemberAPI member = stats.getFleetMember();
         if (member != null && member.getId() != null) {
             shipId = member.getId();
         } else {
             shipId = id;
         }
-
 
         applyDecorativeWeaponBasedOnMode(ship, stats, variant);
 
@@ -184,16 +180,15 @@ public class ImprovisedAutomation extends BaseHullMod {
             }
         }
 
+
         if ((spec.isBuiltInMod(HullMods.AUTOMATED) || spec.hasTag(Tags.AUTOMATED)) && !PROCESSED_SHIPS.contains(shipId)) {
             ShipHullSpecAPI cloned = null;
 
             try {
-
                 cloned = (ShipHullSpecAPI) NSP_ReflectionUtilsT.invoke("clone", ship.getHullSpec());
             } catch (Throwable e) {
                 Global.getLogger(this.getClass()).warn("Failed to clone hull spec via reflection for: " + ship.getHullSpec().getHullId());
             }
-
 
             if (cloned == null) {
                 try {
@@ -208,15 +203,12 @@ public class ImprovisedAutomation extends BaseHullMod {
                 }
             }
 
-
             if (cloned == null) {
                 Global.getLogger(this.getClass()).warn("Could not obtain hull spec for: " + ship.getHullSpec().getHullId() + " - skipping automation conversion");
                 return;
             }
 
-
             PROCESSED_SHIPS.add(shipId);
-
 
             if (cloned.getBuiltInMods() != null) {
                 cloned.getBuiltInMods().remove("automated");
@@ -229,6 +221,7 @@ public class ImprovisedAutomation extends BaseHullMod {
             }
             cloned.addTag("ImprovisedAutomation");
 
+            //Penalty for non build in Improvised Auto
             if (!cloned.isBuiltInMod(this.spec.getId()) && !cloned.hasTag(Tags.TAG_AUTOMATED_NO_PENALTY)) {
                 variant.addMod("nsp_improvised_penalty");
             }
@@ -241,7 +234,6 @@ public class ImprovisedAutomation extends BaseHullMod {
             variant.setHullSpecAPI(cloned);
             variant.addTag(switchTag);
         }
-
 
         if (ship.getHullSpec().hasTag("ImprovisedAutomation")) {
             ShipAPI.HullSize size = ship.getHullSize();
@@ -318,17 +310,14 @@ public class ImprovisedAutomation extends BaseHullMod {
     }
 
     private void handleAutomationSwitching(ShipVariantAPI variantStats) {
-
         if (variantStats.hasTag(Tags.AUTOMATED)) {
             if (!variantStats.hasHullMod(NSP_IMPROVISED_AUTO)) {
                 variantStats.removeTag(Tags.AUTOMATED);
                 variantStats.addMod(NSP_IMPROVISED_MANUAL);
 
-
                 if (variantStats.hasHullMod("nsp_improvised_penalty")) {
                     variantStats.removeMod("nsp_improvised_penalty");
                 }
-
                 refreshRefitScreen();
             }
         } else {
@@ -336,11 +325,9 @@ public class ImprovisedAutomation extends BaseHullMod {
                 variantStats.addTag(Tags.AUTOMATED);
                 variantStats.addMod(NSP_IMPROVISED_AUTO);
 
-
                 if (!variantStats.hasHullMod("nsp_improvised_penalty")) {
                     variantStats.addMod("nsp_improvised_penalty");
                 }
-
                 refreshRefitScreen();
             }
         }

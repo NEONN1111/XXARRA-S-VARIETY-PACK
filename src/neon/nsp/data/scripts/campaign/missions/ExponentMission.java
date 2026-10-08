@@ -19,7 +19,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.fs.starfarer.campaign.fleet.CampaignFleet;
-import neon.nsp.data.scripts.NSPPeople;
+import neon.nsp.data.ids.NSP_People;
 import neon.nsp.data.scripts.plugins.ExponentFIDConfig;
 import neon.nsp.data.scripts.plugins.ExponentLCFleetFidConfig;
 
@@ -67,10 +67,10 @@ public class ExponentMission extends HubMissionWithSearch {
 
 //        if (barEvent) {
 
-            PersonAPI missionGiver = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson();
+        PersonAPI missionGiver = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson();
 
-            missionGiver.setRankId(Ranks.KNIGHT_CAPTAIN);
-            missionGiver.setPostId("luddicKnight");
+        missionGiver.setRankId(Ranks.KNIGHT_CAPTAIN);
+        missionGiver.setPostId("luddicKnight");
 
 //            setGiverRank(Ranks.KNIGHT_CAPTAIN);
 //            setGiverPost("luddicKnight");
@@ -78,39 +78,38 @@ public class ExponentMission extends HubMissionWithSearch {
 //            giverGender = FullName.Gender.ANY;
 //            setGiverPortrait(Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getPortraits(giverGender).pick());
 
-            // Luddic Knight-Captain portrait pickers (to ensure a proper captain looking portrait)
-            if (missionGiver.getGender() == FullName.Gender.FEMALE) {
-                WeightedRandomPicker<String> knightPortraitsFemale = new WeightedRandomPicker<>();
-                knightPortraitsFemale.add("graphics/portraits/portrait_luddic07.png");
-                knightPortraitsFemale.add("graphics/portraits/portrait_luddic10.png");
-                knightPortraitsFemale.add("graphics/portraits/portrait_luddic11.png");
-    //        knightPortraitsFemale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
-                String pick = knightPortraitsFemale.pick();
-                missionGiver.setPortraitSprite(pick);
+        // Luddic Knight-Captain portrait pickers (to ensure a proper captain looking portrait)
+        if (missionGiver.getGender() == FullName.Gender.FEMALE) {
+            WeightedRandomPicker<String> knightPortraitsFemale = new WeightedRandomPicker<>();
+            knightPortraitsFemale.add("graphics/portraits/portrait_luddic07.png");
+            knightPortraitsFemale.add("graphics/portraits/portrait_luddic10.png");
+            knightPortraitsFemale.add("graphics/portraits/portrait_luddic11.png");
+            //        knightPortraitsFemale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+            String pick = knightPortraitsFemale.pick();
+            missionGiver.setPortraitSprite(pick);
 //                setGiverPortrait(pick);
-            }
-            else {
-                WeightedRandomPicker<String> knightPortraitsMale = new WeightedRandomPicker<>();
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic02.png");
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic05.png");
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic06.png");
-    //        knightPortraitsMale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic09.png");
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic13.png");
-                knightPortraitsMale.add("graphics/portraits/portrait_luddic15.png");
-                String pick = knightPortraitsMale.pick();
-                missionGiver.setPortraitSprite(pick);
+        } else {
+            WeightedRandomPicker<String> knightPortraitsMale = new WeightedRandomPicker<>();
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic02.png");
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic05.png");
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic06.png");
+            //        knightPortraitsMale.add("graphics/portraits/portrait_luddic08.png"); // Helmeted knight
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic09.png");
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic13.png");
+            knightPortraitsMale.add("graphics/portraits/portrait_luddic15.png");
+            String pick = knightPortraitsMale.pick();
+            missionGiver.setPortraitSprite(pick);
 //                setGiverPortrait(pick);
-            }
+        }
 
 //            setGiverImportance(pickHighImportance());
-            missionGiver.setImportance(pickHighImportance());
+        missionGiver.setImportance(pickHighImportance());
 
-            missionGiver.setMarket(createdAt);
+        missionGiver.setMarket(createdAt);
 
 //            findOrCreateGiver(createdAt, false, false);
-            setPersonOverride(missionGiver);
-            this.missionGiver = missionGiver;
+        setPersonOverride(missionGiver);
+        this.missionGiver = missionGiver;
 //        }
 
         PersonAPI person = getPerson();
@@ -125,7 +124,7 @@ public class ExponentMission extends HubMissionWithSearch {
         }
 //
 //        if (barEvent) {
-            setGiverIsPotentialContactOnSuccess();
+        setGiverIsPotentialContactOnSuccess();
 //        }
 
         person.setId("exponent_KnightContact");
@@ -133,7 +132,7 @@ public class ExponentMission extends HubMissionWithSearch {
 //        Global.getSector().getMemoryWithoutUpdate().set("$nsp_exponentContact",person);
 
         originMarket = createdAt;
-        Global.getSector().getMemoryWithoutUpdate().set("$nsp_exponentMarket",originMarket);
+        Global.getSector().getMemoryWithoutUpdate().set("$nsp_exponentMarket", originMarket);
 
         setName("The Exponent");
         setStoryMission();
@@ -190,13 +189,13 @@ public class ExponentMission extends HubMissionWithSearch {
         spawnDebrisField(360f, 1.2f, invictus_flair_locdata);
         spawnShipGraveyard(Factions.LUDDIC_CHURCH, 6, 10, invictus_flair_locdata);
 
-        Global.getSector().getFaction("nsp_exponent").setRelationship(Factions.PLAYER,RepLevel.HOSTILE);
+        Global.getSector().getFaction("nsp_exponent").setRelationship(Factions.PLAYER, RepLevel.HOSTILE);
 
 
         makeImportant(originMarket, "$exponent", Stage.FIRST_TALK);
 
         /// ///////////////////////////////// EXPONENT SPAWN CODE /////////////////////////////////
-        beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_ALONE);
+        beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF, Stage.TAKE_THE_FIGHT_ALONE);
         triggerCreateFleet(FleetSize.SMALL, FleetQuality.VERY_HIGH, "nsp_exponent", FleetTypes.PATROL_SMALL, system2);
         triggerFleetSetSingleShipOnly();
         triggerFleetSetFlagship(Global.getSettings().getVariant("nsp_exponent_ascendant"));
@@ -207,29 +206,29 @@ public class ExponentMission extends HubMissionWithSearch {
         triggerSetFleetNotBusy();
         triggerMakeFleetIgnoredByOtherFleets();
         triggerMakeFleetIgnoreOtherFleetsExceptPlayer();
-        triggerOrderFleetInterceptPlayer(false,false);
+        triggerOrderFleetInterceptPlayer(false, false);
         triggerOrderFleetEBurn(1.0f);
-        triggerFleetInterceptPlayerOnSight(false,Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_ALONE);
+        triggerFleetInterceptPlayerOnSight(false, Stage.TAKE_THE_FIGHT_LCF, Stage.TAKE_THE_FIGHT_ALONE);
         triggerSetFleetFaction("nsp_exponent");
-        triggerSetFleetCommander(NSPPeople.getPerson(NSPPeople.EXPONENT_CORE));
+        triggerSetFleetCommander(NSP_People.getPerson(NSP_People.EXPONENT_CORE));
 //        triggerPickLocationAroundEntity(originMarket.getPrimaryEntity(),0);
 //        triggerPickLocationAtClosestToPlayerJumpPoint(system2);
-        triggerPickLocationAroundEntity(getPlanetEntityFromSystem(system2),100);
+        triggerPickLocationAroundEntity(getPlanetEntityFromSystem(system2), 100);
         triggerSpawnFleetAtPickedLocation();
-        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_EXP,Stage.TAKE_THE_FIGHT_ALONE);
+        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF, Stage.TAKE_THE_FIGHT_EXP, Stage.TAKE_THE_FIGHT_ALONE);
         triggerFleetAddDefeatTrigger("nspExponentPostFight");
-        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY,true);
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true);
         triggerSetFleetMemoryValue("$hailing", true);
-        triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,new ExponentFIDConfig.ExpFIDConfig());
-        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE,true);
-        triggerSetFleetMemoryValue("$nsp_isExponentFleet",true);
-        triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(),"$nsp_exponentFleet");
+        triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, new ExponentFIDConfig.ExpFIDConfig());
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE, true);
+        triggerSetFleetMemoryValue("$nsp_isExponentFleet", true);
+        triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(), "$nsp_exponentFleet");
         endTrigger();
         /// ///////////////////////////////////////////////////////////////////////////////////////
 
         /// ///////////////////////////////// LC ESCORT SPAWN CODE ////////////////////////////////
         beginStageTrigger(Stage.TAKE_THE_FIGHT_LCF);
-        triggerCreateFleet(FleetSize.LARGE,FleetQuality.SMOD_1,Factions.LUDDIC_CHURCH,FleetTypes.TASK_FORCE,originMarket.getPrimaryEntity());
+        triggerCreateFleet(FleetSize.LARGE, FleetQuality.SMOD_1, Factions.LUDDIC_CHURCH, FleetTypes.TASK_FORCE, originMarket.getPrimaryEntity());
         triggerFleetSetFlagship(Global.getSettings().getVariant("retribution_Standard"));
         triggerFleetSetName("Placeholder");
         triggerFleetNoAutoDespawn();
@@ -237,21 +236,17 @@ public class ExponentMission extends HubMissionWithSearch {
         triggerMakeFleetIgnoredByOtherFleets();
         triggerMakeFleetIgnoreOtherFleetsExceptPlayer();
         triggerSetFleetFaction(Factions.LUDDIC_CHURCH);
-        triggerSetFleetDoctrineQuality(4,4,15);
+        triggerSetFleetDoctrineQuality(4, 4, 15);
         triggerPickLocationAroundPlayer(0f);
         triggerSpawnFleetAtPickedLocation();
-        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_EXP,Stage.TAKE_THE_FIGHT_ALONE);
-        triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,new ExponentLCFleetFidConfig.LuddicEscortFIDConfig());
-        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE,true);
-        triggerSetFleetMemoryValue("$nsp_isExponentLCEscort",true);
-        triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(),"$nsp_exponentLuddicFleet");
+        triggerFleetMakeImportant("$nsp_exponent", Stage.TAKE_THE_FIGHT_LCF, Stage.TAKE_THE_FIGHT_EXP, Stage.TAKE_THE_FIGHT_ALONE);
+        triggerSetFleetMemoryValue(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, new ExponentLCFleetFidConfig.LuddicEscortFIDConfig());
+        triggerSetFleetMemoryValue(MemFlags.MEMORY_KEY_MAKE_PREVENT_DISENGAGE, true);
+        triggerSetFleetMemoryValue("$nsp_isExponentLCEscort", true);
+        triggerSaveFleetRef(Global.getSector().getMemoryWithoutUpdate(), "$nsp_exponentLuddicFleet");
 //        triggerFleetAddDefeatTrigger("nspFoughtLCF");
         endTrigger();
         /// ///////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 
         // set our starting, success and failure stages
@@ -259,7 +254,7 @@ public class ExponentMission extends HubMissionWithSearch {
         setStartingStage(Stage.FIRST_TALK);
         setSuccessStage(Stage.COMPLETED);
 //        setFailureStage(Stage.SOLD_SIERRA);
-        addFailureStages(Stage.EXPONENT_JOINED,Stage.RELEASED_EXPONENT,Stage.RECOVERED_EXPONENT);
+        addFailureStages(Stage.EXPONENT_JOINED, Stage.RELEASED_EXPONENT, Stage.RECOVERED_EXPONENT);
         setNoAbandon();
 
         // set stage transitions when certain global flags are set
@@ -273,8 +268,8 @@ public class ExponentMission extends HubMissionWithSearch {
         connectWithGlobalFlag(Stage.INVESTIGATE, Stage.REPORT_BACK, "$exponent_hasInvestigated");
         connectWithGlobalFlag(Stage.REPORT_BACK, Stage.TAKE_THE_FIGHT_LCF, "$exponent_goWithFleet");
         // In case of joining The Exponent in the fight
-        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_LCF,Stage.TAKE_THE_FIGHT_EXP, "$exponent_joinExponent");
-        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_EXP,Stage.CONTACT_EXPONENT, "$exponent_contactExponent");
+        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_LCF, Stage.TAKE_THE_FIGHT_EXP, "$exponent_joinExponent");
+        connectWithGlobalFlag(Stage.TAKE_THE_FIGHT_EXP, Stage.CONTACT_EXPONENT, "$exponent_contactExponent");
 
         // ///////////////////////////////
 

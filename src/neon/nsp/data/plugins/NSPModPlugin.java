@@ -27,7 +27,7 @@ public class NSPModPlugin extends BaseModPlugin {
     //Mod interaction checks
     public static boolean hasMagicLib = false;
     public static boolean hasGraphicsLib = false;
-    private boolean use_lunasettings = false;
+    public static boolean use_lunasettings = false;
 
     // Hull IDs for modular ships
     private boolean modularShipSystemInitialized = false;
@@ -63,7 +63,9 @@ public class NSPModPlugin extends BaseModPlugin {
     public void onNewGameAfterEconomyLoad() {
         NSP_CustomFleets_XIVictus.spawnFleetXIVictus();
 
-        new Revachol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
+        if(!use_lunasettings || LunaSettings.getBoolean("NSP", NSP_lunasettings.DISCO_ELYSIUM).booleanValue()) {
+            new Revachol_starsystem().generate(Global.getSector()); //Should be before create people so we can put them on markets in system
+        }
         new NSP_People().nsp_createPeople();
     }
 

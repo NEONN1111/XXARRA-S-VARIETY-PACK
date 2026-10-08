@@ -11,6 +11,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
+import lunalib.lunaSettings.LunaSettings;
+import neon.nsp.data.plugins.NSPModPlugin;
 
 import static neon.nsp.data.ids.NSP_Ranks.POST_DETECTIVE;
 
@@ -27,7 +29,8 @@ public class NSP_People {
     public static String NSP_THREAT_PROCESSOR = "nsp_threat_processor";
 
     //For Disco Elysium Mission
-    public static String HARRYDISCODUBOIS = "nsp_harry_dubois";
+    public static String DE_HARRY_DU_BOIS = "nsp_harry_dubois";
+    public static String DE_KIM_KITSURAGI = "nsp_kim_kitsuragi";
 
     public static PersonAPI getPerson(String id){
         return Global.getSector().getImportantPeople().getPerson(id);
@@ -87,29 +90,6 @@ public class NSP_People {
             threatprocessor.setPersonality(Personalities.RECKLESS);
             ip.addPerson(threatprocessor);
         }
-        if (getPerson(HARRYDISCODUBOIS) == null) {
-            PersonAPI person = Global.getFactory().createPerson();
-            person.setId(HARRYDISCODUBOIS);
-            person.setFaction(Factions.INDEPENDENT);
-            person.setRankId("nsp_detective");
-            person.setPostId(POST_DETECTIVE);
-            person.getName().setFirst("Harry");
-            person.getName().setLast("Du Bois");
-            person.setGender(FullName.Gender.MALE);
-            person.setPortraitSprite("graphics/portraits/characters/harry_dubois.png");
-
-            person.setPersonality(Personalities.AGGRESSIVE);
-            person.getStats().setLevel(1);
-            /* Skills */
-            person.getStats().setSkillLevel(Skills.DAMAGE_CONTROL, 1);
-
-            MarketAPI market =  Global.getSector().getEconomy().getMarket("nsp_revachol_market");
-            market.getCommDirectory().addPerson(person, 10);
-            market.getCommDirectory().getEntryForPerson(person).setHidden(true);
-            market.addPerson(person);
-
-            ip.addPerson(person);
-        }
 
         //Pre create them here so they can be called to before mission is started
         if (getPerson(EXQ_KNIGHT) == null) {
@@ -143,6 +123,60 @@ public class NSP_People {
             //person.setMarket(createdAt);
             //Will be added to market with rulesCMD or not added at all.
             ip.addPerson(person);
+        }
+
+
+        //Disco Elysium People
+        if(!NSPModPlugin.use_lunasettings || LunaSettings.getBoolean("NSP", NSP_lunasettings.DISCO_ELYSIUM).booleanValue()) {
+
+            if (getPerson(DE_HARRY_DU_BOIS) == null) {
+                PersonAPI person = Global.getFactory().createPerson();
+                person.setId(DE_HARRY_DU_BOIS);
+                person.setFaction(Factions.INDEPENDENT);
+                person.setRankId("nsp_detective");
+                person.setPostId(POST_DETECTIVE);
+                person.getName().setFirst("Harry");
+                person.getName().setLast("Du Bois");
+                person.setGender(FullName.Gender.MALE);
+                person.setPortraitSprite("graphics/portraits/characters/harry_dubois.png");
+
+                person.setPersonality(Personalities.AGGRESSIVE);
+                person.getStats().setLevel(1);
+                /* Skills */
+                person.getStats().setSkillLevel(Skills.DAMAGE_CONTROL, 1);
+
+                MarketAPI market = Global.getSector().getEconomy().getMarket("nsp_revachol_market");
+                market.getCommDirectory().addPerson(person, 10);
+                market.getCommDirectory().getEntryForPerson(person).setHidden(true);
+                market.addPerson(person);
+
+                ip.addPerson(person);
+            }
+
+            if (getPerson(DE_KIM_KITSURAGI) == null) {
+                PersonAPI person = Global.getFactory().createPerson();
+                person.setId(DE_KIM_KITSURAGI);
+                person.setFaction(Factions.INDEPENDENT);
+                person.setRankId("nsp_detective");
+                person.setPostId(POST_DETECTIVE);
+                person.getName().setFirst("Kim ");
+                person.getName().setLast("Kitsuragi");
+                person.setGender(FullName.Gender.MALE);
+                person.setPortraitSprite("graphics/portraits/characters/harry_dubois.png"); //todo not use Harry portrait
+
+                person.setPersonality(Personalities.STEADY);
+                person.getStats().setLevel(1);
+                /* Skills */
+                person.getStats().setSkillLevel(Skills.TARGET_ANALYSIS, 1);
+
+                MarketAPI market = Global.getSector().getEconomy().getMarket("nsp_revachol_market");
+                market.getCommDirectory().addPerson(person, 11);
+                market.getCommDirectory().getEntryForPerson(person).setHidden(true);
+                market.addPerson(person);
+
+                ip.addPerson(person);
+            }
+
         }
 
     }

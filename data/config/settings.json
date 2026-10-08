@@ -27,6 +27,9 @@
 	},
 
     "graphics":{	
+		"lunalib":{
+			"NSP_icon":"graphics/icons/NSP_lunasetting_icon.png",
+		},
         "ui":{
         },
 		"glows":{

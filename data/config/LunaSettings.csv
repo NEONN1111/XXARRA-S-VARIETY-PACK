@@ -1,25 +1,36 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
-xvp_IntroHeader,Intro Header,Header,Xxarra's Varietty Pack Settings,,,,,
-xvp_IntroText,Intro Text,Text,"Here you can tweak mod's changes to vanilla, crossover content and other things.",,"Changes the Keybind for opening this Menu in the Campaign. 
+xvp_Intro_Header,Intro Header,Header,Xxarra's Varietty Pack Settings,,,,,
+xvp_Intro_Text,Intro Text,Text,Welcome to [Xxarra's Varietty Pack] Lunalib Settings.,,"Changes the Keybind for opening this Menu in the Campaign. 
 Can always be opened by pressing [Shift + F2], even if set to another key.",,,
 ,,,,,,,,
-xvp_VanillaHeader,Vanilla Changes Header,Header,Vanilla changes ,,,,,
+xvp_Vanilla_Header,Vanilla Changes Header,Header,Vanilla changes Section,,Header,,,
+xvp_Vanilla_Text,Vanilla Intro Text,Text,This is section for disabling or tweaking XVP changes to vanilla content.,,Text,,,
 ,,,,,,,,
-xvp_uniqueSentinels,Unique Sentinels,Boolean,true,,"Enables unique hulls for [Sentinel] ships found during ""The Scythe of Orion"" quest. 
-XVP [Sentinels] feature special version of automation allowing crewed operations, special version of XIV battlegroup hullmod as well as unique sprites.
+xvp_Sentinels_Header,Sentinels Header,Header,Sentinel changes,,,,,
+xvp_Sentinels_Unique,Unique Sentinels,Boolean,true,,"Enables unique hulls for [Sentinel] ships found during ""The Scythe of Orion"" quest. 
+The unique [Sentinel] hulls feature special [1st AI war refit] hullmod which allows them to be crewed or automated, special version of XIV battlegroup hullmod and unique sprites.
 Default: [True]",,,
-xvp_SentinelsCoresLevelCap,Sentinel AI core level cap,Int,5,,"Automation on Sentinels limits max officer level AI cores can use. Integrated AI core level being this number plus one.
-Default: [5]",1,10,
-xvp_vanillaSpacer,Spacer,Text,              ,,,,,
-xvp_hybridMK1s,Hybrid Mk1 ships,Boolean,true,,"Enables automation changes to Mk1 ships, adding special [Improvised Automation hullmod] which allows them to use human or AI officers.
-Default: [True]",,,
-xvp_MK1CoresLevelCap,MK1 AI core level cap,Int,5,,"Automation on MK1 ships limits max officer level AI cores can use. Integrated AI core level being this number plus one.
+xvp_Sentinels_AI_LevelMax,Sentinel AI core level cap,Int,5,,"[1st AI war refit] hullmod on Sentinels limits max officer level AI cores can use. Integrated AI core level being this number plus one.
 Default: [5]",1,10,
 ,,,,,,,,
-,,,,,,,,
-xvp_CrossoverHeader,Crossover Header,Header,Crossover and reference content,,,,,
-xvp_enable_Disco,Disco Elysium,Boolean,true,,"Enables Disco Elisium inspired content. Currently includes separate star system, characters and quest.
+xvp_MK1s_Header,MK.1s Header,Header,Mk.1 Ships changes,,,,,
+xvp_MK1s_hybrid,Mk1 ships - Hybrid Automation,Boolean,true,,"Enables automation changes to Mk1 ships, adding special [Improvised Automation hullmod] which allows them to be crewed or automated.
 Default: [True]",,,
+xvp_MK1s_AI_LevelMax,Mk1 ships - Hybrid Automation AI cores Max level,Int,5,,"[Improvised Automation] hullmod on MK1 ships limits max officer level AI cores can use. Integrated AI core max level being this number plus one.
+Only in effect if [Improvised Automation] hullmod enabled for MK1 ships
+Default: [5]",1,10,
+,,,,,,,,
+xvp_Crossover_Header,Vanilla Changes Header,Header,Crossover Content Section,,,,,
+xvp_Crossover_Text,Vanilla Intro Text,Text,This is section for disabling or tweaking crossover content added by XVP.,,,,,
+,,,,,,,,
+xvp_CrossoverHeader,Crossover Header,Header,Disco Elysium content,,,,,
+xvp_enable_Disco_Elysium,Disco Elysium,Boolean,true,,"Enables Disco Elisium inspired content. 
+Currently includes separate star system, in plans are characters and quest.
+Default: [True]",,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
 ,,,,,,,,
 #luna_exampleHeader,Example Header,Header,Example Section,,,,,
 #luna_exampleText,Example Text Field,Text,"Any value below is merely an example for Modders. 

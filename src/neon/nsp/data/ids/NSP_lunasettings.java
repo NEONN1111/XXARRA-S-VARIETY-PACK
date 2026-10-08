@@ -1,13 +1,15 @@
 package neon.nsp.data.ids;
 
 public class NSP_lunasettings {
-    //ref list and update class for luna settings for XVP
+    //Boolean to call instead of checking mod of plugin
+    public static boolean USE_SETTINGS = false;
 
-    public static String UNIQUE_SENTINELS = "xvp_uniqueSentinels";
+    //ref list
+    public static String UNIQUE_SENTINELS = "xvp_Sentinels_Unique";
+    public static String UNIQUE_SENTINELS_AI_LVL_MAX = "xvp_Sentinels_Unique";
 
     public static String AI_SWITCH_MK1S = "xvp_uniqueSentinels";
 
-
-    public static String DISCO_ELYSIUM = "";
+    public static String DISCO_ELYSIUM = "xvp_enable_Disco_Elysium";
 
 }

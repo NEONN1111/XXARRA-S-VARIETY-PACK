@@ -34,7 +34,7 @@ public class DiscoElysiumMission extends HubMissionWithSearch {
     protected MarketAPI originMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_market");
     protected MarketAPI TriTachMarket = Global.getSector().getEconomy().getMarket("nsp_deora_market");
     protected MarketAPI stationMarket = Global.getSector().getEconomy().getMarket("nsp_revachol_miningstation_market");
-    protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSP_People.HARRYDISCODUBOIS);
+    protected PersonAPI missionGiver = Global.getSector().getImportantPeople().getPerson(NSP_People.DE_HARRY_DU_BOIS);
 
     protected static final float DELAY_TO_INVESTIGATION_2 = 3f;
     protected static final float DELAY_TO_INVESTIGATION_3 = 2f;
