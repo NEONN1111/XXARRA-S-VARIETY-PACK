@@ -82,13 +82,13 @@ class ArmorParent: BaseHullMod() {
         }
 
         // unset hulk for right before any damage gets dealt to the module, this allows for normal processing of hit explosions
-        override fun reportDamageApplied(source: Any, target: CombatEntityAPI, result: ApplyDamageResultAPI) {
+        override fun reportDamageApplied(source: Any?, target: CombatEntityAPI, result: ApplyDamageResultAPI) {
             val module = target as ShipAPI
             if (module.isHulk && module.hitpoints > 0 && !module.hasTag(MODULE_DEAD)) module.isHulk = false
         }
 
         // for some reason the above listener doesn't catch when the module is actually going to be dead.
-        override fun notifyAboutToTakeHullDamage(param: Any, module: ShipAPI, point: Vector2f, damageAmount: Float): Boolean {
+        override fun notifyAboutToTakeHullDamage(param: Any?, module: ShipAPI, point: Vector2f?, damageAmount: Float): Boolean {
             if (module.hitpoints <= damageAmount && !module.hasTag(MODULE_DEAD)) {
                 module.isHulk = false
                 module.isDrone = false
