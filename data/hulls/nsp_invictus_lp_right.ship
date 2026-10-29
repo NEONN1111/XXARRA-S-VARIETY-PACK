@@ -1,0 +1,113 @@
+{
+  "hullName": "Invictus Module (Right)",
+  "hullId": "nsp_invictus_lp_right",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_invictus_lp_right.png",
+  "style": "LOW_TECH",
+  "height": 182,
+  "width": 127,
+  "center": [62, 31],
+  "collisionRadius": 158.5,
+  "shieldCenter": [59, -1],
+  "shieldRadius": 0,
+  "viewOffset": 0,
+  "builtInMods": [
+    "distributed_fire_control",
+    "hbi",
+    "nsp_linkedhull",
+    "safetyoverrides",
+    "ablative_armor"
+  ],
+  "builtInWeapons": {
+    "WS0004": "nsp_vectorEngineController"
+  },
+  "weaponSlots": [
+    {
+      "id": "MODULE_WEP3",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -47,
+      "locations": [3, -15]
+    },
+    {
+      "id": "MODULE_WEP4",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -32.5,
+      "locations": [72, -2]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -45,
+      "locations": [136.5, 14.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [34.5, -0.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -45,
+      "locations": [51.5, -21]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-10, -61],
+      "length": 30,
+      "width": 10,
+      "angle": -135,
+      "contrailSize": 30,
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
+    },
+    {
+      "location": [10, -56],
+      "length": 30,
+      "width": 10,
+      "angle": -135,
+      "contrailSize": 30,
+      "style": "CUSTOM",
+      "styleId": "Vectored NSP_ENGINE"
+    }
+  ],
+  "bounds": [
+    -8.5, 23,
+    -28.5, -4.5,
+    -18, -55,
+    -5.5, -64.5,
+    6.5, -53,
+    14, -60,
+    26.5, -48.5,
+    83.5, -44.5,
+    97, -27.5,
+    97.5, -24,
+    108.5, -24,
+    124, -9.5,
+    123, -1.5,
+    141, 0,
+    148, 7.5,
+    148, 21,
+    151, 24,
+    149.5, 31,
+    36, 14.5,
+    20.5, 33.5
+  ]
+}

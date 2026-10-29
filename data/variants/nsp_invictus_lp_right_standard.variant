@@ -1,0 +1,29 @@
+{
+  "variantId": "nsp_invictus_lp_right_standard",
+  "hullId": "nsp_invictus_lp_right",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "MODULE_WEP3": "devastator"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "MODULE_WEP4": "multineedler"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -148,9 +148,9 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
             if (engine_direction > 0.0F) {
                 engine_effect = Math.max(1.0F, 1.0F + ENGINE_BONUS_MAX * (active_effect / ENGINE_BONUS_TIME_MAX));
                 ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
-                ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
+              //  ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
                 ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, engine_effect);
-                ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
+               // ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
             }
 
             if (engine_direction > 7f) {
@@ -214,9 +214,9 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
             if (engine_direction <= 0.0F) {
                 engine_effect = 1.0F - ENGINE_NERF_MAX * (weapons_direction / WEAPONS_BONUS_TIME_MAX);
                 ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
-                ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
+              //  ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
                 ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, engine_effect);
-                ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
+               // ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
             }
 
             Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY5,

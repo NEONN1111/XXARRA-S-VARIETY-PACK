@@ -40,7 +40,7 @@ class PaperdollUIPanelAdder: BaseEveryFrameCombatPlugin() {
         val hullId = ship.hullSpec.baseHullId
 
         // Check if the ship is one of the allowed hull types
-        if (hullId !in setOf("onslaught_mk1", "nsp_legionmk1", "nsp_dominatormk1")) return
+        if (hullId !in setOf("onslaught_mk1", "nsp_legionmk1", "nsp_dominatormk1", "nsp_invictus_lp")) return
 
         shipInfo.CustomPanel(200f, 200f) { plugin ->
             anchorInBottomLeftOfParent()
@@ -104,4 +104,17 @@ class PaperdollUIPanelAdder: BaseEveryFrameCombatPlugin() {
         glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_ALPHA, GL_PRIMARY_COLOR)
         glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND1_ALPHA, GL_SRC_ALPHA)
     }
+}
+
+// Marker class to identify that our paperdoll panel has been added
+class PaperdollPanelPlugin : CustomUIPanelPlugin {
+    override fun advance(amount: Float) {}
+    override fun positionChanged(position: PositionAPI?) {}
+    override fun processInput(events: MutableList<InputEventAPI>?) {}
+    override fun buttonPressed(buttonId: Any?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun renderBelow(alphaMult: Float) {}
+    override fun render(alphaMult: Float) {}
 }
