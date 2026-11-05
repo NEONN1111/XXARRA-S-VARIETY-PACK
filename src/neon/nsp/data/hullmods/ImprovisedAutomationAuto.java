@@ -13,6 +13,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import lunalib.lunaSettings.LunaSettings;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -23,18 +24,18 @@ import java.util.Random;
 public class ImprovisedAutomationAuto extends BaseHullMod {
 
     private final String nerfkey = "$nsp_improvised_auto_nerfed";
-    private final int alphaCoreMaxLevel = 5;
-    private final int otherCoreMaxLevel = 5;
+    private final int alphaCoreMaxLevel = LunaSettings.getInt("NSP", "xvp_MK1s_AI_LevelMax");
+    private final int otherCoreMaxLevel = LunaSettings.getInt("NSP", "xvp_MK1s_AI_LevelMax");
     private final Random random = new Random();
 
     private static final String AUTO_MODE = "nsp_improvised_auto";
-    public static Map mag = new HashMap();
-    static {
-        mag.put(HullSize.FRIGATE, 2f);
-        mag.put(HullSize.DESTROYER, 3f);
-        mag.put(HullSize.CRUISER, 4f);
-        mag.put(HullSize.CAPITAL_SHIP, 5f);
-    }
+  //  public static Map mag = new HashMap();
+  //  static {
+  //      mag.put(HullSize.FRIGATE, 2f);
+  //      mag.put(HullSize.DESTROYER, 3f);
+  //      mag.put(HullSize.CRUISER, 4f);
+  //      mag.put(HullSize.CAPITAL_SHIP, 5f);
+  //  }
 
 
     @Override
@@ -76,7 +77,13 @@ public class ImprovisedAutomationAuto extends BaseHullMod {
     private int getMaxAllowedLevel(PersonAPI captain) {
         String coreId = captain.getAICoreId();
         if ("alpha_core".equals(coreId)) {
+            if(Misc.isUnremovable(captain)){
+                return alphaCoreMaxLevel + 1;
+            }
             return alphaCoreMaxLevel;
+        }
+        if(Misc.isUnremovable(captain)){
+            return otherCoreMaxLevel + 1;
         }
         return otherCoreMaxLevel;
     }

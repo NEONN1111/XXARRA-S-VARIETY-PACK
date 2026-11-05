@@ -10,7 +10,7 @@ xvp_Sentinels_Header,Sentinels Header,Header,Sentinel changes,,,,,
 xvp_Sentinels_Unique,Unique Sentinels,Boolean,true,,"Enables unique hulls for [Sentinel] ships found during ""The Scythe of Orion"" quest. 
 The unique [Sentinel] hulls feature special [1st AI war refit] hullmod which allows them to be crewed or automated, special version of XIV battlegroup hullmod and unique sprites.
 Default: [True]",,,
-xvp_Sentinels_AI_LevelMax,Sentinel AI core level cap,Int,5,,"[1st AI war refit] hullmod on Sentinels limits max officer level AI cores can use. Integrated AI core level being this number plus one.
+#xvp_Sentinels_AI_LevelMax,Sentinel AI core level cap,Int,5,,"[1st AI war refit] hullmod on Sentinels limits max officer level AI cores can use. Integrated AI core level being this number plus one.
 Default: [5]",1,10,
 ,,,,,,,,
 xvp_MK1s_Header,MK.1s Header,Header,Mk.1 Ships changes,,,,,
