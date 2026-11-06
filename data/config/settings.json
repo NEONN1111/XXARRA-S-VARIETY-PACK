@@ -5,6 +5,7 @@
         "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
 		"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
 		"ThreatAutomationApplicator":"neon.nsp.data.plugins.ThreatAutomationApplicator",
+
 	},
 	"drop_prob_officer_nsp_invicta_core": 0,
 	"ruleCommandPackages":[
@@ -64,6 +65,8 @@
             "nsp_nuke_risidual":"graphics/fx/nsp_nuke_risidual.png",
 			"NSP_drill_cloud":"graphics/fx/NSP_drill_cloud.png",
 			"NSP_shockwave":"graphics/fx/NSP_shockwave.png",
+			"NSP_empblast_core":"graphics/fx/nsp_empblast_core.png",
+			"NSP_empblast_fringe":"graphics/fx/nsp_empblast_fringe.png",
         },
 		"subsystems":{
 			"DPO_engines":"graphics/shipsystems/subsystems/nsp_DPO_engines.png",

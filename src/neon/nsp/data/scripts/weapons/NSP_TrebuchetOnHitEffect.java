@@ -112,8 +112,8 @@ public class NSP_TrebuchetOnHitEffect implements OnHitEffectPlugin {
             this.coreSizeFractionEnd = coreSizeFractionEnd;
 
             layer = CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER;
-            core = Global.getSettings().getSprite("swp_blast", "swp_empblast_core");
-            fringe = Global.getSettings().getSprite("swp_blast", "swp_empblast_fringe");
+            core = Global.getSettings().getSprite("fx", "NSP_empblast_core");
+            fringe = Global.getSettings().getSprite("fx", "NSP_empblast_fringe");
             core.setAdditiveBlend();
             fringe.setAdditiveBlend();
             fringe.setAdditiveBlend();
