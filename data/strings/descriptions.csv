@@ -259,6 +259,14 @@ The results of the Interstellar Quality and Design Assurance Reforms - a series 
 
 While few live to tell of what happened in those tense months that comprised the Hipparcos Containment, it has nonetheless left a scar on the Domain at large. One that may never truly heal.""",,,,
 nsp_fulgurite,SHIP,"A standout of Orion Shipyards design in the post-'Emerald Age' exodus, this frontier-rated utility platform featured a spinal-mount microwave emitter modulated for orbit-to-orbit operations. Alongside this, the platform is also capable of orbit-to-surface energy transferral, though this results in the emitter placing far more strain on the vessel's reactor, varying on the distance. Furthermore, this emitter cannot be used on worlds that have habitable atmospheres. Such caveats ensured that the Fulgurite saw both limited adoption in more civilized spaces, and expectedly, wide-spread adoption within frontier sectors, where such concerns were less prevalent.",,,,
+nsp_iklwa,SHIP,"Essentially a battlefield modification of an ancient civilian design, the Iklwa was originally created in response to the moves of an aggressive bandit kingdom along the Aquila Expanse. Agile and, once Armada doctrine matured to the new conditions of the Aquila Brigands' Rebellion, the ubiquitous Iklwa formed the backbone of the fleets that would move crush the rebels through the Domain's vast fleet of mobile fabricators.
+
+Ultimately, though, poor OPSEC led to many design blueprints getting leaked, and the Aquilans, having jury-rigged their own lines of fabricators, were able to smother the incursion into their territory with their own tsunami of Iklwans among other Domain vessels, causing several humiliating military defeats. The particularly costly embarrassment at Van Maanen's Star was only the proverbial last rod before criticality. Public outrage at all levels led to the opening of investigation into senior Domain admiralty, and the few commanding officers that had personally taken part in, and survived, the debacle.
+
+Curiously, the Aquilla Brigands never pressed their advantage beyond Van Maanen's Star. This pause in hostilities allowed the Domain to prepare for total war along the frontier, as reflected in the ""Van Maanen Declaration"" issued thereafter:
+
+""We shall not back down, we shall never withdraw. From the Belt of Orion to the Polaris Frontier, from Aquila to Andromeda itself, humanity will stand together or face extinction!"" ",,,,
+,,,,,,
 nsp_exponent_invictus,CUSTOM,A heavily damaged invictus.,,,,
 ,,,,,,
 nsp_HELIOS,WEAPON,"An enormous composite-beam laser system with near-omnidirectional coverage integrated into the forward hull of the Galaxy-class battlecruiser. Equally capable of engaging enemy ships and acting as a high-powered point defense system.

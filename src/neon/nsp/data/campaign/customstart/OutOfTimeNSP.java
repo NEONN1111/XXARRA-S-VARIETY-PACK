@@ -29,7 +29,7 @@ public class OutOfTimeNSP extends CustomStart {
     protected List<String> ships = new ArrayList<>(
             Arrays.asList(
                     new String[]{
-                            "nsp_erebid_ancient", "nsp_fulgurite_ancient", "nsp_kardakes_ancient"}
+                            "nsp_erebid_ancient", "nsp_fulgurite_ancient", "nsp_kardakes_ancient", "nsp_iklwa_ancient", "nsp_iklwa_ancient", "nsp_iklwa_ancient"}
             )
     );
 

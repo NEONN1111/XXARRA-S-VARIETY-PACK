@@ -1,0 +1,140 @@
+{
+  "hullName": "Iklwa",
+  "hullId": "nsp_iklwa",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/nsp_Iklwa.png",
+  "style": "LOW_TECH",
+  "height": 102,
+  "width": 90,
+  "center": [45, 51],
+  "collisionRadius": 0,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 0,
+  "viewOffset": 0,
+  "builtInMods": [
+    "nsp_hardened_armor",
+    "rugged",
+    "distributed_fire_control"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [17, 0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [27, 26]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [27, -26]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 45,
+      "locations": [0, 22]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -45,
+      "locations": [0, -22]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-50, 19],
+      "length": 40,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-50, -19],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-50, 30.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-50, -30.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    32.5, -7,
+    41, -7.5,
+    41, -19,
+    33.5, -19,
+    31.5, -38,
+    15.5, -37,
+    4.5, -45,
+    -11, -45,
+    -15, -39,
+    -37.5, -40.5,
+    -50, -35,
+    -50, -26,
+    -49, -26,
+    -49, -25,
+    -50, -25,
+    -50, -11,
+    -44, -11,
+    -44, -6,
+    -47, -4,
+    -47, 4,
+    -44, 6,
+    -44, 11,
+    -50, 11,
+    -50, 25,
+    -49, 25,
+    -49, 26,
+    -50, 26,
+    -50, 35,
+    -37.5, 40.5,
+    -15, 39,
+    -11, 45,
+    4.5, 45,
+    15.5, 37,
+    31.5, 38,
+    33.5, 19,
+    41, 19,
+    41, 7.5,
+    32.5, 7
+  ]
+}
