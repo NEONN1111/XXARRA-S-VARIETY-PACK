@@ -1,0 +1,18 @@
+{
+    "hullFrequency":{
+        "hulls":{
+	    "nsp_peregrine_lg":3,	
+        },
+    },
+    "knownShips":{
+        "hulls":[
+            "nsp_peregrine_lg",
+        ],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[""],
+		"hulls":[
+		],
+	},
+},

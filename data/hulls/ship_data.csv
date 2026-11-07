@@ -76,7 +76,7 @@ Exponent,nsp_exponent_subpar,Experimental Cruiser,Unknown,nsp_temporaljaunt,27,8
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #AUTOMIDLINE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Cassowary (A),nsp_cassowary_auto,Battlecarrier,Midline,plasmaoverdrive,35,25000,1800,20000,,1200,400,3,25,15,10,6,6,6000,OMNI,,150,0.25,1.2,,,1000,1900,500,600,20,30,7,800000,3,15,720,0.25,80,80,HIDE_IN_CODEX,"no_auto_penalty, ship_unique_signature",,0.4,3,5,,,,,,,,,
+Casuarius (A),nsp_cassowary_auto,Battlecarrier,Midline,plasmaoverdrive,35,25000,1800,20000,,1200,400,3,25,15,10,6,6,6000,OMNI,,150,0.25,1.2,,,1000,1900,500,600,20,30,7,800000,3,15,720,0.25,80,80,HIDE_IN_CODEX,"no_auto_penalty, ship_unique_signature",,0.4,3,5,,,,,,,,,
 Champion (A),nsp_champion_auto,Heavy Cruiser,Midline,plasmaoverdrive,15,10000,1250,13000,11000,800,190,,65,40,30,15,20,1500,OMNI,,210,0.4,0.7,,,0,5,150,150,4,38,8,125000,4,12,300,0.45,27,27,HIDE_IN_CODEX,"no_auto_penalty, ship_unique_signature",,0.5,2,4,,30,,,,,,,
 Hammerhead (A),nsp_hammerhead_auto,Destroyer,Midline,plasmaoverdrive,10,6000,700,6500,4167,550,105,,90,60,40,30,60,400,OMNI,,260,0.4,0.8,,,50,100,100,60,2,30,9,40000,5,12,360,0.25,13,13,HIDE_IN_CODEX,"no_auto_penalty, ship_unique_signature",,0.5,2,3,,,,,,,,,
 Centurion (A),nsp_centurion_auto,Heavy Frigate,Midline,deepstrike_maneuver,6,2250,500,2500,2188,175,55,,120,110,90,40,80,300,FRONT,,360,0.4,0.8,,,30,50,50,25,1,25,10,20000,8,10,240,0.25,8,8,HIDE_IN_CODEX,"no_auto_penalty, ship_unique_signature",,0.4,2,2,,,,,,,,,
