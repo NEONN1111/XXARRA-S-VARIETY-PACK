@@ -40,7 +40,7 @@ class PaperdollUIPanelAdder: BaseEveryFrameCombatPlugin() {
         val hullId = ship.hullSpec.baseHullId
 
         // Check if the ship is one of the allowed hull types
-        if (hullId !in setOf("onslaught_mk1", "nsp_legionmk1", "nsp_dominatormk1", "nsp_invictus_lp")) return
+        if (hullId !in setOf("onslaught_mk1", "nsp_legionmk1", "nsp_dominatormk1", "nsp_invictus_lp", "nsp_enforcermk1")) return
 
         shipInfo.CustomPanel(200f, 200f) { plugin ->
             anchorInBottomLeftOfParent()

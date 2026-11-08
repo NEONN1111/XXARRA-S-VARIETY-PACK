@@ -80,9 +80,17 @@ public class nsp_dominatorGen {
 
         AbyssalRogueStellarObjectEPEC.setAbyssalDetectedRanges(system);
 
-       SectorEntityToken legion = createWreckEntity(system, "nsp_dominatormk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial 12A183HP9A z Y5ZN", rock, true, true, new Vector2f());
-        legion.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
-        legion.setId("nsp_dominatorWreck");
+       SectorEntityToken dominator = createWreckEntity(system, "nsp_dominatormk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial 5EQH901 z Y5ZN", rock, true, true, new Vector2f());
+        dominator.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
+        dominator.setId("nsp_dominatorWreck");
+
+       // SectorEntityToken enforcer1 = createWreckEntity(system, "nsp_enforcermk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial HGWH901 z Y5ZN", rock, true, true, new Vector2f());
+       // enforcer1.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
+        //enforcer1.setId("nsp_enforcer1Wreck");
+
+       // SectorEntityToken enforcer2 = createWreckEntity(system, "nsp_enforcermk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial KPMTY901 z Y5ZN", rock, true, true, new Vector2f());
+       // enforcer2.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
+       // enforcer2.setId("nsp_enforcer2Wreck");
 
     }
 

@@ -49,7 +49,7 @@ public class nsp_spawnThreatFleet extends BaseCommandPlugin {
         if (command.equals("legion")) {
 
             DisposableThreatFleetManager.ThreatFleetCreationParams p = new DisposableThreatFleetManager.ThreatFleetCreationParams();
-            p.numFabricators = 3;
+            p.numFabricators = 1;
             p.numHives = 3;
             p.numOverseers = 1;
             p.numDestroyers = 2;

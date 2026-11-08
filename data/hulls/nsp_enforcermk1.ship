@@ -13,8 +13,10 @@
   "shieldRadius": 96,
   "viewOffset": 0,
   "builtInMods": [
-    "automated",
-    "rugged"
+    "nsp_improvised_automation",
+    "rugged",
+	"nsp_armorparent",
+	"nsp_hardened_armor"
   ],
   "weaponSlots": [
     {
