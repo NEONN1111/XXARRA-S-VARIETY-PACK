@@ -30,5 +30,37 @@
     "tags":["has_interaction_dialog", "neutrino_high"],
     "layers":[STATIONS],
     #"pluginClass":"data.scripts.campaign.plugins.apromise.SotfAPVenaEntityPlugin",
+  },
+
+  "nsp_enforcermk1_entity":{
+    "defaultName":"Disabled Ship", # used if name=null in addCustomEntity()
+    "defaultRadius":25, # used if radius<0 in addCustomEntity()
+    "icon":"graphics/icons/fleet0.png",
+    "iconColor":[5,115,10,255],
+    "iconWidth":20,
+    "iconHeight":20,
+    "sprite":"graphics/ships/nsp_enforcermk1/nsp_enforcermk1_entity.png",
+    "spriteWidth":15,
+    "spriteHeight":15,
+    "detectionRange":400,
+    "discoverable":true,
+    "discoveryXP":1000,
+    "renderShadow":true,
+    "useLightColor":true,
+    "showInCampaign":true,
+    "showIconOnMap":true,
+    "showNameOnMap":false,
+    "scaleNameWithZoom":false,
+    "scaleIconWithZoom":true,
+    "nameFont":"graphics/fonts/orbitron20aabold.fnt", # font has to be one of the ones already loaded by the game
+    "nameFontScale":1,
+    "nameAngle":0,
+    "nameColor":[158,158,158,255],
+    "nameShadowColor":[0,0,0,255],
+    "customDescriptionId":"nsp_enforcermk_entitydesc",
+    #"interactionImage":"graphics/illustrations/space_wreckage.jpg",
+    "tags":["neutrino_high"],
+    "layers":[STATIONS],
+    #"pluginClass":"data.scripts.campaign.plugins.apromise.SotfAPVenaEntityPlugin",
   }
 }

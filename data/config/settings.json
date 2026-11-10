@@ -12,6 +12,7 @@
 		"neon.nsp.data.scripts.rulecmd",
 		"neon.nsp.data.scripts.rulecmd.util",
 		"neon.nsp.data.scripts.rulecmd.exponent",
+		"neon.nsp.data.scripts.rulecmd.NSP_ShowShip",
 	],
 	"campaignScripts":[
 		"neon.nsp.data.plugins.ThreatAutomationApplicator"

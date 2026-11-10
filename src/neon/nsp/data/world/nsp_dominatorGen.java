@@ -84,7 +84,25 @@ public class nsp_dominatorGen {
         dominator.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
         dominator.setId("nsp_dominatorWreck");
 
-       // SectorEntityToken enforcer1 = createWreckEntity(system, "nsp_enforcermk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial HGWH901 z Y5ZN", rock, true, true, new Vector2f());
+        SectorEntityToken enforcerentity1 = system.addCustomEntity(
+                "nsp_dominatormk1_wreck2",
+                "Enforcer Mk.1",
+                "nsp_enforcermk1_entity",
+                "neutral");
+        enforcerentity1.setId("nsp_enforcerWreck1");
+        enforcerentity1.setCircularOrbitPointingDown(rock, 120, 1000, 175);
+
+
+        SectorEntityToken enforcerentity2 = system.addCustomEntity(
+                "nsp_dominatormk1_wreck2",
+                "Enforcer Mk.1",
+                "nsp_enforcermk1_entity",
+                "neutral");
+        enforcerentity2.setId("nsp_enforcerWreck2");
+        enforcerentity2.setCircularOrbitPointingDown(rock, 270, 1000, 175);
+
+
+        // SectorEntityToken enforcer1 = createWreckEntity(system, "nsp_enforcermk1_ancient", ShipRecoverySpecial.ShipCondition.WRECKED, "Serial HGWH901 z Y5ZN", rock, true, true, new Vector2f());
        // enforcer1.getMemoryWithoutUpdate().set("$nsp_dominatorWreck", true); // used for dialog
         //enforcer1.setId("nsp_enforcer1Wreck");
 

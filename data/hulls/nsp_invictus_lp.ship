@@ -18,7 +18,8 @@
     "missleracks",
     "ablative_armor",
     "ill_advised",
-    "nsp_armorparent"
+    "nsp_armorparent",
+	"nsp_modulegrouper"
   ],
   "builtInWeapons": {
     "WS 022": "lidardish",

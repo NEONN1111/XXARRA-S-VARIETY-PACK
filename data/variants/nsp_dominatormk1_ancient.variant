@@ -6,7 +6,9 @@
   "fluxCapacitors": 2,
   "fluxVents": 30,
   "quality": 1,
-  "permaMods": [],
+  "permaMods": ["degraded_drive_field",
+                "degraded_life_support",
+				"comp_armor"],
   "hullMods": [
     "dedicated_targeting_core",
     "armoredweapons"
