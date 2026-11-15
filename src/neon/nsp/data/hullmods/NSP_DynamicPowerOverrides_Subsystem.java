@@ -33,6 +33,10 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
     float WEAPONS_BONUS_MAX = 1.0F;
     float WEAPONS_NERF_MAX = 0.5F;
 
+    //these in actuality are 2x the value due to effect going up to 2
+    private static final float WEAPON_MALFUNCTION_PROB = 0.07f;
+    private static final float ENGINE_MALFUNCTION_PROB = 0.05f;
+
     protected Object STATUSKEY1 = new Object();
     protected Object STATUSKEY2 = new Object();
     protected Object STATUSKEY3 = new Object();
@@ -127,6 +131,10 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
 
         ShipEngineControllerAPI engines = ship.getEngineController();
 
+        boolean player = false;
+        player = ship == Global.getCombatEngine().getPlayerShip();
+
+
         if (engine_direction > ENGINE_BONUS_TIME_MAX) {
             engine_direction = ENGINE_BONUS_TIME_MAX;
         } else if (engine_direction < 0.0F) {
@@ -144,58 +152,36 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
             engine_direction += amount;
             weapons_direction -= amount * 5.0F;
 
-            //Speed buff if subsystem is off
+            //Speed buff
             if (engine_direction > 0.0F) {
                 engine_effect = Math.max(1.0F, 1.0F + ENGINE_BONUS_MAX * (active_effect / ENGINE_BONUS_TIME_MAX));
                 ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
-              //  ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
+                //  ship.getMutableStats().getMaxTurnRate().modifyMult(MOD_KEY, engine_effect);
                 ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, engine_effect);
-               // ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
+                // ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
             }
 
+            //system blocked and malfunction chance
             if (engine_direction > 7f) {
                 ship.blockCommandForOneFrame(ShipCommand.USE_SYSTEM);
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY4,
-                        DPO_EngineIcon,
-                        "Dynamic Power Overrides",
-                        "Main shipsystem disabled.", true);
+                stats.getEngineMalfunctionChance().modifyFlat(MOD_KEY, ENGINE_MALFUNCTION_PROB * engine_effect);
             }
 
+            //weapona debuff
             if (weapons_direction <= 0.0F) {
                 weapon_effect = 1.0F - WEAPONS_NERF_MAX * (engine_direction / ENGINE_BONUS_TIME_MAX);
                 ship.getMutableStats().getFluxDissipation().modifyMult(MOD_KEY, weapon_effect);
                 ship.getMutableStats().getBallisticRoFMult().modifyMult(MOD_KEY, weapon_effect);
                 ship.getMutableStats().getEnergyRoFMult().modifyMult(MOD_KEY, weapon_effect);
             }
-
-            //For Off case
-            if (weapons_direction <= 0.0F) {
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
-                        DPO_EngineIcon,
-                        "Dynamic Power Overrides - Weapons",
-                        "Weapon RoF: -" + String.format("%.0f", (1 - weapon_effect) * 100) + "%", true);
-            } else {
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
-                        DPO_EngineIcon,
-                        "Dynamic Power Overrides - Weapons",
-                        "Weapon RoF: -0%", true);
-            }
-
-            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY2,
-                    DPO_EngineIcon,
-                    "Dynamic Power Overrides - Engines",
-                    "Max Speed: +" + String.format("%.0f", (engine_effect - 1) * 100) + "%", false);
-
-            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
-                    DPO_EngineIcon,
-                    "Dynamic Power Overrides",
-                    "active_effect: " + String.format("%.2f", active_effect) + " | EE: " + String.format("%.2f", engine_effect) + " | WE: " + String.format("%.2f", weapon_effect), false);
         }
+
         //1 - Weapons mode
-        else if (ACTIVE_MODE == 1) {
+        if (ACTIVE_MODE == 1) {
             engine_direction -= amount * 5.0F;
             weapons_direction += amount;
 
+            //weapon buff
             if (weapons_direction > 0.0F) {
                 weapon_effect = Math.max(1.0F, 1.0F + WEAPONS_BONUS_MAX * (active_effect / WEAPONS_BONUS_TIME_MAX));
                 ship.getMutableStats().getFluxDissipation().modifyMult(MOD_KEY, weapon_effect);
@@ -203,14 +189,13 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
                 ship.getMutableStats().getEnergyRoFMult().modifyMult(MOD_KEY, weapon_effect);
             }
 
+            //system blocked and malfunction chance
             if (weapons_direction > 7f) {
                 ship.blockCommandForOneFrame(ShipCommand.USE_SYSTEM);
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY8,
-                        DPO_WeaponsIcon,
-                        "Dynamic Power Overrides",
-                        "Main shipsystem disabled.", true);
+                stats.getWeaponMalfunctionChance().modifyFlat(MOD_KEY, WEAPON_MALFUNCTION_PROB * weapon_effect);
             }
 
+            //speed debuff
             if (engine_direction <= 0.0F) {
                 engine_effect = 1.0F - ENGINE_NERF_MAX * (weapons_direction / WEAPONS_BONUS_TIME_MAX);
                 ship.getMutableStats().getMaxSpeed().modifyMult(MOD_KEY, engine_effect);
@@ -218,27 +203,6 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
                 ship.getMutableStats().getAcceleration().modifyMult(MOD_KEY, engine_effect);
                // ship.getMutableStats().getTurnAcceleration().modifyMult(MOD_KEY, engine_effect);
             }
-
-            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY5,
-                    DPO_WeaponsIcon,
-                    "Dynamic Power Overrides - Weapons",
-                    "Weapon RoF: +" + String.format("%.0f", (weapon_effect - 1) * 100) + "%", false);
-            if (engine_direction <= 0.0F) {
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY6,
-                        DPO_WeaponsIcon,
-                        "Dynamic Power Overrides - Engines",
-                        "Max Speed: -" + String.format("%.0f", (1 - engine_effect) * 100) + "%", true);
-            } else {
-                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY6,
-                        DPO_WeaponsIcon,
-                        "Dynamic Power Overrides - Engines",
-                        "Max Speed: -0%", true);
-            }
-
-            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY7,
-                    DPO_WeaponsIcon,
-                    "Dynamic Power Overrides",
-                    "active_effect: " + String.format("%.2f", active_effect) + " | EE: " + String.format("%.2f", engine_effect) + " | WE: " + String.format("%.2f", weapon_effect), false);
 
         }
 
@@ -250,8 +214,84 @@ public class NSP_DynamicPowerOverrides_Subsystem extends MagicSubsystem {
             ship.setWeaponGlow(0, null, EnumSet.of(WeaponAPI.WeaponType.BALLISTIC));
         }
 
+        //SO color shift iirc
         ship.getEngineController().fadeToOtherColor(this, color, null, 1f, 0.4f);
-        //ship.getEngineController().extendFlame(this, 0.25f, 0.25f, 0.25f);
+
+        //For all status stuff
+        maintainStatus();
+    }
+
+    private void maintainStatus() {
+        boolean player = false;
+        player = ship == Global.getCombatEngine().getPlayerShip();
+
+        float active_effect = Math.max(engine_direction, weapons_direction);
+
+        if (!player) {
+            return;
+        }
+
+        //0 - Drive mode
+        if (ACTIVE_MODE == 0) {
+            if (weapons_direction <= 0.0F) {
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
+                        DPO_EngineIcon,
+                        "Dynamic Power Overrides - Weapons",
+                        "Weapon RoF: -" + String.format("%.0f", (1 - weapon_effect) * 100) + "%", true);
+            } else {
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY1,
+                        DPO_EngineIcon,
+                        "Dynamic Power Overrides - Weapons",
+                        "Weapon RoF: -0%", true);
+            }
+            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY2,
+                    DPO_EngineIcon,
+                    "Dynamic Power Overrides - Engines",
+                    "Max Speed: +" + String.format("%.0f", (engine_effect - 1) * 100) + "%", false);
+
+            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
+                    DPO_EngineIcon,
+                    "Dynamic Power Overrides",
+                    "Active Effect: " + String.format("%.1f", active_effect) + " | EE: " + String.format("%.1f", engine_effect) + " | WE: " + String.format("%.1f", weapon_effect), false);
+
+            if (engine_direction > 7f) {
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY4,
+                        DPO_EngineIcon,
+                        "Dynamic Power Overrides",
+                        "Main shipsystem disabled. Chance of engines malfunctions.", true);
+
+            }
+        }
+
+        //1 - Weapons mode
+        if (ACTIVE_MODE == 1) {
+            //Statuses for Weapon Overdrive mode
+            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY5, DPO_WeaponsIcon,
+                    "Dynamic Power Overrides - Weapons",
+                    "Weapon RoF: +" + String.format("%.0f", (weapon_effect - 1) * 100) + "%", false);
+            if (engine_direction <= 0.0F) {
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY6, DPO_WeaponsIcon,
+                        "Dynamic Power Overrides - Engines",
+                        "Max Speed: -" + String.format("%.0f", (1 - engine_effect) * 100) + "%", true);
+            } else {
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY6, DPO_WeaponsIcon,
+                        "Dynamic Power Overrides - Engines",
+                        "Max Speed: -0%", true);
+            }
+            Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY7, DPO_WeaponsIcon,
+                    "Dynamic Power Overrides",
+                    "Active Effect: " + String.format("%.1f", active_effect) + " | EE: " + String.format("%.1f", engine_effect) + " | WE: " + String.format("%.1f", weapon_effect), false);
+
+            if (weapons_direction > 7f) {
+                ship.blockCommandForOneFrame(ShipCommand.USE_SYSTEM);
+                Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY8,
+                        DPO_WeaponsIcon,
+                        "Dynamic Power Overrides",
+                        "Main shipsystem disabled. Chance of weapons malfunctions.", true);
+            }
+
+        }
+
     }
 
     @Override
