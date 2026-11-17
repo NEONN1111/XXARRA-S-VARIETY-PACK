@@ -85,6 +85,7 @@ public class HardenedArmorNSP extends BaseHullMod {
 	public void advanceInCampaign(FleetMemberAPI member, MutableShipStatsAPI stats, float amount) {
 		stats.getArmorBonus().unmodify(HullMods.SHIELD_SHUNT);
 		stats.getArmorBonus().unmodify(HullMods.ARMOREDWEAPONS);
+		stats.getArmorBonus().unmodify(HullMods.HEAVYARMOR);
 	}
 
 }

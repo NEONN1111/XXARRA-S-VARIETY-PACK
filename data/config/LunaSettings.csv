@@ -28,8 +28,11 @@ xvp_enable_Disco_Elysium,Disco Elysium,Boolean,true,,"Enables Disco Elisium insp
 Currently includes separate star system, in plans are characters and quest.
 Default: [True]",,,
 ,,,,,,,,
-,,,,,,,,
-,,,,,,,,
+xvp_Mischeader,Miscellaneous Header,Header,Misc,,,,,Procgen
+nsp_numGeneticStations,Genetic Station Count,Int,1,,"Controls the number of Genetic Stations that spawn on sector generation. Doesn't do anything if edited mid-game.
+
+Allows you to select unique skills that may have not spawned in your sector.",1,10,Procgen
+nsp_splicerSkillLimit,Splicer Usage Limit,Int,1,,Base extra skills that can be added to an officer using Gene Splicers. Additive with other bonuses.,1,10,Procgen
 ,,,,,,,,
 ,,,,,,,,
 #luna_exampleHeader,Example Header,Header,Example Section,,,,,

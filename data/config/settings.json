@@ -1,9 +1,16 @@
 {
+	
+	"nsp_numGeneticStations":1, # DEFAULT: 1
+	# number of stations with Gene Splicer selectors that spawn on sector gen
+	# these allow you to pick a specific skill you want
+	# turn it up if you want everything in every save,
+	# instead of leaving it up to chance
+	
 	"nsp_InvictaHasRandomThoughts":true, #V: depricated?
 	"plugins":{
 		"nsp_mk1CombatPlugin":"neon.nsp.data.scripts.plugins.nsp_mk1CombatPlugin",
         "NSP_shipExplosion":"neon.nsp.data.plugins.NSP_shipExplosion",
-		"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
+	#	"NSPPaperdollCombatUIAdder":"neon.nsp.data.scripts.util.PaperdollUIPanelAdder",
 		"ThreatAutomationApplicator":"neon.nsp.data.plugins.ThreatAutomationApplicator",
 
 	},

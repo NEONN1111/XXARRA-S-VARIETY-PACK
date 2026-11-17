@@ -1415,3 +1415,115 @@ EndConversation",Should call here either to hiring code or to mission/event ref.
 #END Revachol,,,,,,
 #END Missions,,,,,,
 ,,,,,,
+,,,,,,
+,,,,,,
+# gene splicer,,,,,,
+nsp_geneSplicerOpen,nsp_geneSplicerOpen,,"NSP_splicerCmd ""SHOWOFFICERS""",,,
+nsp_geneSplicerSkills,DialogOptionSelected,$option == nsp_geneSplicerSkills,"NSP_splicerCmd ""SHOWSKILLS""",,,
+nsp_geneSplicerStore,DialogOptionSelected,$option == nsp_geneSplicerStore,"NSP_splicerCmd ""STORESKILL""",,100:defaultLeave:Leave,
+nsp_geneSplicerAdd,DialogOptionSelected,$option == nsp_geneSplicerAdd,"NSP_splicerCmd ""ADDSKILL""",,100:defaultLeave:Leave,
+,,,,,,
+# splicer station,,,,,,
+nsp_biotechStationOpen,OpenInteractionDialog,$customType == nsp_biotechStation score:5000,,"Your $shipOrFleet approaches the $nameInText.
+
+Faded white text branding the station as property of Exodyne Biotech rests on the station's exterior, long-battered and bereft of maintenance. Short range scans indicate that most power within is likely long dead, with a small hotspot of activity that suggests a small section may still be online.
+
+","0:nsp_biotechStationExplore:Explore
+100:defaultLeave:Leave",
+nsp_biotechStationExplore,DialogOptionSelected,$option == nsp_biotechStationExplore,"AddTextSmall ""WARN : Subject's vitals are compromised. Continued extraction cannot be guaranteed."" bad","Most of the station is filled with all types of burnt out cryopods with its habitants long since deceased. A bevy of dead machinery is attached to them, various tubing designed to hold liquid wrapping their way throughout the premises and into the walls towards some unknowable purpose.
+
+A single floodlight stays active in a corner of the station, and with it, a single operable machine similar to the others complete with its tubular veins.
+
+The hefty machine has a terminal on its face directly above a dispensary not unlike a vending machine. A warning blinks idly on its dying screen, barely kept alive by the paltry reserve power offered to this lonely corner. It appears to be capable of extracting something, although it's unclear exactly what it is at the moment.","0:nsp_showSplicerFreeSkillSelector:Attempt an ""extraction""
+100:defaultLeave:Leave it alone",
+nsp_showSplicerFreeSkillSelector,DialogOptionSelected,$option == nsp_showSplicerFreeSkillSelector,"NSP_splicerCmd ""SHOWSKILLSSPECIAL""",,,
+nsp_splicerStationConsider,DialogOptionSelected,$option == nsp_splicerStationConsider,,You reconsider your options.,"0:nsp_showSplicerFreeSkillSelector:Attempt an ""extraction""
+100:defaultLeave:Leave it alone",
+nsp_splicerStationCreate,DialogOptionSelected,$option == nsp_splicerStationCreate,,"As you power up the machine, it comes to life once again with a hiss and deep groan, metal struggling against metal. Then with a hefty clunk, it drives a needle-like apparatus through a receptacle in the top of the cryopod.
+
+You hear screaming, a gutteral howling, start up from inside the cryopod. Fists pound desperately on its containing walls, a voice yelling incomprehensible babble. Like a giant proboscis, it hungrily sucks something from the tube drop by drop, a meager amount of green liquid draining upwards and back into the machine.",nsp_splicerStationCreate1:Continue,
+nsp_splicerStationCreate1,DialogOptionSelected,$option == nsp_splicerStationCreate1,"AddTextSmall ""Error code 403: Subject not found. If this machine was operated recently, please consider recycling any used material and assigning replacements."" bad
+AddTextSmall ""This machine will now enter a power-saving sequence to wait for a licensed technician."" bad
+","Tink. A small canister of fluid drops from the contraption's dispenser, landing on a receptacle to hold it firmly in place. Within it is a thick green slurry of some unidentifiable ooze.
+
+As the canister is examined from a safe distance, you hear a dissonant buzz from the terminal lit up in red. ",nsp_splicerStationCreate2:Continue,
+nsp_splicerStationCreate2,DialogOptionSelected,$option == nsp_splicerStationCreate2,"NSP_makeOtherThingExpire
+NSP_splicerCmd ""ADDSKILLSPECIAL""","The electrical hum dies down, leaving your salvor team in the dark with their meager spoils, held in the palm of one's hand.",100:defaultLeave:Leave,
+,,,,,,
+,,,,,,
+"# bonus splicer station dialog, random one once per save
+# technically the 'random one' is always THE one, but lunalib settings can turn it up",,,,,,
+nsp_biotechStationExploreAlt,DialogOptionSelected,"$option == nsp_biotechStationExplore
+$nsp_biotechSpecial score:1001
+!$nsp_sawBiotechSpecial","$nsp_sawBiotechSpecial = true
+ShowImageVisual abandoned_station","You dispatch a salvor shuttle down to the dilapidated carcass of a station, passing through a conveniently located hull breach on one of the walls securing a shuttle port. The perpetrator is soon found - a sizeable asteroid embedded into one of the interior walls and surrounded by debris.
+
+Metal heaves as the shuttle touches down, but the structure holds",nsp_biotechStationExploreAlt1:Continue,
+nsp_biotechStationExploreAlt1,DialogOptionSelected,$option == nsp_biotechStationExploreAlt1,,"The interior is still tenuously powered, some ancient grid supplying energy to only sections deemed vital and sparse overhead lighting that buzzes and flickers on its own whims. Any bulkheads that are still intact have been automatically sealed, likely requiring power to open.
+
+It leaves only a small section currently accessible to your salvor team, although it's nothing the salvor's skeleton key can't fix. One of them takes out a plasma torch and begins their work on a bulkhead impeding their progress.",nsp_biotechStationExploreAlt2:Continue,
+nsp_biotechStationExploreAlt2,DialogOptionSelected,$option == nsp_biotechStationExploreAlt2,,"As they melt their way through the bulkhead, plasma burns through embedded wiring which takes out reserve power to the nearby area. Headlamps immediately flick on in reaction to the darkess, light sweeping over a now-deactivated cryopod that breaches open.
+
+Someone, or something, stumbles outward. The silhouette is difficult to make out from the shadow, vaguely like two people standing next to one another shoulder to shoulder.
+
+Then they get closer.",nsp_biotechStationExploreAlt3:Continue,
+nsp_biotechStationExploreAlt3,DialogOptionSelected,$option == nsp_biotechStationExploreAlt3,,"Its exterior is a sopping deep red dotted with teratoma that menace with clusters of hair and teeth. Each shambling step it takes forward lets out a wet slap, covering the floor below with blood. It stumbles weakly on its four legs like a human learning to walk with its equally many arms limply flailing about.
+
+Then, like a fresh babe suddenly cognizant of the world, it gurgles a deep gutteral scream and collapses to the floor, limbs thrashing. This thing, presumably once human and annihilated by any number of past experiments, is completely incompatible with life. It is...","0:nsp_biotechStationExploreAlt4a:Pathetic.
+20:nsp_biotechStationExploreAlt4b:Demonic.
+50:nsp_biotechStationExploreAlt4c:Incredible!",
+nsp_biotechStationExploreAlt4a,DialogOptionSelected,$option == nsp_biotechStationExploreAlt4a,"$option = nsp_biotechStationExploreAlt5
+FireBest DialogOptionSelected","Some part of you can't help but feel bad for this miscreation. So weak, stupid... and incredibly revolting. Why would anyone create this? It had to have been an accident.",,
+nsp_biotechStationExploreAlt4b,DialogOptionSelected,$option == nsp_biotechStationExploreAlt4b,"$option = nsp_biotechStationExploreAlt5
+FireBest DialogOptionSelected","A pair of souls entwined in this defiled prison created as a result of seeking mastery over life. It is a hellish thing, this station a sepulchre born of man's madness.",,
+nsp_biotechStationExploreAlt4c,DialogOptionSelected,$option == nsp_biotechStationExploreAlt4c,"$option = nsp_biotechStationExploreAlt5
+FireBest DialogOptionSelected","It's amazing something like this could have been created and kept alive all this time. It leaks crimson from every orifice, its fleshy exterior immediately vulnerable to damage or any number of pathogens. Truly the Domain would see natural order overturned, whether it's their thermodynamics-defying cryocomputers or whatever, this, is.",,
+nsp_biotechStationExploreAlt5,DialogOptionSelected,$option == nsp_biotechStationExploreAlt5,,"Comms is abuzz with noise, boots on the station barking between one another as they scramble to attention.
+
+In truth the situation isn't as dire as their own shock would have them believe. They just need an order - a command to do something and get them back on track.","0:nsp_biotechStationExploreAlt6a:""Hold it back!""
+50:nsp_biotechStationExploreAlt6b:""Keep your distance, no sudden movements.""",
+nsp_biotechStationExploreAlt6a,DialogOptionSelected,$option == nsp_biotechStationExploreAlt6a,,"One of the crew fires up the salvor torch again, planning to use the heated plasma edge to ward it off. The others don't move, eyes trained on the thing writhing on the ground. Its tantrum gradually slows down, furious flailing and wailing abating to a weak gurgling. Then, it stops entirely.
+
+It's probably dead. Or at least, they hope so.",nsp_biotechStationExploreAlt7:Continue,
+nsp_biotechStationExploreAlt6b,DialogOptionSelected,$option == nsp_biotechStationExploreAlt6b,,"Your salvors don't move, eyes trained on the thing writhing on the ground. Its tantrum gradually slows down, furious flailing and wailing abating to a weak gurgling. Then, it stops entirely.
+
+It's probably dead. Or at least, they hope so.",nsp_biotechStationExploreAlt7:Continue,
+nsp_biotechStationExploreAlt7,DialogOptionSelected,$option == nsp_biotechStationExploreAlt7,,"Ops mutters some creative curses under their breath and gives you a look fraught with concern, but doesn't say anything. Given their normally superstitious nature, holding back likely took a good amount of restraint.
+
+Fortunately, the rest of the exploration is uneventful in comparison... although, understandably, your salvors refused to continue until a secondary shuttle arrived with a delivery of a few armed bodyguards.",nsp_biotechStationExploreAlt8:Continue,
+nsp_biotechStationExploreAlt8,DialogOptionSelected,$option == nsp_biotechStationExploreAlt8,"NSP_addDatalogIntel ""A short excerpt retrieved from the hulk of an Exodyne Biotech research station. Details two peoples' thought processes in developing new research."" nsp_splicerBonusDatalog","While exploring the area, now with much more caution, your salvors happen upon a data cache containing a small amount of information regarding the station's previous inhabitants. It's quickly sent back to your fleet and uploaded to your Tripad after any necessary security processes.",nsp_biotechStationExplore:Continue,
+,,,,,,
+# bonus station datalog intel,,,,,,
+nsp_splicerBonusDatalog,nsp_splicerBonusDatalog,,,"You load the datalog recovered by your salvor crew. It appears it was already viewed by Tech before being handed off to you, with them leaving a note dismissing the information within as, ""likely useless to us, but less dry than a typical lab report.""
+
+The header helpfully denotes that anything within is the property of Exodyne Biotech, and any unauthorized distribution may result in persecution under Domain law... perhaps too late for that.","0:nsp_splicerBonusDatalog1:Read the datalog
+100:defaultLeave:Cancel",
+nsp_splicerBonusDatalog1,DialogOptionSelected,$option == nsp_splicerBonusDatalog1,,"The term 'gene splicer' is a bit of a misnomer. It can be used for simple genetic editing, yes, in a similar way a starship cannon may be used to swat an insect. No, what our primary clients are interested in is transference of the mind itself. Use a splicer on someone who attended the Domain's finest academies, and suddenly you're a prime fleet admiral without spending four years of your life.
+
+The product is in experimental stages, production rate low, and cost... rather the opposite. And yet, even when we raise the price to absurd levels, people keep buying. Says a lot of the user base, being all people with infinite credits to throw around. We can�t keep up with demand, not even close.",nsp_splicerBonusDatalog2:Continue,
+nsp_splicerBonusDatalog2,DialogOptionSelected,$option == nsp_splicerBonusDatalog2,,"The solution? Simple, create a cheaper product that can be more easily mass produced for our heavy users. Or so the execs say, creating an offshoot of an already experimental product is not trivial.
+
+It did get us thinking, the main expense is creating the receptacle, the splicer itself. Remarkably finnicky little thing. Our lab has performed some experiments on rodents involving a different method, where the two bodies are temporarily conjoined and the solution introduced directly. Results are promising, but there�s two main issues we need to get past before we can bring a demo to the next meeting - and if we don't, no budget.",nsp_splicerBonusDatalog3:Continue,
+nsp_splicerBonusDatalog3,DialogOptionSelected,$option == nsp_splicerBonusDatalog3,"NSP_addVictorText ""A.G: splicers as replacement for AI therapists? didn�t think about throwing out bad memories""
+NSP_addVictorText ""B.E: eh, profit margins are terrible, they�re running that market for free""
+NSP_addVictorText ""B.E: besides, parasocial connection == free credits, not actually helping them is their whole thing""
+NSP_addVictorText ""A.G: true. but it would be nice to do something for the people for a change""
+NSP_addVictorText ""B.E: give it time""","One, accuracy. Splicers are finely targeted, this is more of a shotgun. Fine if you�re using it on an exceptional individual, but many of our clients find people who tend to have a multitude of poor traits. Don�t want to take someone�s PTSD, after all.
+
+Below this portion is a note containing short correspondence between two people.",nsp_splicerBonusDatalog4:Continue,
+nsp_splicerBonusDatalog4,DialogOptionSelected,$option == nsp_splicerBonusDatalog4,"NSP_addVictorText ""B.E: I�ve heard their families are heavily compensated""
+NSP_addVictorText ""A.G: signing their bodily autonomy away like that, is that okay?""
+NSP_addVictorText ""B.E: probably not, but when the other option is your family being homeless, what can you do? I�m sure you�d sell that arts degree of yours, right?""
+NSP_addVictorText ""A.G: don�t know. it�s nice seeing something a human made every now and then""
+NSP_addVictorText ""A.G: ... think we�ll be next after the lab AI picks up our finished research?""
+NSP_addVictorText ""B.E: it�s inevitable, isn�t it. probably why they sent us to this backwater to begin with""","Two, the concept itself is likely revolting to a lot of our users, given where they�re sourcing most of their volunteers from. Would likely need to develop some kind of filament that could adapt to the persons� genealogy and be grafted to each subject.",nsp_splicerBonusDatalog5:Continue,
+nsp_splicerBonusDatalog5,DialogOptionSelected,$option == nsp_splicerBonusDatalog5,"NSP_addVictorText ""B.E: that was bad""
+NSP_addVictorText ""A.G: i'm trying not to think about it""
+NSP_addVictorText ""A.G: do we bring it up in the meeting?""
+NSP_addVictorText ""B.E: we fix it before anyone finds out, no point in showing that off""","Notably, there is a severe issue related to the above. When the genetic solution is introduced, there is a rare chance of incompatibility between the two subjects. 
+Symptoms are rapidly onset and incompatible with life, resembling a combination of severe radiation poisoning and cancer. Testing post-morbidity reveals severe damage to or removal of DNA from non-cancerous cells. Possible an error is causing all DNA to be 'migrated' and creating cancerous clusters? ",nsp_splicerBonusDatalog6:Continue,
+nsp_splicerBonusDatalog6,DialogOptionSelected,$option == nsp_splicerBonusDatalog6,,"For those two to be speaking so casually in a confidential report is odd, their position doesn't seem untouchable with worries of being replaced.
+
+Given the comments still exist it's possible nobody had ever laid eyes on it to find out. The answer is lost to time now, and doesn't particularly matter.",defaultLeave:Close,
+,,,,,,
+,,,,,,

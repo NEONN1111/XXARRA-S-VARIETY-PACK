@@ -11,6 +11,7 @@ import com.fs.starfarer.api.combat.listeners.DamageListener
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener
 import com.fs.starfarer.api.input.InputEventAPI
 import org.lwjgl.util.vector.Vector2f
+import org.magiclib.hullmods.enhancedmodule.ExplosionOcclusionRaycast
 
 const val MODULE_DEAD = "module_dead"
 const val MODULE_HULKED = "module_hulked"

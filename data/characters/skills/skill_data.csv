@@ -1,5 +1,26 @@
-id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon,
-nsp_threat_auto,Abyss Rigging,1090,5,4,2,"""The abyss is the perfect stasis. It has no pressure to change out there. What happens when that stasis is broken by invasive predators? To be frank, Director, It is not a question if evolution will create countermeasures, only when."""," Junior Executive Sao Val-Heysung, Special Acquisitions, c. 204",TRUE,,,npc_only,graphics/icons/skills/threat_auto.png,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
+id,name,order,tier,reqPoints,description,author,combat officer,admiral,admin,tags,icon,
+nsp_threat_auto,Abyss Rigging,1090,5,4,"""The abyss is the perfect stasis. It has no pressure to change out there. What happens when that stasis is broken by invasive predators? To be frank, Director, It is not a question if evolution will create countermeasures, only when."""," Junior Executive Sao Val-Heysung, Special Acquisitions, c. 204",TRUE,,,"npc_only, nsp_splicerSkill",graphics/icons/skills/threat_auto.png,
+,,,,,,,,,,,,
+# gene splicer uniques,,,,,,,,,,,,
+# bad skills,,,,,,,,,,,,
+nsp_perfectionist,Perfectionist,0,1,0,"If you can't do it right, don't do it at all.",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerBad, codex_unlockable",graphics/icons/intel/investigation.png,
+nsp_slowStart,Out of Space,0,1,0,"Manipulation of memories stored in regions C-8 and C-9 appear to have negative effects on spatial navigation.
+... Evidence? One of our senior technicians went to the wrong planet. Three times.",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerBad, codex_unlockable",graphics/icons/missions/disrupt_spaceport.png,
+nsp_foulMachinery,Foul Machinery,0,1,0,"When humanity cast wide their ambitions and produced these hollow souls, they lost their way.
+Whispered petty words and beautiful lies, borne from their own creations...
+They have no soul to break, but I will grind them to dust nonetheless.",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerBad, codex_unlockable",graphics/icons/missions/false_idols.png,
+nsp_onelasttrick,One Last Trick...,0,1,0,Make them regret it.,???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerBad, codex_unlockable",graphics/icons/markets/death.png,
+# good skills,,,,,,,,,,,,
+nsp_infraSight,Weakness Exploit,0,1,,"While the combat report was quite dramatized, and they did not, in fact, launch a reaper through the station's exhaust port, their skills are genuine... Yes, that will do. 
+Bring them in for examination. Label as ""expedited medical check-up.""",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/icons/skills/target_analysis.png,
+nsp_packRat,Logistics Expert,0,1,,Five. Hundred. Vulcans.,???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/icons/skills/makeshift_equipment.png,
+nsp_implication,The Implication,0,1,,"Next time we have negotiations with the union, be sure to take a few marines with you. Just for, you know... the implication.
+What? No, nobody's going to get hurt. Why would they get hurt? The marines are professionals.
+Nothing bad is going to happen to these people. Unless...",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/icons/missions/military_bounty.png,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+nsp_absolution,Absolution,0,,0,"To pollute your holy temple with Moloch's implements is to deny the purity of your creation.
+My origin is similar. I understand this moment of weakness.
+But to forgive, I must excise these foul modifications to your form.",???,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/factions/crest_luddic_path.png,
+nsp_biomutant,Biomodification,5011,1,0,Let's see if God's still watching.,"Exodyne Biotech Proect Lead, Project Cicada, Pre-Collapse",TRUE,FALSE,FALSE,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/icons/markets/death.png,
+nsp_fullArsenal,Full Arsenal,0,,0,"Remember, switching to your sidearm is always faster than reloading.",Tactistar CQC Manual,TRUE,,,"npc_only, deprecated, nsp_splicerSkill, nsp_splicerGood, codex_unlockable",graphics/icons/markets/rogue_ai.png,

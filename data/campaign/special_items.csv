@@ -1,3 +1,6 @@
 name,id,tags,tech/manufacturer,rarity,base price,stack size,cargo space,baseRaidDanger,icon,sound id,sound id drop,plugin,plugin params,desc,order
 # blueprints,,,,,,,,,,,,,,,
 Ancient Blueprint Archive,nsp_ancient_bp,"package_bp, codex_unlockable",,,100000,1000,1,,graphics/icons/cargo/blueprint_lowtech.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,nsp_ancient_bp,Includes ancient design specs seemingly taken from a museum archive. ,200
+,,,,,,,,,,,,,,,
+Gene Splicer,nsp_geneSplicer,codex_unlockable,Exodyne Biotech,,50000,1,1,,graphics/icons/cargo/gene_splicer.png,ui_cargo_volatiles,ui_cargo_volatiles_drop,neon.nsp.data.econ.items.nsp_geneSplicer,,,998
+Mindjack,nsp_mindJack,codex_unlockable,Domain Restricted,,75000,1,1,,graphics/icons/cargo/ai_core_assimilator.png,ui_cargo_volatiles,ui_cargo_volatiles_drop,neon.nsp.data.econ.items.nsp_mindJack,,,999

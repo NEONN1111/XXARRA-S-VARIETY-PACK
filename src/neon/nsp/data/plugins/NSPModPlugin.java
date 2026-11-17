@@ -13,11 +13,12 @@ import neon.nsp.data.ids.NSP_lunasettings;
 import neon.nsp.data.plugins.AICoreOfficerPlugins.NSP_ExponentCore_CampaignPluginImpl;
 import neon.nsp.data.plugins.AICoreOfficerPlugins.NSP_ThreatProcessor_CampaignPluginImpl;
 import neon.nsp.data.scripts.starsystems.Revachol_starsystem;
-import neon.nsp.data.scripts.util.PaperdollUIPanelAdder;
 import neon.nsp.data.world.*;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
 import org.apache.log4j.Logger;
+
+import neon.nsp.data.world.nsp_randomWorldGen;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,9 @@ public class NSPModPlugin extends BaseModPlugin {
     public Logger log = Logger.getLogger(this.getClass());
 
     //Mod interaction checks
+
+    public static final String SPLICERS_ADDED_KEY = "$nsp_addedGeneSplicers";
+
     public static boolean hasMagicLib = false;
     public static boolean hasGraphicsLib = false;
     public static boolean use_lunasettings = false;
@@ -99,6 +103,10 @@ public class NSPModPlugin extends BaseModPlugin {
         NSP_CustomFleets_Threat4_Threatribution.spawnFleetThreatribution();
         NSP_CustomFleets_Threat5_Thremlin.spawnFleetThremlin();
 
+        nsp_randomWorldGen worldGen = new nsp_randomWorldGen();
+        worldGen.addGeneSplicers();
+        worldGen.modifyRemnantHabForCryos();
+
         Global.getSector().getListenerManager().addListener(new nsp_onslaughtMK1Listener());
     }
 
@@ -166,11 +174,11 @@ public class NSPModPlugin extends BaseModPlugin {
         @Override
         public void advance(float amount) {
             if (!registered && Global.getCombatEngine() != null) {
-                PaperdollUIPanelAdder paperdollAdder = new PaperdollUIPanelAdder();
-                Global.getCombatEngine().addPlugin(paperdollAdder);
+               // PaperdollUIPanelAdder paperdollAdder = new PaperdollUIPanelAdder();
+           //     Global.getCombatEngine().addPlugin(paperdollAdder);
                 registered = true;
                 done = true;
-                Global.getLogger(PaperdollUIRegistrar.class).info("Paperdoll UI registered with combat engine");
+              //  Global.getLogger(PaperdollUIRegistrar.class).info("Paperdoll UI registered with combat engine");
             }
         }
     }

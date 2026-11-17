@@ -1,0 +1,70 @@
+id,trigger,conditions,script,text,options,notes
+,,,,,,
+# dominator MK1,,,,,,
+nsp_dominatorMK1wreckDetailsFirstTime,ShowSalvageEntityDetails,"$customType == wreck
+$nsp_dominatorWreck score:1000
+!$encountered","ShowDefaultVisual
+$encountered = true","The ancient war machine drifts, its hull battered and scarred by aeons-old war. Power signs are minimal.",,
+nsp_dominatorMK1wreckDetailsFirstTimeAlt,ShowSalvageEntityDetails,"$customType == wreck
+$nsp_dominatorWreck score:1000
+!$encountered
+PlayerFleetHasShipWithBaseHull onslaught_mk1","ShowDefaultVisual
+$encountered = true","The ancient war machine drifts, its hull battered and scarred by aeons-old war. Power signs are minimal.",,
+nsp_dominatorMK1wreckDetails,ShowSalvageEntityDetails,"$customType == wreck
+$nsp_dominatorWreck score:1000",ShowDefaultVisual,An ancient lies before you. Waiting.,,
+nsp_dominatorMK1exploredAlready,CheckSalvageSpecial,"$salvageSpecialData != null
+$customType == wreck
+$nsp_dominatorWreck score:1000",SalvageSpecialInteraction,An ancient lies before you. Waiting.,,
+nsp_dominatorMK1exploreFirstTimeAlt,CheckSalvageSpecial,"$salvageSpecialData != null
+$customType == wreck
+$nsp_dominatorWreck score:1000
+!$explored
+PlayerFleetHasShipWithBaseHull onslaught_mk1","$explored = true
+$global.nsp_foundDominatorMK1 = true
+$player.encounteredWeird = true","Your sensors are only able to identify the drifting mass before you as a particularly large piece of shattered debris, some part of a station's hab-module or defensive emplacement. The silhouette floating in the infinite darkness of the Abyss only resembling aimless twisted metal... until it comes within range of a spotlight, your sensors crew pulling together a wireframe model of the object. Only then does recognition begin to stir in your mind, the previously unidentifiable shape before you now revealed to be much more than scrap.
+
+The soundscape within your bridge quickly shifts from the background noise of normal operations to a silence so suffocating you can hear the rattling of a loose ventilation duct cover. Some crew stare slackjawed out the broad command center windows, while others repeatedly check their terminals for errors- you can even catch a glimpse of an assistant pinching themselves on the arm.
+
+After a moment, a number of heads turn in your direction, seeking guidance from their captain.","nsp_dominatorMK1continue0Alt:""It looks like... a Mk.I version of the Dominator.""",
+nsp_dominatorMK1explore0Alt,DialogOptionSelected,$option == nsp_dominatorMK1continue0Alt,ShowImageVisual cache_large,"There's hardly time for you to consider what could have caused such extensive damage to this vessel, an alert suddenly appearing on the scratched terminal screen in front of you. Sensors crew scramble to compose themselves as a familiar stream of data crosses their screens- the Onslaught Mk.I's unanswered calls into the void, now directed to the heavily damaged Dominator Mk.I in front of you. 
+
+Streams of binary data cross the short gap of void between the two ancients, yet only one speaks. Your sensors crew can pick out faint whispers- chunks of corrupted, barely detectable data packets occasionally worming their way out from the Dominator Mk.I, labored responses from dying equipment in the ship's mutilated hull. The Onslaught Mk.I slowly goes silent as calls go unanswered, radio transmitters quieting after one last burst of activity.
+
+A distress signal. The ancient battleship asking you to revive its fallen soldier.","nsp_dominatorMK1continue1Alt:""Run high-power scans. I want a recovery report.""",
+nsp_dominatorMK1explore1Alt,DialogOptionSelected,$option == nsp_dominatorMK1continue1Alt,,"Your sensors officer salutes before turning to their terminal, the rest of the crew at the station already preparing scans and models. The damage to the Dominator Mk.I is extensive- heavy weapon impacts scar its hull, one of its disposable armor modules entirely missing, the other hanging on by threads. Weapon mounts have taken heavy fire, barrels of its Devastator cannons snapped off and mutilated. The ship's engines are coated by burn marks and patches of melted material, a signature indicator of having been pushed beyond their limit.
+
+The most concerning of the battle damage is that which is unexplainable. Entire portions of armor plating and hull underneath are entirely missing, surgically removed in unpredictable chunks by some unknown force. The damage patterns are too clean to have been any laser, exposed uncorroded metal ruling out chemical weapons, perfect round edges excluding the possibility of explosives. It's as if pieces of the ship were deliberately stripped off and scrapped, but what could have done so this far into the Abyss? You don't have time to ponder the question, as your salvage chief looks to you and clears their throat, Tri-pad in hand.
+
+""$PlayerSirOrMadam, we believe it's recoverable.""",nsp_dominatorMK1continue2:Continue,
+nsp_dominatorMK1exploreFirstTime,CheckSalvageSpecial,"$salvageSpecialData != null
+$customType == wreck
+$nsp_dominatorWreck score:1000
+!$explored","$explored = true
+$global.nsp_foundDominatorMK1 = true
+$player.encounteredWeird = true","Your sensors are only able to identify the drifting mass before you as a particularly large piece of shattered debris, some part of a station's hab-module or defensive emplacement. The silhouette floating in the infinite darkness of the Abyss only resembling aimless twisted metal... until it comes within range of a spotlight, your sensors crew pulling together a wireframe model of the object. Only then does recognition begin to stir in your mind, the previously unidentifiable shape before you now revealed to be much more than scrap.
+
+The soundscape within your bridge quickly shifts from the background noise of normal operations to a silence so suffocating you can hear the rattling of a loose ventilation duct cover. Some crew stare slackjawed out the broad command center windows, while others repeatedly check their terminals for errors- you can even catch a glimpse of an assistant pinching themselves on the arm.
+
+After a moment, a number of heads turn in your direction, seeking guidance from their captain.","nsp_dominatorMK1continue0:""It looks like... a Mk.I version of the Dominator.""",
+nsp_dominatorMK1explore0,DialogOptionSelected,$option == nsp_dominatorMK1continue0,ShowImageVisual cache_large,"Anxious murmuring slowly breaks loose the silence within your bridge. The metallic form before you so heavily damaged in so many ways, it makes even you wonder what could have possibly wrought such destruction upon a vessel as rugged in design as this primitive Dominator. Your sensors crew needs only to read your expression to rush to work, running high-power sweepscans and bringing together a detailed model for analysis.
+
+Cannon barrels lay twisted and broken, one of the ship's disposable armor plates entirely missing, the other haphazardly splattered with impacts and pierced holes. Engines are scarred by burns and portions of melted components, a clear sign of being pushed well beyond their limits. Damage patterns even suggest the ship suffered a high-speed collision with a hard object- perhaps the hull of a ship.",nsp_dominatorMK1continue1:Continue,
+nsp_dominatorMK1explore1,DialogOptionSelected,$option == nsp_dominatorMK1continue1,,"Most concerning however, is the damage that your crew cannot identify. Significant chunks of armor plating and underlying hull have been stripped with unnerving precision- more smooth than any weapon impact you've seen. The metal below these missing portions is clean, uncorroded, nearly polished- far too clean for any explosive, laser, or even some form of acid based weapon. It appears almost as if pieces of the hull were cleanly stripped, yet the burn marks around conduits left exposed suggest the ship was active, and in fact at combat power, during this process. 
+
+Crew look amongst themselves with nervous expressions, your salvage chief making hand movements said by old spacer superstition to be a seal of protection.","nsp_dominatorMK1continue2:""Send in the salvor teams.""",
+nsp_dominatorMK1explore2,DialogOptionSelected,$option == nsp_dominatorMK1continue2,ShowImageVisual salvor_explore_hull,"You watch as open-vacuum shuttles and salvage drones approach the drifting wreck, trundling through the suffocating darkness of the Abyss. Never before had lightless vacuum felt so thick, until you and your crew made that fateful voyage out chasing sensor ghosts, out finding what went bump in the night those 200 cycles ago. The irony is something not lost upon you, how you've repeated the same chase again. At least, this time, it isn't on the leash of some academia or corporation.
+
+Your thoughts are interrupted by the dull click of shuttle anchors against bare metal, relayed from the salvagers' cameras to your main display. Entry into the vessel is no difficult task, numerous breaches throughout its hull making entry a trivial process. Salvors mumble among themselves, the interior of the ship revealing itself in structure both alien and not- familiar control consoles once manipulated by human hands, now overtaken by the same electromechanical infestation you've come to know.",nsp_dominatorMK1continue3:Continue,
+nsp_dominatorMK1explore3,DialogOptionSelected,$option == nsp_dominatorMK1continue3,,"Tendrils of steel and wire wrap themselves through corridors and around every station once manned by the vessel's brave crew, a form of automation so incredibly primitive it surprises you that the vessels hosting it can even navigate- let alone hold their own in combat. Those among the salvor crew present during the Onslaught Mk.I's exploration remark of the automation seeming 'sharper', and you can't help but agree- something about this vessel emanates a sort of malice, malevolence you can't describe even to yourself.
+
+You overhear one salvor in particular swearing to their team they had heard the vessel itself growl at them, upon bumping into an exposed conduit. Others traverse the hull with hands closer than is usual to the few sidearms they carry, a general sense of anxious unease perforating the comm channels. Lucky charms are held close to chests in tightly clenched fists, seals of protection made with brief somatic movements among the more superstitious.",nsp_dominatorMK1continue4:Continue,
+nsp_dominatorMK1explore4,DialogOptionSelected,$option == nsp_dominatorMK1continue4,"AddTextSmall ""T H R E A T  D E T E C T E D"" bad","Recovery of the vessel is a laborious process. So many systems damaged or destroyed, connections between electromechanical components severed or shorted, the ship's reactor cold and dead for centuries. The stars have blessed you with great fortune though, it seems; enough remains of the vessel's data stores to reconstruct something abstractly describable as a blueprint. Still demanding much jury-rigging and patchwork from your crew, but just barely making the prospect of restarting the venerable monster more than a distant fantasy. 
+
+Eventually, though, the beast does indeed wake from its previously eternal slumber. The moment the reactor is jumpstarted, low-power radio signals fill the hull with a warhorn song, tapping of solenoids against control panels louder than before observed nearly overburdening the sensitive acoustic monitors. Salvors barely have time to secure themselves to bulkheads, or whatever similar sturdy-looking protrusions they can find, before the Dominator Mk.I's engines roar back to life. Familiar signals and half-orchestrated clicks forming a choir of one repeated message...",nsp_dominatorMK1continue5:Continue,
+nsp_dominatorMK1explore5,DialogOptionSelected,$option == nsp_dominatorMK1continue5,"AddTextSmall ""T H R E A T  D E T E C T E D"" bad","Your bridge crew hardly has time to react to the vessel's sudden awakening, fleet command scrambling to send a command to the Dominator Mk.I to stand down and take formation with the fleet. The ship seems to almost hesitate for a moment, engines and maneuvering thrusters going quiet, before the ancient automation complies with the command. Salvors are hurriedly packed into shuttles and evacuated, tools left behind in the half-repaired hull while there is still time. Flurries of signals are sent between the repaired electromechanical parts, one singular war cry scattered among the entire vessel.",nsp_dominatorMK1continue6:Continue,
+nsp_dominatorMK1explore6,DialogOptionSelected,$option == nsp_dominatorMK1continue6,"AddTextSmall ""T H R E A T  D E T E C T E D"" bad
+$player.hasThreatDetectionSensorMods = true
+nsp_spawnThreatFleet ""dominator""
+SalvageSpecialInteraction","There's a startling alert from your sensor crew's terminals, a halo of orange light underlining the station and those manning it. Fourteen letters, two words, and one united voice, your ship's own detection equipment now crying out in unison with the Dominator Mk.I's call to arms. And indeed, both the ancient and your own vessel point to the same seemingly empty section of abyssal space, a signal now repeated by all in this forsaken slice of starless black indicating you're no longer alone.",100:defaultLeave:Continue,
+#END dominator MK1,,,,,,
+,,,,,,

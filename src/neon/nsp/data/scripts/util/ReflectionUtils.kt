@@ -96,11 +96,7 @@ internal object ReflectionUtils {
      * @throws IllegalArgumentException if no field matches the criteria or if multiple fields match (ambiguity).
      * @see getFieldsMatching
      */
-    @JvmStatic
-    @JvmOverloads
-    fun get(instance: Any, name: String? = null, type: Class<*>? = null, searchSuperclass: Boolean = false): Any? {
-        return instance.get(name, type, searchSuperclass)
-    }
+
 
     /**
      * Finds a unique field matching the name and/or type on this object's class (or optionally, superclass's) and returns its value.
@@ -120,19 +116,7 @@ internal object ReflectionUtils {
      * @return The value of the uniquely identified field.
      * @throws IllegalArgumentException if no field matches the criteria or if multiple fields match (ambiguity).
      */
-    @JvmSynthetic
-    @JvmName("ExtensionGet")
-    fun Any.get(name: String? = null, type: Class<*>? = null, searchSuperclass: Boolean = false): Any?{
-        val target = if(this is BoxedUIElement) this.boxedElement else this
-        val reflectedFields = target.getFieldsMatching(name, fieldAssignableTo=type, searchSuperclass=searchSuperclass)
-        if (reflectedFields.isEmpty())
-            throw IllegalArgumentException("No field found for name: '${name ?: "<any>"}' on class: ${target::class.java.name} " +
-                    "that is assignable to type: '${type?.name ?: "<any>"}'.")
-        else if (reflectedFields.size > 1)
-            throw IllegalArgumentException("Ambiguous fields with name: '${name ?: "<any>"}' on class ${target::class.java.name} " +
-                    "assignable to type: '${type?.name ?: "<any>"}'. Multiple fields match.")
-        else return reflectedFields[0].get(target)
-    }
+
 
     /**
      * Finds a unique field matching the type (and name if provided) on the provided `instance`'s class (or optionally, superclass's) and assigns `value` to it.
@@ -151,11 +135,7 @@ internal object ReflectionUtils {
      *
      * @throws IllegalArgumentException if no field matches the criteria or if multiple fields match (ambiguity).
      */
-    @JvmStatic
-    @JvmOverloads
-    fun set(instance: Any, name: String? = null, value: Any?, searchSuperclass: Boolean = false) {
-        instance.set(name, value, searchSuperclass)
-    }
+
 
     /**
      * Finds a unique field matching the type (and name if provided) on this object's class (or optionally, superclass's) and assigns `value` to it.
@@ -174,25 +154,11 @@ internal object ReflectionUtils {
      *
      * @throws IllegalArgumentException if no field matches the criteria or if multiple fields match (ambiguity).
      */
-    @JvmSynthetic
-    @JvmName("ExtensionSet")
-    fun Any.set(name: String? = null, value: Any?, searchSuperclass: Boolean = false) {
-        val target = if(this is BoxedUIElement) this.boxedElement else this
-        val valueType = value?.let{ it::class.javaPrimitiveType ?: it::class.java }
-        val reflectedFields = target.getFieldsMatching(name, fieldAccepts=valueType, searchSuperclass=searchSuperclass)
-        if (reflectedFields.isEmpty())
-            throw IllegalArgumentException("No field found for name: '${name ?: "<any>"}' on class: ${target::class.java.name} " +
-                    "that accepts type: '${valueType?.name ?: "null"}'.")
-        else if (reflectedFields.size > 1)
-            throw IllegalArgumentException("Ambiguous fields with name: '${name ?: "<any>"}' on class: ${target::class.java.name} " +
-                    "accepting type: '${valueType?.name ?: "null"}'. Multiple fields match.")
-        else return reflectedFields[0].set(target, value)
-    }
 
     private fun getAllFields(clazz: Class<*>): Set<Any> {
         var currentClazz: Class<*>? = clazz
         val fields = mutableSetOf<Any>()
-        while (currentClazz != Object::class.java && currentClazz != null){
+        while (currentClazz != Object::class.java && currentClazz != null) {
             fields.addAll(currentClazz.declaredFields)
             currentClazz = currentClazz.superclass
         }
@@ -236,7 +202,9 @@ internal object ReflectionUtils {
         fieldAssignableTo: Class<*>? = null,
         fieldAccepts: Class<*>? = null,
         searchSuperclass: Boolean = false
-    ): List<ReflectedField> { return clazz.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass) }
+    ): List<ReflectedField> {
+        return clazz.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass)
+    }
 
     /**
      * Finds fields within this class (and optionally, its superclass hierarchy) that match the specified criteria.
@@ -297,7 +265,8 @@ internal object ReflectionUtils {
                     // and the user isn't trying to find an object
                     type != Object::class.java &&
                     fieldAssignableTo != Object::class.java &&
-                    fieldAccepts != Object::class.java)
+                    fieldAccepts != Object::class.java
+                )
                 // filter out the field
                     return@filter false
             }
@@ -329,7 +298,9 @@ internal object ReflectionUtils {
         fieldAssignableTo: Class<*>? = null,
         fieldAccepts: Class<*>? = null,
         searchSuperclass: Boolean = false
-    ): List<ReflectedField> { return instance::class.java.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass) }
+    ): List<ReflectedField> {
+        return instance::class.java.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass)
+    }
 
     /**
      * Finds fields within this object's class and its superclass hierarchy that match the specified criteria.
@@ -352,7 +323,9 @@ internal object ReflectionUtils {
         fieldAssignableTo: Class<*>? = null,
         fieldAccepts: Class<*>? = null,
         searchSuperclass: Boolean = false
-    ): List<ReflectedField> { return this::class.java.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass) }
+    ): List<ReflectedField> {
+        return this::class.java.getFieldsMatching(name, type, fieldAssignableTo, fieldAccepts, searchSuperclass)
+    }
 
     /**
      * Finds fields within `clazz`'s class hierarchy whose declared type match the specified criteria.
@@ -390,7 +363,13 @@ internal object ReflectionUtils {
         methodParameterTypes: Array<Class<*>?>? = null,
         searchSuperclass: Boolean = false
     ): List<ReflectedField> {
-        return clazz.getFieldsWithMethodsMatching(methodName, methodReturnType, numOfMethodParams, methodParameterTypes, searchSuperclass)
+        return clazz.getFieldsWithMethodsMatching(
+            methodName,
+            methodReturnType,
+            numOfMethodParams,
+            methodParameterTypes,
+            searchSuperclass
+        )
     }
 
     /**
@@ -430,7 +409,8 @@ internal object ReflectionUtils {
     ): List<ReflectedField> {
         return (if (searchSuperclass) getAllFields(this) else this.declaredFields.toSet()).filter { fieldInstance ->
             val fieldType = getFieldTypeHandle.invoke(fieldInstance) as Class<*>?
-            fieldType?.getMethodsMatching(methodName, methodReturnType, numOfMethodParams, methodParameterTypes)?.isNotEmpty() == true
+            fieldType?.getMethodsMatching(methodName, methodReturnType, numOfMethodParams, methodParameterTypes)
+                ?.isNotEmpty() == true
         }.map { ReflectedField(it) }
     }
 
@@ -457,7 +437,13 @@ internal object ReflectionUtils {
         methodParameterTypes: Array<Class<*>?>? = null,
         searchSuperclass: Boolean = false
     ): List<ReflectedField> {
-        return instance::class.java.getFieldsWithMethodsMatching(methodName, methodReturnType, numOfMethodParams, methodParameterTypes, searchSuperclass)
+        return instance::class.java.getFieldsWithMethodsMatching(
+            methodName,
+            methodReturnType,
+            numOfMethodParams,
+            methodParameterTypes,
+            searchSuperclass
+        )
     }
 
     /**
@@ -482,7 +468,13 @@ internal object ReflectionUtils {
         methodParameterTypes: Array<Class<*>?>? = null,
         searchSuperclass: Boolean = false
     ): List<ReflectedField> {
-        return this::class.java.getFieldsWithMethodsMatching(methodName, methodReturnType, numOfMethodParams, methodParameterTypes, searchSuperclass)
+        return this::class.java.getFieldsWithMethodsMatching(
+            methodName,
+            methodReturnType,
+            numOfMethodParams,
+            methodParameterTypes,
+            searchSuperclass
+        )
     }
 
 
@@ -503,9 +495,6 @@ internal object ReflectionUtils {
      *                                  if multiple methods match the criteria (ambiguity), preventing a safe invocation.
      *                                  The exception message will detail the inferred parameter types causing the ambiguity.
      */
-    @JvmStatic
-    @JvmOverloads
-    fun invoke(instance: Any, name: String? = null, vararg args: Any?): Any? { return instance.invoke(name, *args) }
 
     /**
      * Invokes a method on this object using reflection, simplifying calls by automatically matching argument types.
@@ -524,20 +513,7 @@ internal object ReflectionUtils {
      *                                  if multiple methods match the criteria (ambiguity), preventing a safe invocation.
      *                                  The exception message will detail the inferred parameter types causing the ambiguity.
      */
-    @JvmSynthetic
-    @JvmName("ExtensionInvoke")
-    fun Any.invoke(name: String? = null, vararg args: Any?): Any? {
-        val target = if(this is BoxedUIElement) this.boxedElement else this
-        val paramTypes = args.map { arg -> arg?.let{ it::class.javaPrimitiveType ?: it::class.java } }.toTypedArray()
-        val reflectedMethods = target.getMethodsMatching(name, parameterTypes=paramTypes)
-        if (reflectedMethods.isEmpty())
-            throw IllegalArgumentException("No method found for name: '$name' on class: ${target::class.java.name} " +
-                    "with compatible parameter types derived from arguments: ${paramTypes.contentToString()}")
-        else if (reflectedMethods.size > 1)
-            throw IllegalArgumentException("Ambiguous method call for name: '$name' on class: ${target::class.java.name}. " +
-                    "Multiple methods match parameter types derived from arguments: ${paramTypes.contentToString()}")
-        else return reflectedMethods[0].invoke(target, *args)
-    }
+
 
     /**
      * Invokes a static method on `clazz`'s class using reflection, simplifying calls by automatically matching argument types.
@@ -556,9 +532,7 @@ internal object ReflectionUtils {
      *                                  if multiple methods match the criteria (ambiguity), preventing a safe invocation.
      *                                  The exception message will detail the inferred parameter types causing the ambiguity.
      */
-    @JvmStatic
-    @JvmOverloads
-    fun invoke(clazz: Class<*>, name: String? = null, vararg args: Any?): Any? { return clazz.invoke(name, *args) }
+
 
     /**
      * Invokes a static method on this class using reflection, simplifying calls by automatically matching argument types.
@@ -577,19 +551,7 @@ internal object ReflectionUtils {
      *                                  if multiple methods match the criteria (ambiguity), preventing a safe invocation.
      *                                  The exception message will detail the inferred parameter types causing the ambiguity.
      */
-    @JvmSynthetic
-    @JvmName("ExtensionInvoke")
-    fun Class<*>.invoke(name: String? = null, vararg args: Any?): Any? {
-        val paramTypes = args.map { arg -> arg?.let{ it::class.javaPrimitiveType ?: it::class.java } }.toTypedArray()
-        val reflectedMethods = this.getMethodsMatching(name, parameterTypes=paramTypes)
-        if (reflectedMethods.isEmpty())
-            throw IllegalArgumentException("No method found for name '$name' on class ${this::class.java.name} " +
-                    "with compatible parameter types derived from arguments: ${paramTypes.contentToString()}")
-        else if (reflectedMethods.size > 1)
-            throw IllegalArgumentException("Ambiguous method call for name '$name' on class ${this::class.java.name}. " +
-                    "Multiple methods match parameter types derived from arguments: ${paramTypes.contentToString()}")
-        else return reflectedMethods[0].invoke(null, *args)
-    }
+
 
     // Map primitives to their corresponding wrapper types
     private val primitiveToWrapper = mapOf<Class<*>, Class<*>>(
@@ -934,11 +896,7 @@ internal object ReflectionUtils {
          * @param instance The object instance from which to get the field value. Use `null` for static fields.
          * @return The value of the field. Primitive types will be boxed. Returns `null` if the field value is `null`.
          */
-        fun get(instance: Any?): Any? {
-            val target = if(instance is BoxedUIElement) instance.boxedElement else instance
-            setFieldAccessibleHandle.invoke(field, true)
-            return getFieldHandle.invoke(field, target)
-        }
+
 
         /**
          * Sets the value of the wrapped field on the given object instance.
@@ -947,11 +905,7 @@ internal object ReflectionUtils {
          * @param instance The object instance on which to set the field value. Use `null` for static fields.
          * @param value The new value to assign to the field.
          */
-        fun set(instance: Any?, value: Any?) {
-            val target = if(instance is BoxedUIElement) instance.boxedElement else instance
-            setFieldAccessibleHandle.invoke(field, true)
-            setFieldHandle.invoke(field, target, value)
-        }
+
     }
 
     /**
@@ -977,11 +931,6 @@ internal object ReflectionUtils {
          * @return The value returned by the method. Primitive return types will be boxed. Returns `null` if the method
          *         has a `void` return type or explicitly returns `null`.
          */
-        fun invoke(instance: Any?, vararg arguments: Any?): Any? {
-            val target = if(instance is BoxedUIElement) instance.boxedElement else instance
-            setMethodAccessibleHandle.invoke(method, true)
-            return invokeMethodHandle.invoke(method, target, arguments)
-        }
     }
 
     /**
